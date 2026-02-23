@@ -1,16 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const interDisplay = localFont({
-  src: "../fonts/InterDisplay-Medium.woff2",
-  variable: "--font-inter-display",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
+const stackSansText = localFont({
+  src: "../public/font/Stack_Sans_Text/StackSansText-VariableFont_wght.ttf",
+  variable: "--font-stack-sans-text",
+  weight: "200 700",
 });
 
 export const metadata: Metadata = {
@@ -26,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${interDisplay.variable} ${inter.variable} relative z-0 font-sans antialiased`}
+        className={`${stackSansText.variable} relative z-0 font-sans antialiased`}
       >
         {children}
       </body>

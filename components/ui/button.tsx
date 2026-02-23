@@ -1,24 +1,29 @@
 import { clsx } from "clsx";
 import { cva, type VariantProps } from "class-variance-authority";
 import type { ButtonHTMLAttributes } from "react";
+import Image from "next/image";
 
 const buttonVariants = cva(
-  "rounded-full font-bold leading-[140%] whitespace-nowrap transition-all active:scale-98 cursor-pointer",
+  "font-medium leading-[20px] whitespace-nowrap transition-all active:scale-[0.98] cursor-pointer",
   {
     variants: {
       variant: {
-        primary: "border border-[#202020] bg-[#202020] text-white",
-        secondary: "border-2 border-[#202020]",
+        primary:
+          "px-3 py-1.5 sm:px-[20px] sm:py-[12px]  rounded-[12px] bg-[#006FFF] border border-[#006FFF] text-white",
+        secondary:
+          "px-3 py-1.5 sm:px-[20px] sm:py-[12px]  rounded-[12px] bg-white text-[#202020] border border-[#E4E4E7] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.08),0px_0px_0px_1px_rgba(0,0,0,0.04),inset_0px_1px_0px_0px_rgba(255,255,255,0.9)]",
+        outline:
+          "rounded-[10px] py-[8px] px-[18px] border border-[#006FFF] text-[#006FFF] bg-transparent",
       },
       size: {
         sm: "px-2 py-1 sm:px-4 sm:py-2 text-[13px] sm:text-[14px]",
-        md: "px-2 py-1 sm:px-4 sm:py-2 text-[14px] sm:text-base",
-        lg: "px-2 py-1 sm:px-4 sm:py-2 text-[15px] sm:text-lg",
+        md: "text-[14px] sm:text-[14px] ",
+        lg: "px-4 py-2 sm:px-5 sm:py-2.5 text-[15px] sm:text-lg",
       },
     },
     defaultVariants: {
       variant: "primary",
-      size: "lg",
+      size: "md",
     },
   },
 );
@@ -38,7 +43,18 @@ export default function Button({
       className={clsx(buttonVariants({ variant, size }), className)}
       {...props}
     >
-      {children}
+      <span className="flex items-center gap-2">
+        {children}
+        {variant === "primary" && (
+          <Image
+            src="/assets/common/arrow.svg"
+            alt="arrow"
+            width={20}
+            height={20}
+            className="w-5 h-5"
+          />
+        )}
+      </span>
     </button>
   );
 }
