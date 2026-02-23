@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Caveat } from "next/font/google";
 import "./globals.css";
 
 const stackSansText = localFont({
   src: "../public/font/Stack_Sans_Text/StackSansText-VariableFont_wght.ttf",
   variable: "--font-stack-sans-text",
   weight: "200 700",
+});
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  variable: "--font-caveat",
+  weight: ["700"],
 });
 
 export const metadata: Metadata = {
@@ -21,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${stackSansText.variable} relative z-0 font-sans antialiased`}
+        className={`${stackSansText.variable} ${caveat.variable} relative z-0 font-sans antialiased`}
       >
         {children}
       </body>
