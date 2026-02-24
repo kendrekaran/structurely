@@ -131,13 +131,13 @@
 @variant md {
   :root {
     --padding-global: 2.5rem;
-    --padding-section-md: 64rem;
+    --padding-section-md: 64px;
   }
 }
 @variant lg {
   :root {
     --padding-global: max(4vw, 2.5rem);
-    --padding-section-md: 80px;
+    --padding-section-md: 64px;
   }
 }
 
