@@ -26,7 +26,7 @@ function HeroSection() {
 
             <div className="flex flex-wrap justify-center items-center gap-4">
               <Button variant="primary" size="md">
-                Explore Our Products
+                Request a demo
               </Button>
               <Button variant="secondary" size="md">
                 See How It Works
