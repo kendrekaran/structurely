@@ -1,12 +1,12 @@
-import Button from "@/components/ui/button";
-import HeroBadge from "../ui/hero-badge";
+import Button from "@/components/_ui/button";
+import HeroBadge from "../_ui/hero-badge";
 
 function HeroSection() {
   return (
     <section id="hero" className="relative z-0">
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
-          <div className="py-[80px] flex flex-col items-center gap-8">
+          <div className="flex flex-col items-center gap-8 py-[80px]">
             <div className="flex flex-col items-center gap-3.5">
               <HeroBadge text="Every lead. Every follow-up. Every time." />
 
@@ -16,17 +16,17 @@ function HeroSection() {
               </h1>
 
               <p className="max-w-[38em] text-center">
-                <span className="text-[#202020] ">Structurely</span>{" "}
-                integrates with your CRM and helps businesses capture, qualify,
-                follow up and convert{" "}
-                <span className="text-[#202020] ">
+                <span className="text-[#202020]">Structurely</span> integrates
+                with your CRM and helps businesses capture, qualify, follow up
+                and convert{" "}
+                <span className="text-[#202020]">
                   inbound demand — automatically
                 </span>{" "}
                 and at scale.
               </p>
             </div>
 
-            <div className="flex flex-wrap justify-center items-center gap-4">
+            <div className="flex flex-wrap items-center justify-center gap-4">
               <Button variant="primary" size="md">
                 Explore Our Products
               </Button>

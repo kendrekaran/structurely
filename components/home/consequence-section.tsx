@@ -1,4 +1,4 @@
-import Button from "@/components/ui/button";
+import Button from "@/components/_ui/button";
 
 const problemItems = [
   { text: "Leads sit.", active: false },
@@ -7,18 +7,14 @@ const problemItems = [
   { text: "Sales teams waste time chasing noise.", active: false },
 ];
 
-const chevronDividers = [
-  { dimmed: true },
-  { dimmed: false },
-  { dimmed: true },
-];
+const chevronDividers = [{ dimmed: true }, { dimmed: false }, { dimmed: true }];
 
 function ChevronDivider({ dimmed }: { dimmed: boolean }) {
   return (
-    <div className="flex items-center self-stretch w-full">
-      <div className="flex-1 h-px bg-[#E5E7EB]" />
+    <div className="flex w-full items-center self-stretch">
+      <div className="h-px flex-1 bg-[#E5E7EB]" />
       <div
-        className="flex p-2 items-center rounded-[10px] bg-white overflow-hidden"
+        className="flex items-center overflow-hidden rounded-[10px] bg-white p-2"
         style={{
           boxShadow:
             "0 0 0 1px rgba(0,0,0,0.08), 0 1px 1px -0.5px rgba(51,51,51,0.05), 0 3px 3px -1.5px rgba(51,51,51,0.05), 0 6px 6px -3px rgba(51,51,51,0.05), 0 12px 12px -6px rgba(51,51,51,0.05), 0 24px 24px -12px rgba(51,51,51,0.05)",
@@ -48,7 +44,7 @@ function ChevronDivider({ dimmed }: { dimmed: boolean }) {
           />
         </svg>
       </div>
-      <div className="flex-1 h-px bg-[#E5E7EB]" />
+      <div className="h-px flex-1 bg-[#E5E7EB]" />
     </div>
   );
 }
@@ -67,7 +63,7 @@ function SpeedLines({ side }: { side: "left" | "right" }) {
 
   return (
     <div
-      className={`absolute top-0 ${side === "left" ? "left-0" : "right-0"} h-full pointer-events-none overflow-hidden`}
+      className={`absolute top-0 ${side === "left" ? "left-0" : "right-0"} pointer-events-none h-full overflow-hidden`}
       style={{ width: "220px" }}
     >
       {lines.map((line, i) => (
@@ -89,14 +85,17 @@ function SpeedLines({ side }: { side: "left" | "right" }) {
 
 function ConsequenceSection() {
   return (
-    <section id="consequence" className="relative z-0  border-b border-[#E5E7EB]">
+    <section
+      id="consequence"
+      className="relative z-0 border-b border-[#E5E7EB]"
+    >
       <div className="px-global">
-        <div className="max-w-global mx-auto border-x  border-[#E5E7EB]">
+        <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
           {problemItems.map((item, index) => (
             <div key={index}>
-              <div className="flex justify-center items-center py-12 px-6 md:px-24">
+              <div className="flex items-center justify-center px-6 py-12 md:px-24">
                 <span
-                  className="text-[24px] leading-[32px] tracking-[-0.02em] text-center"
+                  className="text-center text-[24px] leading-[32px] tracking-[-0.02em]"
                   style={{ color: item.active ? "#202020" : "#646464" }}
                 >
                   {item.text}
@@ -108,20 +107,20 @@ function ConsequenceSection() {
             </div>
           ))}
 
-          <div className="relative overflow-hidden flex bg-white flex-col items-center justify-center gap-8 py-12 px-6 md:px-24 border-t border-[#E5E7EB]">
+          <div className="relative flex flex-col items-center justify-center gap-8 overflow-hidden border-t border-[#E5E7EB] bg-white px-6 py-12 md:px-24">
             <div
               className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
               style={{ backgroundImage: "url('/assets/home/cta/cta.png')" }}
             />
-            <div className="flex flex-col items-center gap-1 relative z-10">
+            <div className="relative z-10 flex flex-col items-center gap-1">
               <span
-                className="text-[24px] leading-[32px] tracking-[-0.02em] text-center"
+                className="text-center text-[24px] leading-[32px] tracking-[-0.02em]"
                 style={{ color: "#646464" }}
               >
                 Inbound demand doesn&apos;t fail.
               </span>
               <span
-                className="text-[24px] leading-[32px] tracking-[-0.02em] text-center"
+                className="text-center text-[24px] leading-[32px] tracking-[-0.02em]"
                 style={{ color: "#202020" }}
               >
                 Execution does.
