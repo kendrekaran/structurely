@@ -14,7 +14,7 @@ import CtaSection from "@/components/_common/cta-section";
 export default function Home() {
   return (
     <>
-      <main className="max-h-screen max-w-full overflow-x-clip">
+      <main className="min-h-screen max-w-full overflow-x-clip">
         <Header />
         <HeroSection />
         <HeroAnimationSection />
