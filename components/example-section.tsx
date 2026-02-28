@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "@/components/ui/button";
+import Button from "@/components/_ui/button";
 import { useExampleStore } from "@/stores/example-store";
 
 function ExampleSection() {
@@ -13,7 +13,9 @@ function ExampleSection() {
         <div className="max-w-global mx-auto">
           <div className="flex flex-col items-center gap-4">
             {/* Dont' add any font styles + color styles to p, h1, h2 ,h3 because i have already made them global.css */}
-            <h1 className="max-w-[12em] text-center">AI platform that move the right leads forward</h1>
+            <h1 className="max-w-[12em] text-center">
+              AI platform that move the right leads forward
+            </h1>
             <p className="max-w-[24em] text-center">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste,
               neque laboriosam id harum consequatur quidem dolorem aperiam sit

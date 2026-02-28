@@ -1,4 +1,4 @@
-import HeroBadge from "@/components/ui/hero-badge";
+import HeroBadge from "@/components/_ui/hero-badge";
 
 const outcomeItems = [
   "Faster response times",
@@ -14,31 +14,32 @@ const pillShadow =
 function OutcomesSection() {
   return (
     <div className="px-global">
-    <section id="outcomes" className="max-w-global mx-auto border-x border-[#E5E7EB] relative z-0 flex flex-col items-center">
-      <div className="flex flex-col items-center gap-4 px-6 py-16 md:px-24 md:py-16 w-full">
-        <HeroBadge text="Outcomes" />
-        <h2 className="max-w-[11em] text-center tracking-[-0.03em]">
-          Designed to Improve What{" "}
-          <span className="text-[var(--primary)]">Matters</span>
-        </h2>
-      </div>
-
-      <div
-        className="flex flex-wrap justify-center gap-3 w-full border-t border-b border-[#E5E7EB] bg-[#FAFAFA] px-6 py-6 md:justify-between md:flex-nowrap"
+      <section
+        id="outcomes"
+        className="max-w-global relative z-0 mx-auto flex flex-col items-center border-x border-[#E5E7EB]"
       >
-        {outcomeItems.map((item) => (
-          <div
-            key={item}
-            className="flex items-center rounded-[10px] bg-white px-3 py-2 overflow-hidden"
-            style={{ boxShadow: pillShadow }}
-          >
-            <span className="text-[#646464] text-center text-sm leading-5 tracking-[-0.006em] whitespace-nowrap">
-              {item}
-            </span>
-          </div>
-        ))}
-      </div>
-    </section>
+        <div className="flex w-full flex-col items-center gap-4 px-6 py-16 md:px-24 md:py-16">
+          <HeroBadge text="Outcomes" />
+          <h2 className="max-w-[11em] text-center tracking-[-0.03em]">
+            Designed to Improve What{" "}
+            <span className="text-[var(--primary)]">Matters</span>
+          </h2>
+        </div>
+
+        <div className="flex w-full flex-wrap justify-center gap-3 border-t border-b border-[#E5E7EB] bg-[#FAFAFA] px-6 py-6 md:flex-nowrap md:justify-between">
+          {outcomeItems.map((item) => (
+            <div
+              key={item}
+              className="flex items-center overflow-hidden rounded-[10px] bg-white px-3 py-2"
+              style={{ boxShadow: pillShadow }}
+            >
+              <span className="text-center text-sm leading-5 tracking-[-0.006em] whitespace-nowrap text-[#646464]">
+                {item}
+              </span>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

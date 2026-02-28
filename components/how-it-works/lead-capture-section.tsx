@@ -1,6 +1,6 @@
 import { div } from "motion/react-client";
 import Image from "next/image";
-import Badge from "@/components/ui/badge";
+import Badge from "@/components/_ui/badge";
 
 const leadSources = [
   { label: "Web form", icon: "/assets/how-it-works/logo/9.svg" },
@@ -15,53 +15,64 @@ const iconShadow =
 
 function LeadCaptureSection() {
   return (
-    <div className="px-global ">
-    <section id="lead-capture" className="max-w-global mx-auto border-x border-b border-[#E5E7EB] relative z-0 flex flex-col items-center">
-      <div className="flex flex-col items-center justify-center gap-3 py-section-md w-full">
-        <div className="flex flex-col items-center gap-4 w-full max-w-[46.375em]">
-          <Badge text="Lead Capture" />
+    <div className="px-global">
+      <section
+        id="lead-capture"
+        className="max-w-global relative z-0 mx-auto flex flex-col items-center border-x border-b border-[#E5E7EB]"
+      >
+        <div className="py-section-md flex w-full flex-col items-center justify-center gap-3">
+          <div className="flex w-full max-w-[46.375em] flex-col items-center gap-4">
+            <Badge text="Lead Capture" />
 
-          <h2 className="max-w-[11.08em] text-center">
-            When a lead enters your{" "}
-            <span className="text-[var(--primary)]">CRM</span>
-          </h2>
-        </div>
-      </div>
-
-      <div className="flex items-stretch w-full border-t border-b border-[var(--border)] overflow-x-auto">
-        {leadSources.map((source, index) => (
-          <div
-            key={source.label}
-            className={`flex flex-col items-center justify-center gap-6 flex-1 min-w-[120px] px-8 py-8 ${
-              index < leadSources.length - 1 ? "border-r border-[var(--border)]" : ""
-            }`}
-          >
-            <Image
-              src={source.icon}
-              alt={source.label}
-              width={48}
-              height={40}
-              className="rounded-[10px] w-[48px] py-[8px] px-[12px] h-[40px]"
-              style={{ boxShadow: iconShadow }}
-            />
-            <span className="text-[var(--foreground)] text-sm font-normal leading-5 text-center tracking-[-0.006em] whitespace-nowrap">
-              {source.label}
-            </span>
+            <h2 className="max-w-[11.08em] text-center">
+              When a lead enters your{" "}
+              <span className="text-[var(--primary)]">CRM</span>
+            </h2>
           </div>
-        ))}
-      </div>
+        </div>
 
-      <div className="flex flex-col items-center gap-1 px-6 py-[24px] text-center">
-        <p className="text-sm leading-5">
-          <strong className="font-semibold text-[var(--heading)]">Structurely AI 3</strong>{" "}
-          <span className="text-[var(--foreground)]">activates instantly.</span>
-        </p>
-        <p className="text-sm leading-5 font-bold italic">
-          <span className="text-[var(--primary)] cursue">No delay.</span>{" "}
-          <span className="text-[var(--heading)]">No rep assignment required.</span>
-        </p>
-      </div>
-    </section>
+        <div className="flex w-full items-stretch overflow-x-auto border-t border-b border-[var(--border)]">
+          {leadSources.map((source, index) => (
+            <div
+              key={source.label}
+              className={`flex min-w-[120px] flex-1 flex-col items-center justify-center gap-6 px-8 py-8 ${
+                index < leadSources.length - 1
+                  ? "border-r border-[var(--border)]"
+                  : ""
+              }`}
+            >
+              <Image
+                src={source.icon}
+                alt={source.label}
+                width={48}
+                height={40}
+                className="h-[40px] w-[48px] rounded-[10px] px-[12px] py-[8px]"
+                style={{ boxShadow: iconShadow }}
+              />
+              <span className="text-center text-sm leading-5 font-normal tracking-[-0.006em] whitespace-nowrap text-[var(--foreground)]">
+                {source.label}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        <div className="flex flex-col items-center gap-1 px-6 py-[24px] text-center">
+          <p className="text-sm leading-5">
+            <strong className="font-semibold text-[var(--heading)]">
+              Structurely AI 3
+            </strong>{" "}
+            <span className="text-[var(--foreground)]">
+              activates instantly.
+            </span>
+          </p>
+          <p className="text-sm leading-5 font-bold italic">
+            <span className="cursue text-[var(--primary)]">No delay.</span>{" "}
+            <span className="text-[var(--heading)]">
+              No rep assignment required.
+            </span>
+          </p>
+        </div>
+      </section>
     </div>
   );
 }

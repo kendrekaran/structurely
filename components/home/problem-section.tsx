@@ -1,15 +1,15 @@
-import Badge from "@/components/ui/badge";
+import Badge from "@/components/_ui/badge";
 
 function ProblemSection() {
   return (
     <section id="problem" className="relative z-0">
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
-          <div className="py-16 flex flex-col items-center gap-4 border-b border-[#E5E7EB]">
+          <div className="flex flex-col items-center gap-4 border-b border-[#E5E7EB] py-16">
             <div className="flex flex-col items-center gap-4">
               <Badge text="The Problem" />
               <h2 className="max-w-[14em] text-center">
-                Most teams don't lose deals because of{" "}
+                Most teams don&apos;t lose deals because of{" "}
                 <span className="text-[#006FFF]">demand</span>
               </h2>
             </div>

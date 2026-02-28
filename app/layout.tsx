@@ -16,8 +16,8 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  title: "Next.js",
-  description: "Next.js - The React Framework for the Web.",
+  title: "Structurely",
+  description: "Structurely - AI platform that move the right leads forward.",
 };
 
 export default function RootLayout({
