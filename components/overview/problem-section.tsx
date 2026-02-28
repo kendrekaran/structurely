@@ -191,7 +191,7 @@ function OverviewProblemSection() {
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
           <div className="flex flex-col items-center">
-            <div className="flex w-full flex-col items-center gap-4 px-6 py-16">
+            <div className="flex w-full flex-col items-center gap-4 px-6 py-section-md">
               <div className="flex flex-col items-center gap-4">
                 <Badge text="The Problem" />
                 <h2 className="max-w-[11em] text-center">

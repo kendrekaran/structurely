@@ -40,7 +40,7 @@ function CrmIntegrationSection() {
         id="crm-integration"
         className="max-w-global mx-auto flex flex-col items-start border-x border-b border-[#E5E7EB]"
       >
-        <div className="flex flex-col items-center justify-center gap-4 self-stretch px-6 py-16 md:px-24">
+        <div className="flex flex-col items-center justify-center gap-4 self-stretch px-6 py-section-md md:px-24">
           <HeroBadge text="CRM Integration" />
           <h2 className="max-w-[11em] text-center tracking-[-0.03em]">
             Built to Power Your CRM{" "}

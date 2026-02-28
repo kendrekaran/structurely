@@ -55,7 +55,7 @@ function TrustedSection() {
     <section id="trusted" className="relative z-0">
       <div className="px-global">
         <div className="max-w-global mx-auto flex flex-col items-stretch border-x border-[#E5E7EB]">
-          <div className="px-global  flex flex-col items-center gap-4  py-16">
+          <div className="px-global  flex flex-col items-center gap-4  py-section-md">
             <div className="proof-badge flex items-center rounded-lg bg-white px-4 py-2 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05)]">
               <span className="text-[12px] leading-4 font-medium text-[var(--foreground)]">
                 Proof
@@ -80,7 +80,7 @@ function TrustedSection() {
                   key={logo.name}
                   onClick={() => setActiveIndex(i)}
                   className={[
-                    "flex cursor-pointer items-center justify-center px-10 py-16 transition-colors duration-200",
+                    "flex cursor-pointer items-center justify-center px-10 py-section-md transition-colors duration-200",
                     isActive ? "bg-white" : "",
                     "",
                     smCol === 0 ? "sm:border-border sm:border-r" : "",

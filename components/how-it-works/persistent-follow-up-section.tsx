@@ -389,7 +389,7 @@ function PersistentFollowUpSection() {
         id="persistent-follow-up"
         className="max-w-global relative z-0 mx-auto border-x border-[#E5E7EB]"
       >
-        <div className="flex flex-col gap-6 px-6 py-12 sm:flex-row sm:items-start sm:justify-between md:px-12 md:py-16">
+        <div className="flex flex-col gap-6 px-6 py-12 sm:flex-row sm:items-start sm:justify-between md:px-12 md:py-section-md">
           <h2>
             <span>Persistent </span>
             <span className="text-[#006FFF]">Follow-Up</span>

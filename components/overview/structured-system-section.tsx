@@ -28,7 +28,7 @@ function StructuredSystemSection() {
         id="structured-system"
         className="max-w-global relative mx-auto flex flex-col items-start border-x border-b-2 border-[#E5E7EB] border-b-[#006FFF]"
       >
-        <div className="flex flex-col items-center justify-center gap-3 self-stretch px-6 py-16 md:px-24">
+        <div className="flex flex-col items-center justify-center gap-3 self-stretch px-6 py-section-md md:px-24">
           <div className="flex w-full max-w-[46.375em] flex-col items-center justify-center gap-4">
             <HeroBadge text="What AI 3 Does" />
             <h2 className="max-w-[11.08em] text-center tracking-[-0.03em]">

@@ -12,10 +12,10 @@ export default function About() {
     <main className="min-h-screen max-w-full overflow-x-clip">
       <Header />
       <AboutHeroSection />
-      <AboutProblemSection />
-      <StructuredSystemSection />
       <WhoWeAreSection />
       <WhatWeBelieveSection />
+      <AboutProblemSection />
+      <StructuredSystemSection />
       <ByTheNumbersSection />
       <WhyItMattersSection />
     </main>

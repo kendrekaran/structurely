@@ -122,7 +122,7 @@ function ProductsSection() {
     <section id="products" className="relative z-0 ">
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
-          <div className="flex flex-col items-center gap-4  px-6 py-12 md:px-24 md:py-16">
+          <div className="flex flex-col items-center gap-4  px-6 py-12 md:px-24 md:py-section-md">
             <h2 className="text-center">Our Products</h2>
             <p className="text-center">Built on a proven AI platform.</p>
           </div>

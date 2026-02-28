@@ -42,7 +42,7 @@ function CrmSynchronizationSection() {
         id="crm-synchronization"
         className="max-w-global mx-auto border-x border-[#E5E7EB] relative z-0"
       >
-        <div className="flex flex-col items-center py-16 px-6 md:px-24 gap-3">
+        <div className="flex flex-col items-center py-section-md px-6 md:px-24 gap-3">
           <h2 className="max-w-[12em] text-center">
             <span className="text-[#006FFF]">CRM</span>{" "}
             <span>Synchronization</span>
