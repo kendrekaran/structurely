@@ -9,7 +9,8 @@ type Plan = {
   monthlyPrice?: number;
   description: string;
   cta: string;
-  ctaVariant: "secondary" | "outline";
+  ctaVariant: "outline";
+  ctaCustomStyle?: boolean;
   featuresLabel: string;
   features: string[];
 };
@@ -22,7 +23,8 @@ const plans: Plan[] = [
     description:
       "For independent brokers, LOs, and small teams looking to automate pipeline follow-up",
     cta: "Get Started",
-    ctaVariant: "secondary",
+    ctaVariant: "outline",
+    ctaCustomStyle: true,
     featuresLabel: "What's included",
     features: [
       "20,000 Action Credits / mo",
@@ -59,7 +61,8 @@ const plans: Plan[] = [
     description:
       "For high-volume brokers processing 50k+ leads/mo with systems built to convert — matched to their pace",
     cta: "Get Started",
-    ctaVariant: "secondary",
+    ctaVariant: "outline",
+    ctaCustomStyle: true,
     featuresLabel: "Everything in Growth, plus",
     features: [
       "120,000 Action Credits / mo",
@@ -77,7 +80,8 @@ const plans: Plan[] = [
     description:
       "For organizations processing 100k+ leads/mo ready to build a fully custom AI sales operation and competitive moat",
     cta: "Contact Sales",
-    ctaVariant: "secondary",
+    ctaVariant: "outline",
+    ctaCustomStyle: true,
     featuresLabel: "Everything in Scale, plus",
     features: [
       "Unlimited Action Credits",
@@ -107,7 +111,7 @@ function CheckIcon() {
       viewBox="0 0 16 16"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="shrink-0 mt-0.5"
+      className="mt-0.5 shrink-0"
     >
       <path
         d="M3 8L6.5 11.5L13 5"
@@ -124,21 +128,26 @@ type PricingCardsSectionProps = {
   billing: BillingCycle;
 };
 
-export default function PricingCardsSection({ billing }: PricingCardsSectionProps) {
+export default function PricingCardsSection({
+  billing,
+}: PricingCardsSectionProps) {
   return (
     <section id="pricing-cards" className="relative z-0 bg-white">
       <div className="px-global py-section-md">
         <div className="max-w-global mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-4 divide-y lg:divide-y-0 lg:divide-x divide-[#E5E7EB] border border-[#E5E7EB] rounded-xl overflow-hidden">
+          <div className="grid grid-cols-1 divide-y divide-[#E5E7EB] overflow-hidden rounded-xl border border-[#E5E7EB] lg:grid-cols-4 lg:divide-x lg:divide-y-0">
             {plans.map((plan) => (
-              <div key={plan.id} className="flex flex-col divide-y divide-[#E5E7EB]">
+              <div
+                key={plan.id}
+                className="flex flex-col divide-y divide-[#E5E7EB]"
+              >
                 <div className="flex flex-col gap-4 p-6">
                   <div className="flex items-center gap-2">
-                    <span className="text-[14px] font-medium leading-5 text-[#202020]">
+                    <span className="text-[14px] leading-5 font-medium text-[#202020]">
                       {plan.name}
                     </span>
                     {plan.popular && (
-                      <span className="px-2 py-0.5 rounded-full bg-[#EEF5FF] text-[#006FFF] text-[12px] font-medium leading-4">
+                      <span className="rounded-full bg-[#EEF5FF] px-2 py-0.5 text-[12px] leading-4 font-medium text-[#006FFF]">
                         Popular
                       </span>
                     )}
@@ -146,41 +155,48 @@ export default function PricingCardsSection({ billing }: PricingCardsSectionProp
 
                   {plan.custom ? (
                     <div className="text-[#202020]">
-                      <span className="text-[40px] font-medium leading-[48px] tracking-[-0.04em]">
+                      <span className="text-[40px] leading-[48px] font-medium tracking-[-0.04em]">
                         Custom
                       </span>
                     </div>
                   ) : (
                     <div className="flex items-baseline gap-1 text-[#202020]">
-                      <span className="text-[36px] font-medium leading-[44px] tracking-[-0.04em]">
+                      <span className="text-[36px] leading-[44px] font-medium tracking-[-0.04em]">
                         ${getDisplayPrice(plan, billing)}
                       </span>
-                      <span className="text-[14px] text-[#646464] leading-5">/mo</span>
+                      <span className="text-[14px] leading-5 text-[#646464]">
+                        /mo
+                      </span>
                     </div>
                   )}
 
-                  <p className="text-[13px] leading-[20px] text-[#646464] tracking-[-0.01em]">
+                  <p className="text-[13px] leading-[20px] tracking-[-0.01em] text-[#646464]">
                     {plan.description}
                   </p>
 
                   <Button
                     variant={plan.ctaVariant}
                     size="md"
-                    className="w-full flex justify-center"
+                    className="flex w-full justify-center"
+                    style={
+                      plan.ctaCustomStyle
+                        ? { color: "#646464", borderColor: "#E5E7EB" }
+                        : undefined
+                    }
                   >
                     {plan.cta}
                   </Button>
                 </div>
 
                 <div className="flex flex-col gap-3 p-6">
-                  <span className="text-[13px] text-[#646464] leading-5 tracking-[-0.01em]">
+                  <span className="text-[13px] leading-5 tracking-[-0.01em] text-[#646464]">
                     {plan.featuresLabel}
                   </span>
                   <ul className="flex flex-col gap-3">
                     {plan.features.map((feature, i) => (
                       <li key={i} className="flex items-start gap-2">
                         <CheckIcon />
-                        <span className="text-[13px] leading-5 text-[#202020] tracking-[-0.01em]">
+                        <span className="text-[13px] leading-5 tracking-[-0.01em] text-[#202020]">
                           {feature}
                         </span>
                       </li>
