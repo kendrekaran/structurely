@@ -7,20 +7,22 @@ type BlogCardProps = {
 
 function BlogCard({ title, description, date, image }: BlogCardProps) {
   return (
-    <article className="flex flex-col gap-4 cursor-pointer group">
-      <div className="w-full aspect-[4/3] border border-[#E5E7EB] rounded-xl bg-white overflow-hidden shadow-[0px_2px_8px_0px_rgba(0,0,0,0.04)]">
+    <article className="group flex cursor-pointer flex-col gap-6">
+      <div className="aspect-[9/5] overflow-hidden rounded-xl border border-[#E5E7EB] bg-white shadow-[0px_24px_24px_-12px_#3333330D,0px_12px_12px_-6px_#3333330D,0px_6px_6px_-3px_#3333330D,0px_3px_3px_-1.5px_#3333330D,0px_1px_1px_-0.5px_#3333330D,0px_0px_0px_1px_#00000014]">
         {image && (
           <img
             src={image}
             alt={title}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            className="h-[200px] w-[360px] object-cover transition-transform duration-300 group-hover:scale-105"
           />
         )}
       </div>
-      <div className="flex flex-col gap-2 pb-6 border-b border-[#E5E7EB]">
-        <h3 className="truncate">{title}</h3>
-        <p className="text-[14px] leading-[24px] line-clamp-3">{description}</p>
-        <p className="text-[14px] leading-[20px] mt-3">{date}</p>
+      <div className="flex flex-col gap-2 px-[16px]  border-b border-[#E5E7EB] pb-6">
+        <h3 className="truncate text-[16px] leading-[26px] tracking-[-0.01em] text-[#202020] font-medium">{title}</h3>
+        <p className="line-clamp-3 text-[14px] leading-[24px]">{description}</p>
+      </div>
+      <div className="pb-[24px] px-[16px]">
+      <p className=" text-[14px] leading-[20px]">{date}</p>
       </div>
     </article>
   );

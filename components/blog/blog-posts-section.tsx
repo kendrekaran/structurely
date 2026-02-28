@@ -69,9 +69,9 @@ const posts = [
 function BlogPostsSection() {
   return (
     <section id="blog-posts" className="relative z-0">
-      <div className="px-global py-section-md">
-        <div className="max-w-global mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="px-global ">
+        <div className="max-w-global p-[8px] mx-auto border-x border-[#E5E7EB]">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {posts.map((post) => (
               <BlogCard
                 key={post.id}
