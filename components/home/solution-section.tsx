@@ -409,10 +409,10 @@ function SolutionSection() {
   const [activeIndex, setActiveIndex] = useState(1);
 
   return (
-    <section id="solution" className="relative z-0 border-b border-[#E5E7EB]">
+    <section id="solution" className="relative z-0 ">
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
-          <div className="flex flex-col items-center gap-4 border-b border-[#E5E7EB] px-6 py-12 md:px-24 md:py-16">
+          <div className="flex flex-col items-center gap-4  px-6 py-12 md:px-24 md:py-16">
             <Badge text="What is Structurely" />
             <h2 className="max-w-[11em] text-center">
               Structurely <span className="text-[#006FFF]">automates</span> the
@@ -423,7 +423,7 @@ function SolutionSection() {
             </p>
           </div>
 
-          <div className="flex flex-col border-b border-[#E5E7EB] md:flex-row">
+          <div className="flex flex-col  md:flex-row">
             <div className="flex flex-col border-b border-[#E5E7EB] md:w-1/2 md:border-r md:border-b-0">
               {features.map((feature, index) => {
                 const isActive = index === activeIndex;
@@ -460,7 +460,7 @@ function SolutionSection() {
             </div>
           </div>
 
-          <div className="flex items-stretch border-t border-b border-[#E5E7EB]">
+          <div className="flex items-stretch divide-x divide-[#E5E7EB]">
             {outcomes.map((outcome, index) => (
               <div key={index} className="flex flex-1 items-stretch">
                 <div className="flex flex-1 flex-col items-center justify-center gap-6 px-3 py-8 md:px-12">
@@ -471,15 +471,6 @@ function SolutionSection() {
                     {outcome.text}
                   </span>
                 </div>
-                {index < outcomes.length - 1 && (
-                  <div className="flex flex-col items-center self-stretch">
-                    <div className="w-px flex-1 bg-[#E5E7EB]" />
-                    <div className="flex items-center rounded-md bg-white p-1 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
-                      <ChevronIcon />
-                    </div>
-                    <div className="w-px flex-1 bg-[#E5E7EB]" />
-                  </div>
-                )}
               </div>
             ))}
           </div>

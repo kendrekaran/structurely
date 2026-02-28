@@ -87,7 +87,7 @@ function ConsequenceSection() {
   return (
     <section
       id="consequence"
-      className="relative z-0 border-b border-[#E5E7EB]"
+      className="relative z-0"
     >
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
@@ -107,7 +107,7 @@ function ConsequenceSection() {
             </div>
           ))}
 
-          <div className="relative flex flex-col items-center justify-center gap-8 overflow-hidden border-t border-[#E5E7EB] bg-white px-6 py-12 md:px-24">
+          <div className="relative flex flex-col items-center justify-center gap-8 overflow-hidden  bg-white px-6 py-12 md:px-24">
             <div
               className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
               style={{ backgroundImage: "url('/assets/home/cta/cta.png')" }}
