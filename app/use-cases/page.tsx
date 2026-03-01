@@ -1,15 +1,15 @@
 import Header from "@/components/_common/header";
-import PageMenu from "@/components/overview/page-menu";
-import CtaSection from "@/components/_common/cta-section";
+import HeroSection from "@/components/use-cases/hero-section";
+import IndustriesSection from "@/components/use-cases/industries-section";
+import LeadEnvironmentsSection from "@/components/use-cases/lead-environments-section";
 
-export default function Overview() {
+export default function UseCases() {
   return (
-    <>
-      <main className="max-h-screen max-w-full overflow-x-clip">
-        <Header />
-        <PageMenu />
-        
-      </main>
-    </>
+    <main className="max-w-full overflow-x-clip">
+      <Header />
+      <HeroSection />
+      <IndustriesSection />
+      <LeadEnvironmentsSection />
+    </main>
   );
 }
