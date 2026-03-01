@@ -164,13 +164,11 @@ export default function PricingCardsSection({
                       <span className="text-[36px] leading-[44px] font-medium tracking-[-0.04em]">
                         ${getDisplayPrice(plan, billing)}
                       </span>
-                      <span className="text-[14px] leading-5 text-[#646464]">
-                        /mo
-                      </span>
+                      <span className="text-[14px] leading-5">/mo</span>
                     </div>
                   )}
 
-                  <p className="text-[13px] leading-[20px] tracking-[-0.01em] text-[#646464]">
+                  <p className="text-[13px] leading-[20px] tracking-[-0.01em]">
                     {plan.description}
                   </p>
 
@@ -189,7 +187,7 @@ export default function PricingCardsSection({
                 </div>
 
                 <div className="flex flex-col gap-3 p-6">
-                  <span className="text-[13px] leading-5 tracking-[-0.01em] text-[#646464]">
+                  <span className="text-[13px] leading-5 tracking-[-0.01em]">
                     {plan.featuresLabel}
                   </span>
                   <ul className="flex flex-col gap-3">

@@ -1,10 +1,10 @@
 function WhoWeAreSection() {
   return (
     <section id="who-we-are" className="relative z-0">
-      <div className="px-global ">
-        <div className="max-w-global mx-auto border-b border-[#E5E7EB] flex flex-col items-center gap-4 border-x border-[#E5E7EB] py-section-md text-center">
+      <div className="px-global">
+        <div className="max-w-global py-section-md mx-auto flex flex-col items-center gap-4 border-x border-b border-[#E5E7EB] text-center">
           <div className="flex items-center justify-center rounded-lg bg-white px-4 py-2 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
-            <span className="text-[12px] leading-4 font-medium text-[#646464]">
+            <span className="text-[12px] leading-4 font-medium">
               Who We Are
             </span>
           </div>
@@ -12,8 +12,8 @@ function WhoWeAreSection() {
         </div>
       </div>
 
-      <div className="px-global ">
-        <div className="max-w-global mx-auto flex flex-col border-b border-[#E5E7EB] items-stretch border-x border-[#E5E7EB] md:flex-row">
+      <div className="px-global">
+        <div className="max-w-global mx-auto flex flex-col items-stretch border-x border-b border-[#E5E7EB] md:flex-row">
           <div className="flex flex-1 flex-col gap-6 border-b border-[#E5E7EB] px-12 py-12 md:border-r md:border-b-0">
             <svg
               width="115"
@@ -126,7 +126,7 @@ function WhoWeAreSection() {
                   Structurely is a software company focused on inbound sales
                   execution.
                 </p>
-                <p className="max-w-[25.375em] text-[14px] leading-[20px] tracking-[-0.006em] text-[#646464]">
+                <p className="max-w-[25.375em] text-[14px] leading-[20px] tracking-[-0.006em]">
                   We have been building and operating AI-driven engagement
                   systems for more than ten years.
                 </p>
@@ -149,7 +149,7 @@ function WhoWeAreSection() {
 
           <div className="flex min-h-[400px] flex-1 items-stretch p-3 md:min-h-0">
             <div className="flex flex-1 items-center justify-center bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.08)]">
-              <span className="text-[16px] leading-6 tracking-[-0.01em] text-[#646464]">
+              <span className="text-[16px] leading-6 tracking-[-0.01em]">
                 Graphic
               </span>
             </div>

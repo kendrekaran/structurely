@@ -3,18 +3,62 @@ const cardShadow =
 
 function SalesforceIcon() {
   return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="3" y="3" width="7" height="7" rx="1.5" stroke="#006FFF" strokeWidth="1.5" />
-      <rect x="14" y="3" width="7" height="7" rx="1.5" stroke="#006FFF" strokeWidth="1.5" />
-      <rect x="3" y="14" width="7" height="7" rx="1.5" stroke="#006FFF" strokeWidth="1.5" />
-      <rect x="14" y="14" width="7" height="7" rx="1.5" stroke="#006FFF" strokeWidth="1.5" />
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        x="3"
+        y="3"
+        width="7"
+        height="7"
+        rx="1.5"
+        stroke="#006FFF"
+        strokeWidth="1.5"
+      />
+      <rect
+        x="14"
+        y="3"
+        width="7"
+        height="7"
+        rx="1.5"
+        stroke="#006FFF"
+        strokeWidth="1.5"
+      />
+      <rect
+        x="3"
+        y="14"
+        width="7"
+        height="7"
+        rx="1.5"
+        stroke="#006FFF"
+        strokeWidth="1.5"
+      />
+      <rect
+        x="14"
+        y="14"
+        width="7"
+        height="7"
+        rx="1.5"
+        stroke="#006FFF"
+        strokeWidth="1.5"
+      />
     </svg>
   );
 }
 
 function MortgageIcon() {
   return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
         d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z"
         stroke="#006FFF"
@@ -35,7 +79,13 @@ function MortgageIcon() {
 
 function DedicatedAMIcon() {
   return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
         d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
         stroke="#006FFF"
@@ -72,7 +122,13 @@ function DedicatedAMIcon() {
 
 function ChevronIcon() {
   return (
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
         d="M6 12L10 8L6 4"
         stroke="#006FFF"
@@ -107,7 +163,10 @@ const features = [
 
 export default function OnboardingSection() {
   return (
-    <section id="onboarding" className="relative z-0 border-t border-[#E5E7EB] bg-white">
+    <section
+      id="onboarding"
+      className="relative z-0 border-t border-[#E5E7EB] bg-white"
+    >
       <div className="px-global py-section-md">
         <div className="max-w-global mx-auto flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
           <div className="flex flex-col gap-4 md:max-w-[55%]">
@@ -124,12 +183,10 @@ export default function OnboardingSection() {
           </div>
 
           <div className="flex flex-col items-start gap-1 md:items-end md:text-right">
-            <span className="text-[52px] font-medium leading-none tracking-[-0.04em] text-[#202020] md:text-[64px]">
+            <span className="text-[52px] leading-none font-medium tracking-[-0.04em] text-[#202020] md:text-[64px]">
               $2,500
             </span>
-            <span className="text-[14px] leading-5 text-[#646464]">
-              One-time per account
-            </span>
+            <span className="text-[14px] leading-5">One-time per account</span>
           </div>
         </div>
       </div>
@@ -137,27 +194,31 @@ export default function OnboardingSection() {
       <div className="border-t border-b border-[#E5E7EB]">
         <div className="px-global">
           <div className="max-w-global mx-auto">
-            <div className="flex flex-col md:flex-row items-stretch">
+            <div className="flex flex-col items-stretch md:flex-row">
               {features.map((feature, index) => (
                 <div key={index} className="flex flex-1 items-stretch">
                   <div className="flex flex-1 flex-col items-center justify-center gap-5 px-6 py-10 md:px-12">
-                    <div className={`flex items-center justify-center rounded-[10px] bg-white p-3 ${cardShadow}`}>
+                    <div
+                      className={`flex items-center justify-center rounded-[10px] bg-white p-3 ${cardShadow}`}
+                    >
                       <feature.Icon />
                     </div>
                     <div className="flex flex-col items-center gap-2 text-center">
-                      <span className="text-[15px] font-medium leading-5 tracking-[-0.01em] text-[#202020]">
+                      <span className="text-[15px] leading-5 font-medium tracking-[-0.01em] text-[#202020]">
                         {feature.title}
                       </span>
-                      <span className="text-[13px] leading-5 text-[#646464] max-w-[18em]">
+                      <span className="max-w-[18em] text-[13px] leading-5">
                         {feature.description}
                       </span>
                     </div>
                   </div>
 
                   {index < features.length - 1 && (
-                    <div className="hidden md:flex flex-col items-center self-stretch">
+                    <div className="hidden flex-col items-center self-stretch md:flex">
                       <div className="w-px flex-1 bg-[#E5E7EB]" />
-                      <div className={`flex items-center rounded-md bg-white p-1 ${cardShadow}`}>
+                      <div
+                        className={`flex items-center rounded-md bg-white p-1 ${cardShadow}`}
+                      >
                         <ChevronIcon />
                       </div>
                       <div className="w-px flex-1 bg-[#E5E7EB]" />

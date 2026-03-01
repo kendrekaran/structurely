@@ -20,12 +20,9 @@ function BlogFilterSection() {
   const [activeCategory, setActiveCategory] = useState("Case Study");
 
   return (
-    <section
-      id="blog-filter"
-      className="relative z-0 "
-    >
+    <section id="blog-filter" className="relative z-0">
       <div className="px-global">
-        <div className="max-w-global mx-auto border-y  bg-white border-x border-[#E5E7EB]">
+        <div className="max-w-global mx-auto border-x border-y border-[#E5E7EB] bg-white">
           <div className="flex h-[52px] items-center">
             <div className="scrollbar-none flex flex-1 items-center gap-2 overflow-x-auto">
               {categories.map((category) => (
@@ -35,14 +32,14 @@ function BlogFilterSection() {
                   className={`flex shrink-0 cursor-pointer items-center justify-center rounded-lg px-3 py-1.5 text-[14px] leading-[20px] tracking-[-0.01em] whitespace-nowrap transition-colors ${
                     activeCategory === category
                       ? "bg-[#006FFF] text-[#FAFAFA]"
-                      : "text-[#646464] hover:text-[#202020]"
+                      : "hover:text-[#202020]"
                   }`}
                 >
                   {category}
                 </button>
               ))}
             </div>
-            <button className="ml-2 flex shrink-0 border-l border-[#E5E7EB] cursor-pointer items-center justify-center p-2 text-[#646464] transition-colors hover:text-[#202020]">
+            <button className="ml-2 flex shrink-0 cursor-pointer items-center justify-center border-l border-[#E5E7EB] p-2 transition-colors hover:text-[#202020]">
               <svg
                 width="20"
                 height="20"

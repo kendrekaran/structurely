@@ -35,45 +35,50 @@ const CheckBadgeIcon = () => (
 function StructuredConversationSection() {
   return (
     <div className="px-global">
-      <section id="structured-conversation" className="max-w-global mx-auto border-x border-b border-[#E5E7EB] relative z-0">
+      <section
+        id="structured-conversation"
+        className="max-w-global relative z-0 mx-auto border-x border-b border-[#E5E7EB]"
+      >
         <div className="max-w-global mx-auto flex flex-col md:flex-row">
-          <div className="flex flex-col justify-center gap-6 p-8 md:p-12 flex-1 border-b md:border-b-0 md:border-r border-[#E5E7EB]">
+          <div className="flex flex-1 flex-col justify-center gap-6 border-b border-[#E5E7EB] p-8 md:border-r md:border-b-0 md:p-12">
             <div className="flex flex-col gap-3">
               <h2 className="max-w-[10em]">
-                Structured{" "}
-                <span className="text-[#006FFF]">Conversation</span>{" "}
+                Structured <span className="text-[#006FFF]">Conversation</span>{" "}
                 Engine
               </h2>
-              <div className="flex items-center gap-3 flex-wrap">
-                <p className="text-[#646464] text-base leading-relaxed tracking-[-0.01em]">
+              <div className="flex flex-wrap items-center gap-3">
+                <p className="text-base leading-relaxed tracking-[-0.01em]">
                   This is the differentiator.
                 </p>
-                <span className="w-1 h-1 rounded-full bg-[#006FFF] shrink-0" />
-                <p className="text-[#646464] text-base leading-relaxed tracking-[-0.01em]">
+                <span className="h-1 w-1 shrink-0 rounded-full bg-[#006FFF]" />
+                <p className="text-base leading-relaxed tracking-[-0.01em]">
                   AI 3 is not a keyword bot.
                 </p>
               </div>
             </div>
 
-            <ul className="flex flex-col max-w-[348px] divide-y divide-[#E5E7EB]">
+            <ul className="flex max-w-[348px] flex-col divide-y divide-[#E5E7EB]">
               {featureItems.map((item) => (
-                <li key={item} className="flex items-center gap-2 py-3 first:pt-0 last:pb-0">
+                <li
+                  key={item}
+                  className="flex items-center gap-2 py-3 first:pt-0 last:pb-0"
+                >
                   <CheckBadgeIcon />
-                  <span className="text-[#646464] text-sm leading-relaxed tracking-[-0.01em]">
+                  <span className="text-sm leading-relaxed tracking-[-0.01em]">
                     {item}
                   </span>
                 </li>
               ))}
             </ul>
 
-            <p className="font-medium text-[#202020] text-base leading-relaxed tracking-[-0.01em]">
+            <p className="text-base leading-relaxed font-medium tracking-[-0.01em] text-[#202020]">
               Every interaction builds context.
             </p>
           </div>
 
-          <div className="flex flex-1 p-3 items-stretch min-h-[360px] md:min-h-[480px]">
-            <div className="flex flex-1 items-center justify-center bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.08)] overflow-hidden rounded-sm">
-              <span className="text-[#646464] text-base leading-6 tracking-[-0.01em]">
+          <div className="flex min-h-[360px] flex-1 items-stretch p-3 md:min-h-[480px]">
+            <div className="flex flex-1 items-center justify-center overflow-hidden rounded-sm bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.08)]">
+              <span className="text-base leading-6 tracking-[-0.01em]">
                 Graphic
               </span>
             </div>

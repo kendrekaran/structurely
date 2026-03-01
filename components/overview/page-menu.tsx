@@ -23,23 +23,23 @@ function PageMenu() {
 
   return (
     <div className="px-global">
-    <nav className="max-w-global mx-auto w-full border-x border-b border-[#E5E7EB] bg-white overflow-x-auto">
-      <div className="flex divide-x divide-[#E5E7EB]">
-        {menuItems.map((item) => (
-          <Link
-            key={item.label}
-            href={item.href}
-            className={`flex flex-1 min-w-fit items-center justify-center px-[10px] py-3 text-[14px] leading-5 tracking-[-0.006em] text-center whitespace-nowrap cursor-pointer transition-colors ${
-              isActive(item.href)
-                ? "bg-[#006FFF] text-white"
-                : "bg-white text-[#646464] hover:bg-gray-50"
-            }`}
-          >
-            {item.label}
-          </Link>
-        ))}
-      </div>
-    </nav>
+      <nav className="max-w-global mx-auto w-full overflow-x-auto border-x border-b border-[#E5E7EB] bg-white">
+        <div className="flex divide-x divide-[#E5E7EB]">
+          {menuItems.map((item) => (
+            <Link
+              key={item.label}
+              href={item.href}
+              className={`flex min-w-fit flex-1 cursor-pointer items-center justify-center px-[10px] py-3 text-center text-[14px] leading-5 tracking-[-0.006em] whitespace-nowrap transition-colors ${
+                isActive(item.href)
+                  ? "bg-[#006FFF] text-white"
+                  : "bg-white hover:bg-gray-50"
+              }`}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
+      </nav>
     </div>
   );
 }

@@ -52,9 +52,9 @@ export default function PricingHeroSection({
             </div>
 
             <p className="text-center text-[14px] leading-5 tracking-[-0.01em]">
-              <span className="text-[#646464]">Save </span>
+              <span className="">Save </span>
               <span className="font-semibold text-[#202020]">20%</span>
-              <span className="text-[#646464]"> annually</span>
+              <span className=""> annually</span>
             </p>
           </div>
         </div>

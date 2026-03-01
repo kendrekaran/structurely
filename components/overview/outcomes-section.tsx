@@ -18,7 +18,7 @@ function OutcomesSection() {
         id="outcomes"
         className="max-w-global relative z-0 mx-auto flex flex-col items-center border-x border-[#E5E7EB]"
       >
-        <div className="flex w-full flex-col items-center gap-4 px-6 py-section-md md:px-24 md:py-section-md">
+        <div className="py-section-md md:py-section-md flex w-full flex-col items-center gap-4 px-6 md:px-24">
           <HeroBadge text="Outcomes" />
           <h2 className="max-w-[11em] text-center tracking-[-0.03em]">
             Designed to Improve What{" "}
@@ -33,7 +33,7 @@ function OutcomesSection() {
               className="flex items-center overflow-hidden rounded-[10px] bg-white px-3 py-2"
               style={{ boxShadow: pillShadow }}
             >
-              <span className="text-center text-sm leading-5 tracking-[-0.006em] whitespace-nowrap text-[#646464]">
+              <span className="text-center text-sm leading-5 tracking-[-0.006em] whitespace-nowrap">
                 {item}
               </span>
             </div>

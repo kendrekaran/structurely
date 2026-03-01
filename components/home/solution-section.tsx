@@ -409,10 +409,10 @@ function SolutionSection() {
   const [activeIndex, setActiveIndex] = useState(1);
 
   return (
-    <section id="solution" className="relative z-0 ">
+    <section id="solution" className="relative z-0">
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
-          <div className="flex flex-col items-center gap-4  px-6 py-12 md:px-24 md:py-section-md">
+          <div className="md:py-section-md flex flex-col items-center gap-4 px-6 py-12 md:px-24">
             <Badge text="What is Structurely" />
             <h2 className="max-w-[11em] text-center">
               Structurely <span className="text-[#006FFF]">automates</span> the
@@ -423,7 +423,7 @@ function SolutionSection() {
             </p>
           </div>
 
-          <div className="flex flex-col  md:flex-row">
+          <div className="flex flex-col md:flex-row">
             <div className="flex flex-col border-b border-[#E5E7EB] md:w-1/2 md:border-r md:border-b-0">
               {features.map((feature, index) => {
                 const isActive = index === activeIndex;
@@ -453,8 +453,8 @@ function SolutionSection() {
               })}
             </div>
 
-            <div className="flex items-center justify-center px-10 py-section-md md:w-1/2">
-              <p className="text-center text-base leading-[1.75] tracking-[-0.01em] text-[#646464] transition-all duration-300">
+            <div className="py-section-md flex items-center justify-center px-10 md:w-1/2">
+              <p className="text-center text-base leading-[1.75] tracking-[-0.01em] transition-all duration-300">
                 {features[activeIndex].content}
               </p>
             </div>

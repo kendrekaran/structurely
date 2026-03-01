@@ -53,7 +53,7 @@
 :root {
   --radius: 0.625rem;
   --heading: #202020;
-  --background: #FAFAFA;
+  --background: #fafafa;
   --foreground: #646464;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -90,7 +90,7 @@
 }
 .dark {
   --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
+  --foreground: oklch(50.323% 0.00006 271.152);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
@@ -173,12 +173,12 @@
 
   h3,
   .h3-style {
-    @apply text-[min(17.5px,4.85vw)] sm:text-[20px] md:text-[20px] leading-[28px] tracking-[-0.01em];
+    @apply text-[min(17.5px,4.85vw)] leading-[28px] tracking-[-0.01em] sm:text-[20px] md:text-[20px];
   }
 
   p,
   .p-style {
-    @apply text-[14px] leading-[28px] tracking-[-0.01em] md:text-[18px] tracking-[-0.01em];
+    @apply text-[14px] leading-[28px] tracking-[-0.01em] md:text-[18px];
     color: var(--foreground);
   }
 

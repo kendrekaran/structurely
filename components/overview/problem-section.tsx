@@ -191,7 +191,7 @@ function OverviewProblemSection() {
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
           <div className="flex flex-col items-center">
-            <div className="flex w-full flex-col items-center gap-4 px-6 py-section-md">
+            <div className="py-section-md flex w-full flex-col items-center gap-4 px-6">
               <div className="flex flex-col items-center gap-4">
                 <Badge text="The Problem" />
                 <h2 className="max-w-[11em] text-center">
@@ -206,7 +206,7 @@ function OverviewProblemSection() {
 
             <div className="flex w-full flex-col items-center">
               <div className="flex overflow-hidden rounded-t-xl border-x border-t border-[#E5E7EB] bg-white px-4 py-2">
-                <span className="text-[14px] leading-5 tracking-[-0.01em] text-[#646464]">
+                <span className="text-[14px] leading-5 tracking-[-0.01em]">
                   But most are
                 </span>
               </div>
@@ -218,7 +218,7 @@ function OverviewProblemSection() {
                       <div className="flex items-center gap-2 overflow-hidden rounded-[10px] bg-white px-3 py-2 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
                         {problem.icon}
                       </div>
-                      <span className="text-center text-[14px] leading-5 tracking-[-0.006em] text-[#646464]">
+                      <span className="text-center text-[14px] leading-5 tracking-[-0.006em]">
                         {problem.label}
                       </span>
                     </div>
@@ -232,7 +232,7 @@ function OverviewProblemSection() {
               </div>
 
               <div className="flex w-full flex-col items-center gap-3 border-b border-[#E5E7EB] px-6 py-6">
-                <p className="max-w-[33.43em] text-center text-[14px] leading-5 tracking-[-0.01em] text-[#646464]">
+                <p className="max-w-[33.43em] text-center text-[14px] leading-5 tracking-[-0.01em]">
                   Revenue is lost in the gap between inquiry and engagement.
                 </p>
                 <p className="text-center font-[cursive] text-[16px] leading-6 font-bold tracking-[-0.02em]">

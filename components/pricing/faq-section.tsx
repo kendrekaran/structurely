@@ -121,7 +121,7 @@ export default function FaqSection() {
                     </button>
 
                     {isOpen && (
-                      <div className="mt-3 text-[14px] leading-6 tracking-[-0.01em] text-[#646464]">
+                      <div className="mt-3 text-[14px] leading-6 tracking-[-0.01em]">
                         {faq.answer}
                       </div>
                     )}

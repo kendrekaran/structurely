@@ -135,13 +135,13 @@ function CellContent({ value }: { value: CellValue }) {
   if (value === "dash") {
     return (
       <div className="flex justify-center">
-        <span className="text-[#646464]">—</span>
+        <span className="">—</span>
       </div>
     );
   }
   return (
     <div className="flex justify-center">
-      <span className="text-[13px] leading-5 text-[#646464]">{value}</span>
+      <span className="text-[13px] leading-5">{value}</span>
     </div>
   );
 }
@@ -188,7 +188,7 @@ export default function ComparePlansSection() {
                   key={feature.name}
                   className="border-b border-[#E5E7EB] hover:bg-transparent"
                 >
-                  <TableCell className="py-4 text-[13px] leading-5 text-[#202020] font-normal">
+                  <TableCell className="py-4 text-[13px] leading-5 font-normal text-[#202020]">
                     {feature.name}
                   </TableCell>
                   <TableCell className="py-4">
