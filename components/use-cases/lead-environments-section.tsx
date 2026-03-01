@@ -1,14 +1,50 @@
 const CHECK_ICON = (
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M3.20849 7.18358C3.08686 6.63568 3.10554 6.06595 3.26279 5.52719C3.42004 4.98844 3.71078 4.49811 4.10805 4.10168C4.50532 3.70524 4.99625 3.41553 5.53533 3.25941C6.07441 3.10328 6.64419 3.0858 7.19183 3.20858C7.49325 2.73716 7.9085 2.34921 8.39929 2.08048C8.89008 1.81175 9.44062 1.6709 10.0002 1.6709C10.5597 1.6709 11.1102 1.81175 11.601 2.08048C12.0918 2.34921 12.5071 2.73716 12.8085 3.20858C13.357 3.08526 13.9277 3.10267 14.4677 3.25917C15.0076 3.41568 15.4992 3.70619 15.8967 4.10371C16.2942 4.50122 16.5847 4.9928 16.7412 5.53275C16.8977 6.07269 16.9151 6.64344 16.7918 7.19191C17.2632 7.49334 17.6512 7.90858 17.9199 8.39937C18.1886 8.89016 18.3295 9.4407 18.3295 10.0002C18.3295 10.5598 18.1886 11.1103 17.9199 11.6011C17.6512 12.0919 17.2632 12.5072 16.7918 12.8086C16.9146 13.3562 16.8971 13.926 16.741 14.4651C16.5849 15.0042 16.2952 15.4951 15.8987 15.8924C15.5023 16.2896 15.012 16.5804 14.4732 16.7376C13.9345 16.8949 13.3647 16.9135 12.8168 16.7919C12.5158 17.2651 12.1002 17.6547 11.6086 17.9247C11.117 18.1946 10.5652 18.3361 10.0043 18.3361C9.44347 18.3361 8.89168 18.1946 8.40006 17.9247C7.90843 17.6547 7.49286 17.2651 7.19183 16.7919C6.64419 16.9147 6.07441 16.8972 5.53533 16.7411C4.99625 16.585 4.50532 16.2952 4.10805 15.8988C3.71078 15.5024 3.42004 15.012 3.26279 14.4733C3.10554 13.9345 3.08686 13.3648 3.20849 12.8169C2.73346 12.5163 2.34217 12.1004 2.07103 11.6079C1.7999 11.1155 1.65771 10.5624 1.65771 10.0002C1.65771 9.43807 1.7999 8.88503 2.07103 8.39257C2.34217 7.9001 2.73346 7.48421 3.20849 7.18358Z" stroke="#006FFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M7.5 10.0002L9.16667 11.6668L12.5 8.3335" stroke="#006FFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M3.20849 7.18358C3.08686 6.63568 3.10554 6.06595 3.26279 5.52719C3.42004 4.98844 3.71078 4.49811 4.10805 4.10168C4.50532 3.70524 4.99625 3.41553 5.53533 3.25941C6.07441 3.10328 6.64419 3.0858 7.19183 3.20858C7.49325 2.73716 7.9085 2.34921 8.39929 2.08048C8.89008 1.81175 9.44062 1.6709 10.0002 1.6709C10.5597 1.6709 11.1102 1.81175 11.601 2.08048C12.0918 2.34921 12.5071 2.73716 12.8085 3.20858C13.357 3.08526 13.9277 3.10267 14.4677 3.25917C15.0076 3.41568 15.4992 3.70619 15.8967 4.10371C16.2942 4.50122 16.5847 4.9928 16.7412 5.53275C16.8977 6.07269 16.9151 6.64344 16.7918 7.19191C17.2632 7.49334 17.6512 7.90858 17.9199 8.39937C18.1886 8.89016 18.3295 9.4407 18.3295 10.0002C18.3295 10.5598 18.1886 11.1103 17.9199 11.6011C17.6512 12.0919 17.2632 12.5072 16.7918 12.8086C16.9146 13.3562 16.8971 13.926 16.741 14.4651C16.5849 15.0042 16.2952 15.4951 15.8987 15.8924C15.5023 16.2896 15.012 16.5804 14.4732 16.7376C13.9345 16.8949 13.3647 16.9135 12.8168 16.7919C12.5158 17.2651 12.1002 17.6547 11.6086 17.9247C11.117 18.1946 10.5652 18.3361 10.0043 18.3361C9.44347 18.3361 8.89168 18.1946 8.40006 17.9247C7.90843 17.6547 7.49286 17.2651 7.19183 16.7919C6.64419 16.9147 6.07441 16.8972 5.53533 16.7411C4.99625 16.585 4.50532 16.2952 4.10805 15.8988C3.71078 15.5024 3.42004 15.012 3.26279 14.4733C3.10554 13.9345 3.08686 13.3648 3.20849 12.8169C2.73346 12.5163 2.34217 12.1004 2.07103 11.6079C1.7999 11.1155 1.65771 10.5624 1.65771 10.0002C1.65771 9.43807 1.7999 8.88503 2.07103 8.39257C2.34217 7.9001 2.73346 7.48421 3.20849 7.18358Z"
+      stroke="#006FFF"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M7.5 10.0002L9.16667 11.6668L12.5 8.3335"
+      stroke="#006FFF"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
   </svg>
 );
 
 const ARROW_ICON = (
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M4.1665 10H15.8332" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M10 4.1665L15.8333 9.99984L10 15.8332" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M4.1665 10H15.8332"
+      stroke="white"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M10 4.1665L15.8333 9.99984L10 15.8332"
+      stroke="white"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
   </svg>
 );
 
@@ -22,38 +58,50 @@ const conditions = [
 function LeadEnvironmentsSection() {
   return (
     <section id="lead-environments" className="relative z-0">
-      <div className="flex flex-col items-center pt-8 pb-0">
-        <h3 className="text-center px-global mb-8">High-Volume Lead Environments</h3>
+      <div className="px-global">
+        <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
+          <div className="py-[32px] flex flex-col items-center">
+            <h3 className="mb-8 text-center">High-Volume Lead Environments</h3>
 
-        <div className="w-full max-w-global px-global flex justify-center mb-0">
-          <div className="w-full max-w-[29.25em] h-[200px] flex items-center justify-center rounded-xl bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
-            <span className="text-[var(--foreground)] text-[16px] leading-6 tracking-[-0.01em]">Graphic</span>
-          </div>
-        </div>
-
-        <div className="flex justify-center mt-2">
-          <div className="px-4 py-2 rounded-t-xl border border-b-0 border-[#E5E7EB] bg-white">
-            <span className="text-[var(--foreground)] text-[14px] leading-5 tracking-[-0.01em]">Any organization where</span>
-          </div>
-        </div>
-
-        <div className="w-full border-y border-[#E5E7EB] bg-[#FAFAFA]">
-          <div className="max-w-global mx-auto px-global py-6 flex flex-wrap justify-center gap-3">
-            {conditions.map((condition) => (
-              <div
-                key={condition}
-                className="flex items-center gap-2 px-3 py-2 rounded-[10px] bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]"
-              >
-                {CHECK_ICON}
-                <span className="text-[var(--foreground)] text-[14px] leading-5 tracking-[-0.006em] whitespace-nowrap">{condition}</span>
+            <div className="px-global mb-0 flex w-full justify-center">
+              <div className="flex h-[200px] w-full max-w-[29.25em] items-center justify-center rounded-xl bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
+                <span className="text-[16px] leading-6 tracking-[-0.01em] text-[var(--foreground)]">
+                  Graphic
+                </span>
               </div>
-            ))}
-          </div>
-        </div>
+            </div>
 
-        <div className="w-full bg-[#006FFF] flex items-center justify-center gap-3 px-6 py-5">
-          <span className="text-white text-[14px] font-medium leading-5">See How It Works in Your Environment</span>
-          {ARROW_ICON}
+            <div className="mt-[32px] flex justify-center">
+              <div className="rounded-t-xl border border-b-0 border-[#E5E7EB] bg-white px-4 py-2">
+                <span className="text-[14px] leading-5 tracking-[-0.01em] text-[var(--foreground)]">
+                  Any organization where
+                </span>
+              </div>
+            </div>
+
+            <div className="w-full ">
+              <div className="px-global flex flex-wrap justify-center gap-3 py-6">
+                {conditions.map((condition) => (
+                  <div
+                    key={condition}
+                    className="flex items-center gap-2 rounded-[10px] bg-white px-3 py-2 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]"
+                  >
+                    {CHECK_ICON}
+                    <span className="text-[14px] leading-5 tracking-[-0.006em] whitespace-nowrap text-[var(--foreground)]">
+                      {condition}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex w-full items-center justify-center gap-3 bg-[#006FFF] px-6 py-5">
+              <span className="text-[14px] leading-5 font-medium text-white">
+                See How It Works in Your Environment
+              </span>
+              {ARROW_ICON}
+            </div>
+          </div>
         </div>
       </div>
     </section>

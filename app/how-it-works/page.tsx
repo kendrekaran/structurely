@@ -13,7 +13,6 @@ export default function Overview() {
     <>
       <main className="max-h-screen max-w-full overflow-x-clip">
         <Header />
-        <PageMenu />
         <LeadCaptureSection />
         <MultiChannelSection />
         <StructuredConversationSection />

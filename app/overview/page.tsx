@@ -1,5 +1,4 @@
 import Header from "@/components/_common/header";
-import PageMenu from "@/components/overview/page-menu";
 import HeroSection from "@/components/overview/hero-section";
 import HeroAnimationSection from "@/components/overview/hero-animation-section";
 import OverviewProblemSection from "@/components/overview/problem-section";
@@ -13,7 +12,6 @@ export default function Overview() {
     <>
       <main className="max-h-screen max-w-full overflow-x-clip">
         <Header />
-        <PageMenu />
         <HeroSection />
         <HeroAnimationSection />
         <OverviewProblemSection />

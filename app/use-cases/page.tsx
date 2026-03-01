@@ -5,7 +5,7 @@ import LeadEnvironmentsSection from "@/components/use-cases/lead-environments-se
 
 export default function UseCases() {
   return (
-    <main className="max-w-full overflow-x-clip">
+    <main className="min-h-screen max-w-full overflow-x-clip">
       <Header />
       <HeroSection />
       <IndustriesSection />
