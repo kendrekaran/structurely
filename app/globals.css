@@ -59,7 +59,7 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: #006fff;
+  --primary: #4B7BFF;
   --primary-foreground: #ffffff;
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -178,7 +178,7 @@
 
   p,
   .p-style {
-    @apply text-[14px] leading-[28px] tracking-[-0.01em] md:text-[18px];
+    @apply text-[16px] leading-[26px] tracking-[-0.01em] md:text-[16px];
     color: var(--foreground);
   }
 

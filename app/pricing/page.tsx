@@ -11,14 +11,15 @@ import ActionCreditSection from "@/components/pricing/action-credit-section";
 import OnboardingSection from "@/components/pricing/onboarding-section";
 import ComparePlansSection from "@/components/pricing/compare-plans-section";
 import FaqSection from "@/components/pricing/faq-section";
-import CtaSection from "@/components/_common/cta-section";
+import PilotSection from "@/components/pricing/pilot-section";
+import SpamMitigationSection from "@/components/pricing/spam-mitigation-section";
 import Separator from "@/components/_ui/separator";
 
 export default function PricingPage() {
   const [billing, setBilling] = useState<BillingCycle>("annual");
 
   return (
-    <main className="max-w-full overflow-x-clip">
+    <main className="min-h-screen max-w-full overflow-x-clip">
       <Header />
       <PricingHeroSection billing={billing} onBillingChange={setBilling} />
       <Separator />
@@ -26,9 +27,10 @@ export default function PricingPage() {
       <PricingAddonSection />
       <ActionCreditSection />
       <OnboardingSection />
+      <PilotSection />
       <ComparePlansSection />
       <FaqSection />
-      <CtaSection />
+      <SpamMitigationSection />
     </main>
   );
 }

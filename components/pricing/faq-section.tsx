@@ -72,7 +72,7 @@ function MinusIcon() {
     >
       <path
         d="M4 10H16"
-        stroke="#006FFF"
+        stroke="#4B7BFF"
         strokeWidth="1.5"
         strokeLinecap="round"
       />
@@ -89,16 +89,16 @@ export default function FaqSection() {
 
   return (
     <section id="faq" className="relative z-0 border-t border-[#E5E7EB]">
-      <div className="bg-background px-global py-section-md">
-        <div className="max-w-global mx-auto flex flex-col items-center gap-3">
+      <div className="bg-background px-global">
+        <div className="max-w-global py-section-md mx-auto flex flex-col items-center gap-3 border-x border-[#E5E7EB]">
           <h1 className="text-center">FAQ</h1>
           <p className="text-center">Frequently Asked Questions</p>
         </div>
       </div>
 
       <div className="border-t border-[#E5E7EB] bg-white">
-        <div className="px-global py-section-md">
-          <div className="max-w-global mx-auto">
+        <div className="px-global">
+          <div className="max-w-global py-section-md mx-auto border-x border-b border-[#E5E7EB]">
             <div className="mx-auto max-w-[44rem] divide-y divide-[#E5E7EB]">
               {faqs.map((faq, index) => {
                 const isOpen = openIndex === index;
@@ -111,7 +111,7 @@ export default function FaqSection() {
                       <span
                         className={`text-[15px] leading-6 tracking-[-0.01em] transition-colors ${
                           isOpen
-                            ? "font-semibold text-[#202020]"
+                            ? "  text-[#202020]"
                             : "font-normal text-[#202020]"
                         }`}
                       >

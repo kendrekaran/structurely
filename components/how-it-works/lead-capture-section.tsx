@@ -58,7 +58,7 @@ function LeadCaptureSection() {
 
         <div className="flex flex-col items-center gap-1 px-6 py-[24px] text-center">
           <p className="text-sm leading-5">
-            <strong className="font-semibold text-[var(--heading)]">
+            <strong className="  text-[var(--heading)]">
               Structurely AI 3
             </strong>{" "}
             <span className="text-[var(--foreground)]">

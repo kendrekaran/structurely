@@ -5,12 +5,12 @@ function ProblemSection() {
     <section id="problem" className="relative z-0">
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
-          <div className="flex flex-col items-center gap-4  py-section-md">
+          <div className="flex flex-col items-center gap-3  py-section-md">
             <div className="flex flex-col items-center gap-4">
               <Badge text="The Problem" />
               <h2 className="max-w-[14em] text-center">
                 Most teams don&apos;t lose deals because of{" "}
-                <span className="text-[#006FFF]">demand</span>
+                <span className="text-[#4B7BFF]">demand</span>
               </h2>
             </div>
             <p className="max-w-[27.375em] text-center">

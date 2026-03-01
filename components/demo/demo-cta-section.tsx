@@ -11,7 +11,7 @@ export default function DemoCtaSection() {
           <div className="flex flex-col items-center gap-2 text-center">
             <div className="text-[14px] leading-5 tracking-[-0.01em]">
               This is not a{" "}
-              <span className="font-semibold text-[#202020]">
+              <span className="  text-[#202020]">
                 scripted demo.
               </span>
             </div>
@@ -20,7 +20,7 @@ export default function DemoCtaSection() {
               style={{ fontFamily: "var(--font-caveat)" }}
             >
               You are interacting with the{" "}
-              <span className="text-[#006FFF]">real system.</span>
+              <span className="text-[#4B7BFF]">real system.</span>
             </div>
           </div>
 

@@ -31,7 +31,7 @@ function PageMenu() {
               href={item.href}
               className={`flex min-w-fit flex-1 cursor-pointer items-center justify-center px-[10px] py-3 text-center text-[14px] leading-5 tracking-[-0.006em] whitespace-nowrap transition-colors ${
                 isActive(item.href)
-                  ? "bg-[#006FFF] text-white"
+                  ? "bg-[#4B7BFF] text-white"
                   : "bg-white hover:bg-gray-50"
               }`}
             >

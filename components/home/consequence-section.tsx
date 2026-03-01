@@ -1,4 +1,6 @@
 import Button from "@/components/_ui/button";
+import DownArrow from "@/public/assets/common/arrows/down-arrow.svg";
+import DownArrowBlur from "@/public/assets/common/arrows/down-arrow-blur.svg";
 
 const problemItems = [
   { text: "Leads sit.", active: false },
@@ -10,39 +12,18 @@ const problemItems = [
 const chevronDividers = [{ dimmed: true }, { dimmed: false }, { dimmed: true }];
 
 function ChevronDivider({ dimmed }: { dimmed: boolean }) {
+  const ArrowIcon = dimmed ? DownArrowBlur : DownArrow;
   return (
     <div className="flex w-full items-center self-stretch">
       <div className="h-px flex-1 bg-[#E5E7EB]" />
       <div
-        className="flex items-center overflow-hidden rounded-[10px] bg-white p-2"
+        className="flex items-center justify-center overflow-hidden w-[48px] h-[40px] rounded-[10px] bg-white p-2"
         style={{
           boxShadow:
             "0 0 0 1px rgba(0,0,0,0.08), 0 1px 1px -0.5px rgba(51,51,51,0.05), 0 3px 3px -1.5px rgba(51,51,51,0.05), 0 6px 6px -3px rgba(51,51,51,0.05), 0 12px 12px -6px rgba(51,51,51,0.05), 0 24px 24px -12px rgba(51,51,51,0.05)",
         }}
       >
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          style={{ opacity: dimmed ? 0.48 : 1 }}
-        >
-          <path
-            d="M7 6L12 11L17 6"
-            stroke="#006FFF"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M7 13L12 18L17 13"
-            stroke="#006FFF"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
+        <ArrowIcon />
       </div>
       <div className="h-px flex-1 bg-[#E5E7EB]" />
     </div>

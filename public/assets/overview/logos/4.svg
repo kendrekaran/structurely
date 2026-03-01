@@ -1,9 +1,9 @@
 <svg width="72" height="77" viewBox="0 0 72 77" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_dddddd_2391_19756)">
 <rect x="12" y="1" width="48" height="40" rx="10" fill="white"/>
-<path d="M33 12H29C27.8954 12 27 12.8954 27 14V18C27 19.1046 27.8954 20 29 20H33C34.1046 20 35 19.1046 35 18V14C35 12.8954 34.1046 12 33 12Z" stroke="#006FFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M31 20V24C31 24.5304 31.2107 25.0391 31.5858 25.4142C31.9609 25.7893 32.4696 26 33 26H37" stroke="#006FFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M43 22H39C37.8954 22 37 22.8954 37 24V28C37 29.1046 37.8954 30 39 30H43C44.1046 30 45 29.1046 45 28V24C45 22.8954 44.1046 22 43 22Z" stroke="#006FFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M33 12H29C27.8954 12 27 12.8954 27 14V18C27 19.1046 27.8954 20 29 20H33C34.1046 20 35 19.1046 35 18V14C35 12.8954 34.1046 12 33 12Z" stroke="#4B7BFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M31 20V24C31 24.5304 31.2107 25.0391 31.5858 25.4142C31.9609 25.7893 32.4696 26 33 26H37" stroke="#4B7BFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M43 22H39C37.8954 22 37 22.8954 37 24V28C37 29.1046 37.8954 30 39 30H43C44.1046 30 45 29.1046 45 28V24C45 22.8954 44.1046 22 43 22Z" stroke="#4B7BFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 <defs>
 <filter id="filter0_dddddd_2391_19756" x="0" y="0" width="72" height="77" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">

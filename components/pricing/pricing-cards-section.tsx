@@ -106,16 +106,16 @@ function getDisplayPrice(plan: Plan, billing: BillingCycle): string {
 function CheckIcon() {
   return (
     <svg
-      width="16"
-      height="16"
-      viewBox="0 0 16 16"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="mt-0.5 shrink-0"
+      className="shrink-0"
     >
       <path
-        d="M3 8L6.5 11.5L13 5"
-        stroke="#006FFF"
+        d="M5.625 10.8854L8.25 13.5416L14.375 6.45831"
+        stroke="#4B7BFF"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -133,44 +133,51 @@ export default function PricingCardsSection({
 }: PricingCardsSectionProps) {
   return (
     <section id="pricing-cards" className="relative z-0 bg-white">
-      <div className="px-global py-section-md">
-        <div className="max-w-global mx-auto">
-          <div className="grid grid-cols-1 divide-y divide-[#E5E7EB] overflow-hidden rounded-xl border border-[#E5E7EB] lg:grid-cols-4 lg:divide-x lg:divide-y-0">
+      <div className="px-global">
+        <div className="max-w-global mx-auto border-x border-b border-[#E5E7EB]">
+          <div className="flex flex-col gap-2 p-2 lg:flex-row">
             {plans.map((plan) => (
               <div
                 key={plan.id}
-                className="flex flex-col divide-y divide-[#E5E7EB]"
+                className={[
+                  "flex flex-1 flex-col gap-6 overflow-hidden rounded-[10px] bg-white py-6",
+                  plan.popular
+                    ? "shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]"
+                    : "shadow-[0_0_0_1px_rgba(0,0,0,0.08)]",
+                ].join(" ")}
               >
-                <div className="flex flex-col gap-4 p-6">
-                  <div className="flex items-center gap-2">
-                    <span className="text-[14px] leading-5 font-medium text-[#202020]">
-                      {plan.name}
-                    </span>
-                    {plan.popular && (
-                      <span className="rounded-full bg-[#EEF5FF] px-2 py-0.5 text-[12px] leading-4 font-medium text-[#006FFF]">
-                        Popular
+                <div className="flex flex-col gap-4 px-6">
+                  <div className="flex flex-col gap-3">
+                    <div className="flex items-start gap-2">
+                      <span className="flex-1 text-base leading-6 tracking-[-0.096px] text-[#646464]">
+                        {plan.name}
                       </span>
-                    )}
-                  </div>
+                      {plan.popular && (
+                        <span className="rounded-[8px] bg-[#4B7BFF14] px-2 py-1 text-[12px] leading-4 text-[#4B7BFF]">
+                          Popular
+                        </span>
+                      )}
+                    </div>
 
-                  {plan.custom ? (
-                    <div className="text-[#202020]">
-                      <span className="text-[40px] leading-[48px] font-medium tracking-[-0.04em]">
+                    {plan.custom ? (
+                      <span className="text-[32px] leading-8 tracking-[-0.96px] text-[#202020]">
                         Custom
                       </span>
-                    </div>
-                  ) : (
-                    <div className="flex items-baseline gap-1 text-[#202020]">
-                      <span className="text-[36px] leading-[44px] font-medium tracking-[-0.04em]">
-                        ${getDisplayPrice(plan, billing)}
-                      </span>
-                      <span className="text-[14px] leading-5">/mo</span>
-                    </div>
-                  )}
+                    ) : (
+                      <div className="flex items-end gap-1">
+                        <span className="text-[32px] leading-8 tracking-[-0.96px] text-[#202020]">
+                          ${getDisplayPrice(plan, billing)}
+                        </span>
+                        <span className="pb-0.5 text-base font-light leading-6 tracking-[-0.16px] text-[#646464]">
+                          /mo
+                        </span>
+                      </div>
+                    )}
 
-                  <p className="text-[13px] leading-[20px] tracking-[-0.01em]">
-                    {plan.description}
-                  </p>
+                    <p className="text-[12px] font-light leading-6 tracking-[-0.12px] text-[#646464]">
+                      {plan.description}
+                    </p>
+                  </div>
 
                   <Button
                     variant={plan.ctaVariant}
@@ -186,15 +193,17 @@ export default function PricingCardsSection({
                   </Button>
                 </div>
 
-                <div className="flex flex-col gap-3 p-6">
-                  <span className="text-[13px] leading-5 tracking-[-0.01em]">
+                <hr className="border-[#E5E7EB]" />
+
+                <div className="flex flex-col gap-3 px-6">
+                  <span className="text-[12px] font-light leading-6 tracking-[-0.12px] text-[#646464]">
                     {plan.featuresLabel}
                   </span>
-                  <ul className="flex flex-col gap-3">
+                  <ul className="flex flex-col gap-6">
                     {plan.features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-2">
+                      <li key={i} className="flex items-start gap-1">
                         <CheckIcon />
-                        <span className="text-[13px] leading-5 tracking-[-0.01em] text-[#202020]">
+                        <span className="text-[14px] leading-5 tracking-[-0.084px] text-[#646464]">
                           {feature}
                         </span>
                       </li>

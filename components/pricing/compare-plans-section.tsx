@@ -115,7 +115,7 @@ function CheckIcon() {
     >
       <path
         d="M3 8L6.5 11.5L13 5"
-        stroke="#006FFF"
+        stroke="#4B7BFF"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -152,8 +152,8 @@ export default function ComparePlansSection() {
       id="compare-plans"
       className="relative z-0 border-t border-[#E5E7EB] bg-white"
     >
-      <div className="px-global py-section-md">
-        <div className="max-w-global mx-auto flex flex-col items-center gap-4">
+      <div className="px-global">
+        <div className="max-w-global py-section-md  mx-auto flex flex-col items-center gap-4 border-x border-[#E5E7EB]">
           <h2 className="text-center">Compare Plans</h2>
           <p className="max-w-[28em] text-center">
             Turn your pipeline into closed loans — without hiring
@@ -161,8 +161,8 @@ export default function ComparePlansSection() {
         </div>
       </div>
 
-      <div className="px-global pb-section-md">
-        <div className="max-w-global mx-auto">
+      <div className="px-global ">
+        <div className="max-w-global mx-auto border-x border-t border-[#E5E7EB]">
           <Table>
             <TableHeader>
               <TableRow className="border-b border-[#E5E7EB] hover:bg-transparent">

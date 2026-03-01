@@ -15,8 +15,8 @@ export default function PricingHeroSection({
 }: PricingHeroSectionProps) {
   return (
     <section id="pricing-hero" className="relative z-0 bg-white">
-      <div className="px-global py-section-md">
-        <div className="max-w-global mx-auto flex flex-col items-center gap-10">
+      <div className="px-global">
+        <div className="max-w-global py-section-md pb-[32px] mx-auto flex flex-col items-center gap-10 border-x border-[#E5E7EB]">
           <div className="flex flex-col items-center gap-4">
             <HeroBadge text="Pricing" />
             <h2 className="max-w-[13em] text-center">
@@ -43,7 +43,7 @@ export default function PricingHeroSection({
                 onClick={() => onBillingChange("annual")}
                 className={`w-24 cursor-pointer rounded-full px-5 py-1.5 text-[14px] leading-5 font-medium transition-all ${
                   billing === "annual"
-                    ? "bg-white text-[#006FFF] shadow-[0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05)]"
+                    ? "bg-white text-[#4B7BFF] shadow-[0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05)]"
                     : "bg-transparent text-[#202020]"
                 }`}
               >
@@ -53,7 +53,7 @@ export default function PricingHeroSection({
 
             <p className="text-center text-[14px] leading-5 tracking-[-0.01em]">
               <span className="">Save </span>
-              <span className="font-semibold text-[#202020]">20%</span>
+              <span className=" text-[#202020]">20%</span>
               <span className=""> annually</span>
             </p>
           </div>

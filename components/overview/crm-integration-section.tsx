@@ -44,13 +44,13 @@ function CrmIntegrationSection() {
           <HeroBadge text="CRM Integration" />
           <h2 className="max-w-[11em] text-center tracking-[-0.03em]">
             Built to Power Your CRM{" "}
-            <span className="text-[#006FFF]">— Not Replace It</span>
+            <span className="text-[#4B7BFF]">— Not Replace It</span>
           </h2>
         </div>
 
         <div className="flex items-center justify-center self-stretch border-t border-[#E5E7EB] bg-[#ffffff] px-6 py-5 md:px-24">
           <p className="text-center text-[14px] leading-6 md:text-[14px]">
-            <span className="font-medium text-[#006FFF]">
+            <span className="font-medium text-[#4B7BFF]">
               Structurely AI 3 works
             </span>{" "}
             inside your existing system.

@@ -26,12 +26,12 @@ export default function Header() {
   const isCompanyActive = companyLinks.some((l) => l.href === pathname);
 
   return (
-    <header className="w-full bg-white">
-      <div className="px-global">
-        <div className="max-w-global mx-auto flex h-[60px] items-center gap-8">
+    <header className="w-full bg-white ">
+      <div className="px-global border-b border-[#E5E7EB]">
+        <div className="max-w-global  mx-auto flex py-[24px] items-center gap-8">
           <Link href="/" className="flex-shrink-0">
             <Image
-              src="/assets/common/header-logo.svg"
+              src="/assets/common/heading-logo.svg"
               alt="Structurely"
               width={115}
               height={24}
