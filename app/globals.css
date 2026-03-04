@@ -168,7 +168,7 @@
 
   h2,
   .h2-style {
-    @apply text-[min(36px,8vw)] leading-[54px] tracking-[-0.03em] sm:text-[48px] md:text-[48px];
+    @apply text-[min(36px,8vw)] font-medium leading-[54px] tracking-[-0.03em] sm:text-[48px] md:text-[48px];
   }
 
   h3,

@@ -16,7 +16,7 @@ function CtaSection() {
           <div className="max-w-global mx-auto">
             <div className="flex flex-col items-center gap-8">
               <h2 className="max-w-[11.25em] text-center font-medium">
-                <span className="text-[var(--foreground)]">
+                <span className="text-[var(--heading)]">
                   If demand is coming in,
                 </span>{" "}
                 <span className="text-[var(--heading)]">

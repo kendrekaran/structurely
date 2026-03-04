@@ -10,7 +10,7 @@ function HeroSection() {
             <div className="flex flex-col items-center gap-3.5">
               <HeroBadge text="Every lead. Every follow-up. Every time." />
 
-              <h1 className="max-w-[13em] text-center">
+              <h1 className="max-w-[11em] text-center">
                 AI platform that move the{" "}
                 <span className="text-[#4B7BFF]">right leads</span> forward
               </h1>

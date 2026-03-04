@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import Badge from "@/components/_ui/badge";
 
 const features = [
@@ -405,6 +405,30 @@ function OutcomeIcon({ type }: { type: string }) {
   return null;
 }
 
+const OutcomeChevronDivider = () => (
+  <div className="flex flex-col items-center justify-center gap-px self-stretch">
+    <div className="w-px flex-1 bg-[#E5E7EB]" />
+    <div className="flex items-center gap-2 overflow-hidden rounded-md bg-white p-1 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M6 12L10 8L6 4"
+          stroke="#4B7BFF"
+          strokeWidth="1.33333"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+    <div className="w-px flex-1 bg-[#E5E7EB]" />
+  </div>
+);
+
 function SolutionSection() {
   const [activeIndex, setActiveIndex] = useState(1);
 
@@ -412,7 +436,7 @@ function SolutionSection() {
     <section id="solution" className="relative z-0">
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
-          <div className="md:py-section-md flex flex-col items-center gap-4 px-6 py-12 md:px-24">
+          <div className="md:py-section-md flex flex-col items-center gap-3 px-6 py-12 md:px-24">
             <Badge text="What is Structurely" />
             <h2 className="max-w-[11em] text-center">
               Structurely <span className="text-[#4B7BFF]">automates</span> the
@@ -453,25 +477,32 @@ function SolutionSection() {
               })}
             </div>
 
-            <div className="py-section-md flex items-center justify-center px-10 md:w-1/2">
+            <div className="py-section-md flex items-center justify-center bg-white px-10 md:w-1/2">
               <p className="text-center text-base leading-[1.75] tracking-[-0.01em] transition-all duration-300">
                 {features[activeIndex].content}
               </p>
             </div>
           </div>
 
-          <div className="flex items-stretch divide-x divide-[#E5E7EB]">
+          <div className="flex flex-col items-stretch divide-y divide-[#E5E7EB] md:flex-row md:divide-y-0">
             {outcomes.map((outcome, index) => (
-              <div key={index} className="flex flex-1 items-stretch">
-                <div className="flex flex-1 flex-col items-center justify-center gap-6 px-3 py-8 md:px-12">
-                  <div className="flex items-center rounded-[10px] bg-white px-3 py-2 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
-                    <OutcomeIcon type={outcome.icon} />
+              <React.Fragment key={index}>
+                <div className="flex flex-1 items-stretch">
+                  <div className="flex flex-1 flex-col items-center justify-center gap-6 px-3 py-8 md:px-12">
+                    <div className="flex items-center rounded-[10px] bg-white px-3 py-2 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
+                      <OutcomeIcon type={outcome.icon} />
+                    </div>
+                    <span className="text-center text-sm leading-[1.625] tracking-[-0.01em] text-[#202020] md:text-base">
+                      {outcome.text}
+                    </span>
                   </div>
-                  <span className="text-center text-sm leading-[1.625] tracking-[-0.01em] text-[#202020] md:text-base">
-                    {outcome.text}
-                  </span>
                 </div>
-              </div>
+                {index < outcomes.length - 1 && (
+                  <div className="hidden md:flex">
+                    <OutcomeChevronDivider />
+                  </div>
+                )}
+              </React.Fragment>
             ))}
           </div>
         </div>

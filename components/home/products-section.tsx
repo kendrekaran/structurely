@@ -82,18 +82,23 @@ function ProductCard({
       className={`flex flex-col divide-y divide-[#E5E7EB] ${muted ? "bg-[#FAFAFA]" : "bg-white"}`}
     >
       <div className="flex min-h-[161px] flex-col gap-[16px] px-6 py-8 md:px-8">
-        <h3 className="sm:text-[20px] md:text-[20px] leading-[28px] tracking-[-0.02em]">{name}</h3>
-        <p className="max-w-[20em] text-[16px] leading-[26px] tracking-[-0.01em]">
+        <h3 className="leading-[28px] tracking-[-0.02em] sm:text-[20px] md:text-[20px]">
+          {name}
+        </h3>
+        <p className="max-w-[30em] text-[16px] leading-[26px] tracking-[-0.01em]">
           {description}
         </p>
       </div>
 
-      <div className="flex flex-col divide-y divide-[#E5E7EB]">
+      <div className="flex flex-col">
         {features.map((feature, index) => (
           <div
             key={index}
-            className={`flex items-center gap-3 px-6 py-6 md:px-8 ${muted ? "bg-white" : "bg-[#FAFAFA]"}`}
+            className={`relative flex items-center gap-3 px-6 py-8 md:px-8 ${muted ? "bg-white" : "bg-[#FAFAFA]"}`}
           >
+            {index !== 0 && (
+              <span className="absolute inset-x-0 top-0 ml-8 border-t border-[#E5E7EB]" />
+            )}
             <Image
               src="/assets/common/verification.svg"
               alt="circle check"
@@ -108,7 +113,7 @@ function ProductCard({
       </div>
 
       <div className="flex items-center justify-between px-6 py-8 md:px-8">
-        <span className="text-[14px] leading-[20px]  tracking-[-0.01em] text-[#202020]">
+        <span className="text-[14px] leading-[20px] tracking-[-0.01em] text-[#202020]">
           {ctaLabel}
         </span>
         <ArrowRightIcon />
@@ -119,10 +124,10 @@ function ProductCard({
 
 function ProductsSection() {
   return (
-    <section id="products" className="relative z-0 ">
+    <section id="products" className="relative z-0">
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
-          <div className="flex flex-col items-center gap-4  px-6 py-12 md:px-24 md:py-section-md">
+          <div className="md:py-section-md flex flex-col items-center gap-4 px-6 py-12 md:px-24">
             <h2 className="text-center">Our Products</h2>
             <p className="text-center">Built on a proven AI platform.</p>
           </div>
