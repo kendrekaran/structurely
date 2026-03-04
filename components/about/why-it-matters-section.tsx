@@ -34,7 +34,7 @@ function WhyItMattersSection() {
 
       <div className="px-global border-b border-[#E5E7EB]">
         <div className="max-w-global mx-auto flex flex-col items-center gap-3 border-x border-[#E5E7EB] py-6 text-center">
-          <p className="max-w-[34.14em] ">
+          <p className="max-w-[29.14em] ">
             <span className="text-foreground text-[14px] leading-[20px] tracking-[-0.01em]">
               Execution can no longer depend on individual capacity alone.
             </span>

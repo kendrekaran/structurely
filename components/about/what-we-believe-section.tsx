@@ -27,21 +27,21 @@ function WhatWeBelieveSection() {
           </div>
         </div>
 
-        <div className="px-global">
+        <div className="px-global ">
           <div className="max-w-global mx-auto border-x border-b border-[#E5E7EB]">
             <div className="grid grid-cols-1 divide-y divide-[#E5E7EB] md:grid-cols-3 md:divide-x md:divide-y-0">
-              <div className="px-6 py-8 last:pr-0 md:px-8">
-                <p className="text-[16px] leading-[26px] tracking-[-0.01em] text-[#202020]">
+              <div className="px-[40px] py-[32px] w-full flex items-center justify-center last:pr-0 md:px-8 ">
+                <p className="text-[14px] leading-[20px]  tracking-[-0.01em] ">
                   It deserves timely engagement.
                 </p>
               </div>
-              <div className="px-6 py-8 md:px-8">
-                <p className="text-[16px] leading-[26px] tracking-[-0.01em] text-[#202020]">
+              <div className="px-6 py-8 w-full flex items-center justify-center md:px-8">
+                <p className="text-[14px] leading-[20px]  tracking-[-0.01em] ">
                   It requires consistent qualification.
                 </p>
               </div>
-              <div className="px-6 py-8 first:pl-0 last:pr-0 md:px-8">
-                <p className="text-[16px] leading-[26px] tracking-[-0.01em] text-[#202020]">
+              <div className="px-6 py-8 w-full flex items-center justify-center first:pl-0 last:pr-0 md:px-8">
+                <p className="text-[14px] leading-[20px]  tracking-[-0.01em] ">
                   It should not depend on whether someone remembered to follow
                   up.
                 </p>
@@ -52,7 +52,7 @@ function WhatWeBelieveSection() {
       </div>
 
       <div className="px-global">
-        <div className="max-w-global mx-auto flex justify-center border-x border-b border-[#E5E7EB] py-10">
+        <div className="max-w-global mx-auto flex justify-center border-x border-b border-[#E5E7EB] py-[24px] ">
           <p className="max-w-[34em] text-center text-[14px] leading-[20px] tracking-[-0.01em]">
             We believe AI should support teams by handling the structured work —{" "}
             <span className="text-heading">

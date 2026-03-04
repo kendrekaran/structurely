@@ -91,7 +91,7 @@ export default function FaqSection() {
     <section id="faq" className="relative z-0 border-t border-[#E5E7EB]">
       <div className="bg-background px-global">
         <div className="max-w-global py-section-md mx-auto flex flex-col items-center gap-3 border-x border-[#E5E7EB]">
-          <h1 className="text-center">FAQ</h1>
+          <h2 className="text-center">FAQ</h2>
           <p className="text-center">Frequently Asked Questions</p>
         </div>
       </div>
@@ -103,20 +103,20 @@ export default function FaqSection() {
               {faqs.map((faq, index) => {
                 const isOpen = openIndex === index;
                 return (
-                  <div key={index} className="py-5 first:pt-0 last:pb-0">
+                  <div key={index} className="py-[20px] first:pt-0 last:pb-0">
                     <button
                       onClick={() => toggle(index)}
                       className="flex w-full cursor-pointer items-center justify-between gap-4 text-left"
                     >
-                      <span
-                        className={`text-[15px] leading-6 tracking-[-0.01em] transition-colors ${
+                      <p
+                        className={` transition-colors ${
                           isOpen
                             ? "  text-[#202020]"
-                            : "font-normal text-[#202020]"
+                            : "font-normal "
                         }`}
                       >
                         {faq.question}
-                      </span>
+                      </p>
                       {isOpen ? <MinusIcon /> : <PlusIcon />}
                     </button>
 

@@ -253,7 +253,7 @@ function AboutProblemSection() {
               key={item.label}
               className="relative flex flex-1 items-center gap-4 px-8 py-8 md:flex-col md:justify-center md:gap-6 md:px-12 md:py-8"
             >
-              <div className="flex flex-shrink-0 items-center gap-2 rounded-[10px] bg-white p-3 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
+              <div className="flex flex-shrink-0 w-[48px] h-[40px] items-center gap-2 rounded-[10px] bg-white p-3 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
                 {item.icon}
               </div>
               <p className="text-center text-[14px] leading-[20px] tracking-[-0.006em] md:text-center">
