@@ -1,10 +1,10 @@
-import HeroBadge from "@/components/_ui/hero-badge";
 import Icon1 from "@/public/assets/overview/logos/1.svg";
 import Icon2 from "@/public/assets/overview/logos/2.svg";
 import Icon3 from "@/public/assets/overview/logos/3.svg";
 import Icon4 from "@/public/assets/overview/logos/4.svg";
 import Icon5 from "@/public/assets/overview/logos/5.svg";
 import Icon6 from "@/public/assets/overview/logos/6.svg";
+import Badge from "../_ui/badge";
 
 const features = [
   {
@@ -41,15 +41,15 @@ function CrmIntegrationSection() {
         className="max-w-global mx-auto flex flex-col items-start border-x border-b border-[#E5E7EB]"
       >
         <div className="flex flex-col items-center justify-center gap-4 self-stretch px-6 py-section-md md:px-24">
-          <HeroBadge text="CRM Integration" />
-          <h2 className="max-w-[11em] text-center tracking-[-0.03em]">
-            Built to Power Your CRM{" "}
-            <span className="text-[#006FFF]">— Not Replace It</span>
+          <Badge text="CRM Integration" />
+          <h2 className="max-w-[11.5em] text-center tracking-[-0.03em]">
+            Built to Power Your CRM,{" "}
+            <span className="text-[#006FFF]">Not Replace It</span>
           </h2>
         </div>
 
-        <div className="flex items-center justify-center self-stretch border-t border-[#E5E7EB] bg-[#ffffff] px-6 py-5 md:px-24">
-          <p className="text-center text-[14px] leading-6 md:text-[14px]">
+        <div className="flex items-center justify-center self-stretch border-t border-[#E5E7EB] bg-[#ffffff] px-6 py-[24px]  md:px-24">
+          <p className="text-center text-[14px] leading-6 md:text-[16px]">
             <span className="font-medium text-[#006FFF]">
               Structurely AI 3 works
             </span>{" "}
@@ -71,7 +71,7 @@ function CrmIntegrationSection() {
               <div
                 key={feature.label}
                 className={[
-                  "flex flex-col items-center gap-4 border-[#E5E7EB] px-8 py-10",
+                  "flex flex-col items-center -space-y-3  border-[#E5E7EB] px-8 pt-[31px] pb-[11px] ",
                   "border-b lg:border-b",
                   isLastRow ? "lg:border-b-0" : "",
                   isRightColSm ? "" : "sm:border-r",
@@ -85,7 +85,7 @@ function CrmIntegrationSection() {
                   .join(" ")}
               >
                 <div className="">{feature.icon}</div>
-                <p className="max-w-[14.28em] text-center text-[14px] leading-5 text-[#202020] md:text-[14px]">
+                <p className="max-w-[14.28em]  text-center text-[14px] leading-5 text-[#202020] md:text-[14px]">
                   {feature.label}
                 </p>
               </div>

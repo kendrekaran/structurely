@@ -1,4 +1,5 @@
 import HeroBadge from "@/components/_ui/hero-badge";
+import Badge from "../_ui/badge";
 
 const features = [
   {
@@ -30,7 +31,7 @@ function StructuredSystemSection() {
       >
         <div className="py-section-md flex flex-col items-center justify-center gap-3 self-stretch px-6 md:px-24">
           <div className="flex w-full max-w-[46.375em] flex-col items-center justify-center gap-4">
-            <HeroBadge text="What AI 3 Does" />
+            <Badge text="What AI 3 Does" />
             <h2 className="max-w-[11.08em] text-center tracking-[-0.03em]">
               A <span className="text-[#006FFF]">Structured</span> System for
               Engagement

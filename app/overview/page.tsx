@@ -18,7 +18,7 @@ export default function Overview() {
         <StructuredSystemSection />
         <CrmIntegrationSection />
         <OutcomesSection />
-        <CtaSection />
+        <CtaSection variant="overview" />
       </main>
     </>
   );

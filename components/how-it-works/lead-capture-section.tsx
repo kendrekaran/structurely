@@ -25,8 +25,8 @@ function LeadCaptureSection() {
             <Badge text="Lead Capture" />
 
             <h2 className="max-w-[11.08em] text-center">
-              When a lead enters your{" "}
-              <span className="text-[var(--primary)]">CRM</span>
+            Structurely AI activates instantly.
+              
             </h2>
           </div>
         </div>

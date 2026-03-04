@@ -389,7 +389,7 @@ function PersistentFollowUpSection() {
         id="persistent-follow-up"
         className="max-w-global relative z-0 mx-auto border-x border-[#E5E7EB]"
       >
-        <div className="flex flex-col gap-6 px-6 py-12 sm:flex-row sm:items-start sm:justify-between md:px-12 md:py-section-md">
+        <div className="flex flex-col gap-6 px-6 py-12 sm:flex-row sm:items-start sm:justify-between md:px-12 md:py-[64px]">
           <h2>
             <span>Persistent </span>
             <span className="text-[#006FFF]">Follow-Up</span>
@@ -450,7 +450,7 @@ function PersistentFollowUpSection() {
         </div>
 
         <div className="flex items-center justify-center bg-[#006FFF] py-6">
-          <span className="text-[16px] leading-[26px] font-medium tracking-[-0.02em] text-white">
+          <span className="text-[14px] leading-[26px] font-regular tracking-[-0.02em] text-white">
             No lead is forgotten.
           </span>
         </div>

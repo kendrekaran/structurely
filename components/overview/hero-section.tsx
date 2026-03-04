@@ -13,8 +13,8 @@ function HeroSection() {
                 Demand.
               </h1>
 
-              <p className="max-w-[38em] text-center">
-                <span className="text-[#202020]">Structurely AI 3</span> helps
+              <p className="max-w-[35em] text-[18px] leading-[28px] tracking-[-0.01em] text-center">
+                <span className="text-[#202020]">Structurely AI </span> helps
                 businesses capture, qualify, follow-up and convert inbound{" "}
                 <span className="text-[#202020]">demand — automatically</span>{" "}
                 inside your existing CRM.

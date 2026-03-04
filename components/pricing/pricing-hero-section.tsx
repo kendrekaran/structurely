@@ -1,6 +1,7 @@
 "use client";
 
 import HeroBadge from "@/components/_ui/hero-badge";
+import Badge from "../_ui/badge";
 
 export type BillingCycle = "monthly" | "annual";
 
@@ -18,7 +19,7 @@ export default function PricingHeroSection({
       <div className="px-global">
         <div className="max-w-global py-section-md pb-[32px] mx-auto flex flex-col items-center gap-10 border-x border-[#E5E7EB]">
           <div className="flex flex-col items-center gap-4">
-            <HeroBadge text="Pricing" />
+            <Badge text="Pricing" />
             <h2 className="max-w-[13em] text-center">
               Your leads aren&apos;t going cold. They&apos;re being ignored.
             </h2>

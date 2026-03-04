@@ -1,4 +1,5 @@
 import HeroBadge from "@/components/_ui/hero-badge";
+import Badge from "../_ui/badge";
 
 const outcomeItems = [
   "Faster response times",
@@ -19,7 +20,7 @@ function OutcomesSection() {
         className="max-w-global relative z-0 mx-auto flex flex-col items-center border-x border-[#E5E7EB]"
       >
         <div className="py-section-md md:py-section-md flex w-full flex-col items-center gap-4 px-6 md:px-24">
-          <HeroBadge text="Outcomes" />
+          <Badge text="Outcomes" />
           <h2 className="max-w-[11em] text-center tracking-[-0.03em]">
             Designed to Improve What{" "}
             <span className="text-[var(--primary)]">Matters</span>
