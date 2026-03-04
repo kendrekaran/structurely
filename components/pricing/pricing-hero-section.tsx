@@ -43,7 +43,7 @@ export default function PricingHeroSection({
                 onClick={() => onBillingChange("annual")}
                 className={`w-24 cursor-pointer rounded-full px-5 py-1.5 text-[14px] leading-5 font-medium transition-all ${
                   billing === "annual"
-                    ? "bg-white text-[#4B7BFF] shadow-[0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05)]"
+                    ? "bg-white text-[#006FFF] shadow-[0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05)]"
                     : "bg-transparent text-[#202020]"
                 }`}
               >

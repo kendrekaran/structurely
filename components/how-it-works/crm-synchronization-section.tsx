@@ -27,7 +27,7 @@ function ChevronDivider() {
       <div className="w-px flex-1 bg-[#E5E7EB]" />
       <div className="flex p-1 items-center gap-2 rounded-md bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05)]">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M6 12L10 8L6 4" stroke="#4B7BFF" strokeWidth="1.33333" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M6 12L10 8L6 4" stroke="#006FFF" strokeWidth="1.33333" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </div>
       <div className="w-px flex-1 bg-[#E5E7EB]" />
@@ -44,7 +44,7 @@ function CrmSynchronizationSection() {
       >
         <div className="flex flex-col items-center py-section-md px-6 md:px-24 gap-3">
           <h2 className="max-w-[12em] text-center">
-            <span className="text-[#4B7BFF]">CRM</span>{" "}
+            <span className="text-[#006FFF]">CRM</span>{" "}
             <span>Synchronization</span>
           </h2>
         </div>
@@ -85,8 +85,8 @@ function CrmSynchronizationSection() {
             <span className="text-heading font-medium">CRM.</span>
           </p>
           <p className="text-[16px] leading-6 tracking-[-0.02em] text-center [font-family:var(--font-caveat)] font-bold">
-            <span className="text-[#4B7BFF] underline">Sales teams</span>
-            <span className="text-[#4B7BFF]"> </span>
+            <span className="text-[#006FFF] underline">Sales teams</span>
+            <span className="text-[#006FFF]"> </span>
             <span className="text-heading">see complete context.</span>
           </p>
         </div>

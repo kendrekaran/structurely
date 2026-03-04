@@ -20,7 +20,7 @@ export default function DemoCtaSection() {
               style={{ fontFamily: "var(--font-caveat)" }}
             >
               You are interacting with the{" "}
-              <span className="text-[#4B7BFF]">real system.</span>
+              <span className="text-[#006FFF]">real system.</span>
             </div>
           </div>
 

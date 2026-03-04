@@ -72,7 +72,7 @@ function MinusIcon() {
     >
       <path
         d="M4 10H16"
-        stroke="#4B7BFF"
+        stroke="#006FFF"
         strokeWidth="1.5"
         strokeLinecap="round"
       />

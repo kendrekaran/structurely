@@ -22,10 +22,10 @@ function FeatureIcon() {
       xmlns="http://www.w3.org/2000/svg"
       className="shrink-0"
     >
-      <circle cx="10" cy="10" r="8" stroke="#4B7BFF" strokeWidth="1.2" />
+      <circle cx="10" cy="10" r="8" stroke="#006FFF" strokeWidth="1.2" />
       <path
         d="M10 6.5V10L12.5 12"
-        stroke="#4B7BFF"
+        stroke="#006FFF"
         strokeWidth="1.2"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -50,7 +50,7 @@ export default function PricingAddonSection() {
             </span>
 
             <h2>
-              <span className="text-[#4B7BFF]">AI Power</span> Dialer
+              <span className="text-[#006FFF]">AI Power</span> Dialer
             </h2>
 
             <div className="flex flex-col gap-2">
@@ -114,7 +114,7 @@ export default function PricingAddonSection() {
               <div className="flex items-center gap-3">
                 <span
                   className={`text-[14px] leading-5 font-medium transition-colors ${
-                    mode === "human" ? "text-[#4B7BFF]" : ""
+                    mode === "human" ? "text-[#006FFF]" : ""
                   }`}
                 >
                   Human
@@ -124,7 +124,7 @@ export default function PricingAddonSection() {
                   className="relative h-7 w-14 cursor-pointer rounded-full bg-[#E8EAED] transition-colors"
                 >
                   <span
-                    className="absolute top-0.5 h-6 w-6 rounded-full bg-[#4B7BFF] shadow-sm transition-all duration-300"
+                    className="absolute top-0.5 h-6 w-6 rounded-full bg-[#006FFF] shadow-sm transition-all duration-300"
                     style={{
                       left: mode === "human" ? "2px" : "calc(100% - 26px)",
                     }}
@@ -132,7 +132,7 @@ export default function PricingAddonSection() {
                 </button>
                 <span
                   className={`text-[14px] leading-5 font-medium transition-colors ${
-                    mode === "ai" ? "text-[#4B7BFF]" : ""
+                    mode === "ai" ? "text-[#006FFF]" : ""
                   }`}
                 >
                   AI

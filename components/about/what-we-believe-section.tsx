@@ -9,7 +9,7 @@ function WhatWeBelieveSection() {
             </span>
           </div>
           <h2 className="max-w-[11em] tracking-[-0.03em]">
-            What We <span className="text-[#4B7BFF]">Believe</span>
+            What We <span className="text-[#006FFF]">Believe</span>
           </h2>
         </div>
       </div>

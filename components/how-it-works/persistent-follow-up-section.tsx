@@ -60,7 +60,7 @@ function DotGrid() {
         width="14"
         height="10"
         rx="2"
-        fill="#4B7BFF"
+        fill="#006FFF"
         fillOpacity="0.12"
       />
       <rect
@@ -69,7 +69,7 @@ function DotGrid() {
         width="14"
         height="10"
         rx="2"
-        fill="#4B7BFF"
+        fill="#006FFF"
         fillOpacity="0.06"
       />
       <rect
@@ -78,7 +78,7 @@ function DotGrid() {
         width="14"
         height="10"
         rx="2"
-        fill="#4B7BFF"
+        fill="#006FFF"
         fillOpacity="0.35"
       />
       <rect
@@ -87,7 +87,7 @@ function DotGrid() {
         width="14"
         height="10"
         rx="2"
-        fill="#4B7BFF"
+        fill="#006FFF"
         fillOpacity="0.14"
       />
       <rect
@@ -96,7 +96,7 @@ function DotGrid() {
         width="14"
         height="10"
         rx="2"
-        fill="#4B7BFF"
+        fill="#006FFF"
         fillOpacity="0.06"
       />
       <rect
@@ -105,7 +105,7 @@ function DotGrid() {
         width="14"
         height="10"
         rx="2"
-        fill="#4B7BFF"
+        fill="#006FFF"
         fillOpacity="0.28"
       />
       <rect
@@ -114,7 +114,7 @@ function DotGrid() {
         width="14"
         height="10"
         rx="2"
-        fill="#4B7BFF"
+        fill="#006FFF"
         fillOpacity="0.06"
       />
       <rect
@@ -123,7 +123,7 @@ function DotGrid() {
         width="14"
         height="10"
         rx="2"
-        fill="#4B7BFF"
+        fill="#006FFF"
         fillOpacity="0.48"
       />
       <rect
@@ -132,7 +132,7 @@ function DotGrid() {
         width="14"
         height="10"
         rx="2"
-        fill="#4B7BFF"
+        fill="#006FFF"
         fillOpacity="0.18"
       />
       <rect
@@ -141,7 +141,7 @@ function DotGrid() {
         width="14"
         height="10"
         rx="2"
-        fill="#4B7BFF"
+        fill="#006FFF"
         fillOpacity="0.56"
       />
       <rect
@@ -150,7 +150,7 @@ function DotGrid() {
         width="14"
         height="10"
         rx="2"
-        fill="#4B7BFF"
+        fill="#006FFF"
         fillOpacity="0.24"
       />
       <rect
@@ -159,7 +159,7 @@ function DotGrid() {
         width="14"
         height="10"
         rx="2"
-        fill="#4B7BFF"
+        fill="#006FFF"
         fillOpacity="0.08"
       />
       <rect
@@ -168,7 +168,7 @@ function DotGrid() {
         width="14"
         height="10"
         rx="2"
-        fill="#4B7BFF"
+        fill="#006FFF"
         fillOpacity="0.28"
       />
       <rect
@@ -177,7 +177,7 @@ function DotGrid() {
         width="14"
         height="10"
         rx="2"
-        fill="#4B7BFF"
+        fill="#006FFF"
         fillOpacity="0.14"
       />
       <rect
@@ -186,7 +186,7 @@ function DotGrid() {
         width="14"
         height="10"
         rx="2"
-        fill="#4B7BFF"
+        fill="#006FFF"
         fillOpacity="0.72"
       />
       <rect
@@ -195,7 +195,7 @@ function DotGrid() {
         width="14"
         height="10"
         rx="2"
-        fill="#4B7BFF"
+        fill="#006FFF"
         fillOpacity="0.32"
       />
       <rect
@@ -204,7 +204,7 @@ function DotGrid() {
         width="14"
         height="10"
         rx="2"
-        fill="#4B7BFF"
+        fill="#006FFF"
         fillOpacity="0.52"
       />
       <rect
@@ -213,7 +213,7 @@ function DotGrid() {
         width="14"
         height="10"
         rx="2"
-        fill="#4B7BFF"
+        fill="#006FFF"
         fillOpacity="0.06"
       />
       <rect
@@ -222,7 +222,7 @@ function DotGrid() {
         width="14"
         height="10"
         rx="2"
-        fill="#4B7BFF"
+        fill="#006FFF"
         fillOpacity="0.08"
       />
       <rect
@@ -231,7 +231,7 @@ function DotGrid() {
         width="14"
         height="10"
         rx="2"
-        fill="#4B7BFF"
+        fill="#006FFF"
         fillOpacity="0.36"
       />
       <rect
@@ -240,7 +240,7 @@ function DotGrid() {
         width="14"
         height="10"
         rx="2"
-        fill="#4B7BFF"
+        fill="#006FFF"
         fillOpacity="0.24"
       />
       <rect
@@ -249,7 +249,7 @@ function DotGrid() {
         width="14"
         height="10"
         rx="2"
-        fill="#4B7BFF"
+        fill="#006FFF"
         fillOpacity="0.78"
       />
       <rect
@@ -258,7 +258,7 @@ function DotGrid() {
         width="14"
         height="10"
         rx="2"
-        fill="#4B7BFF"
+        fill="#006FFF"
         fillOpacity="0.16"
       />
       <rect
@@ -267,7 +267,7 @@ function DotGrid() {
         width="14"
         height="10"
         rx="2"
-        fill="#4B7BFF"
+        fill="#006FFF"
         fillOpacity="0.42"
       />
       <rect
@@ -276,7 +276,7 @@ function DotGrid() {
         width="14"
         height="10"
         rx="2"
-        fill="#4B7BFF"
+        fill="#006FFF"
         fillOpacity="0.06"
       />
       <rect
@@ -285,7 +285,7 @@ function DotGrid() {
         width="14"
         height="10"
         rx="2"
-        fill="#4B7BFF"
+        fill="#006FFF"
         fillOpacity="0.2"
       />
       <rect
@@ -294,7 +294,7 @@ function DotGrid() {
         width="14"
         height="10"
         rx="2"
-        fill="#4B7BFF"
+        fill="#006FFF"
         fillOpacity="0.42"
       />
       <rect
@@ -303,7 +303,7 @@ function DotGrid() {
         width="14"
         height="10"
         rx="2"
-        fill="#4B7BFF"
+        fill="#006FFF"
         fillOpacity="0.24"
       />
       <rect
@@ -312,7 +312,7 @@ function DotGrid() {
         width="14"
         height="10"
         rx="2"
-        fill="#4B7BFF"
+        fill="#006FFF"
         fillOpacity="0.62"
       />
       <rect
@@ -321,7 +321,7 @@ function DotGrid() {
         width="14"
         height="10"
         rx="2"
-        fill="#4B7BFF"
+        fill="#006FFF"
         fillOpacity="0.12"
       />
       <rect
@@ -330,7 +330,7 @@ function DotGrid() {
         width="14"
         height="10"
         rx="2"
-        fill="#4B7BFF"
+        fill="#006FFF"
         fillOpacity="0.16"
       />
       <rect
@@ -339,7 +339,7 @@ function DotGrid() {
         width="14"
         height="10"
         rx="2"
-        fill="#4B7BFF"
+        fill="#006FFF"
         fillOpacity="0.06"
       />
       <rect
@@ -348,7 +348,7 @@ function DotGrid() {
         width="14"
         height="10"
         rx="2"
-        fill="#4B7BFF"
+        fill="#006FFF"
         fillOpacity="0.28"
       />
       <rect
@@ -357,7 +357,7 @@ function DotGrid() {
         width="14"
         height="10"
         rx="2"
-        fill="#4B7BFF"
+        fill="#006FFF"
         fillOpacity="0.08"
       />
       <rect
@@ -366,7 +366,7 @@ function DotGrid() {
         width="14"
         height="10"
         rx="2"
-        fill="#4B7BFF"
+        fill="#006FFF"
         fillOpacity="0.32"
       />
       <rect
@@ -375,7 +375,7 @@ function DotGrid() {
         width="14"
         height="10"
         rx="2"
-        fill="#4B7BFF"
+        fill="#006FFF"
         fillOpacity="0.06"
       />
     </svg>
@@ -392,13 +392,13 @@ function PersistentFollowUpSection() {
         <div className="flex flex-col gap-6 px-6 py-12 sm:flex-row sm:items-start sm:justify-between md:px-12 md:py-section-md">
           <h2>
             <span>Persistent </span>
-            <span className="text-[#4B7BFF]">Follow-Up</span>
+            <span className="text-[#006FFF]">Follow-Up</span>
           </h2>
           <div className="flex shrink-0 flex-col gap-1 sm:items-end">
             <span className="text-foreground block text-[16px] leading-[26px] tracking-[-0.01em] sm:text-right">
               Most teams stop too early.
             </span>
-            <span className="block [font-family:var(--font-caveat)] text-[16px] leading-6 font-bold tracking-[-0.02em] text-[#4B7BFF] underline">
+            <span className="block [font-family:var(--font-caveat)] text-[16px] leading-6 font-bold tracking-[-0.02em] text-[#006FFF] underline">
               AI doesn&apos;t.
             </span>
           </div>
@@ -449,7 +449,7 @@ function PersistentFollowUpSection() {
           </div>
         </div>
 
-        <div className="flex items-center justify-center bg-[#4B7BFF] py-6">
+        <div className="flex items-center justify-center bg-[#006FFF] py-6">
           <span className="text-[16px] leading-[26px] font-medium tracking-[-0.02em] text-white">
             No lead is forgotten.
           </span>

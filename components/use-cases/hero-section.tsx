@@ -7,7 +7,7 @@ function HeroSection() {
             Built for Teams That Depend on Inbound Demand
           </h2>
           <p className="max-w-[30em] text-center">
-            <span className="text-[#4B7BFF]">Structurely AI</span> supports any
+            <span className="text-[#006FFF]">Structurely AI</span> supports any
             organization where speed, qualification, and follow-up determine
             revenue.
           </p>

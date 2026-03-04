@@ -140,7 +140,7 @@ function WhoWeAreSection() {
                   response time, follow-up, and consistency directly affect
                   outcomes.
                 </p>
-                <p className="font-[family-name:var(--font-caveat)] text-[16px] leading-6 font-bold tracking-[-0.02em] text-[#4B7BFF]">
+                <p className="font-[family-name:var(--font-caveat)] text-[16px] leading-6 font-bold tracking-[-0.02em] text-[#006FFF]">
                   We are not new to this space.
                 </p>
               </div>

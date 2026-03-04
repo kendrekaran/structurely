@@ -115,7 +115,7 @@ function CheckIcon() {
     >
       <path
         d="M5.625 10.8854L8.25 13.5416L14.375 6.45831"
-        stroke="#4B7BFF"
+        stroke="#006FFF"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -153,7 +153,7 @@ export default function PricingCardsSection({
                         {plan.name}
                       </span>
                       {plan.popular && (
-                        <span className="rounded-[8px] bg-[#4B7BFF14] px-2 py-1 text-[12px] leading-4 text-[#4B7BFF]">
+                        <span className="rounded-[8px] bg-[#006FFF14] px-2 py-1 text-[12px] leading-4 text-[#006FFF]">
                           Popular
                         </span>
                       )}

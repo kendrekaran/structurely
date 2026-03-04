@@ -23,10 +23,10 @@ function CircleCheckIcon() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <circle cx="10" cy="10" r="9.25" stroke="#4B7BFF" strokeWidth="1.5" />
+      <circle cx="10" cy="10" r="9.25" stroke="#006FFF" strokeWidth="1.5" />
       <path
         d="M6.5 10L8.75 12.25L13.5 7.5"
-        stroke="#4B7BFF"
+        stroke="#006FFF"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -46,14 +46,14 @@ function ArrowRightIcon() {
     >
       <path
         d="M3.75 9H14.25"
-        stroke="#4B7BFF"
+        stroke="#006FFF"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M9 3.75L14.25 9L9 14.25"
-        stroke="#4B7BFF"
+        stroke="#006FFF"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"

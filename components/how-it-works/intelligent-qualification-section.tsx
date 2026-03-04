@@ -117,14 +117,14 @@ function IntelligentQualificationSection() {
                 >
                   <path
                     d="M7 6L12 11L17 6"
-                    stroke="#4B7BFF"
+                    stroke="#006FFF"
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
                   <path
                     d="M7 13L12 18L17 13"
-                    stroke="#4B7BFF"
+                    stroke="#006FFF"
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -150,7 +150,7 @@ function IntelligentQualificationSection() {
                   onClick={() => setSelectedIndex(index)}
                   className={`flex cursor-pointer items-center border-b px-8 py-8 transition-all duration-200 ${
                     selectedIndex === index
-                      ? "border-b-2 border-[#4B7BFF] bg-white sm:border-r sm:border-r-[#E5E7EB]"
+                      ? "border-b-2 border-[#006FFF] bg-white sm:border-r sm:border-r-[#E5E7EB]"
                       : "border-b border-[#E5E7EB] hover:bg-gray-50 sm:border-r sm:border-r-[#E5E7EB]"
                   }`}
                 >

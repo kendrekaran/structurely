@@ -16,7 +16,7 @@ function SalesforceIcon() {
         width="7"
         height="7"
         rx="1.5"
-        stroke="#4B7BFF"
+        stroke="#006FFF"
         strokeWidth="1.5"
       />
       <rect
@@ -25,7 +25,7 @@ function SalesforceIcon() {
         width="7"
         height="7"
         rx="1.5"
-        stroke="#4B7BFF"
+        stroke="#006FFF"
         strokeWidth="1.5"
       />
       <rect
@@ -34,7 +34,7 @@ function SalesforceIcon() {
         width="7"
         height="7"
         rx="1.5"
-        stroke="#4B7BFF"
+        stroke="#006FFF"
         strokeWidth="1.5"
       />
       <rect
@@ -43,7 +43,7 @@ function SalesforceIcon() {
         width="7"
         height="7"
         rx="1.5"
-        stroke="#4B7BFF"
+        stroke="#006FFF"
         strokeWidth="1.5"
       />
     </svg>
@@ -61,14 +61,14 @@ function MortgageIcon() {
     >
       <path
         d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z"
-        stroke="#4B7BFF"
+        stroke="#006FFF"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M9 22V12H15V22"
-        stroke="#4B7BFF"
+        stroke="#006FFF"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -88,7 +88,7 @@ function DedicatedAMIcon() {
     >
       <path
         d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
-        stroke="#4B7BFF"
+        stroke="#006FFF"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -97,21 +97,21 @@ function DedicatedAMIcon() {
         cx="9"
         cy="7"
         r="4"
-        stroke="#4B7BFF"
+        stroke="#006FFF"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M23 21v-2a4 4 0 0 0-3-3.87"
-        stroke="#4B7BFF"
+        stroke="#006FFF"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M16 3.13a4 4 0 0 1 0 7.75"
-        stroke="#4B7BFF"
+        stroke="#006FFF"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -131,7 +131,7 @@ function ChevronIcon() {
     >
       <path
         d="M6 12L10 8L6 4"
-        stroke="#4B7BFF"
+        stroke="#006FFF"
         strokeWidth="1.33333"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -172,7 +172,7 @@ export default function OnboardingSection() {
           <div className="flex flex-col gap-4 md:max-w-[55%]">
             <h2>
               Onboarding That Sets{" "}
-              <span className="text-[#4B7BFF]">You Up to Win</span>
+              <span className="text-[#006FFF]">You Up to Win</span>
             </h2>
             <p>
               Your onboarding fee isn&apos;t a setup cost — it&apos;s the

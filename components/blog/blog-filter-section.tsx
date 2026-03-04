@@ -31,7 +31,7 @@ function BlogFilterSection() {
                   onClick={() => setActiveCategory(category)}
                   className={`flex shrink-0 cursor-pointer items-center justify-center rounded-lg px-3 py-1.5 text-[14px] leading-[20px] tracking-[-0.01em] whitespace-nowrap transition-colors ${
                     activeCategory === category
-                      ? "bg-[#4B7BFF] text-[#FAFAFA]"
+                      ? "bg-[#006FFF] text-[#FAFAFA]"
                       : "hover:text-[#202020]"
                   }`}
                 >

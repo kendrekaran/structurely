@@ -10,7 +10,7 @@ function ProblemSection() {
               <Badge text="The Problem" />
               <h2 className="max-w-[14em] text-center">
                 Most teams don&apos;t lose deals because of{" "}
-                <span className="text-[#4B7BFF]">demand</span>
+                <span className="text-[#006FFF]">demand</span>
               </h2>
             </div>
             <p className="max-w-[27.375em] text-center">

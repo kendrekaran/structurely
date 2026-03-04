@@ -18,7 +18,7 @@ function ByTheNumbersSection() {
               </div>
             </div>
             <div className="grid grid-cols-1 divide-y divide-[#E5E7EB] sm:grid-cols-2 sm:divide-x sm:divide-y-0">
-              <div className="border-b-2 border-b-[#4B7BFF] py-8 px-8">
+              <div className="border-b-2 border-b-[#006FFF] py-8 px-8">
                 <p className="text-heading">
                   Thousands of sales professionals supported
                 </p>

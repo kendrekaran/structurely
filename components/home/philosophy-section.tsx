@@ -11,7 +11,7 @@ function PhilosophySection() {
             </div>
             <h2 className="max-w-[11em] text-center">
               Capacity Is the new competitive{" "}
-              <span className="text-[#4B7BFF]">advantage</span>
+              <span className="text-[#006FFF]">advantage</span>
             </h2>
           </div>
         </div>
@@ -37,7 +37,7 @@ function PhilosophySection() {
                 style={{ fontFamily: "var(--font-caveat), cursive" }}
               >
                 It should remove the friction that keeps them from performing at
-                their <span className="text-[#4B7BFF]">highest level.</span>
+                their <span className="text-[#006FFF]">highest level.</span>
               </div>
               <div className="max-w-[21.875rem] text-center text-[14px] leading-[22px] tracking-[-0.01em]">
                 Structurely exists to eliminate unfinished follow-up. so your

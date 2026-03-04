@@ -115,7 +115,7 @@ function CheckIcon() {
     >
       <path
         d="M3 8L6.5 11.5L13 5"
-        stroke="#4B7BFF"
+        stroke="#006FFF"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"

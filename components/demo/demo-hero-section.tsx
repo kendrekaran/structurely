@@ -9,7 +9,7 @@ function PhoneIcon() {
     >
       <path
         d="M3.5 4.5C3.5 4.5 4.5 3 6 3C7.5 3 8.5 5 8.5 5L9.5 7C9.5 7 10 8 9 8.5L8 9C8 9 7.5 9.5 8.5 11C9.5 12.5 10.5 13 11 13L11.5 12C12 11 13 11.5 13 11.5L15 12.5C15 12.5 17 13.5 17 15C17 16.5 15.5 17.5 15.5 17.5C14 18.5 11 18 8 15C5 12 4.5 9 3.5 7C2.5 5 3.5 4.5 3.5 4.5Z"
-        stroke="#4B7BFF"
+        stroke="#006FFF"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -29,14 +29,14 @@ function ChatIcon() {
     >
       <path
         d="M17 10C17 13.866 13.866 17 10 17C8.63 17 7.35 16.61 6.27 15.94L3 17L4.06 13.73C3.39 12.65 3 11.37 3 10C3 6.134 6.134 3 10 3C13.866 3 17 6.134 17 10Z"
-        stroke="#4B7BFF"
+        stroke="#006FFF"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M7 10H7.01M10 10H10.01M13 10H13.01"
-        stroke="#4B7BFF"
+        stroke="#006FFF"
         strokeWidth="2"
         strokeLinecap="round"
       />

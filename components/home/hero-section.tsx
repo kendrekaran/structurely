@@ -12,7 +12,7 @@ function HeroSection() {
 
               <h1 className="max-w-[11em] text-center">
                 AI platform that move the{" "}
-                <span className="text-[#4B7BFF]">right leads</span> forward
+                <span className="text-[#006FFF]">right leads</span> forward
               </h1>
 
               <p className="max-w-[38em] text-[18px] leading-[28px] tracking-[-0.01em] text-center">

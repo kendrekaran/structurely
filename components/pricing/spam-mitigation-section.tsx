@@ -18,7 +18,7 @@ export default function SpamMitigationSection() {
               </p>
             </div>
             <div className="flex shrink-0 flex-col items-end gap-1">
-              <span className="text-[36px] leading-[44px] font-medium tracking-[-0.03em] text-[#4B7BFF]">
+              <span className="text-[36px] leading-[44px] font-medium tracking-[-0.03em] text-[#006FFF]">
                 $8
               </span>
               <span className="text-[16px] leading-6 tracking-[-0.006em] text-[#646464]">
