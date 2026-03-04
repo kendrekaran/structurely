@@ -96,9 +96,9 @@ export default function FaqSection() {
         </div>
       </div>
 
-      <div className="border-t border-[#E5E7EB] bg-white">
+      <div className="border-t border-[#E5E7EB] ">
         <div className="px-global">
-          <div className="max-w-global py-section-md mx-auto border-x border-b border-[#E5E7EB]">
+          <div className="max-w-global bg-white py-section-md mx-auto border-x border-b border-[#E5E7EB]">
             <div className="mx-auto max-w-[44rem] divide-y divide-[#E5E7EB]">
               {faqs.map((faq, index) => {
                 const isOpen = openIndex === index;

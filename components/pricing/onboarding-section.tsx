@@ -165,16 +165,16 @@ export default function OnboardingSection() {
   return (
     <section
       id="onboarding"
-      className="relative z-0 border-t border-[#E5E7EB] bg-white"
+      className="relative z-0  "
     >
       <div className="px-global">
-        <div className="max-w-global py-section-md mx-auto flex flex-col gap-8 border-x border-[#E5E7EB] md:flex-row md:items-center md:justify-between">
-          <div className="flex flex-col gap-4 md:max-w-[55%]">
-            <h2>
+        <div className="max-w-global py-section-md px-[48px] mx-auto flex flex-col gap-8 border-x border-t border-[#E5E7EB] md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-col gap-3 md:max-w-[55%]">
+            <h2 className="max-w-[32em] text-[28px] leading-[36px] tracking-[-0.03em]">
               Onboarding That Sets{" "}
               <span className="text-[#006FFF]">You Up to Win</span>
             </h2>
-            <p>
+            <p className="max-w-[42em] text-[14px] leading-[24px] tracking-[-0.01em] ">
               Your onboarding fee isn&apos;t a setup cost — it&apos;s the
               foundation of your AI sales operation. We build your system,
               connect your tools, and pair you with a dedicated Account Manager
@@ -186,28 +186,28 @@ export default function OnboardingSection() {
             <span className="text-[36px] leading-[44px] font-medium tracking-[-0.03em] text-[#202020]">
               $2,500
             </span>
-            <span className="text-[16px] leading-6 text-[#646464]">One-time per account</span>
+            <span className="text-[16px] leading-[24px] tracking-[-0.006em] text-[#646464]">One-time per account</span>
           </div>
         </div>
       </div>
 
-      <div className="border-t border-b border-[#E5E7EB]">
+      <div className="">
         <div className="px-global">
-          <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
+          <div className="max-w-global bg-white mx-auto border-x border-t border-b  border-[#E5E7EB]">
             <div className="flex flex-col items-stretch md:flex-row">
               {features.map((feature, index) => (
                 <div key={index} className="flex flex-1 items-stretch">
-                  <div className="flex flex-1 flex-col items-center justify-center gap-5 px-6 py-10 md:px-12">
+                  <div className="flex flex-1 flex-col items-center justify-center gap-[24px] px-6 py-10 md:px-12">
                     <div
-                      className={`flex items-center justify-center rounded-[10px] bg-white p-3 ${cardShadow}`}
+                      className={`flex items-center justify-center w-[48px] h-[40px] rounded-[10px] bg-white px-[12px] py-[8px] ${cardShadow}`}
                     >
                       <feature.Icon />
                     </div>
-                    <div className="flex flex-col items-center gap-2 text-center">
-                      <span className="text-[15px] leading-5 font-medium tracking-[-0.01em] text-[#202020]">
+                    <div className="flex flex-col items-center gap-1 text-center">
+                      <span className="text-[16px] leading-[26px]  tracking-[-0.01em] text-[#202020]">
                         {feature.title}
                       </span>
-                      <span className="max-w-[18em] text-[13px] leading-5">
+                      <span className="max-w-[18em] text-[14px] leading-[24px] tracking-[-0.01em] font-light">
                         {feature.description}
                       </span>
                     </div>
@@ -217,7 +217,7 @@ export default function OnboardingSection() {
                     <div className="hidden flex-col items-center self-stretch md:flex">
                       <div className="w-px flex-1 bg-[#E5E7EB]" />
                       <div
-                        className={`flex items-center rounded-md bg-white p-1 ${cardShadow}`}
+                        className={`flex items-center rounded-[6px] bg-white p-1 ${cardShadow}`}
                       >
                         <ChevronIcon />
                       </div>

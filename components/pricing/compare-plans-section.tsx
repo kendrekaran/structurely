@@ -141,7 +141,9 @@ function CellContent({ value }: { value: CellValue }) {
   }
   return (
     <div className="flex justify-center">
-      <span className="text-[13px] leading-5">{value}</span>
+      <span className="text-[14px] leading-[20px] font-light tracking-[-0.01em]">
+        {value}
+      </span>
     </div>
   );
 }
@@ -150,10 +152,10 @@ export default function ComparePlansSection() {
   return (
     <section
       id="compare-plans"
-      className="relative z-0 border-t border-[#E5E7EB] bg-white"
+      className="relative z-0 border-t border-[#E5E7EB]"
     >
       <div className="px-global">
-        <div className="max-w-global py-section-md  mx-auto flex flex-col items-center gap-4 border-x border-[#E5E7EB]">
+        <div className="max-w-global py-section-md mx-auto flex flex-col items-center gap-4 border-x border-[#E5E7EB]">
           <h2 className="text-center">Compare Plans</h2>
           <p className="max-w-[28em] text-center">
             Turn your pipeline into closed loans — without hiring
@@ -161,22 +163,22 @@ export default function ComparePlansSection() {
         </div>
       </div>
 
-      <div className="px-global ">
+      <div className="px-global">
         <div className="max-w-global mx-auto border-x border-t border-[#E5E7EB]">
           <Table>
             <TableHeader>
-              <TableRow className="border-b border-[#E5E7EB] hover:bg-transparent">
-                <TableHead className="w-[32%] py-4 text-[13px] font-medium text-[#202020]" />
-                <TableHead className="py-4 text-center text-[13px] font-medium text-[#202020]">
+              <TableRow className="border-b border-[#E5E7EB] bg-[#FAFAFA] hover:bg-transparent">
+                <TableHead className="h-[52px] w-[32%] border-r border-[#E5E7EB] align-middle text-[14px] leading-[20px] font-medium tracking-[-0.01em] text-[#202020]" />
+                <TableHead className="h-[52px] border-r border-[#E5E7EB] text-center align-middle text-[14px] leading-[20px] font-medium tracking-[-0.01em] text-[#202020]">
                   Starter
                 </TableHead>
-                <TableHead className="bg-[#EEF5FF] py-4 text-center text-[13px] font-medium text-[#202020]">
+                <TableHead className="h-[52px] border-r border-[#E5E7EB] bg-[#EEF5FF] text-center align-middle text-[14px] leading-[20px] font-medium tracking-[-0.01em] text-[#202020]">
                   Growth
                 </TableHead>
-                <TableHead className="py-4 text-center text-[13px] font-medium text-[#202020]">
+                <TableHead className="h-[52px] border-r border-[#E5E7EB] text-center align-middle text-[14px] leading-[20px] font-medium tracking-[-0.01em] text-[#202020]">
                   Scale
                 </TableHead>
-                <TableHead className="py-4 text-center text-[13px] font-medium text-[#202020]">
+                <TableHead className="h-[52px] text-center align-middle text-[14px] leading-[20px] font-medium tracking-[-0.01em] text-[#202020]">
                   Enterprise
                 </TableHead>
               </TableRow>
@@ -186,21 +188,21 @@ export default function ComparePlansSection() {
               {features.map((feature) => (
                 <TableRow
                   key={feature.name}
-                  className="border-b border-[#E5E7EB] hover:bg-transparent"
+                  className="border-b border-[#E5E7EB] bg-white hover:bg-white"
                 >
-                  <TableCell className="py-4 text-[13px] leading-5 font-normal text-[#202020]">
+                  <TableCell className="h-[72px] min-h-[72px] border-r border-[#E5E7EB] align-middle text-[14px] leading-[20px] font-normal tracking-[-0.01em] text-[#202020]">
                     {feature.name}
                   </TableCell>
-                  <TableCell className="py-4">
+                  <TableCell className="h-[72px] min-h-[72px] border-r border-[#E5E7EB] align-middle">
                     <CellContent value={feature.starter} />
                   </TableCell>
-                  <TableCell className="bg-[#EEF5FF] py-4">
+                  <TableCell className="h-[72px] min-h-[72px] border-r border-[#E5E7EB] bg-[#EEF5FF] align-middle">
                     <CellContent value={feature.growth} />
                   </TableCell>
-                  <TableCell className="py-4">
+                  <TableCell className="h-[72px] min-h-[72px] border-r border-[#E5E7EB] align-middle">
                     <CellContent value={feature.scale} />
                   </TableCell>
-                  <TableCell className="py-4">
+                  <TableCell className="h-[72px] min-h-[72px] align-middle">
                     <CellContent value={feature.enterprise} />
                   </TableCell>
                 </TableRow>

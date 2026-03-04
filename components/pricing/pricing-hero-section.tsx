@@ -15,15 +15,15 @@ export default function PricingHeroSection({
   onBillingChange,
 }: PricingHeroSectionProps) {
   return (
-    <section id="pricing-hero" className="relative z-0 bg-white">
+    <section id="pricing-hero" className="relative z-0 ">
       <div className="px-global">
         <div className="max-w-global py-section-md pb-[32px] mx-auto flex flex-col items-center gap-10 border-x border-[#E5E7EB]">
           <div className="flex flex-col items-center gap-4">
             <Badge text="Pricing" />
-            <h2 className="max-w-[13em] text-center">
+            <h2 className="max-w-[15em] text-center">
               Your leads aren&apos;t going cold. They&apos;re being ignored.
             </h2>
-            <p className="max-w-[30em] text-center">
+            <p className="max-w-[30em] text-[18px] leading-[28px] tracking-[-0.01em] text-center">
               Work gets done. You only pay when it does.
             </p>
           </div>

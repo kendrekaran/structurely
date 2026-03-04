@@ -26,7 +26,7 @@ export default function Header() {
   const isCompanyActive = companyLinks.some((l) => l.href === pathname);
 
   return (
-    <header className="w-full bg-white ">
+    <header className="w-full  ">
       <div className="px-global border-b border-[#E5E7EB]">
         <div className="max-w-global  mx-auto flex py-[24px] items-center gap-8">
           <Link href="/" className="flex-shrink-0">

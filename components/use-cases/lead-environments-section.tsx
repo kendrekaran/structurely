@@ -1,3 +1,14 @@
+import Image from "next/image";
+
+const logos = [
+  { name: "Sierra Interactive", src: "/assets/home/companies/1.svg", width: 124, height: 40 },
+  { name: "RealGeeks", src: "/assets/home/companies/2.svg", width: 105, height: 40 },
+  { name: "CINC", src: "/assets/home/companies/3.svg", width: 76, height: 40 },
+  { name: "ValleyDreamTeam", src: "/assets/home/companies/4.svg", width: 160, height: 40 },
+  { name: "firepoint", src: "/assets/home/companies/5.svg", width: 100, height: 40 },
+  { name: "Winchoice", src: "/assets/home/companies/6.svg", width: 110, height: 40 },
+];
+
 const CHECK_ICON = (
   <svg
     width="20"
@@ -95,12 +106,36 @@ function LeadEnvironmentsSection() {
               </div>
             </div>
 
+            <div className="w-full border-t border-[#E5E7EB]">
+              <div className="flex items-center justify-center border-b border-[#E5E7EB] py-8">
+                <p className="text-center text-heading text-[1.25em] leading-[28px] tracking-[-0.01em] ">Trusted by industry leaders</p>
+              </div>
+              <div className="flex flex-wrap divide-x divide-[#EAEDF5]">
+                {logos.map((logo) => (
+                  <div
+                    key={logo.name}
+                    className="flex flex-1 basis-1/3 items-center justify-center px-8 py-5 sm:basis-1/6"
+                  >
+                    <Image
+                      src={logo.src}
+                      alt={logo.name}
+                      width={logo.width}
+                      height={logo.height}
+                      className="h-auto max-w-full opacity-60 grayscale"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+
             <div className="flex w-full items-center justify-center gap-3 bg-[#006FFF] px-6 py-5">
               <span className="text-[14px] leading-5 font-medium text-white">
                 See How It Works in Your Environment
               </span>
               {ARROW_ICON}
             </div>
+
+            
           </div>
         </div>
       </div>

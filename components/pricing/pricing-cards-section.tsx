@@ -132,7 +132,7 @@ export default function PricingCardsSection({
   billing,
 }: PricingCardsSectionProps) {
   return (
-    <section id="pricing-cards" className="relative z-0 bg-white">
+    <section id="pricing-cards" className="relative z-0 ">
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-b border-[#E5E7EB]">
           <div className="flex flex-col gap-2 p-2 lg:flex-row">
@@ -174,7 +174,7 @@ export default function PricingCardsSection({
                       </div>
                     )}
 
-                    <p className="text-[12px] font-light leading-6 tracking-[-0.12px] text-[#646464]">
+                    <p className="max-w-[14.64rem] text-[12px] font-light leading-6 tracking-[-0.12px] text-[#646464]">
                       {plan.description}
                     </p>
                   </div>

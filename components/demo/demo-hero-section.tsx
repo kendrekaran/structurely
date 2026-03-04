@@ -66,8 +66,8 @@ export default function DemoHeroSection() {
       id="demo-hero"
       className="relative z-0 border-b border-[#E5E7EB] bg-white"
     >
-      <div className="px-global pt-16 pb-0">
-        <div className="max-w-global mx-auto">
+      <div className="px-global">
+        <div className="max-w-global mx-auto border-x border-[#E5E7EB] pt-16 pb-0">
           <div className="flex flex-col items-center gap-4 pb-10 text-center">
             <h1 className="max-w-[10em]">Experience the AI.</h1>
             <p className="max-w-[34.44em] text-center">

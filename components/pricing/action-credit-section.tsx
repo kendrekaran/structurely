@@ -122,10 +122,10 @@ export default function ActionCreditSection() {
   return (
     <section
       id="action-credit"
-      className="relative z-0 border-t border-[#E5E7EB] bg-white"
+      className="relative z-0  "
     >
-      <div className="px-global">
-        <div className="max-w-global py-section-md mx-auto flex flex-col items-center gap-4 border-x border-[#E5E7EB]">
+      <div className="px-global ">
+        <div className="max-w-global border-t  py-section-md mx-auto flex flex-col items-center gap-3 border-x border-[#E5E7EB]">
           <h2 className="max-w-[12em] text-center">
             What is an <span className="text-[#006FFF]">Action Credit?</span>
           </h2>
@@ -135,10 +135,10 @@ export default function ActionCreditSection() {
         </div>
       </div>
 
-      <div className="border-t border-[#E5E7EB]">
+      <div className="">
         <div className="px-global ">
-          <div className="max-w-global py-10 mx-auto border-x border-[#E5E7EB]">
-            <p className="mx-auto max-w-[38em] text-center">
+          <div className="max-w-global py-[24px] border-t  mx-auto border-x border-[#E5E7EB]">
+            <p className="mx-auto text-[14px] leading-[20px] tracking-[-0.01em] max-w-[38em] text-center">
               Every time Structurely works on your behalf — chasing documents,
               following up with a lead, or prequalifying a borrower — it spends
               Action Credits.
@@ -147,23 +147,23 @@ export default function ActionCreditSection() {
         </div>
       </div>
 
-      <div className="border-t border-b border-[#E5E7EB]">
+      <div className="">
         <div className="px-global">
-          <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
+          <div className="max-w-global mx-auto border-t border-b border-x border-[#E5E7EB]">
             <div className="flex items-stretch">
               {credits.map((credit, index) => (
                 <div key={index} className="flex flex-1 items-stretch">
-                  <div className="flex flex-1 flex-col items-center justify-center gap-5 px-6 py-10 md:px-12">
+                  <div className="flex flex-1 flex-col items-center justify-center gap-[24px] px-6 py-10 md:px-12">
                     <div
-                      className={`flex items-center justify-center rounded-[10px] bg-white p-3 ${cardShadow}`}
+                      className={`flex items-center justify-center w-[48px] h-[40px] rounded-[10px] bg-white px-[12px] py-[8px] ${cardShadow}`}
                     >
                       <credit.Icon />
                     </div>
                     <div className="flex flex-col items-center gap-1 text-center">
-                      <span className="text-[16px] leading-6 font-medium tracking-[-0.01em] text-[#202020]">
+                      <span className="text-[16px] leading-[24px]  tracking-[-0.01em] text-[#202020]">
                         1 Credit
                       </span>
-                      <span className="text-[13px] leading-5">
+                      <span className="text-[14px] leading-[24px] tracking-[-0.01em] font-light ">
                         {credit.label}
                       </span>
                     </div>
