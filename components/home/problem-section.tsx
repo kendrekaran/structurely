@@ -5,8 +5,8 @@ function ProblemSection() {
     <section id="problem" className="relative z-0">
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
-          <div className="flex flex-col items-center gap-3  py-section-md">
-            <div className="flex flex-col items-center gap-4">
+          <div className="flex flex-col items-center px-[12px] md:px-0 gap-3  py-section-md">
+            <div className="flex flex-col items-center gap-3 md:gap-4">
               <Badge text="The Problem" />
               <h2 className="max-w-[14em] text-center">
                 Most teams don&apos;t lose deals because of{" "}

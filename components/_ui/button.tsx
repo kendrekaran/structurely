@@ -4,14 +4,14 @@ import type { ButtonHTMLAttributes } from "react";
 import Image from "next/image";
 
 const buttonVariants = cva(
-  "font-medium leading-[20px] whitespace-nowrap transition-all active:scale-[0.98] cursor-pointer",
+  "font-medium leading-[20px] w-full flex items-center justify-center md:justify-start sm:w-auto whitespace-nowrap transition-all active:scale-[0.98] cursor-pointer",
   {
     variants: {
       variant: {
         primary:
-          "px-3 py-1.5 sm:px-[20px] sm:py-[12px]  rounded-[12px] bg-[#006FFF] border border-[#006FFF] text-white",
+          "px-3 sm:px-[20px] py-[12px]  rounded-[12px] bg-[#006FFF] border border-[#006FFF] text-white",
         secondary:
-          "px-3 py-1.5 sm:px-[20px] sm:py-[12px]  rounded-[12px] bg-white text-[#202020] shadow-[0px_24px_24px_-12px_#3333330D,0px_12px_12px_-6px_#3333330D,0px_6px_6px_-3px_#3333330D,0px_3px_3px_-1.5px_#3333330D,0px_1px_1px_-0.5px_#3333330D,0px_0px_0px_1px_#00000014]",
+          "px-3 py-1.5 sm:px-[20px] py-[12px]  rounded-[12px] bg-white text-[#202020] shadow-[0px_24px_24px_-12px_#3333330D,0px_12px_12px_-6px_#3333330D,0px_6px_6px_-3px_#3333330D,0px_3px_3px_-1.5px_#3333330D,0px_1px_1px_-0.5px_#3333330D,0px_0px_0px_1px_#00000014]",
         outline:
           "rounded-[10px] py-[8px] px-[18px] border border-[#006FFF] text-[#006FFF] bg-transparent",
       },

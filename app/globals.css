@@ -85,7 +85,7 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
   --max-width-global: 76.25rem;
-  --padding-global: 1rem;
+  --padding-global: 12px;
   --padding-section-md: 2rem;
 }
 .dark {
@@ -163,12 +163,12 @@
 
   h1,
   .h1-style {
-    @apply text-[min(40px,10vw)] leading-[68px] font-normal tracking-[-0.04em] sm:text-[48px] md:text-[60px];
+    @apply text-[min(48px,14vw)] leading-[1.1666666666666667] md:leading-[68px] font-normal tracking-[-0.04em] sm:text-[48px] md:text-[60px];
   }
 
   h2,
   .h2-style {
-    @apply text-[min(36px,8vw)] font-medium leading-[54px] tracking-[-0.03em] sm:text-[48px] md:text-[48px];
+    @apply text-[min(32px,14vw)] font-medium leading-[1.25] tracking-[-0.02em] md:leading-[54px] md:tracking-[-0.03em] sm:text-[48px] md:text-[48px];
   }
 
   h3,
