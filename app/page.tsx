@@ -9,11 +9,14 @@ import SolutionSection from "@/components/home/solution-section";
 import SolutionIntroSection from "@/components/home/solution-intro-section";
 import SolutionOutcomesSection from "@/components/home/solution-outcomes-section";
 import ProductsSection from "@/components/home/products-section";
+import ProductsIntroSection from "@/components/home/products-intro-section";
 import TrustedSection from "@/components/home/trusted-section";
+import TrustedIntroSection from "@/components/home/trusted-intro-section";
 import PhilosophySection from "@/components/home/philosophy-section";
 import CtaSection from "@/components/_common/cta-section";
 import Separator from "@/components/_ui/separator";
 import InboundDemandSection from "@/components/home/inbound-section";
+import PhilosophyIntroSection from "@/components/home/philosophy-intro-section";
 
 export default function Home() {
   return (
@@ -36,9 +39,18 @@ export default function Home() {
         <Separator />
         <SolutionOutcomesSection />
         <Separator />
+        <ProductsIntroSection />
+        <Separator />
         <ProductsSection />
+        <Separator />
+        <TrustedIntroSection />
+        <Separator />
         <TrustedSection />
+        <Separator />
+        <PhilosophyIntroSection />
+        <Separator />
         <PhilosophySection />
+        <Separator />
         <CtaSection />
       </main>
     </>

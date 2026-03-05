@@ -55,18 +55,6 @@ function TrustedSection() {
     <section id="trusted" className="relative z-0">
       <div className="px-global">
         <div className="max-w-global mx-auto flex flex-col items-stretch border-x border-[#E5E7EB]">
-          <div className="px-global  flex flex-col items-center gap-4  py-section-md">
-            <div className="proof-badge flex items-center rounded-lg bg-white px-4 py-2 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05)]">
-              <span className="text-[12px] leading-4 font-medium text-[var(--foreground)]">
-                Proof
-              </span>
-            </div>
-            <h2 className="max-w-[17em] text-center">
-              Trusted by <span className="text-[var(--primary)]">leading</span>{" "}
-              teams across sales-driven industries
-            </h2>
-          </div>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
             {allLogos.map((logo, i) => {
               const col = i % 3;
@@ -80,7 +68,7 @@ function TrustedSection() {
                   key={logo.name}
                   onClick={() => setActiveIndex(i)}
                   className={[
-                    "flex cursor-pointer items-center justify-center px-10 py-section-md transition-colors duration-200",
+                    "py-section-md flex cursor-pointer items-center justify-center px-10 transition-colors duration-200",
                     isActive ? "bg-white" : "",
                     "",
                     smCol === 0 ? "sm:border-border sm:border-r" : "",
@@ -88,6 +76,8 @@ function TrustedSection() {
                       ? "md:border-border md:border-r"
                       : "md:border-r-0",
                     col === 0 && smCol !== 0 ? "sm:border-r-0" : "",
+                    i < 2 ? "sm:border-border sm:border-b" : "",
+                    i < 3 ? "md:border-border md:border-b" : "",
                   ]
                     .filter(Boolean)
                     .join(" ")}
