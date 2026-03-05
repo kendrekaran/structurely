@@ -2,11 +2,13 @@ export default function DemoGraphicSection() {
   return (
     <section id="demo-graphic" className="relative z-0">
       <div className="px-global">
-        <div className="max-w-global mx-auto border-x border-[#E5E7EB] py-10">
-          <div className="flex h-[320px] w-full items-center justify-center rounded-xl border border-[#E5E7EB] bg-white md:h-[400px]">
-            <span className="text-[14px] leading-5 tracking-[-0.01em]">
-              Graphic
-            </span>
+        <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
+          <div className="p-3">
+            <div className="flex h-[365px] w-full items-center justify-center bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.08)]">
+              <span className="text-sm leading-5 tracking-[-0.01em]">
+                Graphic
+              </span>
+            </div>
           </div>
         </div>
       </div>

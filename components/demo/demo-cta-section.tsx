@@ -7,14 +7,16 @@ export default function DemoCtaSection() {
       className="relative z-0 border-b border-[#E5E7EB] bg-white"
     >
       <div className="px-global">
-        <div className="max-w-global mx-auto flex flex-col items-center gap-8 border-x border-[#E5E7EB] py-10">
-          <div className="flex flex-col items-center gap-2 text-center">
-            <div className="text-[14px] leading-5 tracking-[-0.01em]">
+        <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
+          <div className="flex flex-col items-center gap-3 border-t border-[#E5E7EB] px-6 py-6 text-center md:px-24">
+            <p className="text-[14px] leading-[20px] ">
               This is not a{" "}
-              <span className="text-[#202020]">scripted demo.</span>
-            </div>
+              <span className="text-[14px] leading-[20px] text-heading">
+                scripted demo.
+              </span>
+            </p>
             <div
-              className="text-[28px] leading-[36px] text-[#202020] sm:text-[32px]"
+              className="text-base font-bold leading-6 tracking-[-0.02em] text-[#202020]"
               style={{ fontFamily: "var(--font-caveat)" }}
             >
               You are interacting with the{" "}
@@ -22,13 +24,11 @@ export default function DemoCtaSection() {
             </div>
           </div>
 
-          <div className="h-px w-full bg-[#E5E7EB]" />
-
-          <div className="flex flex-col items-center gap-3 sm:flex-row">
+          <div className="flex items-center justify-center gap-4 border-t border-[#E5E7EB] px-6 py-6 md:px-24">
             <Button variant="primary" size="md">
               Try the Live Demo
             </Button>
-            <Button variant="secondary" size="md">
+            <Button variant="secondary" size="md" className="text-foreground">
               Schedule a Guided Demo
             </Button>
           </div>
