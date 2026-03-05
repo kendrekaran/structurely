@@ -87,32 +87,8 @@ function ConsequenceSection() {
               )}
             </div>
           ))}
-
-          <div className="relative flex flex-col items-center justify-center gap-8 overflow-hidden  bg-white px-6 py-12 md:px-24">
-            <div
-              className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-              style={{ backgroundImage: "url('/assets/home/cta/cta.png')" }}
-            />
-            <div className="relative z-10 flex flex-col items-center gap-1">
-              <span
-                className="text-center text-[24px] leading-[32px] tracking-[-0.02em]"
-                style={{ color: "#646464" }}
-              >
-                Inbound demand doesn&apos;t fail.
-              </span>
-              <span
-                className="text-center text-[24px] leading-[32px] tracking-[-0.02em]"
-                style={{ color: "#202020" }}
-              >
-                Execution does.
-              </span>
-            </div>
-            <div className="relative z-10">
-              <Button variant="primary" size="md">
-                Request Demo
-              </Button>
-            </div>
-          </div>
+         
+          
         </div>
       </div>
     </section>
