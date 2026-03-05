@@ -25,11 +25,17 @@ export default function PricingPage() {
       <Separator />
       <PricingCardsSection billing={billing} />
       <PricingAddonSection />
+      <Separator />
       <ActionCreditSection />
+      <Separator />
       <OnboardingSection />
+      <Separator />
       <PilotSection />
+      <Separator />
       <ComparePlansSection />
+      <Separator />
       <FaqSection />
+      <Separator />
       <SpamMitigationSection />
     </main>
   );

@@ -1,6 +1,6 @@
 import { div } from "motion/react-client";
 import Image from "next/image";
-import Badge from "@/components/_ui/badge";
+import LeadCaptureHeader from "./lead-capture-header";
 
 const leadSources = [
   { label: "Web form", icon: "/assets/how-it-works/logo/9.svg" },
@@ -18,24 +18,13 @@ function LeadCaptureSection() {
     <div className="px-global">
       <section
         id="lead-capture"
-        className="max-w-global relative z-0 mx-auto flex flex-col items-center border-x border-b border-[#E5E7EB]"
+        className="max-w-global relative z-0 mx-auto flex flex-col items-center border-x "
       >
-        <div className="py-section-md flex w-full flex-col items-center justify-center gap-3">
-          <div className="flex w-full max-w-[46.375em] flex-col items-center gap-4">
-            <Badge text="Lead Capture" />
-
-            <h2 className="max-w-[11.08em] text-center">
-            Structurely AI activates instantly.
-              
-            </h2>
-          </div>
-        </div>
-
-        <div className="flex w-full items-stretch overflow-x-auto border-t border-b border-[var(--border)]">
+        <div className="flex w-full items-stretch overflow-x-auto  border-b border-[var(--border)]">
           {leadSources.map((source, index) => (
             <div
               key={source.label}
-              className={`flex min-w-[120px] flex-1 flex-col items-center justify-center gap-6 px-8 py-8 ${
+              className={`flex min-w-[120px]   flex-1 flex-col items-center justify-center gap-6 px-8 py-8 ${
                 index < leadSources.length - 1
                   ? "border-r border-[var(--border)]"
                   : ""
@@ -58,14 +47,12 @@ function LeadCaptureSection() {
 
         <div className="flex flex-col items-center gap-1 px-6 py-[24px] text-center">
           <p className="text-sm leading-5">
-            <strong className="  text-[var(--heading)]">
-              Structurely AI 3
-            </strong>{" "}
+            <span className="text-[var(--heading)]">Structurely AI 3</span>{" "}
             <span className="text-[var(--foreground)]">
               activates instantly.
             </span>
           </p>
-          <p className="text-sm leading-5 font-bold italic">
+          <p className="text-sm leading-5  italic">
             <span className="cursue text-[var(--primary)]">No delay.</span>{" "}
             <span className="text-[var(--heading)]">
               No rep assignment required.

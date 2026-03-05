@@ -41,10 +41,10 @@ export default function PricingAddonSection() {
   return (
     <section
       id="pricing-addon"
-      className="relative z-0 border-t border-[#E5E7EB] "
+      className="relative z-0  "
     >
       <div className="px-global">
-        <div className="max-w-global mx-auto flex flex-col border-x border-b border-[#E5E7EB] lg:flex-row">
+        <div className="max-w-global mx-auto flex flex-col border-x  border-[#E5E7EB] lg:flex-row">
           <div className="px-global py-section-md flex flex-1 flex-col gap-8">
             <div className="self-start">
             <Badge text="Beta — Salesforce Add-on" />

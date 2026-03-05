@@ -231,7 +231,7 @@ function OverviewProblemSection() {
                 ))}
               </div>
 
-              <div className="flex w-full flex-col items-center gap-3 border-b border-[#E5E7EB] px-6 py-6">
+              <div className="flex w-full flex-col items-center gap-3  px-6 py-6">
                 <p className="max-w-[33.43em] text-center text-[14px] leading-5 tracking-[-0.01em]">
                   Revenue is lost in the gap between inquiry and engagement.
                 </p>

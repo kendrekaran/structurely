@@ -1,3 +1,5 @@
+import Separator from "../_ui/separator";
+
 const syncItems = [
   {
     icon: "/assets/how-it-works/footer-logo/1.svg",
@@ -57,7 +59,10 @@ function CrmSynchronizationSection() {
           </div>
         </div>
 
-        <div className="flex items-center border-t border-b border-[#E5E7EB] overflow-x-auto">
+        <div className="w-screen ml-[calc(50%-50vw)] mr-[calc(50%-50vw)]">
+          <Separator />
+        </div>
+        <div className="flex items-center  border-b border-[#E5E7EB] overflow-x-auto">
           {syncItems.map((item, index) => (
             <div key={item.label} className="flex items-center flex-1 min-w-[120px]">
               <div className="flex flex-col justify-center items-center gap-6 flex-1 px-6 md:px-12 py-8">

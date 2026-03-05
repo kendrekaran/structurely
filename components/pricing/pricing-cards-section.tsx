@@ -134,7 +134,7 @@ export default function PricingCardsSection({
   return (
     <section id="pricing-cards" className="relative z-0 ">
       <div className="px-global">
-        <div className="max-w-global mx-auto border-x border-b border-[#E5E7EB]">
+        <div className="max-w-global mx-auto border-x  border-[#E5E7EB]">
           <div className="flex flex-col gap-2 p-2 lg:flex-row">
             {plans.map((plan) => (
               <div

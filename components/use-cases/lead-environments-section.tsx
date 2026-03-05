@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Separator from "../_ui/separator";
 
 const logos = [
   { name: "Sierra Interactive", src: "/assets/home/companies/1.svg", width: 124, height: 40 },
@@ -90,6 +91,10 @@ function LeadEnvironmentsSection() {
               </div>
             </div>
 
+            <div className="w-screen ml-[calc(50%-50vw)] mr-[calc(50%-50vw)]">
+              <Separator />
+            </div>
+
             <div className="w-full ">
               <div className="px-global flex flex-wrap justify-center gap-3 py-6">
                 {conditions.map((condition) => (
@@ -106,7 +111,12 @@ function LeadEnvironmentsSection() {
               </div>
             </div>
 
-            <div className="w-full border-t border-[#E5E7EB]">
+            <div className="w-screen ml-[calc(50%-50vw)] mr-[calc(50%-50vw)]">
+              <Separator />
+            </div>
+
+
+            <div className="w-full ">
               <div className="flex items-center justify-center border-b border-[#E5E7EB] py-8">
                 <p className="text-center text-heading text-[1.25em] leading-[28px] tracking-[-0.01em] ">Trusted by industry leaders</p>
               </div>

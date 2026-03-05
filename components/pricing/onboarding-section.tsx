@@ -168,7 +168,7 @@ export default function OnboardingSection() {
       className="relative z-0  "
     >
       <div className="px-global">
-        <div className="max-w-global py-section-md px-[48px] mx-auto flex flex-col gap-8 border-x border-t border-[#E5E7EB] md:flex-row md:items-center md:justify-between">
+        <div className="max-w-global py-section-md px-[48px] mx-auto flex flex-col gap-8 border-x  border-[#E5E7EB] md:flex-row md:items-center md:justify-between">
           <div className="flex flex-col gap-3 md:max-w-[55%]">
             <h2 className="max-w-[32em] text-[28px] leading-[36px] tracking-[-0.03em]">
               Onboarding That Sets{" "}
@@ -193,7 +193,7 @@ export default function OnboardingSection() {
 
       <div className="">
         <div className="px-global">
-          <div className="max-w-global bg-white mx-auto border-x border-t border-b  border-[#E5E7EB]">
+          <div className="max-w-global bg-white mx-auto border-x border-t  border-[#E5E7EB]">
             <div className="flex flex-col items-stretch md:flex-row">
               {features.map((feature, index) => (
                 <div key={index} className="flex flex-1 items-stretch">

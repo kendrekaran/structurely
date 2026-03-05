@@ -38,7 +38,7 @@ function CrmIntegrationSection() {
     <div className="px-global">
       <section
         id="crm-integration"
-        className="max-w-global mx-auto flex flex-col items-start border-x border-b border-[#E5E7EB]"
+        className="max-w-global mx-auto flex flex-col items-start border-x  border-[#E5E7EB]"
       >
         <div className="flex flex-col items-center justify-center gap-4 self-stretch px-6 py-section-md md:px-24">
           <Badge text="CRM Integration" />
@@ -51,7 +51,7 @@ function CrmIntegrationSection() {
         <div className="flex items-center justify-center self-stretch border-t border-[#E5E7EB] bg-[#ffffff] px-6 py-[24px]  md:px-24">
           <p className="text-center text-[14px] leading-6 md:text-[16px]">
             <span className="font-medium text-[#006FFF]">
-              Structurely AI 3 works
+              Structurely AI works
             </span>{" "}
             inside your existing system.
           </p>

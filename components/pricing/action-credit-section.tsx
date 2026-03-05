@@ -125,7 +125,7 @@ export default function ActionCreditSection() {
       className="relative z-0  "
     >
       <div className="px-global ">
-        <div className="max-w-global border-t  py-section-md mx-auto flex flex-col items-center gap-3 border-x border-[#E5E7EB]">
+        <div className="max-w-global   py-section-md mx-auto flex flex-col items-center gap-3 border-x border-[#E5E7EB]">
           <h2 className="max-w-[12em] text-center">
             What is an <span className="text-[#006FFF]">Action Credit?</span>
           </h2>

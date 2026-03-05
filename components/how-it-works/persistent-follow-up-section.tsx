@@ -449,11 +449,6 @@ function PersistentFollowUpSection() {
           </div>
         </div>
 
-        <div className="flex items-center justify-center bg-[#006FFF] py-6">
-          <span className="text-[14px] leading-[26px] font-regular tracking-[-0.02em] text-white">
-            No lead is forgotten.
-          </span>
-        </div>
       </section>
     </div>
   );

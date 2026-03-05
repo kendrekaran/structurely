@@ -27,7 +27,7 @@ function OutcomesSection() {
           </h2>
         </div>
 
-        <div className="flex w-full flex-wrap justify-center gap-3 border-t border-b border-[#E5E7EB] bg-[#FAFAFA] px-6 py-6 md:flex-nowrap md:justify-between">
+        <div className="flex w-full flex-wrap justify-center gap-3 border-t  border-[#E5E7EB] bg-[#FAFAFA] px-6 py-6 md:flex-nowrap md:justify-between">
           {outcomeItems.map((item) => (
             <div
               key={item}

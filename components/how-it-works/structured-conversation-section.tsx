@@ -37,7 +37,7 @@ function StructuredConversationSection() {
     <div className="px-global">
       <section
         id="structured-conversation"
-        className="max-w-global relative z-0 mx-auto border-x border-b border-[#E5E7EB]"
+        className="max-w-global relative z-0 mx-auto border-x "
       >
         <div className="max-w-global mx-auto flex flex-col md:flex-row">
           <div className="flex flex-1 flex-col justify-center gap-6 border-b border-[#E5E7EB] p-8 md:border-r md:border-b-0 md:p-12">

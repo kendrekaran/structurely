@@ -13,7 +13,7 @@ const channels = [
 function MultiChannelSection() {
   return (
     <div className="px-global ">
-      <section id="multi-channel" className="max-w-global mx-auto border-x border-b border-border relative z-0">
+      <section id="multi-channel" className="max-w-global mx-auto border-x  border-border relative z-0">
         <div className="pt-section-md">
           <div className="">
             <div className="flex flex-col items-center">

@@ -1,3 +1,5 @@
+import Separator from "../_ui/separator";
+
 const industries = [
   {
     title: "Mortgage & Lending",
@@ -81,26 +83,37 @@ function IndustriesSection() {
   return (
     <section id="industries" className="relative z-0">
       <div className="px-global">
-        <div className="max-w-global mx-auto border-x border-b border-[#E5E7EB]">
-          <div className="grid grid-cols-1  md:grid-cols-2">
-            {industries.map((industry, idx) => (
-              <div
-                key={idx}
-                className={[
-                  "border-[#E5E7EB]",
-                  idx % 2 === 0 ? "md:border-r" : "",
-                  idx < 2 ? "md:border-b" : "",
-                  idx < industries.length - 1 ? "border-b md:border-b-0" : "",
-                ]
-                  .join(" ")
-                  .trim()}
-              >
-                <IndustryCard
-                  title={industry.title}
-                  features={industry.features}
-                />
-              </div>
-            ))}
+        <div className="max-w-global mx-auto border-x ">
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            <div className="md:border-r border-[#E5E7EB]">
+              <IndustryCard
+                title={industries[0].title}
+                features={industries[0].features}
+              />
+            </div>
+            <div className="border-b md:border-b-0 border-[#E5E7EB]">
+              <IndustryCard
+                title={industries[1].title}
+                features={industries[1].features}
+              />
+            </div>
+          </div>
+          <div className="w-screen ml-[calc(50%-50vw)] mr-[calc(50%-50vw)]">
+            <Separator />
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            <div className="md:border-r border-[#E5E7EB]">
+              <IndustryCard
+                title={industries[2].title}
+                features={industries[2].features}
+              />
+            </div>
+            <div>
+              <IndustryCard
+                title={industries[3].title}
+                features={industries[3].features}
+              />
+            </div>
           </div>
         </div>
       </div>

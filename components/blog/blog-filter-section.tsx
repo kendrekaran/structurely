@@ -22,7 +22,7 @@ function BlogFilterSection() {
   return (
     <section id="blog-filter" className="relative z-0">
       <div className="px-global">
-        <div className="max-w-global mx-auto border-x border-y border-[#E5E7EB] bg-white">
+        <div className="max-w-global mx-auto border-x  border-[#E5E7EB] bg-white">
           <div className="flex h-[52px] items-center">
             <div className="scrollbar-none flex flex-1 items-center gap-2 overflow-x-auto">
               {categories.map((category) => (

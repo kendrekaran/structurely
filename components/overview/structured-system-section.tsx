@@ -27,7 +27,7 @@ function StructuredSystemSection() {
     <div className="px-global">
       <section
         id="structured-system"
-        className="max-w-global relative mx-auto flex flex-col items-start border-x border-b-2 border-[#E5E7EB] border-b-[#006FFF]"
+        className="max-w-global relative mx-auto flex flex-col items-start border-x border-[#E5E7EB] "
       >
         <div className="py-section-md flex flex-col items-center justify-center gap-3 self-stretch px-6 md:px-24">
           <div className="flex w-full max-w-[46.375em] flex-col items-center justify-center gap-4">

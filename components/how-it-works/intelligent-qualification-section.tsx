@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Badge from "@/components/_ui/badge";
+import Separator from "../_ui/separator";
 
 const routingOptions = [
   "Books appointments",
@@ -90,8 +91,10 @@ function IntelligentQualificationSection() {
                 AI evaluates in real time
               </span>
             </div>
-
-            <div className="flex w-full flex-wrap justify-center gap-6 border-t border-[#E5E7EB] bg-[#FAFAFA] px-6 py-6">
+            <div className="w-screen">
+            <Separator />
+            </div>
+            <div className="flex w-full flex-wrap justify-center gap-6  border-[#E5E7EB] bg-[#FAFAFA] px-6 py-6">
               {signals.map((signal) => (
                 <div
                   key={signal.label}
@@ -151,7 +154,7 @@ function IntelligentQualificationSection() {
                   className={`flex cursor-pointer items-center border-b px-8 py-8 transition-all duration-200 ${
                     selectedIndex === index
                       ? "border-b-2 border-[#006FFF] bg-white sm:border-r sm:border-r-[#E5E7EB]"
-                      : "border-b border-[#E5E7EB] hover:bg-gray-50 sm:border-r sm:border-r-[#E5E7EB]"
+                      : " hover:bg-gray-50 sm:border-r sm:border-r-[#E5E7EB]"
                   }`}
                 >
                   <span

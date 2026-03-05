@@ -152,7 +152,7 @@ export default function ComparePlansSection() {
   return (
     <section
       id="compare-plans"
-      className="relative z-0 border-t border-[#E5E7EB]"
+      className="relative z-0 "
     >
       <div className="px-global">
         <div className="max-w-global py-section-md mx-auto flex flex-col items-center gap-4 border-x border-[#E5E7EB]">

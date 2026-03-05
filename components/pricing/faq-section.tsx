@@ -88,7 +88,7 @@ export default function FaqSection() {
   };
 
   return (
-    <section id="faq" className="relative z-0 border-t border-[#E5E7EB]">
+    <section id="faq" className="relative z-0 ">
       <div className="bg-background px-global">
         <div className="max-w-global py-section-md mx-auto flex flex-col items-center gap-3 border-x border-[#E5E7EB]">
           <h2 className="text-center">FAQ</h2>
@@ -96,9 +96,9 @@ export default function FaqSection() {
         </div>
       </div>
 
-      <div className="border-t border-[#E5E7EB] ">
+      <div className=" ">
         <div className="px-global">
-          <div className="max-w-global bg-white py-section-md mx-auto border-x border-b border-[#E5E7EB]">
+          <div className="max-w-global border-t  bg-white py-section-md mx-auto border-x border-[#E5E7EB]">
             <div className="mx-auto max-w-[44rem] divide-y divide-[#E5E7EB]">
               {faqs.map((faq, index) => {
                 const isOpen = openIndex === index;
