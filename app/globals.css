@@ -176,9 +176,9 @@
     @apply text-[min(17.5px,4.85vw)] leading-[28px] tracking-[-0.01em] sm:text-[20px] md:text-[20px];
   }
 
-  p,
+  p, 
   .p-style {
-    @apply text-[16px] leading-[26px] tracking-[-0.01em] md:text-[16px];
+    @apply  text-[14px] leading-[1.4285714285714286] md:leading-[26px] tracking-[-0.01em] md:text-[16px];
     color: var(--foreground);
   }
 
