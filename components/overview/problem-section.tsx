@@ -181,16 +181,43 @@ const ChevronBadge = () => (
   </div>
 );
 
+const ChevronDownBadge = () => (
+  <div className="flex items-center gap-2 overflow-hidden rounded-md bg-white p-1 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
+    <svg
+      width="15"
+      height="15"
+      viewBox="0 0 15 15"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M4.19995 3.6001L7.19995 6.6001L10.2 3.6001"
+        stroke="#006FFF"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M4.19995 7.80029L7.19995 10.8003L10.2 7.80029"
+        stroke="#006FFF"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  </div>
+);
+
 function OverviewProblemSection() {
   return (
     <section id="overview-problem" className="relative z-0">
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
           <div className="flex flex-col items-center">
-            <div className=" py-[24px] md:py-section-md  flex w-full flex-col items-center gap-3 md:gap-4 px-3 md:px-6">
+            <div className="md:py-section-md flex w-full flex-col items-center gap-3 px-3 py-[24px] md:gap-4 md:px-6">
               <div className="flex flex-col items-center gap-4">
                 <Badge text="The Problem" />
-                <h2 className="max-w-[11em]  text-center">
+                <h2 className="max-w-[11em] text-center">
                   Inbound Volume Is Not the Issue.{" "}
                   <span className="text-[#006FFF]">Follow-Up</span> Is.
                 </h2>
@@ -207,15 +234,16 @@ function OverviewProblemSection() {
                 </span>
               </div>
 
-              <div className="flex w-full flex-col items-stretch divide-y divide-[#E5E7EB] border-y border-b-0 md:border-b border-[#E5E7EB] md:flex-row md:divide-y-0">
+              <div className="flex w-full flex-col items-stretch divide-y divide-[#E5E7EB] border-y border-b-0 border-[#E5E7EB] md:flex-row md:divide-y-0 md:border-b">
                 {problems.map((problem, index) => (
                   <div
                     key={problem.label}
                     className={[
-                      "relative flex flex-1 flex-col items-center justify-center gap-4 md:gap-6 px-12 py-6 md:py-8 transition-colors duration-200 hover:bg-black/[0.03]",
+                      "relative flex flex-1 flex-col items-center justify-center gap-4 px-12 py-6 transition-colors duration-200 hover:bg-black/[0.03] md:gap-6 md:py-8",
                       index < problems.length - 1
-                        ? "md:border-r md:border-[#E5E7EB]"
+                        ? "pb-9 md:border-r md:border-[#E5E7EB] md:pb-8"
                         : "",
+                      index > 0 ? "pt-9 md:pt-8" : "",
                     ].join(" ")}
                   >
                     <div className="flex items-center gap-2 overflow-hidden rounded-[10px] bg-white px-3 py-2 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
@@ -225,15 +253,20 @@ function OverviewProblemSection() {
                       {problem.label}
                     </span>
                     {index < problems.length - 1 && (
-                      <div className="absolute top-1/2 right-0 z-10 hidden translate-x-1/2 -translate-y-1/2 md:flex">
-                        <ChevronBadge />
-                      </div>
+                      <>
+                        <div className="absolute top-1/2 right-0 z-10 hidden translate-x-1/2 -translate-y-1/2 md:flex">
+                          <ChevronBadge />
+                        </div>
+                        <div className="absolute bottom-0 left-1/2 z-10 flex -translate-x-1/2 translate-y-1/2 md:hidden">
+                          <ChevronDownBadge />
+                        </div>
+                      </>
                     )}
                   </div>
                 ))}
               </div>
 
-              <div className="hidden md:flex w-full flex-col items-center gap-3 px-6 py-6">
+              <div className="hidden w-full flex-col items-center gap-3 px-6 py-6 md:flex">
                 <p className="max-w-[33.43em] text-center text-[14px] leading-5 tracking-[-0.01em]">
                   Revenue is lost in the gap between inquiry and engagement.
                 </p>

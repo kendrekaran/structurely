@@ -40,30 +40,30 @@ function CrmIntegrationSection() {
         id="crm-integration"
         className="max-w-global mx-auto flex flex-col items-start border-x border-[#E5E7EB]"
       >
-        <div className="py-section-md flex flex-col items-center justify-center gap-4 self-stretch px-6 md:px-24">
+        <div className="py-section-md flex flex-col items-center justify-center gap-4 self-stretch md:px-6 md:px-24">
           <Badge text="CRM Integration" />
-          <h2 className="max-w-[11.5em] text-center tracking-[-0.03em]">
+          <h2 className="text-center tracking-[-0.03em] md:max-w-[11.5em]">
             Built to Power Your CRM,{" "}
             <span className="text-[#006FFF]">Not Replace It</span>
           </h2>
         </div>
 
         <div className="flex items-center justify-center self-stretch border-t border-[#E5E7EB] bg-[#ffffff] px-6 py-[24px] md:px-24">
-          <p className="text-center text-[14px] leading-6 md:text-[16px]">
-            <span className="font-medium text-[#006FFF]">
-              Structurely AI works
-            </span>{" "}
-            inside your existing system.
+          <p className="text-center text-[16px] leading-6 md:font-medium">
+            <span className="text-[#006FFF]">Structurely AI works</span> inside
+            your existing system.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 self-stretch border-t border-[#E5E7EB] sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-2 self-stretch border-t border-[#E5E7EB] lg:grid-cols-3">
           {features.map((feature, index) => {
-            const isLastRow =
+            const isLastRowLg =
               index >=
               features.length -
                 (features.length % 3 === 0 ? 3 : features.length % 3);
-            const isRightColSm = index % 2 === 1;
+            const isLastRowSm =
+              index >= features.length - (features.length % 2 === 0 ? 2 : 1);
+            const isRightCol = index % 2 === 1;
             const isRightColLg = index % 3 === 2;
             const isMidColLg = index % 3 === 1;
 
@@ -71,10 +71,11 @@ function CrmIntegrationSection() {
               <div
                 key={feature.label}
                 className={[
-                  "flex flex-col items-center -space-y-3 border-[#E5E7EB] px-8 pt-[31px] pb-[11px] transition-colors duration-200 hover:bg-black/[0.03]",
-                  "border-b lg:border-b",
-                  isLastRow ? "lg:border-b-0" : "",
-                  isRightColSm ? "" : "sm:border-r",
+                  "flex flex-col items-center -space-y-3 border-[#E5E7EB] px-3 pt-[24px] md:pt-[31px] pb-[24px] md:pb-[11px] transition-colors duration-200 hover:bg-black/[0.03]",
+                  "border-b",
+                  isLastRowSm ? "border-b-0 lg:border-b" : "",
+                  isLastRowLg ? "lg:border-b-0" : "",
+                  isRightCol ? "" : "border-r",
                   isRightColLg
                     ? "lg:border-r-0"
                     : isMidColLg
@@ -85,7 +86,7 @@ function CrmIntegrationSection() {
                   .join(" ")}
               >
                 <div className="">{feature.icon}</div>
-                <p className="max-w-[14.28em] text-center text-[14px] leading-5 text-[#202020] md:text-[14px]">
+                <p className="md:max-w-[14.28em] text-center text-[14px] leading-5  md:text-[14px] tracking-[-0.006em]">
                   {feature.label}
                 </p>
               </div>

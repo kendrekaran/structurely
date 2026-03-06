@@ -25,7 +25,7 @@ function CtaSection({ variant = "default" }: CtaSectionProps) {
           <div className="max-w-global mx-auto">
             <div className="flex flex-col items-center gap-8">
               {isOverview ? (
-                <h2 className="max-w-[11.25em] text-center font-medium">
+                <h2 className="max-w-[9em] md:max-w-[11.25em] text-center font-medium">
                   <span className="text-[#646464]">Follow-up should be a</span>{" "}
                   <span className="text-[var(--heading)]">
                     system, not a variable.
