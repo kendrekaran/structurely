@@ -55,12 +55,9 @@ function TrustedSection() {
     <section id="trusted" className="relative z-0">
       <div className="px-global">
         <div className="max-w-global mx-auto flex flex-col items-stretch border-x border-[#E5E7EB]">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+          <div className="scrollbar-hide flex flex-row overflow-x-auto md:grid md:grid-cols-3">
             {allLogos.map((logo, i) => {
               const col = i % 3;
-              const row = Math.floor(i / 3);
-              const smCol = i % 2;
-
               const isActive = activeIndex === i;
 
               return (
@@ -68,16 +65,13 @@ function TrustedSection() {
                   key={logo.name}
                   onClick={() => setActiveIndex(i)}
                   className={[
-                    "py-section-md flex cursor-pointer items-center justify-center px-10 transition-colors duration-200",
+                    "py-section-md flex shrink-0 cursor-pointer items-center justify-center border-r border-[#E5E7EB] px-10 transition-colors duration-200 last:border-r-0",
+                    "md:shrink",
                     isActive ? "bg-white" : "",
-                    "",
-                    smCol === 0 ? "sm:border-border sm:border-r" : "",
                     col !== 2
-                      ? "md:border-border md:border-r"
+                      ? "md:border-r md:border-[#E5E7EB]"
                       : "md:border-r-0",
-                    col === 0 && smCol !== 0 ? "sm:border-r-0" : "",
-                    i < 2 ? "sm:border-border sm:border-b" : "",
-                    i < 3 ? "md:border-border md:border-b" : "",
+                    i < 3 ? "md:border-b md:border-[#E5E7EB]" : "",
                   ]
                     .filter(Boolean)
                     .join(" ")}

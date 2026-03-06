@@ -59,7 +59,7 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: #006FFF;
+  --primary: #006fff;
   --primary-foreground: #ffffff;
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -163,12 +163,12 @@
 
   h1,
   .h1-style {
-    @apply text-[min(48px,14vw)] leading-[1.1666666666666667] md:leading-[68px] font-normal tracking-[-0.04em] sm:text-[48px] md:text-[60px];
+    @apply text-[min(48px,14vw)] leading-[1.1666666666666667] font-normal tracking-[-0.04em] sm:text-[48px] md:text-[60px] md:leading-[68px];
   }
 
   h2,
   .h2-style {
-    @apply text-[min(32px,14vw)] font-medium leading-[1.25] tracking-[-0.02em] md:leading-[54px] md:tracking-[-0.03em] sm:text-[48px] md:text-[48px];
+    @apply text-[min(32px,14vw)] leading-[1.25] font-medium tracking-[-0.02em] sm:text-[48px] md:text-[48px] md:leading-[54px] md:tracking-[-0.03em];
   }
 
   h3,
@@ -176,9 +176,9 @@
     @apply text-[min(17.5px,4.85vw)] leading-[28px] tracking-[-0.01em] sm:text-[20px] md:text-[20px];
   }
 
-  p, 
+  p,
   .p-style {
-    @apply  text-[14px] leading-[1.4285714285714286] md:leading-[26px] tracking-[-0.01em] md:text-[16px];
+    @apply text-[14px] leading-[1.4285714285714286] tracking-[-0.01em] md:text-[16px] md:leading-[26px];
     color: var(--foreground);
   }
 
@@ -190,6 +190,13 @@
 }
 
 @layer components {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @media (max-width: 340px) {

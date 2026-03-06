@@ -81,11 +81,11 @@ function ProductCard({
     <div
       className={`flex flex-col divide-y divide-[#E5E7EB] ${muted ? "bg-[#FAFAFA]" : "bg-white"}`}
     >
-      <div className="flex min-h-[161px] flex-col gap-[16px] px-6 py-8 md:px-8">
-        <h3 className="leading-[28px] tracking-[-0.02em] sm:text-[20px] md:text-[20px]">
+      <div className="flex items-center md:items-start md:min-h-[161px] flex-col gap-[16px] px-6 py-6 md:py-8 md:px-8">
+        <h3 className="leading-[28px] tracking-[-0.02em] text-[20px]">
           {name}
         </h3>
-        <p className="max-w-[30em] text-[16px] leading-[26px] tracking-[-0.01em]">
+        <p className="max-w-[30em] text-center md:text-left text-[16px] leading-[26px] tracking-[-0.01em]">
           {description}
         </p>
       </div>
@@ -94,10 +94,10 @@ function ProductCard({
         {features.map((feature, index) => (
           <div
             key={index}
-            className={`relative flex items-center gap-3 px-6 py-8 md:px-8 ${muted ? "bg-white" : "bg-[#FAFAFA]"}`}
+            className={`relative flex items-center gap-2 md:gap-3 px-3 py-6 md:py-8 md:px-8 ${muted ? "bg-white" : "bg-[#FAFAFA]"}`}
           >
             {index !== 0 && (
-              <span className="absolute inset-x-0 top-0 ml-8 border-t border-[#E5E7EB]" />
+              <span className="absolute inset-x-0 top-0 ml-3 md:ml-8  border-t border-[#E5E7EB]" />
             )}
             <Image
               src="/assets/common/verification.svg"
@@ -112,7 +112,7 @@ function ProductCard({
         ))}
       </div>
 
-      <div className="flex items-center justify-between px-6 py-8 md:px-8">
+      <div className="flex items-center justify-between px-3 py-6 md:py-8 md:px-8">
         <span className="text-[14px] leading-[20px] tracking-[-0.01em] text-[#202020]">
           {ctaLabel}
         </span>

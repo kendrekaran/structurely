@@ -4,10 +4,10 @@ function PhilosophySection() {
 
       <div className="px-global bg-[#FAFAFA]">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
-          <div className="flex flex-col items-center gap-10 py-10">
-            <div className="text-center text-[24px] leading-8 tracking-[-0.02em]">
-              <span className="text-[24px]">AI shouldn&apos;t replace</span>{" "}
-              <span className="text-[24px] text-[#202020]">your team.</span>
+          <div className="flex flex-col items-center gap-10 pt-[32px] pb-10 md:pt-10 md:pb-10">
+            <div className="text-center text-[20px] md:text-[24px] leading-[28px] md:leading-8 tracking-[-0.02em]">
+              <span className="">AI shouldn&apos;t replace</span>{" "}
+              <span className=" text-[#202020]">your team.</span>
             </div>
 
             <div className="flex h-[400px] w-full max-w-[46.625rem] items-center justify-center rounded-xl bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">

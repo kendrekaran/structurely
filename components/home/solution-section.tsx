@@ -223,14 +223,14 @@ function SolutionSection() {
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
           <div className="flex flex-col md:flex-row">
-            <div className="flex flex-col border-b border-[#E5E7EB] md:w-1/2 md:border-r md:border-b-0">
+            <div className="scrollbar-hide flex flex-row overflow-x-auto border-b border-[#E5E7EB] md:w-1/2 md:flex-col md:overflow-x-visible md:border-r md:border-b-0">
               {features.map((feature, index) => {
                 const isActive = index === activeIndex;
                 return (
                   <div
                     key={index}
                     onClick={() => setActiveIndex(index)}
-                    className={`relative flex cursor-pointer items-center gap-4 border-b border-[#E5E7EB] py-8 pl-8 transition-colors duration-200 last:border-b-0 ${isActive ? "bg-white" : "hover:bg-gray-50"}`}
+                    className={`relative flex shrink-0 cursor-pointer items-center gap-4 border-r border-[#E5E7EB] px-6 py-6 transition-colors duration-200 md:shrink md:border-r-0 md:border-b md:py-8 md:pl-8 md:last:border-b-0 ${isActive ? "bg-white" : "hover:bg-gray-50"}`}
                   >
                     <div className="shrink-0">
                       <FeatureIcon
@@ -252,9 +252,9 @@ function SolutionSection() {
               })}
             </div>
 
-            <div className="py-section-md flex items-center justify-center bg-white px-10 md:w-1/2">
+            <div className="py-section-md flex min-h-[386px] items-center justify-center bg-white px-10 md:w-1/2">
               <p className="text-center text-base leading-[1.75] tracking-[-0.01em] transition-all duration-300">
-                {features[activeIndex].content}
+                Animation
               </p>
             </div>
           </div>

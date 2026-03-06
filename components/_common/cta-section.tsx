@@ -17,6 +17,10 @@ function CtaSection({ variant = "default" }: CtaSectionProps) {
           className="absolute inset-0 z-[-1] bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: "url('/assets/common/footer-bg.png')" }}
         />
+        <div
+          className="absolute inset-0 z-[-1] bg-cover bg-center bg-no-repeat md:hidden"
+          style={{ backgroundImage: "url('/assets/home/cta/cta-mobile.png')" }}
+        />
         <div className="px-global py-section-md">
           <div className="max-w-global mx-auto">
             <div className="flex flex-col items-center gap-8">
