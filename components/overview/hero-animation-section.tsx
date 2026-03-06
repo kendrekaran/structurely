@@ -12,7 +12,7 @@ function HeroAnimationSection() {
           alt="Structurely AI platform overview"
           width={1200}
           height={630}
-          className="w-full object-cover"
+          className="w-full object-cover hidden md:block "
           priority
         />
       </section>

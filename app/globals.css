@@ -168,12 +168,12 @@
 
   h2,
   .h2-style {
-    @apply text-[min(32px,14vw)] leading-[1.25] font-medium tracking-[-0.02em] sm:text-[48px] md:text-[48px] md:leading-[54px] md:tracking-[-0.03em];
+    @apply text-[min(28px,14vw)] leading-[1.2857142857142858] font-medium tracking-[-0.02em] sm:text-[48px] md:text-[48px] md:leading-[54px] md:tracking-[-0.03em];
   }
 
   h3,
   .h3-style {
-    @apply text-[min(17.5px,4.85vw)] leading-[28px] tracking-[-0.01em] sm:text-[20px] md:text-[20px];
+    @apply text-[min(20px,14vw)] leading-[28px] tracking-[-0.01em] sm:text-[20px] md:text-[20px];
   }
 
   p,

@@ -187,10 +187,10 @@ function OverviewProblemSection() {
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
           <div className="flex flex-col items-center">
-            <div className="py-section-md flex w-full flex-col items-center gap-4 px-6">
+            <div className=" py-[24px] md:py-section-md  flex w-full flex-col items-center gap-3 md:gap-4 px-3 md:px-6">
               <div className="flex flex-col items-center gap-4">
                 <Badge text="The Problem" />
-                <h2 className="max-w-[11em] text-center">
+                <h2 className="max-w-[11em]  text-center">
                   Inbound Volume Is Not the Issue.{" "}
                   <span className="text-[#006FFF]">Follow-Up</span> Is.
                 </h2>
@@ -207,12 +207,12 @@ function OverviewProblemSection() {
                 </span>
               </div>
 
-              <div className="flex w-full flex-col items-stretch divide-y divide-[#E5E7EB] border-y border-[#E5E7EB] md:flex-row md:divide-y-0">
+              <div className="flex w-full flex-col items-stretch divide-y divide-[#E5E7EB] border-y border-b-0 md:border-b border-[#E5E7EB] md:flex-row md:divide-y-0">
                 {problems.map((problem, index) => (
                   <div
                     key={problem.label}
                     className={[
-                      "relative flex flex-1 flex-col items-center justify-center gap-6 px-12 py-8 transition-colors duration-200 hover:bg-black/[0.03]",
+                      "relative flex flex-1 flex-col items-center justify-center gap-4 md:gap-6 px-12 py-6 md:py-8 transition-colors duration-200 hover:bg-black/[0.03]",
                       index < problems.length - 1
                         ? "md:border-r md:border-[#E5E7EB]"
                         : "",
@@ -233,7 +233,7 @@ function OverviewProblemSection() {
                 ))}
               </div>
 
-              <div className="flex w-full flex-col items-center gap-3 px-6 py-6">
+              <div className="hidden md:flex w-full flex-col items-center gap-3 px-6 py-6">
                 <p className="max-w-[33.43em] text-center text-[14px] leading-5 tracking-[-0.01em]">
                   Revenue is lost in the gap between inquiry and engagement.
                 </p>
