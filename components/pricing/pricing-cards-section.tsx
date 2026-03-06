@@ -182,7 +182,7 @@ export default function PricingCardsSection({
                   <Button
                     variant={plan.ctaVariant}
                     size="md"
-                    className="flex w-full justify-center"
+                    className="flex w-full px-[67px] mx-auto justify-center"
                     style={
                       plan.ctaCustomStyle
                         ? { color: "#646464", borderColor: "#E5E7EB" }

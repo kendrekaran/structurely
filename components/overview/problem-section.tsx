@@ -161,27 +161,23 @@ const problems = [
   },
 ];
 
-const ChevronDivider = () => (
-  <div className="flex flex-col items-center justify-center gap-px self-stretch">
-    <div className="w-px flex-1 bg-[#E5E7EB]" />
-    <div className="flex items-center gap-2 overflow-hidden rounded-md bg-white p-1 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
-      <svg
-        width="16"
-        height="16"
-        viewBox="0 0 16 16"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M6 12L10 8L6 4"
-          stroke="#006FFF"
-          strokeWidth="1.33333"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    </div>
-    <div className="w-px flex-1 bg-[#E5E7EB]" />
+const ChevronBadge = () => (
+  <div className="flex items-center gap-2 overflow-hidden rounded-md bg-white p-1 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M6 12L10 8L6 4"
+        stroke="#006FFF"
+        strokeWidth="1.33333"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
   </div>
 );
 
@@ -211,27 +207,33 @@ function OverviewProblemSection() {
                 </span>
               </div>
 
-              <div className="flex w-full flex-col items-stretch divide-y divide-[#E5E7EB] overflow-hidden border-y border-[#E5E7EB] md:flex-row md:divide-y-0">
+              <div className="flex w-full flex-col items-stretch divide-y divide-[#E5E7EB] border-y border-[#E5E7EB] md:flex-row md:divide-y-0">
                 {problems.map((problem, index) => (
-                  <React.Fragment key={problem.label}>
-                    <div className="flex flex-1 flex-col items-center justify-center gap-6 px-12 py-8">
-                      <div className="flex items-center gap-2 overflow-hidden rounded-[10px] bg-white px-3 py-2 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
-                        {problem.icon}
-                      </div>
-                      <span className="text-center text-[14px] leading-5 tracking-[-0.006em]">
-                        {problem.label}
-                      </span>
+                  <div
+                    key={problem.label}
+                    className={[
+                      "relative flex flex-1 flex-col items-center justify-center gap-6 px-12 py-8 transition-colors duration-200 hover:bg-black/[0.03]",
+                      index < problems.length - 1
+                        ? "md:border-r md:border-[#E5E7EB]"
+                        : "",
+                    ].join(" ")}
+                  >
+                    <div className="flex items-center gap-2 overflow-hidden rounded-[10px] bg-white px-3 py-2 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
+                      {problem.icon}
                     </div>
+                    <span className="text-center text-[14px] leading-5 tracking-[-0.006em]">
+                      {problem.label}
+                    </span>
                     {index < problems.length - 1 && (
-                      <div className="hidden md:flex">
-                        <ChevronDivider />
+                      <div className="absolute top-1/2 right-0 z-10 hidden translate-x-1/2 -translate-y-1/2 md:flex">
+                        <ChevronBadge />
                       </div>
                     )}
-                  </React.Fragment>
+                  </div>
                 ))}
               </div>
 
-              <div className="flex w-full flex-col items-center gap-3  px-6 py-6">
+              <div className="flex w-full flex-col items-center gap-3 px-6 py-6">
                 <p className="max-w-[33.43em] text-center text-[14px] leading-5 tracking-[-0.01em]">
                   Revenue is lost in the gap between inquiry and engagement.
                 </p>

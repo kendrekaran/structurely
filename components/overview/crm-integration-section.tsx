@@ -38,9 +38,9 @@ function CrmIntegrationSection() {
     <div className="px-global">
       <section
         id="crm-integration"
-        className="max-w-global mx-auto flex flex-col items-start border-x  border-[#E5E7EB]"
+        className="max-w-global mx-auto flex flex-col items-start border-x border-[#E5E7EB]"
       >
-        <div className="flex flex-col items-center justify-center gap-4 self-stretch px-6 py-section-md md:px-24">
+        <div className="py-section-md flex flex-col items-center justify-center gap-4 self-stretch px-6 md:px-24">
           <Badge text="CRM Integration" />
           <h2 className="max-w-[11.5em] text-center tracking-[-0.03em]">
             Built to Power Your CRM,{" "}
@@ -48,7 +48,7 @@ function CrmIntegrationSection() {
           </h2>
         </div>
 
-        <div className="flex items-center justify-center self-stretch border-t border-[#E5E7EB] bg-[#ffffff] px-6 py-[24px]  md:px-24">
+        <div className="flex items-center justify-center self-stretch border-t border-[#E5E7EB] bg-[#ffffff] px-6 py-[24px] md:px-24">
           <p className="text-center text-[14px] leading-6 md:text-[16px]">
             <span className="font-medium text-[#006FFF]">
               Structurely AI works
@@ -71,7 +71,7 @@ function CrmIntegrationSection() {
               <div
                 key={feature.label}
                 className={[
-                  "flex flex-col items-center -space-y-3  border-[#E5E7EB] px-8 pt-[31px] pb-[11px] ",
+                  "flex flex-col items-center -space-y-3 border-[#E5E7EB] px-8 pt-[31px] pb-[11px] transition-colors duration-200 hover:bg-black/[0.03]",
                   "border-b lg:border-b",
                   isLastRow ? "lg:border-b-0" : "",
                   isRightColSm ? "" : "sm:border-r",
@@ -85,7 +85,7 @@ function CrmIntegrationSection() {
                   .join(" ")}
               >
                 <div className="">{feature.icon}</div>
-                <p className="max-w-[14.28em]  text-center text-[14px] leading-5 text-[#202020] md:text-[14px]">
+                <p className="max-w-[14.28em] text-center text-[14px] leading-5 text-[#202020] md:text-[14px]">
                   {feature.label}
                 </p>
               </div>

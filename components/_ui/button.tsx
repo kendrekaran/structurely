@@ -4,7 +4,7 @@ import type { ButtonHTMLAttributes } from "react";
 import Image from "next/image";
 
 const buttonVariants = cva(
-  "font-medium leading-[20px] w-full flex items-center justify-center md:justify-start sm:w-auto whitespace-nowrap transition-all active:scale-[0.98] cursor-pointer",
+  "group font-medium leading-[20px] w-full flex items-center justify-center md:justify-start sm:w-auto whitespace-nowrap transition-all active:scale-[0.98] cursor-pointer",
   {
     variants: {
       variant: {
@@ -51,7 +51,7 @@ export default function Button({
             alt="arrow"
             width={20}
             height={20}
-            className="h-5 w-5"
+            className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
           />
         )}
       </span>
