@@ -1,57 +1,31 @@
-"use client";
-
 import Header from "@/components/_common/header";
-import HeroSection from "@/components/home/hero-section";
-import HeroAnimationSection from "@/components/home/hero-animation-section";
-import ProblemSection from "@/components/home/problem-section";
-import ConsequenceSection from "@/components/home/consequence-section";
-import SolutionSection from "@/components/home/solution-section";
-import SolutionIntroSection from "@/components/home/solution-intro-section";
-import SolutionOutcomesSection from "@/components/home/solution-outcomes-section";
-import ProductsSection from "@/components/home/products-section";
-import ProductsIntroSection from "@/components/home/products-intro-section";
-import TrustedSection from "@/components/home/trusted-section";
-import TrustedIntroSection from "@/components/home/trusted-intro-section";
-import PhilosophySection from "@/components/home/philosophy-section";
+import HeroSection from "@/components/overview/hero-section";
+import HeroAnimationSection from "@/components/overview/hero-animation-section";
+import OverviewProblemSection from "@/components/overview/problem-section";
+import StructuredSystemSection from "@/components/overview/structured-system-section";
+import CrmIntegrationSection from "@/components/overview/crm-integration-section";
+import OutcomesSection from "@/components/overview/outcomes-section";
 import CtaSection from "@/components/_common/cta-section";
 import Separator from "@/components/_ui/separator";
-import InboundDemandSection from "@/components/home/inbound-section";
-import PhilosophyIntroSection from "@/components/home/philosophy-intro-section";
 
-export default function Home() {
+export default function Overview() {
   return (
     <>
-      <main className="min-h-screen max-w-full overflow-x-clip">
+      <main className="max-h-screen max-w-full overflow-x-clip">
         <Header />
         <HeroSection />
         <Separator />
         <HeroAnimationSection />
         <Separator />
-        <ProblemSection />
+        <OverviewProblemSection />
         <Separator />
-        <ConsequenceSection />
+        <StructuredSystemSection />
         <Separator />
-        <InboundDemandSection />
+        <CrmIntegrationSection />
         <Separator />
-        <SolutionIntroSection />
+        <OutcomesSection />
         <Separator />
-        <SolutionSection />
-        <Separator />
-        <SolutionOutcomesSection />
-        <Separator />
-        <ProductsIntroSection />
-        <Separator />
-        <ProductsSection />
-        <Separator />
-        <TrustedIntroSection />
-        <Separator />
-        <TrustedSection />
-        <Separator />
-        <PhilosophyIntroSection />
-        <Separator />
-        <PhilosophySection />
-        <Separator />
-        <CtaSection />
+        <CtaSection variant="overview" />
       </main>
     </>
   );

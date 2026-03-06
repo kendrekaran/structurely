@@ -1,5 +1,6 @@
 import HeroBadge from "@/components/_ui/hero-badge";
 import Badge from "../_ui/badge";
+import Image from "next/image";
 
 const features = [
   {
@@ -11,6 +12,7 @@ const features = [
         seconds — 24/7.
       </>
     ),
+    image: "/assets/overview/logos/structured-system/1.png",
   },
   {
     title: "Real Conversations",
@@ -21,6 +23,7 @@ const features = [
         natural dialogue.
       </>
     ),
+    image: "/assets/overview/logos/structured-system/2.png",
   },
   {
     title: "Intelligent Qualification",
@@ -31,6 +34,7 @@ const features = [
         and intent in real time.
       </>
     ),
+    image: "/assets/overview/logos/structured-system/3.png",
   },
   {
     title: "Automated Follow-Up",
@@ -41,6 +45,7 @@ const features = [
         AI — including outbound dialing.
       </>
     ),
+    image: "/assets/overview/logos/structured-system/4.png",
   },
 ];
 
@@ -75,9 +80,13 @@ function StructuredSystemSection() {
             >
               <div className="self-stretch p-1">
                 <div className="flex h-[240px] items-center justify-center overflow-hidden rounded-md bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.08)]">
-                  <span className="text-[16px] leading-6 tracking-[-0.01em]">
-                    Graphic
-                  </span>
+                  <Image
+                    src={feature.image}
+                    alt={feature.title}
+                    width={560}
+                    height={240}
+                    className="h-full w-full object-cover"
+                  />
                 </div>
               </div>
               <div className="flex flex-col items-center gap-2 self-stretch px-6 py-10">
