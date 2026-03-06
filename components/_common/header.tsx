@@ -28,7 +28,7 @@ export default function Header() {
   const isCompanyActive = companyLinks.some((l) => l.href === pathname);
 
   return (
-    <header className="w-full">
+    <header className="sticky top-0 z-50 w-full bg-white">
       <div className="px-global border-b border-[#E5E7EB]">
         <div className="max-w-global mx-auto flex items-center gap-8 py-[20px]">
           {/* Logo */}
