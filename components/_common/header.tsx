@@ -30,7 +30,7 @@ export default function Header() {
   return (
     <header className="w-full">
       <div className="px-global border-b border-[#E5E7EB]">
-        <div className="max-w-global mx-auto flex items-center gap-8 py-[24px]">
+        <div className="max-w-global mx-auto flex items-center gap-8 py-[20px]">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <Image

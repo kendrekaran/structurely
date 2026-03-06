@@ -4,21 +4,43 @@ import Badge from "../_ui/badge";
 const features = [
   {
     title: "Instant Engagement",
-    description: "Calls, texts, and emails within seconds — 24/7.",
+    description: (
+      <>
+        Calls, texts, and emails within
+        <br />
+        seconds — 24/7.
+      </>
+    ),
   },
   {
     title: "Real Conversations",
-    description: "Dynamic questioning, objection handling, natural dialogue.",
+    description: (
+      <>
+        Dynamic questioning, objection handling,
+        <br />
+        natural dialogue.
+      </>
+    ),
   },
   {
     title: "Intelligent Qualification",
-    description:
-      "Structured logic evaluates readiness and intent in real time.",
+    description: (
+      <>
+        Structured logic evaluates readiness
+        <br />
+        and intent in real time.
+      </>
+    ),
   },
   {
     title: "Automated Follow-Up",
-    description:
-      "Persistent multi-touch sequences powered by AI — including outbound dialing.",
+    description: (
+      <>
+        Persistent multi-touch sequences powered by
+        <br />
+        AI — including outbound dialing.
+      </>
+    ),
   },
 ];
 
@@ -27,7 +49,7 @@ function StructuredSystemSection() {
     <div className="px-global">
       <section
         id="structured-system"
-        className="max-w-global relative mx-auto flex flex-col items-start border-x border-[#E5E7EB] "
+        className="max-w-global relative mx-auto flex flex-col items-start border-x border-[#E5E7EB]"
       >
         <div className="py-section-md flex flex-col items-center justify-center gap-3 self-stretch px-6 md:px-24">
           <div className="flex w-full max-w-[46.375em] flex-col items-center justify-center gap-4">
