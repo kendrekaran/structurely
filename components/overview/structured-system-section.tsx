@@ -86,7 +86,7 @@ function StructuredSystemSection() {
                 .join(" ")}
             >
               <div className="self-stretch p-1">
-                <div className="flex h-[240px] items-center justify-center overflow-hidden rounded-md bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.08)]">
+                <div className="flex aspect-[556/240] min-h-[180px] max-w-full items-center justify-center overflow-hidden rounded-md bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.08)]">
                   {/* <Image
                     src={feature.image}
                     alt={feature.title}
