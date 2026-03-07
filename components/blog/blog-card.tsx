@@ -21,7 +21,7 @@ function BlogCard({ title, description, date, image }: BlogCardProps) {
       </div>
       <div className="flex flex-col divide-y divide-[#E5E7EB]">
         <div className="flex flex-col gap-2 p-6">
-          <h3 className="line-clamp-1">{title}</h3>
+          <h3 className="text-[16px] leading-[26px] font-medium tracking-[-0.01em] line-clamp-1">{title}</h3>
           <p className="line-clamp-3">{description}</p>
         </div>
         <div className="p-6">

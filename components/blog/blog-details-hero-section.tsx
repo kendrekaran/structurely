@@ -16,42 +16,42 @@ function BlogDetailsHeroSection({
   return (
     <section id="blog-details-hero" className="relative z-0">
       <div className="px-global">
-        <div className="max-w-global py-[32px]  mx-auto border-x border-[#E5E7EB]">
-          <div className="flex flex-col items-stretch justify-center gap-8  lg:flex-row    ">
-            <div className="flex flex-col gap-4 lg:max-w-[32.25em]">
-              <Link
-                href="/blog"
-                className="text-foreground flex w-fit items-center gap-1 text-[14px] leading-[20px] tracking-[-0.084px]"
-              >
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M8.00016 12.6663L3.3335 7.99967L8.00016 3.33301"
-                    stroke="#646464"
-                    strokeWidth="1.25"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M12.6668 8H3.3335"
-                    stroke="#646464"
-                    strokeWidth="1.25"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-                Back to News
-              </Link>
-
+        <div className="max-w-global pt-[40px] md:py-[32px] px-[12px] md:px-[48px] flex flex-col gap-[24px]   mx-auto border-x border-[#E5E7EB]">
+          <Link
+            href="/blog"
+            className="text-foreground flex w-fit items-center gap-1 text-[14px] leading-[20px] tracking-[-0.084px]"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8.00016 12.6663L3.3335 7.99967L8.00016 3.33301"
+                stroke="#646464"
+                strokeWidth="1.25"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M12.6668 8H3.3335"
+                stroke="#646464"
+                strokeWidth="1.25"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            Back to News
+          </Link>
+          <div className="flex flex-col-reverse md:flex-col items-stretch justify-center gap-6 md:gap-8  lg:flex-row    ">
+            <div className="flex flex-col gap-2.5 md:gap-4 lg:max-w-[32.25em]">
+              
               <h1 className="text-heading text-[36px] leading-[44px] font-medium tracking-[-0.03em] max-w-[13.6em]">{title}</h1>
 
-              <div className="flex flex-col gap-2">
-                <p className="text-heading">{intro}</p>
+              <div className="flex flex-col gap-[10px] md:gap-2">
+                <p className="md:text-heading ">{intro}</p>
                 <p>{description}</p>
               </div>
             </div>
