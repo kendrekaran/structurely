@@ -43,10 +43,10 @@ export default function CallAiSection() {
             </div>
           </div>
 
-          <div className="flex flex-col items-center px-6 py-16">
-            <div className="flex w-full max-w-[46.375em] flex-col items-center gap-4 text-center">
-              <h2 className="max-w-[13.5em]">Call AI</h2>
-              <p className="max-w-[600px] text-center text-[18px] leading-[28px] tracking-[-0.18px] text-[#646464]">
+          <div className="flex flex-col items-center px-[12px] md:px-6 py-[40px] md:py-16">
+            <div className="flex w-full max-w-[46.375em] flex-col items-center gap-[10px] md:gap-4 text-center">
+              <h2 className="max-w-[13.5em] text-[36px] md:text-[48px] leading-[44px] md:leading-[54px] font-normal md:font-medium tracking-[-0.03em] text-left md:text-center">Call AI</h2>
+              <p className="max-w-[600px] text-center text-[16px] md:text-[18px] leading-[26px] md:leading-[28px] tracking-[-0.01em] text-[#646464]">
                 A step-by-step guide to Structurely&apos;s Call AI Agents
               </p>
             </div>
@@ -57,7 +57,7 @@ export default function CallAiSection() {
               {articles.map((article, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-4 border-b border-[#E5E7EB] px-5 py-5"
+                  className="flex items-center gap-4 border-b border-[#E5E7EB] px-5 py-[23px] md:py-5"
                 >
                   <span className="flex-1 text-[14px] leading-[26px] tracking-[-0.14px] text-[#646464]">
                     {article.title}

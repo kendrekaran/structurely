@@ -182,8 +182,8 @@ export default function HelpCenterSection() {
   return (
     <section id="help-center" className="relative z-0">
       <div className="px-global">
-        <div className="max-w-global mx-auto border-x border-b border-[#E5E7EB]">
-          <div className="flex flex-col items-start gap-6 px-6 py-8 md:items-center md:px-0 md:py-16">
+        <div className="max-w-global mx-auto border-x md:border-b border-[#E5E7EB]">
+          <div className="flex flex-col items-start gap-6  px-3  py-[40px] pb-[24px] md:items-center md:px-0 md:py-16">
             <Link
               href="/blog"
               className="flex items-center gap-1 text-[#646464] md:hidden"
@@ -214,21 +214,25 @@ export default function HelpCenterSection() {
                 Back to blog
               </span>
             </Link>
-            <div className="flex w-full max-w-[46.375em] flex-col items-start gap-4 md:items-center md:text-center">
-              <h2 className="max-w-[13.5em] text-left md:text-center">
+            <div className="flex w-full max-w-[46.375em] flex-col items-start gap-[10px] md:gap-4 md:items-center md:text-center">
+              <h2 className="max-w-[13.5em] text-[36px] md:text-[48px] leading-[44px] md:leading-[54px] font-normal md:font-medium tracking-[-0.03em] text-left md:text-center">
                 Advice and answers from the{" "}
                 <span className="text-[#006FFF]">Structurely</span> Team
               </h2>
-              <p className="text-left text-[18px] leading-[28px] tracking-[-0.18px] text-[#646464] md:max-w-[600px] md:text-center">
+              <p className="text-left text-[16px] md:text-[18px] leading-[26px] md:leading-[28px] tracking-[-0.18px]  md:max-w-[600px] md:text-center">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry.
               </p>
             </div>
           </div>
 
-          <div className="border-t border-[#E5E7EB]">
-            <div className="grid grid-cols-1 divide-y divide-[#E5E7EB] md:grid-cols-2">
-              <div className="grid grid-cols-1 divide-y divide-[#E5E7EB] border-b border-[#E5E7EB] md:col-span-2 md:grid-cols-2 md:divide-y-0">
+          <div className="md:hidden px-3 pb-[48px] md:px-16 md:pb-16">
+            <div className="flex h-[360px] items-center justify-center overflow-hidden rounded-xl bg-white py-2 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]" />
+          </div>
+
+          <div className="md:border-t  border-[#E5E7EB]">
+            <div className="grid grid-cols-1 md:divide-y divide-[#E5E7EB] md:grid-cols-2">
+              <div className="grid grid-cols-1  divide-[#E5E7EB] bg-gray-500 md:border-b border-[#E5E7EB] md:col-span-2 md:grid-cols-2 md:divide-y-0">
                 <div className="border-[#E5E7EB] md:border-r">
                   <Link href="/help-center/call-ai" className="block">
                     <CategoryCard category={categories[0]} />
@@ -238,7 +242,7 @@ export default function HelpCenterSection() {
                   <CategoryCard category={categories[1]} />
                 </div>
               </div>
-              <div className="grid grid-cols-1 md:col-span-2 md:grid-cols-2">
+              <div className="grid grid-cols-1  md:col-span-2 md:grid-cols-2">
                 <div className="border-[#E5E7EB] md:border-r">
                   <CategoryCard category={categories[2]} />
                 </div>
