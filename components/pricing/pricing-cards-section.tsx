@@ -132,17 +132,17 @@ export default function PricingCardsSection({
   billing,
 }: PricingCardsSectionProps) {
   return (
-    <section id="pricing-cards" className="relative z-0 ">
+    <section id="pricing-cards" className="relative z-0">
       <div className="px-global">
-        <div className="max-w-global mx-auto border-x  border-[#E5E7EB]">
-          <div className="flex flex-col gap-2 p-2 lg:flex-row">
+        <div className="max-w-global mx-auto border-x border-[#E5E7EB] max-md:border-b max-md:border-b-[#E5E7EB]">
+          <div className="max-md:scrollbar-hide flex flex-row gap-2 overflow-x-auto p-2 lg:overflow-x-visible [&::-webkit-scrollbar]:max-md:hidden [&>*]:min-w-[80vw] sm:[&>*]:min-w-[70vw] lg:[&>*]:min-w-0">
             {plans.map((plan) => (
               <div
                 key={plan.id}
                 className={[
                   "flex flex-1 flex-col gap-6 overflow-hidden rounded-[10px] bg-white py-6",
                   plan.popular
-                    ? "shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]"
+                    ? "shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)] max-md:order-first"
                     : "shadow-[0_0_0_1px_rgba(0,0,0,0.08)]",
                 ].join(" ")}
               >
@@ -168,13 +168,13 @@ export default function PricingCardsSection({
                         <span className="text-[32px] leading-8 tracking-[-0.96px] text-[#202020]">
                           ${getDisplayPrice(plan, billing)}
                         </span>
-                        <span className="pb-0.5 text-base font-light leading-6 tracking-[-0.16px] text-[#646464]">
+                        <span className="pb-0.5 text-base leading-6 font-light tracking-[-0.16px] text-[#646464]">
                           /mo
                         </span>
                       </div>
                     )}
 
-                    <p className="max-w-[14.64rem] text-[12px] font-light leading-6 tracking-[-0.12px] text-[#646464]">
+                    <p className="max-w-[14.64rem] text-[12px] leading-6 font-light tracking-[-0.12px] text-[#646464]">
                       {plan.description}
                     </p>
                   </div>
@@ -182,7 +182,7 @@ export default function PricingCardsSection({
                   <Button
                     variant={plan.ctaVariant}
                     size="md"
-                    className="flex w-full px-[67px] mx-auto justify-center"
+                    className="mx-auto flex w-full justify-center px-[67px]"
                     style={
                       plan.ctaCustomStyle
                         ? { color: "#646464", borderColor: "#E5E7EB" }
@@ -196,7 +196,7 @@ export default function PricingCardsSection({
                 <hr className="border-[#E5E7EB]" />
 
                 <div className="flex flex-col gap-3 px-6">
-                  <span className="text-[12px] font-light leading-6 tracking-[-0.12px] text-[#646464]">
+                  <span className="text-[12px] leading-6 font-light tracking-[-0.12px] text-[#646464]">
                     {plan.featuresLabel}
                   </span>
                   <ul className="flex flex-col gap-6">

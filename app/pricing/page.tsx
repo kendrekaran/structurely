@@ -24,6 +24,7 @@ export default function PricingPage() {
       <PricingHeroSection billing={billing} onBillingChange={setBilling} />
       <Separator />
       <PricingCardsSection billing={billing} />
+      <Separator />
       <PricingAddonSection />
       <Separator />
       <ActionCreditSection />

@@ -9,6 +9,7 @@ const featureRows = [
   {
     text: "Adjusts messaging over time",
     lineWidthClass: "w-[25%]",
+    mobileLineWidth: 32,
     lineColor: "bg-[#E5E7EB]",
     arrowFill: "#E5E7EB",
     active: false,
@@ -16,6 +17,7 @@ const featureRows = [
   {
     text: "Re-engages dormant leads",
     lineWidthClass: "w-[42%]",
+    mobileLineWidth: 55,
     lineColor: "bg-[#E5E7EB]",
     arrowFill: "#E5E7EB",
     active: false,
@@ -23,6 +25,7 @@ const featureRows = [
   {
     text: "Tracks responsiveness trends",
     lineWidthClass: "w-1/2",
+    mobileLineWidth: 77,
     lineColor: "bg-[#E5E7EB]",
     arrowFill: "#E5E7EB",
     active: false,
@@ -389,13 +392,13 @@ function PersistentFollowUpSection() {
         id="persistent-follow-up"
         className="max-w-global relative z-0 mx-auto border-x border-[#E5E7EB]"
       >
-        <div className="flex flex-col gap-6 px-6 py-12 sm:flex-row sm:items-start sm:justify-between md:px-12 md:py-[64px]">
+        <div className="flex flex-col items-center gap-3 px-6 py-[24px] sm:flex-row sm:justify-between md:items-start md:gap-6 md:px-12 md:py-[64px]">
           <h2>
             <span>Persistent </span>
             <span className="text-[#006FFF]">Follow-Up</span>
           </h2>
-          <div className="flex shrink-0 flex-col gap-1 sm:items-end">
-            <span className="text-foreground block text-[16px] leading-[26px] tracking-[-0.01em] sm:text-right">
+          <div className="flex shrink-0 flex-col items-center gap-1 md:items-end">
+            <span className="text-foreground block text-[16px] leading-[26px] tracking-[-0.01em] md:text-right">
               Most teams stop too early.
             </span>
             <span className="block [font-family:var(--font-caveat)] text-[16px] leading-6 font-bold tracking-[-0.02em] text-[#006FFF] underline">
@@ -431,12 +434,27 @@ function PersistentFollowUpSection() {
                     : undefined
                 }
               >
+                {/* Desktop: variable-width line + arrow */}
                 <div
-                  className={`shrink-0 ${row.lineWidthClass} flex items-center`}
+                  className={`hidden shrink-0 md:flex ${row.lineWidthClass} items-center`}
                 >
                   <div className={`h-px flex-1 ${row.lineColor}`} />
                   <ArrowHead fill={row.arrowFill} />
                 </div>
+
+                {/* Mobile: variable-width line + arrow (only for inactive rows) */}
+                {!row.active && (
+                  <div className="flex shrink-0 items-center pl-3 md:hidden">
+                    <div
+                      className="h-px bg-[#E5E7EB]"
+                      style={{ width: row.mobileLineWidth }}
+                    />
+                    <ArrowHead fill={row.arrowFill} />
+                  </div>
+                )}
+                {/* Mobile active row: no arrow, just left padding */}
+                {row.active && <div className="flex w-0 shrink-0 md:hidden" />}
+
                 <span
                   className={`ml-3 text-[16px] leading-[26px] tracking-[-0.02em] ${
                     row.active ? "text-heading" : "text-foreground"
@@ -448,7 +466,6 @@ function PersistentFollowUpSection() {
             ))}
           </div>
         </div>
-
       </section>
     </div>
   );

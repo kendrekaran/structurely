@@ -32,16 +32,16 @@ function CtaSection({ variant = "default" }: CtaSectionProps) {
               {isOverview ? (
                 <h2 className="max-w-[9em] text-center font-medium md:max-w-[11.25em]">
                   <span className="text-[#646464]">Follow-up should be a</span>{" "}
-                  <span className="text-[var(--heading)]">
+                  <span className="text-heading">
                     system, not a variable.
                   </span>
                 </h2>
               ) : (
                 <h2 className="max-w-[11.25em] text-center font-medium">
-                  <span className="text-[var(--heading)]">
+                  <span className="text-heading">
                     If demand is coming in,
                   </span>{" "}
-                  <span className="text-[var(--heading)]">
+                  <span className="text-heading">
                     it should be converting
                   </span>
                 </h2>
