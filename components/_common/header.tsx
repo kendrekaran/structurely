@@ -23,7 +23,6 @@ export default function Header() {
   const pathname = usePathname();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mobileCompanyOpen, setMobileCompanyOpen] = useState(false);
 
   const isCompanyActive = companyLinks.some((l) => l.href === pathname);
 
@@ -132,103 +131,67 @@ export default function Header() {
               }}
               aria-label="Toggle menu"
             >
-              {mobileMenuOpen ? (
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M2 2L16 16M16 2L2 16"
-                    stroke="#646464"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              ) : (
-                <Image
-                  src="/assets/common/menu-bar.svg"
-                  alt="Menu"
-                  width={24}
-                  height={24}
-                />
-              )}
+              <Image
+                src="/assets/common/menu-bar.svg"
+                alt="Menu"
+                width={24}
+                height={24}
+              />
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu Drawer */}
+      {/* Mobile Menu Full-Screen Overlay */}
       {mobileMenuOpen && (
-        <div className="px-global border-b border-[#E5E7EB] bg-white lg:hidden">
-          <div className="max-w-global mx-auto flex flex-col py-4">
-            {navLinks.map((link) => {
-              const isActive = pathname === link.href;
-              return (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="border-b border-[#F3F4F6] px-3 py-3 text-[14px] leading-[20px] tracking-[-0.084px] transition-colors last:border-b-0"
-                  style={{ color: isActive ? "#202020" : "#646464" }}
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
-
-            {/* Company accordion */}
-            <button
-              onClick={() => setMobileCompanyOpen((prev) => !prev)}
-              className="flex items-center justify-between border-b border-[#F3F4F6] px-3 py-3 text-[14px] leading-[20px] tracking-[-0.084px] transition-colors"
-              style={{
-                color:
-                  isCompanyActive || mobileCompanyOpen ? "#202020" : "#646464",
-              }}
-            >
-              Company
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className={`transition-transform duration-200 ${mobileCompanyOpen ? "rotate-180" : ""}`}
-              >
-                <path
-                  d="M4 6L8 10L12 6"
-                  stroke="currentColor"
-                  strokeWidth="1.2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+        <div className="fixed inset-0 z-[60] flex flex-col bg-[#FAFAFA] lg:hidden">
+          {/* Overlay Header */}
+          <div className="flex flex-col gap-5 border-b border-[#E5E7EB] px-6 py-6">
+            <div className="flex items-center justify-between">
+              <Link href="/" onClick={() => setMobileMenuOpen(false)}>
+                <Image
+                  src="/assets/common/heading-logo.svg"
+                  alt="Structurely"
+                  width={115}
+                  height={24}
                 />
-              </svg>
-            </button>
-
-            {mobileCompanyOpen && (
-              <div className="flex flex-col pl-4">
-                {companyLinks.map((link) => {
-                  const isActive = pathname === link.href;
-                  return (
-                    <Link
-                      key={link.label}
-                      href={link.href}
-                      onClick={() => {
-                        setMobileMenuOpen(false);
-                        setMobileCompanyOpen(false);
-                      }}
-                      className="border-b border-[#F3F4F6] px-3 py-3 text-[14px] leading-[20px] tracking-[-0.084px] transition-colors last:border-b-0"
-                      style={{ color: isActive ? "#202020" : "#646464" }}
-                    >
-                      {link.label}
-                    </Link>
-                  );
-                })}
-              </div>
-            )}
+              </Link>
+              <button
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-[12px] bg-white"
+                style={{
+                  boxShadow:
+                    "0px 24px 24px -12px #3333330D, 0px 12px 12px -6px #3333330D, 0px 6px 6px -3px #3333330D, 0px 3px 3px -1.5px #3333330D, 0px 1px 1px -0.5px #3333330D, 0px 0px 0px 1px #00000014",
+                }}
+                aria-label="Close menu"
+              >
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6.4585 6.45801L13.5418 13.5413M13.5418 6.45801L6.4585 13.5413" stroke="#646464" strokeWidth="1.25" strokeLinecap="round"/>
+                </svg>
+              </button>
+            </div>
+            <Button variant="outline" size="md" className="w-full rounded-[10px] border-[#006FFF] text-[#006FFF]">
+              Request Demo
+            </Button>
           </div>
+
+          {/* Nav Links */}
+          <nav className="flex flex-col divide-y divide-[#E5E7EB]">
+            {[...navLinks, ...companyLinks].map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center justify-between px-6 py-4 text-[16px] leading-[24px] tracking-[-0.176px] text-[#202020]"
+              >
+                {link.label}
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.6665 4.79199L16.8748 10.0003L11.6665 15.2087" stroke="#646464" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M16.25 10H3.125" stroke="#646464" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </Link>
+            ))}
+          </nav>
         </div>
       )}
     </header>

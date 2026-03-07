@@ -183,13 +183,43 @@ export default function HelpCenterSection() {
     <section id="help-center" className="relative z-0">
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-b border-[#E5E7EB]">
-          <div className="flex flex-col items-center py-16">
-            <div className="flex w-full max-w-[46.375em] flex-col items-center gap-4 text-center">
-              <h2 className="max-w-[13.5em]">
+          <div className="flex flex-col items-start gap-6 px-6 py-8 md:items-center md:px-0 md:py-16">
+            <Link
+              href="/blog"
+              className="flex items-center gap-1 text-[#646464] md:hidden"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8.00016 12.6663L3.3335 7.99967L8.00016 3.33301"
+                  stroke="#646464"
+                  strokeWidth="1.25"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M12.6668 8H3.3335"
+                  stroke="#646464"
+                  strokeWidth="1.25"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <span className="text-[14px] leading-[20px] tracking-[-0.084px]">
+                Back to blog
+              </span>
+            </Link>
+            <div className="flex w-full max-w-[46.375em] flex-col items-start gap-4 md:items-center md:text-center">
+              <h2 className="max-w-[13.5em] text-left md:text-center">
                 Advice and answers from the{" "}
                 <span className="text-[#006FFF]">Structurely</span> Team
               </h2>
-              <p className="max-w-[600px] text-center text-[18px] leading-[28px] tracking-[-0.18px] text-[#646464]">
+              <p className="text-left text-[18px] leading-[28px] tracking-[-0.18px] text-[#646464] md:max-w-[600px] md:text-center">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry.
               </p>
@@ -197,9 +227,9 @@ export default function HelpCenterSection() {
           </div>
 
           <div className="border-t border-[#E5E7EB]">
-            <div className="grid grid-cols-1 divide-y divide-[#E5E7EB] sm:grid-cols-2">
-              <div className="grid grid-cols-1 divide-y divide-[#E5E7EB] border-b border-[#E5E7EB] sm:col-span-2 sm:grid-cols-2 sm:divide-y-0">
-                <div className="border-[#E5E7EB] sm:border-r">
+            <div className="grid grid-cols-1 divide-y divide-[#E5E7EB] md:grid-cols-2">
+              <div className="grid grid-cols-1 divide-y divide-[#E5E7EB] border-b border-[#E5E7EB] md:col-span-2 md:grid-cols-2 md:divide-y-0">
+                <div className="border-[#E5E7EB] md:border-r">
                   <Link href="/help-center/call-ai" className="block">
                     <CategoryCard category={categories[0]} />
                   </Link>
@@ -208,8 +238,8 @@ export default function HelpCenterSection() {
                   <CategoryCard category={categories[1]} />
                 </div>
               </div>
-              <div className="grid grid-cols-1 sm:col-span-2 sm:grid-cols-2">
-                <div className="border-[#E5E7EB] sm:border-r">
+              <div className="grid grid-cols-1 md:col-span-2 md:grid-cols-2">
+                <div className="border-[#E5E7EB] md:border-r">
                   <CategoryCard category={categories[2]} />
                 </div>
                 <div>
