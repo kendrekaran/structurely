@@ -17,11 +17,11 @@ function BlogContentSection({ blocks }: BlogContentSectionProps) {
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
         
-          <div className=" mx-auto flex w-full flex-col mb-[64px] gap-[32px] px-6 lg:max-w-[744.0000000000028px] lg:px-12">
-          <hr className="border-t border-[#E5E7EB] " />
+          <div className=" mx-auto flex w-full flex-col mb-[64px] gap-6 md:gap-[32px] pt-6 md:pt-0  px-3 md:px-6 lg:max-w-[744.0000000000028px] lg:px-12">
+          <hr className="hidden md:block border-t border-[#E5E7EB] " />
             {blocks.map((block, index) => {
               if (block.type === "divider") {
-                return <hr key={index} className="border-t border-[#E5E7EB] my-[16px]" />;
+                return <hr key={index} className="border-t border-[#E5E7EB] md:my-[16px]" />;
               }
 
               if (block.type === "heading") {

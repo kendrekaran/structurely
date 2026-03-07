@@ -106,13 +106,13 @@ export default function FaqSection() {
                   <div key={index} className="py-[20px] first:pt-0 last:pb-0">
                     <button
                       onClick={() => toggle(index)}
-                      className="flex w-full cursor-pointer items-center justify-between gap-4 text-left"
+                      className="flex w-full cursor-pointer px-[12px] md:px-0 items-center justify-between gap-4 text-left"
                     >
                       <p
                         className={` transition-colors ${
                           isOpen
-                            ? "  text-[#202020]"
-                            : "font-normal "
+                            ? "  text-[#202020] text-[16px]  leading-[26px]  tracking-[-0.01em]"
+                            : "font-normal text-[16px]  leading-[26px]  tracking-[-0.01em]"
                         }`}
                       >
                         {faq.question}
@@ -121,7 +121,7 @@ export default function FaqSection() {
                     </button>
 
                     {isOpen && (
-                      <div className="mt-3 text-[14px] leading-6 tracking-[-0.01em]">
+                      <div className="mt-3 max-w-[332px] md:max-w-full px-[12px] md:px-0 text-[14px] leading-6 tracking-[-0.01em]">
                         {faq.answer}
                       </div>
                     )}

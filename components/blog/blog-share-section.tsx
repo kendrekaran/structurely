@@ -7,7 +7,7 @@ function BlogShareSection() {
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-y border-[#E5E7EB] py-6">
           <div className="flex flex-col items-center gap-3 px-6 lg:px-12">
-            <p className="text-heading text-center">Share this</p>
+            <p className="text-heading text-[16px] leading-[26px] font-medium tracking-[-0.01em] text-center">Share this</p>
             <div className="flex items-center gap-3">
               <Button
                 variant="secondary"

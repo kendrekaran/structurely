@@ -223,22 +223,22 @@ const ChevronRight = () => (
 function AboutProblemSection() {
   return (
     <section id="about-problem" className="relative z-0">
-      <div className="px-global ">
-        <div className="max-w-global mx-auto flex flex-col items-center gap-4 border-x border-b border-[#E5E7EB] py-section-md text-center">
-          <div className="flex flex-col items-center gap-4">
+      <div className="px-global">
+        <div className="max-w-global md:py-section-md mx-auto flex flex-col items-center gap-4 border-x border-b border-[#E5E7EB] py-[24px] text-center">
+          <div className="flex flex-col items-center gap-3.5 md:gap-4">
             <Badge text="The Problem" />
             <h2 className="max-w-[11.08em] text-center">
-              <span className="text-[#006FFF]">The Problem</span> <br/> We Exist to
-              Solve
+              <span className="text-[#006FFF]">The Problem</span> <br /> We
+              Exist to Solve
             </h2>
           </div>
-          <p className="max-w-[27.375em] text-center">
+          <p className="max-w-[27.375em] text-center text-[16px] leading-[26px] tracking-[-0.01em]">
             Many organizations generate meaningful inbound demand.
           </p>
         </div>
       </div>
 
-      <div className="px-global ">
+      <div className="px-global">
         <div className="max-w-global mx-auto flex items-center justify-center border-x border-b border-[#E5E7EB] py-6">
           <p className="text-center text-[14px] leading-[20px] tracking-[-0.01em]">
             But execution breaks down between inquiry and action.
@@ -246,24 +246,34 @@ function AboutProblemSection() {
         </div>
       </div>
 
-      <div className="px-global ">
-        <div className="max-w-global mx-auto flex flex-col items-stretch divide-y divide-[#E5E7EB] border-x border-b border-[#E5E7EB] md:flex-row md:divide-x md:divide-y-0">
+      <div className="px-global">
+        <div className="max-w-global mx-auto flex flex-col items-stretch border-x border-b border-[#E5E7EB] md:flex-row">
           {problemItems.map((item, index) => (
             <div
               key={item.label}
-              className="relative flex flex-1 items-center gap-4 px-8 py-8 md:flex-col md:justify-center md:gap-6 md:px-12 md:py-8"
+              className="flex flex-1 flex-col items-stretch md:flex-row"
             >
-              <div className="flex flex-shrink-0 w-[48px] h-[40px] items-center gap-2 rounded-[10px] bg-white p-3 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
-                {item.icon}
+              <div className="flex flex-1 flex-col items-center justify-center gap-4 md:gap-6 px-6 py-4 md:px-12 md:py-8">
+                <div className="flex h-[40px] w-[48px] flex-shrink-0 items-center gap-2 rounded-[10px] bg-white p-3 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
+                  {item.icon}
+                </div>
+                <p className="text-center text-[14px] leading-[20px] tracking-[-0.006em]">
+                  {item.label}
+                </p>
               </div>
-              <p className="text-center text-[14px] leading-[20px] tracking-[-0.006em] md:text-center">
-                {item.label}
-              </p>
+
               {index < problemItems.length - 1 && (
-                <div className="absolute top-1/2 right-0 z-10 hidden translate-x-1/2 -translate-y-1/2 flex-col items-center gap-px md:flex">
-                  <div className="flex items-center justify-center rounded-md bg-white p-1 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
-                    <ChevronRight />
+                <div className="flex items-center self-stretch md:flex-col">
+                  <div className="h-px flex-1 bg-[#E5E7EB] md:h-auto md:w-px" />
+                  <div className="flex items-center rounded-[6px] bg-white p-1 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
+                    <span className="block rotate-90 md:hidden">
+                      <ChevronRight />
+                    </span>
+                    <span className="hidden md:block">
+                      <ChevronRight />
+                    </span>
                   </div>
+                  <div className="h-px flex-1 bg-[#E5E7EB] md:h-auto md:w-px" />
                 </div>
               )}
             </div>
@@ -272,7 +282,7 @@ function AboutProblemSection() {
       </div>
 
       <div className="px-global">
-        <div className="max-w-global border-b  mx-auto flex items-center justify-center border-x border-[#E5E7EB] py-[24px] ">
+        <div className="max-w-global mx-auto flex items-center justify-center border-x border-b border-[#E5E7EB] py-[24px]">
           <p className="text-center font-[cursive] text-[16px] leading-[24px] font-bold tracking-[-0.02em] italic">
             <span className="text-[#006FFF]">Structurely</span> was built to
             address that gap.
