@@ -1,6 +1,9 @@
+"use client";
 import HeroBadge from "@/components/_ui/hero-badge";
 import Badge from "../_ui/badge";
 import Image from "next/image";
+import Rive from "@/components/_ui/rive";
+import { Fit, Layout } from "@rive-app/react-canvas";
 
 const features = [
   {
@@ -13,6 +16,7 @@ const features = [
       </>
     ),
     image: "/assets/overview/logos/structured-system/1.png",
+    rive: "/rive/home/sturcture-system/1.riv",
   },
   {
     title: "Real Conversations",
@@ -24,6 +28,7 @@ const features = [
       </>
     ),
     image: "/assets/overview/logos/structured-system/2.png",
+    rive: "/rive/home/sturcture-system/2.riv",
   },
   {
     title: "Intelligent Qualification",
@@ -35,6 +40,7 @@ const features = [
       </>
     ),
     image: "/assets/overview/logos/structured-system/3.png",
+    rive: "/rive/home/sturcture-system/3.riv",
   },
   {
     title: "Automated Follow-Up",
@@ -46,6 +52,7 @@ const features = [
       </>
     ),
     image: "/assets/overview/logos/structured-system/4.png",
+    rive: "/rive/home/sturcture-system/4.riv",
   },
 ];
 
@@ -56,7 +63,7 @@ function StructuredSystemSection() {
         id="structured-system"
         className="max-w-global relative mx-auto flex flex-col items-start border-x border-[#E5E7EB]"
       >
-        <div className="py-[24px] md:py-section-md flex flex-col items-center justify-center gap-3 self-stretch px-6 md:px-24">
+        <div className="md:py-section-md flex flex-col items-center justify-center gap-3 self-stretch px-6 py-[24px] md:px-24">
           <div className="flex w-full max-w-[46.375em] flex-col items-center justify-center gap-4">
             <Badge text="What AI 3 Does" />
             <h2 className="max-w-[11.08em] text-center tracking-[-0.03em]">
@@ -80,18 +87,28 @@ function StructuredSystemSection() {
             >
               <div className="self-stretch p-1">
                 <div className="flex h-[240px] items-center justify-center overflow-hidden rounded-md bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.08)]">
-                  <Image
+                  {/* <Image
                     src={feature.image}
                     alt={feature.title}
                     width={560}
                     height={240}
                     className="h-full w-full object-cover"
+                  /> */}
+                  <Rive
+                    src={feature.rive}
+                    className="h-full w-full"
+                    layout={
+                      new Layout({
+                        fit: Fit.Cover,
+                        layoutScaleFactor: 1,
+                      })
+                    }
                   />
                 </div>
               </div>
-              <div className="flex flex-col items-center gap-2 self-stretch md:px-6 py-10">
+              <div className="flex flex-col items-center gap-2 self-stretch py-10 md:px-6">
                 <h3 className="text-center">{feature.title}</h3>
-                <p className=" md:max-w-[22.28em] text-center text-[14px] leading-5 md:text-[14px]">
+                <p className="text-center text-[14px] leading-5 md:max-w-[22.28em] md:text-[14px]">
                   {feature.description}
                 </p>
               </div>

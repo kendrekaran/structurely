@@ -1,4 +1,5 @@
 import Button from "@/components/_ui/button";
+import Rive from "@/components/_ui/rive";
 
 interface CtaSectionProps {
   variant?: "default" | "overview";
@@ -13,19 +14,23 @@ function CtaSection({ variant = "default" }: CtaSectionProps) {
         id="cta"
         className="max-w-global relative z-0 mx-auto border-x border-[#E5E7EB] bg-white"
       >
-        <div
+        {/* <div
           className="absolute inset-0 z-[-1] bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: "url('/assets/common/footer-bg.png')" }}
         />
         <div
           className="absolute inset-0 z-[-1] bg-cover bg-center bg-no-repeat md:hidden"
           style={{ backgroundImage: "url('/assets/home/cta/cta-mobile.png')" }}
+        /> */}
+        <Rive
+          src="/rive/cta.riv"
+          className="absolute inset-0 z-[-1] h-full w-full"
         />
         <div className="px-global py-section-md">
           <div className="max-w-global mx-auto">
             <div className="flex flex-col items-center gap-8">
               {isOverview ? (
-                <h2 className="max-w-[9em] md:max-w-[11.25em] text-center font-medium">
+                <h2 className="max-w-[9em] text-center font-medium md:max-w-[11.25em]">
                   <span className="text-[#646464]">Follow-up should be a</span>{" "}
                   <span className="text-[var(--heading)]">
                     system, not a variable.
