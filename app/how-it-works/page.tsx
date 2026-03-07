@@ -10,6 +10,7 @@ import PersistentFollowUpSection from "@/components/how-it-works/persistent-foll
 import CrmSynchronizationSection from "@/components/how-it-works/crm-synchronization-section";
 import Separator from "@/components/_ui/separator";
 import NoLeadsSection from "@/components/how-it-works/no-leads-section";
+import BottomSpace from "@/components/_common/bottom-space";
 
 export default function Overview() {
   return (
@@ -32,6 +33,7 @@ export default function Overview() {
         <Separator />
         <CrmSynchronizationSection />
         <Separator />
+        <BottomSpace />
       </main>
     </>
   );

@@ -77,7 +77,7 @@ function LeadEnvironmentsSection() {
 
             <div className="px-global mb-0 flex w-full justify-center">
               <div className="flex h-[200px] w-full max-w-[29.25em] items-center justify-center rounded-xl bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
-                <span className="text-[16px] leading-6 tracking-[-0.01em] text-[var(--foreground)]">
+                <span className="text-[16px] leading-6 tracking-[-0.01em] text-foreground">
                   Graphic
                 </span>
               </div>
@@ -85,7 +85,7 @@ function LeadEnvironmentsSection() {
 
             <div className="mt-[32px] flex justify-center">
               <div className="rounded-t-xl border border-b-0 border-[#E5E7EB] bg-white px-4 py-2">
-                <span className="text-[14px] leading-5 tracking-[-0.01em] text-[var(--foreground)]">
+                <span className="text-[14px] leading-5 tracking-[-0.01em] text-foreground">
                   Any organization where
                 </span>
               </div>
@@ -103,7 +103,7 @@ function LeadEnvironmentsSection() {
                     className="flex items-center gap-2 rounded-[10px] bg-white px-3 py-2 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]"
                   >
                     {CHECK_ICON}
-                    <span className="text-[14px] leading-5 tracking-[-0.006em] whitespace-nowrap text-[var(--foreground)]">
+                    <span className="text-[14px] leading-5 tracking-[-0.006em] whitespace-nowrap text-foreground">
                       {condition}
                     </span>
                   </div>

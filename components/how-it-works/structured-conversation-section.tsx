@@ -40,18 +40,18 @@ function StructuredConversationSection() {
         className="max-w-global relative z-0 mx-auto border-x "
       >
         <div className="max-w-global mx-auto flex flex-col md:flex-row">
-          <div className="flex flex-1 flex-col justify-center gap-6 border-b border-[#E5E7EB] p-8 md:border-r md:border-b-0 md:p-12">
-            <div className="flex flex-col gap-3">
-              <h2 className="max-w-[10em]">
+          <div className="flex flex-1 flex-col justify-center gap-6 border-b border-[#E5E7EB] px-3 py-6 md:px-8 md:py-8 md:border-r md:border-b-0 md:p-12">
+            <div className="flex flex-col gap-3 border-b border-[#E5E7EB] md:border-b-0 pb-4 md:pb-0">
+              <h2 className="md:max-w-[10em]">
                 Structured <span className="text-[#006FFF]">Conversation</span>{" "}
                 Engine
               </h2>
-              <div className="flex flex-wrap items-center gap-3">
-                <p className="text-base leading-relaxed tracking-[-0.01em]">
+              <div className="flex flex-col md:flex-row flex-wrap items-start md:items-center gap-4 md:gap-3">
+                <p className="text-[14px] md:text-[16px] leading-[20px] md:leading-[26px] md:tracking-[-0.01em]">
                   This is the differentiator.
                 </p>
-                <span className="h-1 w-1 shrink-0 rounded-full bg-[#006FFF]" />
-                <p className="text-base leading-relaxed tracking-[-0.01em]">
+                <span className="hidden md:block h-1 w-1 shrink-0 rounded-full bg-[#006FFF]" />
+                <p className="text-[14px] md:text-[16px] leading-[20px] md:leading-[26px] md:tracking-[-0.01em]">
                   AI 3 is not a keyword bot.
                 </p>
               </div>
@@ -71,7 +71,7 @@ function StructuredConversationSection() {
               ))}
             </ul>
 
-            <p className="text-base leading-relaxed font-medium tracking-[-0.01em] text-[#202020]">
+            <p className="text-[14px] md:text-[16px] leading-[20px] md:leading-[26px] md:tracking-[-0.01em] text-[#202020]">
               Every interaction builds context.
             </p>
           </div>
