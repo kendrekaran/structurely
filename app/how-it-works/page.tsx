@@ -15,7 +15,7 @@ import BottomSpace from "@/components/_common/bottom-space";
 export default function Overview() {
   return (
     <>
-      <main className="max-h-screen max-w-full overflow-x-clip">
+      <main className="max-w-full overflow-x-clip">
         <Header />
         <LeadCaptureHeader />
         <Separator />
