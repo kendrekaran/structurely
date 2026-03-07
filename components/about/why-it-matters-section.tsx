@@ -7,22 +7,22 @@ function WhyItMattersSection() {
 
   return (
     <section id="why-it-matters" className="relative z-0">
-      <div className="px-global ">
-        <div className="max-w-global mx-auto border-b  flex flex-col items-center gap-3 border-x border-[#E5E7EB] py-section-md text-center">
+      <div className="px-global">
+        <div className="max-w-global md:py-section-md mx-auto flex flex-col items-center gap-3 border-x border-b border-[#E5E7EB] py-[24px] text-center">
           <h2 className="max-w-[11em]">Why It Matters</h2>
-          <p className="max-w-[27.375em] text-center">
+          <p className="px-[12px] max-w-[27.375em] text-center">
             Over time, we learned that successful follow-up requires more than
             speed.
           </p>
         </div>
       </div>
 
-      <div className="px-global  ">
-        <div className="max-w-global mx-auto flex bg-white divide-x border-b  divide-[#E5E7EB] border-x border-[#E5E7EB]">
+      <div className="px-global">
+        <div className="max-w-global mx-auto flex flex-col divide-y divide-[#E5E7EB] border-x border-b border-[#E5E7EB] bg-white md:flex-row md:divide-x md:divide-y-0">
           {facts.map((fact) => (
             <div
               key={fact}
-              className="flex flex-1 items-center justify-center px-10 py-8 text-center"
+              className="flex flex-1 items-center justify-center px-6  py-[16px] text-center md:px-10 md:py-8"
             >
               <p className="text-[14px] leading-[20px] tracking-[-0.006em]">
                 {fact}
@@ -34,7 +34,7 @@ function WhyItMattersSection() {
 
       <div className="px-global border-b border-[#E5E7EB]">
         <div className="max-w-global mx-auto flex flex-col items-center gap-3 border-x border-[#E5E7EB] py-6 text-center">
-          <p className="max-w-[29.14em] ">
+          <p className="max-w-[29.14em]">
             <span className="text-foreground text-[14px] leading-[20px] tracking-[-0.01em]">
               Execution can no longer depend on individual capacity alone.
             </span>

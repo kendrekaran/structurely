@@ -24,7 +24,7 @@ export default function DemoCtaSection() {
             </div>
           </div>
 
-          <div className="flex items-center justify-center gap-4 border-t border-[#E5E7EB] px-6 py-6 md:px-24">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 border-t border-[#E5E7EB] px-6 py-6 md:px-24">
             <Button variant="primary" size="md">
               Try the Live Demo
             </Button>

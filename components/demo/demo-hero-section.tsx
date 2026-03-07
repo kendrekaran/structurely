@@ -64,19 +64,19 @@ export default function DemoHeroSection() {
   return (
     <section
       id="demo-hero"
-      className="relative z-0 border-b border-[#E5E7EB] "
+      className="relative z-0  md:border-b border-[#E5E7EB] "
     >
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
-          <div className="flex flex-col items-center gap-4 px-6 py-section-md text-center md:px-24">
-            <h2 className="max-w-[10em]">Experience the AI.</h2>
-            <p className="max-w-[34.44em] text-[18px] leading-[28px] tracking-[-0.01em] text-center">
+          <div className="flex flex-col items-center gap-3.5 md:gap-4 px-6 py-10 md:py-section-md text-center md:px-24">
+            <h2 className="max-w-[258px] md:max-w-[10em] text-center text-[32px] md:text-[48px] leading-[44px] md:leading-[54px] font-normal md:font-medium tracking-[-0.04em] md:tracking-[-0.03em]">Experience the AI.</h2>
+            <p className="max-w-[34.44em] text-[16px] md:text-[18px] leading-[26px] md:leading-[28px] tracking-[-0.01em] text-center">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry
             </p>
           </div>
 
-          <div className="flex border-t border-[#E5E7EB] bg-[#FAFAFA] max-md:flex-col max-md:divide-y max-md:divide-[#E5E7EB]">
+          <div className="flex md:border-t border-[#E5E7EB] bg-[#FAFAFA] max-md:flex-col max-md:divide-y max-md:divide-[#E5E7EB]">
             {tabs.map((tab, index) => {
               const isActive = activeTab === index;
               return (
@@ -84,10 +84,10 @@ export default function DemoHeroSection() {
                   key={tab.title}
                   onClick={() => setActiveTab(index)}
                   className={[
-                    "flex flex-1 cursor-pointer items-center gap-6 px-8 py-8 text-left transition-colors md:px-12",
+                    "flex flex-1 cursor-pointer items-center gap-4 md:gap-6  px-4 py-4 text-left transition-colors md:px-12",
                     isActive
-                      ? "border-b-2 border-[#006FFF] bg-white"
-                      : "border-[#E5E7EB] bg-[#FAFAFA] md:border-t md:border-b md:border-l",
+                      ? "md:border-b-2 md:border-[#006FFF] border-b-0 bg-white"
+                      : "md:border-[#E5E7EB] border-b-0 bg-[#FAFAFA] md:border-t md:border-b md:border-l",
                   ].join(" ")}
                 >
                   <div
@@ -97,7 +97,7 @@ export default function DemoHeroSection() {
                   </div>
                   <div className="flex flex-col gap-1">
                     <span
-                      className={`text-base leading-6 tracking-[-0.006em] transition-colors ${isActive ? "text-[#202020]" : "text-[#646464]"}`}
+                      className={`text-[14px] md:text-base leading-6 tracking-[-0.006em] transition-colors ${isActive ? "text-[#202020]" : "text-[#646464]"}`}
                     >
                       {tab.title}
                     </span>

@@ -6,18 +6,18 @@ export default function SpamMitigationSection() {
     >
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-b border-[#E5E7EB]">
-          <div className="flex items-center justify-between gap-8 px-12 py-16">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 md:gap-8 px-3 md:px-12 py-6 md:py-16">
             <div className="flex flex-col gap-3">
               <h3 className="text-[28px] leading-[36px] font-medium tracking-[-0.03em]">
                 <span className="text-[#646464]">Spam Mitigation</span>
                 <span className="text-[#202020]"> Service</span>
               </h3>
-              <p className="max-w-[42em] text-[14px] leading-[24px] tracking-[-0.01em]">
+              <p className="md:max-w-[42em] text-[14px] leading-[24px] tracking-[-0.01em]">
                 Nationwide spam-mitigated, local area code phone numbers to
                 maximize pickup rates and protect your caller reputation.
               </p>
             </div>
-            <div className="flex shrink-0 flex-col items-end gap-1">
+            <div className="flex shrink-0 flex-col items-left md:items-end gap-1">
               <span className="text-[36px] leading-[44px] font-medium tracking-[-0.03em] text-[#006FFF]">
                 $8
               </span>
