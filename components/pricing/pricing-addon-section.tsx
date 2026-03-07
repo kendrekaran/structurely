@@ -102,7 +102,7 @@ export default function PricingAddonSection() {
 
           <div className="flex min-h-[520px] flex-col overflow-hidden p-[12px] lg:w-[48%] lg:border-l lg:border-[#E5E7EB]">
             <div
-              className="flex flex-1 flex-col items-center justify-center gap-4 border border-[#E5E7EB] px-8 py-10"
+              className="flex flex-1 flex-col items-center justify-center gap-3 md:gap-4 border border-[#E5E7EB] px-8 py-10"
               style={{
                 backgroundImage: "url('/assets/pricing/human-mode-bg.png')",
                 backgroundSize: "cover",

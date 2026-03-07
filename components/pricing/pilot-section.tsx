@@ -5,7 +5,7 @@ export default function PilotSection() {
     <section id="pilot" className="relative z-0 ">
       <div className="px-global">
         <div
-          className="max-w-global py-section-md mx-auto flex flex-col items-center gap-6 border-x border-b-[2px] border-[#E5E7EB] border-b-[#006FFF]"
+          className="max-w-global py-section-md px-3 md:px-0 mx-auto flex flex-col items-center gap-6 border-x border-b-[2px] border-[#E5E7EB] border-b-[#006FFF]"
           style={{
             backgroundImage: "url('/assets/pricing/pricing-bg.png')",
             backgroundSize: "cover",

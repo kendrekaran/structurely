@@ -120,13 +120,10 @@ const credits = [
 
 export default function ActionCreditSection() {
   return (
-    <section
-      id="action-credit"
-      className="relative z-0  "
-    >
-      <div className="px-global ">
-        <div className="max-w-global   py-section-md mx-auto flex flex-col items-center gap-3 border-x border-[#E5E7EB]">
-          <h2 className="max-w-[12em] text-center">
+    <section id="action-credit" className="relative z-0">
+      <div className="px-global">
+        <div className="max-w-global py-section-md mx-auto flex flex-col items-center gap-3 border-x border-[#E5E7EB]">
+          <h2 className="max-w-[12em] text-center text-[24px] leading-[32px] font-medium tracking-[-0.02em] md:text-[48px] md:leading-[54px] md:tracking-[-0.03em]">
             What is an <span className="text-[#006FFF]">Action Credit?</span>
           </h2>
           <p className="max-w-[22em] text-center">
@@ -136,9 +133,9 @@ export default function ActionCreditSection() {
       </div>
 
       <div className="">
-        <div className="px-global ">
-          <div className="max-w-global py-[24px] border-t  mx-auto border-x border-[#E5E7EB]">
-            <p className="mx-auto text-[14px] leading-[20px] tracking-[-0.01em] max-w-[38em] text-center">
+        <div className="px-global">
+          <div className="max-w-global mx-auto border-x border-t border-[#E5E7EB] px-[12px] py-[24px] md:px-0">
+            <p className="mx-auto max-w-[38em] text-center text-[14px] leading-[20px] tracking-[-0.01em]">
               Every time Structurely works on your behalf — chasing documents,
               following up with a lead, or prequalifying a borrower — it spends
               Action Credits.
@@ -149,35 +146,43 @@ export default function ActionCreditSection() {
 
       <div className="">
         <div className="px-global">
-          <div className="max-w-global mx-auto border-t border-b border-x border-[#E5E7EB]">
-            <div className="flex items-stretch">
+          <div className="max-w-global mx-auto border-x border-t border-b border-[#E5E7EB]">
+            <div className="flex flex-col items-stretch md:flex-row">
               {credits.map((credit, index) => (
-                <div key={index} className="flex flex-1 items-stretch">
-                  <div className="flex flex-1 flex-col items-center justify-center gap-[24px] px-6 py-10 md:px-12">
+                <div
+                  key={index}
+                  className="flex flex-1 flex-col items-stretch md:flex-row"
+                >
+                  <div className="flex flex-1 flex-col items-center justify-center gap-[16px] md:gap-[24px] px-6 py-[16px] md:py-10 md:px-12">
                     <div
-                      className={`flex items-center justify-center w-[48px] h-[40px] rounded-[10px] bg-white px-[12px] py-[8px] ${cardShadow}`}
+                      className={`flex h-[40px] w-[48px] items-center justify-center rounded-[10px] bg-white px-[12px] py-[8px] ${cardShadow}`}
                     >
                       <credit.Icon />
                     </div>
                     <div className="flex flex-col items-center gap-1 text-center">
-                      <span className="text-[16px] leading-[24px]  tracking-[-0.01em] text-[#202020]">
+                      <span className="text-[16px] leading-[26px] md:leading-[24px] tracking-[-0.01em] text-[#202020]">
                         1 Credit
                       </span>
-                      <span className="text-[14px] leading-[24px] tracking-[-0.01em] font-light ">
+                      <span className="text-[14px] leading-[24px] font-light tracking-[-0.01em]">
                         {credit.label}
                       </span>
                     </div>
                   </div>
 
                   {index < credits.length - 1 && (
-                    <div className="flex flex-col items-center self-stretch">
-                      <div className="w-px flex-1 bg-[#E5E7EB]" />
+                    <div className="flex items-center self-stretch md:flex-col">
+                      <div className="h-px flex-1 bg-[#E5E7EB] md:h-auto md:w-px" />
                       <div
-                        className={`flex items-center rounded-md bg-white p-1 ${cardShadow}`}
+                        className={`flex items-center rounded-[6px] md:rounded-md bg-white p-1 ${cardShadow}`}
                       >
-                        <ChevronIcon />
+                        <span className="block rotate-90 md:hidden">
+                          <ChevronIcon />
+                        </span>
+                        <span className="hidden md:block">
+                          <ChevronIcon />
+                        </span>
                       </div>
-                      <div className="w-px flex-1 bg-[#E5E7EB]" />
+                      <div className="h-px flex-1 bg-[#E5E7EB] md:h-auto md:w-px" />
                     </div>
                   )}
                 </div>
@@ -189,10 +194,10 @@ export default function ActionCreditSection() {
 
       <div className="">
         <div className="px-global">
-          <div className="max-w-global mx py-[24px] bg-white mx-auto border-x border-[#E5E7EB]">
+          <div className="max-w-global mx mx-auto border-x border-[#E5E7EB] bg-white py-[24px]">
             <p className="mx-auto max-w-[38em] text-center text-sm leading-5 tracking-[-0.01em] text-[#646464]">
-              Think of it like paying a team member per task completed, not per hour
-              logged.
+              Think of it like paying a team member per task completed, not per
+              hour logged.
             </p>
           </div>
         </div>
