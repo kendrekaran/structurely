@@ -2,12 +2,37 @@ import Image from "next/image";
 import Separator from "../_ui/separator";
 
 const logos = [
-  { name: "Sierra Interactive", src: "/assets/home/companies/1.svg", width: 124, height: 40 },
-  { name: "RealGeeks", src: "/assets/home/companies/2.svg", width: 105, height: 40 },
+  {
+    name: "Sierra Interactive",
+    src: "/assets/home/companies/1.svg",
+    width: 124,
+    height: 40,
+  },
+  {
+    name: "RealGeeks",
+    src: "/assets/home/companies/2.svg",
+    width: 105,
+    height: 40,
+  },
   { name: "CINC", src: "/assets/home/companies/3.svg", width: 76, height: 40 },
-  { name: "ValleyDreamTeam", src: "/assets/home/companies/4.svg", width: 160, height: 40 },
-  { name: "firepoint", src: "/assets/home/companies/5.svg", width: 100, height: 40 },
-  { name: "Winchoice", src: "/assets/home/companies/6.svg", width: 110, height: 40 },
+  {
+    name: "ValleyDreamTeam",
+    src: "/assets/home/companies/4.svg",
+    width: 160,
+    height: 40,
+  },
+  {
+    name: "firepoint",
+    src: "/assets/home/companies/5.svg",
+    width: 100,
+    height: 40,
+  },
+  {
+    name: "Winchoice",
+    src: "/assets/home/companies/6.svg",
+    width: 110,
+    height: 40,
+  },
 ];
 
 const CHECK_ICON = (
@@ -62,9 +87,9 @@ const ARROW_ICON = (
 
 const conditions = [
   "Leads are purchased",
+  "CRM usage is inconsistent",
   "Speed determines contact rate",
   "Sales teams lack follow-up capacity",
-  "CRM usage is inconsistent",
 ];
 
 function LeadEnvironmentsSection() {
@@ -72,38 +97,38 @@ function LeadEnvironmentsSection() {
     <section id="lead-environments" className="relative z-0">
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
-          <div className="py-[32px] flex flex-col items-center">
+          <div className="flex flex-col items-center py-[32px]">
             <h3 className="mb-8 text-center">High-Volume Lead Environments</h3>
 
             <div className="px-global mb-0 flex w-full justify-center">
               <div className="flex h-[200px] w-full max-w-[29.25em] items-center justify-center rounded-xl bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
-                <span className="text-[16px] leading-6 tracking-[-0.01em] text-foreground">
+                <span className="text-foreground text-[16px] leading-6 tracking-[-0.01em]">
                   Graphic
                 </span>
               </div>
             </div>
 
-            <div className="mt-[32px] flex justify-center">
+            <div className="mt-[59px] flex justify-center md:mt-[32px]">
               <div className="rounded-t-xl border border-b-0 border-[#E5E7EB] bg-white px-4 py-2">
-                <span className="text-[14px] leading-5 tracking-[-0.01em] text-foreground">
+                <span className="text-foreground text-[14px] leading-5 tracking-[-0.01em]">
                   Any organization where
                 </span>
               </div>
             </div>
 
-            <div className="w-screen ml-[calc(50%-50vw)] mr-[calc(50%-50vw)]">
+            <div className="mr-[calc(50%-50vw)] ml-[calc(50%-50vw)] w-screen">
               <Separator />
             </div>
 
-            <div className="w-full ">
-              <div className="px-global flex flex-wrap justify-center gap-3 py-6">
+            <div className="w-full">
+              <div className="px-global flex flex-wrap justify-center gap-6 py-6 md:gap-3">
                 {conditions.map((condition) => (
                   <div
                     key={condition}
                     className="flex items-center gap-2 rounded-[10px] bg-white px-3 py-2 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]"
                   >
                     {CHECK_ICON}
-                    <span className="text-[14px] leading-5 tracking-[-0.006em] whitespace-nowrap text-foreground">
+                    <span className="text-foreground text-[14px] leading-5 tracking-[-0.006em] whitespace-nowrap">
                       {condition}
                     </span>
                   </div>
@@ -111,20 +136,21 @@ function LeadEnvironmentsSection() {
               </div>
             </div>
 
-            <div className="w-screen ml-[calc(50%-50vw)] mr-[calc(50%-50vw)]">
+            <div className="mr-[calc(50%-50vw)] ml-[calc(50%-50vw)] w-screen">
               <Separator />
             </div>
 
-
-            <div className="w-full ">
-              <div className="flex items-center justify-center border-b border-[#E5E7EB] py-8">
-                <p className="text-center text-heading text-[1.25em] leading-[28px] tracking-[-0.01em] ">Trusted by industry leaders</p>
+            <div className="w-full">
+              <div className="hidden items-center justify-center border-b border-[#E5E7EB] py-8 md:flex">
+                <p className="text-heading text-center text-[1.25em] leading-[28px] tracking-[-0.01em]">
+                  Trusted by industry leaders
+                </p>
               </div>
-              <div className="flex flex-wrap divide-x divide-[#EAEDF5]">
+              <div className="scrollbar-hide flex divide-x divide-[#EAEDF5] overflow-x-auto md:flex-wrap">
                 {logos.map((logo) => (
                   <div
                     key={logo.name}
-                    className="flex flex-1 basis-1/3 items-center justify-center px-8 py-5 sm:basis-1/6"
+                    className="flex shrink-0 items-center justify-center px-8 py-5 md:flex-1 md:shrink md:basis-1/6"
                   >
                     <Image
                       src={logo.src}
@@ -138,14 +164,12 @@ function LeadEnvironmentsSection() {
               </div>
             </div>
 
-            <div className="flex w-full items-center justify-center gap-3 bg-[#006FFF] px-6 py-5">
+            <div className="flex w-full items-center justify-center gap-3 bg-[#006FFF] md:px-6 py-5">
               <span className="text-[14px] leading-5 font-medium text-white">
                 See How It Works in Your Environment
               </span>
               {ARROW_ICON}
             </div>
-
-            
           </div>
         </div>
       </div>

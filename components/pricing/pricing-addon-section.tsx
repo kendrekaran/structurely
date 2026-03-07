@@ -15,23 +15,13 @@ const features = [
 
 function FeatureIcon() {
   return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 20 20"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
+    <img
+      src="/assets/common/verification.svg"
+      alt=""
+      width={20}
+      height={20}
       className="shrink-0"
-    >
-      <circle cx="10" cy="10" r="8" stroke="#006FFF" strokeWidth="1.2" />
-      <path
-        d="M10 6.5V10L12.5 12"
-        stroke="#006FFF"
-        strokeWidth="1.2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
+    />
   );
 }
 
@@ -39,62 +29,69 @@ export default function PricingAddonSection() {
   const [mode, setMode] = useState<DialerMode>("human");
 
   return (
-    <section
-      id="pricing-addon"
-      className="relative z-0  "
-    >
+    <section id="pricing-addon" className="relative z-0">
       <div className="px-global">
-        <div className="max-w-global mx-auto flex flex-col border-x  border-[#E5E7EB] lg:flex-row">
-          <div className="px-global py-section-md flex flex-1 flex-col gap-8">
+        <div className="max-w-global mx-auto flex flex-col border-x border-[#E5E7EB] lg:flex-row">
+          <div className="px-global py-section-md flex flex-1 flex-col gap-[16px] md:px-[48px] md:py-[48px]">
             <div className="self-start">
-            <Badge text="Beta — Salesforce Add-on" />
+              <Badge text="Beta — Salesforce Add-on" />
             </div>
 
             <h2>
               <span className="text-[#006FFF]">AI Power</span> Dialer
             </h2>
 
-            <div className="max-w-[29.375rem] flex flex-col gap-2">
-              <div className="text-[14px] leading-[26px]  tracking-[-0.01em] text-[#202020] md:text-[16px]">
+            <div className="flex max-w-[29.375rem] flex-col md:gap-1">
+              <div className="text-[16px] leading-[26px] tracking-[-0.01em] text-[#202020]">
                 You don&apos;t have to replace your dialer — unless you want to.
+                &nbsp;
+                <br className="md:hidden" />
                 Create a list, flip the switch, and let AI start dialing.
               </div>
-              <p className="text-[14px] leading-[24px] font-light  tracking-[-0.01em]">
+              <p className="text-[14px] leading-[24px] font-light tracking-[-0.01em]">
                 Toggle back to human mode anytime. Dial thousands of leads at
                 once, integrated seamlessly into Salesforce.
               </p>
             </div>
 
-            <ul className="divide-y divide-[#E5E7EB]">
+            <ul className="mt-[8px] divide-y divide-[#E5E7EB]">
               {features.map((feature, i) => (
                 <li
                   key={i}
-                  className="flex items-center gap-3 py-3 first:pt-0 last:pb-0"
+                  className="flex items-center gap-2 py-3 first:pt-0 last:pb-0 md:gap-3"
                 >
                   <FeatureIcon />
-                  <span className="text-[14px] leading-[26px] tracking-[-0.01em] text-[#646464]">
+                  <span className="text-[14px] leading-[20px] tracking-[-0.01em] text-[#646464]">
                     {feature}
                   </span>
                 </li>
               ))}
             </ul>
 
-            <div className="flex gap-3">
-              <div className="flex flex-col gap-1 rounded-xl border border-[#E5E7EB] p-3 min-w-[180px]">
+            <hr className="mt-0 mb-0 border-[#E5E7EB]" />
+
+            <div className="mt-[8px] flex w-full max-w-full flex-col gap-[12px] md:flex-row md:gap-3">
+              <div className="flex flex-col gap-1 rounded-xl border border-[#E5E7EB] p-3 md:min-w-[180px]">
                 <div className="flex items-baseline gap-1">
-                  <span className="text-[20px] leading-[20px]  tracking-[-0.006em] text-[#202020]">
+                  <span className="text-[20px] leading-[20px] tracking-[-0.006em] text-[#202020]">
                     $999
                   </span>
-                  <span className="text-[16px] leading-[24px] tracking-[-0.01em]">/mo</span>
+                  <span className="text-[16px] leading-[24px] tracking-[-0.01em]">
+                    /mo
+                  </span>
                 </div>
-                <span className="text-[12px] leading-[24px] tracking-[-0.01em] ">AI Power Dialer</span>
+                <span className="text-[12px] leading-[24px] tracking-[-0.01em]">
+                  AI Power Dialer
+                </span>
               </div>
-              <div className="flex flex-col gap-1 rounded-xl border border-[#E5E7EB] p-3 min-w-[180px]">
+              <div className="flex flex-col gap-1 rounded-xl border border-[#E5E7EB] p-3 md:min-w-[180px]">
                 <div className="flex items-baseline gap-1">
-                  <span className="text-[20px] leading-[20px]  tracking-[-0.006em] text-[#202020]">
+                  <span className="text-[20px] leading-[20px] tracking-[-0.006em] text-[#202020]">
                     $199
                   </span>
-                  <span className="text-[16px] leading-[24px] tracking-[-0.01em]">/mo</span>
+                  <span className="text-[16px] leading-[24px] tracking-[-0.01em]">
+                    /mo
+                  </span>
                 </div>
                 <span className="text-[12px] leading-[24px] tracking-[-0.01em]">
                   Each additional seat
@@ -103,9 +100,9 @@ export default function PricingAddonSection() {
             </div>
           </div>
 
-          <div className="hidden min-h-[520px] flex-col overflow-hidden border-l border-[#E5E7EB] lg:flex lg:w-[48%] p-[12px]">
+          <div className="flex min-h-[520px] flex-col overflow-hidden p-[12px] lg:w-[48%] lg:border-l lg:border-[#E5E7EB]">
             <div
-              className="flex flex-1 flex-col border border-[#E5E7EB] items-center justify-center gap-4 px-8 py-10"
+              className="flex flex-1 flex-col items-center justify-center gap-4 border border-[#E5E7EB] px-8 py-10"
               style={{
                 backgroundImage: "url('/assets/pricing/human-mode-bg.png')",
                 backgroundSize: "cover",
@@ -114,7 +111,7 @@ export default function PricingAddonSection() {
             >
               <div className="flex items-center gap-3">
                 <span
-                  className={`text-[14px] leading-[26px] tracking-[-0.01em]  transition-colors ${
+                  className={`text-[14px] leading-[26px] tracking-[-0.01em] transition-colors ${
                     mode === "human" ? "text-[#006FFF]" : ""
                   }`}
                 >
@@ -132,7 +129,7 @@ export default function PricingAddonSection() {
                   />
                 </button>
                 <span
-                  className={`text-[14px] leading-[26px] tracking-[-0.01em]  transition-colors ${
+                  className={`text-[14px] leading-[26px] tracking-[-0.01em] transition-colors ${
                     mode === "ai" ? "text-[#006FFF]" : ""
                   }`}
                 >
@@ -144,7 +141,7 @@ export default function PricingAddonSection() {
                 <span className="text-[28px] leading-[36px] font-medium tracking-[-0.03em] text-[#202020]">
                   {mode === "human" ? "Human Mode" : "AI Mode"}
                 </span>
-                <span className="text-[14px] leading-[24px]  tracking-[-0.01em]">
+                <span className="text-[14px] leading-[24px] tracking-[-0.01em]">
                   {mode === "human"
                     ? "Your LOs dial manually from a list"
                     : "AI dials and qualifies thousands simultaneously"}

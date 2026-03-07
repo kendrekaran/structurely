@@ -43,11 +43,11 @@ function IndustryCard({
 }) {
   return (
     <div className="flex flex-col">
-      <div className="flex flex-col items-center justify-center py-8">
+      <div className="flex flex-col items-center justify-center py-[16px] md:py-8">
         <h3 className="text-center">{title}</h3>
       </div>
       <div className="flex flex-col border-t border-[#E5E7EB]">
-        <div className="px-8 py-6 md:px-12">
+        <div className="px-3 py-6 md:px-12">
           <div
             className="flex h-[200px] items-center justify-center rounded-xl bg-white px-3 py-2"
             style={{
@@ -60,7 +60,10 @@ function IndustryCard({
         </div>
         <div className="divide-y divide-[#E5E7EB] border-t border-[#E5E7EB]">
           {features.map((row, rowIdx) => (
-            <div key={rowIdx} className="flex divide-x divide-[#E5E7EB]">
+            <div
+              key={rowIdx}
+              className="flex flex-col divide-y divide-[#E5E7EB] md:flex-row md:divide-x md:divide-y-0"
+            >
               {row.map((item, colIdx) => (
                 <div
                   key={colIdx}
@@ -83,26 +86,26 @@ function IndustriesSection() {
   return (
     <section id="industries" className="relative z-0">
       <div className="px-global">
-        <div className="max-w-global mx-auto border-x ">
+        <div className="max-w-global mx-auto border-x">
           <div className="grid grid-cols-1 md:grid-cols-2">
-            <div className="md:border-r border-[#E5E7EB]">
+            <div className="border-b border-[#E5E7EB] md:border-r md:border-b-0">
               <IndustryCard
                 title={industries[0].title}
                 features={industries[0].features}
               />
             </div>
-            <div className="border-b md:border-b-0 border-[#E5E7EB]">
+            <div>
               <IndustryCard
                 title={industries[1].title}
                 features={industries[1].features}
               />
             </div>
           </div>
-          <div className="w-screen ml-[calc(50%-50vw)] mr-[calc(50%-50vw)]">
+          <div className="mr-[calc(50%-50vw)] ml-[calc(50%-50vw)] w-screen">
             <Separator />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2">
-            <div className="md:border-r border-[#E5E7EB]">
+            <div className="border-b border-[#E5E7EB] md:border-r md:border-b-0">
               <IndustryCard
                 title={industries[2].title}
                 features={industries[2].features}
