@@ -71,7 +71,7 @@ function CrmIntegrationSection() {
               <div
                 key={feature.label}
                 className={[
-                  "flex flex-col items-center -space-y-3 border-[#E5E7EB] px-3 pt-[24px] md:pt-[31px] pb-[24px] md:pb-[11px] transition-colors duration-200 hover:bg-black/[0.03]",
+                  "flex flex-col items-center -space-y-3 border-[#E5E7EB] px-3 pt-[24px] md:pt-[31px] pb-[24px] md:pb-[32px] transition-colors duration-200 hover:bg-black/[0.03]",
                   "border-b",
                   isLastRowSm ? "border-b-0 lg:border-b" : "",
                   isLastRowLg ? "lg:border-b-0" : "",
@@ -86,7 +86,7 @@ function CrmIntegrationSection() {
                   .join(" ")}
               >
                 <div className="">{feature.icon}</div>
-                <p className="md:max-w-[14.28em] text-center text-[14px] leading-5  md:text-[14px] tracking-[-0.006em]">
+                <p className="md:max-w-[270px] text-center text-[14px] leading-5  md:text-[14px] tracking-[-0.006em]">
                   {feature.label}
                 </p>
               </div>

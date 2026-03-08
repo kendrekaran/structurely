@@ -21,7 +21,7 @@ export default function PricingHeroSection({
           <div className="flex flex-col items-center gap-8 md:gap-4">
             <Badge text="Pricing" />
             <div className="flex flex-col items-center gap-3.5 md:gap-4">
-              <h2 className="max-w-[11.08em] text-center text-[32px] md:text-[48px] leading-[44px] md:leading-[54px] font-normal md:font-medium tracking-[-0.04em] md:tracking-[-0.03em]">
+              <h2 className="max-w-[11.08em] md:max-w-[652.865234375px] text-center text-[32px] md:text-[48px] leading-[44px] md:leading-[54px] font-normal md:font-medium tracking-[-0.04em] md:tracking-[-0.03em]">
                 Your leads aren&apos;t going cold. They&apos;re being ignored.
               </h2>
               <p className="max-w-[35em] text-center text-[16px] md:text-[18px] leading-[26px] md:leading-[28px] tracking-[-0.01em]">

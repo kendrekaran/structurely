@@ -107,7 +107,7 @@ function CrmSynchronizationSection() {
               key={item.label}
               className="flex flex-col md:min-w-[120px] md:flex-1 md:flex-row md:items-center"
             >
-              <div className="flex flex-1 flex-col items-center justify-center gap-4 px-6 py-6 md:gap-6 md:px-12 md:py-8">
+              <div className="flex flex-1 flex-col items-center justify-center gap-4 px-6 py-6 md:h-[151px] md:gap-6 md:px-0 md:py-8">
                 <div className="flex h-[40px] w-[48px] items-center gap-2 rounded-[10px] bg-white px-3 py-2 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
                   <img
                     src={item.icon}
@@ -117,7 +117,7 @@ function CrmSynchronizationSection() {
                     className="shrink-0"
                   />
                 </div>
-                <span className="text-heading text-center text-[14px] leading-6 tracking-[-0.01em]">
+                <span className="max-w-[137px] text-heading text-center text-[14px] leading-6 tracking-[-0.01em]">
                   {item.label}
                 </span>
               </div>
@@ -131,7 +131,7 @@ function CrmSynchronizationSection() {
             Is recorded inside your{" "}
             <span className="text-heading font-medium">CRM.</span>
           </p>
-          <p className="text-center [font-family:var(--font-caveat)] text-[16px] leading-6 font-bold tracking-[-0.02em]">
+          <p className="font-figma-hand text-center text-[16px] leading-6 font-bold tracking-[-0.02em]">
             <span className="text-[#006FFF] underline">Sales teams</span>
             <span className="text-[#006FFF]"> </span>
             <span className="text-heading">see complete context.</span>

@@ -37,21 +37,21 @@ function StructuredConversationSection() {
     <div className="px-global">
       <section
         id="structured-conversation"
-        className="max-w-global relative z-0 mx-auto border-x "
+        className="max-w-global relative z-0 mx-auto border-x"
       >
         <div className="max-w-global mx-auto flex flex-col md:flex-row">
-          <div className="flex flex-1 flex-col justify-center gap-6 border-b border-[#E5E7EB] px-3 py-6 md:px-8 md:py-8 md:border-r md:border-b-0 md:p-12">
-            <div className="flex flex-col gap-3 border-b border-[#E5E7EB] md:border-b-0 pb-4 md:pb-0">
+          <div className="flex flex-1 flex-col justify-center gap-6 border-b border-[#E5E7EB] px-3 py-6 md:w-1/2 md:flex-none md:border-r md:border-b-0 md:px-[48px] md:py-[48px]">
+            <div className="flex flex-col gap-3 border-b border-[#E5E7EB] pb-4 md:border-b-0 md:pb-0">
               <h2 className="md:max-w-[10em]">
                 Structured <span className="text-[#006FFF]">Conversation</span>{" "}
                 Engine
               </h2>
-              <div className="flex flex-col md:flex-row flex-wrap items-start md:items-center gap-4 md:gap-3">
-                <p className="text-[14px] md:text-[16px] leading-[20px] md:leading-[26px] md:tracking-[-0.01em]">
+              <div className="flex flex-col flex-wrap items-start gap-4 md:flex-row md:items-center md:gap-3">
+                <p className="text-[14px] leading-[20px] md:text-[16px] md:leading-[26px] md:tracking-[-0.01em]">
                   This is the differentiator.
                 </p>
-                <span className="hidden md:block h-1 w-1 shrink-0 rounded-full bg-[#006FFF]" />
-                <p className="text-[14px] md:text-[16px] leading-[20px] md:leading-[26px] md:tracking-[-0.01em]">
+                <span className="hidden h-1 w-1 shrink-0 rounded-full bg-[#006FFF] md:block" />
+                <p className="text-[14px] leading-[20px] md:text-[16px] md:leading-[26px] md:tracking-[-0.01em]">
                   AI 3 is not a keyword bot.
                 </p>
               </div>
@@ -71,12 +71,12 @@ function StructuredConversationSection() {
               ))}
             </ul>
 
-            <p className="text-[14px] md:text-[16px] leading-[20px] md:leading-[26px] md:tracking-[-0.01em] text-[#202020]">
+            <p className="text-[14px] leading-[20px] text-[#202020] md:text-[16px] md:leading-[26px] md:tracking-[-0.01em]">
               Every interaction builds context.
             </p>
           </div>
 
-          <div className="flex min-h-[360px] flex-1 items-stretch p-3 md:min-h-[480px]">
+          <div className="flex min-h-[360px] flex-1 items-stretch p-3 md:min-h-[480px] md:w-1/2 md:flex-none">
             <div className="flex flex-1 items-center justify-center overflow-hidden rounded-sm bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.08)]">
               <span className="text-base leading-6 tracking-[-0.01em]">
                 Graphic

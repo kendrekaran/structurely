@@ -92,13 +92,13 @@ function LeadCaptureSection() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center gap-3 px-6 py-[24px] text-center md:gap-1">
+        <div className="flex flex-col items-center gap-3 px-6 py-[24px] text-center ">
           <p className="text-sm leading-5">
             <span className="text-heading">Structurely AI </span>{" "}
             <span className="text-foreground">activates instantly.</span>
           </p>
-          <p className="text-sm leading-5 italic">
-            <span className="cursue text-[var(--primary)]">No delay.</span>{" "}
+          <p className="font-figma-hand text-center text-[16px] leading-6 font-bold tracking-[-0.02em]">
+            <span className="text-[var(--primary)]">No delay.</span>{" "}
             <span className="text-heading">No rep assignment required.</span>
           </p>
         </div>

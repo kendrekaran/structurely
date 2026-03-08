@@ -90,8 +90,8 @@ function StructuredSystemSection() {
               <div className="h-px flex-1 bg-[#E5E7EB]" />
             </div>
 
-            <div className="flex flex-col items-center gap-3 py-6 text-center">
-              <p className="max-w-[33.857em] text-[14px] leading-[20px] tracking-[-0.01em]">
+            <div className="max-w-[33.857em] flex flex-col items-center gap-3 py-6 text-center">
+              <p className=" text-[14px] leading-[20px] tracking-[-0.01em]">
                 <span className="text-heading text-[14px] leading-[20px] tracking-[-0.01em]">
                   They are designed{" "}
                 </span>
@@ -100,8 +100,7 @@ function StructuredSystemSection() {
                 </span>
               </p>
               <p
-                className="max-w-[29.875em] text-[16px] leading-[24px] font-bold tracking-[-0.02em]"
-                style={{ fontFamily: "var(--font-caveat)" }}
+                className="max-w-[29.875em]  font-figma-hand text-center text-[16px] leading-6 font-bold tracking-[-0.02em]"
               >
                 <span className="text-primary">
                   Our products are built around{" "}

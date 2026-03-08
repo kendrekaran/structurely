@@ -44,7 +44,7 @@ function IndustryCard({
   return (
     <div className="flex flex-col">
       <div className="flex flex-col items-center justify-center py-[16px] md:py-8">
-        <h3 className="text-center">{title}</h3>
+        <h3 className="text-center tracking-[-0.006em]">{title}</h3>
       </div>
       <div className="flex flex-col border-t border-[#E5E7EB]">
         <div className="px-3 py-6 md:px-12">

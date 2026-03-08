@@ -109,7 +109,7 @@ function LeadEnvironmentsSection() {
             </div>
 
             <div className="mt-[59px] flex justify-center md:mt-[32px]">
-              <div className="rounded-t-xl border border-b-0 border-[#E5E7EB] bg-white px-4 py-2">
+              <div className="rounded-t-xl border border-b-0 border-[#E5E7EB] bg-white px-4 py-1">
                 <span className="text-foreground text-[14px] leading-5 tracking-[-0.01em]">
                   Any organization where
                 </span>
@@ -121,7 +121,7 @@ function LeadEnvironmentsSection() {
             </div>
 
             <div className="w-full">
-              <div className="px-global flex flex-wrap justify-center gap-6 py-6 md:gap-3">
+              <div className="px-global flex flex-wrap md:flex-nowrap justify-center gap-6 py-6 md:gap-6">
                 {conditions.map((condition) => (
                   <div
                     key={condition}

@@ -56,7 +56,7 @@ function MultiChannelSection() {
                     return (
                       <div
                         key={channel.label}
-                        className={`flex flex-1 flex-col items-center justify-center gap-6 py-6 md:px-8 md:py-8 ${
+                        className={`flex flex-1 flex-col items-center justify-center gap-6 py-6 md:h-[148px] md:px-8 md:py-8 ${
                           !isMobileLastCol ? "border-border border-r" : ""
                         } ${
                           !isMobileLastRow
@@ -76,7 +76,7 @@ function MultiChannelSection() {
                           className="h-[40px] w-[48px] rounded-[10px] px-[12px] py-[8px]"
                           style={{ boxShadow: iconShadow }}
                         />
-                        <span className="text-foreground max-w-[159px] text-center text-sm leading-5 font-normal tracking-[-0.006em] md:max-w-full ">
+                        <span className="text-foreground max-w-[159px] text-center text-sm leading-5 font-normal tracking-[-0.006em] md:max-w-full">
                           {channel.label}
                         </span>
                       </div>

@@ -15,6 +15,11 @@ const caveat = Caveat({
   weight: ["700"],
 });
 
+const figmaHandBold = localFont({
+  src: "../fonts/FigmaHand-Bold_2.otf",
+  variable: "--font-figma-hand-bold",
+});
+
 export const metadata: Metadata = {
   title: "Structurely",
   description: "Structurely - AI platform that move the right leads forward.",
@@ -28,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${stackSansText.variable} ${caveat.variable} relative z-0 font-sans antialiased`}
+        className={`${stackSansText.variable} ${caveat.variable} ${figmaHandBold.variable} relative z-0 font-sans antialiased`}
       >
         {children}
       </body>

@@ -162,7 +162,7 @@ function IntelligentQualificationSection() {
             <div className="flex w-full items-center">
               <div className="h-px flex-1 bg-[#E5E7EB]" />
               <div className="flex h-[24px] md:h-[40px] w-[28.8px] md:w-[48px] items-center justify-center rounded-[6px] md:rounded-[10px] bg-white md:p-2 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
-                <Image src="/assets/overview/logos/chevron-down.svg" alt="Arrow" width={16} height={16} />
+                <Image src="/assets/overview/logos/chevron-down.svg" alt="Arrow" width={16} height={16} className="w-[16px] h-[16px] md:w-[24px] md:h-[24px]" />
               </div>
               <div className="h-px flex-1 bg-[#E5E7EB]" />
             </div>

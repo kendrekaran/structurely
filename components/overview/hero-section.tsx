@@ -16,7 +16,7 @@ function HeroSection() {
               <p className="max-w-[35em] text-center text-[16px] md:text-[18px] leading-[26px] md:leading-[28px] tracking-[-0.01em]">
                 <span className="text-[#202020]">Structurely AI </span> helps
                 businesses capture, qualify, follow-up and convert inbound{" "}
-                <span className="text-[#202020]">demand — automatically</span>{" "}
+                <span className="text-[#202020]">demand, automatically</span>{" "}
                 inside your existing CRM.
               </p>
             </div>

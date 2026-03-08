@@ -33,10 +33,10 @@ function WhyItMattersSection() {
       </div>
 
       <div className="px-global border-b border-[#E5E7EB]">
-        <div className="max-w-global mx-auto flex flex-col items-center gap-3 border-x border-[#E5E7EB] py-6 text-center">
+        <div className="max-w-global mx-auto flex flex-col items-center px-[12px] gap-4 md:gap-3 border-x border-[#E5E7EB] py-6 text-center">
           <p className="max-w-[29.14em]">
             <span className="text-foreground text-[14px] leading-[20px] tracking-[-0.01em]">
-              Execution can no longer depend on individual capacity alone.
+              Execution can no longer depend on individual capacity alone.<br className="md:hidden" />
             </span>
             <span className="text-heading text-[14px] leading-[20px] tracking-[-0.01em]">
               {" "}
@@ -44,8 +44,7 @@ function WhyItMattersSection() {
             </span>
           </p>
           <p
-            className="max-w-[29.875em] text-[16px] leading-[24px] font-bold tracking-[-0.02em]"
-            style={{ fontFamily: "var(--font-caveat)" }}
+            className="max-w-[29.875em] font-figma-hand text-center text-[16px] leading-6 font-bold tracking-[-0.02em]"
           >
             <span className="text-primary">Organizations that </span>
             <span className="text-heading">

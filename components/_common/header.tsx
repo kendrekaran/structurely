@@ -27,7 +27,7 @@ export default function Header() {
   const isCompanyActive = companyLinks.some((l) => l.href === pathname);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white">
+    <header className="sticky top-0 z-50 w-full bg-[#FAFAFA]">
       <div className="px-global border-b border-[#E5E7EB]">
         <div className="max-w-global mx-auto flex items-center gap-8 py-[20px]">
           {/* Logo */}
@@ -41,7 +41,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden flex-1 items-center justify-center gap-1 lg:flex">
+          <nav className="hidden flex-1 items-center justify-center gap-2 lg:flex">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -112,7 +112,7 @@ export default function Header() {
 
           {/* Desktop CTA */}
           <div className="hidden flex-shrink-0 lg:flex">
-            <Button variant="outline" size="md">
+            <Button variant="outline" size="md" className="text-[14px]! leading-[20px] tracking-0">
               Request Demo
             </Button>
           </div>

@@ -401,16 +401,16 @@ function PersistentFollowUpSection() {
             <span className="text-foreground block text-[16px] leading-[26px] tracking-[-0.01em] md:text-right">
               Most teams stop too early.
             </span>
-            <span className="block [font-family:var(--font-caveat)] text-[16px] leading-6 font-bold tracking-[-0.02em] text-[#006FFF] underline">
+            <span className="font-figma-hand text-center text-[16px] leading-6 font-bold tracking-[-0.02em] text-[#006FFF] underline">
               AI doesn&apos;t.
             </span>
           </div>
         </div>
 
         <div className="flex flex-col items-center">
-          <div className="rounded-t-xl border-t border-r border-l border-[#E5E7EB] bg-white px-4 py-2">
+          <div className="rounded-t-xl border-t border-r border-l border-[#E5E7EB] bg-white px-4 py-1">
             <span className="text-foreground text-[14px] leading-5 tracking-[-0.01em]">
-              Structurely AI 3:
+              Structurely AI:
             </span>
           </div>
         </div>
