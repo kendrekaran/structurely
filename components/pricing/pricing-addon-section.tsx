@@ -61,7 +61,7 @@ export default function PricingAddonSection() {
                   className="flex items-center gap-2 py-3 first:pt-0 last:pb-0 md:gap-3"
                 >
                   <FeatureIcon />
-                  <span className="text-[14px] leading-[20px] tracking-[-0.01em] text-[#646464]">
+                  <span className="text-[14px] leading-[20px] md:leading-[26px] tracking-[-0.01em] text-[#646464]">
                     {feature}
                   </span>
                 </li>
@@ -71,7 +71,7 @@ export default function PricingAddonSection() {
             <hr className="mt-0 mb-0 border-[#E5E7EB]" />
 
             <div className="mt-[8px] flex w-full max-w-full flex-col gap-[12px] md:flex-row md:gap-3">
-              <div className="flex flex-col gap-1 rounded-xl border border-[#E5E7EB] p-3 md:min-w-[180px]">
+              <div className="flex flex-col gap-1 rounded-[10px] bg-white border border-[#E5E7EB] p-3 md:min-w-[180px]">
                 <div className="flex items-baseline gap-1">
                   <span className="text-[20px] leading-[20px] tracking-[-0.006em] text-[#202020]">
                     $999
@@ -84,7 +84,7 @@ export default function PricingAddonSection() {
                   AI Power Dialer
                 </span>
               </div>
-              <div className="flex flex-col gap-1 rounded-xl border border-[#E5E7EB] p-3 md:min-w-[180px]">
+              <div className="flex flex-col gap-1 rounded-[10px] bg-white border border-[#E5E7EB] p-3 md:min-w-[180px]">
                 <div className="flex items-baseline gap-1">
                   <span className="text-[20px] leading-[20px] tracking-[-0.006em] text-[#202020]">
                     $199
@@ -102,7 +102,7 @@ export default function PricingAddonSection() {
 
           <div className="flex min-h-[520px] flex-col overflow-hidden p-[12px] lg:w-[48%] lg:border-l lg:border-[#E5E7EB]">
             <div
-              className="flex flex-1 flex-col items-center justify-center gap-3 md:gap-4 border border-[#E5E7EB] px-8 py-10"
+              className="flex flex-1 flex-col bg-white items-center justify-center gap-3 md:gap-4 border border-[#E5E7EB] px-8 py-10"
               style={{
                 backgroundImage: "url('/assets/pricing/human-mode-bg.png')",
                 backgroundSize: "cover",

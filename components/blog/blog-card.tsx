@@ -22,10 +22,10 @@ function BlogCard({ title, description, date, image }: BlogCardProps) {
       <div className="flex flex-col divide-y divide-[#E5E7EB]">
         <div className="flex flex-col gap-2 p-6">
           <h3 className="text-[16px] leading-[26px] font-medium tracking-[-0.01em] line-clamp-1">{title}</h3>
-          <p className="line-clamp-3">{description}</p>
+          <p className="line-clamp-3 text-[14px] leading-[24px] tracking-[-0.006em]">{description}</p>
         </div>
         <div className="p-6">
-          <p>{date}</p>
+          <p className="line-clamp-3 text-[14px] leading-[24px] tracking-[-0.006em]">{date}</p>
         </div>
       </div>
     </article>

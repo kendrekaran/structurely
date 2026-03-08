@@ -30,17 +30,17 @@ function WhatWeBelieveSection() {
         <div className="px-global">
           <div className="max-w-global mx-auto border-x border-b border-[#E5E7EB]">
             <div className="grid grid-cols-1 divide-y divide-[#E5E7EB] md:grid-cols-3 md:divide-x md:divide-y-0">
-              <div className="flex w-full items-center justify-center px-[12px]  py-6 last:pr-0 md:px-[40px] md:py-[32px] md:last:px-8">
+              <div className="flex w-full max-h-[84px] items-center justify-center px-[12px]  py-6 last:pr-0 md:px-[40px] md:py-[32px] md:last:px-8">
                 <p className="text-[14px] leading-[20px] tracking-[-0.01em]">
                   It deserves timely engagement.
                 </p>
               </div>
-              <div className="flex w-full items-center justify-center px-[12px]  py-6 md:px-8 md:py-8">
+              <div className="flex w-full max-h-[84px] items-center justify-center px-[12px]  py-6 md:px-8 md:py-8">
                 <p className="text-[14px] leading-[20px] tracking-[-0.01em]">
                   It requires consistent qualification.
                 </p>
               </div>
-              <div className="flex w-full items-center justify-center px-[12px]  py-6 first:pl-0 last:pr-0 md:px-8 md:py-8">
+              <div className="flex w-full max-h-[84px] items-center justify-center px-[12px]  py-6 first:pl-0 last:pr-0 md:px-8 md:py-8">
                 <p className="text-[14px] text-center leading-[20px] tracking-[-0.01em]">
                   It should not depend on whether someone remembered to follow
                   up.

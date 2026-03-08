@@ -36,13 +36,13 @@ function StructuredSystemSection() {
           </div>
 
           <div className="flex w-full flex-col items-center">
-            <div className="rounded-t-xl border border-b-0 border-[#E5E7EB] bg-white px-4 py-2">
+            <div className="rounded-t-xl border border-b-0 border-[#E5E7EB] bg-white px-4 py-1">
               <span className="text-foreground text-[14px] leading-[20px] tracking-[-0.01em]">
                 It requires:
               </span>
             </div>
 
-            <div className="flex w-full flex-col items-center justify-center gap-4 border-t border-[#E5E7EB] bg-[#FAFAFA] px-6 py-6 md:flex-row md:flex-wrap">
+            <div className="flex w-full flex-col items-center justify-center gap-4 md:gap-6 border-t border-[#E5E7EB] bg-[#FAFAFA] px-6 py-6 md:flex-row md:flex-wrap">
               {requirementItems.map((item) => (
                 <div
                   key={item.label}

@@ -27,6 +27,8 @@ export default function PricingPage() {
       <Separator />
       <PricingAddonSection />
       <Separator />
+      <SpamMitigationSection />
+      <Separator />
       <ActionCreditSection />
       <Separator />
       <OnboardingSection />
@@ -36,8 +38,6 @@ export default function PricingPage() {
       <ComparePlansSection />
       <Separator />
       <FaqSection />
-      <Separator />
-      <SpamMitigationSection />
     </main>
   );
 }

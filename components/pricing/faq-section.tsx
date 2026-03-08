@@ -90,7 +90,7 @@ export default function FaqSection() {
   return (
     <section id="faq" className="relative z-0 ">
       <div className="bg-background px-global">
-        <div className="max-w-global py-section-md mx-auto flex flex-col items-center gap-3 border-x border-[#E5E7EB]">
+        <div className="max-w-global py-section-md  mx-auto flex flex-col items-center gap-3 border-x border-[#E5E7EB]">
           <h2 className="text-center">FAQ</h2>
           <p className="text-center">Frequently Asked Questions</p>
         </div>
@@ -98,8 +98,8 @@ export default function FaqSection() {
 
       <div className=" ">
         <div className="px-global">
-          <div className="max-w-global border-t  bg-white py-section-md mx-auto border-x border-[#E5E7EB]">
-            <div className="mx-auto max-w-[44rem] divide-y divide-[#E5E7EB]">
+          <div className="max-w-global border-t  bg-white py-section-md md:py-[52px] mx-auto border-x border-[#E5E7EB]">
+            <div className="mx-auto max-w-[550px] divide-y md:border-b border-[#E5E7EB] md:pb-[20px] divide-[#E5E7EB]">
               {faqs.map((faq, index) => {
                 const isOpen = openIndex === index;
                 return (
@@ -121,7 +121,7 @@ export default function FaqSection() {
                     </button>
 
                     {isOpen && (
-                      <div className="mt-3 max-w-[332px] md:max-w-full px-[12px] md:px-0 text-[14px] leading-6 tracking-[-0.01em]">
+                      <div className="mt-3 max-w-[332px]  md:max-w-[491.48291015625px] px-[12px] md:px-0 text-[14px] leading-6 tracking-[-0.01em]">
                         {faq.answer}
                       </div>
                     )}

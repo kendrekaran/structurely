@@ -253,11 +253,11 @@ function AboutProblemSection() {
               key={item.label}
               className="flex flex-1 flex-col items-stretch md:flex-row"
             >
-              <div className="flex flex-1 flex-col items-center justify-center gap-4 md:gap-6 px-6 py-4 md:px-12 md:py-8">
+              <div className="flex flex-1 flex-col items-center justify-center gap-4 md:gap-6 px-6 py-4 md:px-0 md:py-8">
                 <div className="flex h-[40px] w-[48px] flex-shrink-0 items-center gap-2 rounded-[10px] bg-white p-3 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
                   {item.icon}
                 </div>
-                <p className="text-center text-[14px] leading-[20px] tracking-[-0.006em]">
+                <p className="text-center max-w-[175px] text-[14px] leading-[20px] tracking-[-0.006em]">
                   {item.label}
                 </p>
               </div>

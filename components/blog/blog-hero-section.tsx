@@ -21,7 +21,7 @@ function BlogHeroSection({
             </p>
             <div className="flex flex-col items-center gap-2.5 md:gap-2 px-6">
               <h2 className="max-w-[23.6em] text-center  text-[36px] leading-[44px] font-medium tracking-[-0.03em]">{title}</h2>
-              <p className="max-w-[33.33em] text-[16px] md:text-[18px] leading-[26px] md:leading-[28px] tracking-[-0.01em] text-center">{description}</p>
+              <p className="max-w-[34.33em] text-[16px]  leading-[26px]  tracking-[-0.01em] text-center">{description}</p>
             </div>
           </div>
 

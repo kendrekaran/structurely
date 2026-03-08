@@ -151,16 +151,16 @@ export default function ActionCreditSection() {
               {credits.map((credit, index) => (
                 <div
                   key={index}
-                  className="flex flex-1 flex-col items-stretch md:flex-row"
+                  className="flex flex-1 basis-0 flex-col items-stretch md:flex-row"
                 >
-                  <div className="flex flex-1 flex-col items-center justify-center gap-[16px] md:gap-[24px] px-6 py-[16px] md:py-10 md:px-12">
+                  <div className="flex flex-1 flex-col items-center justify-center gap-[16px] px-6 py-[16px] md:gap-[24px] md:px-12 md:py-10">
                     <div
                       className={`flex h-[40px] w-[48px] items-center justify-center rounded-[10px] bg-white px-[12px] py-[8px] ${cardShadow}`}
                     >
                       <credit.Icon />
                     </div>
                     <div className="flex flex-col items-center gap-1 text-center">
-                      <span className="text-[16px] leading-[26px] md:leading-[24px] tracking-[-0.01em] text-[#202020]">
+                      <span className="text-[16px] leading-[26px] tracking-[-0.01em] text-[#202020] md:leading-[24px]">
                         1 Credit
                       </span>
                       <span className="text-[14px] leading-[24px] font-light tracking-[-0.01em]">
@@ -170,10 +170,10 @@ export default function ActionCreditSection() {
                   </div>
 
                   {index < credits.length - 1 && (
-                    <div className="flex items-center self-stretch md:flex-col">
+                    <div className="flex flex-none items-center self-stretch md:flex-col">
                       <div className="h-px flex-1 bg-[#E5E7EB] md:h-auto md:w-px" />
                       <div
-                        className={`flex items-center rounded-[6px] md:rounded-md bg-white p-1 ${cardShadow}`}
+                        className={`flex items-center rounded-[6px] bg-white p-1 md:rounded-md ${cardShadow}`}
                       >
                         <span className="block rotate-90 md:hidden">
                           <ChevronIcon />

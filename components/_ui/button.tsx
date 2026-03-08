@@ -43,7 +43,7 @@ export default function Button({
       className={clsx(buttonVariants({ variant, size }), className)}
       {...props}
     >
-      <span className="flex items-center gap-2">
+      <span className="flex items-center justify-between w-full gap-2">
         {children}
         {variant === "primary" && (
           <Image

@@ -152,7 +152,7 @@ export default function ComparePlansSection() {
   return (
     <section id="compare-plans" className="relative z-0">
       <div className="px-global">
-        <div className="max-w-global py-section-md mx-auto flex flex-col items-center gap-3 border-x border-[#E5E7EB] px-3 md:gap-4 md:px-0">
+        <div className="max-w-global py-section-md mx-auto flex flex-col items-center gap-3 border-x border-[#E5E7EB] px-3  md:px-0">
           <h2 className="text-center">Compare Plans</h2>
           <p className="max-w-[28em] text-center">
             Turn your pipeline into closed loans — without hiring
@@ -190,19 +190,19 @@ export default function ComparePlansSection() {
                   key={feature.name}
                   className="border-b border-[#E5E7EB] bg-white hover:bg-white"
                 >
-                  <TableCell className="h-[72px] min-h-[72px] border-r border-[#E5E7EB] align-middle text-[14px] leading-[20px] font-normal tracking-[-0.01em] text-[#202020]">
+                  <TableCell className="h-[72px] min-h-[72px] border-r border-[#E5E7EB] font-regular align-middle text-[14px] leading-[20px] font-normal tracking-[-0.01em] text-[#202020]">
                     {feature.name}
                   </TableCell>
-                  <TableCell className="h-[72px] min-h-[72px] min-w-[211px] border-r border-[#E5E7EB] align-middle">
+                  <TableCell className="h-[72px] min-h-[72px] min-w-[211px] border-r font-regular border-[#E5E7EB] align-middle">
                     <CellContent value={feature.starter} />
                   </TableCell>
-                  <TableCell className="h-[72px] min-h-[72px] min-w-[211px] border-r border-[#E5E7EB] bg-[#EEF5FF] align-middle">
+                  <TableCell className="h-[72px] min-h-[72px] min-w-[211px] border-r font-regular border-[#E5E7EB] bg-[#EEF5FF] align-middle">
                     <CellContent value={feature.growth} />
                   </TableCell>
-                  <TableCell className="h-[72px] min-h-[72px] min-w-[211px] border-r border-[#E5E7EB] align-middle">
+                  <TableCell className="h-[72px] min-h-[72px] min-w-[211px] border-r font-regular border-[#E5E7EB] align-middle">
                     <CellContent value={feature.scale} />
                   </TableCell>
-                  <TableCell className="h-[72px] min-h-[72px] min-w-[211px] align-middle">
+                  <TableCell className="h-[72px] min-h-[72px] min-w-[211px] align-middle font-regular">
                     <CellContent value={feature.enterprise} />
                   </TableCell>
                 </TableRow>

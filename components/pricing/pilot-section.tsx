@@ -24,7 +24,7 @@ export default function PilotSection() {
               ROI, and real results with your leads before signing long-term.
             </p>
           </div>
-          <Button variant="primary" size="md">
+          <Button variant="primary" size="md" className="w-[178.8330078125px]! flex  justify-between! ">
             Talk to Sales
           </Button>
         </div>

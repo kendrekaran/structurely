@@ -6,7 +6,7 @@ function BlogPagination() {
     <section id="blog-pagination" className="relative z-0 ">
       <div className="px-global">
         <div className="max-w-global mx-auto border-x bg-white border-y border-[#E5E7EB]">
-          <div className="flex items-center justify-center gap-3 py-3">
+          <div className="flex items-center justify-center gap-3 md:gap-0 py-3">
             <button className="flex items-center justify-center p-[6px_8px] cursor-pointer">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M9.99984 15.8327L4.1665 9.99935L9.99984 4.16602" stroke="#646464" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>

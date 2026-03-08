@@ -182,7 +182,7 @@ export default function OnboardingSection() {
                   key={index}
                   className="flex flex-1 flex-col items-stretch md:flex-row"
                 >
-                  <div className="flex flex-1 flex-col items-center justify-center gap-4 md:gap-[24px] px-3 py-[24px] md:px-12 md:py-10">
+                  <div className="flex flex-1 flex-col items-center justify-center gap-4 md:gap-[24px] px-3 py-[24px] md:px-0   md:py-10">
                     <div
                       className={`flex h-[40px] w-[48px] items-center justify-center rounded-[10px] bg-white px-[12px] py-[8px] ${cardShadow}`}
                     >
@@ -192,7 +192,7 @@ export default function OnboardingSection() {
                       <span className="text-[16px] leading-[26px] tracking-[-0.01em] text-[#202020]">
                         {feature.title}
                       </span>
-                      <span className="text-[14px] leading-[24px] font-light tracking-[-0.01em] md:max-w-[18em]">
+                      <span className="text-[14px] md:max-w-[264px] leading-[24px] font-light tracking-[-0.01em] md:max-w-[18em]">
                         {feature.description}
                       </span>
                     </div>
