@@ -1,4 +1,5 @@
 import Button from "@/components/_ui/button";
+import { SlidingNumber } from "@/components/motion-primitives/sliding-number";
 import type { BillingCycle } from "./pricing-hero-section";
 
 type Plan = {
@@ -94,13 +95,11 @@ const plans: Plan[] = [
   },
 ];
 
-function getDisplayPrice(plan: Plan, billing: BillingCycle): string {
-  if (!plan.monthlyPrice) return "";
-  const price =
-    billing === "annual"
-      ? Math.floor(plan.monthlyPrice * 0.8)
-      : plan.monthlyPrice;
-  return price.toLocaleString("en-US");
+function getPriceValue(plan: Plan, billing: BillingCycle): number {
+  if (!plan.monthlyPrice) return 0;
+  return billing === "annual"
+    ? Math.floor(plan.monthlyPrice * 0.8)
+    : plan.monthlyPrice;
 }
 
 function CheckIcon() {
@@ -166,8 +165,11 @@ export default function PricingCardsSection({
                     ) : (
                       <div className="flex items-end gap-1">
                         <span className="text-[32px] leading-8 tracking-[-0.96px] text-[#202020]">
-                          ${getDisplayPrice(plan, billing)}
+                          $
                         </span>
+                        <div className="text-[32px] leading-8 tracking-[-0.96px] text-[#202020] [&_.leading-none]:leading-8">
+                          <SlidingNumber value={getPriceValue(plan, billing)} />
+                        </div>
                         <span className="pb-0.5 text-base leading-6 font-light tracking-[-0.16px] text-[#646464]">
                           /mo
                         </span>

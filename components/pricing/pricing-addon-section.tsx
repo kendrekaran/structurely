@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { SlidingNumber } from "../motion-primitives/sliding-number";
 import Badge from "../_ui/badge";
 
 type DialerMode = "human" | "ai";
@@ -74,8 +75,11 @@ export default function PricingAddonSection() {
               <div className="flex flex-col gap-1 rounded-[10px] bg-white border border-[#E5E7EB] p-3 md:min-w-[180px]">
                 <div className="flex items-baseline gap-1">
                   <span className="text-[20px] leading-[20px] tracking-[-0.006em] text-[#202020]">
-                    $999
+                    $
                   </span>
+                  <div className="text-[20px] leading-[20px] tracking-[-0.006em] text-[#202020] [&_.leading-none]:leading-[20px]">
+                    <SlidingNumber value={999} />
+                  </div>
                   <span className="text-[16px] leading-[24px] tracking-[-0.01em]">
                     /mo
                   </span>
@@ -87,8 +91,11 @@ export default function PricingAddonSection() {
               <div className="flex flex-col gap-1 rounded-[10px] bg-white border border-[#E5E7EB] p-3 md:min-w-[180px]">
                 <div className="flex items-baseline gap-1">
                   <span className="text-[20px] leading-[20px] tracking-[-0.006em] text-[#202020]">
-                    $199
+                    $
                   </span>
+                  <div className="text-[20px] leading-[20px] tracking-[-0.006em] text-[#202020] [&_.leading-none]:leading-[20px]">
+                    <SlidingNumber value={199} />
+                  </div>
                   <span className="text-[16px] leading-[24px] tracking-[-0.01em]">
                     /mo
                   </span>
