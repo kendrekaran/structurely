@@ -94,6 +94,7 @@ function StructuredSystemSection() {
                     height={240}
                     className="h-full w-full object-cover"
                   /> */}
+
                   <Rive
                     src={feature.rive}
                     className="h-full w-full"
