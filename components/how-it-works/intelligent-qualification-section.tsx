@@ -184,7 +184,7 @@ function IntelligentQualificationSection() {
               {routingOptions.map((option) => (
                 <div
                   key={option}
-                  className="flex cursor-default items-center border-b-2 border-transparent px-8 py-4 transition-all duration-300 hover:border-b-[#006FFF] hover:bg-white sm:border-r sm:border-r-[#E5E7EB] md:py-8"
+                  className="flex cursor-default items-center border-b-1 px-8 py-4 transition-all duration-300 hover:border-b-[#006FFF] hover:bg-white sm:border-r sm:border-r-[#E5E7EB] md:py-8"
                 >
                   <span className="text-[14px] leading-[24px] tracking-[-0.01em] text-[#646464] transition-colors duration-300 hover:text-[#202020] md:text-[16px] md:leading-[26px]">
                     {option}

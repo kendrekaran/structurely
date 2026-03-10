@@ -1,5 +1,4 @@
-const cardShadow =
-  "shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]";
+import { IconStepsRow } from "@/components/_ui/icon-steps-row";
 
 function SalesforceIcon() {
   return (
@@ -103,26 +102,6 @@ function DedicatedAMIcon() {
   );
 }
 
-function ChevronIcon() {
-  return (
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 16 16"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M6 12L10 8L6 4"
-        stroke="#006FFF"
-        strokeWidth="1.33333"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
 const features = [
   {
     Icon: SalesforceIcon,
@@ -176,47 +155,15 @@ export default function OnboardingSection() {
       <div className="">
         <div className="px-global">
           <div className="max-w-global mx-auto border-x border-t border-[#E5E7EB] bg-white">
-            <div className="flex flex-col items-stretch md:flex-row">
-              {features.map((feature, index) => (
-                <div
-                  key={index}
-                  className="flex flex-1 flex-col items-stretch md:flex-row"
-                >
-                  <div className="flex flex-1 flex-col items-center justify-center gap-4 md:gap-[24px] px-3 py-[24px] md:px-0   md:py-10">
-                    <div
-                      className={`flex h-[40px] w-[48px] items-center justify-center rounded-[10px] bg-white px-[12px] py-[8px] ${cardShadow}`}
-                    >
-                      <feature.Icon />
-                    </div>
-                    <div className="flex flex-col items-center gap-1 text-center">
-                      <span className="text-[16px] leading-[26px] tracking-[-0.01em] text-[#202020]">
-                        {feature.title}
-                      </span>
-                      <span className="text-[14px] md:max-w-[264px] leading-[24px] font-light tracking-[-0.01em] md:max-w-[18em]">
-                        {feature.description}
-                      </span>
-                    </div>
-                  </div>
-
-                  {index < features.length - 1 && (
-                    <div className="flex items-center self-stretch md:flex-col">
-                      <div className="h-px flex-1 bg-[#E5E7EB] md:h-auto md:w-px" />
-                      <div
-                        className={`flex items-center rounded-[6px] bg-white p-1 ${cardShadow}`}
-                      >
-                        <span className="block rotate-90 md:hidden">
-                          <ChevronIcon />
-                        </span>
-                        <span className="hidden md:block">
-                          <ChevronIcon />
-                        </span>
-                      </div>
-                      <div className="h-px flex-1 bg-[#E5E7EB] md:h-auto md:w-px" />
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
+            <IconStepsRow
+              variant="white"
+              items={features.map((feature) => ({
+                key: feature.title,
+                label: feature.description,
+                topLabel: feature.title,
+                icon: <feature.Icon />,
+              }))}
+            />
           </div>
         </div>
       </div>

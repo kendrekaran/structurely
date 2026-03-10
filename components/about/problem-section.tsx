@@ -1,4 +1,5 @@
 import Badge from "@/components/_ui/badge";
+import { IconStepsRow } from "@/components/_ui/icon-steps-row";
 
 const problemItems = [
   {
@@ -202,24 +203,6 @@ const problemItems = [
   },
 ];
 
-const ChevronRight = () => (
-  <svg
-    width="16"
-    height="16"
-    viewBox="0 0 16 16"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M6 12L10 8L6 4"
-      stroke="#006FFF"
-      strokeWidth="1.33333"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
-
 function AboutProblemSection() {
   return (
     <section id="about-problem" className="relative z-0">
@@ -247,37 +230,14 @@ function AboutProblemSection() {
       </div>
 
       <div className="px-global">
-        <div className="max-w-global mx-auto flex flex-col items-stretch border-x border-b border-[#E5E7EB] md:flex-row">
-          {problemItems.map((item, index) => (
-            <div
-              key={item.label}
-              className="flex flex-1 flex-col items-stretch md:flex-row"
-            >
-              <div className="flex flex-1 flex-col items-center justify-center gap-4 md:gap-6 px-6 py-4 md:px-0 md:py-8">
-                <div className="flex h-[40px] w-[48px] flex-shrink-0 items-center gap-2 rounded-[10px] bg-white p-3 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
-                  {item.icon}
-                </div>
-                <p className="text-center max-w-[175px] text-[14px] leading-[20px] tracking-[-0.006em]">
-                  {item.label}
-                </p>
-              </div>
-
-              {index < problemItems.length - 1 && (
-                <div className="flex items-center self-stretch md:flex-col">
-                  <div className="h-px flex-1 bg-[#E5E7EB] md:h-auto md:w-px" />
-                  <div className="flex items-center rounded-[6px] bg-white p-1 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
-                    <span className="block rotate-90 md:hidden">
-                      <ChevronRight />
-                    </span>
-                    <span className="hidden md:block">
-                      <ChevronRight />
-                    </span>
-                  </div>
-                  <div className="h-px flex-1 bg-[#E5E7EB] md:h-auto md:w-px" />
-                </div>
-              )}
-            </div>
-          ))}
+        <div className="max-w-global mx-auto border-x border-b border-[#E5E7EB]">
+          <IconStepsRow
+            items={problemItems.map((item) => ({
+              key: item.label,
+              label: item.label,
+              icon: item.icon,
+            }))}
+          />
         </div>
       </div>
 
