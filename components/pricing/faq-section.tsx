@@ -1,44 +1,8 @@
 "use client";
 
+import { AnimatePresence, motion } from "motion/react";
+import type { KeyboardEvent } from "react";
 import { useState } from "react";
-
-type FaqItem = {
-  question: string;
-  answer: string;
-};
-
-const faqs: FaqItem[] = [
-  {
-    question: "What ROI can I expect?",
-    answer:
-      "Most clients see a measurable increase in qualified pipeline within the first 30 days. On average, teams using Structurely report a 3–5x increase in lead conversion from existing databases — without adding headcount.",
-  },
-  {
-    question: "What are typical transfer rates?",
-    answer:
-      "Transfer rates vary by market and lead source, but our clients typically see 8–15% of AI-engaged leads transferred to a live loan officer. High-intent lead sources can push this to 20%+.",
-  },
-  {
-    question: "What are the contract terms?",
-    answer:
-      "All plans are annual contracts at the listed price. Month-to-month is available at a 20% premium. Every plan includes a pilot period to prove unit economics with your actual leads before you commit long-term — so you see real results before signing.",
-  },
-  {
-    question: "What's included in onboarding?",
-    answer:
-      "Onboarding includes full Salesforce CRM integration, a pre-built mortgage agent tuned for your loan types, campaign setup, and a dedicated Account Manager for 60 days who stays hands-on to optimize your system.",
-  },
-  {
-    question: "What is an Action Credit?",
-    answer:
-      "An Action Credit is one unit of AI labor. Every time Structurely sends an SMS, speaks for 10 seconds on a call, or sends 2 emails on your behalf, it consumes one Action Credit. You only pay for work actually done.",
-  },
-  {
-    question: "How does Structurely ensure success?",
-    answer:
-      "Every account comes with ongoing optimization support. Your Account Manager monitors transfer rates, conversation quality, and credit usage — and adjusts campaigns to continuously improve results.",
-  },
-];
 
 function PlusIcon() {
   return (
@@ -80,6 +44,54 @@ function MinusIcon() {
   );
 }
 
+type FaqItem = {
+  question: string;
+  answer: string;
+};
+
+const faqs: FaqItem[] = [
+  {
+    question: "What ROI can I expect?",
+    answer:
+      "Most clients see a measurable increase in qualified pipeline within the first 30 days. On average, teams using Structurely report a 3–5x increase in lead conversion from existing databases — without adding headcount.",
+  },
+  {
+    question: "What are typical transfer rates?",
+    answer:
+      "Transfer rates vary by market and lead source, but our clients typically see 8–15% of AI-engaged leads transferred to a live loan officer. High-intent lead sources can push this to 20%+.",
+  },
+  {
+    question: "What are the contract terms?",
+    answer:
+      "All plans are annual contracts at the listed price. Month-to-month is available at a 20% premium. Every plan includes a pilot period to prove unit economics with your actual leads before you commit long-term — so you see real results before signing.",
+  },
+  {
+    question: "What's included in onboarding?",
+    answer:
+      "Onboarding includes full Salesforce CRM integration, a pre-built mortgage agent tuned for your loan types, campaign setup, and a dedicated Account Manager for 60 days who stays hands-on to optimize your system.",
+  },
+  {
+    question: "What is an Action Credit?",
+    answer:
+      "An Action Credit is one unit of AI labor. Every time Structurely sends an SMS, speaks for 10 seconds on a call, or sends 2 emails on your behalf, it consumes one Action Credit. You only pay for work actually done.",
+  },
+  {
+    question: "How does Structurely ensure success?",
+    answer:
+      "Every account comes with ongoing optimization support. Your Account Manager monitors transfer rates, conversation quality, and credit usage — and adjusts campaigns to continuously improve results.",
+  },
+];
+
+const accordionTransition = {
+  duration: 0.3,
+  ease: [0.4, 0, 0.2, 1] as const,
+};
+
+const rotationTransition = {
+  duration: 0.3,
+  ease: [0.4, 0, 0.2, 1] as const,
+};
+
 export default function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(2);
 
@@ -87,10 +99,20 @@ export default function FaqSection() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const handleKeyDown = (
+    e: KeyboardEvent<HTMLButtonElement>,
+    index: number,
+  ) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      toggle(index);
+    }
+  };
+
   return (
-    <section id="faq" className="relative z-0 ">
+    <section id="faq" className="relative z-0">
       <div className="bg-background px-global">
-        <div className="max-w-global py-section-md  mx-auto flex flex-col items-center gap-3 border-x border-[#E5E7EB]">
+        <div className="max-w-global py-section-md mx-auto flex flex-col items-center gap-3 border-x border-[#E5E7EB]">
           <h2 className="text-center">FAQ</h2>
           <p className="text-center">Frequently Asked Questions</p>
         </div>
@@ -98,33 +120,113 @@ export default function FaqSection() {
 
       <div className=" ">
         <div className="px-global">
-          <div className="max-w-global border-t  bg-white py-section-md md:py-[52px] mx-auto border-x border-[#E5E7EB]">
-            <div className="mx-auto max-w-[550px] divide-y md:border-b border-[#E5E7EB] md:pb-[20px] divide-[#E5E7EB]">
+          <div className="max-w-global py-section-md mx-auto border-x border-t border-[#E5E7EB] bg-white md:py-[52px]">
+            <div className="mx-auto max-w-[550px] divide-y divide-[#E5E7EB] border-[#E5E7EB] md:border-b md:pb-[20px]">
               {faqs.map((faq, index) => {
                 const isOpen = openIndex === index;
                 return (
                   <div key={index} className="py-[20px] first:pt-0 last:pb-0">
                     <button
+                      type="button"
                       onClick={() => toggle(index)}
-                      className="flex w-full cursor-pointer px-[12px] md:px-0 items-center justify-between gap-4 text-left"
+                      onKeyDown={(e) => handleKeyDown(e, index)}
+                      className="flex w-full cursor-pointer items-center justify-between gap-4 px-[12px] text-left md:px-0"
+                      aria-expanded={isOpen}
                     >
                       <p
-                        className={` transition-colors ${
+                        className={`transition-colors ${
                           isOpen
-                            ? "  text-[#202020] text-[16px]  leading-[26px]  tracking-[-0.01em]"
-                            : "font-normal text-[16px]  leading-[26px]  tracking-[-0.01em]"
+                            ? "text-[16px] leading-[26px] tracking-[-0.01em] text-[#202020]"
+                            : "text-[16px] leading-[26px] font-normal tracking-[-0.01em] text-[#646464]"
                         }`}
                       >
                         {faq.question}
                       </p>
-                      {isOpen ? <MinusIcon /> : <PlusIcon />}
+                      <span className="relative inline-flex h-5 w-5 shrink-0 items-center justify-center">
+                        <AnimatePresence mode="sync" initial={false}>
+                          {isOpen ? (
+                            <motion.span
+                              key="minus"
+                              initial={{
+                                opacity: 0,
+                                rotate: -90,
+                                filter: "blur(2px)",
+                              }}
+                              animate={{
+                                opacity: 1,
+                                rotate: 0,
+                                filter: "blur(0px)",
+                              }}
+                              exit={{
+                                opacity: 0,
+                                rotate: 90,
+                                filter: "blur(2px)",
+                              }}
+                              transition={rotationTransition}
+                              className="absolute inset-0 flex items-center justify-center"
+                            >
+                              <MinusIcon />
+                            </motion.span>
+                          ) : (
+                            <motion.span
+                              key="plus"
+                              initial={{
+                                opacity: 0,
+                                rotate: -90,
+                                filter: "blur(2px)",
+                              }}
+                              animate={{
+                                opacity: 1,
+                                rotate: 0,
+                                filter: "blur(0px)",
+                              }}
+                              exit={{
+                                opacity: 0,
+                                rotate: 90,
+                                filter: "blur(2px)",
+                              }}
+                              transition={rotationTransition}
+                              className="absolute inset-0 flex items-center justify-center"
+                            >
+                              <PlusIcon />
+                            </motion.span>
+                          )}
+                        </AnimatePresence>
+                      </span>
                     </button>
 
-                    {isOpen && (
-                      <div className="mt-3 max-w-[332px]  md:max-w-[491.48291015625px] px-[12px] md:px-0 text-[14px] leading-6 tracking-[-0.01em]">
-                        {faq.answer}
-                      </div>
-                    )}
+                    <AnimatePresence initial={false}>
+                      {isOpen && (
+                        <motion.div
+                          initial={{
+                            opacity: 0,
+                            height: 0,
+                            y: -10,
+                            filter: "blur(2px)",
+                          }}
+                          animate={{
+                            opacity: 1,
+                            height: "auto",
+                            y: 0,
+                            filter: "blur(0px)",
+                          }}
+                          exit={{
+                            opacity: 0,
+                            height: 0,
+                            y: -10,
+                            filter: "blur(2px)",
+                          }}
+                          transition={accordionTransition}
+                          className="overflow-hidden"
+                        >
+                          <div className="pt-3">
+                            <div className="max-w-[332px] px-[12px] text-[14px] leading-6 tracking-[-0.01em] text-[#202020] md:max-w-[491px] md:px-0">
+                              {faq.answer}
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
                 );
               })}
