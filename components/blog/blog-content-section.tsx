@@ -1,3 +1,5 @@
+import type { PortableTextBlock } from "@/data/dummy-blogs";
+
 type ContentBlock =
   | {
       type: "paragraph";
@@ -8,18 +10,46 @@ type ContentBlock =
   | { type: "divider" };
 
 type BlogContentSectionProps = {
-  blocks: ContentBlock[];
+  /** Legacy block format (paragraphs, headings, dividers). */
+  blocks?: ContentBlock[];
+  /** Sanity-style portable text; when provided, this is rendered instead of blocks. */
+  content?: PortableTextBlock[];
 };
 
-function BlogContentSection({ blocks }: BlogContentSectionProps) {
+function renderPortableBlock(block: PortableTextBlock, index: number) {
+  const text = block.children?.map((c) => c.text).join("") ?? "";
+  if (block.style === "h2") {
+    return (
+      <h2
+        key={block._key ?? index}
+        className="text-heading text-[36px] leading-[44px] font-medium tracking-[-0.03em]"
+      >
+        {text}
+      </h2>
+    );
+  }
+  if (block.style === "h3") {
+    return (
+      <h3
+        key={block._key ?? index}
+        className="text-heading mt-6 text-[24px] leading-[32px] font-medium tracking-[-0.02em]"
+      >
+        {text}
+      </h3>
+    );
+  }
   return (
-    <section id="blog-content" className="relative z-0">
-      <div className="px-global">
-        <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
-        
-          <div className=" mx-auto flex w-full flex-col mb-[64px] gap-6 md:gap-[32px] pt-6 md:pt-0  px-3 md:px-6 lg:max-w-[744.0000000000028px] lg:px-12">
-          <hr className="hidden md:block border-t border-[#E5E7EB] " />
-            {blocks.map((block, index) => {
+    <p key={block._key ?? index} className="text-[#202020] text-[16px] leading-[26px] tracking-[-0.01em]">
+      {text}
+    </p>
+  );
+}
+
+function BlogContentSection({ blocks = [], content }: BlogContentSectionProps) {
+  const hasContent = content && content.length > 0;
+  const nodes = hasContent
+    ? content.map((block, index) => renderPortableBlock(block, index))
+    : blocks.map((block, index) => {
               if (block.type === "divider") {
                 return <hr key={index} className="border-t border-[#E5E7EB] md:my-[16px]" />;
               }
@@ -69,7 +99,14 @@ function BlogContentSection({ blocks }: BlogContentSectionProps) {
               }
 
               return null;
-            })}
+            });
+  return (
+    <section id="blog-content" className="relative z-0">
+      <div className="px-global">
+        <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
+          <div className="mx-auto flex w-full flex-col mb-[64px] gap-6 md:gap-[32px] pt-6 md:pt-0 px-3 md:px-6 lg:max-w-[744px] lg:px-12">
+            <hr className="hidden md:block border-t border-[#E5E7EB]" />
+            {nodes}
           </div>
         </div>
       </div>

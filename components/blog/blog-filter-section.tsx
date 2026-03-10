@@ -1,45 +1,49 @@
 "use client";
 
-import { useState } from "react";
+import Link from "next/link";
 
-const categories = [
-  "All",
-  "Case Study",
-  "Competitors",
-  "CRM",
-  "Customer",
-  "General",
-  "Leasing",
-  "Marketing",
-  "Mortgage",
-  "Podcast",
-  "Real Estate",
-];
+type BlogFilterSectionProps = {
+  categories: string[];
+  currentCategory: string;
+};
 
-function BlogFilterSection() {
-  const [activeCategory, setActiveCategory] = useState("Case Study");
+function BlogFilterSection({
+  categories,
+  currentCategory,
+}: BlogFilterSectionProps) {
+  const displayCategories = ["All", ...categories.filter((c) => c !== "All")];
 
   return (
     <section id="blog-filter" className="relative z-0">
       <div className="px-global">
-        <div className="max-w-global mx-auto border-x  border-[#E5E7EB] bg-white">
-          <div className="flex h-[52px] items-center">
+        <div className="max-w-global mx-auto border-x border-[#E5E7EB] bg-white">
+          <div className="flex h-[52px] items-stretch pl-2">
             <div className="scrollbar-none flex flex-1 items-center gap-2 overflow-x-auto">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setActiveCategory(category)}
-                  className={`flex shrink-0 cursor-pointer items-center justify-center rounded-lg px-3 py-1.5 text-[14px] leading-[20px] tracking-[-0.01em] whitespace-nowrap transition-colors ${
-                    activeCategory === category
-                      ? "bg-[#006FFF] text-[#FAFAFA]"
-                      : "hover:text-[#202020]"
-                  }`}
-                >
-                  {category}
-                </button>
-              ))}
+              {displayCategories.map((category) => {
+                const isActive =
+                  category === "All"
+                    ? !currentCategory || currentCategory === "All"
+                    : currentCategory === category;
+                const href =
+                  category === "All"
+                    ? "/blog"
+                    : `/blog?category=${encodeURIComponent(category)}`;
+                return (
+                  <Link
+                    key={category}
+                    href={href}
+                    className={`flex shrink-0 cursor-pointer items-center justify-center rounded-lg px-3 py-1.5 text-[14px] leading-[20px] tracking-[-0.01em] whitespace-nowrap transition-colors ${
+                      isActive
+                        ? "bg-[#006FFF] text-[#FAFAFA]"
+                        : "hover:text-[#202020]"
+                    }`}
+                  >
+                    {category}
+                  </Link>
+                );
+              })}
             </div>
-            <button className="ml-2 flex shrink-0 cursor-pointer items-center justify-center border-l border-[#E5E7EB] p-2 transition-colors hover:text-[#202020]">
+            <button className="ml-2 flex aspect-square shrink-0 cursor-pointer items-center justify-center border-l border-[#E5E7EB] p-2 transition-colors hover:text-[#202020]">
               <svg
                 width="20"
                 height="20"

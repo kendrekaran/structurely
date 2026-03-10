@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import Badge from "@/components/_ui/badge";
 import Separator from "../_ui/separator";
@@ -71,7 +70,6 @@ const signals = [
 ];
 
 function IntelligentQualificationSection() {
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(2);
   return (
     <div className="px-global">
       <section
@@ -103,7 +101,7 @@ function IntelligentQualificationSection() {
                     className="flex items-center gap-2 rounded-[10px] bg-white px-3 py-2 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]"
                   >
                     {signal.icon}
-                    <span className="text-[14px]  leading-5 tracking-[-0.006em]">
+                    <span className="text-[14px] leading-5 tracking-[-0.006em]">
                       {signal.label}
                     </span>
                   </div>
@@ -113,7 +111,7 @@ function IntelligentQualificationSection() {
               {/* Mobile layout: rows of 2 separated by borders */}
               <div className="flex flex-col md:hidden">
                 {/* Row 1: Urgency + Readiness */}
-                <div className="flex justify-center gap-4  py-6">
+                <div className="flex justify-center gap-4 py-6">
                   {signals.slice(0, 2).map((signal) => (
                     <div
                       key={signal.label}
@@ -128,7 +126,7 @@ function IntelligentQualificationSection() {
                 </div>
                 <div className="h-px w-full bg-[#E5E7EB]" />
                 {/* Row 2: Budget/timing signals + Objections */}
-                <div className="flex justify-center gap-4  py-6">
+                <div className="flex justify-center gap-4 py-6">
                   {signals.slice(2, 4).map((signal) => (
                     <div
                       key={signal.label}
@@ -143,7 +141,7 @@ function IntelligentQualificationSection() {
                 </div>
                 <div className="h-px w-full bg-[#E5E7EB]" />
                 {/* Row 3: Disengagement patterns (centered) */}
-                <div className="flex justify-center  py-6">
+                <div className="flex justify-center py-6">
                   {signals.slice(4).map((signal) => (
                     <div
                       key={signal.label}
@@ -161,13 +159,19 @@ function IntelligentQualificationSection() {
 
             <div className="flex w-full items-center">
               <div className="h-px flex-1 bg-[#E5E7EB]" />
-              <div className="flex h-[24px] md:h-[40px] w-[28.8px] md:w-[48px] items-center justify-center rounded-[6px] md:rounded-[10px] bg-white md:p-2 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
-                <Image src="/assets/overview/logos/chevron-down.svg" alt="Arrow" width={16} height={16} className="w-[16px] h-[16px] md:w-[24px] md:h-[24px]" />
+              <div className="flex h-[24px] w-[28.8px] items-center justify-center rounded-[6px] bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)] md:h-[40px] md:w-[48px] md:rounded-[10px] md:p-2">
+                <Image
+                  src="/assets/overview/logos/chevron-down.svg"
+                  alt="Arrow"
+                  width={16}
+                  height={16}
+                  className="h-[16px] w-[16px] md:h-[24px] md:w-[24px]"
+                />
               </div>
               <div className="h-px flex-1 bg-[#E5E7EB]" />
             </div>
 
-            <div className="hidden md:flex w-full items-center justify-center border-b border-[#E5E7EB] px-6 py-6">
+            <div className="hidden w-full items-center justify-center border-b border-[#E5E7EB] px-6 py-6 md:flex">
               <p className="text-center text-[16px] leading-[26px] tracking-[-0.01em]">
                 <span className="text-foreground">
                   Based on predefined routing logic,{" "}
@@ -176,22 +180,13 @@ function IntelligentQualificationSection() {
               </p>
             </div>
 
-            <div className="grid w-full grid-cols-1 mt-[-12px] md:mt-0 sm:grid-cols-2">
-              {routingOptions.map((option, index) => (
+            <div className="mt-[-12px] grid w-full grid-cols-1 sm:grid-cols-2 md:mt-0">
+              {routingOptions.map((option) => (
                 <div
                   key={option}
-                  onClick={() => setSelectedIndex(index)}
-                  className={`flex cursor-pointer items-center border-b px-8 py-4 md:py-8 transition-all duration-200 ${
-                    selectedIndex === index
-                      ? "border-b-2 border-[#006FFF] bg-white sm:border-r sm:border-r-[#E5E7EB]"
-                      : "hover:bg-gray-50 sm:border-r sm:border-r-[#E5E7EB]"
-                  }`}
+                  className="flex cursor-default items-center border-b-2 border-transparent px-8 py-4 transition-all duration-300 hover:border-b-[#006FFF] hover:bg-white sm:border-r sm:border-r-[#E5E7EB] md:py-8"
                 >
-                  <span
-                    className={`text-[14px] md:text-[16px] leading-[24px] md:leading-[26px] tracking-[-0.01em] ${
-                      selectedIndex === index ? "text-[#202020]" : ""
-                    }`}
-                  >
+                  <span className="text-[14px] leading-[24px] tracking-[-0.01em] text-[#646464] transition-colors duration-300 hover:text-[#202020] md:text-[16px] md:leading-[26px]">
                     {option}
                   </span>
                 </div>

@@ -5,6 +5,7 @@ type RelatedArticle = {
   description: string;
   date: string;
   image?: string;
+  slug?: string;
 };
 
 type BlogRelatedArticlesSectionProps = {
@@ -25,11 +26,12 @@ function BlogRelatedArticlesSection({
             <div className="grid grid-cols-1 divide-y divide-[#E5E7EB] lg:grid-cols-3 lg:divide-x lg:divide-y-0">
               {articles.map((article, index) => (
                 <BlogCard
-                  key={index}
+                  key={article.slug ?? index}
                   title={article.title}
                   description={article.description}
                   date={article.date}
                   image={article.image}
+                  slug={article.slug}
                 />
               ))}
             </div>

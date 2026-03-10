@@ -1,13 +1,17 @@
+import Link from "next/link";
+
 type BlogCardProps = {
   title: string;
   description: string;
   date: string;
   image?: string;
+  /** When provided, the card is wrapped in a link to /blog/[slug]. */
+  slug?: string;
 };
 
-function BlogCard({ title, description, date, image }: BlogCardProps) {
-  return (
-    <article className="group flex cursor-pointer flex-col">
+function BlogCard({ title, description, date, image, slug }: BlogCardProps) {
+  const content = (
+    <>
       <div className="px-2 pt-2">
         <div className="h-[200px] overflow-hidden rounded-xl bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
           {image && (
@@ -28,6 +32,20 @@ function BlogCard({ title, description, date, image }: BlogCardProps) {
           <p className="line-clamp-3 text-[14px] leading-[24px] tracking-[-0.006em]">{date}</p>
         </div>
       </div>
+    </>
+  );
+
+  if (slug) {
+    return (
+      <Link href={`/blog/${slug}`} className="group flex cursor-pointer flex-col">
+        {content}
+      </Link>
+    );
+  }
+
+  return (
+    <article className="group flex cursor-pointer flex-col">
+      {content}
     </article>
   );
 }
