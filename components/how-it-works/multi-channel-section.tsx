@@ -56,7 +56,7 @@ function MultiChannelSection() {
                     return (
                       <div
                         key={channel.label}
-                        className={`flex flex-1 flex-col items-center justify-center gap-6 py-6 md:h-[148px] md:px-8 md:py-8 ${
+                        className={`flex flex-1 flex-col items-center justify-center gap-6 py-6 hover:bg-black/[0.03] md:h-[148px] md:px-8 md:py-8 ${
                           !isMobileLastCol ? "border-border border-r" : ""
                         } ${
                           !isMobileLastRow

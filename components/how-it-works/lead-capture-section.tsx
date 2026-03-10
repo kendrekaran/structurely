@@ -39,7 +39,7 @@ function LeadCaptureSection() {
               return (
                 <div
                   key={source.label}
-                  className={`flex flex-1 flex-col items-center justify-center gap-4 px-8 py-6 md:w-0 md:gap-6 md:border-r md:border-[var(--border)] md:py-8 ${
+                  className={`flex flex-1 flex-col items-center justify-center gap-4 px-8 py-6 hover:bg-black/[0.03] md:w-0 md:gap-6 md:border-r md:border-[var(--border)] md:py-8 ${
                     !isMobileLastCol ? "border-r border-[var(--border)]" : ""
                   } ${
                     !isMobileLastRow
@@ -62,7 +62,7 @@ function LeadCaptureSection() {
               );
             })}
             {/* Desktop only: 5th card inline */}
-            <div className="hidden flex-1 flex-col items-center justify-center gap-6 px-8 py-8 md:flex md:w-0">
+            <div className="hidden flex-1 flex-col items-center justify-center gap-6 px-8 py-8 hover:bg-black/[0.03] md:flex md:w-0">
               <Image
                 src={thirdPartySource.icon}
                 alt={thirdPartySource.label}
@@ -92,7 +92,7 @@ function LeadCaptureSection() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center gap-3 px-6 py-[24px] text-center ">
+        <div className="flex flex-col items-center gap-3 px-6 py-[24px] text-center">
           <p className="text-sm leading-5">
             <span className="text-heading">Structurely AI </span>{" "}
             <span className="text-foreground">activates instantly.</span>
