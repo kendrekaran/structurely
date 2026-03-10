@@ -1,3 +1,13 @@
+"use client";
+
+import { cn } from "@/lib/utils";
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef, useState } from "react";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const featureRows = [
   {
     text: "Executes long-tail follow-up sequences",
@@ -47,345 +57,65 @@ function ArrowHead({ fill }: { fill: string }) {
   );
 }
 
-function DotGrid() {
-  return (
-    <svg
-      width="148"
-      height="112"
-      viewBox="0 0 148 112"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className="pointer-events-none absolute top-2 right-2 hidden select-none md:block"
-    >
-      <rect
-        x="4"
-        y="8"
-        width="14"
-        height="10"
-        rx="2"
-        fill="#006FFF"
-        fillOpacity="0.12"
-      />
-      <rect
-        x="28"
-        y="8"
-        width="14"
-        height="10"
-        rx="2"
-        fill="#006FFF"
-        fillOpacity="0.06"
-      />
-      <rect
-        x="52"
-        y="8"
-        width="14"
-        height="10"
-        rx="2"
-        fill="#006FFF"
-        fillOpacity="0.35"
-      />
-      <rect
-        x="76"
-        y="8"
-        width="14"
-        height="10"
-        rx="2"
-        fill="#006FFF"
-        fillOpacity="0.14"
-      />
-      <rect
-        x="100"
-        y="8"
-        width="14"
-        height="10"
-        rx="2"
-        fill="#006FFF"
-        fillOpacity="0.06"
-      />
-      <rect
-        x="124"
-        y="8"
-        width="14"
-        height="10"
-        rx="2"
-        fill="#006FFF"
-        fillOpacity="0.28"
-      />
-      <rect
-        x="4"
-        y="26"
-        width="14"
-        height="10"
-        rx="2"
-        fill="#006FFF"
-        fillOpacity="0.06"
-      />
-      <rect
-        x="28"
-        y="26"
-        width="14"
-        height="10"
-        rx="2"
-        fill="#006FFF"
-        fillOpacity="0.48"
-      />
-      <rect
-        x="52"
-        y="26"
-        width="14"
-        height="10"
-        rx="2"
-        fill="#006FFF"
-        fillOpacity="0.18"
-      />
-      <rect
-        x="76"
-        y="26"
-        width="14"
-        height="10"
-        rx="2"
-        fill="#006FFF"
-        fillOpacity="0.56"
-      />
-      <rect
-        x="100"
-        y="26"
-        width="14"
-        height="10"
-        rx="2"
-        fill="#006FFF"
-        fillOpacity="0.24"
-      />
-      <rect
-        x="124"
-        y="26"
-        width="14"
-        height="10"
-        rx="2"
-        fill="#006FFF"
-        fillOpacity="0.08"
-      />
-      <rect
-        x="4"
-        y="44"
-        width="14"
-        height="10"
-        rx="2"
-        fill="#006FFF"
-        fillOpacity="0.28"
-      />
-      <rect
-        x="28"
-        y="44"
-        width="14"
-        height="10"
-        rx="2"
-        fill="#006FFF"
-        fillOpacity="0.14"
-      />
-      <rect
-        x="52"
-        y="44"
-        width="14"
-        height="10"
-        rx="2"
-        fill="#006FFF"
-        fillOpacity="0.72"
-      />
-      <rect
-        x="76"
-        y="44"
-        width="14"
-        height="10"
-        rx="2"
-        fill="#006FFF"
-        fillOpacity="0.32"
-      />
-      <rect
-        x="100"
-        y="44"
-        width="14"
-        height="10"
-        rx="2"
-        fill="#006FFF"
-        fillOpacity="0.52"
-      />
-      <rect
-        x="124"
-        y="44"
-        width="14"
-        height="10"
-        rx="2"
-        fill="#006FFF"
-        fillOpacity="0.06"
-      />
-      <rect
-        x="4"
-        y="62"
-        width="14"
-        height="10"
-        rx="2"
-        fill="#006FFF"
-        fillOpacity="0.08"
-      />
-      <rect
-        x="28"
-        y="62"
-        width="14"
-        height="10"
-        rx="2"
-        fill="#006FFF"
-        fillOpacity="0.36"
-      />
-      <rect
-        x="52"
-        y="62"
-        width="14"
-        height="10"
-        rx="2"
-        fill="#006FFF"
-        fillOpacity="0.24"
-      />
-      <rect
-        x="76"
-        y="62"
-        width="14"
-        height="10"
-        rx="2"
-        fill="#006FFF"
-        fillOpacity="0.78"
-      />
-      <rect
-        x="100"
-        y="62"
-        width="14"
-        height="10"
-        rx="2"
-        fill="#006FFF"
-        fillOpacity="0.16"
-      />
-      <rect
-        x="124"
-        y="62"
-        width="14"
-        height="10"
-        rx="2"
-        fill="#006FFF"
-        fillOpacity="0.42"
-      />
-      <rect
-        x="4"
-        y="80"
-        width="14"
-        height="10"
-        rx="2"
-        fill="#006FFF"
-        fillOpacity="0.06"
-      />
-      <rect
-        x="28"
-        y="80"
-        width="14"
-        height="10"
-        rx="2"
-        fill="#006FFF"
-        fillOpacity="0.2"
-      />
-      <rect
-        x="52"
-        y="80"
-        width="14"
-        height="10"
-        rx="2"
-        fill="#006FFF"
-        fillOpacity="0.42"
-      />
-      <rect
-        x="76"
-        y="80"
-        width="14"
-        height="10"
-        rx="2"
-        fill="#006FFF"
-        fillOpacity="0.24"
-      />
-      <rect
-        x="100"
-        y="80"
-        width="14"
-        height="10"
-        rx="2"
-        fill="#006FFF"
-        fillOpacity="0.62"
-      />
-      <rect
-        x="124"
-        y="80"
-        width="14"
-        height="10"
-        rx="2"
-        fill="#006FFF"
-        fillOpacity="0.12"
-      />
-      <rect
-        x="4"
-        y="98"
-        width="14"
-        height="10"
-        rx="2"
-        fill="#006FFF"
-        fillOpacity="0.16"
-      />
-      <rect
-        x="28"
-        y="98"
-        width="14"
-        height="10"
-        rx="2"
-        fill="#006FFF"
-        fillOpacity="0.06"
-      />
-      <rect
-        x="52"
-        y="98"
-        width="14"
-        height="10"
-        rx="2"
-        fill="#006FFF"
-        fillOpacity="0.28"
-      />
-      <rect
-        x="76"
-        y="98"
-        width="14"
-        height="10"
-        rx="2"
-        fill="#006FFF"
-        fillOpacity="0.08"
-      />
-      <rect
-        x="100"
-        y="98"
-        width="14"
-        height="10"
-        rx="2"
-        fill="#006FFF"
-        fillOpacity="0.32"
-      />
-      <rect
-        x="124"
-        y="98"
-        width="14"
-        height="10"
-        rx="2"
-        fill="#006FFF"
-        fillOpacity="0.06"
-      />
-    </svg>
-  );
-}
-
 function PersistentFollowUpSection() {
+  const pinRef = useRef<HTMLDivElement>(null);
+  const lineRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const mobileLineRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useGSAP(
+    () => {
+      const el = pinRef.current;
+      if (!el) return;
+
+      ScrollTrigger.create({
+        trigger: el,
+        start: "top bottom",
+        end: "bottom center",
+        scrub: 1,
+        // markers: true,
+        // pin: true,
+        // pinSpacing: true,
+        onUpdate: (self) => {
+          const progress = self.progress;
+          const index = Math.min(
+            featureRows.length - 1,
+            Math.floor(progress * featureRows.length),
+          );
+          setActiveIndex(index);
+        },
+      });
+    },
+    { scope: pinRef },
+  );
+
+  useGSAP(
+    () => {
+      featureRows.forEach((_, i) => {
+        const lineEl = lineRefs.current[i];
+        const mobileEl = mobileLineRefs.current[i];
+        const shouldShow = i <= activeIndex;
+        if (lineEl) {
+          gsap.to(lineEl, {
+            scaleX: shouldShow ? 1 : 0,
+            duration: 0.5,
+            ease: "power2.out",
+            transformOrigin: "left center",
+          });
+        }
+        if (mobileEl) {
+          gsap.to(mobileEl, {
+            scaleX: shouldShow ? 1 : 0,
+            duration: 0.5,
+            ease: "power2.out",
+            transformOrigin: "left center",
+          });
+        }
+      });
+    },
+    { dependencies: [activeIndex] },
+  );
+
   return (
     <div className="px-global">
       <section
@@ -415,55 +145,90 @@ function PersistentFollowUpSection() {
           </div>
         </div>
 
-        <div className="flex flex-col">
+        <div className="flex flex-col" ref={pinRef}>
           <div className="divide-y divide-[#E5E7EB] border-t border-[#E5E7EB]">
-            {featureRows.map((row) => (
-              <div
-                key={row.text}
-                className="flex items-center overflow-hidden py-6"
-                style={
-                  row.active
-                    ? {
-                        backgroundColor: "#ffffff",
-                        backgroundImage:
-                          "url('/assets/how-it-works/follow-up-bg.png')",
-                        backgroundRepeat: "no-repeat",
-                        backgroundPosition: "right center",
-                        backgroundSize: "auto 100%",
-                      }
-                    : undefined
-                }
-              >
-                {/* Desktop: variable-width line + arrow */}
+            {featureRows.map((row, index) => {
+              const isActive = activeIndex === index;
+              return (
                 <div
-                  className={`hidden shrink-0 md:flex ${row.lineWidthClass} items-center`}
+                  key={row.text}
+                  className="relative flex items-center overflow-hidden py-6"
                 >
-                  <div className={`h-px flex-1 ${row.lineColor}`} />
-                  <ArrowHead fill={row.arrowFill} />
-                </div>
-
-                {/* Mobile: variable-width line + arrow (only for inactive rows) */}
-                {!row.active && (
-                  <div className="flex shrink-0 items-center pl-3 md:hidden">
+                  {/* Background layer: fades in when active */}
+                  <div
+                    className="pointer-events-none absolute inset-0 bg-white transition-opacity duration-300"
+                    style={{
+                      backgroundImage:
+                        "url('/assets/how-it-works/follow-up-bg.png')",
+                      backgroundRepeat: "no-repeat",
+                      backgroundPosition: "right center",
+                      backgroundSize: "auto 100%",
+                      opacity: isActive ? 1 : 0,
+                    }}
+                    aria-hidden
+                  />
+                  {/* Content */}
+                  <div className="relative z-10 flex flex-1 items-center">
+                    {/* Desktop: variable-width line (animated) + arrow */}
                     <div
-                      className="h-px bg-[#E5E7EB]"
-                      style={{ width: row.mobileLineWidth }}
-                    />
-                    <ArrowHead fill={row.arrowFill} />
-                  </div>
-                )}
-                {/* Mobile active row: no arrow, just left padding */}
-                {row.active && <div className="flex w-0 shrink-0 md:hidden" />}
+                      className={`hidden shrink-0 md:flex ${row.lineWidthClass} items-center`}
+                    >
+                      <div className="relative min-h-px flex-1 overflow-hidden">
+                        <div className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-[#E5E7EB]" />
+                        <div
+                          ref={(el) => {
+                            lineRefs.current[index] = el;
+                          }}
+                          className={cn(
+                            "absolute top-1/2 left-0 h-px w-full -translate-y-1/2",
+                            isActive ? "bg-[#202020]" : "bg-[#E5E7EB]",
+                          )}
+                          style={{
+                            transform: "scaleX(0)",
+                            transformOrigin: "left center",
+                          }}
+                          aria-hidden
+                        />
+                      </div>
+                      <ArrowHead fill={isActive ? "#202020" : "#E5E7EB"} />
+                    </div>
 
-                <span
-                  className={`ml-3 text-[16px] leading-[26px] tracking-[-0.02em] ${
-                    row.active ? "text-heading" : "text-foreground"
-                  }`}
-                >
-                  {row.text}
-                </span>
-              </div>
-            ))}
+                    {/* Mobile: line (animated) + arrow */}
+                    <div className="flex shrink-0 items-center pl-3 md:hidden">
+                      <div
+                        className="relative min-h-px overflow-hidden"
+                        style={{ width: row.mobileLineWidth ?? 32 }}
+                      >
+                        <div className="absolute inset-0 top-1/2 h-px w-full -translate-y-1/2 bg-[#E5E7EB]" />
+                        <div
+                          ref={(el) => {
+                            mobileLineRefs.current[index] = el;
+                          }}
+                          className={cn(
+                            "absolute top-1/2 left-0 h-px w-full -translate-y-1/2",
+                            isActive ? "bg-[#202020]" : "bg-[#E5E7EB]",
+                          )}
+                          style={{
+                            transform: "scaleX(0)",
+                            transformOrigin: "left center",
+                          }}
+                          aria-hidden
+                        />
+                      </div>
+                      <ArrowHead fill={isActive ? "#202020" : "#E5E7EB"} />
+                    </div>
+
+                    <span
+                      className={`ml-3 text-[16px] leading-[26px] tracking-[-0.02em] transition-colors duration-300 ${
+                        isActive ? "text-heading" : "text-foreground"
+                      }`}
+                    >
+                      {row.text}
+                    </span>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
