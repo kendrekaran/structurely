@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
 
 const CARD_SHADOW =
@@ -86,7 +87,10 @@ export function IconStepsRow({
 
   return (
     <div
-      className={`flex w-full flex-col items-stretch divide-y divide-[#E5E7EB] border-y border-b-0 border-[#E5E7EB] md:flex-row md:divide-y-0 md:border-b ${className}`}
+      className={cn(
+        "flex w-full flex-col items-stretch divide-y divide-[#E5E7EB] border-y border-b-0 border-[#E5E7EB] md:flex-row md:divide-y-0 md:border-b",
+        className,
+      )}
     >
       {items.map((item, index) => (
         <div
