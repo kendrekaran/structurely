@@ -194,6 +194,7 @@ function OverviewProblemSection() {
                   label: p.label,
                   icon: p.icon,
                 }))}
+                className="border-y"
               />
 
               <div className="hidden w-full flex-col items-center gap-3 px-6 py-6 md:flex">

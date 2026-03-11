@@ -67,7 +67,7 @@ function CrmSynchronizationSection() {
           }))}
         />
 
-        <div className="flex flex-col items-center gap-3 border-b border-[#E5E7EB] px-6 py-6 md:px-24">
+        <div className="flex flex-col items-center gap-3 border-t border-[#E5E7EB] px-6 py-6 md:px-24">
           <p className="text-center text-[14px] leading-5 tracking-[-0.01em]">
             Is recorded inside your{" "}
             <span className="text-heading font-medium">CRM.</span>

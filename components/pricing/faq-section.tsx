@@ -99,10 +99,7 @@ export default function FaqSection() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  const handleKeyDown = (
-    e: KeyboardEvent<HTMLButtonElement>,
-    index: number,
-  ) => {
+  const handleKeyDown = (e: KeyboardEvent<HTMLButtonElement>, index: number) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
       toggle(index);
@@ -125,16 +122,17 @@ export default function FaqSection() {
               {faqs.map((faq, index) => {
                 const isOpen = openIndex === index;
                 return (
-                  <div key={index} className="py-[20px] first:pt-0 last:pb-0">
-                    <button
-                      type="button"
-                      onClick={() => toggle(index)}
-                      onKeyDown={(e) => handleKeyDown(e, index)}
-                      className="flex w-full cursor-pointer items-center justify-between gap-4 px-[12px] text-left md:px-0"
-                      aria-expanded={isOpen}
-                    >
+                  <button
+                    key={index}
+                    type="button"
+                    onClick={() => toggle(index)}
+                    onKeyDown={(e) => handleKeyDown(e, index)}
+                    className="w-full cursor-pointer py-[20px] first:pt-0 last:pb-0"
+                    aria-expanded={isOpen}
+                  >
+                    <div className="flex w-full items-center justify-between gap-4 px-[12px] text-left md:px-0">
                       <p
-                        className={`transition-colors ${
+                        className={`text-left transition-colors ${
                           isOpen
                             ? "text-[16px] leading-[26px] tracking-[-0.01em] text-[#202020]"
                             : "text-[16px] leading-[26px] font-normal tracking-[-0.01em] text-[#646464]"
@@ -193,7 +191,7 @@ export default function FaqSection() {
                           )}
                         </AnimatePresence>
                       </span>
-                    </button>
+                    </div>
 
                     <AnimatePresence initial={false}>
                       {isOpen && (
@@ -220,14 +218,14 @@ export default function FaqSection() {
                           className="overflow-hidden"
                         >
                           <div className="pt-3">
-                            <div className="max-w-[332px] px-[12px] text-[14px] leading-6 tracking-[-0.01em] text-[#202020] md:max-w-[491px] md:px-0">
+                            <div className="max-w-[332px] px-[12px] text-left text-[14px] leading-6 tracking-[-0.01em] text-[#202020] md:max-w-[491px] md:px-0">
                               {faq.answer}
                             </div>
                           </div>
                         </motion.div>
                       )}
                     </AnimatePresence>
-                  </div>
+                  </button>
                 );
               })}
             </div>

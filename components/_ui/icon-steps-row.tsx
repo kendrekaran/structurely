@@ -88,7 +88,7 @@ export function IconStepsRow({
   return (
     <div
       className={cn(
-        "flex w-full flex-col items-stretch divide-y divide-[#E5E7EB] border-y border-b-0 border-[#E5E7EB] md:flex-row md:divide-y-0 md:border-b",
+        "flex w-full flex-col items-stretch divide-y divide-[#E5E7EB] md:flex-row md:divide-y-0",
         className,
       )}
     >
