@@ -1,5 +1,6 @@
 import Button from "@/components/_ui/button";
 import HeroBadge from "../_ui/hero-badge";
+import Link from "next/link";
 
 function HeroSection() {
   return (
@@ -22,12 +23,16 @@ function HeroSection() {
             </div>
 
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <Button variant="primary" size="md">
-                Request a demo
-              </Button>
-              <Button variant="secondary" size="md">
-                See How It Works
-              </Button>
+              <Link href="/demo">
+                <Button variant="primary" size="md">
+                  Request a demo
+                </Button>
+              </Link>
+              <Link href="/how-it-works">
+                <Button variant="secondary" size="md">
+                  See How It Works
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

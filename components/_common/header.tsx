@@ -124,6 +124,7 @@ export default function Header() {
 
           {/* Desktop CTA */}
           <div className="hidden flex-shrink-0 lg:flex">
+            <Link href="/demo">
             <Button
               variant="outline"
               size="md"
@@ -131,13 +132,16 @@ export default function Header() {
             >
               Request Demo
             </Button>
+            </Link>
           </div>
 
           {/* Mobile Right: CTA + Hamburger */}
           <div className="flex flex-1 items-center justify-end gap-3 lg:hidden">
+          <Link href="/demo">
             <Button variant="outline" size="md" className="max-w-[139px]">
               Request Demo
             </Button>
+            </Link>
             <MobileMenuButton
               isMenuOpen={mobileMenuOpen}
               onToggle={handleMenuToggle}
@@ -270,6 +274,7 @@ function MobileMenu({
             </svg>
           </button>
         </div>
+        <Link href="/demo">
         <Button
           variant="outline"
           size="md"
@@ -277,6 +282,7 @@ function MobileMenu({
         >
           Request Demo
         </Button>
+        </Link>
       </div>
 
       {/* Nav Links with reveal animation */}

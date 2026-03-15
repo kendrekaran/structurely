@@ -1,4 +1,5 @@
 import Button from "@/components/_ui/button";
+import Link from "next/link";
 
 export default function DemoCtaSection() {
   return (
@@ -25,9 +26,11 @@ export default function DemoCtaSection() {
           </div>
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 border-t border-[#E5E7EB] px-6 py-6 md:px-24">
-            <Button variant="primary" size="md">
-              Try the Live Demo
-            </Button>
+            <Link href="/demo">
+              <Button variant="primary" size="md">
+                Try the Live Demo
+              </Button>
+            </Link>
             <Button variant="secondary" size="md" className="text-foreground">
               Schedule a Guided Demo
             </Button>

@@ -1,5 +1,6 @@
 import Button from "@/components/_ui/button";
 import Rive from "@/components/_ui/rive";
+import Link from "next/link";
 
 interface CtaSectionProps {
   variant?: "default" | "overview";
@@ -52,12 +53,14 @@ function CtaSection({ variant = "default" }: CtaSectionProps) {
                     Explore Our Products
                   </Button>
                 )}
-                <Button
-                  variant={isOverview ? "primary" : "secondary"}
-                  size="md"
-                >
-                  Request a Demo
-                </Button>
+                <Link href="/demo">
+                  <Button
+                    variant={isOverview ? "primary" : "secondary"}
+                    size="md"
+                  >
+                    Request a Demo
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

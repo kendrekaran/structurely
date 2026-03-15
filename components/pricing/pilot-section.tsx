@@ -1,5 +1,6 @@
 import Button from "@/components/_ui/button";
 import Rive from "@/components/_ui/rive";
+import Link from "next/link";
 
 export default function PilotSection() {
   return (
@@ -17,6 +18,7 @@ export default function PilotSection() {
               ROI, and real results with your leads before signing long-term.
             </p>
           </div>
+          <Link href="/demo">
           <Button
             variant="primary"
             size="md"
@@ -24,6 +26,7 @@ export default function PilotSection() {
           >
             Talk to Sales
           </Button>
+          </Link>
           <Rive
             src="/rive/cta.riv"
             className="absolute inset-0 z-[-1] h-full w-full"

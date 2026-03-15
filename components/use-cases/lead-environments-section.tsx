@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Separator from "../_ui/separator";
+import Link from "next/link";
 
 const logos = [
   {
@@ -165,10 +166,12 @@ function LeadEnvironmentsSection() {
             </div>
 
             <div className="flex w-full items-center justify-center gap-3 bg-[#006FFF] md:px-6 py-5">
+              <Link href="/how-it-works" className="flex items-center gap-2">
               <span className="text-[14px] leading-5 font-medium text-white">
                 See How It Works in Your Environment
               </span>
               {ARROW_ICON}
+              </Link>
             </div>
           </div>
         </div>

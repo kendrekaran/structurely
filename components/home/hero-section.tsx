@@ -1,5 +1,6 @@
 import Button from "@/components/_ui/button";
 import HeroBadge from "../_ui/hero-badge";
+import Link from "next/link";
 
 function HeroSection() {
   return (
@@ -30,9 +31,11 @@ function HeroSection() {
               <Button variant="primary" size="md">
                 Explore Our Products
               </Button>
+              <Link href="/how-it-works">
               <Button variant="secondary" size="md">
-                See How It Works
-              </Button>
+                  See How It Works
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

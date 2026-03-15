@@ -1,4 +1,5 @@
 import Button from "@/components/_ui/button";
+import Link from "next/link";
 
 function InboundDemandSection() {
   return (
@@ -28,9 +29,11 @@ function InboundDemandSection() {
             </span>
           </div>
           <div className="relative z-10">
+            <Link href="/demo">
             <Button variant="primary" size="md">
               Request Demo
             </Button>
+            </Link>
           </div>
         </div>
       </div>
