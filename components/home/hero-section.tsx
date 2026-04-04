@@ -43,5 +43,7 @@ function HeroSection() {
     </section>
   );
 }
-
+/**
+ * Hero Section
+ */
 export default HeroSection;
