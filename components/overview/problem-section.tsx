@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import Badge from "@/components/_ui/badge";
 import { IconStepsRow } from "@/components/_ui/icon-steps-row";
 
@@ -166,48 +167,28 @@ function OverviewProblemSection() {
   return (
     <section id="overview-problem" className="relative z-0">
       <div className="px-global">
-        <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
+        <div className="max-w-global mx-auto border-x space-y-[64px] border-[#E5E7EB]">
           <div className="flex flex-col items-center">
-            <div className="md:py-section-md flex w-full flex-col items-center gap-3 px-3 py-[24px] md:gap-4 md:px-6">
+            <div className="md:pt-section-md flex w-full flex-col items-center gap-3 px-3 pt-[24px] md:gap-4 md:px-6">
               <div className="flex flex-col items-center gap-4">
-                <Badge text="The Problem" />
+                <Badge text="Seamless AI-Tools that Convert" />
                 <h2 className="max-w-[11em] text-center">
-                  Inbound Volume Is Not the Issue.{" "}
-                  <span className="text-[#006FFF]">Follow-Up</span> Is.
+                Get more qualified appointments.{" "} <br />
+                  <span className="text-[#006FFF]">Grow your revenue.</span>
                 </h2>
               </div>
-              <p className="max-w-[27.375em] text-center">
-                Leads come in every day.
-              </p>
-            </div>
-
-            <div className="flex w-full flex-col items-center">
-              <div className="flex overflow-hidden rounded-t-xl border-x border-t border-[#E5E7EB] bg-white px-4 py-2">
-                <span className="text-[14px] leading-5 tracking-[-0.01em]">
-                  But most are
-                </span>
-              </div>
-
-              <IconStepsRow
-                items={problems.map((p) => ({
-                  key: p.label,
-                  label: p.label,
-                  icon: p.icon,
-                }))}
-                className="border-y"
-              />
-
-              <div className="hidden w-full flex-col items-center gap-3 px-6 py-6 md:flex">
-                <p className="max-w-[33.43em] text-center text-[14px] leading-5 tracking-[-0.01em]">
-                  Revenue is lost in the gap between inquiry and engagement.
-                </p>
-                <p className="font-figma-hand text-center text-[16px] leading-6 font-bold tracking-[-0.02em]">
-                  <span className="text-[#006FFF]">Structurely AI 3</span>
-                  <span className="text-[#202020]"> closes that gap.</span>
-                </p>
-              </div>
-            </div>
+            </div> 
           </div>
+
+          <Image
+                  src="/assets/home/dashboard/dashboard.png"
+                  alt="Structurely dashboard with lead metrics, activity chart, and pipeline overview"
+                  width={2256}
+                  height={960}
+                  className="h-auto w-full border-t border-[#E5E7EB]  max-w-5xl"
+                  sizes="(max-width: 768px) 100vw, min(1024px, 100vw)"
+                />
+
         </div>
       </div>
     </section>

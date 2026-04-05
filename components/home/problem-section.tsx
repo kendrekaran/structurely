@@ -4,7 +4,7 @@ function ProblemSection() {
   return (
     <section id="problem" className="relative z-0">
       <div className="px-global">
-        <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
+        <div className="max-w-global mx-auto border-x border-t border-[#E5E7EB]">
           <div className="flex flex-col items-center px-[12px] md:px-0 gap-3  py-section-md">
             <div className="flex flex-col items-center gap-3 md:gap-4">
               <Badge text="The Problem" />

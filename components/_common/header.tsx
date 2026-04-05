@@ -14,6 +14,7 @@ const navLinks = [
   { label: "How it works", href: "/how-it-works" },
   { label: "Use Cases", href: "/use-cases" },
   { label: "Pricing", href: "/pricing" },
+  { label: "Partners", href: "/partners" },
 ];
 
 const companyLinks = [
