@@ -13,7 +13,7 @@ function TrustedLogosSection() {
   return (
     <section id="trusted-logos" className="relative z-0">
       <div className="px-global">
-        <div className="max-w-global mx-auto flex flex-col items-center gap-8 border-x border-[#E5E7EB] pt-6">
+        <div className="max-w-global  mx-auto flex flex-col items-center gap-8 border-x border-b border-[#E5E7EB] pt-6">
           <p className="text-center text-base font-medium leading-relaxed tracking-[-0.01em]">
             <span className="text-heading">Trusted by </span>
             <span className="text-foreground">industry leaders</span>
