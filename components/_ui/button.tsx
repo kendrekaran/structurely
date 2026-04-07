@@ -1,7 +1,12 @@
+"use client";
+
 import { clsx } from "clsx";
 import { cva, type VariantProps } from "class-variance-authority";
-import type { ButtonHTMLAttributes } from "react";
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
 import Image from "next/image";
+import type { ButtonHTMLAttributes } from "react";
+import { useRef } from "react";
 
 const buttonVariants = cva(
   "group font-medium leading-[20px] w-full flex items-center justify-center md:justify-start sm:w-auto whitespace-nowrap transition-all active:scale-[0.98] cursor-pointer",
@@ -36,23 +41,110 @@ export default function Button({
   size,
   className,
   children,
+  onMouseEnter,
+  onMouseLeave,
   ...props
 }: ButtonProps) {
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const leftIconRef = useRef<HTMLSpanElement>(null);
+  const rightIconRef = useRef<HTMLSpanElement>(null);
+  const tlRef = useRef<gsap.core.Timeline | null>(null);
+
+  useGSAP(
+    () => {
+      const btn = buttonRef.current;
+      const leftIcon = leftIconRef.current;
+      const rightIcon = rightIconRef.current;
+      if (!btn || !leftIcon || !rightIcon || variant !== "primary") return;
+
+      btn.style.minWidth = `${btn.offsetWidth + 1}px`;
+
+      tlRef.current = gsap.timeline({
+        paused: true,
+        defaults: {
+          duration: 0.5,
+          ease: "power4.inOut",
+        },
+      });
+
+      tlRef.current
+        .to(
+          rightIcon,
+          {
+            width: 0,
+            marginRight: 0,
+            opacity: 0,
+            filter: "blur(6px)",
+            scale: 0,
+            x: "2.5em",
+          },
+          0,
+        )
+        .fromTo(
+          leftIcon,
+          {
+            width: 0,
+            filter: "blur(6px)",
+            opacity: 0,
+            scale: 0,
+            x: "-2.5em",
+          },
+          {
+            width: 20,
+            x: 0,
+            scale: 1,
+            opacity: 1,
+            filter: "blur(0px)",
+          },
+          0,
+        );
+    },
+    { scope: buttonRef, dependencies: [variant] },
+  );
+
   return (
     <button
+      ref={buttonRef}
       className={clsx(buttonVariants({ variant, size }), className)}
+      onMouseEnter={(e) => {
+        onMouseEnter?.(e);
+        if (variant === "primary") tlRef.current?.play();
+      }}
+      onMouseLeave={(e) => {
+        onMouseLeave?.(e);
+        if (variant === "primary") tlRef.current?.reverse();
+      }}
       {...props}
     >
       <span className="flex w-full items-center justify-between gap-2">
         {children}
         {variant === "primary" && (
-          <Image
-            src="/assets/common/arrow.svg"
-            alt="arrow"
-            width={20}
-            height={20}
-            className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
-          />
+          <span className="relative inline-flex h-5 w-5 shrink-0 items-center justify-center overflow-hidden">
+            <span
+              ref={leftIconRef}
+              className="pointer-events-none inline-flex h-5 w-5 items-center justify-center overflow-hidden"
+            >
+              <Image
+                src="/assets/common/arrow.svg"
+                alt="arrow"
+                width={20}
+                height={20}
+                className="h-5 w-5"
+              />
+            </span>
+            <span
+              ref={rightIconRef}
+              className="pointer-events-none absolute right-0 inline-flex h-5 w-5 items-center justify-center overflow-hidden"
+            >
+              <Image
+                src="/assets/common/arrow.svg"
+                alt="arrow"
+                width={20}
+                height={20}
+                className="h-5 w-5"
+              />
+            </span>
+          </span>
         )}
       </span>
     </button>
