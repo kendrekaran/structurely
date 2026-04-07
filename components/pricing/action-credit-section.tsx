@@ -50,7 +50,7 @@ export default function ActionCreditSection() {
                 How Billing Works
               </span>
             </div>
-            <h2 className="max-w-[13.375em] text-center text-[28px] font-medium leading-[36px] tracking-[-0.03em] md:text-[48px] md:leading-[54px]">
+            <h2 data-reveal="words" className="max-w-[13.375em] text-center text-[28px] font-medium leading-[36px] tracking-[-0.03em] md:text-[48px] md:leading-[54px]">
               What is an <span className="text-[#006FFF]">Action Credit?</span>
             </h2>
             <p className="max-w-[29.375em] text-center text-[16px] font-medium leading-[26px] tracking-[-0.01em] text-[#646464]">

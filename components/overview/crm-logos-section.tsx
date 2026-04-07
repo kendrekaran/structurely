@@ -196,7 +196,7 @@ function CrmLogosSection() {
             >
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
                 <Badge text="Activity Logs + Remote Management" />
-                <h2 className="max-w-[8em] text-center">
+                <h2 data-reveal="words" className="max-w-[8em] text-center">
                   Integrated with your{" "}
                   <span className="text-[#006FFF]">CRM.</span>
                 </h2>
@@ -387,7 +387,7 @@ function CrmLogosSection() {
               {/* Text in foreground */}
               <div className="relative z-10 flex flex-col items-center gap-4 px-4 pt-6 md:pt-10 text-center">
                 <Badge text="Activity Logs + Remote Management" />
-                <h2 className="max-w-[8em]">
+                <h2 data-reveal="words" className="max-w-[8em]">
                   Integrated with your{" "}
                   <span className="text-[#006FFF]">CRM.</span>
                 </h2>

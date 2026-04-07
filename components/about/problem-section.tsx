@@ -210,7 +210,7 @@ function AboutProblemSection() {
         <div className="max-w-global md:py-section-md mx-auto flex flex-col items-center gap-4 border-x border-b border-[#E5E7EB] py-[24px] text-center">
           <div className="flex flex-col items-center gap-3.5 md:gap-4">
             <Badge text="The Problem" />
-            <h2 className="max-w-[11.08em] text-center">
+            <h2 data-reveal="words" className="max-w-[11.08em] text-center">
               <span className="text-[#006FFF]">The Problem</span> <br /> We
               Exist to Solve
             </h2>

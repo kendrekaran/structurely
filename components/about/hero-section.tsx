@@ -3,7 +3,7 @@ function AboutHeroSection() {
     <section id="about-hero" className="relative z-0">
       <div className="px-global">
         <div className="max-w-global md:py-section-md mx-auto flex flex-col items-center gap-3.5 md:gap-4 border-x border-[#E5E7EB] py-[40px] text-center">
-          <h2 className="max-w-[11.08em] text-center text-[32px] md:text-[48px] leading-[44px] md:leading-[54px] font-normal md:font-medium tracking-[-0.04em] md:tracking-[-0.03em]">Structurely</h2>
+          <h2 data-reveal="words" className="max-w-[11.08em] text-center text-[32px] md:text-[48px] leading-[44px] md:leading-[54px] font-normal md:font-medium tracking-[-0.04em] md:tracking-[-0.03em]">Structurely</h2>
           <p className="max-w-[27.6em] text-center text-[16px] leading-[26px] tracking-[-0.01em] md:text-[18px] md:leading-[28px]">
             For over a decade, Structurely has helped businesses capture,
             qualify, follow-up and convert inbound demand.

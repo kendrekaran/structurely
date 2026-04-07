@@ -73,7 +73,7 @@ function PowerDialerSection() {
             </span>
           </div>
 
-          <h2 className="max-w-[12em] text-center">
+          <h2 data-reveal="words" className="max-w-[12em] text-center">
             Power your sales efforts{" "}
             <span className="text-[#006FFF]">like never before.</span>
           </h2>

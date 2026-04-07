@@ -6,7 +6,7 @@ function SolutionIntroSection() {
       <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
         <div className="md:py-section-md flex flex-col items-center gap-3 px-6 py-12 md:px-24">
           <Badge text="What is Structurely" />
-          <h2 className="max-w-[11em] text-center">
+          <h2 data-reveal="words" className="max-w-[11em] text-center">
             Structurely <span className="text-[#006FFF]">automates</span><br className=" md:hidden" /> the
             middle
           </h2>

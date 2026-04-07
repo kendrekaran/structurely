@@ -69,7 +69,7 @@ export default function DemoHeroSection() {
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
           <div className="flex flex-col items-center gap-3.5 md:gap-4 px-6 py-10 md:py-section-md text-center md:px-24">
-            <h2 className="max-w-[258px] md:max-w-[10em] text-center text-[32px] md:text-[48px] leading-[44px] md:leading-[54px] font-normal md:font-medium tracking-[-0.04em] md:tracking-[-0.03em]">Experience the AI.</h2>
+            <h2 data-reveal="words" className="max-w-[258px] md:max-w-[10em] text-center text-[32px] md:text-[48px] leading-[44px] md:leading-[54px] font-normal md:font-medium tracking-[-0.04em] md:tracking-[-0.03em]">Experience the AI.</h2>
             <p className="max-w-[34.44em] text-[16px] md:text-[18px] leading-[26px] md:leading-[28px] tracking-[-0.01em] text-center">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry

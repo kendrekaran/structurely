@@ -20,7 +20,7 @@ function BlogRelatedArticlesSection({
       <div className="px-global">
         <div className="max-w-global border-b mx-auto border-x border-[#E5E7EB]">
           <div className="py-[32px] flex flex-col items-center px-6 lg:px-12">
-            <h2 className="max-w-[10em] text-center">Related articles</h2>
+            <h2 data-reveal="words" className="max-w-[10em] text-center">Related articles</h2>
           </div>
           <div className="border-t border-[#E5E7EB]">
             <div className="grid grid-cols-1 divide-y divide-[#E5E7EB] lg:grid-cols-3 lg:divide-x lg:divide-y-0">

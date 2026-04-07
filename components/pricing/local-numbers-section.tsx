@@ -68,7 +68,7 @@ export default function LocalNumbersSection() {
                   🛡️ Built-In Protection
                 </span>
               </div>
-              <h2 className="text-[40px] font-medium leading-[1.125] tracking-[-0.03em] md:text-[48px] md:leading-[54px]">
+              <h2 data-reveal="words" className="text-[40px] font-medium leading-[1.125] tracking-[-0.03em] md:text-[48px] md:leading-[54px]">
                 <span className="text-[#202020]">Local Numbers.</span>
                 <br />
                 <span className="text-[#006FFF]">More Pickups.</span>

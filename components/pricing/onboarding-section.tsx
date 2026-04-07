@@ -129,7 +129,7 @@ export default function OnboardingSection() {
       <div className="px-global">
         <div className="max-w-global py-section-md mx-auto flex flex-col gap-3 border-x border-[#E5E7EB] px-3 md:flex-row md:items-center md:justify-between md:gap-8 md:px-[48px]">
           <div className="flex flex-col gap-3 md:max-w-[55%]">
-            <h2 className="text-[28px] leading-[36px] tracking-[-0.03em] md:max-w-[32em]">
+            <h2 data-reveal="words" className="text-[28px] leading-[36px] tracking-[-0.03em] md:max-w-[32em]">
               Onboarding That Sets{" "}
               <span className="text-[#006FFF]">You Up to Win</span>
             </h2>

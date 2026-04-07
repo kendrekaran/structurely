@@ -8,7 +8,7 @@ function TrustedIntroSection() {
               Proof
             </span>
           </div>
-          <h2 className="max-w-[17em] text-center">
+          <h2 data-reveal="words" className="max-w-[17em] text-center">
             Trusted by <span className="text-[var(--primary)]">leading</span>{" "}
             teams across sales-driven industries
           </h2>

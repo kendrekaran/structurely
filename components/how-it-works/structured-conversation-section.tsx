@@ -42,7 +42,7 @@ function StructuredConversationSection() {
         <div className="max-w-global mx-auto flex flex-col md:flex-row">
           <div className="flex flex-1 flex-col justify-center gap-6 border-b border-[#E5E7EB] px-3 py-6 md:w-1/2 md:flex-none md:border-r md:border-b-0 md:px-[48px] md:py-[48px]">
             <div className="flex flex-col gap-3 border-b border-[#E5E7EB] pb-4 md:border-b-0 md:pb-0">
-              <h2 className="md:max-w-[10em]">
+              <h2 data-reveal="words" className="md:max-w-[10em]">
                 Structured <span className="text-[#006FFF]">Conversation</span>{" "}
                 Engine
               </h2>

@@ -30,7 +30,7 @@ function CtaSection({ variant = "default" }: CtaSectionProps) {
         <div className="px-global md:py-section-md py-8">
           <div className="max-w-global mx-auto">
             <div className="flex flex-col items-center gap-8">
-              <h2 className="max-w-[198px] text-center font-medium md:max-w-[11.25em]">
+              <h2 data-reveal="words" className="max-w-[198px] text-center font-medium md:max-w-[11.25em]">
                 <span className="text-[#646464]">Grow your revenue with</span>{" "}
                 <span className="text-heading">Structurely.</span>
               </h2>

@@ -54,7 +54,7 @@ export default function KnowledgeBasesSection() {
           <div className="flex flex-col items-center px-3 py-8 pb-[24px]">
             <div className="flex w-full max-w-[744px] flex-col items-center gap-[32px] ">
               <div className="flex w-full flex-col items-start px-3 md:px-0 gap-4">
-                <h2 className="text-heading max-w-[16em] text-[36px] leading-[44px] font-medium tracking-[-0.03em]">
+                <h2 data-reveal="words" className="text-heading max-w-[16em] text-[36px] leading-[44px] font-medium tracking-[-0.03em]">
                   5. Knowledge Bases
                 </h2>
                 <p className="text-heading text-[16px]  leading-[26px]  tracking-[-0.01em]">
@@ -68,7 +68,7 @@ export default function KnowledgeBasesSection() {
               </div>
 
               <div className="flex w-full flex-col gap-6 ">
-                <h2 className="text-heading max-w-[16em] text-[28px] md:text-[36px] leading-[36px] md:leading-[44px] font-medium tracking-[-0.02em] md:tracking-[-0.03em]">
+                <h2 data-reveal="words" className="text-heading max-w-[16em] text-[28px] md:text-[36px] leading-[36px] md:leading-[44px] font-medium tracking-[-0.02em] md:tracking-[-0.03em]">
                   Do you have a pre-existing FAQ or reference materials?
                 </h2>
                 <p className="text-heading">
@@ -120,7 +120,7 @@ export default function KnowledgeBasesSection() {
               <div className="w-full border-t border-[#E5E7EB] my-[16px]" />
 
               <div className="flex w-full flex-col gap-6">
-                <h2 className="text-heading max-w-[22em] text-[36px] leading-[44px] font-medium tracking-[-0.03em]">
+                <h2 data-reveal="words" className="text-heading max-w-[22em] text-[36px] leading-[44px] font-medium tracking-[-0.03em]">
                   Now that you&apos;ve established a Knowledge Base, add it to
                   the applicable Call AI Agent(s) here!
                 </h2>

@@ -40,7 +40,7 @@ export default function PricingHeroSection({
               </div>
 
               <div className="flex flex-col items-center gap-4">
-                <h1 className="max-w-[13.5em] text-center text-[32px] md:text-[48px] leading-[1.125] tracking-[-0.03em] font-medium text-[#202020]">
+                <h1 data-reveal="words" className="max-w-[13.5em] text-center text-[32px] md:text-[48px] leading-[1.125] tracking-[-0.03em] font-medium text-[#202020]">
                   Your leads aren&apos;t going cold. They&apos;re being{" "}
                   <span className="text-[#006FFF]">ignored.</span>
                 </h1>

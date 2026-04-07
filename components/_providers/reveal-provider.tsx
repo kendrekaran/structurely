@@ -115,7 +115,7 @@ export default function RevealProvider({
               if (d === "longer") return 2;
               return 0.8;
             },
-            ease: "power3.inOut",
+            ease: "power4.inOut",
           });
         },
       });

@@ -8,7 +8,7 @@ function PhilosophyIntroSection() {
               Philosophy
             </span>
           </div>
-          <h2 className="max-w-[11em] text-center">
+          <h2 data-reveal="words" className="max-w-[11em] text-center">
             Capacity Is the new competitive{" "}
             <span className="text-[#006FFF]">advantage</span>
           </h2>

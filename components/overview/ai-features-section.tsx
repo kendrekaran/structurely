@@ -107,7 +107,7 @@ function FeatureRow({
       >
         <StatBadge text={statText} />
         <div className="flex flex-col gap-3">
-          <h2 className="text-heading text-[24px] md:text-[32px] leading-[32px] md:leading-[40px] font-medium tracking-[-0.03em]">
+          <h2 data-reveal="words" className="text-heading text-[24px] md:text-[32px] leading-[32px] md:leading-[40px] font-medium tracking-[-0.03em]">
             {heading}
           </h2>
           <p className="text-[#646464] text-[16px] leading-[26px] tracking-[-0.01em]">
