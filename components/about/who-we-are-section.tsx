@@ -8,7 +8,7 @@ function WhoWeAreSection() {
               Who We Are
             </span>
           </div>
-          <h2 className="max-w-[11em] md:tracking-[-0.03em]">Who We Are</h2>
+          <h2 data-reveal="words" className="max-w-[11em] md:tracking-[-0.03em]">Who We Are</h2>
         </div>
       </div>
 

@@ -11,7 +11,7 @@ function HeroSection() {
             <div className="flex flex-col items-center gap-3.5">
               <HeroBadge text="Every lead. Every follow-up. Every time." />
 
-              <h1 className="max-w-[342px] sm:max-w-[18em] text-center">
+              <h1 data-reveal="words" className="max-w-[342px] sm:max-w-[18em] text-center">
               Get appointments with your{" "}
                 <span className="text-[#006FFF]">highest-quality leads.</span>
               </h1>

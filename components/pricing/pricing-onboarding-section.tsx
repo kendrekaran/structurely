@@ -103,7 +103,7 @@ export default function PricingOnboardingSection() {
             <div className="rounded-[8px] bg-white px-4 py-2 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
               <span className="text-[12px] font-medium leading-4 text-[#646464]">One-Time Setup</span>
             </div>
-            <h2 className="text-center  " style={{ maxWidth: "500px" }}>
+            <h2 data-reveal="words" className="text-center  " style={{ maxWidth: "500px" }}>
               Onboarding That Sets You Up to Win
             </h2>
             <p className="text-center text-[#646464]" style={{ maxWidth: `${470 / 16}em`, fontSize: "16px", lineHeight: "26px", letterSpacing: "-0.01em" }}>

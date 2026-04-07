@@ -9,7 +9,7 @@ function WhyItMattersSection() {
     <section id="why-it-matters" className="relative z-0">
       <div className="px-global">
         <div className="max-w-global md:py-section-md mx-auto flex flex-col items-center gap-3 border-x border-b border-[#E5E7EB] py-[24px] text-center">
-          <h2 className="max-w-[11em]">Why It Matters</h2>
+          <h2 data-reveal="words" className="max-w-[11em]">Why It Matters</h2>
           <p className="px-[12px] max-w-[27.375em] w-full md:max-w-[488px]  text-center">
             Over time, we learned that successful follow-up requires more than
             speed.

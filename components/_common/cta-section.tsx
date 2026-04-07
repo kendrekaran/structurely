@@ -27,15 +27,13 @@ function CtaSection({ variant = "default" }: CtaSectionProps) {
           src="/rive/cta.riv"
           className="absolute inset-0 z-[-1] h-full w-full"
         />
-        <div className="px-global py-8 md:py-section-md">
+        <div className="px-global md:py-section-md py-8">
           <div className="max-w-global mx-auto">
             <div className="flex flex-col items-center gap-8">
-            <h2 className="max-w-[198px] text-center font-medium md:max-w-[11.25em]">
-                  <span className="text-[#646464]">Grow your revenue with</span>{" "}
-                  <span className="text-heading">
-                    Structurely.
-                  </span>
-                </h2>
+              <h2 data-reveal="words" className="max-w-[198px] text-center font-medium md:max-w-[11.25em]">
+                <span className="text-[#646464]">Grow your revenue with</span>{" "}
+                <span className="text-heading">Structurely.</span>
+              </h2>
               <div className="flex flex-wrap items-center justify-center gap-4">
                 {!isOverview && (
                   <Button variant="primary" size="md">

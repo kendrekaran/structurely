@@ -110,7 +110,7 @@ export default function FaqSection() {
     <section id="faq" className="relative z-0">
       <div className="bg-background px-global">
         <div className="max-w-global py-section-md mx-auto flex flex-col items-center gap-3 border-x border-[#E5E7EB]">
-          <h2 className="text-center">FAQ</h2>
+          <h2 data-reveal="words" className="text-center">FAQ</h2>
           <p className="text-center">Frequently Asked Questions</p>
         </div>
       </div>

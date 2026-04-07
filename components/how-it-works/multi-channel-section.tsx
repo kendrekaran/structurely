@@ -26,7 +26,7 @@ function MultiChannelSection() {
         <div className="pt-section-md px-[12px] md:px-0">
           <div className="">
             <div className="flex flex-col items-center">
-              <h2 className="text-center md:max-w-[11em]">
+              <h2 data-reveal="words" className="text-center md:max-w-[11em]">
                 Immediate <span className="text-[#006FFF]">Multi-Channel</span>{" "}
                 Engagement
               </h2>

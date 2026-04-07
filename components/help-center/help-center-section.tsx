@@ -215,7 +215,7 @@ export default function HelpCenterSection() {
               </span>
             </Link>
             <div className="flex w-full max-w-[46.375em] flex-col items-start gap-[10px] md:gap-4 md:items-center md:text-center">
-              <h2 className="max-w-[13.5em] text-[36px] md:text-[48px] leading-[44px] md:leading-[54px] font-normal md:font-medium tracking-[-0.03em] text-left md:text-center">
+              <h2 data-reveal="words" className="max-w-[13.5em] text-[36px] md:text-[48px] leading-[44px] md:leading-[54px] font-normal md:font-medium tracking-[-0.03em] text-left md:text-center">
                 Advice and answers from the{" "}
                 <span className="text-[#006FFF]">Structurely</span> Team
               </h2>

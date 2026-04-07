@@ -237,3 +237,25 @@
     font-size: 12px;
   }
 }
+
+[data-reveal="lines"],
+[data-reveal="words"],
+[data-reveal="chars"] {
+  opacity: 0;
+}
+
+[data-reveal="basic"],
+[data-reveal="lines"] .reveal_line,
+[data-reveal="words"] .reveal_word,
+[data-reveal="chars"] .reveal_char {
+  opacity: 0;
+  filter: blur(0.125rem);
+  transform: translate(0, 5%);
+  transform-origin: top;
+}
+
+[data-reveal="fade"] {
+  opacity: 0;
+  filter: blur(0.125rem);
+  transform-origin: top;
+}

@@ -25,7 +25,7 @@ function StructuredSystemSection() {
       <div className="px-global">
         <div className="max-w-global mx-auto flex flex-col items-center border-x border-b border-[#E5E7EB]">
           <div className="py-section-md flex flex-col items-center gap-3 text-center">
-            <h2 className="max-w-[278px] sm:max-w-[11em]">
+            <h2 data-reveal="words" className="max-w-[278px] sm:max-w-[11em]">
               Why Our Systems Are{" "}
               <span className="text-primary">Structured</span>
             </h2>

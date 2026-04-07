@@ -7,7 +7,7 @@ export default function PricingCtaSection() {
         <div className="max-w-global bg-white mx-auto border-x border-[#E5E7EB]">
           <div className="flex flex-col items-center gap-6 px-6 py-12 text-center md:px-12">
             <div className="flex flex-col items-center justify-center gap-3">
-              <h2 className="max-w-[16em] text-[28px] leading-[36px] tracking-[-0.003em] md:tracking-[-0.03em]">
+              <h2 data-reveal="words" className="max-w-[16em] text-[28px] leading-[36px] tracking-[-0.003em] md:tracking-[-0.03em]">
                 Not sure which plan fits?
               </h2>
               <p className=" text-[14px] leading-6 tracking-[-0.01em] text-[#646464]">

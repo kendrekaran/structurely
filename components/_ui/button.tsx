@@ -57,7 +57,7 @@ export default function Button({
       const rightIcon = rightIconRef.current;
       if (!btn || !leftIcon || !rightIcon || variant !== "primary") return;
 
-      btn.style.minWidth = `${btn.offsetWidth + 1}px`;
+      // btn.style.minWidth = `${btn.offsetWidth + 1}px`;
 
       tlRef.current = gsap.timeline({
         paused: true,

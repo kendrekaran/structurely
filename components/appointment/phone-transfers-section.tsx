@@ -19,7 +19,7 @@ function PhoneTransfersSection() {
             </span>
           </div>
 
-          <h2 className="max-w-[12em] text-center">
+          <h2 data-reveal="words" className="max-w-[12em] text-center">
             Get live phone transfers or appointments with your{" "}
             <span className="text-[#006FFF]">most qualified leads.</span>
           </h2>

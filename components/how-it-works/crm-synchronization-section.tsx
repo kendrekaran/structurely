@@ -32,7 +32,7 @@ function CrmSynchronizationSection() {
         className="max-w-global relative z-0 mx-auto border-x border-[#E5E7EB]"
       >
         <div className="py-section-md flex flex-col items-center gap-3 px-6 md:px-24">
-          <h2 className="max-w-[12em] text-center">
+          <h2 data-reveal="words" className="max-w-[12em] text-center">
             <span className="text-[#006FFF]">CRM</span>{" "}
             <span className="md:text-heading text-[#006FFF]">
               Synchronization

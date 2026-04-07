@@ -125,7 +125,7 @@ export default function PricingAddonSection() {
                 <Badge text="Beta — Salesforce Add-on" />
               </div>
 
-              <h2 style={{ maxWidth: "10em" }}>
+              <h2 data-reveal="words" style={{ maxWidth: "10em" }}>
                 <span className="text-[#006FFF]">AI Power</span> Dialer
               </h2>
 

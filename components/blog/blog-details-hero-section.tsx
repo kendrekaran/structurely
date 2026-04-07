@@ -48,7 +48,7 @@ function BlogDetailsHeroSection({
           <div className="flex flex-col-reverse md:flex-col items-stretch justify-center gap-6 md:gap-8  lg:flex-row    ">
             <div className="flex flex-col gap-2.5 md:gap-4 lg:max-w-[32.25em]">
               
-              <h1 className="text-heading text-[36px] leading-[44px] font-medium tracking-[-0.03em] max-w-[13.6em]">{title}</h1>
+              <h1 data-reveal="words" className="text-heading text-[36px] leading-[44px] font-medium tracking-[-0.03em] max-w-[13.6em]">{title}</h1>
 
               <div className="flex flex-col gap-[10px] md:gap-2">
                 <p className="md:text-heading ">{intro}</p>

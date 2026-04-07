@@ -8,7 +8,7 @@ function WhatWeBelieveSection() {
               What We Believe
             </span>
           </div>
-          <h2 className="max-w-[11em] tracking-[-0.03em]">
+          <h2 data-reveal="words" className="max-w-[11em] tracking-[-0.03em]">
             What We <span className="text-[#006FFF]">Believe</span>
           </h2>
         </div>

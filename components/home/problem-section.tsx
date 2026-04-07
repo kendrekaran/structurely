@@ -8,7 +8,7 @@ function ProblemSection() {
           <div className="flex flex-col items-center px-[12px] md:px-0 gap-3  py-section-md">
             <div className="flex flex-col items-center gap-3 md:gap-4">
               <Badge text="The Problem" />
-              <h2 className="max-w-[14em] text-center">
+              <h2 data-reveal="words" className="max-w-[14em] text-center">
                 Most teams don&apos;t lose deals because of{" "}
                 <span className="text-[#006FFF]">demand</span>
               </h2>

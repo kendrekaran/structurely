@@ -67,7 +67,7 @@ function CrmIntegrationSection() {
               </span>
             </div>
 
-            <h2 className="max-w-[10em] text-center">
+            <h2 data-reveal="words" className="max-w-[10em] text-center">
               Integrated with your CRM.
             </h2>
           </div>
