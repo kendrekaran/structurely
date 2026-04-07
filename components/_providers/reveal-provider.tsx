@@ -106,7 +106,7 @@ export default function RevealProvider({
             scaleY: 1,
             stagger: 0.09,
             delay: (_, target: HTMLElement) => {
-              return Number(target.getAttribute("data-delay")) || 0;
+              return Number(target.getAttribute("data-delay")) || 0.25;
             },
             y: 0,
             duration: (_, target: HTMLElement) => {
