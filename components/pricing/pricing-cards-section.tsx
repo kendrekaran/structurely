@@ -133,14 +133,14 @@ export default function PricingCardsSection({
               </p>
             </div>
           </div>
-          <div className="max-md:scrollbar-hide flex flex-row  gap-2 overflow-x-auto p-2 lg:overflow-x-visible [&::-webkit-scrollbar]:max-md:hidden [&>*]:min-w-[272px] lg:[&>*]:min-w-0">
+          <div className="max-md:scrollbar-hide  flex flex-row items-center  gap-2 overflow-x-auto p-2 md:pb-4 lg:overflow-x-visible [&::-webkit-scrollbar]:max-md:hidden [&>*]:min-w-[272px] lg:[&>*]:min-w-0">
             {plans.map((plan) => (
               <div
                 key={plan.id}
                 className={[
-                  "flex flex-1 flex-col h-fit gap-6 overflow-hidden rounded-[10px] bg-white",
+                  "flex flex-1 flex-col h-[556px] gap-6 overflow-hidden rounded-[10px] bg-white",
                   plan.popular
-                    ? "border border-[#006FFF] py-8 shadow-[0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)] max-md:order-first"
+                    ? "h-[580px] border border-[#006FFF] py-6 shadow-[0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)] max-md:order-first"
                     : "py-6 shadow-[0_0_0_1px_rgba(0,0,0,0.08)]",
                 ].join(" ")}
               >
