@@ -12,7 +12,15 @@ function HeroAnimationSection() {
           alt="Structurely AI platform overview"
           width={1200}
           height={630}
-          className="w-full object-cover"
+          className="w-full object-cover hidden md:block "
+          priority
+        />
+        <Image
+          src="/assets/home/hero-mobile.png"
+          alt="Structurely AI platform overview"
+          width={1200}
+          height={630}
+          className=" w-full pt-[32px] px-[12px] object-cover  md:hidden"
           priority
         />
       </section>

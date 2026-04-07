@@ -164,12 +164,12 @@
 
   h1,
   .h1-style {
-    @apply text-[min(48px,14vw)] leading-[1.1666666666666667] font-normal tracking-[-0.03em] sm:text-[48px] md:text-[48px] md:leading-[54px];
+    @apply text-[min(32px,14vw)] leading-[40px] font-medium tracking-[-0.03em] md:text-[48px] md:leading-[54px];
   }
 
   h2,
   .h2-style {
-    @apply text-[min(28px,14vw)] leading-[1.2857142857142858] font-medium tracking-[-0.02em] sm:text-[48px] md:text-[48px] md:leading-[54px] md:tracking-[-0.03em];
+    @apply text-[min(32px,14vw)] leading-[40px] font-medium tracking-[-0.03em] sm:text-[48px] md:text-[48px] md:leading-[54px] md:tracking-[-0.03em];
   }
 
   h3,

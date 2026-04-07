@@ -14,24 +14,32 @@ const leftLogos = [
     alt: "Follow Up Boss",
     width: 55,
     height: 16,
+    smWidth: 24,
+    smHeight: 7,
   },
   {
     src: companyAroundAsset("image 20.png"),
     alt: "HubSpot",
     width: 57,
     height: 20,
+    smWidth: 25,
+    smHeight: 9,
   },
   {
     src: companyAroundAsset("image 19.png"),
     alt: "BoomTown",
     width: 52,
     height: 12,
+    smWidth: 23,
+    smHeight: 5,
   },
   {
     src: companyAroundAsset("Vector.png"),
     alt: "CRM integration",
     width: 55,
     height: 9,
+    smWidth: 24,
+    smHeight: 4,
   },
 ];
 
@@ -41,12 +49,16 @@ const centerLogos = [
     alt: "Bonzo",
     width: 55,
     height: 18,
+    smWidth: 25,
+    smHeight: 8,
   },
   {
     src: companyAroundAsset("image 21.png"),
     alt: "Salesforce",
     width: 46,
     height: 32,
+    smWidth: 20,
+    smHeight: 14,
   },
 ];
 
@@ -56,12 +68,16 @@ const rightLogos = [
     alt: "LP",
     width: 32,
     height: 32,
+    smWidth: 14,
+    smHeight: 14,
   },
   {
     src: companyAroundAsset("Layer 2.png"),
     alt: "MarketSharp",
     width: 54,
     height: 13,
+    smWidth: 24,
+    smHeight: 6,
   },
 ];
 
@@ -77,6 +93,29 @@ function LogoCard({
       <div
         className={[
           "flex h-20 w-20 flex-col items-center justify-center rounded-[18px] border border-[#E5E7EB] bg-white p-3",
+          hasShadow ? logoCardShadow : "",
+        ]
+          .filter(Boolean)
+          .join(" ")}
+      >
+        {children}
+      </div>
+    </div>
+  );
+}
+
+function LogoCardSm({
+  children,
+  hasShadow = false,
+}: {
+  children: React.ReactNode;
+  hasShadow?: boolean;
+}) {
+  return (
+    <div className="inline-flex items-center justify-center rounded-[10px] border border-[#E5E7EB] bg-[#FAFAFA] p-[2.66px]">
+      <div
+        className={[
+          "flex h-[35px] w-[35px] flex-col items-center justify-center rounded-[8px] border border-[#E5E7EB] bg-white p-[5px]",
           hasShadow ? logoCardShadow : "",
         ]
           .filter(Boolean)
@@ -116,18 +155,45 @@ function AccuLynxLogo() {
   );
 }
 
+function AccuLynxLogoSm() {
+  return (
+    <svg
+      width="25"
+      height="4"
+      viewBox="0 0 25 4"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clipPath="url(#acculynx-sm-clip)">
+        <path
+          d="M10.1378 0.732961V2.22334C10.1378 2.34325 10.115 2.43176 10.0693 2.4803C10.0236 2.52884 9.95508 2.55453 9.86086 2.55453C9.67528 2.55453 9.58677 2.45746 9.58106 2.24904V0.732961H8.93866V2.23762C8.94151 2.49458 9.02717 2.70015 9.19276 2.84861C9.35551 2.99708 9.58106 3.07131 9.86372 3.07131C10.031 3.07489 10.1969 3.04073 10.3491 2.97138C10.489 2.90572 10.5975 2.80579 10.6717 2.67731C10.746 2.54882 10.7831 2.3975 10.7831 2.22619V0.732961H10.1378ZM5.94362 1.895C5.94362 2.74297 6.44898 3.09701 7.02572 3.09701C7.52822 3.09701 7.91081 2.76296 7.95649 2.27473H7.32265C7.30838 2.41178 7.19703 2.60022 6.97718 2.58023C6.71451 2.55739 6.62029 2.27473 6.626 1.895C6.626 1.47815 6.75163 1.20977 6.97718 1.20406C7.18275 1.19549 7.29981 1.33539 7.32265 1.51527H7.95649C7.89939 1.00991 7.51109 0.692989 6.96576 0.692989C6.35191 0.695844 5.94362 1.17265 5.94362 1.895ZM3.10277 1.895C3.10277 2.74297 3.60813 3.09701 4.18486 3.09701C4.68737 3.09701 5.06995 2.76296 5.11564 2.27473H4.4818C4.46752 2.41178 4.35617 2.60022 4.13633 2.58023C3.87365 2.55739 3.77943 2.27473 3.78514 1.895C3.78514 1.47815 3.91077 1.20977 4.13633 1.20406C4.34189 1.19549 4.45896 1.33539 4.4818 1.51527H5.11564C5.05853 1.00991 4.67024 0.692989 4.1249 0.692989C3.51105 0.695844 3.10277 1.17265 3.10277 1.895ZM1.55814 0.732961H0.944288L0.0449219 3.04847H0.724443L0.87291 2.63733H1.63523L1.78655 3.04847H2.46322L1.55814 0.732961ZM1.0642 2.11484L1.25264 1.59236L1.44394 2.11484H1.0642ZM24.008 0.0477295H24.0566V3.85076H24.008V0.0477295Z"
+          fill="#24476C"
+        />
+        <path
+          d="M22.0578 1.88355L22.7116 0.724365H21.9664L21.6381 1.39247L21.3069 0.724365H20.5646L21.2184 1.88355L20.5474 3.06557H21.2955L21.6381 2.38034L21.9779 3.06557H22.7288L22.0578 1.88355ZM18.7373 0.732931V1.95778L18.0406 0.732931H17.4182V3.06557H18.0635V1.83787L18.763 3.06557H19.3826V0.732931H18.7373ZM15.6966 0.724365L15.3226 1.60375L14.9485 0.724365H14.2433L14.9942 2.22045V3.06557H15.6509V2.22045L16.4046 0.724365H15.6966ZM12.613 2.53452V0.732931H11.9678V3.05701H13.6437V2.53452H12.613Z"
+          fill="#F5863B"
+        />
+      </g>
+      <defs>
+        <clipPath id="acculynx-sm-clip">
+          <rect width="24.2686" height="3.99718" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+}
+
 function CrmLogosSection() {
   return (
     <section id="crm-logos" className="relative z-0">
       <div className="px-global">
         <div className="max-w-global mx-auto overflow-hidden border-x border-[#E5E7EB]">
-          <div className="flex flex-col items-center gap-8 px-4 sm:px-6 lg:px-24">
+          <div className="flex flex-col items-center gap-8  lg:px-24">
             {/* Desktop: scattered absolute layout */}
             <div
               className="relative hidden w-full lg:block"
               style={{ height: "460px" }}
             >
-              {/* Center text */}
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
                 <Badge text="Activity Logs + Remote Management" />
                 <h2 className="max-w-[8em] text-center">
@@ -136,7 +202,6 @@ function CrmLogosSection() {
                 </h2>
               </div>
 
-              {/* Top center: Bonzo */}
               <div className="absolute -top-8 left-[48%] -translate-x-1/2">
                 <LogoCard hasShadow>
                   <Image
@@ -149,7 +214,6 @@ function CrmLogosSection() {
                 </LogoCard>
               </div>
 
-              {/* Top left: HubSpot */}
               <div className="absolute top-[10%] left-[18%]">
                 <LogoCard hasShadow>
                   <Image
@@ -162,7 +226,6 @@ function CrmLogosSection() {
                 </LogoCard>
               </div>
 
-              {/* Middle left: Follow Up Boss */}
               <div className="absolute top-1/2 left-[5%] -translate-y-1/2">
                 <LogoCard hasShadow>
                   <Image
@@ -175,7 +238,6 @@ function CrmLogosSection() {
                 </LogoCard>
               </div>
 
-              {/* Bottom left: BoomTown */}
               <div className="absolute bottom-[8%] left-[18%]">
                 <LogoCard hasShadow>
                   <Image
@@ -188,7 +250,6 @@ function CrmLogosSection() {
                 </LogoCard>
               </div>
 
-              {/* Bottom center: Salesforce */}
               <div className="absolute bottom-[-8%] left-[48%] -translate-x-1/2">
                 <LogoCard>
                   <Image
@@ -201,7 +262,6 @@ function CrmLogosSection() {
                 </LogoCard>
               </div>
 
-              {/* Top right: LP */}
               <div className="absolute top-[10%] right-[18%]">
                 <LogoCard>
                   <Image
@@ -214,14 +274,12 @@ function CrmLogosSection() {
                 </LogoCard>
               </div>
 
-              {/* Middle right: AccuLynx */}
               <div className="absolute top-1/2 right-[5%] -translate-y-1/2">
                 <LogoCard hasShadow>
                   <AccuLynxLogo />
                 </LogoCard>
               </div>
 
-              {/* Bottom right: MarketSharp */}
               <div className="absolute right-[18%] bottom-[8%]">
                 <LogoCard>
                   <Image
@@ -235,59 +293,104 @@ function CrmLogosSection() {
               </div>
             </div>
 
-            {/* Mobile: stacked text + grid of logos */}
-            <div className="flex flex-col items-center gap-8 py-10 lg:hidden">
-              <div className="flex flex-col items-center gap-4">
+            {/* Mobile: logos as background behind heading */}
+            <div
+              className="relative w-full overflow-hidden lg:hidden"
+              style={{ height: "176px" }}
+            >
+              {/* Logos background layer */}
+              <div className="pointer-events-none absolute inset-0">
+                <div className="absolute left-1/2 top-[-16px] md:top-[22px] -translate-x-1/2">
+                  <LogoCardSm hasShadow>
+                    <Image
+                      src={centerLogos[0].src}
+                      alt={centerLogos[0].alt}
+                      width={centerLogos[0].smWidth}
+                      height={centerLogos[0].smHeight}
+                      className="object-contain"
+                    />
+                  </LogoCardSm>
+                </div>
+                <div className="absolute left-1 md:left-3 top-[9px] md:top-[92px]">
+                  <LogoCardSm hasShadow>
+                    <Image
+                      src={leftLogos[0].src}
+                      alt={leftLogos[0].alt}
+                      width={leftLogos[0].smWidth}
+                      height={leftLogos[0].smHeight}
+                      className="object-contain"
+                    />
+                  </LogoCardSm>
+                </div>
+                <div className="absolute md:right-3 right-2 md:top-[92px] top-[12px]">
+                  <LogoCardSm>
+                    <Image
+                      src={rightLogos[0].src}
+                      alt={rightLogos[0].alt}
+                      width={rightLogos[0].smWidth}
+                      height={rightLogos[0].smHeight}
+                      className="object-contain"
+                    />
+                  </LogoCardSm>
+                </div>
+                <div className="absolute md:left-54 left-1 md:top-[154px] top-[66px]">
+                  <LogoCardSm hasShadow>
+                    <Image
+                      src={leftLogos[1].src}
+                      alt={leftLogos[1].alt}
+                      width={leftLogos[1].smWidth}
+                      height={leftLogos[1].smHeight}
+                      className="object-contain"
+                    />
+                  </LogoCardSm>
+                </div>
+                <div className="absolute md:right-5 right-2 md:top-[154px] top-[66px]">
+                  <LogoCardSm hasShadow>
+                    <AccuLynxLogoSm />
+                  </LogoCardSm>
+                </div>
+                <div className="absolute md:bottom-9 bottom-2 md:left-12 left-14">
+                  <LogoCardSm hasShadow>
+                    <Image
+                      src={leftLogos[2].src}
+                      alt={leftLogos[2].alt}
+                      width={leftLogos[2].smWidth}
+                      height={leftLogos[2].smHeight}
+                      className="object-contain"
+                    />
+                  </LogoCardSm>
+                </div>
+                <div className="absolute md:bottom-9 bottom-2 md:right-12 right-14 ">
+                  <LogoCardSm>
+                    <Image
+                      src={rightLogos[1].src}
+                      alt={rightLogos[1].alt}
+                      width={rightLogos[1].smWidth}
+                      height={rightLogos[1].smHeight}
+                      className="object-contain"
+                    />
+                  </LogoCardSm>
+                </div>
+                <div className="absolute md:bottom-3 -bottom-4 left-1/2 -translate-x-1/2">
+                  <LogoCardSm>
+                    <Image
+                      src={centerLogos[1].src}
+                      alt={centerLogos[1].alt}
+                      width={centerLogos[1].smWidth}
+                      height={centerLogos[1].smHeight}
+                      className="object-contain"
+                    />
+                  </LogoCardSm>
+                </div>
+              </div>
+
+              {/* Text in foreground */}
+              <div className="relative z-10 flex flex-col items-center gap-4 px-4 pt-6 md:pt-10 text-center">
                 <Badge text="Activity Logs + Remote Management" />
-                <h2 className="max-w-[10em] text-center">
+                <h2 className="max-w-[8em]">
                   Integrated with your{" "}
                   <span className="text-[#006FFF]">CRM.</span>
                 </h2>
-              </div>
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-                {leftLogos.slice(0, 3).map((logo) => (
-                  <LogoCard key={logo.alt} hasShadow>
-                    <Image
-                      src={logo.src}
-                      alt={logo.alt}
-                      width={logo.width}
-                      height={logo.height}
-                      className="object-contain"
-                    />
-                  </LogoCard>
-                ))}
-                <LogoCard hasShadow>
-                  <Image
-                    src={centerLogos[0].src}
-                    alt={centerLogos[0].alt}
-                    width={centerLogos[0].width}
-                    height={centerLogos[0].height}
-                    className="object-contain"
-                  />
-                </LogoCard>
-                {rightLogos.map((logo) => (
-                  <LogoCard key={logo.alt}>
-                    <Image
-                      src={logo.src}
-                      alt={logo.alt}
-                      width={logo.width}
-                      height={logo.height}
-                      className="object-contain"
-                    />
-                  </LogoCard>
-                ))}
-                <LogoCard hasShadow>
-                  <AccuLynxLogo />
-                </LogoCard>
-                <LogoCard>
-                  <Image
-                    src={centerLogos[1].src}
-                    alt={centerLogos[1].alt}
-                    width={centerLogos[1].width}
-                    height={centerLogos[1].height}
-                    className="object-contain"
-                  />
-                </LogoCard>
               </div>
             </div>
           </div>
