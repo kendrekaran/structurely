@@ -143,7 +143,7 @@ function LeadEnvironmentsSection() {
 
             <div className="w-full">
               <div className="hidden items-center justify-center border-b border-[#E5E7EB] py-8 md:flex">
-                <p className="text-heading text-center text-[1.25em] leading-[28px] tracking-[-0.01em]">
+                <p className="text-heading  text-center text-[1.25em] leading-[28px] tracking-[-0.01em]">
                   Trusted by industry leaders
                 </p>
               </div>

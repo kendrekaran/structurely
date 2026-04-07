@@ -21,7 +21,7 @@ function MultiChannelSection() {
     <div className="px-global">
       <section
         id="multi-channel"
-        className="max-w-global border-border relative z-0 mx-auto border-x"
+        className="max-w-global  border-border relative z-0 mx-auto border-x"
       >
         <div className="pt-section-md px-[12px] md:px-0">
           <div className="">
@@ -83,14 +83,13 @@ function MultiChannelSection() {
                     );
                   })}
                 </div>
-
-                <p className="text-foreground py-6 text-center text-[14px] leading-[20px] tracking-[-0.01em]">
+              </div>
+              <p className="text-foreground w-full bg-white py-6 text-center text-[14px] leading-[20px] tracking-[-0.01em]">
                   All logged in your{" "}
                   <strong className="text-heading font-normal">
                     CRM automatically.
                   </strong>
                 </p>
-              </div>
             </div>
           </div>
         </div>

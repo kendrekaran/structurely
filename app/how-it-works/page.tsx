@@ -11,6 +11,8 @@ import CrmSynchronizationSection from "@/components/how-it-works/crm-synchroniza
 import Separator from "@/components/_ui/separator";
 import NoLeadsSection from "@/components/how-it-works/no-leads-section";
 import BottomSpace from "@/components/_common/bottom-space";
+import HeroButtons from "@/components/how-it-works/hero-buttons";
+import FooterSection from "@/components/_common/footer-section";
 
 export default function Overview() {
   return (
@@ -21,6 +23,7 @@ export default function Overview() {
         <Separator />
         <LeadCaptureSection />
         <Separator />
+        <HeroButtons />
         <MultiChannelSection />
         <Separator />
         <StructuredConversationSection />
@@ -33,7 +36,8 @@ export default function Overview() {
         <Separator />
         <CrmSynchronizationSection />
         <Separator />
-        <BottomSpace />
+        <CtaSection />
+        <FooterSection />
       </main>
     </>
   );

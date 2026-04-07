@@ -97,8 +97,8 @@ function LeadCaptureSection() {
             <span className="text-heading">Structurely AI </span>{" "}
             <span className="text-foreground">activates instantly.</span>
           </p>
-          <p className="font-figma-hand text-center text-[16px] leading-6 font-bold tracking-[-0.02em]">
-            <span className="text-[var(--primary)]">No delay.</span>{" "}
+          <p className=" text-center text-[16px] leading-6 font-bold tracking-[-0.02em]">
+            <span className="text-[var(--primary)] underline">No delay.</span>{" "}
             <span className="text-heading">No rep assignment required.</span>
           </p>
         </div>

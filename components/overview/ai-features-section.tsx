@@ -48,8 +48,8 @@ function AiFeaturesSection() {
           <div className="flex min-w-0 flex-col justify-center gap-4 px-4 py-10 sm:px-6 lg:px-12">
             <StatBadge text="50% Lower Sales Overhead" />
             <div className="flex flex-col gap-3">
-              <h2>Decrease Staffing Costs.</h2>
-              <p>
+              <h2 className="text-heading text-[32px] leading-[40px] font-medium tracking-[-0.03em]">Decrease Staffing Costs.</h2>
+              <p className="text-[#646464] text-[16px] leading-[26px] tracking-[-0.01em]">
                 Automate your CRM and sales resources with AI-powered
                 appointment setting and calling.
               </p>
@@ -61,8 +61,8 @@ function AiFeaturesSection() {
           <div className="flex min-w-0 flex-col justify-center gap-4 px-4 py-10 sm:px-6 lg:px-12">
             <StatBadge text="17% More Qualified Leads" />
             <div className="flex flex-col gap-3">
-              <h2>Increase Qualified Connections.</h2>
-              <p>
+              <h2  className="text-heading text-[32px] leading-[40px] font-medium tracking-[-0.03em]">Increase Qualified Connections.</h2>
+              <p className="text-[#646464] text-[16px] leading-[26px] tracking-[-0.01em]">
                 AI-filtering and qualification lets you focus on your highest
                 quality leads.
               </p>
@@ -86,8 +86,8 @@ function AiFeaturesSection() {
           <div className="flex min-w-0 flex-col justify-center gap-4 px-4 py-10 sm:px-6 lg:px-12">
             <StatBadge text="31% Higher Answer Rate" />
             <div className="flex flex-col gap-3">
-              <h2>Increase Response.</h2>
-              <p>
+              <h2 className="text-heading text-[32px] leading-[40px] font-medium tracking-[-0.03em]">Increase Response.</h2>
+              <p className="text-[#646464] text-[16px] leading-[26px] tracking-[-0.01em]">
                 AI-messaging follows up with leads for over 12 months and
                 AI-calling uses local phone numbers that increase trust and
                 answer rates.

@@ -23,7 +23,7 @@ export default function PricingPage() {
       <Header />
       <PricingHeroSection billing={billing} onBillingChange={setBilling} />
       <Separator />
-      <PricingCardsSection billing={billing} />
+      <PricingCardsSection billing={billing} onBillingChange={setBilling} />
       <Separator />
       <PricingAddonSection />
       <Separator />
