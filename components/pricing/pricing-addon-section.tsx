@@ -90,8 +90,8 @@ const bottomFeatures = [
 
 function FeatureCell({ title, description, icon }: { title: string; description: string; icon: React.ReactNode }) {
   return (
-    <div className="flex flex-col gap-6 p-8">
-      <div className="flex items-center gap-2 self-start rounded-[10px] bg-white p-3 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
+    <div className="flex flex-col gap-6 px-5 py-8 md:p-8">
+      <div className="flex items-center justify-center gap-2 self-start rounded-[10px] bg-white h-[40px] w-[48px] shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
         {icon}
       </div>
       <div className="flex flex-col gap-2">
@@ -120,7 +120,7 @@ export default function PricingAddonSection() {
         <div className="max-w-global mx-auto flex flex-col border-x border-[#E5E7EB]">
 
           <div className="flex flex-col lg:flex-row ">
-            <div className="flex flex-1 flex-col justify-center gap-4 p-8 md:p-12 md:py-[87px] ">
+            <div className="flex flex-1 flex-col justify-center gap-4 px-[12px] md:px-8 p-8 md:p-12 md:py-[87px] ">
               <div className="self-start">
                 <Badge text="Beta — Salesforce Add-on" />
               </div>
@@ -163,8 +163,8 @@ export default function PricingAddonSection() {
               </div>
             </div>
 
-            <div className="flex flex-col justify-center  p-8 md:p-12 ">
-              <div className="flex flex-col w-[289px] items-center justify-center gap-4 rounded-[10px] border border-[#E5E7EB] bg-white px-8 py-[31px] shadow-[0_0_0_1px_rgba(0,0,0,0.08)]">
+            <div className="flex flex-col items-center justify-center  px-3 pb-[56px] md:pb-0 md:p-12 ">
+              <div className="flex flex-col w-full md:w-[289px] items-center justify-center gap-4 rounded-[10px] border border-[#E5E7EB] bg-white px-8 py-[55px] md:py-[31px] shadow-[0_0_0_1px_rgba(0,0,0,0.08)]">
                 <div className="flex flex-col items-center gap-3 w-full">
                   <div className="flex flex-col items-center gap-2">
                     <span className="text-[16px] leading-6 tracking-[-0.006em] text-[#646464] font-medium">
@@ -183,20 +183,20 @@ export default function PricingAddonSection() {
                     $199/mo per additional seat
                   </p>
                 </div>
-                <Button variant="primary" className="w-full">
+                <Button variant="primary" className="w-auto md:w-full">
                   Book a Demo
                 </Button>
               </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 border-t border-[#E5E7EB] md:grid-cols-3 md:divide-x md:divide-[#E5E7EB]">
+          <div className="grid grid-cols-1 border-t border-[#E5E7EB] md:grid-cols-3 md:divide-x divide-y md:divide-y-0 divide-[#E5E7EB]">
             {topFeatures.map((feature) => (
               <FeatureCell key={feature.title} {...feature} />
             ))}
           </div>
 
-          <div className="grid grid-cols-1 border-t border-b border-[#E5E7EB] md:grid-cols-3 md:divide-x md:divide-[#E5E7EB]">
+          <div className="grid grid-cols-1 border-t border-b border-[#E5E7EB] md:grid-cols-3 md:divide-x divide-y md:divide-y-0 divide-[#E5E7EB]">
             {bottomFeatures.map((feature) => (
               <FeatureCell key={feature.title} {...feature} />
             ))}
