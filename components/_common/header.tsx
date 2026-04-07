@@ -12,13 +12,13 @@ import { useRef, useState } from "react";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "How it works", href: "/how-it-works" },
-  { label: "Use Cases", href: "/use-cases" },
+  { label: "Use cases", href: "/use-cases" },
   { label: "Pricing", href: "/pricing" },
-  { label: "Partners", href: "/partners" },
 ];
 
 const companyLinks = [
   { label: "About", href: "/about" },
+  { label: "Partners", href: "/partners" },
   { label: "News", href: "/blog" },
   { label: "Help Center", href: "/help-center" },
 ];
@@ -288,7 +288,47 @@ function MobileMenu({
 
       {/* Nav Links with reveal animation */}
       <nav className="flex flex-col divide-y divide-[#E5E7EB]">
-        {[...navLinks, ...companyLinks].map((link) => (
+        {navLinks.map((link) => (
+          <div key={link.label} className="overflow-hidden">
+            <div className="nav-reveal">
+              <Link
+                href={link.href}
+                onClick={onClose}
+                className="flex items-center justify-between px-6 py-4 text-[16px] leading-[24px] tracking-[-0.176px] text-[#202020]"
+              >
+                {link.label}
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11.6665 4.79199L16.8748 10.0003L11.6665 15.2087"
+                    stroke="#646464"
+                    strokeWidth="1.25"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M16.25 10H3.125"
+                    stroke="#646464"
+                    strokeWidth="1.25"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        ))}
+        <div className="px-6 py-3">
+          <p className="text-[12px] font-medium tracking-[-0.02em] text-[#646464] uppercase">
+            Company
+          </p>
+        </div>
+        {companyLinks.map((link) => (
           <div key={link.label} className="overflow-hidden">
             <div className="nav-reveal">
               <Link
