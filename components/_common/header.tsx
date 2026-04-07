@@ -48,7 +48,7 @@ export default function Header() {
             <Image
               src="/assets/common/heading-logo.svg"
               alt="Structurely"
-              width={115}
+              width={92}
               height={24}
             />
           </Link>
@@ -126,22 +126,22 @@ export default function Header() {
           {/* Desktop CTA */}
           <div className="hidden flex-shrink-0 lg:flex">
             <Link href="/demo">
-            <Button
-              variant="outline"
-              size="md"
-              className="tracking-0 text-[14px]! leading-[20px]"
-            >
-              Request Demo
-            </Button>
+              <Button
+                variant="outline"
+                size="md"
+                className="tracking-0 text-[14px]! leading-[20px]"
+              >
+                Request Demo
+              </Button>
             </Link>
           </div>
 
           {/* Mobile Right: CTA + Hamburger */}
           <div className="flex flex-1 items-center justify-end gap-3 lg:hidden">
-          <Link href="/demo">
-            <Button variant="outline" size="md" className="max-w-[139px]">
-              Request Demo
-            </Button>
+            <Link href="/demo">
+              <Button variant="outline" size="md" className="max-w-[139px]">
+                Request Demo
+              </Button>
             </Link>
             <MobileMenuButton
               isMenuOpen={mobileMenuOpen}
@@ -276,13 +276,13 @@ function MobileMenu({
           </button>
         </div>
         <Link href="/demo">
-        <Button
-          variant="outline"
-          size="md"
-          className="w-full rounded-[10px] border-[#006FFF] text-[#006FFF]"
-        >
-          Request Demo
-        </Button>
+          <Button
+            variant="outline"
+            size="md"
+            className="w-full rounded-[10px] border-[#006FFF] text-[#006FFF]"
+          >
+            Request Demo
+          </Button>
         </Link>
       </div>
 
