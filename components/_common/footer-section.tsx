@@ -61,9 +61,9 @@ export default function FooterSection() {
   return (
     <footer id="footer" className="relative z-0 ">
       <div className="px-global">
-        <div className="max-w-global mx-auto border-x border-t border-[#E5E7EB] ">
-          <div className="flex flex-col lg:flex-row ">
-            <div className="flex flex-col gap-8 bg-white px-12 pt-16 pb-16 max-w-[290px]  border-b-2 border-[#006FFF] lg:border-b-2 lg:pr-24 lg:min-w-[280px]">
+        <div className="max-w-global mx-auto border-x border-t border-[#E5E7EB]">
+          <div className="flex flex-col lg:flex-row">
+            <div className="flex w-full flex-col gap-8 border-b-2 border-[#006FFF] bg-white px-4 pb-12 pt-12 sm:px-8 md:px-12 lg:max-w-[290px] lg:pb-16 lg:pt-16 lg:pr-24 lg:min-w-[280px]">
               <svg
                 width="115"
                 height="24"
@@ -180,9 +180,9 @@ export default function FooterSection() {
               </div>
             </div>
 
-            <div className="flex gap-10 lg:gap-20 px-8 lg:px-16 py-16 lg:border-l border-[#E5E7EB] flex-1">
+            <div className="grid flex-1 grid-cols-1 gap-8 px-4 py-10 sm:grid-cols-2 sm:gap-10 sm:px-8 md:px-12 lg:grid-cols-4 lg:gap-12 lg:px-16 lg:py-16 lg:border-l border-[#E5E7EB]">
               {navColumns.map((col) => (
-                <div key={col.title} className="flex flex-col gap-2">
+                <div key={col.title} className="flex min-w-0 flex-col gap-2">
                   <div className="px-3 lg:px-0 py-[6px]">
                     <span className="text-[14px] font-medium leading-[20px] uppercase text-[#202020]">
                       {col.title}
@@ -204,12 +204,12 @@ export default function FooterSection() {
             </div>
           </div>
 
-          <div className="flex items-center justify-between px-12 py-5 border-t border-[#E5E7EB]">
-            <span className="text-[14px] font-medium leading-[20px] text-[#646464]">
+          <div className="flex flex-col gap-4 border-t border-[#E5E7EB] px-4 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-8 md:px-12">
+            <span className="text-center text-[14px] font-medium leading-[20px] text-[#646464] sm:text-left">
               © 2026 Structurely. All rights reserved.
             </span>
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center justify-center gap-4 sm:justify-start">
               <Link href="#" aria-label="Facebook" className="text-[#646464] hover:text-[#202020] transition-colors">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
