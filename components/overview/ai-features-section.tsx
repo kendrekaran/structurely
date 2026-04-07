@@ -4,6 +4,47 @@ import Image from "next/image";
 const statBadgeShadow =
   "0 0 0 1px rgba(0,0,0,0.08), 0 1px 1px -0.5px rgba(51,51,51,0.05), 0 3px 3px -1.5px rgba(51,51,51,0.05), 0 6px 6px -3px rgba(51,51,51,0.05), 0 12px 12px -6px rgba(51,51,51,0.05), 0 24px 24px -12px rgba(51,51,51,0.05)";
 
+type FeatureCard = {
+  statText: string;
+  heading: string;
+  description: string;
+  imageSrc: string;
+  imageAlt: string;
+  borderBottom?: boolean;
+  imageFirstOnDesktop?: boolean;
+};
+
+const featureCards: FeatureCard[] = [
+  {
+    statText: "50% Lower Sales Overhead",
+    heading: "Decrease Staffing Costs.",
+    description:
+      "Automate your CRM and sales resources with AI-powered appointment setting and calling.",
+    imageSrc: "/assets/home/grid-cards/1.png",
+    imageAlt: "AI automating CRM tasks, appointments, and sales workflows",
+    borderBottom: true,
+    imageFirstOnDesktop: true,
+  },
+  {
+    statText: "17% More Qualified Leads",
+    heading: "Increase Qualified Connections.",
+    description:
+      "AI-filtering and qualification lets you focus on your highest quality leads.",
+    imageSrc: "/assets/home/grid-cards/2.png",
+    imageAlt: "AI lead qualification and filtering visualization",
+    borderBottom: true,
+  },
+  {
+    statText: "31% Higher Answer Rate",
+    heading: "Increase Response.",
+    description:
+      "AI-messaging follows up with leads for over 12 months and AI-calling uses local phone numbers that increase trust and answer rates.",
+    imageSrc: "/assets/home/grid-cards/3.png",
+    imageAlt: "AI call lists, messaging, and multi-channel outreach",
+    imageFirstOnDesktop: true,
+  },
+];
+
 function StatBadge({ text }: { text: string }) {
   return (
     <div
@@ -31,6 +72,53 @@ function GridCardImage({ src, alt }: { src: string; alt: string }) {
   );
 }
 
+function FeatureRow({
+  statText,
+  heading,
+  description,
+  imageSrc,
+  imageAlt,
+  borderBottom,
+  imageFirstOnDesktop,
+}: FeatureCard) {
+  return (
+    <div
+      className={
+        borderBottom
+          ? "grid grid-cols-1 border-b border-[#E5E7EB] lg:grid-cols-2"
+          : "grid grid-cols-1 lg:grid-cols-2"
+      }
+    >
+      <div
+        className={
+          imageFirstOnDesktop
+            ? "order-2 min-w-0 h-[260px] sm:h-[320px] md:h-[400px] lg:order-1"
+            : "order-2 min-w-0 h-[260px] sm:h-[320px] md:h-[400px] lg:order-2"
+        }
+      >
+        <GridCardImage src={imageSrc} alt={imageAlt} />
+      </div>
+      <div
+        className={
+          imageFirstOnDesktop
+            ? "order-1 flex min-w-0 flex-col justify-center  gap-3 md:gap-4 px-4 py-4 md:py-10 border-b md:border-b-0 sm:px-6 lg:order-2 lg:px-12"
+            : "order-1 flex min-w-0 flex-col justify-center gap-3 md:gap-4 px-4 py-4 md:py-10 border-b md:border-b-0 sm:px-6 lg:order-1 lg:px-12"
+        }
+      >
+        <StatBadge text={statText} />
+        <div className="flex flex-col gap-3">
+          <h2 className="text-heading text-[24px] md:text-[32px] leading-[32px] md:leading-[40px] font-medium tracking-[-0.03em]">
+            {heading}
+          </h2>
+          <p className="text-[#646464] text-[16px] leading-[26px] tracking-[-0.01em]">
+            {description}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function AiFeaturesSection() {
   return (
     <div className="px-global">
@@ -38,63 +126,9 @@ function AiFeaturesSection() {
         id="ai-features"
         className="max-w-global mx-auto border-x border-[#E5E7EB]"
       >
-        <div className="grid grid-cols-1 border-b border-[#E5E7EB] lg:grid-cols-2">
-          <div className="min-w-0 h-[260px] sm:h-[320px] md:h-[400px]">
-            <GridCardImage
-              src="/assets/home/grid-cards/1.png"
-              alt="AI automating CRM tasks, appointments, and sales workflows"
-            />
-          </div>
-          <div className="flex min-w-0 flex-col justify-center gap-4 px-4 py-10 sm:px-6 lg:px-12">
-            <StatBadge text="50% Lower Sales Overhead" />
-            <div className="flex flex-col gap-3">
-              <h2 className="text-heading text-[32px] leading-[40px] font-medium tracking-[-0.03em]">Decrease Staffing Costs.</h2>
-              <p className="text-[#646464] text-[16px] leading-[26px] tracking-[-0.01em]">
-                Automate your CRM and sales resources with AI-powered
-                appointment setting and calling.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 border-b border-[#E5E7EB] lg:grid-cols-2">
-          <div className="flex min-w-0 flex-col justify-center gap-4 px-4 py-10 sm:px-6 lg:px-12">
-            <StatBadge text="17% More Qualified Leads" />
-            <div className="flex flex-col gap-3">
-              <h2  className="text-heading text-[32px] leading-[40px] font-medium tracking-[-0.03em]">Increase Qualified Connections.</h2>
-              <p className="text-[#646464] text-[16px] leading-[26px] tracking-[-0.01em]">
-                AI-filtering and qualification lets you focus on your highest
-                quality leads.
-              </p>
-            </div>
-          </div>
-          <div className="min-w-0 h-[260px] sm:h-[320px] md:h-[400px]">
-            <GridCardImage
-              src="/assets/home/grid-cards/2.png"
-              alt="AI lead qualification and filtering visualization"
-            />
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2">
-          <div className="min-w-0 h-[260px] sm:h-[320px] md:h-[400px]">
-            <GridCardImage
-              src="/assets/home/grid-cards/3.png"
-              alt="AI call lists, messaging, and multi-channel outreach"
-            />
-          </div>
-          <div className="flex min-w-0 flex-col justify-center gap-4 px-4 py-10 sm:px-6 lg:px-12">
-            <StatBadge text="31% Higher Answer Rate" />
-            <div className="flex flex-col gap-3">
-              <h2 className="text-heading text-[32px] leading-[40px] font-medium tracking-[-0.03em]">Increase Response.</h2>
-              <p className="text-[#646464] text-[16px] leading-[26px] tracking-[-0.01em]">
-                AI-messaging follows up with leads for over 12 months and
-                AI-calling uses local phone numbers that increase trust and
-                answer rates.
-              </p>
-            </div>
-          </div>
-        </div>
+        {featureCards.map((card) => (
+          <FeatureRow key={card.heading} {...card} />
+        ))}
       </section>
     </div>
   );

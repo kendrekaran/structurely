@@ -14,7 +14,7 @@ function HeroSection() {
               closed deals <span className="text-[#006FFF]">with AI.</span>
               </h1>
 
-              <p className="max-w-[35em] text-center text-[16px] md:text-[18px] leading-[26px] md:leading-[28px] tracking-[-0.01em]">
+              <p className="max-w-[35em] text-center text-[16px] md:text-[18px] leading-[24px] md:leading-[28px] tracking-[-0.01em]">
               Automate your sales with AI calling, texting, appointment setting, & live phone transfers.
               </p>
             </div>

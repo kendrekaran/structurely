@@ -45,7 +45,7 @@ function HowItWorksSection() {
         id="how-it-works"
         className="max-w-global mx-auto border-x border-[#E5E7EB]"
       >
-        <div className="flex flex-col items-center justify-center border-b border-[#E5E7EB] px-4 py-12 md:px-24 md:py-16">
+        <div className="flex flex-col items-center justify-center border-b border-[#E5E7EB] px-4 py-4 md:px-24 md:py-16">
           <h2 className="max-w-[10em] text-center">How it works</h2>
         </div>
 

@@ -167,9 +167,9 @@ function OverviewProblemSection() {
   return (
     <section id="overview-problem" className="relative z-0">
       <div className="px-global">
-        <div className="max-w-global mx-auto space-y-10 border-x border-[#E5E7EB] md:space-y-[64px]">
+        <div className="max-w-global mx-auto  border-x border-[#E5E7EB] md:space-y-[64px]">
           <div className="flex flex-col items-center">
-            <div className="md:pt-section-md flex w-full flex-col items-center gap-3 px-3 pt-6 md:gap-4 md:px-6">
+            <div className="md:pt-section-md flex w-full flex-col items-center gap-3 px-3 py-4  md:gap-4 md:px-6">
               <div className="flex flex-col items-center gap-4">
                 <Badge text="Seamless AI-Tools that Convert" />
                 <h2 className="max-w-[11em] text-center">
@@ -181,13 +181,21 @@ function OverviewProblemSection() {
           </div>
 
           <Image
-                  src="/assets/home/dashboard/dashboard.png"
-                  alt="Structurely dashboard with lead metrics, activity chart, and pipeline overview"
-                  width={2256}
-                  height={960}
-                  className="h-auto w-full border-t border-[#E5E7EB]  max-w-5xl"
-                  sizes="(max-width: 768px) 100vw, min(1024px, 100vw)"
-                />
+            src="/assets/home/dashboard/dash-mobile.png"
+            alt="Structurely dashboard mobile view with lead metrics and activity overview"
+            width={342}
+            height={217.74}
+            className=" w-full  p-4 h-auto -mb-6 border-t border-[#E5E7EB] md:hidden"
+            
+          />
+          <Image
+            src="/assets/home/dashboard/dashboard.png"
+            alt="Structurely dashboard with lead metrics, activity chart, and pipeline overview"
+            width={2256}
+            height={960}
+            className="hidden h-auto w-full max-w-5xl border-t border-[#E5E7EB] md:block"
+            sizes="(max-width: 768px) 100vw, min(1024px, 100vw)"
+          />
 
         </div>
       </div>
