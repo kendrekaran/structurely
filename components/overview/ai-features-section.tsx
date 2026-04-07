@@ -39,13 +39,13 @@ function AiFeaturesSection() {
         className="max-w-global mx-auto border-x border-[#E5E7EB]"
       >
         <div className="grid grid-cols-1 border-b border-[#E5E7EB] lg:grid-cols-2">
-          <div className="min-w-0 h-[400px] ">
+          <div className="min-w-0 h-[260px] sm:h-[320px] md:h-[400px]">
             <GridCardImage
               src="/assets/home/grid-cards/1.png"
               alt="AI automating CRM tasks, appointments, and sales workflows"
             />
           </div>
-          <div className="flex min-w-0 flex-col justify-center gap-4 px-8 py-12 lg:px-12">
+          <div className="flex min-w-0 flex-col justify-center gap-4 px-4 py-10 sm:px-6 lg:px-12">
             <StatBadge text="50% Lower Sales Overhead" />
             <div className="flex flex-col gap-3">
               <h2>Decrease Staffing Costs.</h2>
@@ -58,7 +58,7 @@ function AiFeaturesSection() {
         </div>
 
         <div className="grid grid-cols-1 border-b border-[#E5E7EB] lg:grid-cols-2">
-          <div className="flex min-w-0 flex-col justify-center gap-4 px-8 py-12 lg:px-12">
+          <div className="flex min-w-0 flex-col justify-center gap-4 px-4 py-10 sm:px-6 lg:px-12">
             <StatBadge text="17% More Qualified Leads" />
             <div className="flex flex-col gap-3">
               <h2>Increase Qualified Connections.</h2>
@@ -68,7 +68,7 @@ function AiFeaturesSection() {
               </p>
             </div>
           </div>
-          <div className="min-w-0 h-[400px] ">
+          <div className="min-w-0 h-[260px] sm:h-[320px] md:h-[400px]">
             <GridCardImage
               src="/assets/home/grid-cards/2.png"
               alt="AI lead qualification and filtering visualization"
@@ -77,13 +77,13 @@ function AiFeaturesSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2">
-          <div className="min-w-0 h-[400px] ">
+          <div className="min-w-0 h-[260px] sm:h-[320px] md:h-[400px]">
             <GridCardImage
               src="/assets/home/grid-cards/3.png"
               alt="AI call lists, messaging, and multi-channel outreach"
             />
           </div>
-          <div className="flex min-w-0 flex-col justify-center gap-4 px-8 py-12 lg:px-12">
+          <div className="flex min-w-0 flex-col justify-center gap-4 px-4 py-10 sm:px-6 lg:px-12">
             <StatBadge text="31% Higher Answer Rate" />
             <div className="flex flex-col gap-3">
               <h2>Increase Response.</h2>

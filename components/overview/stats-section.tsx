@@ -7,15 +7,15 @@ const stats = [
 function StatsSection() {
   return (
     <div className="px-global">
-      <section className="max-w-global mx-auto border-x py-6 border-[#E5E7EB]">
-        <div className="flex divide-x divide-[#E5E7EB] border-y border-[#E5E7EB] bg-white">
+      <section className="max-w-global mx-auto border-x border-[#E5E7EB] py-6">
+        <div className="grid grid-cols-1 divide-y divide-[#E5E7EB] border-y border-[#E5E7EB] bg-white sm:grid-cols-3 sm:divide-x sm:divide-y-0">
           {stats.map((stat) => (
             <div
               key={stat.label}
-              className="flex flex-1 flex-col items-center gap-3 px-6 py-10 md:px-10"
+              className="flex flex-1 flex-col items-center gap-3 px-6 py-8 md:px-10 md:py-10"
             >
               <span
-                className={`text-center text-5xl font-medium leading-[1.125] tracking-[-0.03em] ${
+                className={`text-center text-4xl font-medium leading-[1.125] tracking-[-0.03em] md:text-5xl ${
                   stat.highlight ? "text-[#006FFF]" : "text-[#202020]"
                 }`}
               >

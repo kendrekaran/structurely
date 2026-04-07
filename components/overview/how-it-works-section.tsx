@@ -45,7 +45,7 @@ function HowItWorksSection() {
         id="how-it-works"
         className="max-w-global mx-auto border-x border-[#E5E7EB]"
       >
-        <div className="flex flex-col items-center justify-center border-b border-[#E5E7EB] px-6 py-16 md:px-24">
+        <div className="flex flex-col items-center justify-center border-b border-[#E5E7EB] px-4 py-12 md:px-24 md:py-16">
           <h2 className="max-w-[10em] text-center">How it works</h2>
         </div>
 
@@ -54,7 +54,7 @@ function HowItWorksSection() {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className={`flex flex-col gap-2 px-8 py-6 ${feature.highlighted ? "bg-white" : "bg-[#FAFAFA]"}`}
+                className={`flex flex-col gap-2 px-4 py-6 sm:px-6 md:px-8 ${feature.highlighted ? "bg-white" : "bg-[#FAFAFA]"}`}
               >
                 <h3 className="text-[1rem] font-medium leading-6 tracking-[-0.02em] text-[#202020]">
                   {feature.title}

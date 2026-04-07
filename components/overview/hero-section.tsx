@@ -6,8 +6,8 @@ function HeroSection() {
   return (
     <section id="hero" className="relative z-0">
       <div className="px-global">
-        <div className="max-w-global mx-auto px-[12px] md:px-0 border-x border-[#E5E7EB]">
-          <div className="flex flex-col items-center gap-8  md:py-[48px]">
+        <div className="max-w-global mx-auto border-x border-[#E5E7EB] px-3 md:px-0">
+          <div className="flex flex-col items-center gap-8 py-10 md:py-[48px]">
             <div className="flex flex-col items-center gap-3.5 max-w-[28em] ">
               <h1 className="max-w-[18em] text-center ">
               Convert leads into 

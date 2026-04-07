@@ -121,7 +121,7 @@ function CrmLogosSection() {
     <section id="crm-logos" className="relative z-0">
       <div className="px-global">
         <div className="max-w-global mx-auto overflow-hidden border-x border-[#E5E7EB]">
-          <div className="flex flex-col items-center gap-8 px-6  lg:px-24">
+          <div className="flex flex-col items-center gap-8 px-4 sm:px-6 lg:px-24">
             {/* Desktop: scattered absolute layout */}
             <div
               className="relative hidden w-full lg:block"
@@ -236,7 +236,7 @@ function CrmLogosSection() {
             </div>
 
             {/* Mobile: stacked text + grid of logos */}
-            <div className="flex flex-col items-center gap-8 lg:hidden">
+            <div className="flex flex-col items-center gap-8 py-10 lg:hidden">
               <div className="flex flex-col items-center gap-4">
                 <Badge text="Activity Logs + Remote Management" />
                 <h2 className="max-w-[10em] text-center">
@@ -244,7 +244,7 @@ function CrmLogosSection() {
                   <span className="text-[#006FFF]">CRM.</span>
                 </h2>
               </div>
-              <div className="grid grid-cols-4 gap-3">
+              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
                 {leftLogos.slice(0, 3).map((logo) => (
                   <LogoCard key={logo.alt} hasShadow>
                     <Image
