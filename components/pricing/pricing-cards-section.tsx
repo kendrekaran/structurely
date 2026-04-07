@@ -37,7 +37,7 @@ const plans: Plan[] = [
     monthlyPrice: 499,
     description:
       "For growing teams scaling outreach across multiple producers, campaigns, and lead sources.",
-    featuresLabel: "Everything in Starter, plus",
+    featuresLabel: "Everything in Individual, plus",
     features: [
       { bold: "4 AI agents", rest: " built & configured initially" },
       "Multi-agent workflows",
@@ -53,7 +53,7 @@ const plans: Plan[] = [
     monthlyPrice: 999,
     description:
       "For high-volume operations running multiple teams, verticals, and lead channels at enterprise scale.",
-    featuresLabel: "Everything in Growth, plus",
+    featuresLabel: "Everything in Team, plus",
     features: [
       "Custom agent configurations",
       "Advanced analytics & BI reporting",
