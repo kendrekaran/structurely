@@ -77,8 +77,8 @@ function ChevronDivider() {
 
 function FeatureCard({ title, description, icon }: { title: string; description: string; icon: React.ReactNode }) {
   return (
-    <div className="flex flex-col items-center gap-6 px-12 py-8">
-      <div className="flex items-center gap-2 rounded-[10px] bg-white p-3 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
+    <div className="flex flex-col items-center gap-6 px-3 md:px-12 py-8">
+      <div className="flex items-center justify-center h-[40px] w-[48px] gap-2 rounded-[10px] bg-white p-3 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
         {icon}
       </div>
       <div className="flex flex-col items-center gap-1 self-stretch">
@@ -99,7 +99,7 @@ export default function PricingOnboardingSection() {
       <div className="px-global">
         <div className="max-w-global mx-auto flex flex-col border-x border-[#E5E7EB]">
 
-          <div className="flex flex-col items-center gap-4 px-6 py-16 md:px-24">
+          <div className="flex flex-col items-center gap-4 px-6 py-8 md:py-16 md:px-24">
             <div className="rounded-[8px] bg-white px-4 py-2 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
               <span className="text-[12px] font-medium leading-4 text-[#646464]">One-Time Setup</span>
             </div>
@@ -111,19 +111,19 @@ export default function PricingOnboardingSection() {
             </p>
           </div>
 
-          <div className="flex flex-col items-start justify-between gap-6 border-t bg-white border-[#E5E7EB] px-6 py-12 md:flex-row md:items-center md:px-12">
+          <div className="flex flex-col items-start justify-between gap-6 border-t bg-white border-[#E5E7EB] px-3 md:px-6 py-6 md:py-12 md:flex-row md:items-center md:px-12">
             <div className="flex flex-col gap-3">
               <p style={{ fontSize: "28px", lineHeight: "36px", letterSpacing: "-0.03em" }}>
                 <span className="text-[#646464] font-medium">Everything you need</span>
                 <span className="text-[#202020] font-medium"> to go live — fast.</span>
               </p>
-              <p className="text-[#646464]" style={{ fontSize: "14px", lineHeight: "24px", letterSpacing: "-0.01em" }}>
-                We configure your system, set up your agents, and pair you with a dedicated Account <br/> Manager who stays with you for 60 days to optimize transfers and hit your ROI targets.
+              <p className="text-[#646464] max-w-[577px]" style={{ fontSize: "14px", lineHeight: "24px", letterSpacing: "-0.01em" }}>
+                We configure your system, set up your agents, and pair you with a dedicated Account Manager who stays with you for 60 days to optimize transfers and hit your ROI targets.
               </p>
             </div>
             <div className="flex flex-col items-start gap-4 md:items-end">
               <div className="flex flex-col items-start gap-1 md:items-end">
-                <p style={{ fontSize: "36px", lineHeight: "44px", letterSpacing: "-0.03em" }}>
+                <p className="text-center md:text-left text-[24px] md:text-[36px] leading-[32px] md:leading-[44px] tracking-[-0.03em]">
                   <span className="font-medium text-[#202020]">From </span>
                   <span className="font-medium text-[#006FFF]">$1,500</span>
                 </p>
@@ -145,11 +145,11 @@ export default function PricingOnboardingSection() {
               key={rowIndex}
               className={`flex items-stretch border-t border-[#E5E7EB] ${rowIndex === featureRows.length - 1 ? "" : ""}`}
             >
-              <div className="flex flex-1 flex-col md:flex-row">
-                <div className="flex-1">
+              <div className="flex flex-1 flex-col md:flex-row divide-y divide-[#E5E7EB] md:divide-y-0 ">
+                <div className="flex-1  ">
                   <FeatureCard {...row[0]} />
                 </div>
-                <ChevronDivider />
+                <span className="hidden md:flex"><ChevronDivider /></span>
                 <div className="flex-1">
                   <FeatureCard {...row[1]} />
                 </div>

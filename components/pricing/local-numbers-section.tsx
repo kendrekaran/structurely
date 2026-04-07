@@ -95,7 +95,7 @@ export default function LocalNumbersSection() {
         <div className="max-w-global mx-auto border-x border-t border-b border-[#E5E7EB]">
           <div className="flex flex-col divide-y divide-[#E5E7EB] md:flex-row md:divide-x md:divide-y-0">
             {features.map((feature) => (
-              <div key={feature.title} className="flex flex-1 flex-col gap-6 p-8">
+              <div key={feature.title} className="flex flex-1 flex-col gap-6 px-5 md:px-8 p-8">
                 <div className={`w-[48px] h-[40px] flex items-center justify-center overflow-hidden rounded-[10px] bg-white  ${ICON_SHADOW}`}>
                   <feature.Icon />
                 </div>
