@@ -1,6 +1,6 @@
 "use client";
 
-import { clsx } from "clsx";
+import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
@@ -105,7 +105,7 @@ export default function Button({
   return (
     <button
       ref={buttonRef}
-      className={clsx(buttonVariants({ variant, size }), className)}
+      className={cn(buttonVariants({ variant, size }), className)}
       onMouseEnter={(e) => {
         onMouseEnter?.(e);
         if (variant === "primary") tlRef.current?.play();

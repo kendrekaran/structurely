@@ -61,14 +61,14 @@ export default function LocalNumbersSection() {
     <section id="local-numbers" className="relative z-0 border-t border-[#E5E7EB]">
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
-          <div className="flex flex-col gap-8 px-3 py-16 md:flex-row md:items-center md:gap-12 md:px-12">
+          <div className="flex flex-col gap-8 px-3  py-8 md:py-16 md:flex-row md:items-center md:gap-12 md:px-12">
             <div className="flex flex-col gap-4 md:flex-1">
               <div className={`w-fit overflow-hidden rounded-lg bg-white px-4 py-2 ${BADGE_SHADOW}`}>
                 <span className="text-[12px] font-medium leading-4 text-[#646464]">
                   🛡️ Built-In Protection
                 </span>
               </div>
-              <h2 className="text-[40px] font-medium leading-[1.125] tracking-[-0.03em] md:text-[48px] md:leading-[54px]">
+              <h2 className="text-[32px] font-medium leading-[1.125] tracking-[-0.03em] md:text-[48px] md:leading-[54px]">
                 <span className="text-[#202020]">Local Numbers.</span>
                 <br />
                 <span className="text-[#006FFF]">More Pickups.</span>
@@ -96,7 +96,7 @@ export default function LocalNumbersSection() {
           <div className="flex flex-col divide-y divide-[#E5E7EB] md:flex-row md:divide-x md:divide-y-0">
             {features.map((feature) => (
               <div key={feature.title} className="flex flex-1 flex-col gap-6 p-8">
-                <div className={`w-fit overflow-hidden rounded-[10px] bg-white p-3 ${ICON_SHADOW}`}>
+                <div className={`w-[48px] h-[40px] flex items-center justify-center overflow-hidden rounded-[10px] bg-white  ${ICON_SHADOW}`}>
                   <feature.Icon />
                 </div>
                 <div className="flex flex-col gap-2">

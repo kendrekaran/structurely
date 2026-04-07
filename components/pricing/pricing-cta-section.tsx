@@ -18,13 +18,13 @@ export default function PricingCtaSection() {
               </p>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <Button variant="primary" size="md">
-                Book a Demo
+            <div className="flex  items-center justify-center gap-4">
+              <Button variant="primary" size="md" className="w-auto md:w-full">
+                <span className="w-fit">Book a Demo</span>
               </Button>
-              <button className="cursor-pointer rounded-[12px] bg-white px-5 py-3 text-[14px] font-medium leading-5 text-[#646464] shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)] transition-all hover:bg-gray-50 active:scale-[0.98]">
+              <Button variant="secondary" size="md" className="  ">
                 Talk to Sales
-              </button>
+              </Button>
             </div>
           </div>
         </div>
