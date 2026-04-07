@@ -31,7 +31,7 @@ export default function PricingHeroSection({
     <section id="pricing-hero" className="relative z-0">
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
-          <div className="flex flex-col items-center gap-8 md:gap-10 pt-16 pb-0">
+          <div className="flex flex-col items-center gap-8 md:gap-10 pt-10 md:pt-16 pb-0">
             <div className="flex flex-col items-center gap-4 px-4">
               <div className="inline-flex items-center justify-center gap-1 overflow-hidden rounded-lg bg-white px-4 py-2 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
                 <span className="text-center text-[12px] leading-4 font-medium text-[#646464]">
@@ -42,21 +42,24 @@ export default function PricingHeroSection({
               <div className="flex flex-col items-center gap-4">
                 <h1 data-reveal="words" className="max-w-[13.5em] text-center text-[32px] md:text-[48px] leading-[1.125] tracking-[-0.03em] font-medium text-[#202020]">
                   Your leads aren&apos;t going cold. They&apos;re being{" "}
-                  <span className="text-[#006FFF]">ignored.</span>
+                  <span className="md:text-[#006FFF]">ignored.</span>
                 </h1>
-                <p className="max-w-[46.375em] md:max-w-[41.22em] text-center text-[16px] md:text-[18px] leading-[28px] tracking-[-0.01em] font-medium text-[#646464]">
+                <p className="hidden md:block max-w-[46.375em] md:max-w-[41.22em] text-center text-[18px] leading-[28px] tracking-[-0.01em] font-medium text-[#646464]">
                   AI agents that work every lead, every day — across call, text, and email. Only pay for what the AI actually does.
+                </p>
+                <p className="block md:hidden text-center text-[18px] leading-[28px] tracking-[-0.01em] font-medium text-[#646464]">
+                Your leads aren't going cold.They're being ignored.
                 </p>
               </div>
             </div>
 
-            <div className="inline-flex items-center justify-center gap-1 overflow-hidden rounded-lg bg-white px-4 py-2 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
+            <div className="mx-2 inline-flex items-center justify-center gap-1 overflow-hidden rounded-lg bg-white px-4 py-2 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
               <span className="text-center text-[14px] leading-5 font-medium text-[#006FFF]">
                 Usage-based · No minimums · No wasted credits
               </span>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex items-center justify-center gap-4">
               <Link href="/demo">
                 <Button variant="primary">Book a Demo</Button>
               </Link>
@@ -66,7 +69,7 @@ export default function PricingHeroSection({
             </div>
           </div>
 
-          <div className="mt-10 flex flex-wrap justify-center items-center gap-3 px-6 py-6 border-t border-[#E5E7EB] bg-white">
+          <div className="mt-10 flex flex-wrap justify-center items-center gap-1 md:gap-3 md:px-6 py-6 border-t border-[#E5E7EB] bg-white">
             {featureItems.map((item) => (
               <div
                 key={item}
