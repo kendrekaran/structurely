@@ -85,7 +85,7 @@ function FeatureCard({ title, description, icon }: { title: string; description:
         <p className="text-center font-medium text-[#202020]" style={{ fontSize: "16px", lineHeight: "26px", letterSpacing: "-0.01em" }}>
           {title}
         </p>
-        <p className="self-stretch text-center text-[#646464]" style={{ fontSize: "14px", lineHeight: "24px", letterSpacing: "-0.01em", maxWidth: `${360 / 14}em`, margin: "0 auto" }}>
+        <p className="self-stretch text-center max-w-[456px] text-[#646464]" style={{ fontSize: "14px", lineHeight: "24px", letterSpacing: "-0.01em", margin: "0 auto" }}>
           {description}
         </p>
       </div>
@@ -103,7 +103,7 @@ export default function PricingOnboardingSection() {
             <div className="rounded-[8px] bg-white px-4 py-2 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
               <span className="text-[12px] font-medium leading-4 text-[#646464]">One-Time Setup</span>
             </div>
-            <h2 className="text-center" style={{ maxWidth: "13em" }}>
+            <h2 className="text-center  " style={{ maxWidth: "500px" }}>
               Onboarding That Sets You Up to Win
             </h2>
             <p className="text-center text-[#646464]" style={{ maxWidth: `${470 / 16}em`, fontSize: "16px", lineHeight: "26px", letterSpacing: "-0.01em" }}>
@@ -111,14 +111,14 @@ export default function PricingOnboardingSection() {
             </p>
           </div>
 
-          <div className="flex flex-col items-start justify-between gap-6 border-t border-[#E5E7EB] px-6 py-12 md:flex-row md:items-center md:px-12">
+          <div className="flex flex-col items-start justify-between gap-6 border-t bg-white border-[#E5E7EB] px-6 py-12 md:flex-row md:items-center md:px-12">
             <div className="flex flex-col gap-3">
-              <p style={{ fontSize: "28px", lineHeight: "36px", letterSpacing: "-0.03em", maxWidth: `${520 / 28}em` }}>
+              <p style={{ fontSize: "28px", lineHeight: "36px", letterSpacing: "-0.03em" }}>
                 <span className="text-[#646464] font-medium">Everything you need</span>
                 <span className="text-[#202020] font-medium"> to go live — fast.</span>
               </p>
-              <p className="text-[#646464]" style={{ fontSize: "14px", lineHeight: "24px", letterSpacing: "-0.01em", maxWidth: `${480 / 14}em` }}>
-                We configure your system, set up your agents, and pair you with a dedicated Account Manager who stays with you for 60 days to optimize transfers and hit your ROI targets.
+              <p className="text-[#646464]" style={{ fontSize: "14px", lineHeight: "24px", letterSpacing: "-0.01em" }}>
+                We configure your system, set up your agents, and pair you with a dedicated Account <br/> Manager who stays with you for 60 days to optimize transfers and hit your ROI targets.
               </p>
             </div>
             <div className="flex flex-col items-start gap-4 md:items-end">
@@ -157,10 +157,10 @@ export default function PricingOnboardingSection() {
             </div>
           ))}
 
-          <div className="flex flex-col items-start justify-between gap-4 border-t border-b border-[#E5E7EB] px-6 py-6 md:flex-row md:items-center md:px-12">
+          <div className="flex flex-col bg-white items-start justify-between gap-4 border-t border-b border-[#E5E7EB] px-6 py-6 md:flex-row md:items-center md:px-12">
             <p style={{ fontSize: "14px", lineHeight: "20px", letterSpacing: "-0.01em", maxWidth: `${520 / 14}em` }}>
               <span className="text-[#646464]">Usage-based pricing means </span>
-              <span className="text-[#006FFF]">you only pay as the AI delivers value</span>
+              <span className="text-[#006FFF]">you only pay as the AI delivers value</span> <br/>
               <span className="text-[#646464]"> — the more it works, the more you grow.</span>
             </p>
             <Button variant="primary" className="shrink-0">

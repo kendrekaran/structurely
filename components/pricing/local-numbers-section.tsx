@@ -77,8 +77,8 @@ export default function LocalNumbersSection() {
               </h2>
             </div>
 
-            <div className="flex flex-col items-start gap-6 md:flex-1 md:items-end">
-              <p className="text-[14px] font-medium leading-6 tracking-[-0.01em] text-[#646464] md:max-w-[30em] md:text-right">
+            <div className="flex flex-col  items-start gap-6 md:flex-1 md:items-end">
+              <p className="text-[14px] font-medium leading-6 tracking-[-0.01em] text-[#646464] md:max-w-[510px] md:text-right">
                 Your AI agent calls from local area codes that match your leads&apos; markets — not a 1-800 number they&apos;ll never answer.
                 <br /><br />
                 Our spam mitigation service keeps your numbers clean, your caller reputation protected, and your connect rates high.

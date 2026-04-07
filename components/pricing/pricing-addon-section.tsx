@@ -51,7 +51,7 @@ const bottomFeatures = [
   {
     title: "Live Transfer to Your LOs",
     description:
-      "When AI qualifies a lead, it bridges the call instantly to your team \u2014 no warm transfer lag, no dropped handoffs.",
+      "When AI qualifies a lead, it bridges the call instantly to your team — no warm transfer lag, no dropped handoffs.",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M11 17L13 19C13.197 19.197 13.4308 19.3532 13.6882 19.4598C13.9456 19.5665 14.2214 19.6213 14.5 19.6213C14.7786 19.6213 15.0544 19.5665 15.3118 19.4598C15.5692 19.3532 15.803 19.197 16 19C16.197 18.803 16.3532 18.5692 16.4598 18.3118C16.5665 18.0544 16.6213 17.7786 16.6213 17.5C16.6213 17.2214 16.5665 16.9456 16.4598 16.6882C16.3532 16.4308 16.197 16.197 16 16" stroke="#006FFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -65,7 +65,7 @@ const bottomFeatures = [
   {
     title: "Works With Your Existing Dialer",
     description:
-      "Not a replacement \u2014 an upgrade layer. Add AI dialing capability without ripping out what\u2019s already working.",
+      "Not a replacement — an upgrade layer. Add AI dialing capability without ripping out what\u2019s already working.",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M9.67082 4.13603C9.72591 3.55637 9.99515 3.01807 10.4259 2.62631C10.8567 2.23454 11.418 2.01746 12.0003 2.01746C12.5826 2.01746 13.1439 2.23454 13.5747 2.62631C14.0055 3.01807 14.2747 3.55637 14.3298 4.13603C14.3629 4.51048 14.4858 4.87145 14.688 5.18837C14.8901 5.50529 15.1657 5.76884 15.4913 5.95671C15.8169 6.14457 16.183 6.25123 16.5585 6.26765C16.9341 6.28407 17.3081 6.20977 17.6488 6.05103C18.1779 5.81081 18.7775 5.77605 19.3308 5.95352C19.8841 6.13098 20.3516 6.50798 20.6423 7.01113C20.933 7.51429 21.0261 8.1076 20.9035 8.6756C20.7808 9.2436 20.4512 9.74565 19.9788 10.084C19.6712 10.2999 19.4201 10.5866 19.2467 10.9201C19.0734 11.2535 18.9829 11.6237 18.9829 11.9995C18.9829 12.3753 19.0734 12.7456 19.2467 13.079C19.4201 13.4124 19.6712 13.6992 19.9788 13.915C20.4512 14.2534 20.7808 14.7555 20.9035 15.3235C21.0261 15.8915 20.933 16.4848 20.6423 16.9879C20.3516 17.4911 19.8841 17.8681 19.3308 18.0455C18.7775 18.223 18.1779 18.1883 17.6488 17.948C17.3081 17.7893 16.9341 17.715 16.5585 17.7314C16.183 17.7478 15.8169 17.8545 15.4913 18.0424C15.1657 18.2302 14.8901 18.4938 14.688 18.8107C14.4858 19.1276 14.3629 19.4886 14.3298 19.863C14.2747 20.4427 14.0055 20.981 13.5747 21.3727C13.1439 21.7645 12.5826 21.9816 12.0003 21.9816C11.418 21.9816 10.8567 21.7645 10.4259 21.3727C9.99515 20.981 9.72591 20.4427 9.67082 19.863C9.63776 19.4884 9.51491 19.1273 9.31268 18.8103C9.11045 18.4933 8.83479 18.2296 8.50905 18.0418C8.18331 17.8539 7.81708 17.7472 7.4414 17.7309C7.06571 17.7146 6.69162 17.7891 6.35082 17.948C5.82171 18.1883 5.22214 18.223 4.66882 18.0455C4.11549 17.8681 3.64799 17.4911 3.3573 16.9879C3.06661 16.4848 2.97353 15.8915 3.09618 15.3235C3.21882 14.7555 3.54842 14.2534 4.02082 13.915C4.32844 13.6992 4.57955 13.4124 4.7529 13.079C4.92626 12.7456 5.01677 12.3753 5.01677 11.9995C5.01677 11.6237 4.92626 11.2535 4.7529 10.9201C4.57955 10.5866 4.32844 10.2999 4.02082 10.084C3.54908 9.74547 3.22007 9.24362 3.09772 8.67601C2.97537 8.1084 3.06842 7.51557 3.3588 7.01274C3.64918 6.50991 4.11613 6.13301 4.66891 5.95527C5.22168 5.77753 5.8208 5.81166 6.34982 6.05103C6.69057 6.20977 7.06456 6.28407 7.44012 6.26765C7.81567 6.25123 8.18175 6.14457 8.50735 5.95671C8.83296 5.76884 9.10851 5.50529 9.31068 5.18837C9.51286 4.87145 9.6357 4.51048 9.66882 4.13603" stroke="#006FFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -76,7 +76,7 @@ const bottomFeatures = [
   {
     title: "Full BI Reporting Integration",
     description:
-      "All dialer activity feeds your Structurely reporting suite \u2014 connect rates, transfer rates, and campaign performance in one place.",
+      "All dialer activity feeds your Structurely reporting suite — connect rates, transfer rates, and campaign performance in one place.",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z" stroke="#006FFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -111,8 +111,8 @@ export default function PricingAddonSection() {
 
   const modeLabel =
     mode === "human"
-      ? "Human Mode \u2014 your LOs dial manually from the list"
-      : "AI Mode \u2014 the agent dials thousands simultaneously";
+      ? "Human Mode — your LOs dial manually from the list"
+      : "AI Mode — the agent dials thousands simultaneously";
 
   return (
     <section id="pricing-addon" className="relative z-0">
@@ -120,26 +120,26 @@ export default function PricingAddonSection() {
         <div className="max-w-global mx-auto flex flex-col border-x border-[#E5E7EB]">
 
           <div className="flex flex-col lg:flex-row ">
-            <div className="flex flex-1 flex-col justify-center gap-6 p-8 md:p-12">
+            <div className="flex flex-1 flex-col justify-center gap-4 p-8 md:p-12 md:py-[87px] ">
               <div className="self-start">
-                <Badge text="Beta \u2014 Salesforce Add-on" />
+                <Badge text="Beta — Salesforce Add-on" />
               </div>
 
               <h2 style={{ maxWidth: "10em" }}>
                 <span className="text-[#006FFF]">AI Power</span> Dialer
               </h2>
 
-              <div className="flex flex-col gap-1">
-                <p className="text-[16px] leading-[26px] tracking-[-0.01em] text-[#202020] font-medium" style={{ maxWidth: `${470 / 16}em` }}>
+              <div className="flex flex-col gap-1 ">
+                <p className="text-[16px] leading-[26px] tracking-[-0.01em] text-[#202020] font-medium">
                   Create a list, flip the switch, and let AI start dialing. Toggle back to your team anytime.
                 </p>
-                <p className="text-[14px] leading-[24px] tracking-[-0.01em] text-[#646464]" style={{ maxWidth: `${470 / 14}em` }}>
-                  No new platform. No new workflow. Just more conversations \u2014 at scale.
+                <p className="text-[14px] leading-[24px] tracking-[-0.01em] text-[#646464]">
+                  No new platform. No new workflow. Just more conversations — at scale.
                 </p>
               </div>
 
               <div className="flex flex-col gap-3">
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 mt-2">
                   <span className={`text-[16px] leading-[26px] tracking-[-0.01em] font-medium transition-colors ${mode === "human" ? "text-[#006FFF]" : "text-[#646464]"}`}>
                     Human
                   </span>
@@ -157,14 +157,14 @@ export default function PricingAddonSection() {
                     AI
                   </span>
                 </div>
-                <p className="text-[14px] leading-[24px] tracking-[-0.01em] text-[#646464]" style={{ maxWidth: `${280 / 14}em` }}>
+                <p className="text-[14px] leading-[24px] tracking-[-0.01em] text-[#646464]">
                   {modeLabel}
                 </p>
               </div>
             </div>
 
-            <div className="flex flex-col justify-center p-8 md:p-12 lg:border-l lg:border-[#E5E7EB]">
-              <div className="flex flex-col items-center justify-center gap-4 rounded-[10px] border border-[#E5E7EB] bg-white px-8 py-6 shadow-[0_0_0_1px_rgba(0,0,0,0.08)]">
+            <div className="flex flex-col justify-center  p-8 md:p-12 ">
+              <div className="flex flex-col w-[289px] items-center justify-center gap-4 rounded-[10px] border border-[#E5E7EB] bg-white px-8 py-[31px] shadow-[0_0_0_1px_rgba(0,0,0,0.08)]">
                 <div className="flex flex-col items-center gap-3 w-full">
                   <div className="flex flex-col items-center gap-2">
                     <span className="text-[16px] leading-6 tracking-[-0.006em] text-[#646464] font-medium">

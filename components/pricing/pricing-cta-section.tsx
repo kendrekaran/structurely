@@ -4,7 +4,7 @@ export default function PricingCtaSection() {
   return (
     <section id="pricing-cta" className="relative z-0">
       <div className="px-global">
-        <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
+        <div className="max-w-global bg-white mx-auto border-x border-[#E5E7EB]">
           <div className="flex flex-col items-center gap-6 px-6 py-12 text-center md:px-12">
             <div className="flex flex-col items-center justify-center gap-3">
               <h2 className="max-w-[16em] text-[28px] leading-[36px] tracking-[-0.003em] md:tracking-[-0.03em]">

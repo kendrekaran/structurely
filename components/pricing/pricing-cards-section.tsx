@@ -182,14 +182,14 @@ export default function PricingCardsSection({
                   <Button
                     variant="outline"
                     size="md"
-                    className="flex w-full justify-center"
+                    className="flex w-full text-center items-center justify-center"
                     style={
                       !plan.popular
                         ? { color: "#646464", borderColor: "#E5E7EB" }
                         : undefined
                     }
                   >
-                    Book a Demo
+                    <span className="w-full text-center">Book a Demo</span>
                   </Button>
                 </div>
 
