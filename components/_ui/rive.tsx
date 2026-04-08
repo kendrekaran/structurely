@@ -2,6 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { Fit, Layout, useRive } from "@rive-app/react-canvas";
+import Image from "next/image";
 import * as React from "react";
 
 interface RiveProps {
@@ -9,22 +10,28 @@ interface RiveProps {
   stateMachineName?: string;
   className?: string;
   fallback?: React.ReactNode;
+  poster?: string;
   rootMargin?: string;
   onLoad?: () => void;
   layout?: Layout;
+  isAnimated?: boolean;
 }
+
+const riveLayout = new Layout({
+  fit: Fit.Contain,
+  layoutScaleFactor: 1,
+});
 
 function Rive({
   src,
   stateMachineName = "State Machine 1",
   className,
   fallback,
+  poster,
   rootMargin = "50px",
-  layout = new Layout({
-    fit: Fit.Contain,
-    layoutScaleFactor: 1,
-  }),
+  layout = riveLayout,
   onLoad,
+  isAnimated = true,
 }: RiveProps) {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const [isLoaded, setIsLoaded] = React.useState(false);
@@ -69,10 +76,8 @@ function Rive({
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             rive.play();
-            console.log("play");
           } else {
             rive.pause();
-            console.log("pause");
           }
         });
       },
@@ -83,22 +88,29 @@ function Rive({
     return () => observer.disconnect();
   }, [rive, rootMargin]);
 
-  if (fallback && !isLoaded) {
+  if (!RiveComponent) {
     return (
       <div
         ref={containerRef}
-        className={cn("flex items-center justify-center", className)}
+        className={cn("relative overflow-hidden", className)}
       >
-        {fallback}
+        {(poster || fallback) && (
+          <div className="absolute inset-0 flex items-center justify-center">
+            {poster ? (
+              <Image
+                src={poster}
+                alt=""
+                fill
+                sizes="100vw"
+                unoptimized
+                className="object-cover"
+              />
+            ) : (
+              fallback
+            )}
+          </div>
+        )}
       </div>
-    );
-  }
-
-  if (!RiveComponent) {
-    return fallback ? (
-      <div className={cn(className)}>{fallback}</div>
-    ) : (
-      <div ref={containerRef} className={cn(className)} />
     );
   }
 
@@ -107,17 +119,35 @@ function Rive({
       ref={containerRef}
       className={cn("relative overflow-hidden", className)}
     >
-      {fallback && (
+      {(poster || fallback) && (
         <div
           className={cn(
             "absolute inset-0 flex items-center justify-center",
             isLoaded && "pointer-events-none opacity-0",
           )}
         >
-          {fallback}
+          {poster ? (
+            <Image
+              src={poster}
+              alt=""
+              fill
+              sizes="100vw"
+              unoptimized
+              className="object-cover"
+            />
+          ) : (
+            fallback
+          )}
         </div>
       )}
-      <div className="absolute inset-0 h-full w-full mask-[linear-gradient(#000_1px,#000_calc(100%-1px))] [-webkit-mask-image:linear-gradient(#000_1px,#000_calc(100%-1px))]">
+      <div
+        data-rive-id={src}
+        className={cn(
+          "absolute inset-0 h-full w-full mask-[linear-gradient(#000_1px,#000_calc(100%-1px))] [-webkit-mask-image:linear-gradient(#000_1px,#000_calc(100%-1px))]",
+          isAnimated && "will-change-opacity transition-all duration-800",
+          isAnimated ? (isLoaded ? "opacity-100" : "opacity-0") : "opacity-100",
+        )}
+      >
         <RiveComponent />
       </div>
     </div>
