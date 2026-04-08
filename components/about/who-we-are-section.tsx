@@ -1,3 +1,7 @@
+"use client";
+import Rive from "@/components/_ui/rive";
+import { Fit, Layout } from "@rive-app/react-canvas";
+
 function WhoWeAreSection() {
   return (
     <section id="who-we-are" className="relative z-0">
@@ -8,7 +12,12 @@ function WhoWeAreSection() {
               Who We Are
             </span>
           </div>
-          <h2 data-reveal="words" className="max-w-[11em] md:tracking-[-0.03em]">Who We Are</h2>
+          <h2
+            data-reveal="words"
+            className="max-w-[11em] md:tracking-[-0.03em]"
+          >
+            Who We Are
+          </h2>
         </div>
       </div>
 
@@ -140,7 +149,7 @@ function WhoWeAreSection() {
                   response time, follow-up, and consistency directly affect
                   outcomes.
                 </p>
-                <p className="font-figma-hand  text-[16px] leading-6 font-bold tracking-[-0.02em]  text-[#006FFF]">
+                <p className="font-figma-hand text-[16px] leading-6 font-bold tracking-[-0.02em] text-[#006FFF]">
                   We are not new to this space.
                 </p>
               </div>
@@ -149,9 +158,11 @@ function WhoWeAreSection() {
 
           <div className="flex min-h-[400px] flex-1 items-stretch p-3 md:min-h-0">
             <div className="flex flex-1 items-center justify-center bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.08)]">
-              <span className="text-[16px] leading-6 tracking-[-0.01em]">
-                Graphic
-              </span>
+              <Rive
+                src="/rive/home/7.riv"
+                className="h-full w-full"
+                layout={new Layout({ fit: Fit.Cover, layoutScaleFactor: 1 })}
+              />
             </div>
           </div>
         </div>

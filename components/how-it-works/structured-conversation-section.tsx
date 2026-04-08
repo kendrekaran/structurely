@@ -1,3 +1,8 @@
+"use client";
+
+import Rive from "@/components/_ui/rive";
+import { Fit, Layout } from "@rive-app/react-canvas";
+
 const featureItems = [
   "Structured conversation trees",
   "Dynamic branching logic",
@@ -78,9 +83,11 @@ function StructuredConversationSection() {
 
           <div className="flex min-h-[360px] flex-1 items-stretch p-3 md:min-h-[480px] md:w-1/2 md:flex-none">
             <div className="flex flex-1 items-center justify-center overflow-hidden rounded-sm bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.08)]">
-              <span className="text-base leading-6 tracking-[-0.01em]">
-                Graphic
-              </span>
+              <Rive
+                src="/rive/home/6.riv"
+                className="h-full w-full"
+                layout={new Layout({ fit: Fit.Cover, layoutScaleFactor: 1 })}
+              />
             </div>
           </div>
         </div>
