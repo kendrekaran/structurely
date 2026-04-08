@@ -41,7 +41,7 @@ const credits = [
 
 export default function ActionCreditSection() {
   return (
-    <section id="action-credit" className="relative z-0 border-t border-[#E5E7EB]">
+    <section id="action-credit" className="relative z-0 ">
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
           <div className="flex flex-col items-center gap-3 px-3 py-8 md:py-16 md:px-24">

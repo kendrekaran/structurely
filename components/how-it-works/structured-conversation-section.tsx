@@ -85,7 +85,7 @@ function StructuredConversationSection() {
             <div className="flex flex-1 items-center justify-center overflow-hidden rounded-sm bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.08)]">
               <Rive
                 src="/rive/home/6.riv"
-                className="h-full w-full"
+                className="h-full w-full scale-110 overflow-hidden"
                 layout={new Layout({ fit: Fit.Cover, layoutScaleFactor: 1 })}
               />
             </div>

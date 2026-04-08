@@ -13,6 +13,7 @@ import SmartOutreachSection from "@/components/overview/smart-outreach-section";
 import StructuredSystemSection from "@/components/overview/structured-system-section";
 import CrmIntegrationSection from "@/components/overview/crm-integration-section";
 import OutcomesSection from "@/components/overview/outcomes-section";
+import UseCasesSection from "@/components/overview/use-cases-section";
 import CtaSection from "@/components/_common/cta-section";
 import FooterSection from "@/components/_common/footer-section";
 import Separator from "@/components/_ui/separator";
@@ -49,6 +50,8 @@ export default function Overview() {
         <CrmIntegrationSection /> 
         <Separator />
         <OutcomesSection /> */}
+        <Separator />
+        <UseCasesSection />
         <Separator />
         <CtaSection variant="overview" />
         <FooterSection />

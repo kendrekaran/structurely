@@ -762,7 +762,7 @@ function SmartOutreachSection() {
   return (
     <section
       id="smart-outreach"
-      className="overflow-hidden border-b border-[#E5E7EB]"
+      className="overflow-hidden  border-[#E5E7EB]"
     >
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB]">

@@ -100,7 +100,7 @@ function StructuredSystemSection() {
                 </span>
               </p>
               <p
-                className="max-w-[29.875em]  font-figma-hand text-center text-[16px] leading-6 font-bold tracking-[-0.02em]"
+                className="max-w-[29.875em]   text-center text-[16px] leading-6 font-bold tracking-[-0.02em]"
               >
                 <span className="text-primary">
                   Our products are built around{" "}

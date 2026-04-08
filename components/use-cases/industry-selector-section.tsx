@@ -225,7 +225,7 @@ function IndustrySelectorSection() {
       <div className="px-0 md:px-global">
         <div className="max-w-global mx-auto border-x  border-[#E5E7EB]">
           <div className="flex flex-col md:flex-row">
-            <div className="flex md:w-[429px] md:shrink-0 flex-col border-b md:border-b-0 md:border-r border-[#E5E7EB]">
+            <div className="flex md:w-[429px] md:shrink-0 flex-col border-b md:border-b-0  border-[#E5E7EB]">
               {industries.map((ind, i) => (
                 <button
                   key={i}
@@ -255,7 +255,7 @@ function IndustrySelectorSection() {
             </div>
 
             <div className="px-global md:flex md:flex-1 md:px-0">
-                <div className="flex h-full flex-1 border-x border-[#E5E7EB] flex-col items-center justify-between gap-8 px-6 pt-8 pb-0 md:px-8 md:pt-[37px] md:pb-0">
+                <div className="flex h-full flex-1 border-l border-[#E5E7EB] flex-col items-center justify-between gap-8 px-6 pt-8 pb-0 md:px-8 md:pt-[37px] md:pb-0">
                   <div className="flex flex-wrap justify-center gap-3">
                     {active.features.map((feature, i) => (
                       <span

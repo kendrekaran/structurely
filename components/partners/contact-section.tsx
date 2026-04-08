@@ -115,7 +115,7 @@ export default function ContactSection() {
             </div>
           </div>
 
-          <div className="relative border-t border-[#E5E7EB] flex flex-col items-center py-10 px-6 md:px-12">
+          <div className="relative border-t border-[#E5E7EB] flex flex-col items-center py-10 px-3 md:px-12">
             <svg className="absolute left-0 top-0" height="132" viewBox="0 0 1 132" fill="none" xmlns="http://www.w3.org/2000/svg" width="1">
               <path d="M0.5 0L0.5 132" stroke="url(#contact-gradient)" strokeWidth="1"/>
               <defs>

@@ -6,6 +6,7 @@ import BlogPostsSection from "@/components/blog/blog-posts-section";
 import Separator from "@/components/_ui/separator";
 import { getBlogCategories, getBlogs } from "@/data/blog-data";
 import type { Metadata } from "next";
+import FooterSection from "@/components/_common/footer-section";
 
 export const metadata: Metadata = {
   title: "Blog - Structurely",
@@ -46,6 +47,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
       <Separator />
       <BlogPostsSection posts={filtered} />
       <BlogPagination />
+      <FooterSection />
     </main>
   );
 }

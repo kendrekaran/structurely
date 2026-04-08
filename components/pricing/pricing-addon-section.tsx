@@ -196,7 +196,7 @@ export default function PricingAddonSection() {
             ))}
           </div>
 
-          <div className="grid grid-cols-1 border-t border-b border-[#E5E7EB] md:grid-cols-3 md:divide-x divide-y md:divide-y-0 divide-[#E5E7EB]">
+          <div className="grid grid-cols-1 border-t border-[#E5E7EB] md:grid-cols-3 md:divide-x divide-y md:divide-y-0 divide-[#E5E7EB]">
             {bottomFeatures.map((feature) => (
               <FeatureCell key={feature.title} {...feature} />
             ))}
