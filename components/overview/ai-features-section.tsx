@@ -1,5 +1,9 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
+import Rive from "@/components/_ui/rive";
+import { Fit, Layout } from "@rive-app/react-canvas";
 
 const statBadgeShadow =
   "0 0 0 1px rgba(0,0,0,0.08), 0 1px 1px -0.5px rgba(51,51,51,0.05), 0 3px 3px -1.5px rgba(51,51,51,0.05), 0 6px 6px -3px rgba(51,51,51,0.05), 0 12px 12px -6px rgba(51,51,51,0.05), 0 24px 24px -12px rgba(51,51,51,0.05)";
@@ -10,6 +14,7 @@ type FeatureCard = {
   description: string;
   imageSrc: string;
   imageAlt: string;
+  riveSrc: string;
 };
 
 const featureCards: FeatureCard[] = [
@@ -20,6 +25,7 @@ const featureCards: FeatureCard[] = [
       "Automate your CRM and sales resources with AI-powered appointment setting and calling.",
     imageSrc: "/assets/home/grid-cards/1.svg",
     imageAlt: "AI automating CRM tasks, appointments, and sales workflows",
+    riveSrc: "/rive/home/new/3.riv",
   },
   {
     statText: "17% More Qualified Leads",
@@ -28,6 +34,7 @@ const featureCards: FeatureCard[] = [
       "AI-filtering and qualification lets you focus on your highest quality leads.",
     imageSrc: "/assets/home/grid-cards/2.svg",
     imageAlt: "AI lead qualification and filtering visualization",
+    riveSrc: "/rive/home/new/4.riv",
   },
   {
     statText: "31% Higher Answer Rate",
@@ -36,6 +43,7 @@ const featureCards: FeatureCard[] = [
       "AI-messaging follows up with leads for over 12 months and AI-calling uses local phone numbers that increase trust and answer rates.",
     imageSrc: "/assets/home/grid-cards/3.svg",
     imageAlt: "AI call lists, messaging, and multi-channel outreach",
+    riveSrc: "/rive/home/new/5.riv",
   },
 ];
 
@@ -52,15 +60,28 @@ function StatBadge({ text }: { text: string }) {
   );
 }
 
-function GridCardImage({ src, alt }: { src: string; alt: string }) {
+function GridCardImage({
+  src,
+  riveSrc,
+  alt,
+}: {
+  src: string;
+  riveSrc: string;
+  alt: string;
+}) {
   return (
     <div className="relative h-full w-full overflow-hidden">
-      <Image
+      {/* <Image
         src={src}
         alt={alt}
         fill
         className="object-cover object-center"
         sizes="(max-width: 1024px) 100vw, 50vw"
+      /> */}
+      <Rive
+        src={riveSrc}
+        className="h-full w-full"
+        layout={new Layout({ fit: Fit.Cover, layoutScaleFactor: 1 })}
       />
     </div>
   );
@@ -72,6 +93,7 @@ function FeatureRow({
   description,
   imageSrc,
   imageAlt,
+  riveSrc,
   index,
 }: FeatureCard & { index: number }) {
   const reverseOnDesktop = index % 2 === 1;
@@ -87,7 +109,7 @@ function FeatureRow({
       <div
         className={`${imageOrder} bg-background h-[260px] min-w-0 sm:h-[320px] md:h-[400px]`}
       >
-        <GridCardImage src={imageSrc} alt={imageAlt} />
+        <GridCardImage src={imageSrc} riveSrc={riveSrc} alt={imageAlt} />
       </div>
       <div
         className={`${textOrder} bg-background flex min-w-0 flex-col justify-center gap-3 px-4 py-4 sm:px-6 md:gap-4 md:py-10 lg:px-12`}

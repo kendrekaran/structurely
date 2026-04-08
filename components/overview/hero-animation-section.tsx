@@ -1,4 +1,8 @@
+"use client";
+
 import Image from "next/image";
+import Rive from "@/components/_ui/rive";
+import { Fit, Layout } from "@rive-app/react-canvas";
 
 function HeroAnimationSection() {
   return (
@@ -7,20 +11,26 @@ function HeroAnimationSection() {
         id="hero-animation"
         className="max-w-global relative mx-auto flex min-h-[260px] w-full items-stretch justify-center border-x border-[#E5E7EB] bg-white md:min-h-[480px]"
       >
-        <Image
+        {/* <Image
           src="/assets/home/hero-img.png"
           alt="Structurely AI platform overview"
           width={1200}
           height={630}
-          className="w-full object-cover hidden md:block "
+          className="hidden w-full object-cover md:block"
           priority
+        /> */}
+
+        <Rive
+          src="/rive/home/new/1.riv"
+          className="hidden w-full object-cover md:block"
+          layout={new Layout({ fit: Fit.Cover, layoutScaleFactor: 1 })}
         />
         <Image
           src="/assets/home/hero-mobile.png"
           alt="Structurely AI platform overview"
           width={1200}
           height={630}
-          className=" w-full pt-[32px] px-[12px] object-cover  md:hidden"
+          className="w-full object-cover px-[12px] pt-[32px] md:hidden"
           priority
         />
       </section>
