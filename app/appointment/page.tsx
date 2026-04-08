@@ -1,19 +1,17 @@
 "use client";
 
 import Header from "@/components/_common/header";
+import CtaSection from "@/components/_common/cta-section";
+import FooterSection from "@/components/_common/footer-section";
+import HeroSection from "@/components/appointment/hero-section";
 import HeroAnimationSection from "@/components/email-ai/hero-animation-section";
-
 import PowerDialerSection from "@/components/email-ai/power-dialer-section";
 import PhoneTransfersSection from "@/components/email-ai/phone-transfers-section";
 import StatsSection from "@/components/email-ai/stats-section";
 import CrmIntegrationSection from "@/components/email-ai/crm-integration-section";
 import TrustedLogosSection from "@/components/overview/trusted-logos-section";
-import FooterSection from "@/components/_common/footer-section";
-import CtaSection from "@/components/_common/cta-section";
-import HeroSection from "@/components/appointment/hero-section";
 
-
-export default function HelpCenterPage() {
+export default function AppointmentPage() {
   return (
     <main className="min-h-screen max-w-full overflow-x-clip">
       <Header />
@@ -24,7 +22,7 @@ export default function HelpCenterPage() {
       <StatsSection />
       <CrmIntegrationSection />
       <TrustedLogosSection />
-      <CtaSection  />
+      <CtaSection />
       <FooterSection />
     </main>
   );
