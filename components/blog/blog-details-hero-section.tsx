@@ -16,47 +16,38 @@ function BlogDetailsHeroSection({
   return (
     <section id="blog-details-hero" className="relative z-0">
       <div className="px-global">
-        <div className="max-w-global pt-[40px] md:py-[32px] px-[12px] md:px-[48px] flex flex-col gap-[24px]   mx-auto border-x border-[#E5E7EB]">
-          <Link
-            href="/blog"
-            className="text-foreground flex w-fit items-center gap-1 text-[14px] leading-[20px] tracking-[-0.084px]"
-          >
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+        <div className="max-w-global mx-auto w-full flex flex-col items-center justify-center border-x border-[#E5E7EB]  gap-8 pt-10 md:pt-8 px-3 md:px-12 pb-0">
+          <div className="flex flex-col items-left justify-center  gap-4 md:px-6 max-w-[744px]">
+            <Link
+              href="/blog"
+              className="flex w-fit items-center gap-1 md:px-6 text-[14px] leading-[20px] tracking-[-0.084px] text-[var(--Subtext)]"
             >
-              <path
-                d="M8.00016 12.6663L3.3335 7.99967L8.00016 3.33301"
-                stroke="#646464"
-                strokeWidth="1.25"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M12.6668 8H3.3335"
-                stroke="#646464"
-                strokeWidth="1.25"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            Back to News
-          </Link>
-          <div className="flex flex-col-reverse md:flex-col items-stretch justify-center gap-6 md:gap-8  lg:flex-row    ">
-            <div className="flex flex-col gap-2.5 md:gap-4 lg:max-w-[32.25em]">
-              
-              <h1 data-reveal="words" className="text-heading text-[36px] leading-[44px] font-medium tracking-[-0.03em] max-w-[13.6em]">{title}</h1>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8.00065 12.6666L3.33398 7.99992L8.00065 3.33325"
+                  stroke="#646464"
+                  strokeWidth="1.25"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M12.6673 8H3.33398"
+                  stroke="#646464"
+                  strokeWidth="1.25"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              Back to Blog
+            </Link>
 
-              <div className="flex flex-col gap-[10px] md:gap-2">
-                <p className="md:text-heading ">{intro}</p>
-                <p>{description}</p>
-              </div>
-            </div>
-
-            <div className="min-h-[220px] flex-1 overflow-hidden rounded-xl bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)] lg:max-w-[33.25em]">
+            <div className="w-full min-h-[360px] rounded-xl overflow-hidden bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)] md:hidden">
               {image && (
                 <img
                   src={image}
@@ -65,6 +56,28 @@ function BlogDetailsHeroSection({
                 />
               )}
             </div>
+
+            <h1
+              data-reveal="words"
+              className="font-medium tracking-[-0.03em] md:px-6 max-w-[744px]"
+            >
+              {title}
+            </h1>
+
+            <div className="flex flex-col gap-2 md:px-6">
+              <p className="font-medium">{intro}</p>
+              <p className="text-[var(--Subtext)]">{description}</p>
+            </div>
+          </div>
+
+          <div className="hidden w-full min-h-[360px] md:min-h-[360px] rounded-xl overflow-hidden bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)] md:block">
+            {image && (
+              <img
+                src={image}
+                alt={title}
+                className="h-full w-full object-cover"
+              />
+            )}
           </div>
         </div>
       </div>

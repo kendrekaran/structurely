@@ -18,9 +18,9 @@ const navLinks = [
 
 const companyLinks = [
   { label: "About", href: "/about" },
-  { label: "Partners", href: "/partners" },
-  { label: "News", href: "/blog" },
-  { label: "Help Center", href: "/help-center" },
+  // { label: "Partners", href: "/partners" },
+  { label: "Blog", href: "/blog" },
+  // { label: "Help Center", href: "/help-center" },
 ];
 
 const mobileMenuShadow = {

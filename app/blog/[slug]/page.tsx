@@ -6,6 +6,7 @@ import BlogShareSection from "@/components/blog/blog-share-section";
 import { getBlogBySlug } from "@/data/blog-data";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import FooterSection from "@/components/_common/footer-section";
 
 export async function generateMetadata({
   params,
@@ -73,6 +74,7 @@ export default async function BlogDetailsPage({
       <BlogContentSection content={post.content} />
       <BlogShareSection />
       <BlogRelatedArticlesSection articles={relatedArticles} />
+      <FooterSection />
     </main>
   );
 }

@@ -138,9 +138,9 @@ export default function PricingCardsSection({
               <div
                 key={plan.id}
                 className={[
-                  "flex h-[556px] max-md:h-auto max-md:w-full max-md:flex-none flex-1 flex-col gap-6 overflow-hidden rounded-[10px] bg-white",
+                  "flex h-[566px] max-md:h-auto max-md:w-full max-md:flex-none flex-1 flex-col gap-6  overflow-hidden rounded-[10px] bg-white",
                   plan.popular
-                    ? "h-[580px] max-md:h-auto border border-[#006FFF] py-6 shadow-[0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]"
+                    ? "h-[595px] max-md:h-auto border border-[#006FFF] py-6 shadow-[0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]"
                     : "py-6 shadow-[0_0_0_1px_rgba(0,0,0,0.08)]",
                 ].join(" ")}
               >
