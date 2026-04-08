@@ -10,8 +10,6 @@ type FeatureCard = {
   description: string;
   imageSrc: string;
   imageAlt: string;
-  borderBottom?: boolean;
-  imageFirstOnDesktop?: boolean;
 };
 
 const featureCards: FeatureCard[] = [
@@ -20,28 +18,24 @@ const featureCards: FeatureCard[] = [
     heading: "Decrease Staffing Costs.",
     description:
       "Automate your CRM and sales resources with AI-powered appointment setting and calling.",
-    imageSrc: "/assets/home/grid-cards/1.png",
+    imageSrc: "/assets/home/grid-cards/1.svg",
     imageAlt: "AI automating CRM tasks, appointments, and sales workflows",
-    borderBottom: true,
-    imageFirstOnDesktop: true,
   },
   {
     statText: "17% More Qualified Leads",
     heading: "Increase Qualified Connections.",
     description:
       "AI-filtering and qualification lets you focus on your highest quality leads.",
-    imageSrc: "/assets/home/grid-cards/2.png",
+    imageSrc: "/assets/home/grid-cards/2.svg",
     imageAlt: "AI lead qualification and filtering visualization",
-    borderBottom: true,
   },
   {
     statText: "31% Higher Answer Rate",
     heading: "Increase Response.",
     description:
       "AI-messaging follows up with leads for over 12 months and AI-calling uses local phone numbers that increase trust and answer rates.",
-    imageSrc: "/assets/home/grid-cards/3.png",
+    imageSrc: "/assets/home/grid-cards/3.svg",
     imageAlt: "AI call lists, messaging, and multi-channel outreach",
-    imageFirstOnDesktop: true,
   },
 ];
 
@@ -51,7 +45,7 @@ function StatBadge({ text }: { text: string }) {
       className="inline-flex w-fit items-center justify-center overflow-hidden rounded-lg bg-white px-4 py-2"
       style={{ boxShadow: statBadgeShadow }}
     >
-      <span className="text-center text-xs font-medium leading-4 text-[#006FFF]">
+      <span className="text-center text-xs leading-4 font-medium text-[#006FFF]">
         {text}
       </span>
     </div>
@@ -60,12 +54,12 @@ function StatBadge({ text }: { text: string }) {
 
 function GridCardImage({ src, alt }: { src: string; alt: string }) {
   return (
-    <div className="relative h-full w-full overflow-hidden ">
+    <div className="relative h-full w-full overflow-hidden">
       <Image
         src={src}
         alt={alt}
         fill
-        className="object-contain object-center"
+        className="object-cover object-center"
         sizes="(max-width: 1024px) 100vw, 50vw"
       />
     </div>
@@ -78,39 +72,35 @@ function FeatureRow({
   description,
   imageSrc,
   imageAlt,
-  borderBottom,
-  imageFirstOnDesktop,
-}: FeatureCard) {
+  index,
+}: FeatureCard & { index: number }) {
+  const reverseOnDesktop = index % 2 === 1;
+  const imageOrder = reverseOnDesktop
+    ? "order-2 lg:order-1"
+    : "order-2 lg:order-2";
+  const textOrder = reverseOnDesktop
+    ? "order-1 lg:order-2"
+    : "order-1 lg:order-1";
+
   return (
-    <div
-      className={
-        borderBottom
-          ? "grid grid-cols-1 border-b border-[#E5E7EB] lg:grid-cols-2"
-          : "grid grid-cols-1 lg:grid-cols-2"
-      }
-    >
+    <div className="grid grid-cols-1 gap-px lg:grid-cols-2">
       <div
-        className={
-          imageFirstOnDesktop
-            ? "order-2 min-w-0 h-[260px] sm:h-[320px] md:h-[400px] lg:order-1"
-            : "order-2 min-w-0 h-[260px] sm:h-[320px] md:h-[400px] lg:order-2"
-        }
+        className={`${imageOrder} bg-background h-[260px] min-w-0 sm:h-[320px] md:h-[400px]`}
       >
         <GridCardImage src={imageSrc} alt={imageAlt} />
       </div>
       <div
-        className={
-          imageFirstOnDesktop
-            ? "order-1 flex min-w-0 flex-col justify-center  gap-3 md:gap-4 px-4 py-4 md:py-10 border-b md:border-b-0 sm:px-6 lg:order-2 lg:px-12"
-            : "order-1 flex min-w-0 flex-col justify-center gap-3 md:gap-4 px-4 py-4 md:py-10 border-b md:border-b-0 sm:px-6 lg:order-1 lg:px-12"
-        }
+        className={`${textOrder} bg-background flex min-w-0 flex-col justify-center gap-3 px-4 py-4 sm:px-6 md:gap-4 md:py-10 lg:px-12`}
       >
         <StatBadge text={statText} />
         <div className="flex flex-col gap-3">
-          <h2 data-reveal="words" className="text-heading text-[24px] md:text-[32px] leading-[32px] md:leading-[40px] font-medium tracking-[-0.03em]">
+          <h2
+            data-reveal="words"
+            className="text-heading text-[24px] leading-[32px] font-medium tracking-[-0.03em] md:text-[32px] md:leading-[40px]"
+          >
             {heading}
           </h2>
-          <p className="text-[#646464] text-[16px] leading-[26px] tracking-[-0.01em]">
+          <p className="text-[16px] leading-[26px] tracking-[-0.01em] text-[#646464]">
             {description}
           </p>
         </div>
@@ -124,10 +114,10 @@ function AiFeaturesSection() {
     <div className="px-global">
       <section
         id="ai-features"
-        className="max-w-global mx-auto border-x border-[#E5E7EB]"
+        className="max-w-global bg-border mx-auto flex flex-col gap-px border-x border-[#E5E7EB]"
       >
-        {featureCards.map((card) => (
-          <FeatureRow key={card.heading} {...card} />
+        {featureCards.map((card, index) => (
+          <FeatureRow key={card.heading} {...card} index={index} />
         ))}
       </section>
     </div>

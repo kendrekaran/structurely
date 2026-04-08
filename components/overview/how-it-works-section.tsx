@@ -94,7 +94,7 @@ function HowItWorksSection() {
           </h2>
         </div>
 
-        <div className="flex flex-col border-b border-[#E5E7EB] lg:flex-row">
+        <div className="flex flex-col border-[#E5E7EB] lg:flex-row">
           <div className="flex flex-col divide-y divide-[#E5E7EB] border-b border-[#E5E7EB] lg:w-[38%] lg:border-r lg:border-b-0 lg:border-r-[#E5E7EB]">
             {features.map((feature, index) => {
               const isSelected = index === selectedIndex;
