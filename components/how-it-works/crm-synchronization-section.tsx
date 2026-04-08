@@ -72,7 +72,7 @@ function CrmSynchronizationSection() {
             Is recorded inside your{" "}
             <span className="text-heading font-medium">CRM.</span>
           </p>
-          <p className="font-figma-hand text-center text-[16px] leading-6 font-bold tracking-[-0.02em]">
+          <p className=" text-center text-[16px] leading-6 font-bold tracking-[-0.02em]">
             <span className="text-[#006FFF] underline">Sales teams</span>
             <span className="text-[#006FFF]"> </span>
             <span className="text-heading">see complete context.</span>

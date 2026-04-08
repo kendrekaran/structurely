@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Badge from "@/components/_ui/badge";
+import { cn } from "@/lib/utils";
 import Separator from "../_ui/separator";
 
 const routingOptions = [
@@ -181,10 +182,15 @@ function IntelligentQualificationSection() {
             </div>
 
             <div className="mt-[-12px] grid w-full grid-cols-1 sm:grid-cols-2 md:mt-0">
-              {routingOptions.map((option) => (
+              {routingOptions.map((option, index) => (
                 <div
                   key={option}
-                  className="flex cursor-default items-center border-b-1 px-8 py-4 transition-all duration-300 hover:border-b-[#006FFF] hover:bg-white sm:border-r sm:border-r-[#E5E7EB] md:py-8"
+                  className={cn(
+                    "flex cursor-default items-center border-b px-8 py-4 transition-all duration-300 hover:border-b-[#006FFF] hover:bg-white sm:border-r sm:border-r-[#E5E7EB] md:py-8",
+                    index < routingOptions.length - 2
+                      ? "border-[#E5E7EB]"
+                      : "border-transparent",
+                  )}
                 >
                   <span className="text-[14px] leading-[24px] tracking-[-0.01em] text-[#646464] transition-colors duration-300 hover:text-[#202020] md:text-[16px] md:leading-[26px]">
                     {option}

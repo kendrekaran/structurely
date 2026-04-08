@@ -157,7 +157,7 @@ export default function PricingOnboardingSection() {
             </div>
           ))}
 
-          <div className="flex flex-col bg-white items-start justify-between gap-4 border-t border-b border-[#E5E7EB] px-6 py-6 md:flex-row md:items-center md:px-12">
+          <div className="flex flex-col bg-white items-start justify-between gap-4 border-t  border-[#E5E7EB] px-6 py-6 md:flex-row md:items-center md:px-12">
             <p style={{ fontSize: "14px", lineHeight: "20px", letterSpacing: "-0.01em", maxWidth: `${520 / 14}em` }}>
               <span className="text-[#646464]">Usage-based pricing means </span>
               <span className="text-[#006FFF]">you only pay as the AI delivers value</span> <br/>

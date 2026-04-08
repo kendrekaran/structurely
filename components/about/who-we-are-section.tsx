@@ -149,7 +149,7 @@ function WhoWeAreSection() {
                   response time, follow-up, and consistency directly affect
                   outcomes.
                 </p>
-                <p className="font-figma-hand text-[16px] leading-6 font-bold tracking-[-0.02em] text-[#006FFF]">
+                <p className=" text-[16px] leading-6 font-bold tracking-[-0.02em] text-[#006FFF]">
                   We are not new to this space.
                 </p>
               </div>

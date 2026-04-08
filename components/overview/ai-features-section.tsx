@@ -64,7 +64,7 @@ function GridCardImage({ riveSrc, alt }: { riveSrc: string; alt: string }) {
     >
       <Rive
         src={riveSrc}
-        className="h-full w-full"
+        className="h-full w-full scale-110 overflow-hidden"
         layout={new Layout({ fit: Fit.Cover, layoutScaleFactor: 1 })}
       />
     </div>

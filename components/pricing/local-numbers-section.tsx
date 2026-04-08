@@ -58,7 +58,7 @@ const features = [
 
 export default function LocalNumbersSection() {
   return (
-    <section id="local-numbers" className="relative z-0 border-t border-[#E5E7EB]">
+    <section id="local-numbers" className="relative z-0 ">
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
           <div className="flex flex-col gap-8 px-3  py-8 md:py-16 md:flex-row md:items-center md:gap-12 md:px-12">
@@ -92,7 +92,7 @@ export default function LocalNumbersSection() {
       </div>
 
       <div className="px-global">
-        <div className="max-w-global mx-auto border-x border-t border-b border-[#E5E7EB]">
+        <div className="max-w-global mx-auto border-x border-t  border-[#E5E7EB]">
           <div className="flex flex-col divide-y divide-[#E5E7EB] md:flex-row md:divide-x md:divide-y-0">
             {features.map((feature) => (
               <div key={feature.title} className="flex flex-1 flex-col gap-6 px-5 md:px-8 p-8">

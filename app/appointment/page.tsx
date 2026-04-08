@@ -1,5 +1,3 @@
-"use client";
-
 import Header from "@/components/_common/header";
 import CtaSection from "@/components/_common/cta-section";
 import FooterSection from "@/components/_common/footer-section";

@@ -131,7 +131,7 @@ function PersistentFollowUpSection() {
             <span className="text-foreground block text-[16px] leading-[26px] tracking-[-0.01em] md:text-right">
               Most teams stop too early.
             </span>
-            <span className="font-figma-hand text-center text-[16px] leading-6 font-bold tracking-[-0.02em] text-[#006FFF] underline">
+            <span className=" text-center text-[16px] leading-6 font-bold tracking-[-0.02em] text-[#006FFF] underline">
               AI doesn&apos;t.
             </span>
           </div>

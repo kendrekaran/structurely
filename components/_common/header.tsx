@@ -18,9 +18,9 @@ const navLinks = [
 
 const companyLinks = [
   { label: "About", href: "/about" },
-  { label: "Partners", href: "/partners" },
-  { label: "News", href: "/blog" },
-  { label: "Help Center", href: "/help-center" },
+  // { label: "Partners", href: "/partners" },
+  { label: "Blog", href: "/blog" },
+  // { label: "Help Center", href: "/help-center" },
 ];
 
 const mobileMenuShadow = {
@@ -46,10 +46,18 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <Image
+              src="/assets/common/mobile-logo.png"
+              alt="Structurely"
+              width={115}
+              height={24}
+              className="lg:hidden w-[115px] h-auto "
+            />
+            <Image
               src="/assets/common/heading-logo.svg"
               alt="Structurely"
-              width={92}
+              width={115}
               height={24}
+              className="hidden lg:block "
             />
           </Link>
 
@@ -246,7 +254,15 @@ function MobileMenu({
         <div className="flex items-center justify-between">
           <Link href="/" onClick={onClose}>
             <Image
+              src="/assets/common/mobile-logo.png"
+              alt="Structurely"
+              width={115}
+              height={24}
+              className="lg:hidden  w-[115px] h-auto "
+            />
+            <Image
               src="/assets/common/heading-logo.svg"
+              className="hidden h-[24px] w-[115px] lg:block"
               alt="Structurely"
               width={115}
               height={24}

@@ -1,3 +1,5 @@
+"use client";
+
 import Button from "@/components/_ui/button";
 import Rive from "@/components/_ui/rive";
 import Link from "next/link";
@@ -7,7 +9,7 @@ interface CtaSectionProps {
 }
 
 function CtaSection({ variant = "default" }: CtaSectionProps) {
-  const isOverview = variant === "overview";
+  void variant;
 
   return (
     <div className="px-global">
@@ -35,17 +37,8 @@ function CtaSection({ variant = "default" }: CtaSectionProps) {
                 <span className="text-heading">Structurely.</span>
               </h2>
               <div className="flex flex-wrap items-center justify-center gap-4">
-                {!isOverview && (
-                  <Button variant="primary" size="md">
-                    Explore Our Products
-                  </Button>
-                )}
                 <Link href="/demo">
-                  <Button
-                    variant={isOverview ? "primary" : "secondary"}
-                    size="md"
-                    className=""
-                  >
+                  <Button variant="primary" size="md" className="">
                     <span className="w-[104px] text-left">Try the AI</span>
                   </Button>
                 </Link>

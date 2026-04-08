@@ -243,7 +243,7 @@ function AboutProblemSection() {
 
       <div className="px-global">
         <div className="max-w-global mx-auto flex items-center justify-center border-x border-b px-[12px] border-[#E5E7EB] py-[24px]">
-          <p className="font-figma-hand text-center text-[16px] leading-6 font-bold tracking-[-0.02em]">
+          <p className=" text-center text-[16px] leading-6 font-bold tracking-[-0.02em]">
             <span className="text-[#006FFF]">Structurely</span> was built to
             address that gap.
           </p>
