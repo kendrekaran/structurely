@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Caveat } from "next/font/google";
+import { Caveat, Inter } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import RevealProvider from "@/components/_providers/reveal-provider";
 import SmoothScrollProvider from "@/components/_providers/smooth-scroll-provider";
 
-const stackSansText = localFont({
-  src: "../public/font/Stack_Sans_Text/StackSansText-VariableFont_wght.ttf",
-  variable: "--font-stack-sans-text",
-  weight: "200 700",
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 const caveat = Caveat({
@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${stackSansText.variable} ${caveat.variable} ${figmaHandBold.variable} relative z-0 font-sans antialiased`}
+        className={`${GeistSans.variable} ${inter.variable} ${caveat.variable} ${figmaHandBold.variable} relative z-0 font-sans antialiased`}
       >
         <SmoothScrollProvider>
           <RevealProvider>
