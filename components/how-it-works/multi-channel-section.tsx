@@ -23,11 +23,11 @@ function MultiChannelSection() {
         id="multi-channel"
         className="max-w-global  border-border relative z-0 mx-auto border-x"
       >
-        <div className="pt-section-md px-[12px] md:px-0">
+        <div className="pt-section-md  md:px-0">
           <div className="">
             <div className="flex flex-col items-center">
               <h2 data-reveal="words" className="text-center md:max-w-[11em]">
-                Immediate <span className="text-[#006FFF]">Multi-Channel</span>{" "}
+                Immediate <span className="text-[#006FFF]">Multi- Channel</span>{" "}
                 Engagement
               </h2>
 
@@ -56,7 +56,7 @@ function MultiChannelSection() {
                     return (
                       <div
                         key={channel.label}
-                        className={`flex flex-1 flex-col items-center justify-center gap-6 py-6 hover:bg-black/[0.03] md:h-[148px] md:px-8 md:py-8 ${
+                        className={`flex flex-1 flex-col items-center justify-center gap-6 py-6 hover:bg-black/[0.03] md:h-[148px] px-[12px] md:px-8 md:py-8 ${
                           !isMobileLastCol ? "border-border border-r" : ""
                         } ${
                           !isMobileLastRow

@@ -172,7 +172,7 @@ function IntelligentQualificationSection() {
               <div className="h-px flex-1 bg-[#E5E7EB]" />
             </div>
 
-            <div className="hidden w-full items-center justify-center border-b border-[#E5E7EB] px-6 py-6 md:flex">
+            <div className=" w-full items-center justify-center border-b border-[#E5E7EB] md:px-6 py-6 md:flex">
               <p className="text-center text-[16px] leading-[26px] tracking-[-0.01em]">
                 <span className="text-foreground">
                   Based on predefined routing logic,{" "}
@@ -181,18 +181,18 @@ function IntelligentQualificationSection() {
               </p>
             </div>
 
-            <div className="mt-[-12px] grid w-full grid-cols-1 sm:grid-cols-2 md:mt-0">
+            <div className=" grid w-full grid-cols-1 sm:grid-cols-2 ">
               {routingOptions.map((option, index) => (
                 <div
                   key={option}
                   className={cn(
-                    "flex cursor-default items-center border-b px-8 py-4 transition-all duration-300 hover:border-b-[#006FFF] hover:bg-white sm:border-r sm:border-r-[#E5E7EB] md:py-8",
-                    index < routingOptions.length - 2
+                    "group flex cursor-default items-center border-b px-5 py-4 transition-all duration-300 hover:border-b-[#006FFF] hover:bg-white active:border-b-[#006FFF] active:bg-white sm:border-r sm:border-r-[#E5E7EB] md:px-8 md:py-8",
+                    index < routingOptions.length - 1
                       ? "border-[#E5E7EB]"
                       : "border-transparent",
                   )}
                 >
-                  <span className="text-[14px] leading-[24px] tracking-[-0.01em] text-[#646464] transition-colors duration-300 hover:text-[#202020] md:text-[16px] md:leading-[26px]">
+                  <span className="text-[14px] leading-[24px] tracking-[-0.01em] text-[#646464] transition-colors duration-300 group-hover:text-[#202020] group-active:text-[#202020] md:text-[16px] md:leading-[26px]">
                     {option}
                   </span>
                 </div>

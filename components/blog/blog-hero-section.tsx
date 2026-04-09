@@ -21,11 +21,11 @@ function BlogHeroSection({
             </p>
             <div className="flex flex-col items-center gap-2.5 md:gap-2 px-6">
               <h2 data-reveal="words" className="max-w-[23.6em] text-center  text-[36px] leading-[44px] font-medium tracking-[-0.03em]">{title}</h2>
-              <p className="max-w-[34.33em] text-[16px]  leading-[26px]  tracking-[-0.01em] text-center">{description}</p>
+              <p className="max-w-[34.33em] text-[#202020] text-[16px]  leading-[26px]  tracking-[-0.01em] text-center">{description}</p>
             </div>
           </div>
 
-          <div className="mt-[24px] md:mt-4 min-h-[360px] px-3 md:px-0 overflow-hidden rounded-xl bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
+          <div className="mt-[24px] mx-3 md:mt-4 min-h-[360px] px-3 md:px-0 overflow-hidden rounded-xl bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
             {image && (
               <img
                 src={image}

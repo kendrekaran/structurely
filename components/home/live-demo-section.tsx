@@ -27,7 +27,7 @@ function LiveDemoSection() {
               </p>
             </div>
 
-            <div className="flex items-center gap-1.5 border-b-[3px] border-[#006FFF] bg-[#FAFAFA] px-3 py-1.5">
+            <div className="flex items-center gap-1.5 border-b-[3px] border-transparent bg-[#FAFAFA] px-3 py-1.5 focus-within:border-[#006FFF]">
               <div className="flex flex-1 items-center gap-2 rounded-lg px-1.5 py-3">
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12.7503 1.49985H5.25031C4.42188 1.49985 3.75031 2.17142 3.75031 2.99985V14.9998C3.75031 15.8283 4.42188 16.4998 5.25031 16.4998H12.7503C13.5787 16.4998 14.2503 15.8283 14.2503 14.9998V2.99985C14.2503 2.17142 13.5787 1.49985 12.7503 1.49985Z" stroke="#646464" strokeWidth="1.3125" strokeLinecap="round" strokeLinejoin="round"/>
@@ -35,7 +35,9 @@ function LiveDemoSection() {
                 </svg>
                 <input
                   type="tel"
-                  defaultValue="+44 "
+                  placeholder="Enter your number here"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
                   aria-label="Phone number"
                   className="w-full bg-transparent font-sans text-[14px] font-medium leading-[20px] tracking-[-0.006em] text-[#202020] outline-none placeholder:text-[#A0A0A0]"
                 />

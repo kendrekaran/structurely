@@ -4,7 +4,7 @@ function ByTheNumbersSection() {
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
           <div className="md:py-section-md flex flex-col items-center justify-center py-[24px]">
-            <h2 data-reveal="words" className="max-w-[11em] text-center font-medium">
+            <h2 data-reveal="words" className="max-w-[11em] text-center font-medium text-[28px] leading-[36px]  tracking-[-0.02em] md:text-[48px] md:leading-[54px] md:tracking-[-0.03em]">
               By the Numbers
             </h2>
           </div>
