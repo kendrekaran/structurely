@@ -23,13 +23,13 @@ function UseCasesSection() {
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
           <div className="border-b border-[#E5E7EB] px-6 py-8 md:px-24 md:py-16 text-center">
-            <h2 className="max-w-[8em] mx-auto">Use Cases</h2>
+            <h2 className="max-w-[8em] mx-auto">Use cases</h2>
           </div>
 
           <div className="bg-[#FAFAFA]  flex flex-col md:flex-row md:justify-between gap-0 px-6 pt-6 md:px-[96px] md:pt-0 overflow-hidden">
             <div className="flex flex-col gap-4 md:gap-8 pb-3 md:pt-[160px] md:pb-[96px] md:max-w-[563px]">
               <div className="flex flex-col items-center md:items-start gap-2">
-                <h3 className="max-w-[10em] text-[24px] md:text-[24px] leading-[32px] md:leading-[32px] font-medium tracking-[-0.03em] text-center md:text-left">Real Estate</h3>
+                <h3 className="max-w-[10em] text-[24px] md:text-[24px] leading-[32px] md:leading-[32px] font-medium tracking-[-0.03em] text-center md:text-left">Real estate</h3>
                 <p className="max-w-[31.375em] text-[#646464] text-[16px] leading-[26px] tracking-[-0.01em] text-center md:text-left">
                   Automate lead follow-up and appointment setting for high-volume real estate teams.
                 </p>

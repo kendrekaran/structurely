@@ -77,7 +77,7 @@ const categories = [
     ),
   },
   {
-    title: "Appointment Scheduling + Live Transfer Availability",
+    title: "Appointment scheduling + live transfer availability",
     description:
       "Specify when your AI assistant and your human team will be available",
     articles: 5,
@@ -115,8 +115,8 @@ const categories = [
     ),
   },
   {
-    title: "FAQ's",
-    description: "Frequently Asked Questions",
+    title: "FAQs",
+    description: "Frequently asked questions",
     articles: 45,
     bg: "bg-white",
     icon: (
@@ -217,7 +217,7 @@ export default function HelpCenterSection() {
             <div className="flex w-full max-w-[46.375em] flex-col items-start gap-[10px] md:gap-4 md:items-center md:text-center">
               <h2 data-reveal="words" className="max-w-[13.5em] text-[36px] md:text-[48px] leading-[44px] md:leading-[54px] font-normal md:font-medium tracking-[-0.03em] text-left md:text-center">
                 Advice and answers from the{" "}
-                <span className="text-[#006FFF]">Structurely</span> Team
+                <span className="text-[#006FFF]">Structurely</span> team
               </h2>
               <p className="text-left text-[16px] md:text-[18px] leading-[26px] md:leading-[28px] tracking-[-0.18px]  md:max-w-[600px] md:text-center">
                 Lorem Ipsum is simply dummy text of the printing and typesetting

@@ -132,13 +132,13 @@ function ProductsSection() {
               name="Structurely AI 3"
               description="Built for high-volume teams that need structured AI follow-up inside their CRM."
               features={structurelyFeatures}
-              ctaLabel="Learn About Structurely AI 3"
+              ctaLabel="Learn about Structurely AI 3"
             />
             <ProductCard
               name="Switch AI"
               description="Purpose-built for mortgage."
               features={switchFeatures}
-              ctaLabel="Learn About Switch AI"
+              ctaLabel="Learn about Switch AI"
               muted
             />
           </div>

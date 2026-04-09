@@ -3,7 +3,7 @@ import Button from "@/components/_ui/button";
 const featureRows = [
   [
     {
-      title: "Platform Setup & Configuration",
+      title: "Platform setup & configuration",
       description:
         "Your account configured, campaigns built, and agents trained — ready to work leads from day one.",
       icon: (
@@ -14,7 +14,7 @@ const featureRows = [
       ),
     },
     {
-      title: "Agents Configured for Your Vertical",
+      title: "Agents configured for your vertical",
       description:
         "Pre-built agents trained on mortgage, real estate, or home improvement — your talk track, your qualification criteria.",
       icon: (
@@ -33,7 +33,7 @@ const featureRows = [
   ],
   [
     {
-      title: "60-Day Dedicated AM",
+      title: "60-day dedicated AM",
       description:
         "A named Account Manager to fine-tune campaigns, optimize transfer rates, and make sure you see ROI — fast.",
       icon: (
@@ -47,7 +47,7 @@ const featureRows = [
       ),
     },
     {
-      title: "Local Number Setup",
+      title: "Local number setup",
       description:
         "Spam-mitigated, market-matched local area code numbers configured for your lead geographies.",
       icon: (
@@ -101,10 +101,10 @@ export default function PricingOnboardingSection() {
 
           <div className="flex flex-col items-center gap-4 px-6 py-8 md:py-16 md:px-24">
             <div className="rounded-[8px] bg-white px-4 py-2 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
-              <span className="text-[12px] font-medium leading-4 text-[#646464]">One-Time Setup</span>
+              <span className="text-[12px] font-medium leading-4 text-[#646464]">One-time setup</span>
             </div>
             <h2 data-reveal="words" className="text-center  " style={{ maxWidth: "500px" }}>
-              Onboarding That Sets You Up to Win
+              Onboarding that sets you up to win
             </h2>
             <p className="text-center text-[#646464]" style={{ maxWidth: `${470 / 16}em`, fontSize: "16px", lineHeight: "26px", letterSpacing: "-0.01em" }}>
               Your onboarding fee isn&apos;t overhead — it&apos;s the foundation of your AI sales operation.

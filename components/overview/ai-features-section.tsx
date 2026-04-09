@@ -17,24 +17,24 @@ type FeatureCard = {
 
 const featureCards: FeatureCard[] = [
   {
-    statText: "50% Lower Sales Overhead",
-    heading: "Decrease Staffing Costs.",
+    statText: "50% lower sales overhead",
+    heading: "Decrease staffing costs.",
     description:
       "Automate your CRM and sales resources with AI-powered appointment setting and calling.",
     imageAlt: "AI automating CRM tasks, appointments, and sales workflows",
     riveSrc: "/rive/home/new/3.riv",
   },
   {
-    statText: "17% More Qualified Leads",
-    heading: "Increase Qualified Connections.",
+    statText: "17% more qualified leads",
+    heading: "Increase qualified connections.",
     description:
       "AI-filtering and qualification lets you focus on your highest quality leads.",
     imageAlt: "AI lead qualification and filtering visualization",
     riveSrc: "/rive/home/new/4.riv",
   },
   {
-    statText: "31% Higher Answer Rate",
-    heading: "Increase Response.",
+    statText: "31% higher answer rate",
+    heading: "Increase response.",
     description:
       "AI-messaging follows up with leads for over 12 months and AI-calling uses local phone numbers that increase trust and answer rates.",
     imageAlt: "AI call lists, messaging, and multi-channel outreach",

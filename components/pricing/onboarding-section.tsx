@@ -105,19 +105,19 @@ function DedicatedAMIcon() {
 const features = [
   {
     Icon: SalesforceIcon,
-    title: "Salesforce Integration",
+    title: "Salesforce integration",
     description:
       "Full CRM integration so your AI workforce operates inside your existing systems from day one.",
   },
   {
     Icon: MortgageIcon,
-    title: "Mortgage Agent — Ready to Go",
+    title: "Mortgage agent — ready to go",
     description:
       "Out-of-the-box agent trained on VA, Conventional, FHA, HELOC, Purchase, and Refinance conversations.",
   },
   {
     Icon: DedicatedAMIcon,
-    title: "60-Day Dedicated AM",
+    title: "60-day dedicated AM",
     description:
       "A named Account Manager to fine-tune campaigns, optimize transfers, and make sure you see ROI fast.",
   },
@@ -130,8 +130,8 @@ export default function OnboardingSection() {
         <div className="max-w-global py-section-md mx-auto flex flex-col gap-3 border-x border-[#E5E7EB] px-3 md:flex-row md:items-center md:justify-between md:gap-8 md:px-[48px]">
           <div className="flex flex-col gap-3 md:max-w-[55%]">
             <h2 data-reveal="words" className="text-[28px] leading-[36px] tracking-[-0.03em] md:max-w-[32em]">
-              Onboarding That Sets{" "}
-              <span className="text-[#006FFF]">You Up to Win</span>
+              Onboarding that sets{" "}
+              <span className="text-[#006FFF]">you up to win</span>
             </h2>
             <p className="max-w-[42em] text-[14px] leading-[24px] tracking-[-0.01em]">
               Your onboarding fee isn&apos;t a setup cost — it&apos;s the

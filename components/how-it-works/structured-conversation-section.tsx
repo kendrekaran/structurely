@@ -52,8 +52,8 @@ function StructuredConversationSection() {
                 data-reveal="words"
                 className="text-center md:max-w-[10em] md:text-left"
               >
-                Structured <span className="text-[#006FFF]">Conversation</span>{" "}
-                Engine
+                Structured <span className="text-[#006FFF]">conversation</span>{" "}
+                engine
               </h2>
               <div className="flex flex-wrap items-start gap-4 md:items-center md:gap-3">
                 <p className="text-[12px] leading-[16px] md:text-[16px] md:leading-[26px] md:tracking-[-0.01em]">

@@ -3,16 +3,16 @@
 import Link from "next/link";
 
 const articles = [
-  { title: "Create a Call AI Agent", active: false },
-  { title: "Pick your Greetings", active: false },
-  { title: "Voicemail Settings", active: true },
-  { title: "Set Live Transfer Messages", active: false },
-  { title: "Knowledge Bases", active: false },
-  { title: "Add Guidelines (Call Scripting)", active: false },
-  { title: "Qualification (+ Disqualification)", active: false },
-  { title: "Advanced Settings (Call AI)", active: false },
-  { title: "Live Transfer Routing", active: false },
-  { title: "6. Add Guidelines (Call Scripting)", active: false },
+  { title: "Create a Call AI agent", active: false },
+  { title: "Pick your greetings", active: false },
+  { title: "Voicemail settings", active: true },
+  { title: "Set live transfer messages", active: false },
+  { title: "Knowledge bases", active: false },
+  { title: "Add guidelines (call scripting)", active: false },
+  { title: "Qualification (+ disqualification)", active: false },
+  { title: "Advanced settings (Call AI)", active: false },
+  { title: "Live transfer routing", active: false },
+  { title: "6. Add guidelines (call scripting)", active: false },
 ];
 
 function ArrowRightIcon({ color }: { color: string }) {

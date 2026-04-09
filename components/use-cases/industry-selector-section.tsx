@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 const industries = [
   {
-    title: "Mortgage & Lending",
+    title: "Mortgage & lending",
     description:
       "Automate your CRM and sales resources with AI-powered appointment setting and calling.",
     features: [
@@ -36,7 +36,7 @@ const industries = [
     },
   },
   {
-    title: "Real Estate",
+    title: "Real estate",
     description:
       "Automate lead follow-up and appointment setting for high-volume real estate teams.",
     features: [

@@ -47,11 +47,11 @@ export default function ActionCreditSection() {
           <div className="flex flex-col items-center gap-3 px-3 py-8 md:py-16 md:px-24">
             <div className={`flex items-center justify-center gap-1 overflow-hidden rounded-lg bg-white px-4 py-2 ${CARD_SHADOW}`}>
               <span className="text-center text-[12px] font-medium leading-4 text-[#646464]">
-                How Billing Works
+                How billing works
               </span>
             </div>
             <h2 className="max-w-[13.375em] text-center  ">
-              What is an <span className="text-[#006FFF]">Action Credit?</span>
+              What is an <span className="text-[#006FFF]">action credit?</span>
             </h2>
             <p className="max-w-[29.375em] text-center text-[16px] font-medium leading-[26px] tracking-[-0.01em] text-[#646464]">
               An Action Credit is a unit of AI labor. You only pay when the AI

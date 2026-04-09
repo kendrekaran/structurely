@@ -344,7 +344,7 @@ function MobileMenu({
           </div>
         ))}
         <div className="hidden px-6 py-3 md:block">
-          <p className="text-[12px] font-medium tracking-[-0.02em] text-[#646464] uppercase">
+          <p className="text-[12px] font-medium tracking-[-0.02em] text-[#646464]">
             Company
           </p>
         </div>

@@ -41,10 +41,10 @@ function CrmIntegrationSection() {
         className="max-w-global mx-auto flex flex-col items-start border-x border-[#E5E7EB]"
       >
         <div className="py-section-md flex flex-col items-center justify-center gap-4 self-stretch md:px-6 md:px-24">
-          <Badge text="CRM Integration" />
+          <Badge text="CRM integration" />
           <h2 data-reveal="words" className="text-center tracking-[-0.03em] md:max-w-[11.5em]">
-            Built to Power Your CRM,{" "}
-            <span className="text-[#006FFF]">Not Replace It</span>
+            Built to power your CRM,{" "}
+            <span className="text-[#006FFF]">not replace it</span>
           </h2>
         </div>
 

@@ -50,12 +50,12 @@ function PhoneTransfersSection() {
               </div>
               <div className="flex flex-col items-center gap-4 py-10 w-full">
                 <h3 className="text-center text-[20px] leading-7 font-medium tracking-[-0.005em] text-[#202020]">
-                  Live Phone Transfers
+                  Live phone transfers
                 </h3>
                 <button
                   className={`inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3 text-[14px] leading-5 font-medium text-[#646464] ${CARD_SHADOW}`}
                 >
-                  Live Phone Transfers
+                  Live phone transfers
                   <ArrowIcon />
                 </button>
               </div>
@@ -67,12 +67,12 @@ function PhoneTransfersSection() {
               </div>
               <div className="flex flex-col items-center gap-4 py-10 w-full">
                 <h3 className="text-center text-[20px] leading-7 font-medium tracking-[-0.005em] text-[#202020]">
-                  Appointment Setting
+                  Appointment setting
                 </h3>
                 <button
                   className={`inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3 text-[14px] leading-5 font-medium text-[#646464] ${CARD_SHADOW}`}
                 >
-                  Appointment Setting
+                  Appointment setting
                   <ArrowIcon />
                 </button>
               </div>

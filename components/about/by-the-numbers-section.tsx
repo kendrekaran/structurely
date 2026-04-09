@@ -8,7 +8,7 @@ function ByTheNumbersSection() {
               data-reveal="words"
               className="max-w-[11em] text-center text-[28px] leading-[36px] font-medium tracking-[-0.02em] md:text-[48px] md:leading-[54px] md:tracking-[-0.03em]"
             >
-              By the Numbers
+              By the numbers
             </h2>
           </div>
           <div className="divide-y divide-[#E5E7EB] border-y border-[#E5E7EB]">

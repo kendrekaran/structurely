@@ -13,8 +13,8 @@ export default function SpamMitigationSection() {
               
               <div className="flex flex-col gap-3">
                 <h3 className="text-[28px] leading-[36px] font-medium tracking-[-0.03em]">
-                  <span className="text-[#646464]">Spam Mitigation</span>
-                  <span className="text-[#202020]"> Service</span>
+                  <span className="text-[#646464]">Spam mitigation</span>
+                  <span className="text-[#202020]"> service</span>
                 </h3>
                 <p className="md:max-w-[42em] text-[14px] leading-[24px] tracking-[-0.01em]">
                   Nationwide spam-mitigated, local area code phone numbers to

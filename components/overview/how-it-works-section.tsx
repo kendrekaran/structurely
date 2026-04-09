@@ -13,7 +13,7 @@ type Feature = {
 
 const features: Feature[] = [
   {
-    title: "Human-like AI Calls with Leads",
+    title: "Human-like AI calls with leads",
     description:
       "Human-like AI voice agents handle inbound and outbound lead qualification calls, engage prospects naturally, and capture sales-ready opportunities.",
     flowTitle: "Voice → qualify → record",
@@ -22,7 +22,7 @@ const features: Feature[] = [
       "Calls open a structured loop: answer, qualify with natural conversation, score intent, and push outcomes to your stack without manual note-taking.",
   },
   {
-    title: "Texting + Drip Campaigns",
+    title: "Texting + drip campaigns",
     description:
       "AI text messaging and drip campaigns automate follow-up, support two-way SMS conversations, and keep leads engaged throughout the sales funnel.",
     flowTitle: "SMS drip path",
@@ -31,7 +31,7 @@ const features: Feature[] = [
       "Sequences react to behavior—quiet leads get nudges, hot replies jump the queue, and every thread stays in one timeline for the team.",
   },
   {
-    title: "Live Transfers",
+    title: "Live transfers",
     description:
       "Real-time live transfers route qualified leads directly to your sales team, improving response speed, connection rates, and conversion opportunities.",
     flowTitle: "Warm handoff",
@@ -40,7 +40,7 @@ const features: Feature[] = [
       "When criteria hit, the AI hands off with context so reps pick up already oriented instead of cold-transferring into silence.",
   },
   {
-    title: "Appointment Setting",
+    title: "Appointment setting",
     description:
       "AI appointment setting automates scheduling for qualified leads, integrates with calendars and CRMs, and helps sales teams book more meetings.",
     flowTitle: "Book on the call",
@@ -53,7 +53,7 @@ const features: Feature[] = [
 function FlowDiagramPanel({ feature }: { feature: Feature }) {
   return (
     <div className="mx-auto flex h-full min-h-[280px] flex-col justify-center gap-6 px-6 py-10 sm:px-8 sm:py-12">
-      <p className="text-center text-[11px] font-medium tracking-[0.12em] text-[#646464] uppercase">
+      <p className="text-center text-[11px] font-medium tracking-[0.12em] text-[#646464]">
         {feature.flowTitle}
       </p>
       <div

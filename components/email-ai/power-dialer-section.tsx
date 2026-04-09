@@ -4,7 +4,7 @@ const CARD_SHADOW =
 const features = [
   {
     key: "two-way",
-    title: "Two-Way Conversation",
+    title: "Two-way conversation",
     description: "Instantly engage and nurture your leads.",
     active: false,
     icon: (
@@ -16,7 +16,7 @@ const features = [
   },
   {
     key: "rescheduling",
-    title: "Automated Rescheduling",
+    title: "Automated rescheduling",
     description: "AI sets followups within a lead's timeframe if they're not ready now.",
     active: true,
     icon: (
@@ -31,7 +31,7 @@ const features = [
   },
   {
     key: "drip",
-    title: "Long Term Drip Campaigns",
+    title: "Long-term drip campaigns",
     description: "AI automatically follows up with your leads for over twelve months.",
     active: false,
     icon: (
@@ -45,7 +45,7 @@ const features = [
   },
   {
     key: "customizable",
-    title: "Fully Customizable",
+    title: "Fully customizable",
     description: "Make your AI behave and speak exactly how you'd like.",
     active: false,
     icon: (

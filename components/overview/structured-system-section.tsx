@@ -7,7 +7,7 @@ import { Fit, Layout } from "@rive-app/react-canvas";
 
 const features = [
   {
-    title: "Instant Engagement",
+    title: "Instant engagement",
     description: (
       <>
         Calls, texts, and emails within
@@ -19,7 +19,7 @@ const features = [
     rive: "/rive/home/sturcture-system/1.riv",
   },
   {
-    title: "Real Conversations",
+    title: "Real conversations",
     description: (
       <>
         Dynamic questioning, objection handling,
@@ -31,7 +31,7 @@ const features = [
     rive: "/rive/home/sturcture-system/2.riv",
   },
   {
-    title: "Intelligent Qualification",
+    title: "Intelligent qualification",
     description: (
       <>
         Structured logic evaluates readiness
@@ -43,7 +43,7 @@ const features = [
     rive: "/rive/home/sturcture-system/3.riv",
   },
   {
-    title: "Automated Follow-Up",
+    title: "Automated follow-up",
     description: (
       <>
         Persistent multi-touch sequences powered by
@@ -65,10 +65,10 @@ function StructuredSystemSection() {
       >
         <div className="md:py-section-md flex flex-col items-center justify-center gap-3 self-stretch px-6 py-[24px] md:px-24">
           <div className="flex w-full max-w-[46.375em] flex-col items-center justify-center gap-4">
-            <Badge text="What AI 3 Does" />
+            <Badge text="What AI 3 does" />
             <h2 data-reveal="words" className="max-w-[11.08em] text-center tracking-[-0.03em]">
-              A <span className="text-[#006FFF]">Structured</span> System for
-              Engagement
+              A <span className="text-[#006FFF]">structured</span> system for
+              engagement
             </h2>
           </div>
         </div>

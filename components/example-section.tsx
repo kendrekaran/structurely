@@ -14,7 +14,7 @@ function ExampleSection() {
           <div className="flex flex-col items-center gap-4">
             {/* Dont' add any font styles + color styles to p, h1, h2 ,h3 because i have already made them global.css */}
             <h1 data-reveal="words" className="max-w-[12em] text-center">
-              AI platform that move the right leads forward
+              AI platform that moves the right leads forward
             </h1>
             <p className="max-w-[24em] text-center">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste,
