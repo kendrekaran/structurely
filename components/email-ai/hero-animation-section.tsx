@@ -1,5 +1,3 @@
-import { div } from "motion/react-client";
-
 function HeroAnimationSection() {
   return (
     <div className="px-global">

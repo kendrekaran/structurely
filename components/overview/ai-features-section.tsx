@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import Rive from "@/components/_ui/rive";
 import { Fit, Layout } from "@rive-app/react-canvas";
 
@@ -12,7 +11,6 @@ type FeatureCard = {
   statText: string;
   heading: string;
   description: string;
-  imageSrc: string;
   imageAlt: string;
   riveSrc: string;
 };
@@ -23,7 +21,6 @@ const featureCards: FeatureCard[] = [
     heading: "Decrease Staffing Costs.",
     description:
       "Automate your CRM and sales resources with AI-powered appointment setting and calling.",
-    imageSrc: "/assets/home/grid-cards/1.svg",
     imageAlt: "AI automating CRM tasks, appointments, and sales workflows",
     riveSrc: "/rive/home/new/3.riv",
   },
@@ -32,7 +29,6 @@ const featureCards: FeatureCard[] = [
     heading: "Increase Qualified Connections.",
     description:
       "AI-filtering and qualification lets you focus on your highest quality leads.",
-    imageSrc: "/assets/home/grid-cards/2.svg",
     imageAlt: "AI lead qualification and filtering visualization",
     riveSrc: "/rive/home/new/4.riv",
   },
@@ -41,7 +37,6 @@ const featureCards: FeatureCard[] = [
     heading: "Increase Response.",
     description:
       "AI-messaging follows up with leads for over 12 months and AI-calling uses local phone numbers that increase trust and answer rates.",
-    imageSrc: "/assets/home/grid-cards/3.svg",
     imageAlt: "AI call lists, messaging, and multi-channel outreach",
     riveSrc: "/rive/home/new/5.riv",
   },
@@ -60,24 +55,13 @@ function StatBadge({ text }: { text: string }) {
   );
 }
 
-function GridCardImage({
-  src,
-  riveSrc,
-  alt,
-}: {
-  src: string;
-  riveSrc: string;
-  alt: string;
-}) {
+function GridCardImage({ riveSrc, alt }: { riveSrc: string; alt: string }) {
   return (
-    <div className="relative h-full w-full overflow-hidden">
-      {/* <Image
-        src={src}
-        alt={alt}
-        fill
-        className="object-cover object-center"
-        sizes="(max-width: 1024px) 100vw, 50vw"
-      /> */}
+    <div
+      className="relative h-full w-full overflow-hidden"
+      role="img"
+      aria-label={alt}
+    >
       <Rive
         src={riveSrc}
         className="h-full w-full scale-110 overflow-hidden"
@@ -91,7 +75,6 @@ function FeatureRow({
   statText,
   heading,
   description,
-  imageSrc,
   imageAlt,
   riveSrc,
   index,
@@ -109,7 +92,7 @@ function FeatureRow({
       <div
         className={`${imageOrder} bg-background h-[260px] min-w-0 sm:h-[320px] md:h-[400px]`}
       >
-        <GridCardImage src={imageSrc} riveSrc={riveSrc} alt={imageAlt} />
+        <GridCardImage riveSrc={riveSrc} alt={imageAlt} />
       </div>
       <div
         className={`${textOrder} bg-background flex min-w-0 flex-col justify-center gap-3 px-4 py-4 sm:px-6 md:gap-4 md:py-10 lg:px-12`}
