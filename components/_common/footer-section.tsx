@@ -67,7 +67,7 @@ export default function FooterSection() {
                   </span>
                 </div>
 
-                <div className="flex items-start gap-6">
+                <div className="flex flex-col items-start gap-6">
                   <div className="flex flex-1 flex-col gap-1">
                     <span className="text-[14px] leading-[20px] font-medium text-[#202020] uppercase">
                       Sales

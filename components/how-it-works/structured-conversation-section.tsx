@@ -4,6 +4,7 @@ import Rive from "@/components/_ui/rive";
 import { Fit, Layout } from "@rive-app/react-canvas";
 
 const featureItems = [
+  "AI 3 is not a keyword bot",
   "Structured conversation trees",
   "Dynamic branching logic",
   "Intent detection",
@@ -46,18 +47,17 @@ function StructuredConversationSection() {
       >
         <div className="max-w-global mx-auto flex flex-col md:flex-row">
           <div className="flex flex-1 flex-col justify-center gap-6 border-b border-[#E5E7EB] px-3 py-6 md:w-1/2 md:flex-none md:border-r md:border-b-0 md:px-[48px] md:py-[48px]">
-            <div className="flex flex-col  items-center md:items-start gap-3 md:border-b border-[#E5E7EB] md:border-b-0 md:pb-0">
-              <h2 data-reveal="words" className="md:max-w-[10em] text-center md:text-left">
+            <div className="flex flex-col items-center gap-3 border-[#E5E7EB] md:items-start md:border-b md:border-b-0 md:pb-0">
+              <h2
+                data-reveal="words"
+                className="text-center md:max-w-[10em] md:text-left"
+              >
                 Structured <span className="text-[#006FFF]">Conversation</span>{" "}
                 Engine
               </h2>
-              <div className="flex flex-wrap  items-start gap-4 md:items-center md:gap-3">
-                <p className=" text-[12px] leading-[16px] md:text-[16px] md:leading-[26px] md:tracking-[-0.01em]">
-                  This is the differentiator.
-                </p>
-                <span className="hidden h-1 w-1 shrink-0 rounded-full bg-[#006FFF] md:block" />
+              <div className="flex flex-wrap items-start gap-4 md:items-center md:gap-3">
                 <p className="text-[12px] leading-[16px] md:text-[16px] md:leading-[26px] md:tracking-[-0.01em]">
-                  AI 3 is not a keyword bot.
+                  This is the differentiator.
                 </p>
               </div>
             </div>
