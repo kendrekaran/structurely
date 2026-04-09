@@ -37,12 +37,12 @@ const industries = [
   {
     title: "Real Estate",
     description:
-      "Engage every lead instantly and automate follow-up across your entire real estate pipeline.",
+      "Automate lead follow-up and appointment setting for high-volume real estate teams.",
     features: [
-      "New buyer & seller qualification",
+      "Listing inquiry follow-up",
       "Showing scheduling",
       "Long-term nurture campaigns",
-      "Listing inquiry follow-up",
+      "New buyer & seller qualification",
     ],
     chat: {
       sender: "Maya · HomeVest Realty",
@@ -67,12 +67,12 @@ const industries = [
   {
     title: "Home improvement",
     description:
-      "Book more jobs and reduce no-shows with AI-powered scheduling and lead follow-up.",
+      "Engage new leads instantly and qualify project interest so your team can book more jobs faster.",
     features: [
-      "Lead qualification",
-      "Appointment scheduling",
-      "Job estimate follow-up",
-      "Review collection",
+      "Trade-in qualification",
+      "Test drive booking",
+      "Re-engagement of cold leads",
+      "Inventory inquiry follow-up",
     ],
     chat: {
       sender: "Chris · ProBuild",
@@ -97,12 +97,12 @@ const industries = [
   {
     title: "Sports",
     description:
-      "Re-engage fans and drive ticket sales with personalized AI outreach at scale.",
+      "Turn fan and prospect engagement into qualified opportunities with fast, personalized follow-up.",
     features: [
-      "Fan re-engagement",
-      "Ticket sales automation",
-      "Event promotion",
-      "Season ticket renewal",
+      "MQL pre-qualification",
+      "Meeting scheduling",
+      "Consistent follow-up enforcement",
+      "SDR workload reduction",
     ],
     chat: {
       sender: "Alex · Riverside FC",
@@ -127,12 +127,12 @@ const industries = [
   {
     title: "Marketing agencies",
     description:
-      "Scale your client campaigns with AI-driven lead nurture and qualification.",
+      "Instantly qualify agency leads and seamlessly hand them off.",
     features: [
-      "Lead qualification",
-      "Campaign automation",
-      "Multi-channel outreach",
-      "Client reporting",
+      "Leads are purchased",
+      "Speed determines contact rate",
+      "Sales teams lack follow-up capacity",
+      "CRM usage is inconsistent",
     ],
     chat: {
       sender: "Dana · GrowthLab",
@@ -157,12 +157,12 @@ const industries = [
   {
     title: "Whitelabel",
     description:
-      "Offer AI-powered sales automation under your own brand with full white-label support.",
+      "Start better partner conversations and surface the right fit faster.",
     features: [
-      "Custom branding",
-      "API access",
-      "Reseller support",
-      "White-glove onboarding",
+      "MQL pre-qualification",
+      "Meeting scheduling",
+      "Consistent follow-up enforcement",
+      "SDR workload reduction",
     ],
     chat: {
       sender: "Taylor · YourBrand AI",
@@ -187,7 +187,7 @@ const industries = [
   {
     title: "Universities",
     description:
-      "Engage prospective students and streamline admissions with AI-powered outreach.",
+      "Nurture prospective student relationships with timely, helpful conversations.",
     features: [
       "Leads are purchased",
       "Speed determines contact rate",
@@ -255,8 +255,8 @@ function IndustrySelectorSection() {
             </div>
 
             <div className="px-global md:flex md:flex-1 md:px-0">
-                <div className="flex h-full flex-1 border-l border-[#E5E7EB] flex-col items-center justify-between gap-8 px-3 pt-8 pb-0 md:px-8 md:pt-[37px] md:pb-0">
-                  <div className="flex flex-wrap justify-center gap-3">
+                <div className="flex h-full flex-1 border-l border-[#E5E7EB] flex-col items-center justify-between gap-8 px-3 pt-8 pb-0 md:px-8 md:pt-[37px]  md:pb-0">
+                  <div className="flex flex-wrap justify-center max-w-[560px] mx-auto gap-3">
                     {active.features.map((feature, i) => (
                       <span
                         key={i}
