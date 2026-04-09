@@ -39,11 +39,13 @@ export default function Overview() {
         <Separator />
         <CrmLogosSection />
         <Separator />
-        <AiFeaturesSection />
-        <Separator />
-        <HowItWorksSection />
-        <Separator />
-        <SmartOutreachSection />
+        <section className="how-its-works-pinned">
+          <AiFeaturesSection />
+          <Separator />
+          <HowItWorksSection />
+          <Separator />
+          <SmartOutreachSection />
+        </section>
         {/* <Separator />
         <StructuredSystemSection />
         <Separator />

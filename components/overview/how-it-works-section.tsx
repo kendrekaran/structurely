@@ -2,6 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import React, { useState } from "react";
+import { RiveScrollNumberStates } from "@/components/_ui/rive-scroll-number-states";
 
 type Feature = {
   title: string;
@@ -94,38 +95,8 @@ function HowItWorksSection() {
           </h2>
         </div>
 
-        <div className="flex flex-col border-[#E5E7EB] lg:flex-row">
-          <div className="flex flex-col divide-y divide-[#E5E7EB] border-b border-[#E5E7EB] lg:w-[38%] lg:border-r lg:border-b-0 lg:border-r-[#E5E7EB]">
-            {features.map((feature, index) => {
-              const isSelected = index === selectedIndex;
-              return (
-                <button
-                  key={feature.title}
-                  type="button"
-                  onClick={() => setSelectedIndex(index)}
-                  aria-pressed={isSelected}
-                  className={cn(
-                    "flex w-full cursor-pointer flex-col gap-2 px-4 py-6 text-left transition-colors sm:px-6 md:px-8",
-                    "focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-[#006FFF]",
-                    isSelected
-                      ? "  bg-white"
-                      : " border-l-transparent bg-[#FAFAFA] hover:bg-[#FAFAFA]",
-                  )}
-                >
-                  <h3 className="text-[1rem] leading-6 font-medium tracking-[-0.02em] text-[#202020]">
-                    {feature.title}
-                  </h3>
-                  <p className="text-[0.875rem] leading-5 tracking-[-0.01em] text-[#646464]">
-                    {feature.description}
-                  </p>
-                </button>
-              );
-            })}
-          </div>
-
-          <div className="flex min-h-[280px] flex-1 bg-white lg:min-h-0">
-            <FlowDiagramPanel feature={selected} />
-          </div>
+        <div className="aspect-[699/560] w-full">
+          <RiveScrollNumberStates />
         </div>
       </section>
     </div>
