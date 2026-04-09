@@ -129,10 +129,10 @@ function PersistentFollowUpSection() {
           </h2>
           <div className="flex shrink-0 flex-col items-center gap-1 md:items-end">
             <span className="text-foreground block text-[16px] leading-[26px] tracking-[-0.01em] md:text-right">
-              Most teams stop too early.
+              Most follow-ups stop too early.
             </span>
-            <span className=" text-center text-[16px] leading-6 font-bold tracking-[-0.02em] text-[#006FFF] underline">
-              AI doesn&apos;t.
+            <span className="font-figma-hand text-center text-[16px] leading-6 font-bold tracking-[-0.02em] text-[#006FFF]">
+              Structurely doesn&apos;t.
             </span>
           </div>
         </div>
