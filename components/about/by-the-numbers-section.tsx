@@ -11,30 +11,46 @@ function ByTheNumbersSection() {
               By the Numbers
             </h2>
           </div>
-          <div className="divide-y divide-[#E5E7EB] border-t border-[#E5E7EB]">
+          <div className="divide-y divide-[#E5E7EB] border-y border-[#E5E7EB]">
             <div className="grid grid-cols-1 divide-y divide-[#E5E7EB] sm:grid-cols-2 sm:divide-x sm:divide-y-0">
-              <div className="border-b-2 border-b-transparent px-3 py-4 transition-all duration-300 ease-out hover:border-b-[#006FFF] hover:bg-white md:px-8 md:py-8">
-                <p className="text-foreground hover:text-heading transition-colors duration-300 ease-out">
+              <div className="group relative px-3 py-4 transition-colors duration-300 ease-out hover:bg-white md:px-8 md:py-8">
+                <p className="text-foreground group-hover:text-heading transition-colors duration-300 ease-out">
                   Over 10 years in operation
                 </p>
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute right-0 bottom-0 left-0 z-10 h-[2px] bg-[#006FFF] opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100"
+                />
               </div>
-              <div className="border-b-2 border-b-transparent px-3 py-4 transition-all duration-300 ease-out hover:border-b-[#006FFF] hover:bg-white sm:pl-8 md:py-8">
-                <p className="text-foreground hover:text-heading transition-colors duration-300 ease-out">
+              <div className="group relative px-3 py-4 transition-colors duration-300 ease-out hover:bg-white sm:pl-8 md:py-8">
+                <p className="text-foreground group-hover:text-heading transition-colors duration-300 ease-out">
                   Millions of inbound conversations handled
                 </p>
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute right-0 bottom-0 left-0 z-10 h-[2px] bg-[#006FFF] opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100"
+                />
               </div>
             </div>
             <div className="grid grid-cols-1 divide-y divide-[#E5E7EB] sm:grid-cols-2 sm:divide-x sm:divide-y-0">
-              <div className="border-b border-b-[#E5E7EB] px-3 py-4 transition-all duration-300 ease-out hover:border-b-[#006FFF] hover:bg-white md:px-8 md:py-8">
-                <p className="text-foreground hover:text-heading transition-colors duration-300 ease-out">
+              <div className="group relative px-3 py-4 transition-colors duration-300 ease-out hover:bg-white md:px-8 md:py-8">
+                <p className="text-foreground group-hover:text-heading transition-colors duration-300 ease-out">
                   Thousands of sales professionals supported
                 </p>
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute right-0 bottom-0 left-0 z-10 h-[2px] bg-[#006FFF] opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100"
+                />
               </div>
-              <div className="border-b border-b-[#E5E7EB] px-3 py-4 transition-all duration-300 ease-out hover:border-b-[#006FFF] hover:bg-white sm:pl-8 md:py-8">
-                <p className="text-foreground hover:text-heading text-[14px] transition-colors duration-300 ease-out">
+              <div className="group relative px-3 py-4 transition-colors duration-300 ease-out hover:bg-white sm:pl-8 md:py-8">
+                <p className="text-foreground group-hover:text-heading text-[14px] transition-colors duration-300 ease-out">
                   Continuous product development across multiple platform
                   generations
                 </p>
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute right-0 bottom-0 left-0 z-10 h-[2px] bg-[#006FFF] opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100"
+                />
               </div>
             </div>
           </div>
