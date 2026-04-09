@@ -12,11 +12,12 @@ export default function UseCases() {
     <main className="min-h-screen max-w-full overflow-x-clip">
       <Header />
       <HeroSection />
-      <TabsFilter />
+      {/* <TabsFilter /> */}
+      <Separator />
       <IndustrySelectorSection />
       <Separator />
       <LeadEnvironmentsSection />
-      <CtaSection  />
+      <CtaSection />
       <FooterSection />
     </main>
   );
