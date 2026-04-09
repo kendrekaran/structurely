@@ -147,7 +147,7 @@ export default function Header() {
           {/* Mobile Right: CTA + Hamburger */}
           <div className="flex flex-1 items-center justify-end gap-3 lg:hidden">
             <Link href="/demo">
-              <Button variant="outline" size="md" className="max-w-[139px]">
+              <Button variant="outline" size="md" className="max-w-[139px] text-center ">
                 Request Demo
               </Button>
             </Link>
@@ -295,7 +295,7 @@ function MobileMenu({
           <Button
             variant="outline"
             size="md"
-            className="w-full rounded-[10px] border-[#006FFF] text-[#006FFF]"
+            className="w-full flex justify-center text-center rounded-[10px] border-[#006FFF] text-[#006FFF]"
           >
             Request Demo
           </Button>
@@ -339,8 +339,8 @@ function MobileMenu({
             </div>
           </div>
         ))}
-        <div className="px-6 py-3">
-          <p className="text-[12px] font-medium tracking-[-0.02em] text-[#646464] uppercase">
+        <div className="hidden md:block px-6 py-3">
+          <p className="  text-[12px] font-medium tracking-[-0.02em] text-[#646464] uppercase">
             Company
           </p>
         </div>

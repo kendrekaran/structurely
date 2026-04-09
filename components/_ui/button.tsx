@@ -116,7 +116,12 @@ export default function Button({
       }}
       {...props}
     >
-      <span className="flex w-full items-center justify-between gap-2">
+      <span
+        className={cn(
+          "flex items-center gap-2",
+          variant === "primary" ? "w-full justify-between" : "justify-center",
+        )}
+      >
         {children}
         {variant === "primary" && (
           <span className="relative inline-flex h-5 w-5 shrink-0 items-center justify-center overflow-hidden">

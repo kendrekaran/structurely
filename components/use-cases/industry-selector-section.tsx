@@ -189,10 +189,10 @@ const industries = [
     description:
       "Engage prospective students and streamline admissions with AI-powered outreach.",
     features: [
-      "Prospective student engagement",
-      "Application follow-up",
-      "Event scheduling",
-      "Alumni outreach",
+      "Leads are purchased",
+      "Speed determines contact rate",
+      "Sales teams lack follow-up capacity",
+      "CRM usage is inconsistent",
     ],
     chat: {
       sender: "Sam · Westfield University",
@@ -232,8 +232,8 @@ function IndustrySelectorSection() {
                   onClick={() => setActiveIndex(i)}
                   className={`relative flex w-full flex-col items-start text-left transition-colors ${
                     activeIndex === i
-                      ? "gap-4 bg-white px-6 py-5 md:px-8 md:py-6"
-                      : `gap-2 bg-[#FAFAFA] px-6 py-5 md:px-8 md:py-6 ${
+                      ? "gap-4 bg-white px-3 py-5 md:px-8 md:py-6"
+                      : `gap-2 bg-[#FAFAFA] px-3 py-5 md:px-8 md:py-6 ${
                           i !== industries.length - 1 ? "border-b border-[#E5E7EB]" : ""
                         }`
                   }`}
@@ -255,12 +255,12 @@ function IndustrySelectorSection() {
             </div>
 
             <div className="px-global md:flex md:flex-1 md:px-0">
-                <div className="flex h-full flex-1 border-l border-[#E5E7EB] flex-col items-center justify-between gap-8 px-6 pt-8 pb-0 md:px-8 md:pt-[37px] md:pb-0">
+                <div className="flex h-full flex-1 border-l border-[#E5E7EB] flex-col items-center justify-between gap-8 px-3 pt-8 pb-0 md:px-8 md:pt-[37px] md:pb-0">
                   <div className="flex flex-wrap justify-center gap-3">
                     {active.features.map((feature, i) => (
                       <span
                         key={i}
-                        className="rounded-[8px] bg-[#006FFF14] px-4 py-2 text-sm font-medium tracking-[-0.01em] text-[#006FFF]"
+                        className="rounded-[8px] text-[12px] leading-[16px] md:text-[14px] md:leading-[20px] bg-[#006FFF14] px-4 py-2 text-sm font-medium tracking-[-0.01em] text-[#006FFF]"
                         style={{
                           boxShadow:
                             "0px 0.5px 0.5px 0px #FFFFFF inset, 0px 0px 0px 1px #006FFF33"

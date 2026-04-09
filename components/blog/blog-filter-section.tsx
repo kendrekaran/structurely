@@ -18,7 +18,7 @@ function BlogFilterSection({
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB] bg-white">
           <div className="flex h-[52px] items-stretch pl-2">
-            <div className="scrollbar-none flex flex-1 items-center gap-2 overflow-x-auto">
+            <div className="scrollbar-none flex flex-1 items-center  gap-2 overflow-x-auto">
               {displayCategories.map((category) => {
                 const isActive =
                   category === "All"

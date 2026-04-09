@@ -95,7 +95,7 @@ function FeatureRow({
         <GridCardImage riveSrc={riveSrc} alt={imageAlt} />
       </div>
       <div
-        className={`${textOrder} bg-background flex min-w-0 flex-col justify-center gap-3 px-4 py-4 sm:px-6 md:gap-4 md:py-10 lg:px-12`}
+        className={`${textOrder} bg-background flex min-w-0 flex-col justify-center gap-3 px-3 py-4 sm:px-6 md:gap-4 md:py-10 lg:px-12`}
       >
         <StatBadge text={statText} />
         <div className="flex flex-col gap-3">

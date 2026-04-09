@@ -185,7 +185,7 @@ function OverviewProblemSection() {
             alt="Structurely dashboard mobile view with lead metrics and activity overview"
             width={342}
             height={217.74}
-            className=" w-full  p-4 h-auto -mb-6 border-t border-[#E5E7EB] md:hidden"
+            className=" w-full  p-4 h-auto  border-t border-[#E5E7EB] md:hidden"
             
           />
           <Image
