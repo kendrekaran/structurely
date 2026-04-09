@@ -83,11 +83,13 @@ function StructuredConversationSection() {
 
           <div className="flex min-h-[360px] flex-1 items-stretch p-3 md:min-h-[480px] md:w-1/2 md:flex-none">
             <div className="flex flex-1 items-center justify-center overflow-hidden rounded-sm bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.08)]">
-              <Rive
-                src="/rive/home/6.riv"
-                className="h-full w-full scale-110 overflow-hidden"
-                layout={new Layout({ fit: Fit.Cover, layoutScaleFactor: 1 })}
-              />
+              <div className="relative aspect-[540/518] w-full overflow-hidden">
+                <Rive
+                  src="/rive/home/6.riv"
+                  className="h-full w-full scale-110 overflow-hidden"
+                  layout={new Layout({ fit: Fit.Cover, layoutScaleFactor: 1 })}
+                />
+              </div>
             </div>
           </div>
         </div>
