@@ -108,8 +108,8 @@ function HowItWorksSection() {
                     "flex w-full cursor-pointer flex-col gap-2 px-4 py-6 text-left transition-colors sm:px-6 md:px-8",
                     "focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-[#006FFF]",
                     isSelected
-                      ? "border-l-[3px] border-l-[#006FFF] bg-white"
-                      : "border-l-[3px] border-l-transparent bg-[#FAFAFA] hover:bg-[#FAFAFA]",
+                      ? "  bg-white"
+                      : " border-l-transparent bg-[#FAFAFA] hover:bg-[#FAFAFA]",
                   )}
                 >
                   <h3 className="text-[1rem] leading-6 font-medium tracking-[-0.02em] text-[#202020]">
