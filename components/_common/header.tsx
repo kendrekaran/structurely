@@ -46,18 +46,18 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <Image
-              src="/assets/common/mobile-logo.png"
+              src="/assets/common/heading-logo.svg"
               alt="Structurely"
               width={115}
               height={24}
-              className="lg:hidden w-[115px] h-auto "
+              className="h-auto w-[115px] lg:hidden"
             />
             <Image
               src="/assets/common/heading-logo.svg"
               alt="Structurely"
               width={115}
               height={24}
-              className="hidden lg:block "
+              className="hidden lg:block"
             />
           </Link>
 
@@ -147,7 +147,11 @@ export default function Header() {
           {/* Mobile Right: CTA + Hamburger */}
           <div className="flex flex-1 items-center justify-end gap-3 lg:hidden">
             <Link href="/demo">
-              <Button variant="outline" size="md" className="max-w-[139px] text-center ">
+              <Button
+                variant="outline"
+                size="md"
+                className="max-w-[139px] text-center"
+              >
                 Request Demo
               </Button>
             </Link>
@@ -258,7 +262,7 @@ function MobileMenu({
               alt="Structurely"
               width={115}
               height={24}
-              className="lg:hidden  w-[115px] h-auto "
+              className="h-auto w-[115px] lg:hidden"
             />
             <Image
               src="/assets/common/heading-logo.svg"
@@ -295,7 +299,7 @@ function MobileMenu({
           <Button
             variant="outline"
             size="md"
-            className="w-full flex justify-center text-center rounded-[10px] border-[#006FFF] text-[#006FFF]"
+            className="flex w-full justify-center rounded-[10px] border-[#006FFF] text-center text-[#006FFF]"
           >
             Request Demo
           </Button>
@@ -339,8 +343,8 @@ function MobileMenu({
             </div>
           </div>
         ))}
-        <div className="hidden md:block px-6 py-3">
-          <p className="  text-[12px] font-medium tracking-[-0.02em] text-[#646464] uppercase">
+        <div className="hidden px-6 py-3 md:block">
+          <p className="text-[12px] font-medium tracking-[-0.02em] text-[#646464] uppercase">
             Company
           </p>
         </div>
