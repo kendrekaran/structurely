@@ -258,7 +258,7 @@ function MobileMenu({
         <div className="flex items-center justify-between">
           <Link href="/" onClick={onClose}>
             <Image
-              src="/assets/common/mobile-logo.png"
+              src="/assets/common/heading-logo.svg"
               alt="Structurely"
               width={115}
               height={24}
