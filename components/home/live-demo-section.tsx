@@ -1,3 +1,5 @@
+import { PhoneE164Input } from "@/components/_ui/phone-e164-input";
+
 function LiveDemoSection() {
   return (
     <section id="live-demo" className="relative z-0">
@@ -33,13 +35,9 @@ function LiveDemoSection() {
                   <path d="M12.7503 1.49985H5.25031C4.42188 1.49985 3.75031 2.17142 3.75031 2.99985V14.9998C3.75031 15.8283 4.42188 16.4998 5.25031 16.4998H12.7503C13.5787 16.4998 14.2503 15.8283 14.2503 14.9998V2.99985C14.2503 2.17142 13.5787 1.49985 12.7503 1.49985Z" stroke="#646464" strokeWidth="1.3125" strokeLinecap="round" strokeLinejoin="round"/>
                   <path d="M9 13.5H9.00833" stroke="#646464" strokeWidth="1.3125" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-                <input
-                  type="tel"
+                <PhoneE164Input
                   placeholder="Enter your number here"
-                  inputMode="numeric"
-                  pattern="[0-9]*"
                   aria-label="Phone number"
-                  className="w-full bg-transparent font-sans text-[14px] font-medium leading-[20px] tracking-[-0.006em] text-[#202020] outline-none placeholder:text-[#A0A0A0]"
                 />
               </div>
 
