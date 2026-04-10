@@ -23,7 +23,7 @@ function UseCasesSection() {
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
           <div className="border-b border-[#E5E7EB] px-6 py-8 md:px-24 md:py-16 text-center">
-            <h2 className="max-w-[8em] mx-auto">Use cases</h2>
+            <h2 className="max-w-[8em] mx-auto">Use Cases</h2>
           </div>
 
           <div className="bg-[#FAFAFA]  flex flex-col md:flex-row md:justify-between gap-0 px-6 pt-6 md:px-[96px] md:pt-0 overflow-hidden">

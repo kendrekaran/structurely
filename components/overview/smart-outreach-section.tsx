@@ -771,8 +771,8 @@ function SmartOutreachSection() {
               Smart outreach
             </div>
             <h2 data-reveal="words" className="max-w-[11em] text-center">
-              Powerful tools to{" "}
-              <span className="text-[#006FFF]">grow your</span> pipeline
+              Powerful Tools to{" "}
+              <span className="text-[#006FFF]">Grow Your</span> Pipeline
             </h2>
           </div>
 
