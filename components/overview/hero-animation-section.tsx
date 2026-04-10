@@ -21,7 +21,7 @@ function HeroAnimationSection() {
         /> */}
 
         <Rive
-          src="/rive/home/new/1.riv"
+          src="/rive/home/hero.riv"
           className="hidden w-full object-cover md:block"
           layout={new Layout({ fit: Fit.Cover, layoutScaleFactor: 1 })}
         />
