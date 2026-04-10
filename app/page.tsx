@@ -18,6 +18,13 @@ import CtaSection from "@/components/_common/cta-section";
 import FooterSection from "@/components/_common/footer-section";
 import Separator from "@/components/_ui/separator";
 import BottomSpace from "@/components/_common/bottom-space";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Structurely",
+  description:
+    "AI-powered lead engagement and qualification for mortgage and real estate teams.",
+};
 
 export default function Overview() {
   return (

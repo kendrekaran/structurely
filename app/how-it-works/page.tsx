@@ -13,6 +13,13 @@ import NoLeadsSection from "@/components/how-it-works/no-leads-section";
 import BottomSpace from "@/components/_common/bottom-space";
 import HeroButtons from "@/components/how-it-works/hero-buttons";
 import FooterSection from "@/components/_common/footer-section";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "How It Works - Structurely",
+  description:
+    "See how Structurely captures, qualifies, and follows up with leads using AI across every channel.",
+};
 
 export default function Overview() {
   return (

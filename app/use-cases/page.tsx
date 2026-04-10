@@ -5,6 +5,13 @@ import IndustrySelectorSection from "@/components/use-cases/industry-selector-se
 import LeadEnvironmentsSection from "@/components/use-cases/lead-environments-section";
 import FooterSection from "@/components/_common/footer-section";
 import CtaSection from "@/components/_common/cta-section";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Use Cases - Structurely",
+  description:
+    "Discover how teams use Structurely to automate lead engagement across industries and workflows.",
+};
 
 export default function UseCases() {
   return (

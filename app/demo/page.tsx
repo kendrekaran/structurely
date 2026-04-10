@@ -21,6 +21,13 @@ import Header from "@/components/_common/header";
 import ProblemSection from "@/components/home/problem-section";
 import TrustedLogosSection from "@/components/overview/trusted-logos-section";
 import ContactSection from "@/components/partners/contact-section";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Request Demo - Structurely",
+  description:
+    "Request a demo to see how Structurely automates lead qualification and follow-up with AI.",
+};
 
 export default function PartnersPage() {
   return (

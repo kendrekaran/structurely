@@ -6,6 +6,13 @@ import WhoWeAreSection from "@/components/about/who-we-are-section";
 import WhatWeBelieveSection from "@/components/about/what-we-believe-section";
 import StructuredSystemSection from "@/components/about/structured-system-section";
 import ByTheNumbersSection from "@/components/about/by-the-numbers-section";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About - Structurely",
+  description:
+    "Learn about Structurely, our mission, and the team building AI systems for better lead conversations.",
+};
 
 export default function About() {
   return (
