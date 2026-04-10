@@ -51,7 +51,7 @@ export default function ActionCreditSection() {
               </span>
             </div>
             <h2 className="max-w-[13.375em] text-center  ">
-              What is an <span className="text-[#006FFF]">Action Credit?</span>
+              What is an <span className="text-[#006FFF]">action credit?</span>
             </h2>
             <p className="max-w-[29.375em] text-center text-[16px] font-medium leading-[26px] tracking-[-0.01em] text-[#646464]">
               An Action Credit is a unit of AI labor. You only pay when the AI

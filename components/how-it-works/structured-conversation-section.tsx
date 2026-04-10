@@ -5,6 +5,7 @@ import { Fit, Layout } from "@rive-app/react-canvas";
 
 const featureItems = [
   "Structured conversation trees",
+  "AI 3 is not a keyword bot.",
   "Dynamic branching logic",
   "Intent detection",
   "Objection response frameworks",
@@ -54,10 +55,6 @@ function StructuredConversationSection() {
               <div className="flex flex-wrap  items-start gap-4 md:items-center md:gap-3">
                 <p className=" text-[12px] leading-[16px] md:text-[16px] md:leading-[26px] md:tracking-[-0.01em]">
                   This is the differentiator.
-                </p>
-                <span className="hidden h-1 w-1 shrink-0 rounded-full bg-[#006FFF] md:block" />
-                <p className="text-[12px] leading-[16px] md:text-[16px] md:leading-[26px] md:tracking-[-0.01em]">
-                  AI 3 is not a keyword bot.
                 </p>
               </div>
             </div>

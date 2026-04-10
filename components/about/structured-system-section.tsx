@@ -26,8 +26,8 @@ function StructuredSystemSection() {
         <div className="max-w-global mx-auto flex flex-col items-center border-x border-b border-[#E5E7EB]">
           <div className="py-section-md flex flex-col items-center gap-3 text-center">
             <h2 data-reveal="words" className="max-w-[278px] sm:max-w-[11em]">
-              Why Our Systems Are{" "}
-              <span className="text-primary">Structured</span>
+              Why our systems are{" "}
+              <span className="text-primary">structured</span>
             </h2>
             <p className="max-w-[278px] text-center sm:max-w-[27.375em]">
               Over time, we learned that successful follow-up requires more than

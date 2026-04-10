@@ -211,8 +211,8 @@ function AboutProblemSection() {
           <div className="flex flex-col items-center gap-3.5 md:gap-4">
             <Badge text="The Problem" />
             <h2 data-reveal="words" className="max-w-[11.08em] text-center">
-              <span className="text-[#006FFF]">The Problem</span> <br /> We
-              Exist to Solve
+              <span className="text-[#006FFF]">The problem</span> <br /> we
+              exist to solve
             </h2>
           </div>
           <p className="max-w-[27.375em] text-center text-[16px] leading-[26px] tracking-[-0.01em]">

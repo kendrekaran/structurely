@@ -10,7 +10,7 @@ const topFeatures = [
   {
     title: "Toggle AI \u2194 Human Per Campaign",
     description:
-      "Switch modes without changing anything. Your LOs dial manually in human mode. Flip to AI and the agent takes over the same list at scale.",
+      "Switch modes without changing anything. Teams dial manually in human mode. Flip to AI and the agent takes over the same list at scale.",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M18 14L22 18L18 22" stroke="#006FFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -51,7 +51,7 @@ const bottomFeatures = [
   {
     title: "Live Transfer to Your LOs",
     description:
-      "When AI qualifies a lead, it bridges the call instantly to your team — no warm transfer lag, no dropped handoffs.",
+      "When Structurely AI qualifies a lead, it bridges the call instantly to your team — no warm transfer lag, no dropped handoffs.",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M11 17L13 19C13.197 19.197 13.4308 19.3532 13.6882 19.4598C13.9456 19.5665 14.2214 19.6213 14.5 19.6213C14.7786 19.6213 15.0544 19.5665 15.3118 19.4598C15.5692 19.3532 15.803 19.197 16 19C16.197 18.803 16.3532 18.5692 16.4598 18.3118C16.5665 18.0544 16.6213 17.7786 16.6213 17.5C16.6213 17.2214 16.5665 16.9456 16.4598 16.6882C16.3532 16.4308 16.197 16.197 16 16" stroke="#006FFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>

@@ -69,11 +69,11 @@ export default function LocalNumbersSection() {
                 </span>
               </div>
               <h2 className="text-[32px] font-medium leading-[1.125] tracking-[-0.03em] md:text-[48px] md:leading-[54px]">
-                <span className="text-[#202020]">Local Numbers.</span>
+                <span className="text-[#202020]">Local numbers.</span>
                 <br />
-                <span className="text-[#006FFF]">More Pickups.</span>
+                <span className="text-[#006FFF]">More pickups.</span>
                 <br />
-                <span className="text-[#202020]">Zero Spam Flags.</span>
+                <span className="text-[#202020]">Zero spam flags.</span>
               </h2>
             </div>
 

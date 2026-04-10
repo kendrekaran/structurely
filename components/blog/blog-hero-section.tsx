@@ -7,7 +7,7 @@ type BlogHeroSectionProps = {
 
 function BlogHeroSection({
   date = "October 11, 2024",
-  title = "Maximize Your CRM Automation With A",
+  title = "Maximiz Your CRM Automation With A",
   description = "In today's digital age, customers expect quick, personalized responses to their inquiries, no matter when they reach out.",
   image,
 }: BlogHeroSectionProps) {

@@ -54,14 +54,13 @@ export default function PricingHeroSection({
               <div className="flex flex-col items-center gap-4">
                 <h1
                   data-reveal="words"
-                  className="max-w-[13.5em] text-center text-[32px] leading-[1.125] font-medium tracking-[-0.03em] text-[#202020] md:text-[48px]"
+                  className="max-w-[11.5em] text-center text-[32px] leading-[1.125] font-medium tracking-[-0.03em] text-[#202020] md:text-[48px]"
                 >
-                  Your leads aren&apos;t going cold. They&apos;re being{" "}
-                  <span className="md:text-[#006FFF]">ignored.</span>
+                  Leads donaren&apos;t go cold. They go {" "}
+                  <span className="md:text-[#006FFF]">unworked.</span>
                 </h1>
                 <p className="hidden max-w-[46.375em] text-center text-[18px] leading-[28px] font-medium tracking-[-0.01em] text-[#646464] md:block md:max-w-[41.22em]">
-                  AI agents that work every lead, every day — across call, text,
-                  and email. Only pay for what the AI actually does.
+                Structurely AI engages every lead, every day — across call, text, and email. Pay only for what the AI actually does.
                 </p>
                 <p className="block text-center text-[18px] leading-[28px] font-medium tracking-[-0.01em] text-[#646464] md:hidden">
                   Your leads aren&apos;t going cold. They&apos;re being ignored.

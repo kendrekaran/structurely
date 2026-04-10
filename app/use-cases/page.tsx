@@ -1,7 +1,6 @@
 import Header from "@/components/_common/header";
 import Separator from "@/components/_ui/separator";
 import HeroSection from "@/components/use-cases/hero-section";
-import TabsFilter from "@/components/use-cases/tabs-filter";
 import IndustrySelectorSection from "@/components/use-cases/industry-selector-section";
 import LeadEnvironmentsSection from "@/components/use-cases/lead-environments-section";
 import FooterSection from "@/components/_common/footer-section";
@@ -12,7 +11,6 @@ export default function UseCases() {
     <main className="min-h-screen max-w-full overflow-x-clip">
       <Header />
       <HeroSection />
-      <TabsFilter />
       <IndustrySelectorSection />
       <Separator />
       <LeadEnvironmentsSection />

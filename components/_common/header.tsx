@@ -19,7 +19,7 @@ const navLinks = [
 const companyLinks = [
   { label: "About", href: "/about" },
   // { label: "Partners", href: "/partners" },
-  { label: "Blog", href: "/blog" },
+  { label: "News", href: "/blog" },
   // { label: "Help Center", href: "/help-center" },
 ];
 
@@ -46,7 +46,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <Image
-              src="/assets/common/mobile-logo.png"
+              src="/assets/common/heading-logo.svg"
               alt="Structurely"
               width={115}
               height={24}
@@ -254,7 +254,7 @@ function MobileMenu({
         <div className="flex items-center justify-between">
           <Link href="/" onClick={onClose}>
             <Image
-              src="/assets/common/mobile-logo.png"
+              src="/assets/common/heading-logo.svg"
               alt="Structurely"
               width={115}
               height={24}

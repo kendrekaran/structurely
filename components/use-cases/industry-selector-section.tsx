@@ -223,7 +223,7 @@ function IndustrySelectorSection() {
   return (
     <section id="industry-selector" className="relative z-0">
       <div className="px-0 md:px-global">
-        <div className="max-w-global mx-auto border-x  border-[#E5E7EB]">
+        <div className="max-w-global mx-auto border-x border-t  border-[#E5E7EB]">
           <div className="flex flex-col md:flex-row">
             <div className="flex md:w-[429px] md:shrink-0 flex-col border-b md:border-b-0  border-[#E5E7EB]">
               {industries.map((ind, i) => (

@@ -104,10 +104,11 @@ export default function PricingOnboardingSection() {
               <span className="text-[12px] font-medium leading-4 text-[#646464]">One-Time Setup</span>
             </div>
             <h2 data-reveal="words" className="text-center  " style={{ maxWidth: "500px" }}>
-              Onboarding That Sets You Up to Win
+            Onboarding that sets
+            you up to win
             </h2>
             <p className="text-center text-[#646464]" style={{ maxWidth: `${470 / 16}em`, fontSize: "16px", lineHeight: "26px", letterSpacing: "-0.01em" }}>
-              Your onboarding fee isn&apos;t overhead — it&apos;s the foundation of your AI sales operation.
+            Your onboarding fee isn&apos;t overhead — it&apos;s the foundation of your AI enhanced sales operation.
             </p>
           </div>
 
