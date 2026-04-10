@@ -169,7 +169,7 @@ export default function ComparePlansSection() {
     <section id="compare-plans" className="relative z-0 ">
       <div className="px-global">
         <div className="max-w-global py-6 md:py-16 mx-auto flex flex-col items-center gap-3 border-x border-[#E5E7EB] px-3 md:px-0">
-          <h2 data-reveal="words" className="text-center text-[28px] leading-[36px] font-medium tracking-[-0.02em] md:text-[48px] md:leading-[54px] md:tracking-[-0.03em]">Compare plans</h2>
+          <h2 data-reveal="words" className="text-center text-[28px] leading-[36px] font-medium tracking-[-0.02em] md:text-[48px] md:leading-[54px] md:tracking-[-0.03em]">Compare Plans</h2>
         </div>
       </div>
 

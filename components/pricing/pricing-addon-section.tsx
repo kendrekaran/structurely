@@ -126,7 +126,7 @@ export default function PricingAddonSection() {
               </div>
 
               <h2 data-reveal="words" style={{ maxWidth: "10em" }}>
-                <span className="text-[#006FFF]">AI Power</span> dialer
+                <span className="text-[#006FFF]">AI Power</span> Dialer
               </h2>
 
               <div className="flex flex-col gap-1 ">
