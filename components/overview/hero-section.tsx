@@ -9,8 +9,8 @@ function HeroSection() {
         <div className="max-w-global mx-auto border-x border-[#E5E7EB] px-3 md:px-0">
           <div className="flex flex-col items-center gap-8 py-10 md:py-[48px]">
             <div className="flex flex-col items-center gap-3.5">
-              <h1 data-reveal="words" className="max-w-[744px] text-center">
-                Convert leads into <br/> closed deals{" "}
+              <h1 data-reveal="words" className="text-center">
+                Convert leads into <br /> closed deals{" "}
                 <span className="text-[#006FFF]">with Structurely AI.</span>
               </h1>
 
@@ -20,7 +20,7 @@ function HeroSection() {
               </p>
             </div>
 
-            <div className="flex  items-center justify-center gap-4">
+            <div className="flex items-center justify-center gap-4">
               <Link href="/demo">
                 <Button variant="primary" size="md">
                   Request a demo
