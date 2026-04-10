@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ReactLenis, useLenis } from "lenis/react";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 import "lenis/dist/lenis.css";
 
@@ -44,6 +45,7 @@ export default function SmoothScrollProvider({
   children: React.ReactNode;
 }) {
   const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const isTouch =
@@ -52,7 +54,10 @@ export default function SmoothScrollProvider({
     setIsTouchDevice(isTouch);
   }, []);
 
-  if (isTouchDevice) {
+  const isBlogDetailPage =
+    pathname.startsWith("/blog/") && pathname !== "/blog";
+
+  if (isTouchDevice || isBlogDetailPage) {
     return <>{children}</>;
   }
 
