@@ -23,7 +23,8 @@ const figmaHandBold = localFont({
 
 export const metadata: Metadata = {
   title: "Structurely",
-  description: "Structurely - AI platform that move the right leads forward.",
+  description:
+    "Structurely — an AI platform that moves the right leads forward.",
 };
 
 export default function RootLayout({

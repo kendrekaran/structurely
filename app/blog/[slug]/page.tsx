@@ -40,9 +40,7 @@ export default async function BlogDetailsPage({
   }
 
   const thumbnailUrl =
-    typeof post.thumbnail === "string"
-      ? post.thumbnail
-      : undefined;
+    typeof post.thumbnail === "string" ? post.thumbnail : undefined;
 
   const relatedArticles = (post.relatedBlogs ?? []).map((rel) => ({
     title: rel.title,
