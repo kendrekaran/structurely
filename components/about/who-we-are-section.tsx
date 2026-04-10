@@ -25,12 +25,12 @@ function WhoWeAreSection() {
       <div className="px-global">
         <div className="max-w-global mx-auto flex flex-col items-stretch border-x border-b border-[#E5E7EB] md:flex-row">
           <div className="flex flex-1 flex-col gap-6 border-b border-[#E5E7EB] px-3 py-[24px] md:border-r md:border-b-0 md:px-12 md:py-12">
-          <Image
+            <Image
               src="/assets/common/heading-logo.svg"
               alt="Structurely"
               width={115}
               height={24}
-              className=" w-[91px] h-auto "
+              className="h-auto w-[91px]"
             />
 
             <div className="flex flex-col gap-4">
@@ -53,7 +53,7 @@ function WhoWeAreSection() {
                   response time, follow-up, and consistency directly affect
                   outcomes.
                 </p>
-                <p className=" text-[16px] leading-6 font-bold tracking-[-0.02em] text-[#006FFF]">
+                <p className="font-figma-hand text-[16px] leading-6 font-bold tracking-[-0.02em] text-[#006FFF]">
                   We are not new to this space.
                 </p>
               </div>

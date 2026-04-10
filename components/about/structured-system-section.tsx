@@ -42,7 +42,7 @@ function StructuredSystemSection() {
               </span>
             </div>
 
-            <div className="flex w-full flex-col items-center justify-center gap-4 md:gap-6 border-t border-[#E5E7EB] bg-[#FAFAFA] px-6 py-6 md:flex-row md:flex-wrap">
+            <div className="flex w-full flex-col items-center justify-center gap-4 border-t border-[#E5E7EB] bg-[#FAFAFA] px-6 py-6 md:flex-row md:flex-wrap md:gap-6">
               {requirementItems.map((item) => (
                 <div
                   key={item.label}
@@ -63,7 +63,7 @@ function StructuredSystemSection() {
 
             <div className="flex w-full items-center">
               <div className="h-px flex-1 bg-[#E5E7EB]" />
-              <div className="flex h-[24px] w-[28.8px] md:h-[40px] md:w-[48px] items-center justify-center rounded-[6px]  md:rounded-[10px] bg-white p-1.5 md:p-2 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
+              <div className="flex h-[24px] w-[28.8px] items-center justify-center rounded-[6px] bg-white p-1.5 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)] md:h-[40px] md:w-[48px] md:rounded-[10px] md:p-2">
                 <svg
                   width="24"
                   height="24"
@@ -90,8 +90,8 @@ function StructuredSystemSection() {
               <div className="h-px flex-1 bg-[#E5E7EB]" />
             </div>
 
-            <div className="max-w-[33.857em] flex flex-col items-center gap-3 py-6 text-center">
-              <p className=" text-[14px] leading-[20px] tracking-[-0.01em]">
+            <div className="flex max-w-[33.857em] flex-col items-center gap-3 py-6 text-center">
+              <p className="text-[14px] leading-[20px] tracking-[-0.01em]">
                 <span className="text-heading text-[14px] leading-[20px] tracking-[-0.01em]">
                   They are designed{" "}
                 </span>
@@ -99,9 +99,7 @@ function StructuredSystemSection() {
                   to operate reliably inside existing workflows.
                 </span>
               </p>
-              <p
-                className="max-w-[29.875em]   text-center text-[16px] leading-6 font-bold tracking-[-0.02em]"
-              >
+              <p className="font-figma-hand max-w-[29.875em] text-center text-[16px] leading-6 font-bold tracking-[-0.02em]">
                 <span className="text-primary">
                   Our products are built around{" "}
                 </span>

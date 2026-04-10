@@ -222,7 +222,7 @@ function AboutProblemSection() {
       </div>
 
       <div className="px-global">
-        <div className="max-w-global mx-auto flex items-center justify-center border-x border-b px-[12px] border-[#E5E7EB] py-6">
+        <div className="max-w-global mx-auto flex items-center justify-center border-x border-b border-[#E5E7EB] px-[12px] py-6">
           <p className="text-center text-[14px] leading-[20px] tracking-[-0.01em]">
             But execution breaks down between inquiry and action.
           </p>
@@ -242,8 +242,8 @@ function AboutProblemSection() {
       </div>
 
       <div className="px-global">
-        <div className="max-w-global mx-auto flex items-center justify-center border-x border-b px-[12px] border-[#E5E7EB] py-[24px]">
-          <p className=" text-center text-[16px] leading-6 font-bold tracking-[-0.02em]">
+        <div className="max-w-global mx-auto flex items-center justify-center border-x border-b border-[#E5E7EB] px-[12px] py-[24px]">
+          <p className="font-figma-hand text-center text-[16px] leading-6 font-bold tracking-[-0.02em]">
             <span className="text-[#006FFF]">Structurely</span> was built to
             address that gap.
           </p>
