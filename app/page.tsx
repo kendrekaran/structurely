@@ -46,7 +46,7 @@ export default function Overview() {
         <Separator />
         <CrmLogosSection />
         <Separator />
-        <section className="how-its-works-pinned">
+        <section className="section-pinned">
           <AiFeaturesSection />
           <Separator />
           <HowItWorksSection />

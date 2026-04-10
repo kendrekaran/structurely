@@ -1,19 +1,20 @@
 "use client";
 
 import { useGSAP } from "@gsap/react";
-import {
-  Fit,
-  Layout,
-  useRive,
-  useStateMachineInput,
-} from "@rive-app/react-canvas";
+import { Fit, Layout } from "@rive-app/react-canvas";
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { cn } from "@/lib/utils";
-import { memo, useCallback, useMemo, useRef } from "react";
+import { memo, useCallback, useMemo, useRef, useState } from "react";
+import {
+  RiveScrollStatesCanvas,
+  type RiveScrollStatesCanvasHandle,
+} from "@/components/_ui/rive-scroll-number-states-canvas";
 
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+}
 
 const DEFAULT_RIVE_SRC = "/rive/home/new/2.riv";
 const DEFAULT_STATE_MACHINE = "State Machine 1";
@@ -24,6 +25,35 @@ const DEFAULT_MAX_STATE = 3;
 
 function riveScrollStateLabel(index: number) {
   return `state-${index}`;
+}
+
+/** Scroll Y for a timeline label (same geometry as `labelToScroll`; manual calc avoids bad `|| 0` fallbacks). */
+function resolveLabelScrollY(
+  tl: gsap.core.Timeline,
+  st: ScrollTrigger,
+  label: string,
+): number | null {
+  const labelTime = tl.labels[label];
+  if (labelTime === undefined) return null;
+  const dur = tl.duration();
+  if (!(dur > 0)) return null;
+  const range = st.end - st.start;
+  if (!Number.isFinite(range)) return null;
+  const y = st.start + (labelTime / dur) * range;
+  if (Number.isFinite(y)) return y;
+  const fallback = st.labelToScroll(label);
+  return typeof fallback === "number" && Number.isFinite(fallback)
+    ? fallback
+    : null;
+}
+
+/** Element ScrollToPlugin should animate — matches ScrollTrigger’s scroller (window → scrollingElement). */
+function scrollTweenTarget(st: ScrollTrigger): Element | Window {
+  const raw = (st as { scroller?: Window | Element }).scroller ?? window;
+  if (raw === window && typeof document !== "undefined") {
+    return document.scrollingElement ?? document.documentElement;
+  }
+  return raw;
 }
 
 export type RiveScrollNumberStatesProps = {
@@ -39,10 +69,12 @@ export type RiveScrollNumberStatesProps = {
   scrollTriggerStart?: string;
   scrollTriggerEnd?: string;
   layout?: Layout;
-  /** Duration (s) when jumping scroll via segment clicks (ScrollTrigger + labelToScroll). */
+  /** Duration (s) when jumping scroll via segment clicks. */
   scrollToDuration?: number;
-  /** Optional class for the bottom segment strip (omit to hide the strip). */
+  /** Optional class for the bottom segment strip (pass `null` to hide). */
   segmentStripClassName?: string | null;
+  /** Fires when the scrubbed segment index changes (synced with Rive input). */
+  onActiveSegmentChange?: (index: number) => void;
 };
 
 function RiveScrollNumberStatesInner({
@@ -53,43 +85,43 @@ function RiveScrollNumberStatesInner({
   className,
   canvasClassName,
   scrub = 1,
-  scrollTriggerStart = "25% center",
-  scrollTriggerEnd = "75% center",
+  scrollTriggerStart = "center center",
+  scrollTriggerEnd = "200% center",
   layout: layoutProp,
-  scrollToDuration = 0.55,
   segmentStripClassName,
+  onActiveSegmentChange,
 }: RiveScrollNumberStatesProps) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const timelineRef = useRef<gsap.core.Timeline | null>(null);
+  const riveCanvasRef = useRef<RiveScrollStatesCanvasHandle | null>(null);
+  const lastSteppedRef = useRef<number | null>(null);
+  const onSegmentChangeRef = useRef(onActiveSegmentChange);
+  onSegmentChangeRef.current = onActiveSegmentChange;
+
+  const [activeSegment, setActiveSegment] = useState(0);
+
   const layout = useMemo(
     () => layoutProp ?? new Layout({ fit: Fit.Cover, layoutScaleFactor: 1 }),
     [layoutProp],
   );
 
-  const { rive, RiveComponent } = useRive({
-    src,
-    stateMachines: stateMachineName,
-    autoplay: false,
-    layout,
-  });
-
-  const numberInput = useStateMachineInput(
-    rive,
-    stateMachineName,
-    inputName,
-    0,
-  );
-
   const valueProxy = useRef({ value: 0 });
-
   const segmentCount = maxState + 1;
+
+  const pushSegment = useCallback((stepped: number) => {
+    if (lastSteppedRef.current === stepped) return;
+    lastSteppedRef.current = stepped;
+    setActiveSegment(stepped);
+    onSegmentChangeRef.current?.(stepped);
+  }, []);
 
   useGSAP(
     () => {
       const trigger = wrapperRef.current;
-      if (!trigger || !numberInput) return;
+      if (!trigger) return;
 
       valueProxy.current.value = 0;
+      lastSteppedRef.current = null;
       timelineRef.current = null;
 
       const tl = gsap.timeline({
@@ -98,6 +130,8 @@ function RiveScrollNumberStatesInner({
           start: scrollTriggerStart,
           end: scrollTriggerEnd,
           scrub,
+          // markers: true,
+          pin: document.querySelector(".section-pinned"),
           fastScrollEnd: true,
         },
       });
@@ -105,11 +139,11 @@ function RiveScrollNumberStatesInner({
       const parts = maxState + 1;
       const partDuration = 1 / parts;
 
-      const syncRiveValue = () => {
+      const syncFromScroll = () => {
         const raw = valueProxy.current.value;
         const stepped = Math.round(Math.min(maxState, Math.max(0, raw)));
-        numberInput.value = stepped;
-        rive?.play();
+        riveCanvasRef.current?.applyStep(stepped);
+        pushSegment(stepped);
       };
 
       for (let i = 0; i < parts; i++) {
@@ -120,7 +154,7 @@ function RiveScrollNumberStatesInner({
             value: endVal,
             ease: "none",
             duration: partDuration,
-            onUpdate: syncRiveValue,
+            onUpdate: syncFromScroll,
           },
           i * partDuration,
         );
@@ -133,79 +167,102 @@ function RiveScrollNumberStatesInner({
 
       timelineRef.current = tl;
 
+      const rafId = requestAnimationFrame(() => {
+        ScrollTrigger.refresh();
+        syncFromScroll();
+      });
+
       return () => {
+        cancelAnimationFrame(rafId);
         timelineRef.current = null;
       };
     },
     {
       dependencies: [
-        numberInput,
-        rive,
         maxState,
         scrub,
         scrollTriggerStart,
         scrollTriggerEnd,
+        pushSegment,
       ],
       scope: wrapperRef,
     },
   );
 
-  const scrollToSegment = useCallback(
-    (index: number) => {
-      const tl = timelineRef.current;
-      const st = tl?.scrollTrigger;
-      if (!tl || !st) return;
-      console.log("scrollToSegment", index);
+  const scrollToSegment = useCallback((index: number) => {
+    const tl = timelineRef.current;
+    if (!tl?.scrollTrigger) return;
 
-      const label = riveScrollStateLabel(index);
-      if (tl.labels[label] === undefined) return;
+    const label = riveScrollStateLabel(index);
+    if (tl.labels[label] === undefined) return;
 
-      console.log("label", label);
+    // pushSegment(index);
+    // riveCanvasRef.current?.applyStep(index);
 
-      const y = st.labelToScroll(label);
-      gsap.to(window, {
-        duration: scrollToDuration,
-        ease: "power2.inOut",
-        scrollTo: { y, autoKill: true },
+    const run = () => {
+      ScrollTrigger.refresh();
+      const st = tl.scrollTrigger;
+      if (!st) return;
+
+      const y = resolveLabelScrollY(tl, st, label);
+      if (y === null || !Number.isFinite(y)) return;
+
+      const target = scrollTweenTarget(st);
+      const yClamped = Math.max(0, Math.round(y));
+
+      gsap.killTweensOf(target);
+      gsap.to(target, {
+        duration: 0.01,
+        ease: "none",
+        overwrite: "auto",
+        scrollTo: { y: yClamped, autoKill: false },
+        onUpdate: () => {
+          ScrollTrigger.update();
+        },
+        onComplete: () => {
+          ScrollTrigger.update();
+        },
       });
-    },
-    [scrollToDuration],
-  );
+    };
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(run);
+    });
+  }, []);
 
   const showSegments = segmentStripClassName !== null;
 
   return (
     <div ref={wrapperRef} className={cn("relative h-full w-full", className)}>
-      <div
-        className={cn(
-          "absolute inset-0 flex items-center justify-center",
-          canvasClassName,
-        )}
-      >
-        {RiveComponent ? <RiveComponent /> : null}
-      </div>
+      <RiveScrollStatesCanvas
+        ref={riveCanvasRef}
+        src={src}
+        stateMachineName={stateMachineName}
+        inputName={inputName}
+        layout={layout}
+        canvasClassName={canvasClassName}
+      />
 
       {showSegments ? (
         <div
           className={cn(
-            "pointer-events-auto absolute inset-x-0 bottom-0 z-10 flex h-10 border-t border-black/10 bg-white/40 backdrop-blur-sm dark:bg-black/30",
+            "pointer-events-auto absolute inset-x-0 bottom-0 z-10 flex h-full border-t px-[5%]",
             segmentStripClassName,
           )}
-          role="group"
-          aria-label="Scroll to animation state"
+          role="tablist"
+          aria-label="Rive animation states"
         >
           {Array.from({ length: segmentCount }, (_, i) => (
             <button
               key={i}
               type="button"
-              className={cn(
-                "text-foreground/80 flex flex-1 items-center justify-center border-r border-black/10 text-xs font-medium transition-colors last:border-r-0",
-                "focus-visible:ring-primary hover:bg-black/5 focus-visible:ring-2 focus-visible:outline-none dark:hover:bg-white/10",
-              )}
-              aria-label={`Scroll to state ${i + 1} of ${segmentCount}`}
+              role="tab"
+              aria-selected={activeSegment === i}
+              className={cn("flex flex-1 items-center justify-center")}
+              aria-label={`State ${i + 1} of ${segmentCount}`}
               onClick={() => scrollToSegment(i)}
             >
-              {i + 1}
+              {/* {i + 1} */}
             </button>
           ))}
         </div>
