@@ -188,7 +188,7 @@ function CrmLogosSection() {
     <section id="crm-logos" className="relative z-0">
       <div className="px-global">
         <div className="max-w-global mx-auto overflow-hidden border-x border-[#E5E7EB]">
-          <div className="flex flex-col items-center gap-8  lg:px-24">
+          <div className="flex flex-col items-center gap-8 lg:px-24">
             {/* Desktop: scattered absolute layout */}
             <div
               className="relative hidden w-full lg:block"
@@ -294,13 +294,10 @@ function CrmLogosSection() {
             </div>
 
             {/* Mobile: logos as background behind heading */}
-            <div
-              className="relative w-full overflow-hidden lg:hidden"
-              style={{ height: "176px" }}
-            >
+            <div className="relative flex min-h-[230px] w-full items-center justify-center overflow-hidden lg:hidden">
               {/* Logos background layer */}
               <div className="pointer-events-none absolute inset-0">
-                <div className="absolute left-1/2 top-[-16px] md:top-[22px] -translate-x-1/2">
+                <div className="absolute top-[-16px] left-1/2 -translate-x-1/2 md:top-[22px]">
                   <LogoCardSm hasShadow>
                     <Image
                       src={centerLogos[0].src}
@@ -311,7 +308,7 @@ function CrmLogosSection() {
                     />
                   </LogoCardSm>
                 </div>
-                <div className="absolute left-1 md:left-3 top-[9px] md:top-[92px]">
+                <div className="absolute top-[9px] left-1 md:top-[92px] md:left-3">
                   <LogoCardSm hasShadow>
                     <Image
                       src={leftLogos[0].src}
@@ -322,7 +319,7 @@ function CrmLogosSection() {
                     />
                   </LogoCardSm>
                 </div>
-                <div className="absolute md:right-3 right-2 md:top-[92px] top-[12px]">
+                <div className="absolute top-[12px] right-2 md:top-[92px] md:right-3">
                   <LogoCardSm>
                     <Image
                       src={rightLogos[0].src}
@@ -333,7 +330,7 @@ function CrmLogosSection() {
                     />
                   </LogoCardSm>
                 </div>
-                <div className="absolute md:left-54 left-1 md:top-[154px] top-[66px]">
+                <div className="absolute top-[66px] left-1 md:top-[154px] md:left-54">
                   <LogoCardSm hasShadow>
                     <Image
                       src={leftLogos[1].src}
@@ -344,12 +341,12 @@ function CrmLogosSection() {
                     />
                   </LogoCardSm>
                 </div>
-                <div className="absolute md:right-5 right-2 md:top-[154px] top-[66px]">
+                <div className="absolute top-[66px] right-2 md:top-[154px] md:right-5">
                   <LogoCardSm hasShadow>
                     <AccuLynxLogoSm />
                   </LogoCardSm>
                 </div>
-                <div className="absolute md:bottom-9 bottom-2 md:left-12 left-14">
+                <div className="absolute bottom-2 left-14 md:bottom-9 md:left-12">
                   <LogoCardSm hasShadow>
                     <Image
                       src={leftLogos[2].src}
@@ -360,7 +357,7 @@ function CrmLogosSection() {
                     />
                   </LogoCardSm>
                 </div>
-                <div className="absolute md:bottom-9 bottom-2 md:right-12 right-14 ">
+                <div className="absolute right-14 bottom-2 md:right-12 md:bottom-9">
                   <LogoCardSm>
                     <Image
                       src={rightLogos[1].src}
@@ -371,7 +368,7 @@ function CrmLogosSection() {
                     />
                   </LogoCardSm>
                 </div>
-                <div className="absolute md:bottom-3 -bottom-4 left-1/2 -translate-x-1/2">
+                <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 md:bottom-3">
                   <LogoCardSm>
                     <Image
                       src={centerLogos[1].src}
@@ -385,7 +382,7 @@ function CrmLogosSection() {
               </div>
 
               {/* Text in foreground */}
-              <div className="relative z-10 flex flex-col items-center gap-4 px-4 pt-6 md:pt-10 text-center">
+              <div className="relative z-10 flex flex-col items-center gap-4 px-4 text-center md:pt-10">
                 <Badge text="Activity logs + remote management" />
                 <h2 data-reveal="words" className="max-w-[8em]">
                   Integrated with your{" "}
