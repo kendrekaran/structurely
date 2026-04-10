@@ -4,7 +4,6 @@ import { Caveat, Inter } from "next/font/google";
 import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import RevealProvider from "@/components/_providers/reveal-provider";
-import SmoothScrollProvider from "@/components/_providers/smooth-scroll-provider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -37,11 +36,9 @@ export default function RootLayout({
       <body
         className={`${GeistSans.variable} ${inter.variable} ${caveat.variable} ${figmaHandBold.variable} relative z-0 font-sans antialiased`}
       >
-        <SmoothScrollProvider>
-          <RevealProvider>
-            <div className="relative">{children}</div>
-          </RevealProvider>
-        </SmoothScrollProvider>
+        <RevealProvider>
+          <div className="relative">{children}</div>
+        </RevealProvider>
       </body>
     </html>
   );
