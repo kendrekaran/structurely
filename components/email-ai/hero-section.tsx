@@ -12,8 +12,7 @@ function HeroSection() {
               <HeroBadge text="Every lead. Every follow-up. Every time." />
 
               <h1 data-reveal="words" className="max-w-[342px] sm:max-w-[10em] text-center">
-              Engage & Convert 
-              with {" "}
+              Engage & convert with{" "}
                 <span className="text-[#006FFF]">Email AI.</span>
               </h1>
 

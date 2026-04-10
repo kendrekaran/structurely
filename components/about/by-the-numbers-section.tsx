@@ -4,32 +4,53 @@ function ByTheNumbersSection() {
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
           <div className="md:py-section-md flex flex-col items-center justify-center py-[24px]">
-            <h2 data-reveal="words" className="max-w-[11em] text-center font-medium text-[28px] leading-[36px]  tracking-[-0.02em] md:text-[48px] md:leading-[54px] md:tracking-[-0.03em]">
+            <h2
+              data-reveal="words"
+              className="max-w-[11em] text-center text-[28px] leading-[36px] font-medium tracking-[-0.02em] md:text-[48px] md:leading-[54px] md:tracking-[-0.03em]"
+            >
               By the numbers
             </h2>
           </div>
-          <div className="divide-y divide-[#E5E7EB] border-t border-[#E5E7EB]">
+          <div className="divide-y divide-[#E5E7EB] border-y border-[#E5E7EB]">
             <div className="grid grid-cols-1 divide-y divide-[#E5E7EB] sm:grid-cols-2 sm:divide-x sm:divide-y-0">
-              <div className="px-3 py-4 md:px-8 md:py-8">
-                <p className="text-foreground">Over 10 years in operation</p>
+              <div className="group relative px-3 py-4 transition-colors duration-300 ease-out hover:bg-white md:px-8 md:py-8">
+                <p className="text-foreground group-hover:text-heading transition-colors duration-300 ease-out">
+                  Over 10 years in operation
+                </p>
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute right-0 bottom-0 left-0 z-10 h-[2px] bg-[#006FFF] opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100"
+                />
               </div>
-              <div className="px-3 py-4 sm:pl-8 md:py-8">
-                <p className="text-foreground">
+              <div className="group relative px-3 py-4 transition-colors duration-300 ease-out hover:bg-white sm:pl-8 md:py-8">
+                <p className="text-foreground group-hover:text-heading transition-colors duration-300 ease-out">
                   Millions of inbound conversations handled
                 </p>
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute right-0 bottom-0 left-0 z-10 h-[2px] bg-[#006FFF] opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100"
+                />
               </div>
             </div>
             <div className="grid grid-cols-1 divide-y divide-[#E5E7EB] sm:grid-cols-2 sm:divide-x sm:divide-y-0">
-              <div className="border-b-2 bg-white border-b-[#006FFF] px-3 py-4 md:px-8 md:py-8">
-                <p className="text-heading">
+              <div className="group relative px-3 py-4 transition-colors duration-300 ease-out hover:bg-white md:px-8 md:py-8">
+                <p className="text-foreground group-hover:text-heading transition-colors duration-300 ease-out">
                   Thousands of sales professionals supported
                 </p>
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute right-0 bottom-0 left-0 z-10 h-[2px] bg-[#006FFF] opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100"
+                />
               </div>
-              <div className="px-3 py-4 border-b border-[#E5E7EB] sm:pl-8 md:py-8">
-                <p className="text-foreground text-[14px]">
+              <div className="group relative px-3 py-4 transition-colors duration-300 ease-out hover:bg-white sm:pl-8 md:py-8">
+                <p className="text-foreground group-hover:text-heading text-[14px] transition-colors duration-300 ease-out">
                   Continuous product development across multiple platform
                   generations
                 </p>
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute right-0 bottom-0 left-0 z-10 h-[2px] bg-[#006FFF] opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100"
+                />
               </div>
             </div>
           </div>

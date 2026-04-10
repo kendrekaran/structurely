@@ -35,7 +35,7 @@ function CrmSynchronizationSection() {
           <h2 data-reveal="words" className="max-w-[12em] text-center">
             <span className="text-[#006FFF]">CRM</span>{" "}
             <span className="md:text-heading text-[#006FFF]">
-              Synchronization
+              synchronization
             </span>
           </h2>
         </div>

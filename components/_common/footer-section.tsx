@@ -3,21 +3,21 @@ import Image from "next/image";
 
 const navColumns = [
   {
-    title: "How It Works",
+    title: "How it works",
     links: [
       { label: "Call AI", href: "#" },
       { label: "Text AI", href: "#" },
       { label: "Email AI", href: "#" },
-      { label: "Appointment Setting", href: "#" },
-      { label: "Live Phone Transfers", href: "#" },
+      { label: "Appointment setting", href: "#" },
+      { label: "Live phone transfers", href: "#" },
       { label: "Reporting", href: "#" },
-      { label: "Script Customization", href: "#" },
+      { label: "Script customization", href: "#" },
     ],
   },
   {
     title: "Why Structurely",
     links: [
-      { label: "Our Customers", href: "#" },
+      { label: "Our customers", href: "#" },
       { label: "Partners", href: "#" },
     ],
   },
@@ -25,9 +25,9 @@ const navColumns = [
     title: "Resources",
     links: [
       { label: "Blog", href: "#" },
-      { label: "A2P Compliance", href: "#" },
+      { label: "A2P compliance", href: "#" },
       { label: "Media", href: "#" },
-      { label: "Help Center", href: "#" },
+      { label: "Help center", href: "#" },
       { label: "Glossary", href: "#" },
     ],
   },
@@ -36,9 +36,9 @@ const navColumns = [
     links: [
       { label: "Pricing", href: "#" },
       { label: "Login", href: "#" },
-      { label: "Privacy Policy", href: "#" },
-      { label: "Terms of Use", href: "#" },
-      { label: "Contact Sales", href: "#" },
+      { label: "Privacy policy", href: "#" },
+      { label: "Terms of use", href: "#" },
+      { label: "Contact sales", href: "#" },
     ],
   },
 ];
@@ -59,7 +59,7 @@ export default function FooterSection() {
 
               <div className="flex flex-col gap-6">
                 <div className="flex flex-col gap-1">
-                  <span className="text-[14px] leading-[20px] font-medium text-[#202020] uppercase">
+                  <span className="text-[14px] leading-[20px] font-medium text-[#202020]">
                     Headquarters
                   </span>
                   <span className="text-[14px] leading-[20px] font-medium tracking-[-0.084px] text-[#646464]">
@@ -67,9 +67,9 @@ export default function FooterSection() {
                   </span>
                 </div>
 
-                <div className="flex items-start gap-6">
+                <div className="flex flex-col items-start gap-6">
                   <div className="flex flex-1 flex-col gap-1">
-                    <span className="text-[14px] leading-[20px] font-medium text-[#202020] uppercase">
+                    <span className="text-[14px] leading-[20px] font-medium text-[#202020]">
                       Sales
                     </span>
                     <span className="text-[14px] leading-[20px] font-medium tracking-[-0.084px] text-[#646464]">
@@ -77,7 +77,7 @@ export default function FooterSection() {
                     </span>
                   </div>
                   <div className="flex flex-1 flex-col gap-1">
-                    <span className="text-[14px] leading-[20px] font-medium text-[#202020] uppercase">
+                    <span className="text-[14px] leading-[20px] font-medium text-[#202020]">
                       Support
                     </span>
                     <span className="text-[14px] leading-[20px] font-medium tracking-[-0.084px] text-[#646464]">
@@ -92,7 +92,7 @@ export default function FooterSection() {
               {navColumns.map((col) => (
                 <div key={col.title} className="flex min-w-0 flex-col gap-2">
                   <div className="py-[6px]">
-                    <span className="text-[14px] leading-[20px] font-medium text-[#202020] uppercase">
+                    <span className="text-[14px] leading-[20px] font-medium text-[#202020]">
                       {col.title}
                     </span>
                   </div>

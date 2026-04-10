@@ -2,6 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import React, { useState } from "react";
+import { RiveScrollNumberStates } from "@/components/_ui/rive-scroll-number-states";
 
 type Feature = {
   title: string;
@@ -13,7 +14,7 @@ type Feature = {
 
 const features: Feature[] = [
   {
-    title: "Human-like AI Calls with Leads",
+    title: "Human-like AI calls with leads",
     description:
       "Human-like AI voice agents handle inbound and outbound lead qualification calls, engage prospects naturally, and capture sales-ready opportunities.",
     flowTitle: "Voice → qualify → record",
@@ -22,7 +23,7 @@ const features: Feature[] = [
       "Calls open a structured loop: answer, qualify with natural conversation, score intent, and push outcomes to your stack without manual note-taking.",
   },
   {
-    title: "Texting + Drip Campaigns",
+    title: "Texting + drip campaigns",
     description:
       "AI text messaging and drip campaigns automate follow-up, support two-way SMS conversations, and keep leads engaged throughout the sales funnel.",
     flowTitle: "SMS drip path",
@@ -31,7 +32,7 @@ const features: Feature[] = [
       "Sequences react to behavior—quiet leads get nudges, hot replies jump the queue, and every thread stays in one timeline for the team.",
   },
   {
-    title: "Live Transfers",
+    title: "Live transfers",
     description:
       "Real-time live transfers route qualified leads directly to your sales team, improving response speed, connection rates, and conversion opportunities.",
     flowTitle: "Warm handoff",
@@ -40,7 +41,7 @@ const features: Feature[] = [
       "When criteria hit, the AI hands off with context so reps pick up already oriented instead of cold-transferring into silence.",
   },
   {
-    title: "Appointment Setting",
+    title: "Appointment setting",
     description:
       "AI appointment setting automates scheduling for qualified leads, integrates with calendars and CRMs, and helps sales teams book more meetings.",
     flowTitle: "Book on the call",
@@ -53,7 +54,7 @@ const features: Feature[] = [
 function FlowDiagramPanel({ feature }: { feature: Feature }) {
   return (
     <div className="mx-auto flex h-full min-h-[280px] flex-col justify-center gap-6 px-6 py-10 sm:px-8 sm:py-12">
-      <p className="text-center text-[11px] font-medium tracking-[0.12em] text-[#646464] uppercase">
+      <p className="text-center text-[11px] font-medium tracking-[0.12em] text-[#646464]">
         {feature.flowTitle}
       </p>
       <div
@@ -94,38 +95,8 @@ function HowItWorksSection() {
           </h2>
         </div>
 
-        <div className="flex flex-col border-[#E5E7EB] lg:flex-row">
-          <div className="flex flex-col divide-y divide-[#E5E7EB] border-b border-[#E5E7EB] lg:w-[38%] lg:border-r lg:border-b-0 lg:border-r-[#E5E7EB]">
-            {features.map((feature, index) => {
-              const isSelected = index === selectedIndex;
-              return (
-                <button
-                  key={feature.title}
-                  type="button"
-                  onClick={() => setSelectedIndex(index)}
-                  aria-pressed={isSelected}
-                  className={cn(
-                    "flex w-full cursor-pointer flex-col gap-2 px-4 py-6 text-left transition-colors sm:px-6 md:px-8",
-                    "focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-[#006FFF]",
-                    isSelected
-                      ? "  bg-white"
-                      : " border-l-transparent bg-[#FAFAFA] hover:bg-[#FAFAFA]",
-                  )}
-                >
-                  <h3 className="text-[1rem] leading-6 font-medium tracking-[-0.02em] text-[#202020]">
-                    {feature.title}
-                  </h3>
-                  <p className="text-[0.875rem] leading-5 tracking-[-0.01em] text-[#646464]">
-                    {feature.description}
-                  </p>
-                </button>
-              );
-            })}
-          </div>
-
-          <div className="flex min-h-[280px] flex-1 bg-white lg:min-h-0">
-            <FlowDiagramPanel feature={selected} />
-          </div>
+        <div className="aspect-[699/560] w-full">
+          <RiveScrollNumberStates />
         </div>
       </section>
     </div>

@@ -8,7 +8,7 @@ type DialerMode = "human" | "ai";
 
 const topFeatures = [
   {
-    title: "Toggle AI \u2194 Human Per Campaign",
+    title: "Toggle AI \u2194 human per campaign",
     description:
       "Switch modes without changing anything. Teams dial manually in human mode. Flip to AI and the agent takes over the same list at scale.",
     icon: (
@@ -22,7 +22,7 @@ const topFeatures = [
     ),
   },
   {
-    title: "Dial Thousands Simultaneously",
+    title: "Dial thousands simultaneously",
     description:
       "In AI mode, every lead on your list gets called the moment you flip the switch. No queue. No delay. Maximum coverage instantly.",
     icon: (
@@ -35,7 +35,7 @@ const topFeatures = [
     ),
   },
   {
-    title: "Native Salesforce Integration",
+    title: "Native Salesforce integration",
     description:
       "Lives inside Salesforce. No new dashboard. No data sync. Your team works where they already work.",
     icon: (
@@ -49,7 +49,7 @@ const topFeatures = [
 
 const bottomFeatures = [
   {
-    title: "Live Transfer to Your LOs",
+    title: "Live transfer to your LOs",
     description:
       "When Structurely AI qualifies a lead, it bridges the call instantly to your team — no warm transfer lag, no dropped handoffs.",
     icon: (
@@ -63,7 +63,7 @@ const bottomFeatures = [
     ),
   },
   {
-    title: "Works With Your Existing Dialer",
+    title: "Works with your existing dialer",
     description:
       "Not a replacement — an upgrade layer. Add AI dialing capability without ripping out what\u2019s already working.",
     icon: (
@@ -74,7 +74,7 @@ const bottomFeatures = [
     ),
   },
   {
-    title: "Full BI Reporting Integration",
+    title: "Full BI reporting integration",
     description:
       "All dialer activity feeds your Structurely reporting suite — connect rates, transfer rates, and campaign performance in one place.",
     icon: (
@@ -122,11 +122,11 @@ export default function PricingAddonSection() {
           <div className="flex flex-col lg:flex-row ">
             <div className="flex flex-1 flex-col justify-center gap-4 px-[12px] md:px-8 p-8 md:p-12 md:py-[87px] ">
               <div className="self-start">
-                <Badge text="Beta — Salesforce Add-on" />
+                <Badge text="Beta — Salesforce add-on" />
               </div>
 
               <h2 data-reveal="words" style={{ maxWidth: "10em" }}>
-                <span className="text-[#006FFF]">AI Power</span> Dialer
+                <span className="text-[#006FFF]">AI Power</span> dialer
               </h2>
 
               <div className="flex flex-col gap-1 ">

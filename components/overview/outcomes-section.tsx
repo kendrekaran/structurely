@@ -22,8 +22,8 @@ function OutcomesSection() {
         <div className="py-section-md md:py-section-md flex w-full flex-col items-center gap-4 px-6 md:px-24">
           <Badge text="Outcomes" />
           <h2 data-reveal="words" className="max-w-[11em] text-center tracking-[-0.03em]">
-            Designed to Improve What{" "}
-            <span className="text-[var(--primary)]">Matters</span>
+            Designed to improve what{" "}
+            <span className="text-[var(--primary)]">matters</span>
           </h2>
         </div>
 

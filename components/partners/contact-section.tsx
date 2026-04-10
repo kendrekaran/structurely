@@ -106,7 +106,7 @@ export default function ContactSection() {
           <div className="flex flex-col items-center gap-8 py-8 md:py-16 px-6 md:px-24">
             <div className="flex flex-col items-center gap-4 w-full max-w-[46.375em]">
               <div className="px-4 py-2 rounded-lg bg-white text-[#646464] text-[12px] font-medium leading-[16px] shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
-                Contact Sales
+                Contact sales
               </div>
               <h1 data-reveal="words" className="text-center max-w-[13.85em]">
                 Let&apos;s improve your{" "}

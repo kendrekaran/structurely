@@ -38,19 +38,19 @@ function BarChartIcon() {
 const features = [
   {
     Icon: LocationIcon,
-    title: "Local Area Codes — By Market",
+    title: "Local area codes — by market",
     description:
       "Leads are far more likely to answer a number that looks local. We assign numbers matched to your leads' area codes across every market you run.",
   },
   {
     Icon: LockIcon,
-    title: "Spam-Mitigated & Carrier-Registered",
+    title: "Spam-mitigated & carrier-registered",
     description:
       'Numbers are pre-registered and continuously monitored across all major carriers. No "Spam Risk" labels. No flagged calls. Just clean dials.',
   },
   {
     Icon: BarChartIcon,
-    title: "Scales With Your Account",
+    title: "Scales with your account",
     description:
       "As your operation grows across markets, we scale your number inventory to match. Pricing is tailored to the number of numbers your account requires.",
   },
@@ -65,7 +65,7 @@ export default function LocalNumbersSection() {
             <div className="flex flex-col gap-4 md:flex-1">
               <div className={`w-fit overflow-hidden rounded-lg bg-white px-4 py-2 ${BADGE_SHADOW}`}>
                 <span className="text-[12px] font-medium leading-4 text-[#646464]">
-                  🛡️ Built-In Protection
+                  🛡️ Built-in protection
                 </span>
               </div>
               <h2 className="text-[32px] font-medium leading-[1.125] tracking-[-0.03em] md:text-[48px] md:leading-[54px]">

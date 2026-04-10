@@ -80,7 +80,7 @@ function IntelligentQualificationSection() {
         <div className="max-w-global pt-section-md mx-auto flex flex-col items-center">
           <div className="flex w-full flex-col items-center gap-3 text-center">
             <h2 data-reveal="words" className="md:max-w-[11em]">
-              Intelligent Qualification & Decisioning
+              Intelligent qualification & decisioning
             </h2>
           </div>
 

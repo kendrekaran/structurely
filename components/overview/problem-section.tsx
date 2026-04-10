@@ -171,7 +171,7 @@ function OverviewProblemSection() {
           <div className="flex flex-col items-center">
             <div className="md:pt-section-md flex w-full flex-col items-center gap-3 px-3 py-4  md:gap-4 md:px-6">
               <div className="flex flex-col items-center gap-4">
-                <Badge text="Seamless AI-Tools that Convert" />
+                <Badge text="Seamless AI tools that convert" />
                 <h2 data-reveal="words" className="max-w-[11em] text-center">
                 Get more qualified appointments.{" "} <br />
                   <span className="text-[#006FFF]">Grow your revenue.</span>

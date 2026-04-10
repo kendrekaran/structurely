@@ -2,7 +2,7 @@ import Separator from "../_ui/separator";
 
 const industries = [
   {
-    title: "Mortgage & Lending",
+    title: "Mortgage & lending",
     features: [
       ["Appointment booking", "Instant borrower engagement"],
       [
@@ -12,7 +12,7 @@ const industries = [
     ],
   },
   {
-    title: "Real Estate",
+    title: "Real estate",
     features: [
       ["New buyer & seller lead qualification", "Showing scheduling"],
       ["Long-term nurture campaigns", "Listing inquiry follow-up"],
@@ -26,7 +26,7 @@ const industries = [
     ],
   },
   {
-    title: "Enterprise Sales Teams",
+    title: "Enterprise sales teams",
     features: [
       ["SDR workload reduction", "MQL pre-qualification"],
       ["Meeting scheduling", "Consistent follow-up enforcement"],

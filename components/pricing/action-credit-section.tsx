@@ -47,7 +47,7 @@ export default function ActionCreditSection() {
           <div className="flex flex-col items-center gap-3 px-3 py-8 md:py-16 md:px-24">
             <div className={`flex items-center justify-center gap-1 overflow-hidden rounded-lg bg-white px-4 py-2 ${CARD_SHADOW}`}>
               <span className="text-center text-[12px] font-medium leading-4 text-[#646464]">
-                How Billing Works
+                How billing works
               </span>
             </div>
             <h2 className="max-w-[13.375em] text-center  ">

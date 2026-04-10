@@ -55,7 +55,7 @@ export default function KnowledgeBasesSection() {
             <div className="flex w-full max-w-[744px] flex-col items-center gap-[32px] ">
               <div className="flex w-full flex-col items-start px-3 md:px-0 gap-4">
                 <h2 data-reveal="words" className="text-heading max-w-[16em] text-[36px] leading-[44px] font-medium tracking-[-0.03em]">
-                  5. Knowledge Bases
+                  5. Knowledge bases
                 </h2>
                 <p className="text-heading text-[16px]  leading-[26px]  tracking-[-0.01em]">
                   Create a shared basis of information that ALL of your Call AI
@@ -121,8 +121,8 @@ export default function KnowledgeBasesSection() {
 
               <div className="flex w-full flex-col gap-6">
                 <h2 data-reveal="words" className="text-heading max-w-[22em] text-[36px] leading-[44px] font-medium tracking-[-0.03em]">
-                  Now that you&apos;ve established a Knowledge Base, add it to
-                  the applicable Call AI Agent(s) here!
+                  Now that you&apos;ve established a knowledge base, add it to
+                  the applicable Call AI agent(s) here!
                 </h2>
                 <p className="text-heading">
                   Head to the &ldquo;Knowledge Bases&rdquo; section of the
