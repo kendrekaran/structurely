@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 const menuItems = [
   { label: "Overview", href: "/overview" },
   { label: "How It Works", href: "/how-it-works" },
-  { label: "Use Cases", href: "/use-cases" },
+  { label: "Use cases", href: "/use-cases" },
   { label: "Pricing", href: "/pricing" },
   { label: "Demo", href: "/demo" },
 ];

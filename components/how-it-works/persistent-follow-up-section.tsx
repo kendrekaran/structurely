@@ -125,13 +125,13 @@ function PersistentFollowUpSection() {
         <div className="flex flex-col items-center gap-3 px-6 py-[24px] sm:flex-row sm:justify-between md:items-start md:gap-6 md:px-12 md:py-[64px]">
           <h2 data-reveal="words">
             <span>Persistent </span>
-            <span className="text-[#006FFF]">Follow-Up</span>
+            <span className="text-[#006FFF]">follow-up</span>
           </h2>
           <div className="flex shrink-0 flex-col items-center gap-1 md:items-end">
             <span className="text-foreground block text-[16px] leading-[26px] tracking-[-0.01em] md:text-right">
-            Most follow-ups stop too early..
+              Most follow-ups stop too early..
             </span>
-            <span className="font-figma-hand underline text-center text-[16px] leading-6 font-bold tracking-[-0.02em] text-[#006FFF]">
+            <span className="font-figma-hand text-center text-[16px] leading-6 font-bold tracking-[-0.02em] text-[#006FFF] underline">
               Structurely doesn&apos;t.
             </span>
           </div>
