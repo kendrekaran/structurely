@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
+import { Fit, Layout, useRive } from "@rive-app/react-canvas";
 
 const industries = [
   {
@@ -221,6 +222,12 @@ function IndustrySelectorSection() {
   const [cycleResetKey, setCycleResetKey] = useState(0);
   const active = industries[activeIndex];
   const tabTransition = { duration: 0.4, ease: [0.4, 0, 0.2, 1] as const };
+  const { rive, RiveComponent } = useRive({
+    src: "/rive/how-it-works/6.riv",
+    autoplay: true,
+    stateMachines: "State Machine 1",
+    layout: new Layout({ fit: Fit.Contain, layoutScaleFactor: 1 }),
+  });
 
   useEffect(() => {
     const timeoutId = window.setTimeout(() => {
@@ -231,6 +238,19 @@ function IndustrySelectorSection() {
       window.clearTimeout(timeoutId);
     };
   }, [activeIndex, cycleResetKey]);
+
+  useEffect(() => {
+    if (!rive) return;
+
+    const inputs = rive.stateMachineInputs("State Machine 1");
+    const numberInput = Array.isArray(inputs)
+      ? inputs.find((input) => input.name === "Number 1")
+      : null;
+
+    if (numberInput && "value" in numberInput && typeof numberInput.value === "number") {
+      numberInput.value = activeIndex + 1;
+    }
+  }, [rive, activeIndex, cycleResetKey]);
 
   return (
     <section id="industry-selector" className="relative z-0">
@@ -293,8 +313,8 @@ function IndustrySelectorSection() {
             </div>
 
             <div className="px-global md:flex md:flex-1 md:px-0">
-              <div className="flex h-full flex-1 flex-col items-center justify-between gap-8 border-l border-[#E5E7EB] px-6 pt-8 pb-0 md:px-8 md:pt-[37px] md:pb-0">
-                <div className="flex flex-wrap justify-center gap-3">
+              <div className="flex h-full flex-1 flex-col border-l border-[#E5E7EB] px-6 py-6 md:px-0 md:py-0 ">
+                <div className="flex flex-wrap justify-center gap-3 md:hidden">
                   {active.features.map((feature, i) => (
                     <span
                       key={i}
@@ -314,9 +334,19 @@ function IndustrySelectorSection() {
                   alt="Conversation preview on mobile"
                   width={751}
                   height={787}
-                  className="mt-auto block h-auto w-full max-w-[280px] md:max-w-[360px]"
+                  className="mt-6 block h-auto w-full max-w-[280px] self-center md:hidden"
                   priority
                 />
+
+                <div className="relative hidden min-h-[360px] flex-1 items-center justify-center overflow-hidden  bg-white md:flex md:min-h-[500px]">
+                  {RiveComponent ? (
+                    <div className="h-full scale-105 w-full">
+                      <RiveComponent />
+                    </div>
+                  ) : (
+                    <div className="text-sm text-[#646464]">Loading animation...</div>
+                  )}
+                </div>
               </div>
             </div>
           </div>
