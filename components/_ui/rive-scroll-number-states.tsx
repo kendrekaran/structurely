@@ -130,7 +130,7 @@ function RiveScrollNumberStatesInner({
         className,
       )}
     >
-      <div className="flex flex-col border-b border-[#E5E7EB] md:w-[529px] md:shrink-0 md:border-b-0">
+      <div className="flex flex-col border-b border-[#E5E7EB] md:w-[50%] md:shrink-0 md:border-b-0">
         {items.map((item, i) => (
           <motion.button
             key={`${item.title}-${i}`}
