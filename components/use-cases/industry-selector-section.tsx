@@ -3,7 +3,12 @@
 import Image from "next/image";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
-import { Fit, Layout, useRive } from "@rive-app/react-canvas";
+import {
+  Fit,
+  Layout,
+  StateMachineInputType,
+  useRive,
+} from "@rive-app/react-canvas";
 
 const industries = [
   {
@@ -35,6 +40,7 @@ const industries = [
         },
       ],
     },
+    riveState: 0,
   },
   {
     title: "Real Estate",
@@ -65,6 +71,7 @@ const industries = [
         },
       ],
     },
+    riveState: 1,
   },
   {
     title: "Home Improvement",
@@ -95,6 +102,7 @@ const industries = [
         },
       ],
     },
+    riveState: 2,
   },
   {
     title: "Sports",
@@ -125,6 +133,7 @@ const industries = [
         },
       ],
     },
+    riveState: 3,
   },
   {
     title: "Marketing Agencies",
@@ -154,6 +163,7 @@ const industries = [
         },
       ],
     },
+    riveState: 4,
   },
   {
     title: "Whitelabel",
@@ -184,6 +194,7 @@ const industries = [
         },
       ],
     },
+    riveState: 5,
   },
   {
     title: "Universities",
@@ -214,6 +225,7 @@ const industries = [
         },
       ],
     },
+    riveState: 6,
   },
 ];
 
@@ -223,7 +235,7 @@ function IndustrySelectorSection() {
   const active = industries[activeIndex];
   const tabTransition = { duration: 0.4, ease: [0.4, 0, 0.2, 1] as const };
   const { rive, RiveComponent } = useRive({
-    src: "/rive/how-it-works/6.riv",
+    src: "/rive/home/new/6.riv",
     autoplay: true,
     stateMachines: "State Machine 1",
     layout: new Layout({ fit: Fit.Contain, layoutScaleFactor: 1 }),
@@ -243,18 +255,16 @@ function IndustrySelectorSection() {
     if (!rive) return;
 
     const inputs = rive.stateMachineInputs("State Machine 1");
-    const numberInput = Array.isArray(inputs)
-      ? inputs.find((input) => input.name === "Number 1")
-      : null;
+    const numberInput = inputs?.find(
+      (input) =>
+        input.name === "Number 1" &&
+        input.type === StateMachineInputType.Number,
+    );
 
-    if (
-      numberInput &&
-      "value" in numberInput &&
-      typeof numberInput.value === "number"
-    ) {
-      numberInput.value = activeIndex + 1;
+    if (numberInput) {
+      numberInput.value = active.riveState;
     }
-  }, [rive, activeIndex, cycleResetKey]);
+  }, [rive, active.riveState, cycleResetKey]);
 
   return (
     <section id="industry-selector" className="relative z-0">
