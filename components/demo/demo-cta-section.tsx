@@ -31,9 +31,6 @@ export default function DemoCtaSection() {
                 Try the Live Demo Now
               </Button>
             </Link>
-            <Button variant="secondary" size="md" className="text-foreground">
-              Schedule a Guided Demo
-            </Button>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import Button from "../_ui/button";
 import Badge from "../_ui/badge";
 
@@ -375,9 +376,11 @@ export default function PricingAddonSection() {
                     $199/mo per additional seat
                   </p>
                 </div>
-                <Button variant="primary" className="w-auto md:w-full">
-                  Book a Demo
-                </Button>
+                <Link href="/demo" className="w-auto md:w-full">
+                  <Button variant="primary" className="w-full md:w-full">
+                    Request a demo
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

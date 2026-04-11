@@ -139,7 +139,7 @@ export default function Header() {
                 size="md"
                 className="tracking-0 text-[14px]! leading-[20px]"
               >
-                Request Demo
+                Request a demo
               </Button>
             </Link>
           </div>
@@ -152,7 +152,7 @@ export default function Header() {
                 size="md"
                 className="max-w-[139px] text-center"
               >
-                Request Demo
+                Request a demo
               </Button>
             </Link>
             <MobileMenuButton
@@ -301,7 +301,7 @@ function MobileMenu({
             size="md"
             className="flex w-full justify-center rounded-[10px] border-[#006FFF] text-center text-[#006FFF]"
           >
-            Request Demo
+            Request a demo
           </Button>
         </Link>
       </div>

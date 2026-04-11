@@ -23,7 +23,7 @@ import ContactSection from "@/components/partners/contact-section";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Request Demo - Structurely",
+  title: "Request a demo - Structurely",
   description:
     "Request a demo to see how Structurely automates lead qualification and follow-up with AI.",
 };

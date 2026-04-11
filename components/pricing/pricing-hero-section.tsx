@@ -76,7 +76,7 @@ export default function PricingHeroSection({
 
             <div className="flex items-center justify-center gap-4">
               <Link href="/demo">
-                <Button variant="primary">Book a Demo</Button>
+                <Button variant="primary">Request a demo</Button>
               </Link>
               <Link href="/how-it-works">
                 <Button variant="secondary">See How It Works</Button>

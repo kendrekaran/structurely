@@ -33,9 +33,9 @@ function ExampleSection() {
             <Button
               variant="primary"
               size="md"
-              onClick={() => setLastClickedCta("Book a Demo")}
+              onClick={() => setLastClickedCta("Request a demo")}
             >
-              Book a Demo
+              Request a demo
             </Button>
 
             <Button

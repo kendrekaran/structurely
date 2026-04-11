@@ -19,7 +19,7 @@ export default function PilotSection() {
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link href="/demo">
               <Button variant="primary" size="md">
-                Book a Demo
+                Request a demo
               </Button>
             </Link>
             <Link href="/demo">
