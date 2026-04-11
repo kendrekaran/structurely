@@ -80,7 +80,7 @@ function IntelligentQualificationSection() {
         <div className="max-w-global pt-section-md mx-auto flex flex-col items-center">
           <div className="flex w-full flex-col items-center gap-3 text-center">
             <h2 data-reveal="words" className="md:max-w-[10.4em]">
-              Intelligent Qualification  & Decisioning
+              Intelligent qualification & decisioning
             </h2>
           </div>
 
@@ -172,7 +172,7 @@ function IntelligentQualificationSection() {
               <div className="h-px flex-1 bg-[#E5E7EB]" />
             </div>
 
-            <div className=" w-full items-center justify-center border-b border-[#E5E7EB] md:px-6 py-6 md:flex">
+            <div className="w-full items-center justify-center border-b border-[#E5E7EB] py-6 md:flex md:px-6">
               <p className="text-center text-[16px] leading-[26px] tracking-[-0.01em]">
                 <span className="text-foreground">
                   Based on predefined routing logic,{" "}
@@ -181,7 +181,7 @@ function IntelligentQualificationSection() {
               </p>
             </div>
 
-            <div className=" grid w-full grid-cols-1 sm:grid-cols-2 ">
+            <div className="grid w-full grid-cols-1 sm:grid-cols-2">
               {routingOptions.map((option, index) => (
                 <div
                   key={option}

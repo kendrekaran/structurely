@@ -1,4 +1,5 @@
 import Button from "@/components/_ui/button";
+import Link from "next/link";
 
 const featureRows = [
   [
@@ -164,9 +165,11 @@ export default function PricingOnboardingSection() {
               <span className="text-[#006FFF]">you only pay as the AI delivers value</span> <br/>
               <span className="text-[#646464]"> — the more it works, the more you grow.</span>
             </p>
-            <Button variant="primary" className="w-fit md:w-auto">
-              Book a Demo
-            </Button>
+            <Link href="/demo">
+              <Button variant="primary" className="w-fit md:w-auto">
+                Request a demo
+              </Button>
+            </Link>
           </div>
 
         </div>

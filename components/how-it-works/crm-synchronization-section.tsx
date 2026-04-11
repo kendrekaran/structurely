@@ -35,7 +35,7 @@ function CrmSynchronizationSection() {
           <h2 data-reveal="words" className="max-w-[12em] text-center">
             <span className="text-[#006FFF]">CRM</span>{" "}
             <span className="md:text-heading text-[#006FFF]">
-              Synchronization
+              synchronization
             </span>
           </h2>
         </div>
@@ -72,7 +72,7 @@ function CrmSynchronizationSection() {
             Is recorded inside your{" "}
             <span className="text-heading font-medium">CRM.</span>
           </p>
-          <p className=" text-center text-[16px] leading-6 font-bold tracking-[-0.02em]">
+          <p className="text-center text-[16px] leading-6 font-bold tracking-[-0.02em]">
             <span className="text-[#006FFF] underline">Sales teams</span>
             <span className="text-[#006FFF]"> </span>
             <span className="text-heading">see complete context.</span>

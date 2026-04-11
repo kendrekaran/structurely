@@ -39,7 +39,7 @@ function CtaSection({ variant = "default" }: CtaSectionProps) {
               <div className="flex flex-wrap items-center justify-center gap-4">
                 <Link href="/demo">
                   <Button variant="primary" size="md" className="">
-                    <span className="w-[104px] text-left">Try the AI</span>
+                    <span className="w-fit text-left">Request a demo</span>
                   </Button>
                 </Link>
               </div>

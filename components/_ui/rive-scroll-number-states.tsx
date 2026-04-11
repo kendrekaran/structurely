@@ -1,217 +1,210 @@
 "use client";
 
-import { useGSAP } from "@gsap/react";
-import {
-  Fit,
-  Layout,
-  useRive,
-  useStateMachineInput,
-} from "@rive-app/react-canvas";
-import gsap from "gsap";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { motion } from "motion/react";
+import { useEffect, useMemo, useState } from "react";
+import { Fit, Layout, useRive } from "@rive-app/react-canvas";
 import { cn } from "@/lib/utils";
-import { memo, useCallback, useMemo, useRef } from "react";
-
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const DEFAULT_RIVE_SRC = "/rive/home/new/2.riv";
 const DEFAULT_STATE_MACHINE = "State Machine 1";
 const DEFAULT_INPUT_NAME = "Number 1";
+const DEFAULT_AUTOPLAY_MS = 5000;
 
-/** Inclusive range [0, maxState] — default four states: 0, 1, 2, 3. */
-const DEFAULT_MAX_STATE = 3;
+export type RiveNumberStateItem = {
+  title: string;
+  description: string;
+  /** Shown as pills on small screens (same pattern as industry selector). */
+  features?: string[];
+};
 
-function riveScrollStateLabel(index: number) {
-  return `state-${index}`;
-}
+const DEFAULT_ITEMS: RiveNumberStateItem[] = [
+  {
+    title: "Human-like AI calls with leads",
+    description:
+      "Human-like AI voice agents handle inbound and outbound lead qualification calls, engage prospects naturally, and capture sales-ready opportunities.",
+    features: ["Ring", "AI dialog", "Score", "CRM log"],
+  },
+  {
+    title: "Texting + drip campaigns",
+    description:
+      "AI text messaging and drip campaigns automate follow-up, support two-way SMS conversations, and keep leads engaged throughout the sales funnel.",
+    features: ["Trigger", "Drip", "Reply", "Re-engage"],
+  },
+  {
+    title: "Live transfers",
+    description:
+      "Real-time live transfers route qualified leads directly to your sales team, improving response speed, connection rates, and conversion opportunities.",
+    features: ["Qualify", "Warm intro", "Bridge", "Agent"],
+  },
+  {
+    title: "Appointment setting",
+    description:
+      "AI appointment setting automates scheduling for qualified leads, integrates with calendars and CRMs, and helps sales teams book more meetings.",
+    features: ["Intent", "Slots", "Book", "Remind"],
+  },
+];
 
 export type RiveScrollNumberStatesProps = {
+  items?: RiveNumberStateItem[];
   src?: string;
   stateMachineName?: string;
   inputName?: string;
-  /** Highest numeric value sent to the input (states are 0 … maxState). */
-  maxState?: number;
-  className?: string;
-  canvasClassName?: string;
-  /** ScrollTrigger scrub smoothing (seconds). */
-  scrub?: number;
-  scrollTriggerStart?: string;
-  scrollTriggerEnd?: string;
+  /** Milliseconds between autoplay steps (default 5000). */
+  autoplayIntervalMs?: number;
   layout?: Layout;
-  /** Duration (s) when jumping scroll via segment clicks (ScrollTrigger + labelToScroll). */
-  scrollToDuration?: number;
-  /** Optional class for the bottom segment strip (omit to hide the strip). */
-  segmentStripClassName?: string | null;
+  className?: string;
+  /** If true, Rive input uses 1…n (legacy); if false, uses 0…n−1 (states 0–3 for four items). */
+  inputOneBased?: boolean;
 };
 
 function RiveScrollNumberStatesInner({
+  items: itemsProp,
   src = DEFAULT_RIVE_SRC,
   stateMachineName = DEFAULT_STATE_MACHINE,
   inputName = DEFAULT_INPUT_NAME,
-  maxState = DEFAULT_MAX_STATE,
-  className,
-  canvasClassName,
-  scrub = 1,
-  scrollTriggerStart = "25% center",
-  scrollTriggerEnd = "75% center",
+  autoplayIntervalMs = DEFAULT_AUTOPLAY_MS,
   layout: layoutProp,
-  scrollToDuration = 0.55,
-  segmentStripClassName,
+  className,
+  inputOneBased = false,
 }: RiveScrollNumberStatesProps) {
-  const wrapperRef = useRef<HTMLDivElement>(null);
-  const timelineRef = useRef<gsap.core.Timeline | null>(null);
+  const items = itemsProp ?? DEFAULT_ITEMS;
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [cycleResetKey, setCycleResetKey] = useState(0);
+  const active = items[activeIndex];
+
+  const tabTransition = { duration: 0.4, ease: [0.4, 0, 0.2, 1] as const };
+
   const layout = useMemo(
-    () => layoutProp ?? new Layout({ fit: Fit.Cover, layoutScaleFactor: 1 }),
+    () => layoutProp ?? new Layout({ fit: Fit.Contain, layoutScaleFactor: 1 }),
     [layoutProp],
   );
 
   const { rive, RiveComponent } = useRive({
     src,
     stateMachines: stateMachineName,
-    autoplay: false,
+    autoplay: true,
     layout,
   });
 
-  const numberInput = useStateMachineInput(
+  useEffect(() => {
+    const timeoutId = window.setTimeout(() => {
+      setActiveIndex((prev) => (prev + 1) % items.length);
+    }, autoplayIntervalMs);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+    };
+  }, [activeIndex, cycleResetKey, items.length, autoplayIntervalMs]);
+
+  useEffect(() => {
+    if (!rive) return;
+
+    const inputs = rive.stateMachineInputs(stateMachineName);
+    const numberInput = Array.isArray(inputs)
+      ? inputs.find((input) => input.name === inputName)
+      : null;
+
+    if (
+      numberInput &&
+      "value" in numberInput &&
+      typeof numberInput.value === "number"
+    ) {
+      const next = inputOneBased ? activeIndex + 1 : activeIndex;
+      numberInput.value = next;
+    }
+  }, [
     rive,
+    activeIndex,
+    cycleResetKey,
     stateMachineName,
     inputName,
-    0,
-  );
+    inputOneBased,
+  ]);
 
-  const valueProxy = useRef({ value: 0 });
-
-  const segmentCount = maxState + 1;
-
-  useGSAP(
-    () => {
-      const trigger = wrapperRef.current;
-      if (!trigger || !numberInput) return;
-
-      valueProxy.current.value = 0;
-      timelineRef.current = null;
-
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger,
-          start: scrollTriggerStart,
-          end: scrollTriggerEnd,
-          scrub,
-          fastScrollEnd: true,
-        },
-      });
-
-      const parts = maxState + 1;
-      const partDuration = 1 / parts;
-
-      const syncRiveValue = () => {
-        const raw = valueProxy.current.value;
-        const stepped = Math.round(Math.min(maxState, Math.max(0, raw)));
-        numberInput.value = stepped;
-        rive?.play();
-      };
-
-      for (let i = 0; i < parts; i++) {
-        const endVal = ((i + 1) / parts) * maxState;
-        tl.to(
-          valueProxy.current,
-          {
-            value: endVal,
-            ease: "none",
-            duration: partDuration,
-            onUpdate: syncRiveValue,
-          },
-          i * partDuration,
-        );
-      }
-
-      for (let i = 0; i <= maxState; i++) {
-        const t = maxState === 0 ? 0 : i / maxState;
-        tl.addLabel(riveScrollStateLabel(i), t);
-      }
-
-      timelineRef.current = tl;
-
-      return () => {
-        timelineRef.current = null;
-      };
-    },
-    {
-      dependencies: [
-        numberInput,
-        rive,
-        maxState,
-        scrub,
-        scrollTriggerStart,
-        scrollTriggerEnd,
-      ],
-      scope: wrapperRef,
-    },
-  );
-
-  const scrollToSegment = useCallback(
-    (index: number) => {
-      const tl = timelineRef.current;
-      const st = tl?.scrollTrigger;
-      if (!tl || !st) return;
-      console.log("scrollToSegment", index);
-
-      const label = riveScrollStateLabel(index);
-      if (tl.labels[label] === undefined) return;
-
-      console.log("label", label);
-
-      const y = st.labelToScroll(label);
-      gsap.to(window, {
-        duration: scrollToDuration,
-        ease: "power2.inOut",
-        scrollTo: { y, autoKill: true },
-      });
-    },
-    [scrollToDuration],
-  );
-
-  const showSegments = segmentStripClassName !== null;
+  const mobileFeatures = active?.features ?? [];
 
   return (
-    <div ref={wrapperRef} className={cn("relative h-full w-full", className)}>
-      <div
-        className={cn(
-          "absolute inset-0 flex items-center justify-center",
-          canvasClassName,
-        )}
-      >
-        {RiveComponent ? <RiveComponent /> : null}
+    <div
+      className={cn(
+        "flex h-full min-h-0 w-full flex-col md:flex-row",
+        className,
+      )}
+    >
+      <div className="flex flex-col border-b border-[#E5E7EB] md:w-[50%] md:shrink-0 md:border-b-0">
+        {items.map((item, i) => (
+          <motion.button
+            key={`${item.title}-${i}`}
+            type="button"
+            onClick={() => {
+              setCycleResetKey((prev) => prev + 1);
+              if (i !== activeIndex) setActiveIndex(i);
+            }}
+            initial={false}
+            animate={{
+              backgroundColor: activeIndex === i ? "#FFFFFF" : "#FAFAFA",
+            }}
+            transition={tabTransition}
+            className={cn(
+              "relative flex w-full cursor-pointer flex-col items-start px-6 py-5 text-left md:px-8 md:py-6",
+              activeIndex !== i && i !== items.length - 1
+                ? "border-b border-[#E5E7EB]"
+                : "",
+            )}
+          >
+            <span className="text-base leading-6 font-medium tracking-[-0.02em] text-[#202020]">
+              {item.title}
+            </span>
+            <motion.div
+              className="overflow-hidden"
+              initial={false}
+              animate={{
+                height: activeIndex === i ? "auto" : 0,
+                opacity: activeIndex === i ? 1 : 0,
+                filter: activeIndex === i ? "blur(0px)" : "blur(4px)",
+                y: activeIndex === i ? 0 : 10,
+              }}
+              transition={tabTransition}
+            >
+              <div className="pt-2">
+                <span className="text-base leading-[26px] font-medium tracking-[-0.01em] text-[#646464]">
+                  {item.description}
+                </span>
+              </div>
+            </motion.div>
+            {activeIndex === i && (
+              <>
+                <div className="absolute right-0 bottom-0 left-0 h-[3px] bg-[#E5E7EB]" />
+                <motion.div
+                  key={`${activeIndex}-${cycleResetKey}`}
+                  className="absolute bottom-0 left-0 h-[3px] bg-[#006FFF]"
+                  initial={{ width: "0%" }}
+                  animate={{ width: "100%" }}
+                  transition={{
+                    duration: autoplayIntervalMs / 1000,
+                    ease: "linear",
+                  }}
+                />
+              </>
+            )}
+          </motion.button>
+        ))}
       </div>
 
-      {showSegments ? (
-        <div
-          className={cn(
-            "pointer-events-auto absolute inset-x-0 bottom-0 z-10 flex h-10 border-t border-black/10 bg-white/40 backdrop-blur-sm dark:bg-black/30",
-            segmentStripClassName,
-          )}
-          role="group"
-          aria-label="Scroll to animation state"
-        >
-          {Array.from({ length: segmentCount }, (_, i) => (
-            <button
-              key={i}
-              type="button"
-              className={cn(
-                "text-foreground/80 flex flex-1 items-center justify-center border-r border-black/10 text-xs font-medium transition-colors last:border-r-0",
-                "focus-visible:ring-primary hover:bg-black/5 focus-visible:ring-2 focus-visible:outline-none dark:hover:bg-white/10",
-              )}
-              aria-label={`Scroll to state ${i + 1} of ${segmentCount}`}
-              onClick={() => scrollToSegment(i)}
-            >
-              {i + 1}
-            </button>
-          ))}
+      <div className="flex flex-1">
+        <div className="flex h-full min-h-0 flex-1 flex-col border-t border-[#E5E7EB] md:border-t-0 md:border-l">
+          <div className="relative flex aspect-[699/560] w-full flex-1 items-center justify-center overflow-hidden bg-white">
+            {RiveComponent ? (
+              <div className="absolute h-full w-full scale-105">
+                <RiveComponent />
+              </div>
+            ) : (
+              <div className="text-sm text-[#646464]">Loading animation…</div>
+            )}
+          </div>
         </div>
-      ) : null}
+      </div>
     </div>
   );
 }
 
-export const RiveScrollNumberStates = memo(RiveScrollNumberStatesInner);
+export const RiveScrollNumberStates = RiveScrollNumberStatesInner;

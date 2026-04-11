@@ -1,4 +1,5 @@
 import Button from "@/components/_ui/button";
+import Link from "next/link";
 import { SlidingNumber } from "@/components/motion-primitives/sliding-number";
 import type { BillingCycle } from "./pricing-hero-section";
 
@@ -179,18 +180,20 @@ export default function PricingCardsSection({
                     </div>
                   </div>
 
-                  <Button
-                    variant="outline"
-                    size="md"
-                    className="flex w-full text-center items-center justify-center"
-                    style={
-                      !plan.popular
-                        ? { color: "#646464", borderColor: "#E5E7EB" }
-                        : undefined
-                    }
-                  >
-                    <span className="w-full text-center">Book a Demo</span>
-                  </Button>
+                  <Link href="/demo" className="w-full">
+                    <Button
+                      variant="outline"
+                      size="md"
+                      className="flex w-full text-center items-center justify-center"
+                      style={
+                        !plan.popular
+                          ? { color: "#646464", borderColor: "#E5E7EB" }
+                          : undefined
+                      }
+                    >
+                      <span className="w-full text-center">Request a demo</span>
+                    </Button>
+                  </Link>
                 </div>
 
                 <hr className="border-[#E5E7EB]" />

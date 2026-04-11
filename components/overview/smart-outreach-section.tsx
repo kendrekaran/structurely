@@ -760,10 +760,7 @@ function MarqueeRow({ chips, reverse = false }: MarqueeRowProps) {
 
 function SmartOutreachSection() {
   return (
-    <section
-      id="smart-outreach"
-      className="overflow-hidden  border-[#E5E7EB]"
-    >
+    <section id="smart-outreach" className="overflow-hidden border-[#E5E7EB]">
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
           <div className="flex flex-col items-center gap-3 px-6 pt-4 text-center md:px-24 md:pt-16 md:pb-4">
@@ -771,8 +768,8 @@ function SmartOutreachSection() {
               Smart outreach
             </div>
             <h2 data-reveal="words" className="max-w-[11em] text-center">
-              Powerful Tools to{" "}
-              <span className="text-[#006FFF]">Grow Your</span> Pipeline
+              Powerful tools to{" "}
+              <span className="text-[#006FFF]">grow your</span> pipeline
             </h2>
           </div>
 

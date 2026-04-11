@@ -8,7 +8,7 @@ import CtaSection from "@/components/_common/cta-section";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Use Cases - Structurely",
+  title: "Use cases - Structurely",
   description:
     "Discover how teams use Structurely to automate lead engagement across industries and workflows.",
 };

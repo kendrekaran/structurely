@@ -14,7 +14,6 @@
 //   );
 // }
 
-
 import CtaSection from "@/components/_common/cta-section";
 import FooterSection from "@/components/_common/footer-section";
 import Header from "@/components/_common/header";
@@ -24,7 +23,7 @@ import ContactSection from "@/components/partners/contact-section";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Request Demo - Structurely",
+  title: "Request a demo - Structurely",
   description:
     "Request a demo to see how Structurely automates lead qualification and follow-up with AI.",
 };

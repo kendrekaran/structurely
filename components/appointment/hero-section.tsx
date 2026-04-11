@@ -16,8 +16,9 @@ function HeroSection() {
                 <span className="text-[#006FFF]">highest-quality leads.</span>
               </h1>
 
-              <p className="max-w-[39em] text-[16px] sm:text-[18px] leading-[26px] sm:leading-[28px] font-normal teext-[#646464] tracking-[-0.01em] text-center">
-              AI uses qualifying conversation to determine the leads that you should be meeting with and schedules appointments for you directly in your CRM.
+              <p className="max-w-[39em] text-[16px] sm:text-[18px] leading-[26px] sm:leading-[28px] font-normal text-[#646464] tracking-[-0.01em] text-center">
+                AI qualification identifies which leads you should meet with,
+                then schedules appointments for you in your CRM.
               </p>
             </div>
           </div>

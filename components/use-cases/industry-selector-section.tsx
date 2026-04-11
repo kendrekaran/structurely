@@ -3,11 +3,16 @@
 import Image from "next/image";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
-import { Fit, Layout, useRive } from "@rive-app/react-canvas";
+import {
+  Fit,
+  Layout,
+  StateMachineInputType,
+  useRive,
+} from "@rive-app/react-canvas";
 
 const industries = [
   {
-    title: "Mortgage & lending",
+    title: "Mortgage",
     description:
       "Automate your CRM and sales resources with AI-powered appointment setting and calling.",
     features: [
@@ -17,27 +22,28 @@ const industries = [
       "Automated nurture for long-cycle buyers",
     ],
     chat: {
-      sender: "Jordan · Oakland Athletics",
+      sender: "Jordan · Summit Loans",
       subtitle: "Verified Business · Structurely AI",
       time: "Today · 10:14 AM",
       messages: [
         {
-          text: "Hey Amber! Jordan here from Oakland Athletics. Quick one — you came to a couple Grizzlies games last year, right? 🏀",
+          text: "Hi Amber! Jordan here from Summit Loans. I see you started a refi inquiry last month — still interested in lowering your rate? 🏠",
           fromUser: false,
         },
         {
-          text: "I did! Those were fun. Didn't know you'd have my info like that ha.",
+          text: "Definitely! But haven't had the chance to gather docs yet.",
           fromUser: true,
         },
         {
-          text: "Ha — we keep track of our fans. Alumni rate on season tickets is live — $249/seat instead of $349. Expires Sunday.",
+          text: "No worries, I can walk you through it. Want to set a time for a quick call this week?",
           fromUser: false,
         },
       ],
     },
+    riveState: 0,
   },
   {
-    title: "Real estate",
+    title: "Real Estate",
     description:
       "Automate lead follow-up and appointment setting for high-volume real estate teams.",
     features: [
@@ -47,27 +53,28 @@ const industries = [
       "New buyer & seller qualification",
     ],
     chat: {
-      sender: "Maya · HomeVest Realty",
+      sender: "Maya · Westbrook Realty",
       subtitle: "Verified Business · Structurely AI",
       time: "Today · 9:30 AM",
       messages: [
         {
-          text: "Hi Tom! I saw you viewed 3 listings in Midtown this week. Still looking in that area? 🏡",
+          text: "Hi Tom! This is Maya at Westbrook Realty. I noticed you checked out a few Uptown listings — still house-hunting? 🏡",
           fromUser: false,
         },
         {
-          text: "Yeah, still searching. Nothing has clicked yet.",
+          text: "Yeah, I'm just waiting for something that fits.",
           fromUser: true,
         },
         {
-          text: "Got it! A new 3BR just listed today — matches your wishlist. Want me to schedule a showing?",
+          text: "A new 3BR just hit the market today that matches your wishlist. Want me to schedule a showing?",
           fromUser: false,
         },
       ],
     },
+    riveState: 1,
   },
   {
-    title: "Home improvement",
+    title: "Home Improvement",
     description:
       "Engage new leads instantly and qualify project interest so your team can book more jobs faster.",
     features: [
@@ -77,24 +84,25 @@ const industries = [
       "Inventory inquiry follow-up",
     ],
     chat: {
-      sender: "Chris · ProBuild",
+      sender: "Chris · Brighthome Exteriors",
       subtitle: "Verified Business · Structurely AI",
       time: "Today · 11:00 AM",
       messages: [
         {
-          text: "Hey! Chris from ProBuild here. You requested a quote for kitchen remodeling last week — still interested? 🔨",
+          text: "Hey! Chris from Brighthome Exteriors here. Ready to move forward with your siding replacement quote? 🔨",
           fromUser: false,
         },
         {
-          text: "Yes, we're ready to move forward.",
+          text: "Yes! What’s the next step?",
           fromUser: true,
         },
         {
-          text: "Perfect! I can have a crew out for a free estimate Thursday or Friday — which works better?",
+          text: "We can schedule an installer visit for Thursday or Friday this week for final measurements. Preference?",
           fromUser: false,
         },
       ],
     },
+    riveState: 2,
   },
   {
     title: "Sports",
@@ -107,27 +115,28 @@ const industries = [
       "SDR workload reduction",
     ],
     chat: {
-      sender: "Alex · Riverside FC",
+      sender: "Alex · University Athletics",
       subtitle: "Verified Business · Structurely AI",
       time: "Today · 2:15 PM",
       messages: [
         {
-          text: "Hey Mike! You've been a season ticket holder for 3 years. Early renewal locks in your seat at last year's price ⚽",
+          text: "Hey Mike! Renew your University Athletics season tickets now to guarantee your seats for next year 🏀",
           fromUser: false,
         },
         {
-          text: "Is the early bird discount still available?",
+          text: "Is the early bird discount still valid?",
           fromUser: true,
         },
         {
-          text: "Yes — 15% off through Friday. I can send the link right now if you'd like to lock it in.",
+          text: "Yes — renew by Friday to save 15%. Want me to send you the payment link now?",
           fromUser: false,
         },
       ],
     },
+    riveState: 3,
   },
   {
-    title: "Marketing agencies",
+    title: "Marketing Agencies",
     description: "Instantly qualify agency leads and seamlessly hand them off.",
     features: [
       "Leads are purchased",
@@ -136,24 +145,25 @@ const industries = [
       "CRM usage is inconsistent",
     ],
     chat: {
-      sender: "Dana · GrowthLab",
+      sender: "Dana · Nortline Growth",
       subtitle: "Verified Business · Structurely AI",
       time: "Today · 2:00 PM",
       messages: [
         {
-          text: "Hi! Dana from GrowthLab. You filled out our agency inquiry — looking to scale your paid ads? 📈",
+          text: "Hi! Dana from Nortline Growth. You filled out our agency inquiry — looking to scale your paid ads? 📈",
           fromUser: false,
         },
         {
-          text: "Yes, we're spending $50k/mo and need better results.",
+          text: "Yes, we're spending $50k/mo and want better results.",
           fromUser: true,
         },
         {
-          text: "We've helped 3 similar brands cut CAC by 40%. Quick 15-min call this week?",
+          text: "We’ve helped 3 brands in your space cut CAC by 40%. Quick 15-min call this week to chat?",
           fromUser: false,
         },
       ],
     },
+    riveState: 4,
   },
   {
     title: "Whitelabel",
@@ -166,24 +176,25 @@ const industries = [
       "SDR workload reduction",
     ],
     chat: {
-      sender: "Taylor · YourBrand AI",
+      sender: "Taylor · Elevate Partners",
       subtitle: "Verified Business · Structurely AI",
       time: "Today · 3:15 PM",
       messages: [
         {
-          text: "Hi! Taylor here. You expressed interest in our white-label platform — still exploring? 🤝",
+          text: "Hi! Taylor here from Elevate Partners. You showed interest in our white-label platform — still exploring? 🤝",
           fromUser: false,
         },
         {
-          text: "We are! We want to offer this under our own brand.",
+          text: "We’re interested! Want to offer this under our own brand.",
           fromUser: true,
         },
         {
-          text: "Perfect fit. We handle the AI, you get full branding control. Want me to walk you through the partner program?",
+          text: "Awesome fit. We handle the AI, you get the branding control. Want a walkthrough of our partner program?",
           fromUser: false,
         },
       ],
     },
+    riveState: 5,
   },
   {
     title: "Universities",
@@ -196,24 +207,25 @@ const industries = [
       "CRM usage is inconsistent",
     ],
     chat: {
-      sender: "Sam · Westfield University",
+      sender: "Sam · North Valley University",
       subtitle: "Verified Business · Structurely AI",
       time: "Today · 10:45 AM",
       messages: [
         {
-          text: "Hi Emma! Sam from Westfield U. You attended our virtual open day — have questions about programs? 🎓",
+          text: "Hello Emma! Sam from North Valley University. You attended our online info session — any questions about applying? 🎓",
           fromUser: false,
         },
         {
-          text: "Yes! I'm deciding between two programs.",
+          text: "Yes! I’m deciding between two programs.",
           fromUser: true,
         },
         {
-          text: "Happy to help. I can connect you with a current student from each — would that be useful?",
+          text: "Great! I can connect you with a current student in each program. Want me to set up an intro?",
           fromUser: false,
         },
       ],
     },
+    riveState: 6,
   },
 ];
 
@@ -223,7 +235,7 @@ function IndustrySelectorSection() {
   const active = industries[activeIndex];
   const tabTransition = { duration: 0.4, ease: [0.4, 0, 0.2, 1] as const };
   const { rive, RiveComponent } = useRive({
-    src: "/rive/how-it-works/6.riv",
+    src: "/rive/home/new/6.riv",
     autoplay: true,
     stateMachines: "State Machine 1",
     layout: new Layout({ fit: Fit.Contain, layoutScaleFactor: 1 }),
@@ -243,14 +255,16 @@ function IndustrySelectorSection() {
     if (!rive) return;
 
     const inputs = rive.stateMachineInputs("State Machine 1");
-    const numberInput = Array.isArray(inputs)
-      ? inputs.find((input) => input.name === "Number 1")
-      : null;
+    const numberInput = inputs?.find(
+      (input) =>
+        input.name === "Number 1" &&
+        input.type === StateMachineInputType.Number,
+    );
 
-    if (numberInput && "value" in numberInput && typeof numberInput.value === "number") {
-      numberInput.value = activeIndex + 1;
+    if (numberInput) {
+      numberInput.value = active.riveState;
     }
-  }, [rive, activeIndex, cycleResetKey]);
+  }, [rive, active.riveState, cycleResetKey]);
 
   return (
     <section id="industry-selector" className="relative z-0">
@@ -313,7 +327,7 @@ function IndustrySelectorSection() {
             </div>
 
             <div className="px-global md:flex md:flex-1 md:px-0">
-              <div className="flex h-full flex-1 flex-col border-l border-[#E5E7EB] px-6 py-6 md:px-0 md:py-0 ">
+              <div className="flex h-full flex-1 flex-col border-l border-[#E5E7EB] px-6 py-6 md:px-0 md:py-0">
                 <div className="flex flex-wrap justify-center gap-3 md:hidden">
                   {active.features.map((feature, i) => (
                     <span
@@ -338,13 +352,15 @@ function IndustrySelectorSection() {
                   priority
                 />
 
-                <div className="relative hidden min-h-[360px] flex-1 items-center justify-center overflow-hidden  bg-white md:flex md:min-h-[500px]">
+                <div className="relative hidden min-h-[360px] flex-1 items-center justify-center overflow-hidden bg-white md:flex md:min-h-[500px]">
                   {RiveComponent ? (
-                    <div className="h-full scale-105 w-full">
+                    <div className="h-full w-full scale-105">
                       <RiveComponent />
                     </div>
                   ) : (
-                    <div className="text-sm text-[#646464]">Loading animation...</div>
+                    <div className="text-sm text-[#646464]">
+                      Loading animation...
+                    </div>
                   )}
                 </div>
               </div>

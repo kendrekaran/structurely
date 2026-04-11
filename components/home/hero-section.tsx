@@ -12,7 +12,7 @@ function HeroSection() {
               <HeroBadge text="Every lead. Every follow-up. Every time." />
 
               <h1 data-reveal="words" className="max-w-[342px] sm:max-w-[11em] text-center">
-                AI platform that move the{" "}
+                AI platform that moves the{" "}
                 <span className="text-[#006FFF]">right leads</span> forward
               </h1>
 

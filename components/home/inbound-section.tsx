@@ -31,7 +31,7 @@ function InboundDemandSection() {
           <div className="relative z-10">
             <Link href="/demo">
             <Button variant="primary" size="md">
-              Request Demo
+              Request a demo
             </Button>
             </Link>
           </div>

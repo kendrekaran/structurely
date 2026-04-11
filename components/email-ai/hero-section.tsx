@@ -16,9 +16,9 @@ function HeroSection() {
                 <span className="text-[#006FFF]">Email AI.</span>
               </h1>
 
-              <p className="max-w-[23em] text-[16px] sm:text-[18px] leading-[26px] sm:leading-[28px] font-normal teext-[#646464] tracking-[-0.01em] text-center">
-              AI powered two-way qualifying conversations
-              within your current email automation system.
+              <p className="max-w-[23em] text-[16px] sm:text-[18px] leading-[26px] sm:leading-[28px] font-normal text-[#646464] tracking-[-0.01em] text-center">
+                AI-powered, two-way qualifying conversations within your
+                existing email automation stack.
               </p>
             </div>
           </div>

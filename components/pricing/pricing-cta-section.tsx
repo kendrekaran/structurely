@@ -1,4 +1,5 @@
 import Button from "@/components/_ui/button";
+import Link from "next/link";
 
 export default function PricingCtaSection() {
   return (
@@ -19,12 +20,16 @@ export default function PricingCtaSection() {
             </div>
 
             <div className="flex  items-center justify-center gap-4">
-              <Button variant="primary" size="md" className="w-auto md:w-full">
-                <span className="w-fit">Book a Demo</span>
-              </Button>
-              <Button variant="secondary" size="md" className="  ">
-                Talk to Sales
-              </Button>
+              <Link href="/demo">
+                <Button variant="primary" size="md" className="w-auto md:w-full">
+                  <span className="w-fit">Request a demo</span>
+                </Button>
+              </Link>
+              <Link href="/demo">
+                <Button variant="secondary" size="md" className="  ">
+                  Talk to Sales
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

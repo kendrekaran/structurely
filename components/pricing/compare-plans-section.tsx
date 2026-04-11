@@ -166,10 +166,15 @@ function CellContent({ value }: { value: CellValue }) {
 
 export default function ComparePlansSection() {
   return (
-    <section id="compare-plans" className="relative z-0 ">
+    <section id="compare-plans" className="relative z-0">
       <div className="px-global">
-        <div className="max-w-global py-6 md:py-16 mx-auto flex flex-col items-center gap-3 border-x border-[#E5E7EB] px-3 md:px-0">
-          <h2 data-reveal="words" className="text-center text-[28px] leading-[36px] font-medium tracking-[-0.02em] md:text-[48px] md:leading-[54px] md:tracking-[-0.03em]">Compare Plans</h2>
+        <div className="max-w-global mx-auto flex flex-col items-center gap-3 border-x border-[#E5E7EB] px-3 py-6 md:px-0 md:py-16">
+          <h2
+            data-reveal="words"
+            className="text-center text-[28px] leading-[36px] font-medium tracking-[-0.02em] md:text-[48px] md:leading-[54px] md:tracking-[-0.03em]"
+          >
+            Compare plans
+          </h2>
         </div>
       </div>
 
@@ -178,10 +183,10 @@ export default function ComparePlansSection() {
           <Table containerClassName="max-md:[&::-webkit-scrollbar]:hidden max-md:[scrollbar-width:none]">
             <TableHeader>
               <TableRow className="border-b-0 hover:bg-transparent">
-                <TableHead className="w-[320px] min-w-[200px] border-r border-[#E5E7EB] border-b border-[#E5E7EB] bg-[#FAFAFA] px-4 py-4 align-middle text-[14px] leading-[20px] font-medium tracking-[-0.01em] text-[#202020]">
+                <TableHead className="w-[320px] min-w-[200px] border-r border-b border-[#E5E7EB] bg-[#FAFAFA] px-4 py-4 align-middle text-[14px] leading-[20px] font-medium tracking-[-0.01em] text-[#202020]">
                   Feature
                 </TableHead>
-                <TableHead className="flex-1 min-w-[160px] border-r border-[#E5E7EB] border-b border-[#E5E7EB] bg-[#FAFAFA] py-4 text-center align-middle">
+                <TableHead className="min-w-[160px] flex-1 border-r border-b border-[#E5E7EB] bg-[#FAFAFA] py-4 text-center align-middle">
                   <div className="text-[14px] leading-[20px] font-medium tracking-[-0.01em] text-[#202020]">
                     Individual
                   </div>
@@ -189,7 +194,7 @@ export default function ComparePlansSection() {
                     $99/mo
                   </div>
                 </TableHead>
-                <TableHead className="flex-1 min-w-[160px] border border-[#E5E7EB] bg-[rgba(0,111,255,0.08)] py-4 text-center align-middle">
+                <TableHead className="min-w-[160px] flex-1 border border-[#E5E7EB] bg-[rgba(0,111,255,0.08)] py-4 text-center align-middle">
                   <div className="text-[14px] leading-[20px] font-medium tracking-[-0.01em] text-[#202020]">
                     Team
                   </div>
@@ -197,7 +202,7 @@ export default function ComparePlansSection() {
                     $499/mo
                   </div>
                 </TableHead>
-                <TableHead className="flex-1 min-w-[160px] border-b border-[#E5E7EB] bg-[#FAFAFA] py-4 text-center align-middle">
+                <TableHead className="min-w-[160px] flex-1 border-b border-[#E5E7EB] bg-[#FAFAFA] py-4 text-center align-middle">
                   <div className="text-[14px] leading-[20px] font-medium tracking-[-0.01em] text-[#202020]">
                     Company
                   </div>
@@ -217,13 +222,13 @@ export default function ComparePlansSection() {
                   <TableCell className="w-[320px] min-w-[200px] border-r border-[#E5E7EB] px-4 py-6 align-middle text-[14px] leading-[20px] font-medium tracking-[-0.01em] text-[#202020]">
                     {feature.name}
                   </TableCell>
-                  <TableCell className="flex-1 min-w-[160px] border-r border-[#E5E7EB] py-6 align-middle">
+                  <TableCell className="min-w-[160px] flex-1 border-r border-[#E5E7EB] py-6 align-middle">
                     <CellContent value={feature.individual} />
                   </TableCell>
-                  <TableCell className="flex-1 min-w-[160px] border-r border-l border-[#E5E7EB] py-6 align-middle bg-[rgba(0,111,255,0.04)]">
+                  <TableCell className="min-w-[160px] flex-1 border-r border-l border-[#E5E7EB] bg-[rgba(0,111,255,0.04)] py-6 align-middle">
                     <CellContent value={feature.team} />
                   </TableCell>
-                  <TableCell className="flex-1 min-w-[160px] py-6 align-middle">
+                  <TableCell className="min-w-[160px] flex-1 py-6 align-middle">
                     <CellContent value={feature.company} />
                   </TableCell>
                 </TableRow>
