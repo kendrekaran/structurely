@@ -96,7 +96,7 @@ export function LiveDemoPhoneRow({ onSubmitPhone }: LiveDemoPhoneRowProps) {
           <span
             id={ERROR_ID}
             role="alert"
-            className="col-start-1 row-start-1 px-1.5 text-[12px] leading-[16px] text-red-600"
+            className="col-start-1 row-start-1 px-1.5 pt-1 text-[12px] leading-[16px] text-red-600"
           >
             {error}
           </span>
