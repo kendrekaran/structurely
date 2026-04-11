@@ -353,7 +353,7 @@ export function ContactSalesForm({ className }: ContactSalesFormProps) {
           <FieldLabel label="Phone Number" required />
           <FieldError message={errors.phoneNumber?.message} />
           <div className="flex items-center overflow-visible rounded-[9px] border border-[#E5E7EB] bg-white px-3 py-3">
-            <PhoneIcon />
+            {/* <PhoneIcon /> */}
             <Controller
               name="phoneNumber"
               control={control}
@@ -463,7 +463,7 @@ export function ContactSalesForm({ className }: ContactSalesFormProps) {
             className="mt-[2px] h-[20px] w-[20px] shrink-0 cursor-pointer rounded-[6px] accent-[#006FFF]"
             {...register("tcpaConsent")}
           />
-          <span className="text-[14px] font-medium leading-[20px] tracking-[-0.006px] text-[#646464]">
+          <span className="text-[14px] leading-[20px] font-medium tracking-[-0.006px] text-[#646464]">
             By checking this box and clicking Submit, I authorize Structurely to
             send me recurring telemarketing text messages at the number
             provided, including by use of an automatic telephone dialing system.

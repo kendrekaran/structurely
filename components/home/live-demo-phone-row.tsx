@@ -103,7 +103,7 @@ export function LiveDemoPhoneRow({ onSubmitPhone }: LiveDemoPhoneRowProps) {
         </>
       ) : null}
       <div className="col-start-1 row-start-2 flex min-w-0 items-center gap-2 overflow-visible rounded-lg px-1.5 py-3">
-        <PhoneIcon />
+        {/* <PhoneIcon /> */}
         <AuthPhoneInput
           embedded
           value={raw}

@@ -148,7 +148,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background font-sans text-foreground font-normal;
+    @apply bg-background text-foreground font-sans font-normal;
   }
 
   h1,
@@ -268,6 +268,10 @@
 }
 
 /* intl-tel-input (AuthPhoneInput) — matches partners form typography */
+
+.auth-phone-iti {
+  --iti-flag-width: 18px;
+}
 .auth-field-label {
   font-size: 14px;
   line-height: 20px;
@@ -323,9 +327,15 @@
   background-color: #fff;
 }
 
-.auth-phone-iti.iti--allow-dropdown .iti__country-container .iti__selected-country:hover,
-.auth-phone-iti.iti--allow-dropdown .iti__country-container .iti__selected-country:focus,
-.auth-phone-iti.iti--allow-dropdown .iti__country-container .iti__selected-country-primary:hover,
+.auth-phone-iti.iti--allow-dropdown
+  .iti__country-container
+  .iti__selected-country:hover,
+.auth-phone-iti.iti--allow-dropdown
+  .iti__country-container
+  .iti__selected-country:focus,
+.auth-phone-iti.iti--allow-dropdown
+  .iti__country-container
+  .iti__selected-country-primary:hover,
 .auth-phone-iti.iti--allow-dropdown
   .iti__country-container
   .iti__selected-country:has(+ .iti__dropdown-content:hover)
@@ -402,7 +412,6 @@
 
 /* Selected row: dark disc + white check (library SVG is single-color) */
 
-
 .auth-phone-iti .iti__country-check-svg {
   width: 12px !important;
   height: 12px !important;
@@ -432,7 +441,9 @@
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: calc(14px + var(--iti-globe-icon-size, 17px) + 8px);
-  padding-right: calc(var(--iti-spacer-horizontal, 10px) + var(--iti-clear-icon-size, 15px));
+  padding-right: calc(
+    var(--iti-spacer-horizontal, 10px) + var(--iti-clear-icon-size, 15px)
+  );
   border-radius: 0;
   background-color: transparent;
   border: none;
@@ -467,4 +478,8 @@
   border-radius: 16px;
   max-width: none;
   min-width: 0;
+}
+
+.iti__selected-country-primary {
+  padding-left: 3px;
 }
