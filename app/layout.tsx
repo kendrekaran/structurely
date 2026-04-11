@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Caveat, Inter } from "next/font/google";
 import { GeistSans } from "geist/font/sans";
+import "intl-tel-input/styles";
 import "./globals.css";
 import RevealProvider from "@/components/_providers/reveal-provider";
 

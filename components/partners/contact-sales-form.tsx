@@ -1,7 +1,7 @@
 "use client";
 
+import AuthPhoneInput from "@/components/_ui/auth-phone-input";
 import {
-  PhoneE164Input,
   sanitizeE164Candidate,
   toE164IfValid,
 } from "@/components/_ui/phone-e164-input";
@@ -345,25 +345,25 @@ export function ContactSalesForm({ className }: ContactSalesFormProps) {
             />
           </div>
         </div>
-        <div className="flex flex-1 flex-col gap-2">
+        <div className="relative z-[5] flex min-w-0 flex-1 flex-col gap-2 overflow-visible">
           <FieldLabel label="Phone Number" required />
           <FieldError message={errors.phoneNumber?.message} />
-          <div className="flex items-center gap-2 rounded-[9px] border border-[#E5E7EB] bg-white px-3 py-3 transition-colors focus-within:border-[#006FFF]">
+          <div className="flex items-center  overflow-visible rounded-[9px] border border-[#E5E7EB] bg-white px-3 py-3">
             <PhoneIcon />
             <Controller
               name="phoneNumber"
               control={control}
               render={({ field }) => (
-                <PhoneE164Input
+                <AuthPhoneInput
+                  embedded
                   value={field.value}
-                  onChange={({ raw }) => field.onChange(raw)}
+                  onChange={field.onChange}
                   onBlur={field.onBlur}
                   name={field.name}
                   ref={field.ref}
                   placeholder="Phone number"
                   autoComplete="tel"
                   aria-invalid={errors.phoneNumber ? true : undefined}
-                  className={inputClassName}
                 />
               )}
             />

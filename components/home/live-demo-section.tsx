@@ -2,7 +2,7 @@ import { LiveDemoPhoneRow } from "@/components/home/live-demo-phone-row";
 import Link from "next/link";
 function LiveDemoSection() {
   return (
-    <section id="live-demo" className="relative z-0">
+    <section id="live-demo" className="relative z-30">
       <div className="px-global">
         <div className="max-w-global relative mx-auto flex justify-center border-x border-[#E5E7EB]">
           <div className="pointer-events-none absolute inset-0 hidden md:block">
@@ -19,7 +19,7 @@ function LiveDemoSection() {
             <div className="absolute bottom-0 left-[94.9%] h-[56%] w-px bg-[#E5E7EB]" />
           </div>
 
-          <div className="relative z-10 w-full max-w-[22em] overflow-hidden border-x border-[#E5E7EB]">
+          <div className="relative z-10 w-full max-w-[22em] border-x border-[#E5E7EB]">
             <div className="flex items-center justify-center gap-2 border-b border-[#E5E7EB] bg-white px-4 py-3">
               <p className="text-center tracking-[-0.01em]">
                 <span className="text-[#646464]">This is not a </span>

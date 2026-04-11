@@ -1,7 +1,7 @@
 "use client";
 
+import AuthPhoneInput from "@/components/_ui/auth-phone-input";
 import {
-  PhoneE164Input,
   sanitizeE164Candidate,
   toE164IfValid,
 } from "@/components/_ui/phone-e164-input";
@@ -102,19 +102,20 @@ export function LiveDemoPhoneRow({ onSubmitPhone }: LiveDemoPhoneRowProps) {
           </span>
         </>
       ) : null}
-      <div className="col-start-1 row-start-2 flex items-center gap-2 rounded-lg px-1.5 py-3">
+      <div className="col-start-1 row-start-2 flex min-w-0 items-center gap-2 overflow-visible rounded-lg px-1.5 py-3">
         <PhoneIcon />
-        <PhoneE164Input
+        <AuthPhoneInput
+          embedded
           value={raw}
-          onChange={(details) => {
-            setRaw(details.raw);
+          onChange={(value) => {
+            setRaw(sanitizeE164Candidate(value));
             setError(null);
           }}
           placeholder="Enter your number here"
           aria-label="Phone number"
           aria-invalid={error ? true : undefined}
           aria-describedby={error ? ERROR_ID : undefined}
-          className="w-full bg-transparent font-sans text-[14px] leading-[20px] font-medium tracking-[-0.006em] text-[#202020] outline-none placeholder:text-[#A0A0A0]"
+          inputClassName="w-full bg-transparent font-sans text-[14px] leading-[20px] font-medium tracking-[-0.006em] text-[#202020] outline-none placeholder:text-[#A0A0A0]"
         />
       </div>
 

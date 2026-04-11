@@ -266,3 +266,205 @@
   filter: blur(0.125rem);
   transform-origin: top;
 }
+
+/* intl-tel-input (AuthPhoneInput) — matches partners form typography */
+.auth-field-label {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  letter-spacing: -0.084px;
+  color: #646464;
+}
+
+.auth-phone-iti {
+  width: 100%;
+  position: relative;
+  /* Above adjacent cards/rows; dropdown uses higher z-index below */
+  z-index: 20;
+  overflow: visible;
+}
+
+.auth-phone-iti--embedded {
+  min-width: 0;
+}
+
+.auth-phone-iti .iti__tel-input {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.084px;
+  color: #202020;
+}
+
+/* intl-tel-input: no focus ring on the number field (library + browser defaults) */
+.auth-phone-iti input.iti__tel-input:focus,
+.auth-phone-iti input.iti__tel-input:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.auth-phone-iti .iti__selected-country:focus,
+.auth-phone-iti .iti__selected-country:focus-visible {
+  outline: none;
+}
+
+/* White backing behind flag + dial code; block library hover tint */
+.auth-phone-iti .iti__country-container {
+  background-color: #fff !important;
+}
+
+.auth-phone-iti .iti__selected-country,
+.auth-phone-iti .iti__selected-country-primary {
+  background-color: #fff !important;
+}
+
+.auth-phone-iti .iti__country-container .iti__flag,
+.auth-phone-iti .iti__country-list .iti__flag {
+  background-color: #fff;
+}
+
+.auth-phone-iti.iti--allow-dropdown .iti__country-container .iti__selected-country:hover,
+.auth-phone-iti.iti--allow-dropdown .iti__country-container .iti__selected-country:focus,
+.auth-phone-iti.iti--allow-dropdown .iti__country-container .iti__selected-country-primary:hover,
+.auth-phone-iti.iti--allow-dropdown
+  .iti__country-container
+  .iti__selected-country:has(+ .iti__dropdown-content:hover)
+  .iti__selected-country-primary {
+  background-color: #fff !important;
+}
+
+/* Country dropdown: white surface, thin scrollbar */
+.auth-phone-iti.iti--inline-dropdown .iti__dropdown-content,
+.auth-phone-iti .iti__dropdown-content {
+  z-index: 100;
+  margin-top: 8px;
+  margin-left: -42px;
+  min-width: min(13.5rem, calc(100vw - 2rem));
+  max-width: min(19rem, calc(100vw - 1.25rem));
+  border-radius: 10px;
+  border: 1px solid #dedede;
+  background-color: #fff;
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.1);
+  overflow: hidden;
+}
+
+.auth-phone-iti .iti__country-list {
+  max-height: min(280px, 58vh);
+  padding: 4px 0;
+  background-color: #fff;
+  scrollbar-width: thin;
+  scrollbar-color: #c4c4c4 #f0f0f0;
+}
+
+.auth-phone-iti .iti__country-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.auth-phone-iti .iti__country-list::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 4px;
+}
+
+.auth-phone-iti .iti__country-list::-webkit-scrollbar-thumb {
+  background: #b8b9bd;
+  border-radius: 4px;
+}
+
+.auth-phone-iti .iti__country {
+  margin: 0;
+  padding: 10px 12px 10px 10px;
+  border-radius: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  color: #0a0a0a;
+  transition: background-color 0.1s ease;
+}
+
+.auth-phone-iti .iti__country.iti__highlight {
+  background-color: #f3f4f6;
+}
+
+.auth-phone-iti .iti__country-name {
+  font-size: 14px;
+  color: #0a0a0a;
+}
+
+.auth-phone-iti .iti__country-name .iti__dial-code {
+  color: #0a0a0a;
+  font-weight: 500;
+}
+
+.auth-phone-iti .iti__selected-dial-code {
+  color: #646464;
+}
+
+/* Selected row: dark disc + white check (library SVG is single-color) */
+
+
+.auth-phone-iti .iti__country-check-svg {
+  width: 12px !important;
+  height: 12px !important;
+  color: #4b5563;
+}
+
+.auth-phone-iti .iti__search-input-wrapper {
+  position: relative;
+  padding: 4px 12px;
+  border-bottom: 1px solid #e8e8ea;
+  background-color: #fff;
+}
+
+.auth-phone-iti .iti__search-icon {
+  left: 14px;
+}
+
+.auth-phone-iti .iti__search-icon-svg {
+  stroke: #6b7280;
+  stroke-width: 2;
+}
+
+.auth-phone-iti .iti__search-input {
+  font-size: 14px;
+  font-weight: 500;
+  color: #0a0a0a;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: calc(14px + var(--iti-globe-icon-size, 17px) + 8px);
+  padding-right: calc(var(--iti-spacer-horizontal, 10px) + var(--iti-clear-icon-size, 15px));
+  border-radius: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.auth-phone-iti .iti__search-input:focus,
+.auth-phone-iti .iti__search-input:focus-visible {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+.auth-phone-iti .iti__search-input::placeholder {
+  color: #9ca3af;
+}
+
+.auth-phone-iti .iti__no-results {
+  padding: 18px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #646464;
+}
+
+/* Fullscreen picker (small viewports): match rounded, comfortable width */
+@media (max-width: 500px) {
+  .auth-phone-iti.iti--flexible-dropdown-width .iti__country-list {
+    white-space: normal;
+  }
+}
+
+.auth-phone-iti.iti--fullscreen-popup .iti__dropdown-content {
+  border-radius: 16px;
+  max-width: none;
+  min-width: 0;
+}
