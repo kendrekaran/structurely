@@ -18,7 +18,8 @@ function WhoWeAreSection() {
               data-reveal="words"
               className="max-w-[11em] md:tracking-[-0.03em]"
             >
-              Who we are
+              Built for{" "}
+              <span className="text-[#006FFF]">real sales conversations</span>
             </h2>
           </div>
         </div>
