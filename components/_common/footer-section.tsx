@@ -36,8 +36,8 @@ const navColumns = [
     links: [
       { label: "Pricing", href: "#" },
       { label: "Login", href: "#" },
-      { label: "Privacy policy", href: "#" },
-      { label: "Terms of use", href: "#" },
+      { label: "Privacy policy", href: "/privacy-policy" },
+      { label: "Terms of use", href: "/terms-of-use" },
       { label: "Contact sales", href: "#" },
     ],
   },
