@@ -206,47 +206,55 @@ const problemItems = [
 function AboutProblemSection() {
   return (
     <section id="about-problem" className="relative z-0">
-      <div className="px-global">
-        <div className="max-w-global md:py-section-md mx-auto flex flex-col items-center gap-4 border-x border-b border-[#E5E7EB] py-[24px] text-center">
-          <div className="flex flex-col items-center gap-3.5 md:gap-4">
-            <Badge text="The problem" />
-            <h2 data-reveal="words" className="max-w-[11.08em] text-center">
-              <span className="text-[#006FFF]">The problem</span> <br /> we
-              exist to solve
-            </h2>
+      <div className="border-b border-[#E5E7EB]">
+        <div className="px-global">
+          <div className="max-w-global md:py-section-md mx-auto flex flex-col items-center gap-4 border-x border-[#E5E7EB] py-[24px] text-center">
+            <div className="flex flex-col items-center gap-3.5 md:gap-4">
+              <Badge text="The problem" />
+              <h2 data-reveal="words" className="max-w-[11.08em] text-center">
+                <span className="text-[#006FFF]">The problem</span> <br /> we
+                exist to solve
+              </h2>
+            </div>
+            <p className="max-w-[27.375em] text-center text-[16px] leading-[26px] tracking-[-0.01em]">
+              Many organizations generate meaningful inbound demand.
+            </p>
           </div>
-          <p className="max-w-[27.375em] text-center text-[16px] leading-[26px] tracking-[-0.01em]">
-            Many organizations generate meaningful inbound demand.
-          </p>
         </div>
       </div>
 
-      <div className="px-global">
-        <div className="max-w-global mx-auto flex items-center justify-center border-x border-b border-[#E5E7EB] px-[12px] py-6">
-          <p className="text-center text-[14px] leading-[20px] tracking-[-0.01em]">
-            But execution breaks down between inquiry and action.
-          </p>
+      <div className="border-b border-[#E5E7EB]">
+        <div className="px-global">
+          <div className="max-w-global mx-auto flex items-center justify-center border-x border-[#E5E7EB] px-[12px] py-6">
+            <p className="text-center text-[14px] leading-[20px] tracking-[-0.01em]">
+              But execution breaks down between inquiry and action.
+            </p>
+          </div>
         </div>
       </div>
 
-      <div className="px-global">
-        <div className="max-w-global mx-auto border-x border-b border-[#E5E7EB]">
-          <IconStepsRow
-            items={problemItems.map((item) => ({
-              key: item.label,
-              label: item.label,
-              icon: item.icon,
-            }))}
-          />
+      <div className="border-b border-[#E5E7EB]">
+        <div className="px-global">
+          <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
+            <IconStepsRow
+              items={problemItems.map((item) => ({
+                key: item.label,
+                label: item.label,
+                icon: item.icon,
+              }))}
+            />
+          </div>
         </div>
       </div>
 
-      <div className="px-global">
-        <div className="max-w-global mx-auto flex items-center justify-center border-x border-b border-[#E5E7EB] px-[12px] py-[24px]">
-          <p className="font-figma-hand text-center text-[16px] leading-6 font-bold tracking-[-0.02em]">
-            <span className="text-[#006FFF]">Structurely</span> was built to
-            address that gap.
-          </p>
+      <div className="border-b border-[#E5E7EB]">
+        <div className="px-global">
+          <div className="max-w-global mx-auto flex items-center justify-center border-x border-[#E5E7EB] px-[12px] py-[24px]">
+            <p className="font-figma-hand text-center text-[16px] leading-6 font-bold tracking-[-0.02em]">
+              <span className="text-[#006FFF]">Structurely</span> was built to
+              address that gap.
+            </p>
+          </div>
         </div>
       </div>
     </section>

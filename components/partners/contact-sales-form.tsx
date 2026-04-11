@@ -60,6 +60,9 @@ export const contactSalesSchema = z.object({
   leadsPerMonth: z.string().min(1, "Please select an option."),
   crmSystem: z.string().min(1, "Please select a CRM."),
   comments: z.string(),
+  tcpaConsent: z
+    .boolean()
+    .refine((val) => val === true, "You must agree to continue."),
 });
 
 export type ContactSalesFormData = z.infer<typeof contactSalesSchema>;
@@ -73,6 +76,7 @@ const defaultValues: ContactSalesFormData = {
   leadsPerMonth: "",
   crmSystem: "",
   comments: "",
+  tcpaConsent: false,
 };
 
 function UserIcon() {
@@ -348,7 +352,7 @@ export function ContactSalesForm({ className }: ContactSalesFormProps) {
         <div className="relative z-[5] flex min-w-0 flex-1 flex-col gap-2 overflow-visible">
           <FieldLabel label="Phone Number" required />
           <FieldError message={errors.phoneNumber?.message} />
-          <div className="flex items-center  overflow-visible rounded-[9px] border border-[#E5E7EB] bg-white px-3 py-3">
+          <div className="flex items-center overflow-visible rounded-[9px] border border-[#E5E7EB] bg-white px-3 py-3">
             <PhoneIcon />
             <Controller
               name="phoneNumber"
@@ -450,6 +454,51 @@ export function ContactSalesForm({ className }: ContactSalesFormProps) {
           className="w-full resize-none rounded-[9px] border border-[#E5E7EB] bg-white px-3 py-3 text-[14px] leading-[20px] font-medium tracking-[-0.084px] text-[#202020] transition-colors outline-none placeholder:text-[#646464] focus:border-[#006FFF]"
           {...register("comments")}
         />
+      </div>
+
+      <div className="flex flex-col gap-1.5">
+        <label className="flex cursor-pointer items-start gap-3">
+          <input
+            type="checkbox"
+            className="mt-[2px] h-[20px] w-[20px] shrink-0 cursor-pointer rounded-[6px] accent-[#006FFF]"
+            {...register("tcpaConsent")}
+          />
+          <span className="text-[14px] font-medium leading-[20px] tracking-[-0.006px] text-[#646464]">
+            By checking this box and clicking Submit, I authorize Structurely to
+            send me recurring telemarketing text messages at the number
+            provided, including by use of an automatic telephone dialing system.
+            Consent is not required as a condition of purchase. Message
+            frequency varies. Message and data rates may apply. Reply STOP to
+            opt out and HELP for help. View our{" "}
+            <a
+              href="/privacy-policy"
+              className="text-[#006FFF] underline underline-offset-2 hover:text-[#0056CC]"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              privacy policy
+            </a>
+            ,{" "}
+            <a
+              href="/terms-of-use"
+              className="text-[#006FFF] underline underline-offset-2 hover:text-[#0056CC]"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              terms of use
+            </a>
+            , and{" "}
+            <a
+              href="/sms-terms"
+              className="text-[#006FFF] underline underline-offset-2 hover:text-[#0056CC]"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              SMS terms
+            </a>
+          </span>
+        </label>
+        <FieldError message={errors.tcpaConsent?.message} />
       </div>
 
       <button

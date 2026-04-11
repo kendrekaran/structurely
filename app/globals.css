@@ -186,7 +186,7 @@
 
   p,
   .p-style {
-    @apply text-[14px] leading-[1.4285714285714286] tracking-[-0.01em] md:text-[16px] md:leading-[26px];
+    @apply text-[14px] leading-[1.4285714285714286] font-medium tracking-[-0.01em] md:text-[16px] md:leading-[26px];
     color: var(--foreground);
   }
 

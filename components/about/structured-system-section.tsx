@@ -21,9 +21,12 @@ function StructuredSystemSection() {
   ];
 
   return (
-    <section id="structured-system" className="relative z-0">
+    <section
+      id="structured-system"
+      className="relative z-0 border-b border-[#E5E7EB]"
+    >
       <div className="px-global">
-        <div className="max-w-global mx-auto flex flex-col items-center border-x border-b border-[#E5E7EB]">
+        <div className="max-w-global mx-auto flex flex-col border-x border-[#E5E7EB] items-center">
           <div className="py-section-md flex flex-col items-center gap-3 text-center">
             <h2 data-reveal="words" className="max-w-[278px] sm:max-w-[11em]">
               Why our systems are{" "}
@@ -42,7 +45,7 @@ function StructuredSystemSection() {
               </span>
             </div>
 
-            <div className="flex w-full flex-col items-center justify-center gap-4 border-t border-[#E5E7EB] bg-[#FAFAFA] px-6 py-6 md:flex-row md:flex-wrap md:gap-6">
+            <div className="relative flex w-full flex-col items-center justify-center gap-4 bg-[#FAFAFA] px-6 py-6 before:absolute before:top-0 before:left-1/2 before:h-px before:w-screen before:-translate-x-1/2 before:bg-[#E5E7EB] md:flex-row md:flex-wrap md:gap-6">
               {requirementItems.map((item) => (
                 <div
                   key={item.label}
@@ -61,9 +64,9 @@ function StructuredSystemSection() {
               ))}
             </div>
 
-            <div className="flex w-full items-center">
-              <div className="h-px flex-1 bg-[#E5E7EB]" />
-              <div className="flex h-[24px] w-[28.8px] items-center justify-center rounded-[6px] bg-white p-1.5 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)] md:h-[40px] md:w-[48px] md:rounded-[10px] md:p-2">
+            <div className="relative flex w-full items-center">
+              <div className="absolute left-1/2 h-px w-screen -translate-x-1/2 bg-[#E5E7EB]" />
+              <div className="relative mx-auto flex h-[24px] w-[28.8px] items-center justify-center rounded-[6px] bg-white p-1.5 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)] md:h-[40px] md:w-[48px] md:rounded-[10px] md:p-2">
                 <svg
                   width="24"
                   height="24"
@@ -87,7 +90,6 @@ function StructuredSystemSection() {
                   />
                 </svg>
               </div>
-              <div className="h-px flex-1 bg-[#E5E7EB]" />
             </div>
 
             <div className="flex max-w-[33.857em] flex-col items-center gap-3 py-6 text-center">

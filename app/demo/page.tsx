@@ -34,6 +34,9 @@ export default function PartnersPage() {
       <Header />
       <ContactSection />
       <TrustedLogosSection />
+      <div className="px-global">
+        <div className="h-px max-w-global mx-auto bg-[#E5E7EB]"></div>
+      </div>
       <CtaSection />
       <FooterSection />
     </main>

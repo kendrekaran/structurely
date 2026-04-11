@@ -7,6 +7,7 @@ import WhatWeBelieveSection from "@/components/about/what-we-believe-section";
 import StructuredSystemSection from "@/components/about/structured-system-section";
 import ByTheNumbersSection from "@/components/about/by-the-numbers-section";
 import type { Metadata } from "next";
+import FooterSection from "@/components/_common/footer-section";
 
 export const metadata: Metadata = {
   title: "About - Structurely",
@@ -25,6 +26,7 @@ export default function About() {
       <StructuredSystemSection />
       <ByTheNumbersSection />
       <WhyItMattersSection />
+      <FooterSection />
     </main>
   );
 }
