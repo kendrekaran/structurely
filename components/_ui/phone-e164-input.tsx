@@ -3,6 +3,7 @@
 import { cn } from "@/lib/utils";
 import { AsYouType, parsePhoneNumberFromString } from "libphonenumber-js";
 import {
+  forwardRef,
   useState,
   type ChangeEvent,
   type InputHTMLAttributes,
@@ -60,42 +61,48 @@ export type PhoneE164InputProps = Omit<
   }) => void;
 };
 
-export function PhoneE164Input({
-  className,
-  value: valueProp,
-  defaultValue = "",
-  onChange,
-  placeholder = "+1 202 555 0123",
-  ...rest
-}: PhoneE164InputProps) {
-  const [uncontrolled, setUncontrolled] = useState(() =>
-    sanitizeE164Candidate(defaultValue),
-  );
-  const isControlled = valueProp !== undefined;
-  const raw = isControlled ? sanitizeE164Candidate(valueProp) : uncontrolled;
-  const display = formatInternationalDisplay(raw);
+export const PhoneE164Input = forwardRef<HTMLInputElement, PhoneE164InputProps>(
+  function PhoneE164Input(
+    {
+      className,
+      value: valueProp,
+      defaultValue = "",
+      onChange,
+      placeholder = "+1 202 555 0123",
+      ...rest
+    },
+    ref,
+  ) {
+    const [uncontrolled, setUncontrolled] = useState(() =>
+      sanitizeE164Candidate(defaultValue),
+    );
+    const isControlled = valueProp !== undefined;
+    const raw = isControlled ? sanitizeE164Candidate(valueProp) : uncontrolled;
+    const display = formatInternationalDisplay(raw);
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const sanitized = sanitizeE164Candidate(e.target.value);
-    if (!isControlled) setUncontrolled(sanitized);
-    const e164 = toE164IfValid(sanitized);
-    onChange?.({ e164, raw: sanitized, isValid: Boolean(e164) });
-  };
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+      const sanitized = sanitizeE164Candidate(e.target.value);
+      if (!isControlled) setUncontrolled(sanitized);
+      const e164 = toE164IfValid(sanitized);
+      onChange?.({ e164, raw: sanitized, isValid: Boolean(e164) });
+    };
 
-  return (
-    <input
-      type="tel"
-      inputMode="tel"
-      autoComplete="tel"
-      spellCheck={false}
-      value={display}
-      onChange={handleChange}
-      placeholder={placeholder}
-      className={cn(
-        "w-full bg-transparent font-sans text-[14px] font-medium leading-[20px] tracking-[-0.006em] text-[#202020] outline-none placeholder:text-[#A0A0A0]",
-        className,
-      )}
-      {...rest}
-    />
-  );
-}
+    return (
+      <input
+        ref={ref}
+        type="tel"
+        inputMode="tel"
+        autoComplete="tel"
+        spellCheck={false}
+        value={display}
+        onChange={handleChange}
+        placeholder={placeholder}
+        className={cn(
+          "w-full bg-transparent font-sans text-[14px] font-medium leading-[20px] tracking-[-0.006em] text-[#202020] outline-none placeholder:text-[#A0A0A0]",
+          className,
+        )}
+        {...rest}
+      />
+    );
+  },
+);

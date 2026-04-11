@@ -1,6 +1,14 @@
 "use client";
 
-import { useState, type ChangeEvent, type FormEvent } from "react";
+import {
+  PhoneE164Input,
+  sanitizeE164Candidate,
+  toE164IfValid,
+} from "@/components/_ui/phone-e164-input";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useState } from "react";
+import { Controller, useForm } from "react-hook-form";
+import { z } from "zod";
 
 const industryOptions = [
   "Real Estate",
@@ -34,18 +42,29 @@ const crmOptions = [
   "Other",
 ];
 
-export type ContactSalesFormData = {
-  firstName: string;
-  lastName: string;
-  email: string;
-  phoneNumber: string;
-  industry: string;
-  leadsPerMonth: string;
-  crmSystem: string;
-  comments: string;
-};
+export const contactSalesSchema = z.object({
+  firstName: z.string().min(1, "Please enter your first name."),
+  lastName: z.string().min(1, "Please enter your last name."),
+  email: z
+    .string()
+    .min(1, "Please enter your email.")
+    .email("Enter a valid email address."),
+  phoneNumber: z
+    .string()
+    .min(1, "Please enter your phone number.")
+    .refine(
+      (val) => toE164IfValid(sanitizeE164Candidate(val)) !== undefined,
+      "Enter a valid number with country code (e.g. +1).",
+    ),
+  industry: z.string().min(1, "Please select your industry."),
+  leadsPerMonth: z.string().min(1, "Please select an option."),
+  crmSystem: z.string().min(1, "Please select a CRM."),
+  comments: z.string(),
+});
 
-const emptyForm = (): ContactSalesFormData => ({
+export type ContactSalesFormData = z.infer<typeof contactSalesSchema>;
+
+const defaultValues: ContactSalesFormData = {
   firstName: "",
   lastName: "",
   email: "",
@@ -54,7 +73,7 @@ const emptyForm = (): ContactSalesFormData => ({
   leadsPerMonth: "",
   crmSystem: "",
   comments: "",
-});
+};
 
 function UserIcon() {
   return (
@@ -199,6 +218,15 @@ function FieldLabel({
   );
 }
 
+function FieldError({ message }: { message?: string }) {
+  if (!message) return null;
+  return (
+    <p className="text-[12px] leading-4 text-red-600" role="alert">
+      {message}
+    </p>
+  );
+}
+
 const inputClassName =
   "flex-1 text-[14px] font-medium leading-[20px] tracking-[-0.084px] text-[#202020] placeholder:text-[#646464] bg-transparent outline-none";
 
@@ -207,25 +235,30 @@ type ContactSalesFormProps = {
 };
 
 export function ContactSalesForm({ className }: ContactSalesFormProps) {
-  const [formData, setFormData] = useState<ContactSalesFormData>(emptyForm);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+  const {
+    register,
+    control,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<ContactSalesFormData>({
+    resolver: zodResolver(contactSalesSchema),
+    defaultValues,
+    mode: "onSubmit",
+    reValidateMode: "onChange",
+  });
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const data = { ...formData };
-    console.log("[ContactSalesForm] submission:", data);
+  const onValid = (data: ContactSalesFormData) => {
+    const e164 = toE164IfValid(sanitizeE164Candidate(data.phoneNumber));
+    const payload = { ...data, phoneNumber: e164 ?? data.phoneNumber };
+    console.log("[ContactSalesForm] submission:", payload);
     setSubmitted(true);
   };
 
   const handleSendAnother = () => {
-    setFormData(emptyForm());
+    reset(defaultValues);
     setSubmitted(false);
   };
 
@@ -259,39 +292,38 @@ export function ContactSalesForm({ className }: ContactSalesFormProps) {
 
   return (
     <form
-      onSubmit={handleSubmit}
+      onSubmit={handleSubmit(onValid)}
       className={`flex w-full max-w-[34.5em] flex-col gap-6 ${className ?? ""}`}
+      noValidate
     >
       <div className="flex flex-col gap-6 sm:flex-row">
         <div className="flex flex-1 flex-col gap-2">
           <FieldLabel label="First Name" required />
+          <FieldError message={errors.firstName?.message} />
           <div className="flex items-center gap-2 rounded-[9px] border border-[#E5E7EB] bg-white px-3 py-3 transition-colors focus-within:border-[#006FFF]">
             <UserIcon />
             <input
               type="text"
-              name="firstName"
-              value={formData.firstName}
-              onChange={handleChange}
-              placeholder="Enter your name..."
               autoComplete="given-name"
-              required
+              placeholder="Enter your name..."
               className={inputClassName}
+              aria-invalid={errors.firstName ? true : undefined}
+              {...register("firstName")}
             />
           </div>
         </div>
         <div className="flex flex-1 flex-col gap-2">
           <FieldLabel label="Last Name" required />
+          <FieldError message={errors.lastName?.message} />
           <div className="flex items-center gap-2 rounded-[9px] border border-[#E5E7EB] bg-white px-3 py-3 transition-colors focus-within:border-[#006FFF]">
             <UserIcon />
             <input
               type="text"
-              name="lastName"
-              value={formData.lastName}
-              onChange={handleChange}
-              placeholder="Enter your name..."
               autoComplete="family-name"
-              required
+              placeholder="Enter your name..."
               className={inputClassName}
+              aria-invalid={errors.lastName ? true : undefined}
+              {...register("lastName")}
             />
           </div>
         </div>
@@ -300,33 +332,40 @@ export function ContactSalesForm({ className }: ContactSalesFormProps) {
       <div className="flex flex-col gap-6 sm:flex-row">
         <div className="flex flex-1 flex-col gap-2">
           <FieldLabel label="Email" required />
+          <FieldError message={errors.email?.message} />
           <div className="flex items-center gap-2 rounded-[9px] border border-[#E5E7EB] bg-white px-3 py-3 transition-colors focus-within:border-[#006FFF]">
             <EmailIcon />
             <input
               type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="Your email address"
               autoComplete="email"
-              required
+              placeholder="Your email address"
               className={inputClassName}
+              aria-invalid={errors.email ? true : undefined}
+              {...register("email")}
             />
           </div>
         </div>
         <div className="flex flex-1 flex-col gap-2">
           <FieldLabel label="Phone Number" required />
+          <FieldError message={errors.phoneNumber?.message} />
           <div className="flex items-center gap-2 rounded-[9px] border border-[#E5E7EB] bg-white px-3 py-3 transition-colors focus-within:border-[#006FFF]">
             <PhoneIcon />
-            <input
-              type="tel"
+            <Controller
               name="phoneNumber"
-              value={formData.phoneNumber}
-              onChange={handleChange}
-              placeholder="Phone number"
-              autoComplete="tel"
-              required
-              className={inputClassName}
+              control={control}
+              render={({ field }) => (
+                <PhoneE164Input
+                  value={field.value}
+                  onChange={({ raw }) => field.onChange(raw)}
+                  onBlur={field.onBlur}
+                  name={field.name}
+                  ref={field.ref}
+                  placeholder="Phone number"
+                  autoComplete="tel"
+                  aria-invalid={errors.phoneNumber ? true : undefined}
+                  className={inputClassName}
+                />
+              )}
             />
           </div>
         </div>
@@ -334,13 +373,12 @@ export function ContactSalesForm({ className }: ContactSalesFormProps) {
 
       <div className="flex flex-col gap-2">
         <FieldLabel label="Your Company Industry" required />
+        <FieldError message={errors.industry?.message} />
         <div className="relative flex items-center">
           <select
-            name="industry"
-            value={formData.industry}
-            onChange={handleChange}
-            required
             className="w-full cursor-pointer appearance-none rounded-[9px] border border-[#E5E7EB] bg-white px-3 py-3 pr-8 text-[14px] leading-[20px] font-medium tracking-[-0.084px] text-[#646464] transition-colors outline-none focus:border-[#006FFF]"
+            aria-invalid={errors.industry ? true : undefined}
+            {...register("industry")}
           >
             <option value="" disabled>
               Please Select...
@@ -359,13 +397,12 @@ export function ContactSalesForm({ className }: ContactSalesFormProps) {
 
       <div className="flex flex-col gap-2">
         <FieldLabel label="Estimated New Leads Generated Each Month" required />
+        <FieldError message={errors.leadsPerMonth?.message} />
         <div className="relative flex items-center">
           <select
-            name="leadsPerMonth"
-            value={formData.leadsPerMonth}
-            onChange={handleChange}
-            required
             className="w-full cursor-pointer appearance-none rounded-[9px] border border-[#E5E7EB] bg-white px-3 py-3 pr-8 text-[14px] leading-[20px] font-medium tracking-[-0.084px] text-[#646464] transition-colors outline-none focus:border-[#006FFF]"
+            aria-invalid={errors.leadsPerMonth ? true : undefined}
+            {...register("leadsPerMonth")}
           >
             <option value="" disabled>
               Please Select...
@@ -384,13 +421,12 @@ export function ContactSalesForm({ className }: ContactSalesFormProps) {
 
       <div className="flex flex-col gap-2">
         <FieldLabel label="CRM System You Use" required />
+        <FieldError message={errors.crmSystem?.message} />
         <div className="relative flex items-center">
           <select
-            name="crmSystem"
-            value={formData.crmSystem}
-            onChange={handleChange}
-            required
             className="w-full cursor-pointer appearance-none rounded-[9px] border border-[#E5E7EB] bg-white px-3 py-3 pr-8 text-[14px] leading-[20px] font-medium tracking-[-0.084px] text-[#646464] transition-colors outline-none focus:border-[#006FFF]"
+            aria-invalid={errors.crmSystem ? true : undefined}
+            {...register("crmSystem")}
           >
             <option value="" disabled>
               Please Select...
@@ -410,11 +446,9 @@ export function ContactSalesForm({ className }: ContactSalesFormProps) {
       <div className="flex flex-col gap-2">
         <FieldLabel label="Additional Comments or Questions" />
         <textarea
-          name="comments"
-          value={formData.comments}
-          onChange={handleChange}
           rows={4}
           className="w-full resize-none rounded-[9px] border border-[#E5E7EB] bg-white px-3 py-3 text-[14px] leading-[20px] font-medium tracking-[-0.084px] text-[#202020] transition-colors outline-none placeholder:text-[#646464] focus:border-[#006FFF]"
+          {...register("comments")}
         />
       </div>
 
