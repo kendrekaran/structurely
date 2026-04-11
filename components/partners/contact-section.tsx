@@ -1,6 +1,5 @@
 "use client";
 
-import Button from "@/components/_ui/button";
 import { useState } from "react";
 
 const industryOptions = [
@@ -70,11 +69,10 @@ function ChevronIcon() {
   );
 }
 
-function FieldLabel({ label, required }: { label: string; required?: boolean }) {
+function FieldLabel({ label }: { label: string }) {
   return (
     <label className="text-[14px] font-medium leading-[20px] tracking-[-0.084px] text-[#646464]">
       {label}
-      {required && <span className="text-[#006FFF]"> *</span>}
     </label>
   );
 }
@@ -129,7 +127,7 @@ export default function ContactSection() {
             <form onSubmit={handleSubmit} className="flex flex-col gap-6 w-full max-w-[34.5em]">
               <div className="flex flex-col sm:flex-row gap-6">
                 <div className="flex flex-col gap-2 flex-1">
-                  <FieldLabel label="First Name" required />
+                  <FieldLabel label="First Name" />
                   <div className="flex items-center gap-2 px-3 py-3 rounded-[9px] border border-[#E5E7EB] focus-within:border-[#006FFF] transition-colors bg-white">
                     <UserIcon />
                     <input
@@ -143,7 +141,7 @@ export default function ContactSection() {
                   </div>
                 </div>
                 <div className="flex flex-col gap-2 flex-1">
-                  <FieldLabel label="Last Name" required />
+                  <FieldLabel label="Last Name" />
                   <div className="flex items-center gap-2 px-3 py-3 rounded-[9px] border border-[#E5E7EB] focus-within:border-[#006FFF] transition-colors bg-white">
                     <UserIcon />
                     <input
@@ -160,7 +158,7 @@ export default function ContactSection() {
 
               <div className="flex flex-col sm:flex-row gap-6">
                 <div className="flex flex-col gap-2 flex-1">
-                  <FieldLabel label="Email" required />
+                  <FieldLabel label="Email" />
                   <div className="flex items-center gap-2 px-3 py-3 rounded-[9px] border border-[#E5E7EB] focus-within:border-[#006FFF] transition-colors bg-white">
                     <EmailIcon />
                     <input
@@ -174,7 +172,7 @@ export default function ContactSection() {
                   </div>
                 </div>
                 <div className="flex flex-col gap-2 flex-1">
-                  <FieldLabel label="Phone Number" required />
+                  <FieldLabel label="Phone Number" />
                   <div className="flex items-center gap-2 px-3 py-3 rounded-[9px] border border-[#E5E7EB] focus-within:border-[#006FFF] transition-colors bg-white">
                     <PhoneIcon />
                     <input
@@ -190,7 +188,7 @@ export default function ContactSection() {
               </div>
 
               <div className="flex flex-col gap-2">
-                <FieldLabel label="Your Company Industry" required />
+                <FieldLabel label="Your Company Industry" />
                 <div className="relative flex items-center">
                   <select
                     name="industry"
@@ -210,7 +208,7 @@ export default function ContactSection() {
               </div>
 
               <div className="flex flex-col gap-2">
-                <FieldLabel label="Estimated New Leads Generated Each Month" required />
+                <FieldLabel label="Estimated New Leads Generated Each Month" />
                 <div className="relative flex items-center">
                   <select
                     name="leadsPerMonth"
@@ -230,7 +228,7 @@ export default function ContactSection() {
               </div>
 
               <div className="flex flex-col gap-2">
-                <FieldLabel label="CRM System You Use" required />
+                <FieldLabel label="CRM System You Use" />
                 <div className="relative flex items-center">
                   <select
                     name="crmSystem"

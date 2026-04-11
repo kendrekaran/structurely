@@ -11,9 +11,11 @@ export default function HeroButtons() {
                 <span className="block md:w-[164px] text-center md:text-left">Try the Live Demo</span>
                 </Button>
             </Link>
-            <Button variant="secondary" size="md" className="text-foreground w-full md:w-auto">
-                <span className="block w-full text-center md:text-left">Schedule a Guided Demo</span>
-            </Button>
+            <Link href="https://calendly.com/structurely-sales/schedule-demo" target="_blank">
+              <Button variant="secondary" size="md" className="text-foreground w-full md:w-auto">
+                  <span className="block w-full text-center md:text-left">Schedule a Guided Demo</span>
+              </Button>
+            </Link>
             </div>
         </div>
     </div>

@@ -31,9 +31,11 @@ export default function DemoCtaSection() {
                 Try the Live Demo
               </Button>
             </Link>
-            <Button variant="secondary" size="md" className="text-foreground">
-              Schedule a Guided Demo
-            </Button>
+            <Link href="https://calendly.com/structurely-sales/schedule-demo" target="_blank">
+              <Button variant="secondary" size="md" className="text-foreground">
+                Schedule a Guided Demo
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
