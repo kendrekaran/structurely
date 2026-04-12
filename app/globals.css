@@ -312,19 +312,19 @@
   outline: none;
 }
 
-/* White backing behind flag + dial code; block library hover tint */
+/* White backing behind flag + dial code; suppress all hover/focus tints */
 .auth-phone-iti .iti__country-container {
-  background-color: #fff !important;
+  background-color: transparent;
 }
 
 .auth-phone-iti .iti__selected-country,
 .auth-phone-iti .iti__selected-country-primary {
-  background-color: #fff !important;
+  background-color: transparent !important;
 }
 
 .auth-phone-iti .iti__country-container .iti__flag,
 .auth-phone-iti .iti__country-list .iti__flag {
-  background-color: #fff;
+  background-color: transparent;
 }
 
 .auth-phone-iti.iti--allow-dropdown
@@ -340,7 +340,7 @@
   .iti__country-container
   .iti__selected-country:has(+ .iti__dropdown-content:hover)
   .iti__selected-country-primary {
-  background-color: #fff !important;
+  background-color: transparent !important;
 }
 
 /* Country dropdown: white surface, thin scrollbar */
@@ -348,7 +348,23 @@
 .auth-phone-iti .iti__dropdown-content {
   z-index: 100;
   margin-top: 8px;
-  margin-left: -42px;
+  min-width: min(13.5rem, calc(100vw - 2rem));
+  max-width: min(19rem, calc(100vw - 1.25rem));
+  border-radius: 10px;
+  border: 1px solid #dedede;
+  background-color: #fff;
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.1);
+  overflow: hidden;
+}
+
+/* Dropdown appended to <body> via dropdownContainer option */
+.iti--container.auth-phone-iti {
+  position: fixed;
+  z-index: 9999;
+}
+
+.iti--container.auth-phone-iti .iti__dropdown-content {
+  margin-top: 4px;
   min-width: min(13.5rem, calc(100vw - 2rem));
   max-width: min(19rem, calc(100vw - 1.25rem));
   border-radius: 10px;
@@ -467,7 +483,7 @@
   color: #646464;
 }
 
-/* Fullscreen picker (small viewports): match rounded, comfortable width */
+/* Flexible dropdown width on small viewports */
 @media (max-width: 500px) {
   .auth-phone-iti.iti--flexible-dropdown-width .iti__country-list {
     white-space: normal;

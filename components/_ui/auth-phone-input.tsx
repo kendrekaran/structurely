@@ -80,8 +80,20 @@ const AuthPhoneInput = forwardRef<HTMLInputElement, AuthPhoneInputProps>(
         formatOnDisplay: true,
         /** Wider dropdown sized to country names; use CSS min/max-width for bounds. */
         fixDropdownWidth: false,
+        /** Never show fullscreen popup — always inline dropdown below input. */
+        useFullscreenPopup: false,
+        /**
+         * Append dropdown to <body> so it escapes any overflow:clip / stacking
+         * context ancestors (e.g. overflow-x-clip on <main>). The library
+         * positions it via getBoundingClientRect so it still appears below the
+         * input on both desktop and mobile.
+         */
+        dropdownContainer:
+          typeof document !== "undefined" ? document.body : undefined,
         loadUtils: () => import("intl-tel-input/utils"),
-        containerClass: embedded ? "auth-phone-iti auth-phone-iti--embedded" : "auth-phone-iti",
+        containerClass: embedded
+          ? "auth-phone-iti auth-phone-iti--embedded"
+          : "auth-phone-iti",
         geoIpLookup: (success, failure) => {
           fetch("https://ipapi.co/json/")
             .then((res) => res.json())
