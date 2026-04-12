@@ -124,11 +124,40 @@ const AuthPhoneInput = forwardRef<HTMLInputElement, AuthPhoneInputProps>(
         onBlurRef.current?.();
       };
 
+      /**
+       * On mobile, tapping the flag button fires touchstart → touchend → click.
+       * intl-tel-input uses setTimeout(0) to defer adding its "click off to close"
+       * listener on document.documentElement, but when dropdownContainer is
+       * document.body the synthesized click from the same tap bubbles up to
+       * documentElement *after* that setTimeout fires, instantly closing the
+       * dropdown it just opened.
+       *
+       * Fix: intercept the click on the ITI container (after intl-tel-input's
+       * own selectedCountry click listener has already opened the dropdown) and
+       * stop it from propagating up to documentElement where the close handler
+       * would fire.
+       */
+      const itiContainer = el.closest(".auth-phone-iti") as HTMLElement | null;
+
+      const stopContainerClickPropagation = (e: MouseEvent) => {
+        // Only suppress clicks that originate from the flag/country button.
+        const target = e.target as HTMLElement | null;
+        if (target?.closest(".iti__selected-country")) {
+          e.stopPropagation();
+        }
+      };
+
+      itiContainer?.addEventListener("click", stopContainerClickPropagation);
+
       el.addEventListener("input", syncPhone);
       el.addEventListener("countrychange", syncPhone);
       el.addEventListener("blur", handleBlur);
 
       return () => {
+        itiContainer?.removeEventListener(
+          "click",
+          stopContainerClickPropagation,
+        );
         el.removeEventListener("input", syncPhone);
         el.removeEventListener("countrychange", syncPhone);
         el.removeEventListener("blur", handleBlur);
