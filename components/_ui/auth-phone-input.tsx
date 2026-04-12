@@ -125,39 +125,127 @@ const AuthPhoneInput = forwardRef<HTMLInputElement, AuthPhoneInputProps>(
       };
 
       /**
-       * On mobile, tapping the flag button fires touchstart → touchend → click.
-       * intl-tel-input uses setTimeout(0) to defer adding its "click off to close"
-       * listener on document.documentElement, but when dropdownContainer is
-       * document.body the synthesized click from the same tap bubbles up to
-       * documentElement *after* that setTimeout fires, instantly closing the
-       * dropdown it just opened.
+       * iOS Safari dropdown-instant-close fix.
        *
-       * Fix: intercept the click on the ITI container (after intl-tel-input's
-       * own selectedCountry click listener has already opened the dropdown) and
-       * stop it from propagating up to documentElement where the close handler
-       * would fire.
+       * Two independent race-conditions conspire to close the dropdown the
+       * instant it opens on iPhones:
+       *
+       * 1. **Click propagation race.**
+       *    Tapping the flag button fires touchstart → touchend → (synthesized)
+       *    click. intl-tel-input opens the dropdown synchronously on the click,
+       *    then uses `setTimeout(0)` to defer adding its "click-off-to-close"
+       *    listener on `document.documentElement`. On iOS the synthesized click
+       *    reaches documentElement *after* that setTimeout fires, so the
+       *    just-registered close handler sees it and shuts the dropdown.
+       *
+       * 2. **Scroll-triggered close.**
+       *    With `useFullscreenPopup:false` + `dropdownContainer:document.body`
+       *    intl-tel-input adds a `window "scroll"` listener that immediately
+       *    closes the dropdown. When the dropdown opens it focuses the search
+       *    input; on iOS this can cause a layout scroll (virtual-keyboard
+       *    appearing, scroll-into-view, etc.) which fires the scroll handler.
+       *
+       * Fix for (1): record a timestamp when the flag button is tapped, then
+       * use a **bubble-phase** listener on `document.documentElement` (registered
+       * eagerly, i.e. before intl-tel-input's deferred one) that swallows the
+       * click via `stopImmediatePropagation` if it arrives within 400 ms of
+       * the tap and originates from the flag button.
+       *
+       * Fix for (2): temporarily suppress the scroll-close by intercepting
+       * `window "scroll"` in the capture phase for a short window after the
+       * dropdown opens, giving iOS time to settle layout/keyboard changes.
        */
-      const itiContainer = el.closest(".auth-phone-iti") as HTMLElement | null;
 
-      const stopContainerClickPropagation = (e: MouseEvent) => {
-        // Only suppress clicks that originate from the flag/country button.
-        const target = e.target as HTMLElement | null;
-        if (target?.closest(".iti__selected-country")) {
-          e.stopPropagation();
+      let lastFlagTapTime = 0;
+      const FLAG_TAP_GUARD_MS = 400;
+
+      // Scroll-guard state (declared early because handleFlagClick pre-arms it).
+      let suppressScrollClose = false;
+      let scrollGuardTimer: ReturnType<typeof setTimeout> | null = null;
+
+      // --- Fix (1): click propagation ---
+      // Capture the moment the flag button is tapped (touchend fires before
+      // the synthesized click).
+      const handleFlagTouchEnd = () => {
+        lastFlagTapTime = Date.now();
+      };
+
+      const itiContainer = el.closest(".auth-phone-iti") as HTMLElement | null;
+      const flagBtn = itiContainer?.querySelector(
+        ".iti__selected-country",
+      ) as HTMLElement | null;
+      flagBtn?.addEventListener("touchend", handleFlagTouchEnd);
+
+      // Also catch pointer/mouse clicks (in case touchend doesn't fire).
+      // Additionally pre-arm the scroll guard here so it's active even before
+      // the "open:countrydropdown" event fires (covers the narrow window where
+      // iOS fires a scroll between focus() and event dispatch).
+      const handleFlagClick = () => {
+        lastFlagTapTime = Date.now();
+        // Pre-arm scroll guard (handleDropdownOpen will refresh the timer).
+        suppressScrollClose = true;
+        if (scrollGuardTimer) clearTimeout(scrollGuardTimer);
+        scrollGuardTimer = setTimeout(() => {
+          suppressScrollClose = false;
+        }, 600);
+      };
+      flagBtn?.addEventListener("click", handleFlagClick);
+
+      // Bubble-phase listener on documentElement. Because we register it
+      // synchronously (not inside setTimeout), it is registered **before**
+      // intl-tel-input's deferred handler, so addEventListener order guarantees
+      // ours runs first. We use stopImmediatePropagation to prevent ITI's
+      // handler from ever executing for this event.
+      const guardDocClick = (e: MouseEvent) => {
+        if (Date.now() - lastFlagTapTime < FLAG_TAP_GUARD_MS) {
+          const target = e.target as HTMLElement | null;
+          if (target?.closest(".iti__selected-country")) {
+            e.stopImmediatePropagation();
+          }
+        }
+      };
+      document.documentElement.addEventListener("click", guardDocClick);
+
+      // --- Fix (2): scroll-triggered close ---
+      // intl-tel-input adds a `window "scroll"` listener (bubble phase) when
+      // `!useFullscreenPopup && dropdownContainer` that instantly closes the
+      // dropdown. On iOS, focusing the search input or the keyboard appearing
+      // triggers a scroll event. We suppress that by using a capture-phase
+      // scroll listener on window that calls stopImmediatePropagation during
+      // a short guard window after the dropdown opens.
+      const handleDropdownOpen = () => {
+        suppressScrollClose = true;
+        if (scrollGuardTimer) clearTimeout(scrollGuardTimer);
+        // Keep suppressing for 600 ms — enough for iOS keyboard animation.
+        scrollGuardTimer = setTimeout(() => {
+          suppressScrollClose = false;
+        }, 600);
+      };
+
+      const guardWindowScroll = (e: Event) => {
+        if (suppressScrollClose) {
+          e.stopImmediatePropagation();
         }
       };
 
-      itiContainer?.addEventListener("click", stopContainerClickPropagation);
+      // Capture phase so it runs before ITI's bubble-phase scroll handler.
+      window.addEventListener("scroll", guardWindowScroll, true);
+
+      // Listen for intl-tel-input's custom "open:countrydropdown" event on the
+      // input element to know when the dropdown just opened.
+      el.addEventListener("open:countrydropdown", handleDropdownOpen);
 
       el.addEventListener("input", syncPhone);
       el.addEventListener("countrychange", syncPhone);
       el.addEventListener("blur", handleBlur);
 
       return () => {
-        itiContainer?.removeEventListener(
-          "click",
-          stopContainerClickPropagation,
-        );
+        flagBtn?.removeEventListener("touchend", handleFlagTouchEnd);
+        flagBtn?.removeEventListener("click", handleFlagClick);
+        document.documentElement.removeEventListener("click", guardDocClick);
+        window.removeEventListener("scroll", guardWindowScroll, true);
+        el.removeEventListener("open:countrydropdown", handleDropdownOpen);
+        if (scrollGuardTimer) clearTimeout(scrollGuardTimer);
         el.removeEventListener("input", syncPhone);
         el.removeEventListener("countrychange", syncPhone);
         el.removeEventListener("blur", handleBlur);
