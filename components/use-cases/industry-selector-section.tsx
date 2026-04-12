@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import {
+  Alignment,
   Fit,
   Layout,
   StateMachineInputType,
@@ -238,7 +239,11 @@ function IndustrySelectorSection() {
     src: "/rive/home/new/6.riv",
     autoplay: true,
     stateMachines: "State Machine 1",
-    layout: new Layout({ fit: Fit.Contain, layoutScaleFactor: 1 }),
+    layout: new Layout({
+      fit: Fit.Cover,
+      layoutScaleFactor: 1,
+      alignment: Alignment.TopCenter,
+    }),
   });
 
   useEffect(() => {
@@ -269,7 +274,7 @@ function IndustrySelectorSection() {
   return (
     <section id="industry-selector" className="relative z-0">
       <div className="md:px-global px-0">
-        <div className="max-w-global mx-auto border-x border-t border-[#E5E7EB]">
+        <div className="max-w-global mx-auto border-x">
           <div className="flex flex-col md:flex-row">
             <div className="flex flex-col border-b border-[#E5E7EB] md:w-[429px] md:shrink-0 md:border-b-0">
               {industries.map((ind, i) => (
@@ -327,34 +332,10 @@ function IndustrySelectorSection() {
             </div>
 
             <div className="px-global md:flex md:flex-1 md:px-0">
-              <div className="flex h-full flex-1 flex-col border-l border-[#E5E7EB] px-6 py-6 md:px-0 md:py-0">
-                <div className="flex flex-wrap justify-center gap-3 md:hidden">
-                  {active.features.map((feature, i) => (
-                    <span
-                      key={i}
-                      className="rounded-[8px] bg-[#006FFF14] px-4 py-2 text-sm font-medium tracking-[-0.01em] text-[#006FFF]"
-                      style={{
-                        boxShadow:
-                          "0px 0.5px 0.5px 0px #FFFFFF inset, 0px 0px 0px 1px #006FFF33",
-                      }}
-                    >
-                      {feature}
-                    </span>
-                  ))}
-                </div>
-
-                <Image
-                  src="/assets/use-case/use-case-mobile.png"
-                  alt="Conversation preview on mobile"
-                  width={751}
-                  height={787}
-                  className="mt-6 block h-auto w-full max-w-[280px] self-center md:hidden"
-                  priority
-                />
-
-                <div className="relative hidden min-h-[360px] flex-1 items-center justify-center overflow-hidden bg-white md:flex md:min-h-[500px]">
+              <div className="flex h-full flex-1 flex-col border-l border-[#E5E7EB]">
+                <div className="relative flex aspect-[600/560] flex-1 items-center justify-center overflow-hidden bg-white md:min-h-[500px]">
                   {RiveComponent ? (
-                    <div className="h-full w-full scale-105">
+                    <div className="absolute inset-0 h-full w-full scale-105">
                       <RiveComponent />
                     </div>
                   ) : (
