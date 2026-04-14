@@ -1,7 +1,7 @@
 "use client";
 
 import { clsx } from "clsx";
-import intlTelInput, { type Iso2, type Iti } from "intl-tel-input";
+import intlTelInput, { type Iti } from "intl-tel-input";
 import {
   forwardRef,
   useEffect,
@@ -74,7 +74,8 @@ const AuthPhoneInput = forwardRef<HTMLInputElement, AuthPhoneInputProps>(
       if (!el) return;
 
       const iti = intlTelInput(el, {
-        initialCountry: "auto",
+        initialCountry: "fr",
+        onlyCountries: ["us", "ca", "fr"],
         nationalMode: false,
         autoPlaceholder: "aggressive",
         formatOnDisplay: true,
@@ -94,21 +95,6 @@ const AuthPhoneInput = forwardRef<HTMLInputElement, AuthPhoneInputProps>(
         containerClass: embedded
           ? "auth-phone-iti auth-phone-iti--embedded"
           : "auth-phone-iti",
-        geoIpLookup: (success, failure) => {
-          fetch("https://ipapi.co/json/")
-            .then((res) => res.json())
-            .then((data: { country_code?: string }) => {
-              const code = data.country_code?.toLowerCase();
-              if (code && code.length === 2) {
-                success(code as Iso2);
-              } else {
-                failure();
-              }
-            })
-            .catch(() => {
-              failure();
-            });
-        },
       });
       itiRef.current = iti;
 
