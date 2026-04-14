@@ -233,6 +233,27 @@
   }
 }
 
+/* Live demo phone row — bottom edge, brand blue → transparent */
+@keyframes live-demo-border-sweep {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(350%);
+  }
+}
+
+.animate-live-demo-border-sweep {
+  animation: live-demo-border-sweep 2.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-live-demo-border-sweep {
+    animation: none;
+    transform: translateX(0);
+  }
+}
+
 @media (max-width: 340px) {
   html {
     font-size: 14px;
