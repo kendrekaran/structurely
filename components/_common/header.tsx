@@ -135,8 +135,7 @@ export default function Header() {
           <div className="hidden flex-shrink-0 lg:flex">
             <Link href="/demo">
               <Button
-                variant="outline"
-                size="md"
+                size="sm"
                 className="tracking-0 text-[14px]! leading-[20px]"
               >
                 Request a demo

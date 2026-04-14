@@ -22,13 +22,12 @@ function LiveDemoSection() {
           <div className="relative z-10 w-full max-w-[22em] border-x border-[#E5E7EB]">
             <div className="flex items-center justify-center gap-2 border-b border-[#E5E7EB] bg-white px-4 py-3">
               <p className="text-center tracking-[-0.01em]">
-                <span className="text-[#646464]">This is not a </span>
-                <span className="font-semibold text-[#202020]">
-                  scripted demo.
+                <span className="text-[#646464]">
+                  This is not a scripted demo{" "}
                 </span>
-                <Link href="/demo" className="text-[#202020]">
+                <Link href="/demo" className="font-semibold text-[#202020]">
                   {" "}
-                  Try it now
+                  Try it now.
                 </Link>
               </p>
             </div>
