@@ -15,7 +15,7 @@ const industries = [
   {
     title: "Mortgage",
     description:
-      "Automate your CRM and sales resources with AI-powered appointment setting and calling.",
+      "Use Structurely AI to automate your CRM, set appointments, and make calls.",
     features: [
       "Qualification before LO involvement",
       "Appointment booking",
@@ -167,7 +167,7 @@ const industries = [
     riveState: 4,
   },
   {
-    title: "Whitelabel",
+    title: "White-label",
     description:
       "Start better partner conversations and surface the right fit faster.",
     features: [
@@ -199,8 +199,7 @@ const industries = [
   },
   {
     title: "Universities",
-    description:
-      "Nurture prospective student relationships with timely, helpful conversations.",
+    description: "Nurture prospective student and alumni relationships.",
     features: [
       "Leads are purchased",
       "Speed determines contact rate",

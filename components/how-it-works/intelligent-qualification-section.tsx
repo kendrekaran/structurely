@@ -87,7 +87,7 @@ function IntelligentQualificationSection() {
           <div className="flex w-full flex-col items-center">
             <div className="mt-6 flex rounded-t-xl border-t border-r border-l border-[#E5E7EB] bg-white px-3 py-2 md:mt-16">
               <span className="text-[14px] leading-5 tracking-[-0.01em]">
-                AI evaluates in real time
+                Structurely AI evaluates in real time
               </span>
             </div>
             <div className="w-screen">

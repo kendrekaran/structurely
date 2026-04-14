@@ -36,7 +36,7 @@ export default function PricingPageClient() {
       <PricingAddonSection />
       <Separator />
       <PricingOnboardingSection />
-      <Separator />
+      {/* <Separator /> */}
       <ComparePlansSection />
       <Separator />
       <FaqSection />

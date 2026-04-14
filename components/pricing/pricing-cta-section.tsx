@@ -18,7 +18,8 @@ export default function PricingCtaSection() {
                 Talk to our team. We&apos;ll match you to the right plan based
                 on your lead volume and team size.
                 <br className="hidden sm:block" />
-                Usage-based means you only pay as the AI delivers value.
+                Usage-based means you only pay as the Structurely AI delivers
+                value.
               </p>
             </div>
 
@@ -37,7 +38,7 @@ export default function PricingCtaSection() {
                 href="https://calendly.com/structurely-sales/schedule-demo"
               >
                 <Button variant="secondary" size="md" className=" ">
-                  Talk to Sales
+                  Talk to sales
                 </Button>
               </Link>
             </div>

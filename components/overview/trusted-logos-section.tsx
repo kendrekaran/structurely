@@ -42,7 +42,7 @@ function TrustedLogosSection() {
           <div className="flex w-full justify-center border-[#E5E7EB] py-8 md:border-b-0 md:py-0">
             <p className="text-center text-base leading-relaxed font-medium tracking-[-0.01em]">
               <span className="text-heading">Trusted by </span>
-              <span className="text-foreground">industry leaders</span>
+              <span className="text-foreground">industry leaders.</span>
             </p>
           </div>
           <div className="scrollbar-hide flex w-full overflow-x-auto border-t border-[#E5E7EB] md:divide-x md:divide-[#E5E7EB]">

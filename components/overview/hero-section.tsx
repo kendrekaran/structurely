@@ -28,7 +28,7 @@ function HeroSection() {
               </Link>
               <Link href="/how-it-works">
                 <Button variant="secondary" size="md">
-                  See How It Works
+                  See how It Works
                 </Button>
               </Link>
             </div>

@@ -132,7 +132,7 @@ function PersistentFollowUpSection() {
               Most follow-ups stop too early..
             </span>
             <span className="font-figma-hand text-center text-[16px] leading-6 font-bold tracking-[-0.02em] text-[#006FFF] underline">
-              Structurely doesn&apos;t.
+              Structurely AI doesn&apos;t.
             </span>
           </div>
         </div>
