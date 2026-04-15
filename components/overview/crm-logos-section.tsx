@@ -168,6 +168,17 @@ function parseStrengthAttr(raw: string | undefined, fallback: number): number {
   return Number.isFinite(n) && n >= 0 ? n : fallback;
 }
 
+/**
+ * Per-card motion multipliers on mapped pointer delta. Magnitudes ~±2× base “strength”
+ * feel; negatives invert direction on that axis. Order matches `[data-crm-parallax-card]` DOM.
+ */
+const PARALLAX_X_FACTORS = [
+  1.85, -1.15, -1.95, 1.45, -1.65, 1.75, -0.95, 1.35,
+] as const;
+const PARALLAX_Y_FACTORS = [
+  -1.55, 1.9, 1.25, -1.8, 1.0, -1.45, 1.7, -1.2,
+] as const;
+
 /** Desktop scattered CRM logos: mouse-follow parallax (container-local mapRange + eased tween). */
 function CrmLogosDesktopParallax() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -181,10 +192,16 @@ function CrmLogosDesktopParallax() {
         root.querySelectorAll<HTMLElement>("[data-crm-parallax-card]"),
       );
       if (cards.length === 0) return;
+      if (
+        cards.length !== PARALLAX_X_FACTORS.length ||
+        cards.length !== PARALLAX_Y_FACTORS.length
+      ) {
+        return;
+      }
 
-      const followDuration = 0.32;
+      const followDuration = 0.52;
       const followEase = "power3.out";
-      const resetDuration = 0.5;
+      const resetDuration = 0.6;
       const resetEase = "power3.out";
 
       const onMove = (e: MouseEvent) => {
@@ -205,12 +222,14 @@ function CrmLogosDesktopParallax() {
         const x = mapX(localX);
         const y = mapY(localY);
 
-        gsap.to(cards, {
-          x,
-          y,
-          duration: followDuration,
-          ease: followEase,
-          overwrite: "auto",
+        cards.forEach((card, i) => {
+          gsap.to(card, {
+            x: x * PARALLAX_X_FACTORS[i],
+            y: y * PARALLAX_Y_FACTORS[i],
+            duration: followDuration,
+            ease: followEase,
+            overwrite: "auto",
+          });
         });
       };
 
