@@ -99,7 +99,10 @@ export default function FaqSection() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  const handleKeyDown = (e: KeyboardEvent<HTMLButtonElement>, index: number) => {
+  const handleKeyDown = (
+    e: KeyboardEvent<HTMLButtonElement>,
+    index: number,
+  ) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
       toggle(index);
@@ -110,7 +113,9 @@ export default function FaqSection() {
     <section id="faq" className="relative z-0">
       <div className="bg-background px-global">
         <div className="max-w-global py-section-md mx-auto flex flex-col items-center gap-3 border-x border-[#E5E7EB]">
-          <h2 data-reveal="words" className="text-center">FAQ</h2>
+          <h2 data-reveal="words" className="text-center">
+            FAQ
+          </h2>
           <p className="text-center">Frequently asked questions</p>
         </div>
       </div>
@@ -135,7 +140,7 @@ export default function FaqSection() {
                         className={`text-left transition-colors ${
                           isOpen
                             ? "text-[16px] leading-[26px] tracking-[-0.01em] text-[#202020]"
-                            : "text-[16px] leading-[26px] font-normal tracking-[-0.01em] text-[#646464]"
+                            : "text-[16px] leading-[26px] tracking-[-0.01em] text-[#646464]"
                         }`}
                       >
                         {faq.question}
