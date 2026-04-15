@@ -66,9 +66,9 @@ function ProblemDashboardStack() {
   return (
     <div
       ref={wrapRef}
-      className="relative z-0 overflow-hidden border-t border-[#E5E7EB]"
+      className="relative z-0 hidden overflow-hidden border-t border-[#E5E7EB] md:block"
     >
-      <div ref={layer1Ref} className="hidden will-change-transform md:block">
+      <div ref={layer1Ref} className="will-change-transform">
         <Image
           src="/assets/home/dashboard/dashboard1.png"
           alt="Structurely dashboard with lead metrics, activity chart, and pipeline overview"
@@ -78,7 +78,7 @@ function ProblemDashboardStack() {
           sizes="(max-width: 768px) 100vw, min(1024px, 100vw)"
         />
       </div>
-      <div className="absolute top-0 left-1/2 hidden w-full max-w-5xl -translate-x-1/2 md:block">
+      <div className="absolute top-0 left-1/2 w-full max-w-5xl -translate-x-1/2">
         <div ref={layer2Ref} className="will-change-transform">
           <Image
             src="/assets/home/dashboard/dashboard2.png"
@@ -90,7 +90,7 @@ function ProblemDashboardStack() {
           />
         </div>
       </div>
-      <div className="absolute top-0 left-1/2 -z-10 hidden w-full max-w-5xl -translate-x-1/2 md:block">
+      <div className="absolute top-0 left-1/2 -z-10 w-full max-w-5xl -translate-x-1/2">
         <div ref={layer3Ref} className="will-change-transform">
           <Image
             src="/assets/home/dashboard/dashboard3.png"
