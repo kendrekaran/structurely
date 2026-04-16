@@ -1,6 +1,9 @@
 import type { NewsPost } from "@/data/news-data";
 import NewsCard from "@/components/news/news-card";
 
+/** Matches `lg:grid-cols-3` so short rows get white cells instead of empty gray tracks. */
+const NEWS_GRID_COLUMNS_LG = 3;
+
 type NewsPostsSectionProps = {
   posts: NewsPost[];
 };
@@ -39,27 +42,41 @@ function NewsPostsSection({ posts }: NewsPostsSectionProps) {
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
           <div className="bg-border flex flex-col gap-px">
-            {rows.map((row, rowIdx) => (
-              <div
-                key={rowIdx}
-                className="grid grid-cols-1 gap-px lg:grid-cols-3"
-              >
-                {row.map((post) => (
-                  <NewsCard
-                    key={post._id}
-                    title={post.title}
-                    description={post.description ?? ""}
-                    date={formatDate(post.publishedAt)}
-                    image={
-                      typeof post.thumbnail === "string"
-                        ? post.thumbnail
-                        : undefined
-                    }
-                    slug={post.slug?.current}
-                  />
-                ))}
-              </div>
-            ))}
+            {rows.map((row, rowIdx) => {
+              const cells: (NewsPost | null)[] = [...row];
+              while (cells.length < NEWS_GRID_COLUMNS_LG) {
+                cells.push(null);
+              }
+              return (
+                <div
+                  key={rowIdx}
+                  className="grid grid-cols-1 gap-px lg:grid-cols-3"
+                >
+                  {cells.map((post, colIdx) =>
+                    post ? (
+                      <NewsCard
+                        key={post._id}
+                        title={post.title}
+                        description={post.description ?? ""}
+                        date={formatDate(post.publishedAt)}
+                        image={
+                          typeof post.thumbnail === "string"
+                            ? post.thumbnail
+                            : undefined
+                        }
+                        slug={post.slug?.current}
+                      />
+                    ) : (
+                      <div
+                        key={`empty-${rowIdx}-${colIdx}`}
+                        className="hidden bg-white lg:block"
+                        aria-hidden
+                      />
+                    ),
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
