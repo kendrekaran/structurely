@@ -46,7 +46,7 @@ export const dummyNewsPosts: DummyNewsPost[] = [
   {
     _id: "struct-1",
     title: "How Structurely's Call and Text AI Improve Response Rates",
-    category: "Mortgage",
+    category: "Press Release",
     description:
       "To drive conversions and grow revenue, companies must reach out to leads at the right time. Structurely's AI-powered calling and texting tools automate follow-ups with precision timing and personalized messaging.",
     slug: { current: "how-structurely-call-text-ai-improve-response-rates" },
@@ -127,7 +127,7 @@ export const dummyNewsPosts: DummyNewsPost[] = [
   {
     _id: "struct-2",
     title: "24/7 Lead Handling with Structurely's AI Assistant",
-    category: "CRM",
+    category: "Related News",
     description:
       "Customers expect instant responses at any hour. With Structurely's AI assistant, your leads are never left waiting.",
     slug: { current: "247-lead-handling-structurely-ai-assistant" },
@@ -182,7 +182,7 @@ export const dummyNewsPosts: DummyNewsPost[] = [
   {
     _id: "struct-3",
     title: "Embrace the Multi-Channel Approach",
-    category: "Marketing",
+    category: "Stories",
     description:
       "Reaching leads on a single channel is no longer enough. Discover how a multi-channel strategy drives higher engagement.",
     slug: { current: "embrace-the-multi-channel-approach" },
@@ -237,7 +237,7 @@ export const dummyNewsPosts: DummyNewsPost[] = [
   {
     _id: "struct-4",
     title: "Maximize Your CRM Automation With AI",
-    category: "CRM",
+    category: "Press Release",
     description:
       "Your CRM is only as powerful as the data inside it. AI-driven automation keeps everything clean, updated, and actionable.",
     slug: { current: "maximize-your-crm-automation-with-ai" },
@@ -292,7 +292,7 @@ export const dummyNewsPosts: DummyNewsPost[] = [
   {
     _id: "struct-5",
     title: "Why Real Estate Teams Choose Structurely for Lead Follow-Up",
-    category: "Real Estate",
+    category: "Related News",
     description:
       "From first touch to closed deal, see how real estate teams use Structurely to stay ahead of the curve.",
     slug: { current: "why-real-estate-teams-choose-structurely" },
@@ -347,7 +347,7 @@ export const dummyNewsPosts: DummyNewsPost[] = [
   {
     _id: "struct-6",
     title: "Intelligent Qualification: How AI Decides Who Gets a Call",
-    category: "Case Study",
+    category: "Stories",
     description:
       "Not every lead needs a human touch right away. Learn how Structurely uses signals like urgency and readiness to route leads intelligently.",
     slug: { current: "intelligent-qualification-ai-decides-who-gets-a-call" },

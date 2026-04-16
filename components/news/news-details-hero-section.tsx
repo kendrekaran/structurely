@@ -1,10 +1,13 @@
 import Link from "next/link";
+import Badge from "@/components/_ui/badge";
 
 type NewsDetailsHeroSectionProps = {
   title: string;
   intro: string;
   description: string;
   image?: string;
+  /** e.g. Press Release, Related News, Stories */
+  category?: string | null;
 };
 
 function NewsDetailsHeroSection({
@@ -12,15 +15,16 @@ function NewsDetailsHeroSection({
   intro,
   description,
   image,
+  category,
 }: NewsDetailsHeroSectionProps) {
   return (
     <section id="news-details-hero" className="relative z-0">
       <div className="px-global">
-        <div className="max-w-global mx-auto w-full flex flex-col items-center justify-center border-x border-[#E5E7EB]  gap-8 pt-10 md:pt-8 px-3 md:px-12 pb-0">
-          <div className="flex flex-col items-left justify-center  gap-4 md:px-6 max-w-[744px]">
+        <div className="max-w-global mx-auto flex w-full flex-col items-center justify-center gap-8 border-x border-[#E5E7EB] px-3 pt-10 pb-0 md:px-12 md:pt-8">
+          <div className="items-left flex max-w-[744px] flex-col justify-center gap-4 md:px-6">
             <Link
               href="/news"
-              className="flex w-fit items-center gap-1 md:px-6 text-[14px] leading-[20px] tracking-[-0.084px] text-[var(--Subtext)]"
+              className="flex w-fit items-center gap-1 text-[14px] leading-[20px] tracking-[-0.084px] text-[var(--Subtext)] md:px-6"
             >
               <svg
                 width="16"
@@ -47,7 +51,7 @@ function NewsDetailsHeroSection({
               Back to News
             </Link>
 
-            <div className="w-full min-h-[360px] rounded-xl overflow-hidden bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)] md:hidden">
+            <div className="min-h-[360px] w-full overflow-hidden rounded-xl bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)] md:hidden">
               {image && (
                 <img
                   src={image}
@@ -56,11 +60,12 @@ function NewsDetailsHeroSection({
                 />
               )}
             </div>
-
-            <h1
-              data-reveal="words"
-              className="font-medium tracking-[-0.03em] md:px-6 max-w-[744px]"
-            >
+            <div className="md:px-6">
+              <Badge
+                text={category?.trim() || "News & Insights"}
+              />
+            </div>
+            <h1 className="max-w-[744px] text-[24px] leading-[1.2222222222222223] font-medium tracking-[-0.03em] md:px-6 md:text-[36px]">
               {title}
             </h1>
 
@@ -70,7 +75,7 @@ function NewsDetailsHeroSection({
             </div>
           </div>
 
-          <div className="hidden w-full min-h-[360px] md:min-h-[360px] rounded-xl overflow-hidden bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)] md:block">
+          <div className="hidden min-h-[360px] w-full overflow-hidden rounded-xl bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)] md:block md:min-h-[360px]">
             {image && (
               <img
                 src={image}
