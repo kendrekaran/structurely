@@ -6,7 +6,10 @@ import PricingHeroSection, {
   type BillingCycle,
 } from "@/components/pricing/pricing-hero-section";
 import PricingCardsSection from "@/components/pricing/pricing-cards-section";
+import PricingComparisonCardsSection from "@/components/pricing/pricing-comparison-cards-section";
+import PricingWhiteLabelSection from "@/components/pricing/pricing-white-label-section";
 import PricingCtaSection from "@/components/pricing/pricing-cta-section";
+import LeadStoreSection from "@/components/pricing/lead-store-section";
 import PricingAddonSection from "@/components/pricing/pricing-addon-section";
 import PricingOnboardingSection from "@/components/pricing/pricing-onboarding-section";
 import ActionCreditSection from "@/components/pricing/action-credit-section";
@@ -24,16 +27,23 @@ export default function PricingPageClient() {
     <main className="min-h-screen max-w-full overflow-x-clip">
       <Header />
       <PricingHeroSection billing={billing} onBillingChange={setBilling} />
+      {/* <Separator /> */}
+      {/* <PricingCardsSection billing={billing} onBillingChange={setBilling} /> */}
       <Separator />
-      <PricingCardsSection billing={billing} onBillingChange={setBilling} />
+      <PricingComparisonCardsSection />
       <Separator />
-      <PricingCtaSection />
+      <PricingWhiteLabelSection />
+      {/* <Separator /> */}
+      {/* <PricingCtaSection /> */}
+      <Separator />
+      <LeadStoreSection />
+
+      <Separator />
+      {/* <LocalNumbersSection /> */}
+      {/* <Separator /> */}
+      <PricingAddonSection />
       <Separator />
       <ActionCreditSection />
-      <Separator />
-      <LocalNumbersSection />
-      <Separator />
-      <PricingAddonSection />
       <Separator />
       <PricingOnboardingSection />
       {/* <Separator /> */}

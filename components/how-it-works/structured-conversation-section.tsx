@@ -5,7 +5,7 @@ import { Fit, Layout } from "@rive-app/react-canvas";
 
 const featureItems = [
   "Structured conversation trees",
-  "AI 3 is not a keyword bot.",
+  // "AI 3 is not a keyword bot.",
   "Dynamic branching logic",
   "Intent detection",
   "Objection response frameworks",

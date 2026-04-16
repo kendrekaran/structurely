@@ -74,7 +74,7 @@ const AuthPhoneInput = forwardRef<HTMLInputElement, AuthPhoneInputProps>(
       if (!el) return;
 
       const iti = intlTelInput(el, {
-        initialCountry: "fr",
+        initialCountry: "us",
         onlyCountries: ["us", "ca", "fr"],
         nationalMode: false,
         autoPlaceholder: "aggressive",
