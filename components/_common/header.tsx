@@ -14,13 +14,12 @@ const navLinks = [
   { label: "How it works", href: "/how-it-works" },
   { label: "Use cases", href: "/use-cases" },
   { label: "Pricing", href: "/pricing" },
-  { label: "News", href: "/news" },
 ];
 
 const companyLinks = [
   { label: "About", href: "/about" },
+  { label: "News", href: "/news" },
   // { label: "Partners", href: "/partners" },
-  // { label: "News", href: "/news" },
   // { label: "Help Center", href: "/help-center" },
 ];
 
@@ -34,7 +33,11 @@ export default function Header() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const isCompanyActive = companyLinks.some((l) => l.href === pathname);
+  const isCompanyActive = companyLinks.some((l) =>
+    l.href === "/news"
+      ? pathname === "/news" || pathname.startsWith("/news/")
+      : l.href === pathname,
+  );
 
   const handleMenuToggle = () => {
     setMobileMenuOpen((prev) => !prev);
@@ -65,10 +68,7 @@ export default function Header() {
           {/* Desktop Nav */}
           <nav className="hidden flex-1 items-center justify-center gap-2 lg:flex">
             {navLinks.map((link) => {
-              const isActive =
-                link.href === "/news"
-                  ? pathname === "/news" || pathname.startsWith("/news/")
-                  : pathname === link.href;
+              const isActive = pathname === link.href;
               return (
                 <Link
                   key={link.label}
