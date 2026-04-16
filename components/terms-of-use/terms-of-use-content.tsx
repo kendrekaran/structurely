@@ -35,7 +35,7 @@ function TermsOfUseContent() {
             </h1>
 
             <div className={blockGap}>
-              <h3 className={`${h3} font-semibold`}>
+              <h3 className={`${h3} font-semibold uppercase`}>
                 Please read the following terms and conditions carefully.
               </h3>
               <p className={body}>
@@ -62,7 +62,9 @@ function TermsOfUseContent() {
 
 
             <div id="changes" className={sectionGap}>
-              <h2 className={h2}>1. Changes to these terms and the Site</h2>
+              <h2 className={h2}>
+                1. Changes to these terms and the Site
+              </h2>
               <div className={blockGap}>
                 <p className={body}>
                   We may change these Terms at any time, and all such changes are
@@ -278,7 +280,19 @@ function TermsOfUseContent() {
                     use the Site to post or transmit any advertisements,
                     solicitations, chain letters, pyramid schemes, investment
                     opportunities or schemes, or other unsolicited commercial
-                    communication.
+                    communication; and
+                  </li>
+                  <li>
+                    use the Site to contact others in violation of the Telephone
+                    Consumer Protection Act (&ldquo;TCPA&rdquo;), 47 U.S.C. § 227,
+                    Federal Communications Commission regulations implementing the
+                    TCPA, including 47 C.F.R. § 64.1200(c)-(d), Do Not Call
+                    regulations, and similar state rules prohibiting certain calls
+                    or other types of outreaches, privacy laws, Do-Not-Call
+                    obligations, consent requirements, and recording laws
+                    (one-party/two-party consent) as applicable (together,
+                    &ldquo;Laws Applicable to Customer&rsquo;s
+                    Communications&rdquo;).
                   </li>
                 </ol>
               </div>
@@ -473,7 +487,9 @@ function TermsOfUseContent() {
                   proceedings, and all resulting loss, damage, liability, cost, and
                   expense (including reasonable attorneys&rsquo; fees), arising
                   out of: (a) content, data, or information that you submit, post
-                  to, or transmit through the Site; (b) your access to and use of
+                  to, or transmit through the Site, including, but not limited to,
+                  as a result of your use of demonstration features on the
+                  Structurely Site; (b) your access to and use of
                   the Content, the Site, and other materials, products, and
                   services available on or through the Site and Structurely; (c)
                   your violation of these Terms; (d) your violation of any rights
@@ -495,23 +511,25 @@ function TermsOfUseContent() {
                   These Terms will be construed and enforced in accordance with
                   the laws of the State of Iowa, without regard to the conflicts
                   of law provisions thereof. You expressly agree that any claim or
-                  controversy arising out of or related the Terms, the Site, or the
-                  Content shall be settled by binding arbitration to be held in
+                  controversy arising out of or related to the Terms, the Site, or
+                  the Content shall be settled by binding arbitration to be held in
                   Chicago, Illinois, before a single arbitrator, in accordance with
                   the commercial arbitration rules of the American Arbitration
-                  Association. Any such claim or controversy shall be arbitrated
-                  on an individual basis and shall not be consolidated with a
-                  claim of any other party. Each party shall bear its own costs
-                  relating to such arbitration, and the parties shall equally share
-                  the arbitrator&rsquo;s fees. Judgment on any award resulting from
-                  such arbitration may be entered in any court having
-                  jurisdiction. You further agree and expressly consent to the
-                  exercise of personal jurisdiction in the courts of the State of
-                  Illinois for the enforcement of this arbitration agreement and of
-                  any such award. The foregoing shall not preclude Structurely from
-                  seeking any injunctive relief in any court of competent
-                  jurisdiction for protection of Structurely&rsquo;s intellectual
-                  property rights.
+                  Association. Any dispute relating to the validity or scope of
+                  this Agreement, as well as other aspects of arbitrability of the
+                  dispute between the parties, shall be resolved by the arbitrator.
+                  Any such claim or controversy shall be arbitrated on an
+                  individual basis and shall not be consolidated with a claim of
+                  any other party. Each party shall bear its own costs relating to
+                  such arbitration, and the parties shall equally share the
+                  arbitrator&rsquo;s fees. Judgment on any award resulting from
+                  such arbitration may be entered in any court having jurisdiction.
+                  You further agree and expressly consent to the exercise of
+                  personal jurisdiction in the courts of the State of Illinois for
+                  the enforcement of this arbitration agreement and of any such
+                  award. The foregoing shall not preclude Structurely from seeking
+                  any injunctive relief in any court of competent jurisdiction for
+                  protection of Structurely&rsquo;s intellectual property rights.
                 </p>
               </div>
             </div>
@@ -522,7 +540,7 @@ function TermsOfUseContent() {
               <h2 className={h2}>16. Third-Party Services</h2>
               <div className={blockGap}>
                 <p className={body}>
-                  1. Our website utilizes various third-party services to enhance user
+                  Our website utilizes various third-party services to enhance user
                   experience, including Google reCAPTCHA. Google reCAPTCHA is used
                   to protect our site from spam and abuse. By using our site, you
                   agree to the collection and processing of data by Google as
@@ -623,23 +641,39 @@ function TermsOfUseContent() {
             <div className={sectionDivider} role="separator" aria-hidden="true" />
 
             <div id="questions" className={sectionGap}>
-              <h2 className={h2}>19. Questions</h2>
+              <h2 className={h2}>19. Questions and pre-dispute resolution</h2>
               <div className={blockGap}>
                 <p className={body}>
                   Please contact us with any questions regarding the Site or these
-                  Terms at:
-                </p>
-                <p className={body}>
-                  Reinform, Inc. d/b/a Structurely
-                  <br />
-                  525 Kellogg Ave, #408, Ames, IA 50010
-                  <br />
+                  Terms at: Reinform, Inc. d/b/a Structurely, 525 Kellogg Ave, #408,
+                  Ames, IA 50010{" "}
                   <a
                     href="mailto:info@structurely.com"
-                    className="underline text-[#202020]"
+                    className="underline text-[#646464]"
                   >
                     info@structurely.com
                   </a>
+                </p>
+                <p className={body}>
+                  Contacting Structurely as provided in this Paragraph 19, and
+                  allowing Structurely an opportunity to resolve the dispute within
+                  30 calendar days is a condition precedent to initiation of any
+                  formal dispute with Structurely.
+                </p>
+              </div>
+            </div>
+
+            <div className={sectionDivider} role="separator" aria-hidden="true" />
+
+            <div id="independent-contractors" className={sectionGap}>
+              <h2 className={h2}>20. Independent contractors</h2>
+              <div className={blockGap}>
+                <p className={body}>
+                  Each Party agrees that the other is acting as an independent
+                  contractor with respect to this Agreement, and neither Party shall
+                  have the right to bind or obligate the other Party. Nothing in
+                  this Agreement shall be deemed or construed to create an agency,
+                  partnership, or joint venture between Structurely and Customer.
                 </p>
               </div>
             </div>
@@ -647,7 +681,7 @@ function TermsOfUseContent() {
             <div className={sectionDivider} role="separator" aria-hidden="true" />
 
             <div id="acknowledgement" className={sectionGap}>
-              <h2 className={h2}>20. Acknowledgement</h2>
+              <h2 className={h2}>21. Acknowledgement</h2>
               <div className={blockGap}>
                 <p className={body}>
                   BY ACCESSING AND USING THE SITE, YOU AGREE TO BE BOUND BY THESE
@@ -659,7 +693,9 @@ function TermsOfUseContent() {
             <div className={sectionDivider} role="separator" aria-hidden="true" />
 
             <div id="supplemental-terms" className={sectionGap}>
-              <h2 className="text-[24px] leading-[32px] font-semibold tracking-[-0.03px] text-[#202020]">Supplemental Terms for Business Customers</h2>
+              <h2 className="text-[24px] leading-[32px] font-semibold tracking-[-0.03px] text-[#202020]">
+                Supplemental Terms for Business Customers
+              </h2>
               <div className={blockGap}>
                 <p className={body}>
                   In combination with the above Terms of Use, these Supplemental
@@ -670,15 +706,7 @@ function TermsOfUseContent() {
                   Agreement.
                 </p>
               </div>
-            </div>
-
-            <div className={sectionDivider} role="separator" aria-hidden="true" />
-
-            <div className={sectionGap}>
-              <h2 className="text-[24px] leading-[32px] font-semibold tracking-[-0.03px] text-[#202020]">
-                Supplemental Terms for Business Customers
-              </h2>
-              <ol className={`${listNumbered} space-y-6`}>
+              <ol className={`${listNumbered} mt-4 space-y-6`}>
                 <li id="supplemental-user-terms" className="pl-0">
                   <span className="font-medium uppercase tracking-[-0.36px] ">
                     User terms of use
@@ -747,7 +775,7 @@ function TermsOfUseContent() {
                           Pro Bundle: $20 one-time setup fee + $148 monthly
                         </li>
                         <li>
-                          Enterprise Bundle: $20 one-time setup fee + $278 monthly
+                          Enterprise Bundle: $20 one-time set up fee + $278 monthly
                         </li>
                       </ol>
                     </li>
@@ -796,27 +824,29 @@ function TermsOfUseContent() {
               </div>
             </div>
 
-            <div id="supplemental-termination" className={sectionGap}>
-              <h2 className="text-[24px] leading-[32px] font-semibold tracking-[-0.03px] text-[#202020]">Effect of Termination</h2>
+            <div id="supplemental-effect-termination" className={sectionGap}>
+              <h2 className="text-[24px] leading-[32px] font-semibold tracking-[-0.03px] text-[#202020]">
+                Effect of Termination
+              </h2>
               <div className={blockGap}>
-              <p className={body}>
+                <p className={body}>
                   Neither Structurely nor its suppliers shall be liable to Customer
                   or any third party for suspension or termination of
                   Customer&rsquo;s access to, or right to use, the services under
                   this Agreement, provided such suspension or termination was done
                   in good faith. Customer shall owe and pay the balance due for the
-                  services up to the date of termination. Commensurate therewith,
-                  Structurely shall issue a pro rata refund of any unused prepaid
-                  amounts, as applicable. Upon the effective date of termination of
-                  this Agreement for any reason, Customer and its authorized
-                  users&rsquo; access to the services shall terminate and Customer
-                  shall cease accessing and using the services immediately.
+                  services up to the date of termination.
                 </p>
-               
+                <p className={body}>
+                  Commensurate therewith, Structurely shall issue a pro rata refund
+                  of any unused prepaid amounts, as applicable. Upon the effective
+                  date of termination of this Agreement for any reason, Customer
+                  and its authorized users&rsquo; access to the services shall
+                  terminate and Customer shall cease accessing and using the
+                  services immediately.
+                </p>
               </div>
             </div>
-
-                
 
             <div className={sectionDivider} role="separator" aria-hidden="true" />
 
@@ -840,10 +870,18 @@ function TermsOfUseContent() {
                   Customer hereby represents that, in connection with
                   Customer&rsquo;s use of the Site and the services, Customer will
                   comply with all applicable laws and regulations, including the
-                  Telephone Consumer Protection Act (&ldquo;TCPA&rdquo;). Structurely
+                  Telephone Consumer Protection Act, 47 U.S.C. § 227
+                  (&ldquo;TCPA&rdquo;), Federal Communications Commission regulations
+                  implementing the TCPA, including 47 C.F.R. § 64.1200(c)-(d), Do
+                  Not Call regulations, and similar state rules prohibiting certain
+                  calls or other types of outreaches, privacy laws, Do-Not-Call
+                  obligations, consent requirements, and recording laws
+                  (one-party/two-party consent) as applicable (together, &ldquo;Laws
+                  Applicable to Customer&rsquo;s Communications&rdquo;). Structurely
                   reserves the right to terminate Customer&rsquo;s use of the
                   services without notice or liability, in the event it learns of
-                  any noncompliance with the TCPA.
+                  any noncompliance with the Laws Applicable to Customer&rsquo;s
+                  Communications.
                 </p>
               </div>
             </div>
@@ -869,13 +907,22 @@ function TermsOfUseContent() {
                   LIMITATION, THE CONDITIONS OR WARRANTIES OF MERCHANTABILITY,
                   FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
                 </p>
+                <p className={body}>
+                  Customer represents that, in using the Site, including the
+                  demonstration feature of the Site, the phone numbers entered by
+                  Customer are accurate and any communications to those numbers are
+                  made with the requisite degree of consent by the ultimate
+                  recipient required by law.
+                </p>
               </div>
             </div>
 
             <div className={sectionDivider} role="separator" aria-hidden="true" />
 
             <div id="supplemental-indemnification" className={sectionGap}>
-              <h3 className="text-[24px] leading-[32px] font-semibold tracking-[-0.03px] text-[#202020]">Indemnification</h3>
+              <h2 className="text-[24px] leading-[32px] font-semibold tracking-[-0.03px] text-[#202020]">
+                Indemnification
+              </h2>
               <div className={blockGap}>
                 <p className={body}>
                   Customer shall defend, indemnify and hold harmless Structurely,
@@ -884,9 +931,10 @@ function TermsOfUseContent() {
                   proceedings, and all resulting loss, damage, liability, cost, and
                   expense (including reasonable attorneys&rsquo; fees), arising from
                   Customer&rsquo;s breach of any warranties, representations, or
-                  agreements made by Customer herein, including but not limited to,
-                  Customer&rsquo;s breach of applicable laws and regulations,
-                  including the Telephone Consumer Protection Act.
+                  agreements made by Customer herein, and Customer&rsquo;s breach of
+                  applicable laws and regulations, including the Telephone Consumer
+                  Protection Act and other Laws Applicable to Customer&rsquo;s
+                  Communications.
                 </p>
               </div>
             </div>
@@ -894,7 +942,9 @@ function TermsOfUseContent() {
             <div className={sectionDivider} role="separator" aria-hidden="true" />
 
             <div id="supplemental-limitation" className={sectionGap}>
-              <h3 className="text-[24px] leading-[32px] font-semibold tracking-[-0.03px] text-[#202020]">Limitation of Liability</h3>
+              <h2 className="text-[24px] leading-[32px] font-semibold tracking-[-0.03px] text-[#202020]">
+                Limitation of Liability
+              </h2>
               <div className={blockGap}>
                 <p className={`${body} font-medium text-[#202020]`}>
                   Limitation on Direct Damages.
@@ -912,28 +962,46 @@ function TermsOfUseContent() {
                   Act.
                 </p>
                 <p className={body}>
-                Waiver of Consequential Damages. IN NO EVENT WILL STRUCTURELY BE LIABLE TO CUSTOMER FOR ANY
+                  <span className="font-medium text-[#202020]">
+                    Waiver of Consequential Damages.
+                  </span>{" "}
+                  IN NO EVENT WILL STRUCTURELY BE LIABLE TO CUSTOMER FOR ANY
                   INDIRECT, EXEMPLARY, SPECIAL, PUNITIVE, OR CONSEQUENTIAL DAMAGES,
-                  INCLUDING, WITHOUT LIMITATION, LOSS OF PROFITS, WITHOUT REGARD
-                  TO WHETHER SUCH CLAIM IS BASED IN CONTRACT, TORT (INCLUDING,
-                  WITHOUT LIMITATION, NEGLIGENCE), PRODUCT LIABILITY, OR OTHERWISE,
-                  EVEN IF CUSTOMER HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH
-                  DAMAGES.
+                  INCLUDING, WITHOUT LIMITATION, LOSS OF PROFITS, WITHOUT REGARD TO
+                  WHETHER SUCH CLAIM IS BASED IN CONTRACT, TORT (INCLUDING, WITHOUT
+                  LIMITATION, NEGLIGENCE), PRODUCT LIABILITY, OR OTHERWISE, EVEN IF
+                  CUSTOMER HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
                 </p>
               </div>
             </div>
 
-            <div id="supplemental-limitation" className={sectionGap}>
-            <h2 className="text-[24px] leading-[32px] font-semibold tracking-[-0.03px] text-[#202020]">
-              Exceptions to Limitation of Liability.
-            </h2>
-            <p className={body}>
-              The Limitations of Liability set forth in this Section 8 shall
-              not apply to: (i) losses or damages due to Structurely&rsquo;s
-              gross negligence, willful misconduct, or fraud; or (ii)
-              Customer&rsquo;s indemnification obligations set forth in Section
-              7.
-            </p>
+            <div className={sectionDivider} role="separator" aria-hidden="true" />
+
+            <div id="supplemental-liability-exceptions" className={sectionGap}>
+              <h2 className="text-[24px] leading-[32px] font-semibold tracking-[-0.03px] text-[#202020]">
+                9. Exceptions to Limitation of Liability
+              </h2>
+              <p className={body}>
+                The Limitations of Liability set forth in this Section 8 shall not
+                apply to losses or damages due to Structurely&rsquo;s gross
+                negligence, willful misconduct, or fraud.
+              </p>
+            </div>
+
+            <div className={sectionDivider} role="separator" aria-hidden="true" />
+
+            <div id="supplemental-governing-law" className={sectionGap}>
+              <h2 className="text-[24px] leading-[32px] font-semibold tracking-[-0.03px] text-[#202020]">
+                10. Governing Law; Venue
+              </h2>
+              <p className={body}>
+                This Agreement is governed by the laws of the State of Florida,
+                without regard to its conflict of laws principles. Any disputes
+                arising out of or relating to this Agreement shall be brought
+                exclusively in the federal or state courts located in Lee County,
+                Florida, and each party consents to the personal jurisdiction of
+                such courts.
+              </p>
             </div>
           </div>
         </div>

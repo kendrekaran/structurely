@@ -18,6 +18,11 @@ const accountLinks = [
   { label: "Privacy policy", href: "/privacy-policy", external: false },
   { label: "Terms of use", href: "/terms-of-use", external: false },
   {
+    label: "Subscription agreement",
+    href: "/subscription-agreement",
+    external: false,
+  },
+  {
     label: "Contact sales",
     href: "/partners#partners-contact",
     external: false,
