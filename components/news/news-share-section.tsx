@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Button from "@/components/_ui/button";
 
-function BlogShareSection() {
+function NewsShareSection() {
   return (
-    <section id="blog-share" className="relative z-0">
+    <section id="news-share" className="relative z-0">
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-y border-[#E5E7EB] py-6">
           <div className="flex flex-col items-center gap-3 px-6 lg:px-12">
@@ -16,7 +16,7 @@ function BlogShareSection() {
                 aria-label="Share on X"
               >
                 <Image
-                  src="/assets/blog/socials/x.svg"
+                  src="/assets/news/socials/x.svg"
                   alt="X"
                   width={20}
                   height={20}
@@ -29,7 +29,7 @@ function BlogShareSection() {
                 aria-label="Share on LinkedIn"
               >
                 <Image
-                  src="/assets/blog/socials/linkedin.svg"
+                  src="/assets/news/socials/linkedin.svg"
                   alt="LinkedIn"
                   width={20}
                   height={20}
@@ -42,7 +42,7 @@ function BlogShareSection() {
                 aria-label="Share"
               >
                 <Image
-                  src="/assets/blog/socials/share.svg"
+                  src="/assets/news/socials/share.svg"
                   alt="Share"
                   width={20}
                   height={20}
@@ -56,4 +56,4 @@ function BlogShareSection() {
   );
 }
 
-export default BlogShareSection;
+export default NewsShareSection;

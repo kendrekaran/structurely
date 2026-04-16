@@ -1,4 +1,4 @@
-import BlogCard from "@/components/blog/blog-card";
+import NewsCard from "@/components/news/news-card";
 
 type RelatedArticle = {
   title: string;
@@ -8,13 +8,13 @@ type RelatedArticle = {
   slug?: string;
 };
 
-type BlogRelatedArticlesSectionProps = {
+type NewsRelatedArticlesSectionProps = {
   articles: RelatedArticle[];
 };
 
-function BlogRelatedArticlesSection({
+function NewsRelatedArticlesSection({
   articles,
-}: BlogRelatedArticlesSectionProps) {
+}: NewsRelatedArticlesSectionProps) {
   return (
     <section id="related-articles" className="relative z-0">
       <div className="px-global">
@@ -25,7 +25,7 @@ function BlogRelatedArticlesSection({
           <div className="border-t border-[#E5E7EB]">
             <div className="grid grid-cols-1 divide-y divide-[#E5E7EB] lg:grid-cols-3 lg:divide-x lg:divide-y-0">
               {articles.map((article, index) => (
-                <BlogCard
+                <NewsCard
                   key={article.slug ?? index}
                   title={article.title}
                   description={article.description}
@@ -42,4 +42,4 @@ function BlogRelatedArticlesSection({
   );
 }
 
-export default BlogRelatedArticlesSection;
+export default NewsRelatedArticlesSection;

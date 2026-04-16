@@ -2,6 +2,12 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
+  async redirects() {
+    return [
+      { source: "/blog", destination: "/news", permanent: true },
+      { source: "/blog/:slug", destination: "/news/:slug", permanent: true },
+    ];
+  },
   images: {
     unoptimized: true,
     domains: ["api.builder.io"],

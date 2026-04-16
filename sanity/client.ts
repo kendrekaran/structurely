@@ -3,7 +3,7 @@
  *
  * ## When `sanityClient` is `null` (default)
  * - `NEXT_PUBLIC_SANITY_PROJECT_ID` is **not** set in the environment.
- * - Blog listing and detail pages use **dummy data** from `data/dummy-blogs.ts`.
+ * - News listing and detail pages use **dummy data** from `data/dummy-news.ts`.
  * - No network calls to Sanity — safe for local dev, previews, and builds without CMS secrets.
  *
  * ## When `sanityClient` is configured
@@ -11,13 +11,13 @@
  *   - `NEXT_PUBLIC_SANITY_PROJECT_ID` — from [sanity.io/manage](https://sanity.io/manage)
  *   - Optionally `NEXT_PUBLIC_SANITY_DATASET` (defaults to `production`)
  *   - Optionally `NEXT_PUBLIC_SANITY_API_VERSION` (defaults to `2024-01-01`)
- * - Blog data is loaded via GROQ in `data/blog-data.ts`.
+ * - News data is loaded via GROQ in `data/news-data.ts`.
  * - Align your Studio schema document `_type` with `NEXT_PUBLIC_SANITY_BLOG_DOCUMENT_TYPE`
  *   (defaults to `blogPost` — change if your schema uses e.g. `post`).
  *
  * ## Images
  * - Use `urlForImage()` for Sanity `image` / `sanity.imageAsset` objects so Next/Image gets absolute URLs.
- * - Dummy blogs continue to use string paths under `/public`.
+ * - Dummy articles continue to use string paths under `/public`.
  */
 
 import { createClient, type SanityClient } from "@sanity/client";
@@ -45,7 +45,7 @@ function createSanityClient(): SanityClient | null {
 
 /**
  * Resolves to a configured Sanity client, or `null` when the project ID is missing.
- * Blog code should branch on this and fall back to `dummy-blogs` when `null`.
+ * News code should branch on this and fall back to `dummy-news` when `null`.
  */
 export const sanityClient = createSanityClient();
 

@@ -1,4 +1,4 @@
-import type { PortableTextBlock } from "@/data/dummy-blogs";
+import type { PortableTextBlock } from "@/data/dummy-news";
 
 type ContentBlock =
   | {
@@ -9,7 +9,7 @@ type ContentBlock =
   | { type: "labeled-paragraph"; label: string; text: string }
   | { type: "divider" };
 
-type BlogContentSectionProps = {
+type NewsContentSectionProps = {
   /** Legacy block format (paragraphs, headings, dividers). */
   blocks?: ContentBlock[];
   /** Sanity-style portable text; when provided, this is rendered instead of blocks. */
@@ -46,7 +46,7 @@ function renderPortableBlock(block: PortableTextBlock, index: number) {
   );
 }
 
-function BlogContentSection({ blocks = [], content }: BlogContentSectionProps) {
+function NewsContentSection({ blocks = [], content }: NewsContentSectionProps) {
   const hasContent = content && content.length > 0;
   const nodes = hasContent
     ? content.map((block, index) => renderPortableBlock(block, index))
@@ -106,7 +106,7 @@ function BlogContentSection({ blocks = [], content }: BlogContentSectionProps) {
               return null;
             });
   return (
-    <section id="blog-content" className="relative z-0">
+    <section id="news-content" className="relative z-0">
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
           <div className="mx-auto flex w-full flex-col mb-[64px] gap-6 md:gap-[32px] pt-6 md:pt-0 px-3 md:px-6 lg:max-w-[744px] lg:px-12">
@@ -119,4 +119,4 @@ function BlogContentSection({ blocks = [], content }: BlogContentSectionProps) {
   );
 }
 
-export default BlogContentSection;
+export default NewsContentSection;

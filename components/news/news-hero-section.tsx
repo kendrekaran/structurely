@@ -1,18 +1,18 @@
-type BlogHeroSectionProps = {
+type NewsHeroSectionProps = {
   date?: string;
   title?: string;
   description?: string;
   image?: string;
 };
 
-function BlogHeroSection({
+function NewsHeroSection({
   date = "October 11, 2024",
   title = "Maximiz Your CRM Automation With A",
   description = "In today's digital age, customers expect quick, personalized responses to their inquiries, no matter when they reach out.",
   image,
-}: BlogHeroSectionProps) {
+}: NewsHeroSectionProps) {
   return (
-    <section id="blog-hero" className="relative z-0">
+    <section id="news-hero" className="relative z-0">
       <div className="px-global">
         <div className="max-w-global py-[40px] md:p-6  mx-auto border-x border-[#E5E7EB]">
           <div className="flex  flex-col  items-center gap-[24px] md:gap-[16px] text-center">
@@ -40,4 +40,4 @@ function BlogHeroSection({
   );
 }
 
-export default BlogHeroSection;
+export default NewsHeroSection;

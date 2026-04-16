@@ -5,7 +5,7 @@ const primaryNavLinks = [
   { label: "How it works", href: "/how-it-works" },
   { label: "Use cases", href: "/use-cases" },
   { label: "Pricing", href: "/pricing" },
-  // { label: "News", href: "/blog" },
+  { label: "News", href: "/news" },
   { label: "About", href: "/about" },
 ] as const;
 

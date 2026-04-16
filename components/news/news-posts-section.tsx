@@ -1,8 +1,8 @@
-import type { BlogPost } from "@/data/blog-data";
-import BlogCard from "@/components/blog/blog-card";
+import type { NewsPost } from "@/data/news-data";
+import NewsCard from "@/components/news/news-card";
 
-type BlogPostsSectionProps = {
-  posts: BlogPost[];
+type NewsPostsSectionProps = {
+  posts: NewsPost[];
 };
 
 function formatDate(iso: string): string {
@@ -13,14 +13,14 @@ function formatDate(iso: string): string {
   });
 }
 
-function BlogPostsSection({ posts }: BlogPostsSectionProps) {
-  const rows: BlogPost[][] = [];
+function NewsPostsSection({ posts }: NewsPostsSectionProps) {
+  const rows: NewsPost[][] = [];
   for (let i = 0; i < posts.length; i += 3) {
     rows.push(posts.slice(i, i + 3));
   }
 
   return (
-    <section id="blog-posts" className="relative z-0">
+    <section id="news-posts" className="relative z-0">
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
           <div className="flex flex-col divide-y divide-[#E5E7EB]">
@@ -30,7 +30,7 @@ function BlogPostsSection({ posts }: BlogPostsSectionProps) {
                 className="grid grid-cols-1 divide-y divide-[#E5E7EB] lg:grid-cols-3 lg:divide-x lg:divide-y-0"
               >
                 {row.map((post) => (
-                  <BlogCard
+                  <NewsCard
                     key={post._id}
                     title={post.title}
                     description={post.description ?? ""}
@@ -52,4 +52,4 @@ function BlogPostsSection({ posts }: BlogPostsSectionProps) {
   );
 }
 
-export default BlogPostsSection;
+export default NewsPostsSection;

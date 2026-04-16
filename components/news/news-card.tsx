@@ -1,15 +1,15 @@
 import Link from "next/link";
 
-type BlogCardProps = {
+type NewsCardProps = {
   title: string;
   description: string;
   date: string;
   image?: string;
-  /** When provided, the card is wrapped in a link to /blog/[slug]. */
+  /** When provided, the card is wrapped in a link to /news/[slug]. */
   slug?: string;
 };
 
-function BlogCard({ title, description, date, image, slug }: BlogCardProps) {
+function NewsCard({ title, description, date, image, slug }: NewsCardProps) {
   const content = (
     <>
       <div className="px-2 pt-2">
@@ -37,7 +37,7 @@ function BlogCard({ title, description, date, image, slug }: BlogCardProps) {
 
   if (slug) {
     return (
-      <Link href={`/blog/${slug}`} className="group flex cursor-pointer flex-col">
+      <Link href={`/news/${slug}`} className="group flex cursor-pointer flex-col">
         {content}
       </Link>
     );
@@ -50,4 +50,4 @@ function BlogCard({ title, description, date, image, slug }: BlogCardProps) {
   );
 }
 
-export default BlogCard;
+export default NewsCard;

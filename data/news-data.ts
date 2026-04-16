@@ -1,33 +1,33 @@
 /**
- * Blog data layer.
+ * News article data layer.
  *
  * - **Sanity**: When `sanityClient` is configured (`NEXT_PUBLIC_SANITY_PROJECT_ID` in `.env`),
  *   posts are loaded with GROQ from `sanity/queries.ts`. See `sanity/client.ts` for env vars.
- * - **Dummy data**: When the client is `null` (no project ID), all routes use `dummy-blogs.ts`.
+ * - **Dummy data**: When the client is `null` (no project ID), all routes use `dummy-news.ts`.
  *   No CMS or token required for local development.
  */
 
 import {
-  dummyBlogs,
-  getDummyBlogBySlug,
-  type DummyBlogPost,
+  dummyNewsPosts,
+  getDummyNewsPostBySlug,
+  type DummyNewsPost,
   type PortableTextBlock,
-} from "./dummy-blogs";
+} from "./dummy-news";
 import { sanityClient, urlForImage } from "@/sanity/client";
 import {
-  blogBySlugQuery,
-  blogCategoriesQuery,
-  blogsListQuery,
+  newsBySlugQuery,
+  newsCategoriesQuery,
+  newsListQuery,
 } from "@/sanity/queries";
 import type { SanityImageSource } from "@sanity/image-url";
 import { unstable_cache } from "next/cache";
 
 /** Shape compatible with both dummy and Sanity. */
-export type BlogPost = Omit<DummyBlogPost, "thumbnail"> & {
+export type NewsPost = Omit<DummyNewsPost, "thumbnail"> & {
   thumbnail?: string | Record<string, unknown>;
 };
 
-function getBlogDocumentType(): string {
+function getSanityNewsDocumentType(): string {
   const raw = process.env.NEXT_PUBLIC_SANITY_BLOG_DOCUMENT_TYPE?.trim();
   if (raw && /^[a-zA-Z0-9_]+$/.test(raw)) {
     return raw;
@@ -41,16 +41,16 @@ function toCategoryStrings(raw: unknown[]): string[] {
     .sort((a, b) => a.localeCompare(b, "en"));
 }
 
-function sortByPublishedAt(blogs: BlogPost[]): BlogPost[] {
-  return [...blogs].sort(
+function sortByPublishedAt(posts: NewsPost[]): NewsPost[] {
+  return [...posts].sort(
     (a, b) =>
       new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
   );
 }
 
-function mapRelatedBlogs(
+function mapRelatedPosts(
   raw: unknown,
-): DummyBlogPost["relatedBlogs"] | undefined {
+): DummyNewsPost["relatedBlogs"] | undefined {
   if (!Array.isArray(raw)) return undefined;
   const mapped = raw
     .map((item) => {
@@ -74,16 +74,16 @@ function mapRelatedBlogs(
       };
     })
     .filter(Boolean);
-  return mapped.length ? (mapped as DummyBlogPost["relatedBlogs"]) : undefined;
+  return mapped.length ? (mapped as DummyNewsPost["relatedBlogs"]) : undefined;
 }
 
-function mapSanityPost(doc: Record<string, unknown>): BlogPost | null {
+function mapSanityPost(doc: Record<string, unknown>): NewsPost | null {
   if (doc._id == null || doc.title == null) return null;
   const slug = doc.slug as { current?: string } | undefined;
   if (!slug?.current) return null;
 
   const thumb = doc.thumbnail;
-  let thumbnail: BlogPost["thumbnail"];
+  let thumbnail: NewsPost["thumbnail"];
   if (typeof thumb === "string") {
     thumbnail = thumb;
   } else if (thumb && typeof thumb === "object") {
@@ -124,66 +124,66 @@ function mapSanityPost(doc: Record<string, unknown>): BlogPost | null {
       ? (doc.content as PortableTextBlock[])
       : undefined,
     thumbnail,
-    relatedBlogs: mapRelatedBlogs(doc.relatedBlogs),
+    relatedBlogs: mapRelatedPosts(doc.relatedBlogs),
   };
 }
 
-async function fetchSanityBlogs(): Promise<BlogPost[]> {
+async function fetchSanityNewsPosts(): Promise<NewsPost[]> {
   const rows = await sanityClient!.fetch<Record<string, unknown>[]>(
-    blogsListQuery,
-    { type: getBlogDocumentType() },
+    newsListQuery,
+    { type: getSanityNewsDocumentType() },
   );
   return rows
     .map((row) => mapSanityPost(row))
-    .filter((p): p is BlogPost => p !== null);
+    .filter((p): p is NewsPost => p !== null);
 }
 
-const getCachedSanityBlogs = unstable_cache(
-  fetchSanityBlogs,
-  ["sanity-blogs-list"],
+const getCachedSanityNewsPosts = unstable_cache(
+  fetchSanityNewsPosts,
+  ["sanity-news-list"],
   { revalidate: 60 },
 );
 
 /** Returns unique category names for the filter bar. */
-export async function getBlogCategories(): Promise<string[]> {
+export async function getNewsCategories(): Promise<string[]> {
   if (!sanityClient) {
     const fromDummy = [
-      ...new Set(dummyBlogs.map((b) => b.category).filter(Boolean)),
+      ...new Set(dummyNewsPosts.map((b) => b.category).filter(Boolean)),
     ] as string[];
     return fromDummy.sort((a, b) => a.localeCompare(b, "en"));
   }
 
   const raw = await sanityClient.fetch<(string | null)[]>(
-    blogCategoriesQuery,
-    { type: getBlogDocumentType() },
+    newsCategoriesQuery,
+    { type: getSanityNewsDocumentType() },
   );
   return toCategoryStrings(raw.filter((c): c is string => typeof c === "string"));
 }
 
-/** Returns all blog posts, sorted by `publishedAt` descending. */
-export async function getBlogs(): Promise<BlogPost[]> {
+/** Returns all posts, sorted by `publishedAt` descending. */
+export async function getNewsPosts(): Promise<NewsPost[]> {
   if (!sanityClient) {
-    return sortByPublishedAt([...dummyBlogs]);
+    return sortByPublishedAt([...dummyNewsPosts]);
   }
-  return sortByPublishedAt(await getCachedSanityBlogs());
+  return sortByPublishedAt(await getCachedSanityNewsPosts());
 }
 
 /** Returns a single post by slug, or `null`. */
-export async function getBlogBySlug(slug: string): Promise<BlogPost | null> {
+export async function getNewsPostBySlug(slug: string): Promise<NewsPost | null> {
   if (!sanityClient) {
-    return getDummyBlogBySlug(slug);
+    return getDummyNewsPostBySlug(slug);
   }
 
   return unstable_cache(
     async () => {
       const doc = await sanityClient!.fetch<Record<string, unknown> | null>(
-        blogBySlugQuery,
-        { type: getBlogDocumentType(), slug },
+        newsBySlugQuery,
+        { type: getSanityNewsDocumentType(), slug },
       );
       if (!doc) return null;
       return mapSanityPost(doc);
     },
-    ["sanity-blog-by-slug", slug],
+    ["sanity-news-by-slug", slug],
     { revalidate: 60 },
   )();
 }

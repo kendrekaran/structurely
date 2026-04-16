@@ -1,9 +1,9 @@
 import Header from "@/components/_common/header";
-import BlogDetailsHeroSection from "@/components/blog/blog-details-hero-section";
-import BlogContentSection from "@/components/blog/blog-content-section";
-import BlogRelatedArticlesSection from "@/components/blog/blog-related-articles-section";
-import BlogShareSection from "@/components/blog/blog-share-section";
-import { getBlogBySlug } from "@/data/blog-data";
+import NewsDetailsHeroSection from "@/components/news/news-details-hero-section";
+import NewsContentSection from "@/components/news/news-content-section";
+import NewsRelatedArticlesSection from "@/components/news/news-related-articles-section";
+import NewsShareSection from "@/components/news/news-share-section";
+import { getNewsPostBySlug } from "@/data/news-data";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import FooterSection from "@/components/_common/footer-section";
@@ -14,26 +14,26 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const post = await getBlogBySlug(slug);
+  const post = await getNewsPostBySlug(slug);
   if (!post) {
     return {
-      title: "Post Not Found - Structurely Blog",
-      description: "The requested blog post could not be found.",
+      title: "Post Not Found - Structurely News",
+      description: "The requested article could not be found.",
     };
   }
   return {
-    title: `${post.title} - Structurely Blog`,
+    title: `${post.title} - Structurely News`,
     description: post.description ?? undefined,
   };
 }
 
-export default async function BlogDetailsPage({
+export default async function NewsArticlePage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = await getBlogBySlug(slug);
+  const post = await getNewsPostBySlug(slug);
 
   if (!post) {
     notFound();
@@ -63,15 +63,15 @@ export default async function BlogDetailsPage({
   return (
     <main className="min-h-screen max-w-full overflow-x-clip">
       <Header />
-      <BlogDetailsHeroSection
+      <NewsDetailsHeroSection
         title={post.title}
         intro={post.description ?? ""}
         description={post.description ?? ""}
         image={thumbnailUrl}
       />
-      <BlogContentSection content={post.content} />
-      <BlogShareSection />
-      <BlogRelatedArticlesSection articles={relatedArticles} />
+      <NewsContentSection content={post.content} />
+      <NewsShareSection />
+      <NewsRelatedArticlesSection articles={relatedArticles} />
       <FooterSection />
     </main>
   );

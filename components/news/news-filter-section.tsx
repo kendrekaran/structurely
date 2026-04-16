@@ -2,19 +2,19 @@
 
 import Link from "next/link";
 
-type BlogFilterSectionProps = {
+type NewsFilterSectionProps = {
   categories: string[];
   currentCategory: string;
 };
 
-function BlogFilterSection({
+function NewsFilterSection({
   categories,
   currentCategory,
-}: BlogFilterSectionProps) {
+}: NewsFilterSectionProps) {
   const displayCategories = ["All", ...categories.filter((c) => c !== "All")];
 
   return (
-    <section id="blog-filter" className="relative z-0">
+    <section id="news-filter" className="relative z-0">
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB] bg-white">
           <div className="flex h-[52px] items-stretch pl-2">
@@ -26,8 +26,8 @@ function BlogFilterSection({
                     : currentCategory === category;
                 const href =
                   category === "All"
-                    ? "/blog"
-                    : `/blog?category=${encodeURIComponent(category)}`;
+                    ? "/news"
+                    : `/news?category=${encodeURIComponent(category)}`;
                 return (
                   <Link
                     key={category}
@@ -74,4 +74,4 @@ function BlogFilterSection({
   );
 }
 
-export default BlogFilterSection;
+export default NewsFilterSection;

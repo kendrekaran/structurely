@@ -1,5 +1,5 @@
 /**
- * GROQ queries for blog documents.
+ * GROQ queries for news / blog documents (Sanity `_type` is often `blogPost`).
  *
  * Expected fields (adjust your Sanity schema to match, or change projections):
  * - `slug` (slug object with `current`)
@@ -10,7 +10,7 @@
  */
 
 /** Single post shape reused in list and detail queries. */
-export const blogPostProjection = `{
+export const newsPostProjection = `{
   _id,
   title,
   description,
@@ -33,17 +33,17 @@ export const blogPostProjection = `{
   }
 }`;
 
-export const blogsListQuery = `
+export const newsListQuery = `
   *[_type == $type && defined(slug.current)] | order(publishedAt desc)
-  ${blogPostProjection}
+  ${newsPostProjection}
 `;
 
-export const blogBySlugQuery = `
+export const newsBySlugQuery = `
   *[_type == $type && slug.current == $slug][0]
-  ${blogPostProjection}
+  ${newsPostProjection}
 `;
 
-/** Distinct category strings for the blog filter UI. */
-export const blogCategoriesQuery = `
+/** Distinct category strings for the news listing filter UI. */
+export const newsCategoriesQuery = `
   array::unique(*[_type == $type && defined(category)].category)
 `;

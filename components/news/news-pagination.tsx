@@ -1,9 +1,9 @@
-function BlogPagination() {
+function NewsPagination() {
   const pages = [1, 2, 3, "...", 10];
   const activePage = 2;
 
   return (
-    <section id="blog-pagination" className="relative z-0 ">
+    <section id="news-pagination" className="relative z-0 ">
       <div className="px-global">
         <div className="max-w-global mx-auto border-x bg-white border-y border-[#E5E7EB]">
           <div className="flex items-center justify-center gap-3 md:gap-0 py-3">
@@ -38,4 +38,4 @@ function BlogPagination() {
   );
 }
 
-export default BlogPagination;
+export default NewsPagination;

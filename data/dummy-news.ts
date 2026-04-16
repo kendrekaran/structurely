@@ -1,5 +1,5 @@
 /**
- * Dummy blog data for development. Shape matches Sanity blog documents
+ * Dummy news articles for development. Shape matches Sanity documents
  * so switching to Sanity later is straightforward.
  */
 
@@ -15,7 +15,7 @@ export type PortableTextBlock = {
   }>;
 };
 
-export type DummyBlogPost = {
+export type DummyNewsPost = {
   _id: string;
   title: string;
   category?: string;
@@ -29,7 +29,7 @@ export type DummyBlogPost = {
   primaryKeywords?: string[];
   secondaryKeywords?: string[];
   relatedBlogs?: Array<
-    | DummyBlogPost
+    | DummyNewsPost
     | {
         _id: string;
         title: string;
@@ -42,7 +42,7 @@ export type DummyBlogPost = {
 
 const pt = (blocks: PortableTextBlock[]) => blocks;
 
-export const dummyBlogs: DummyBlogPost[] = [
+export const dummyNewsPosts: DummyNewsPost[] = [
   {
     _id: "struct-1",
     title: "How Structurely's Call and Text AI Improve Response Rates",
@@ -401,11 +401,11 @@ export const dummyBlogs: DummyBlogPost[] = [
   },
 ];
 
-/** Resolve related posts by slug for detail view. Returns full posts so BlogCard can render them. */
-export function getDummyBlogBySlug(slug: string): DummyBlogPost | null {
-  const post = dummyBlogs.find((b) => b.slug.current === slug) ?? null;
+/** Resolve related posts by slug for detail view. Returns full posts so NewsCard can render them. */
+export function getDummyNewsPostBySlug(slug: string): DummyNewsPost | null {
+  const post = dummyNewsPosts.find((b) => b.slug.current === slug) ?? null;
   if (!post) return null;
-  const others = dummyBlogs
+  const others = dummyNewsPosts
     .filter((b) => b._id !== post._id)
     .slice(0, 3)
     .map((b) => ({
