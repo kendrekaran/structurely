@@ -2,35 +2,40 @@ import Image from "next/image";
 
 const logos = [
   {
-    name: "Sierra Interactive",
+    name: "United Wholesale Mortgage",
     src: "/assets/home/companies/1.svg",
-    width: 124,
-    height: 14,
+    width: 90,
+    height: 47,
   },
   {
-    name: "RealGeeks",
+    name: "Rocket",
     src: "/assets/home/companies/2.svg",
-    width: 105,
-    height: 13,
+    width: 88,
+    height: 31,
   },
-  { name: "CINC", src: "/assets/home/companies/3.svg", width: 76, height: 17 },
   {
-    name: "ValleyDreamTeam",
-    src: "/assets/home/companies/4.svg",
+    name: "Bonzo",
+    src: "/assets/home/companies/3.svg",
     width: 140,
-    height: 19,
+    height: 48,
   },
   {
-    name: "Firepoint",
+    name: "Fub",
+    src: "/assets/home/companies/4.svg",
+    width: 68,
+    height: 26,
+  },
+  {
+    name: "Siera Interactive",
     src: "/assets/home/companies/5.svg",
-    width: 100,
-    height: 17,
+    width: 134,
+    height: 15,
   },
   {
-    name: "Winchoice",
+    name: "Emortage Capital",
     src: "/assets/home/companies/6.svg",
-    width: 110,
-    height: 17,
+    width: 108,
+    height: 24,
   },
 ];
 
@@ -49,7 +54,7 @@ function TrustedLogosSection() {
             {logos.map((logo) => (
               <div
                 key={logo.name}
-                className="flex h-[80px] min-w-[120px] shrink-0 items-center justify-center border-r border-b border-[#E5E7EB] bg-white px-8 md:flex-1 md:border-b-0"
+                className="flex h-[80px] min-w-[120px] shrink-0 items-center justify-center border-r border-[#E5E7EB] bg-white px-8 md:flex-1 md:border-b-0"
               >
                 <Image
                   src={logo.src}
