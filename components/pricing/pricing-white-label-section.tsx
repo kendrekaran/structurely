@@ -1,4 +1,5 @@
 import Button from "@/components/_ui/button";
+import Link from "next/link";
 
 const features = [
   "Multi-tenant architecture",
@@ -66,7 +67,9 @@ export default function PricingWhiteLabelSection() {
                 className="w-fit!"
                 style={{ color: "#646464", borderColor: "#E5E7EB" }}
               >
-                Talk to sales for pricing
+                <Link href="https://calendly.com/structurely-sales/schedule-demo">
+                  Talk to sales for pricing
+                </Link>
               </Button>
             </div>
 

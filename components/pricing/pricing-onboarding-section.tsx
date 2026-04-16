@@ -17,18 +17,18 @@ const featureRows = [
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M12 2L20 6.5V15.5L12 20L4 15.5V6.5L12 2Z"
+            d="M21 15.9999V7.9999C20.9996 7.64918 20.9071 7.30471 20.7315 7.00106C20.556 6.69742 20.3037 6.44526 20 6.2699L13 2.2699C12.696 2.09437 12.3511 2.00195 12 2.00195C11.6489 2.00195 11.304 2.09437 11 2.2699L4 6.2699C3.69626 6.44526 3.44398 6.69742 3.26846 7.00106C3.09294 7.30471 3.00036 7.64918 3 7.9999V15.9999C3.00036 16.3506 3.09294 16.6951 3.26846 16.9987C3.44398 17.3024 3.69626 17.5545 4 17.7299L11 21.7299C11.304 21.9054 11.6489 21.9979 12 21.9979C12.3511 21.9979 12.696 21.9054 13 21.7299L20 17.7299C20.3037 17.5545 20.556 17.3024 20.7315 16.9987C20.9071 16.6951 20.9996 16.3506 21 15.9999Z"
             stroke="#006FFF"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
           />
-          <circle
-            cx="12"
-            cy="12"
-            r="3.5"
+          <path
+            d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"
             stroke="#006FFF"
-            strokeWidth="1.5"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
           />
         </svg>
       ),
@@ -108,8 +108,7 @@ const featureRows = [
   [
     {
       title: "60-Day Dedicated AM",
-      description:
-        "Fine-tuning campaigns and optimizing transfer rates.",
+      description: "Fine-tuning campaigns and optimizing transfer rates.",
       icon: (
         <svg
           width="24"
@@ -185,23 +184,23 @@ const featureRows = [
           <path
             d="M18 8C18 11.613 14.131 15.429 12.607 16.795C12.4327 16.9282 12.2194 17.0003 12 17.0003C11.7806 17.0003 11.5673 16.9282 11.393 16.795C9.87 15.429 6 11.613 6 8C6 6.4087 6.63214 4.88258 7.75736 3.75736C8.88258 2.63214 10.4087 2 12 2C13.5913 2 15.1174 2.63214 16.2426 3.75736C17.3679 4.88258 18 6.4087 18 8Z"
             stroke="#006FFF"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <circle
-            cx="12"
-            cy="8"
-            r="1.75"
-            stroke="#006FFF"
-            strokeWidth="1.5"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
           />
           <path
-            d="M9.5 12.25C9.5 11.1454 10.567 10.25 12 10.25C13.433 10.25 14.5 11.1454 14.5 12.25"
+            d="M12 10C13.1046 10 14 9.10457 14 8C14 6.89543 13.1046 6 12 6C10.8954 6 10 6.89543 10 8C10 9.10457 10.8954 10 12 10Z"
             stroke="#006FFF"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M8.71357 14H5.00357C4.7939 14.0001 4.58956 14.0661 4.41945 14.1886C4.24933 14.3112 4.12204 14.4841 4.05557 14.683L2.05157 20.683C2.00133 20.8333 1.98754 20.9934 2.01133 21.1501C2.03512 21.3068 2.09581 21.4556 2.1884 21.5842C2.28098 21.7128 2.40282 21.8176 2.54385 21.8899C2.68489 21.9622 2.84109 21.9999 2.99957 22H20.9996C21.1579 21.9999 21.314 21.9621 21.455 21.8899C21.5959 21.8177 21.7176 21.713 21.8102 21.5845C21.9028 21.456 21.9635 21.3074 21.9874 21.1508C22.0113 20.9942 21.9976 20.8343 21.9476 20.684L19.9476 14.684C19.8812 14.4848 19.7539 14.3115 19.5835 14.1888C19.4132 14.066 19.2085 13.9999 18.9986 14H15.2866"
+            stroke="#006FFF"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
           />
         </svg>
       ),
@@ -253,7 +252,7 @@ function FeatureCard({
         <p className="text-center text-[16px] leading-[26px] font-medium tracking-[-0.01em] text-[#202020]">
           {title}
         </p>
-        <p className="mx-auto max-w-[28.5em] self-stretch text-center text-[14px] leading-[24px] tracking-[-0.01em] text-[#646464]">
+        <p className="mx-auto max-w-[18.5em] self-stretch text-center text-[14px] leading-[24px] tracking-[-0.01em] text-[#646464]">
           {description}
         </p>
       </div>

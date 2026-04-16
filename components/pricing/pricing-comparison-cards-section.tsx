@@ -1,5 +1,6 @@
 import Button from "@/components/_ui/button";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 type Feature = string;
 
@@ -264,18 +265,20 @@ export default function PricingComparisonCardsSection() {
                   <hr className="border-[#E5E7EB]" />
 
                   <div className="p-5">
-                    <Button
-                      variant="outline"
-                      size="md"
-                      className="w-full! justify-center! text-center"
-                      style={
-                        plan.popular
-                          ? undefined
-                          : { color: "#646464", borderColor: "#E5E7EB" }
-                      }
-                    >
-                      Talk to sales for pricing
-                    </Button>
+                    <Link href="https://calendly.com/structurely-sales/schedule-demo">
+                      <Button
+                        variant="outline"
+                        size="md"
+                        className="w-full! justify-center! text-center"
+                        style={
+                          plan.popular
+                            ? undefined
+                            : { color: "#646464", borderColor: "#E5E7EB" }
+                        }
+                      >
+                        Talk to sales for pricing
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               );

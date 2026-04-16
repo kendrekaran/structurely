@@ -61,6 +61,8 @@ export type IconStepsRowItem = {
   icon: ReactNode;
   /** Optional line above the label (e.g. "1 Credit") */
   topLabel?: string;
+  /** Optional smaller note below the label (e.g. "(each SMS your AI sends or receives)") */
+  subLabel?: string;
 };
 
 type IconStepsRowProps = {
@@ -109,13 +111,18 @@ export function IconStepsRow({
           >
             {item.icon}
           </div>
-          <div className="flex flex-col items-center gap-1 text-center">
+          <div className="flex flex-col items-center gap-0.5 text-center">
             {item.topLabel && (
-              <span className="text-[16px] leading-[26px] tracking-[-0.01em] text-[#202020] md:leading-[24px]">
+              <span className="text-[16px] font-medium leading-[26px] tracking-[-0.01em] text-[#202020] md:leading-[24px]">
                 {item.topLabel}
               </span>
             )}
             <span className={labelClass}>{item.label}</span>
+            {item.subLabel && (
+              <span className="text-[12px] leading-[20px] tracking-[-0.006em] text-[#646464]">
+                {item.subLabel}
+              </span>
+            )}
           </div>
           {index < items.length - 1 && (
             <>
