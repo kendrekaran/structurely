@@ -18,6 +18,8 @@ export type PortableTextBlock = {
 export type DummyNewsPost = {
   _id: string;
   title: string;
+  /** When true, featured in the news hero; excluded from the grid listing. */
+  pinned?: boolean;
   category?: string;
   description?: string;
   slug: { current: string };
@@ -45,6 +47,7 @@ const pt = (blocks: PortableTextBlock[]) => blocks;
 export const dummyNewsPosts: DummyNewsPost[] = [
   {
     _id: "struct-1",
+    pinned: true,
     title: "How Structurely's Call and Text AI Improve Response Rates",
     category: "Press Release",
     description:
@@ -392,6 +395,61 @@ export const dummyNewsPosts: DummyNewsPost[] = [
             _key: "c3",
             _type: "span",
             text: "Predefined routing logic is just the start. Over time, AI learns which paths lead to conversions and can suggest optimizations. You stay in control while the system gets smarter.",
+            marks: [],
+          },
+        ],
+      },
+    ]),
+    relatedBlogs: [],
+  },
+  {
+    _id: "struct-7",
+    title: "Structurely Expands AI Agents for Home Services and Contractors",
+    category: "Press Release",
+    description:
+      "New vertical-specific playbooks and qualification flows help remodelers, roofers, and home service teams convert more inbound leads without adding headcount.",
+    slug: { current: "structurely-expands-ai-agents-home-services" },
+    publishedAt: "2025-01-05T00:00:00.000Z",
+    readTime: 4,
+    author: { name: "Structurely Team" },
+    primaryKeywords: ["home services", "AI agents", "contractors"],
+    secondaryKeywords: ["leads", "qualification"],
+    content: pt([
+      {
+        _key: "b1",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "c1",
+            _type: "span",
+            text: "Home services businesses live and die by speed to lead. Structurely's AI agents now ship with templates tuned for estimates, scheduling, and service-area qualification—so every text and call moves the job forward.",
+            marks: [],
+          },
+        ],
+      },
+      {
+        _key: "b2",
+        _type: "block",
+        style: "h2",
+        children: [
+          {
+            _key: "c2",
+            _type: "span",
+            text: "Built for how crews actually work",
+            marks: [],
+          },
+        ],
+      },
+      {
+        _key: "b3",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "c3",
+            _type: "span",
+            text: "Route urgent jobs to the right rep, capture photos and notes in the CRM, and keep homeowners in the loop with consistent follow-up—without burning out your office staff.",
             marks: [],
           },
         ],

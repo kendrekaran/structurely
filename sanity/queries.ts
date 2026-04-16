@@ -15,6 +15,7 @@ export const newsPostProjection = `{
   title,
   description,
   category,
+  pinned,
   slug,
   publishedAt,
   readTime,

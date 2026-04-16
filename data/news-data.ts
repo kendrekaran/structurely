@@ -106,6 +106,7 @@ function mapSanityPost(doc: Record<string, unknown>): NewsPost | null {
     description:
       typeof doc.description === "string" ? doc.description : undefined,
     category: typeof doc.category === "string" ? doc.category : undefined,
+    pinned: doc.pinned === true,
     slug: { current: slug.current },
     publishedAt: String(doc.publishedAt ?? new Date().toISOString()),
     readTime: typeof doc.readTime === "number" ? doc.readTime : undefined,

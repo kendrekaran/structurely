@@ -19,15 +19,30 @@ function NewsPostsSection({ posts }: NewsPostsSectionProps) {
     rows.push(posts.slice(i, i + 3));
   }
 
+  if (posts.length === 0) {
+    return (
+      <section id="news-posts" className="relative z-0">
+        <div className="px-global">
+          <div className="max-w-global mx-auto border-x border-[#E5E7EB] px-6 py-16 text-center">
+            <p className="text-[16px] leading-[26px] tracking-[-0.01em] text-[#646464]">
+              No articles match your filters. Try another category or search
+              term.
+            </p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section id="news-posts" className="relative z-0">
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
-          <div className="flex flex-col divide-y divide-[#E5E7EB]">
+          <div className="bg-border flex flex-col gap-px">
             {rows.map((row, rowIdx) => (
               <div
                 key={rowIdx}
-                className="grid grid-cols-1 divide-y divide-[#E5E7EB] lg:grid-cols-3 lg:divide-x lg:divide-y-0"
+                className="grid grid-cols-1 gap-px lg:grid-cols-3"
               >
                 {row.map((post) => (
                   <NewsCard
