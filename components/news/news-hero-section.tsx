@@ -29,7 +29,7 @@ function NewsHeroSection({ featuredPost }: NewsHeroSectionProps) {
         <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
           <div className="flex flex-col items-center gap-4 px-6 py-10 text-center md:px-12 md:py-14">
             <Badge text="News & Insights" />
-            <h1 data-reveal="words" className="max-w-[14em] text-center">
+            <h1 className="max-w-[14em] text-center">
               The Latest From Structurely
             </h1>
           </div>

@@ -21,7 +21,6 @@ function renderPortableBlock(block: PortableTextBlock, index: number) {
   if (block.style === "h2") {
     return (
       <h2
-        data-reveal="words"
         key={block._key ?? index}
         className="text-heading text-[28px] leading-[36px] font-medium tracking-[-0.02em] md:text-[36px] md:leading-[44px] md:tracking-[-0.03em]"
       >
@@ -58,7 +57,6 @@ function NewsContentSection({ blocks = [], content }: NewsContentSectionProps) {
               if (block.type === "heading") {
                 return (
                   <h2
-                    data-reveal="words"
                     key={index}
                     className="text-heading text-[28px] leading-[36px] font-medium tracking-[-0.02em] md:text-[36px] md:leading-[44px] md:tracking-[-0.03em]"
                   >
