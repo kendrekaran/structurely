@@ -5,6 +5,7 @@ import { GeistSans } from "geist/font/sans";
 import "intl-tel-input/styles";
 import "./globals.css";
 import RevealProvider from "@/components/_providers/reveal-provider";
+import AiChatWidget from "@/components/ai-chat-widget";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -40,6 +41,7 @@ export default function RootLayout({
       >
         <RevealProvider>
           <div className="relative">{children}</div>
+          <AiChatWidget />
         </RevealProvider>
       </body>
     </html>

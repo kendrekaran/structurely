@@ -5,7 +5,9 @@ import {
   sanitizeE164Candidate,
   toE164IfValid,
 } from "@/components/_ui/phone-e164-input";
-import { useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
+import Button from "@/components/_ui/button";
+import { useAiChatWidgetStore } from "@/stores/ai-chat-widget-store";
 
 export type LiveDemoPhoneRowProps = {
   /** Fires after a valid E.164 number is submitted (Enter or arrow). */
@@ -21,7 +23,7 @@ const ERROR_ID = "live-demo-phone-error";
 function LiveDemoAnimatedBorder() {
   return (
     <div
-      className="relative z-0 h-[3px] w-full shrink-0 overflow-hidden bg-[#FAFAFA]"
+      className="absolute bottom-0 z-0 h-[3px] w-full shrink-0 overflow-hidden bg-[#FAFAFA]"
       aria-hidden
     >
       <div className="absolute inset-0 bg-linear-to-r from-[#006FFF]/20 via-transparent to-[#006FFF]/12 transition-opacity duration-300 group-focus-within/live-demo:from-[#006FFF]/35 group-focus-within/live-demo:to-[#006FFF]/22" />
@@ -38,6 +40,31 @@ export function LiveDemoPhoneRow({ onSubmitPhone }: LiveDemoPhoneRowProps) {
   const [raw, setRaw] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const setHomeLiveDemoInView = useAiChatWidgetStore(
+    (state) => state.setHomeLiveDemoInView,
+  );
+
+  useEffect(() => {
+    const element = wrapperRef.current;
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setHomeLiveDemoInView(entry.isIntersecting);
+      },
+      {
+        threshold: 0.2,
+      },
+    );
+
+    observer.observe(element);
+
+    return () => {
+      observer.disconnect();
+      setHomeLiveDemoInView(false);
+    };
+  }, [setHomeLiveDemoInView]);
 
   const submit = (e: FormEvent) => {
     e.preventDefault();
@@ -61,10 +88,17 @@ export function LiveDemoPhoneRow({ onSubmitPhone }: LiveDemoPhoneRowProps) {
 
   if (submitted) {
     return (
-      <div className="group/live-demo bg-[#FAFAFA]">
-        <div className="bg-white px-3 py-3" role="status" aria-live="polite">
-          <p className="text-center text-[14px] leading-[20px] tracking-[-0.01em] text-[#202020]">
-            Thanks, we got your number. We&apos;ll get back to you soon.
+      <div
+        ref={wrapperRef}
+        className="group/live-demo relative mx-auto my-3 max-w-[250px]"
+      >
+        <div
+          className="flex min-h-[44px] items-center justify-center bg-white px-3 py-1.5"
+          role="status"
+          aria-live="polite"
+        >
+          <p className="mx-auto max-w-[16em] text-center text-[14px] leading-[1.4285714285714286] tracking-[-0.01em] text-[#202020]">
+            Calling you now...
           </p>
         </div>
         <LiveDemoAnimatedBorder />
@@ -73,10 +107,10 @@ export function LiveDemoPhoneRow({ onSubmitPhone }: LiveDemoPhoneRowProps) {
   }
 
   return (
-    <div className="group/live-demo bg-[#FAFAFA]">
+    <div ref={wrapperRef} className="group/live-demo">
       <form
         onSubmit={submit}
-        className="relative z-10 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-1.5 px-3 py-1.5"
+        className="relative z-10 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-1.5"
         noValidate
       >
         {error ? (
@@ -103,11 +137,11 @@ export function LiveDemoPhoneRow({ onSubmitPhone }: LiveDemoPhoneRowProps) {
             aria-label="Phone number"
             aria-invalid={error ? true : undefined}
             aria-describedby={error ? ERROR_ID : undefined}
-            inputClassName="w-full bg-transparent font-sans text-[14px] leading-[20px] font-medium tracking-[-0.006em] text-[#202020] outline-none placeholder:text-[#A0A0A0]"
+            inputClassName="w-full bg-white font-sans gap-2 self-stretch rounded-[9px]  shadow-[0px_0px_0px_1px_rgba(0,0,0,0.08),0px_1px_1px_-0.5px_rgba(51,51,51,0.05),0px_3px_3px_-1.5px_rgba(51,51,51,0.05),0px_6px_6px_-3px_rgba(51,51,51,0.05),0px_12px_12px_-6px_rgba(51,51,51,0.05),0px_24px_24px_-12px_rgba(51,51,51,0.05)]! px-3 py-3 text-[14px] leading-[20px] font-medium tracking-[-0.006em] text-[#202020] outline-none placeholder:text-[#A0A0A0] "
           />
         </div>
 
-        <button
+        {/* <button
           type="submit"
           aria-label="Submit phone number"
           className="col-start-2 row-start-2 flex cursor-pointer items-center gap-2 self-center rounded-lg border border-[#E5E7EB] bg-white p-2"
@@ -127,9 +161,16 @@ export function LiveDemoPhoneRow({ onSubmitPhone }: LiveDemoPhoneRowProps) {
               strokeLinejoin="round"
             />
           </svg>
-        </button>
+        </button> */}
+        <Button
+          variant="primary"
+          size="md"
+          iconOnly
+          className="col-start-2 row-start-2 !h-11 !w-11 !min-w-0 !shrink-0 !rounded-[8px] !p-2 sm:!w-11 sm:!justify-center"
+        >
+          Submit
+        </Button>
       </form>
-      <LiveDemoAnimatedBorder />
     </div>
   );
 }
