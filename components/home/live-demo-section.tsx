@@ -1,5 +1,6 @@
 import { LiveDemoPhoneRow } from "@/components/home/live-demo-phone-row";
 import Link from "next/link";
+import { AiCallForm } from "@/components/_common/ai-call-form";
 function LiveDemoSection() {
   return (
     <section id="live-demo" className="relative z-30">
@@ -36,6 +37,8 @@ function LiveDemoSection() {
               Enter your number and experience Structurely in action —
               instantly.
             </p>
+
+            <AiCallForm />
           </div>
         </div>
       </div>

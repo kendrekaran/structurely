@@ -6,8 +6,8 @@ const HUBSPOT_SCRIPT_SRC = "https://js.hsforms.net/forms/embed/v2.js";
 const HUBSPOT_SCRIPT_ID = "hs-forms-v2-script";
 
 const PORTAL_ID = "5109119";
-const FORM_ID = "7b318854-532b-4552-a161-c6e952e13c75";
-// const FORM_ID = "1cb9d276-9280-4e85-9aac-29f9773cb7d8";
+// const FORM_ID = "7b318854-532b-4552-a161-c6e952e13c75";
+const FORM_ID = "1cb9d276-9280-4e85-9aac-29f9773cb7d8";
 const REGION = "na1";
 /** Matches HubSpot embed `target: "#hubspot-form"` — must be unique on the page. */
 const TARGET_ID = "hubspot-form";
@@ -27,13 +27,11 @@ declare global {
   }
 }
 
-export type HubSpotContactFormEmbedProps = {
+export type AiCallFormProps = {
   className?: string;
 };
 
-export function HubSpotContactFormEmbed({
-  className,
-}: HubSpotContactFormEmbedProps) {
+export function AiCallForm({ className }: AiCallFormProps) {
   const [loadError, setLoadError] = useState(false);
 
   useEffect(() => {
