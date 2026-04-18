@@ -3,12 +3,42 @@
 import { clsx } from "clsx";
 import intlTelInput, { type Iti } from "intl-tel-input";
 import {
+  parsePhoneNumberFromString,
+  type CountryCode,
+} from "libphonenumber-js";
+import {
   forwardRef,
   useEffect,
   useId,
   useImperativeHandle,
   useRef,
+  useState,
 } from "react";
+
+/** Must stay in sync with `onlyCountries` passed to intl-tel-input. */
+export const AUTH_PHONE_ALLOWED_COUNTRIES = [
+  "US",
+  "CA",
+  "FR",
+] as const satisfies readonly CountryCode[];
+
+export const AUTH_PHONE_REGION_ERROR_MESSAGE = "This number is not in range.";
+
+/** When the number is complete and valid but the country is not US, Canada, or France. */
+export function getAuthPhoneRegionError(fullNumber: string): string | null {
+  const raw = (fullNumber ?? "").trim();
+  if (!raw || raw === "+") return null;
+  const parsed = parsePhoneNumberFromString(raw);
+  if (!parsed?.isValid()) return null;
+  const country = parsed.country;
+  if (
+    country &&
+    (AUTH_PHONE_ALLOWED_COUNTRIES as readonly string[]).includes(country)
+  ) {
+    return null;
+  }
+  return AUTH_PHONE_REGION_ERROR_MESSAGE;
+}
 
 export interface AuthPhoneInputProps {
   id?: string;
@@ -29,6 +59,8 @@ export interface AuthPhoneInputProps {
   "aria-invalid"?: boolean;
   "aria-label"?: string;
   "aria-describedby"?: string;
+  /** Called when the allowed-region error changes (embedded UIs should show this). */
+  onRegionRestrictionError?: (message: string | null) => void;
 }
 
 const AuthPhoneInput = forwardRef<HTMLInputElement, AuthPhoneInputProps>(
@@ -49,6 +81,7 @@ const AuthPhoneInput = forwardRef<HTMLInputElement, AuthPhoneInputProps>(
       "aria-invalid": ariaInvalid,
       "aria-label": ariaLabel,
       "aria-describedby": ariaDescribedBy,
+      onRegionRestrictionError,
     },
     ref,
   ) {
@@ -58,6 +91,10 @@ const AuthPhoneInput = forwardRef<HTMLInputElement, AuthPhoneInputProps>(
     const itiRef = useRef<Iti | null>(null);
     const onChangeRef = useRef(onChange);
     const onBlurRef = useRef(onBlur);
+    const onRegionRestrictionErrorRef = useRef(onRegionRestrictionError);
+    const [regionRestrictionError, setRegionRestrictionError] = useState<
+      string | null
+    >(null);
 
     useImperativeHandle(ref, () => inputRef.current as HTMLInputElement, []);
 
@@ -68,6 +105,10 @@ const AuthPhoneInput = forwardRef<HTMLInputElement, AuthPhoneInputProps>(
     useEffect(() => {
       onBlurRef.current = onBlur;
     }, [onBlur]);
+
+    useEffect(() => {
+      onRegionRestrictionErrorRef.current = onRegionRestrictionError;
+    }, [onRegionRestrictionError]);
 
     useEffect(() => {
       const el = inputRef.current;
@@ -103,6 +144,9 @@ const AuthPhoneInput = forwardRef<HTMLInputElement, AuthPhoneInputProps>(
         if (!itiInstance) return;
         const internationalNumber =
           itiInstance.getNumber() || inputRef.current?.value || "";
+        const regionMsg = getAuthPhoneRegionError(internationalNumber);
+        setRegionRestrictionError(regionMsg);
+        onRegionRestrictionErrorRef.current?.(regionMsg);
         onChangeRef.current(internationalNumber);
       };
 
@@ -253,11 +297,18 @@ const AuthPhoneInput = forwardRef<HTMLInputElement, AuthPhoneInputProps>(
           if (currentNumber) {
             iti.setNumber("");
           }
+          setRegionRestrictionError(null);
+          onRegionRestrictionErrorRef.current?.(null);
           return;
         }
         if (currentNumber !== value) {
           iti.setNumber(value);
         }
+        const next =
+          itiRef.current.getNumber() || inputRef.current?.value || "";
+        const regionMsg = getAuthPhoneRegionError(next);
+        setRegionRestrictionError(regionMsg);
+        onRegionRestrictionErrorRef.current?.(regionMsg);
       });
     }, [value]);
 
@@ -271,7 +322,7 @@ const AuthPhoneInput = forwardRef<HTMLInputElement, AuthPhoneInputProps>(
         defaultValue={value}
         className={clsx("auth-phone-input iti__tel-input", inputClassName)}
         placeholder={placeholder}
-        aria-invalid={ariaInvalid ?? Boolean(error)}
+        aria-invalid={ariaInvalid ?? Boolean(error || regionRestrictionError)}
         aria-label={ariaLabel}
         aria-describedby={ariaDescribedBy}
       />
@@ -303,12 +354,12 @@ const AuthPhoneInput = forwardRef<HTMLInputElement, AuthPhoneInputProps>(
         <p
           className={clsx(
             "text-[12px] font-medium transition-all",
-            error
+            error || regionRestrictionError
               ? "mb-[-3px] block max-h-6 leading-[140%] text-[#D14343] opacity-100"
               : "m-0 hidden max-h-0 overflow-hidden leading-0 opacity-0",
           )}
         >
-          {error || ""}
+          {error || regionRestrictionError || ""}
         </p>
         {inner}
       </div>

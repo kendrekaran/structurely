@@ -8,6 +8,7 @@ import {
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import Button from "@/components/_ui/button";
 import { useAiChatWidgetStore } from "@/stores/ai-chat-widget-store";
+import { useLiveDemoAiCallStore } from "@/stores/live-demo-ai-call-store";
 
 export type LiveDemoPhoneRowProps = {
   /** Fires after a valid E.164 number is submitted (Enter or arrow). */
@@ -37,9 +38,15 @@ function LiveDemoAnimatedBorder() {
 }
 
 export function LiveDemoPhoneRow({ onSubmitPhone }: LiveDemoPhoneRowProps) {
-  const [raw, setRaw] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const raw = useLiveDemoAiCallStore((s) => s.phoneRaw);
+  const setPhoneRaw = useLiveDemoAiCallStore((s) => s.setPhoneRaw);
+  const submitted = useLiveDemoAiCallStore((s) => s.submitted);
+  const submitLiveDemoPhone = useLiveDemoAiCallStore(
+    (s) => s.submitLiveDemoPhone,
+  );
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [regionError, setRegionError] = useState<string | null>(null);
+  const error = submitError ?? regionError;
   const wrapperRef = useRef<HTMLDivElement>(null);
   const setHomeLiveDemoInView = useAiChatWidgetStore(
     (state) => state.setHomeLiveDemoInView,
@@ -68,6 +75,7 @@ export function LiveDemoPhoneRow({ onSubmitPhone }: LiveDemoPhoneRowProps) {
 
   const submit = (e: FormEvent) => {
     e.preventDefault();
+    if (regionError) return;
     const candidate = sanitizeE164Candidate(raw);
     const e164 = toE164IfValid(candidate);
     if (!e164) {
@@ -76,14 +84,14 @@ export function LiveDemoPhoneRow({ onSubmitPhone }: LiveDemoPhoneRowProps) {
         digitsOnly.length === 0
           ? "Please enter your phone number."
           : "Enter a valid number with country code.";
-      setError(message);
+      setSubmitError(message);
       console.warn("[LiveDemo] Invalid phone:", candidate);
       return;
     }
-    setError(null);
+    setSubmitError(null);
     console.log("[LiveDemo] submit:", e164);
     onSubmitPhone?.(e164);
-    setSubmitted(true);
+    submitLiveDemoPhone(e164);
   };
 
   if (submitted) {
@@ -98,7 +106,7 @@ export function LiveDemoPhoneRow({ onSubmitPhone }: LiveDemoPhoneRowProps) {
           aria-live="polite"
         >
           <p className="mx-auto max-w-[16em] text-center text-[14px] leading-[1.4285714285714286] tracking-[-0.01em] text-[#202020]">
-            Calling you now...
+            AI is calling you now!
           </p>
         </div>
         <LiveDemoAnimatedBorder />
@@ -130,9 +138,10 @@ export function LiveDemoPhoneRow({ onSubmitPhone }: LiveDemoPhoneRowProps) {
             embedded
             value={raw}
             onChange={(value) => {
-              setRaw(sanitizeE164Candidate(value));
-              setError(null);
+              setPhoneRaw(sanitizeE164Candidate(value));
+              setSubmitError(null);
             }}
+            onRegionRestrictionError={setRegionError}
             placeholder="Enter your number here"
             aria-label="Phone number"
             aria-invalid={error ? true : undefined}

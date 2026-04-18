@@ -1,6 +1,9 @@
 "use client";
 
-import AuthPhoneInput from "@/components/_ui/auth-phone-input";
+import AuthPhoneInput, {
+  AUTH_PHONE_REGION_ERROR_MESSAGE,
+  getAuthPhoneRegionError,
+} from "@/components/_ui/auth-phone-input";
 import {
   sanitizeE164Candidate,
   toE164IfValid,
@@ -55,6 +58,10 @@ export const contactSalesSchema = z.object({
     .refine(
       (val) => toE164IfValid(sanitizeE164Candidate(val)) !== undefined,
       "Enter a valid number with country code (e.g. +1).",
+    )
+    .refine(
+      (val) => getAuthPhoneRegionError(val) === null,
+      AUTH_PHONE_REGION_ERROR_MESSAGE,
     ),
   industry: z.string().min(1, "Please select your industry."),
   leadsPerMonth: z.string().min(1, "Please select an option."),
@@ -240,6 +247,7 @@ type ContactSalesFormProps = {
 
 export function ContactSalesForm({ className }: ContactSalesFormProps) {
   const [submitted, setSubmitted] = useState(false);
+  const [phoneRegionError, setPhoneRegionError] = useState<string | null>(null);
 
   const {
     register,
@@ -264,6 +272,7 @@ export function ContactSalesForm({ className }: ContactSalesFormProps) {
   const handleSendAnother = () => {
     reset(defaultValues);
     setSubmitted(false);
+    setPhoneRegionError(null);
   };
 
   if (submitted) {
@@ -351,7 +360,9 @@ export function ContactSalesForm({ className }: ContactSalesFormProps) {
         </div>
         <div className="relative z-[5] flex min-w-0 flex-1 flex-col gap-2 overflow-visible">
           <FieldLabel label="Phone Number" required />
-          <FieldError message={errors.phoneNumber?.message} />
+          <FieldError
+            message={errors.phoneNumber?.message ?? phoneRegionError ?? undefined}
+          />
           <div className="flex items-center overflow-visible rounded-[9px] border border-[#E5E7EB] bg-white px-3 py-3">
             {/* <PhoneIcon /> */}
             <Controller
@@ -367,7 +378,10 @@ export function ContactSalesForm({ className }: ContactSalesFormProps) {
                   ref={field.ref}
                   placeholder="Phone number"
                   autoComplete="tel"
-                  aria-invalid={errors.phoneNumber ? true : undefined}
+                  aria-invalid={
+                    errors.phoneNumber || phoneRegionError ? true : undefined
+                  }
+                  onRegionRestrictionError={setPhoneRegionError}
                 />
               )}
             />

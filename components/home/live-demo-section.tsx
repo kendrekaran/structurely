@@ -37,8 +37,6 @@ function LiveDemoSection() {
               Enter your number and experience Structurely in action —
               instantly.
             </p>
-
-            <AiCallForm />
           </div>
         </div>
       </div>

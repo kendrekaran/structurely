@@ -6,6 +6,7 @@ import { useAiChatWidgetStore } from "@/stores/ai-chat-widget-store";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
 import { LiveDemoPhoneRow } from "@/components/home/live-demo-phone-row";
+import { AiCallForm } from "@/components/_common/ai-call-form";
 
 export default function AiChatWidget() {
   const [phone, setPhone] = useState("");
@@ -84,6 +85,7 @@ export default function AiChatWidget() {
 
                 <LiveDemoPhoneRow />
               </div>
+              <AiCallForm />
             </div>
           </div>
         </motion.div>
