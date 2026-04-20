@@ -20,7 +20,7 @@ function HeroSection() {
               </p>
             </div>
 
-            <div className="flex items-center justify-center gap-4">
+            <div className="hidden items-center justify-center gap-4">
               <Link href="/demo">
                 <Button variant="primary" size="md">
                   Request a demo
