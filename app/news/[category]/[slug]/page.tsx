@@ -84,7 +84,8 @@ export default async function NewsArticlePage({
             }),
             slug: item.slug.current,
             category: item.category,
-            image: typeof item.thumbnail === "string" ? item.thumbnail : undefined,
+            image:
+              typeof item.thumbnail === "string" ? item.thumbnail : undefined,
           }))
       : [];
 
@@ -102,6 +103,7 @@ export default async function NewsArticlePage({
         image={thumbnailUrl}
         category={post.category}
         publishedAt={post.publishedAt ?? null}
+        tags={post.tags}
       />
       <NewsContentSection content={post.content} />
       <NewsShareSection title={post.title} />

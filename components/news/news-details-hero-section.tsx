@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Badge from "@/components/_ui/badge";
+import { buildNewsListingHref } from "@/lib/news-listing-url";
 
 type NewsDetailsHeroSectionProps = {
   title: string;
@@ -9,6 +10,8 @@ type NewsDetailsHeroSectionProps = {
   category?: string | null;
   /** ISO date string; if absent the date line is omitted */
   publishedAt?: string | null;
+  /** Topic tags — rendered as clickable filter links */
+  tags?: string[];
 };
 
 function formatArticleDate(iso: string): string {
@@ -25,6 +28,7 @@ function NewsDetailsHeroSection({
   image,
   category,
   publishedAt,
+  tags,
 }: NewsDetailsHeroSectionProps) {
   return (
     <section id="news-details-hero" className="relative z-0">
@@ -82,6 +86,19 @@ function NewsDetailsHeroSection({
                 <p className="text-[13px] leading-[20px] font-medium tracking-[-0.084px] text-[#646464]">
                   {formatArticleDate(publishedAt)}
                 </p>
+              )}
+              {tags && tags.length > 0 && (
+                <div className="mt-1 flex flex-wrap gap-1.5">
+                  {tags.map((tag) => (
+                    <Link
+                      key={tag}
+                      href={buildNewsListingHref({ tag })}
+                      className="inline-flex items-center rounded-full border border-[#E5E7EB] px-3 py-1 text-[12px] leading-[16px] tracking-[-0.01em] text-[#646464] transition-colors hover:border-[#006FFF] hover:text-[#006FFF]"
+                    >
+                      #{tag}
+                    </Link>
+                  ))}
+                </div>
               )}
             </div>
           </div>

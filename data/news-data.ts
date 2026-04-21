@@ -17,6 +17,7 @@ import {
   newsBySlugQuery,
   newsCategoriesQuery,
   newsListQuery,
+  newsTagsQuery,
 } from "@/sanity/queries";
 import type { SanityImageSource } from "@sanity/image-url";
 import { unstable_cache } from "next/cache";
@@ -125,6 +126,11 @@ function mapSanityPost(doc: Record<string, unknown>): NewsPost | null {
           (x): x is string => typeof x === "string",
         )
       : undefined,
+    tags: Array.isArray(doc.tags)
+      ? (doc.tags as unknown[]).filter(
+          (x): x is string => typeof x === "string",
+        )
+      : undefined,
     content: Array.isArray(doc.content)
       ? (doc.content as PortableTextBlock[])
       : undefined,
@@ -158,13 +164,35 @@ export async function getNewsCategories(): Promise<string[]> {
     return fromDummy.sort((a, b) => a.localeCompare(b, "en"));
   }
 
-  const rows = await sanityClient.fetch<{ name?: string | null }[]>(
-    newsCategoriesQuery,
-  );
+  const rows =
+    await sanityClient.fetch<{ name?: string | null }[]>(newsCategoriesQuery);
   const names = rows
     .map((r) => (typeof r.name === "string" ? r.name.trim() : ""))
     .filter((n) => n.length > 0);
   return [...new Set(names)].sort((a, b) => a.localeCompare(b, "en"));
+}
+
+/** Returns unique tag names for the tag filter bar. */
+export async function getNewsTags(): Promise<string[]> {
+  if (!sanityClient) {
+    const fromDummy = dummyNewsPosts.flatMap((b) => b.tags ?? []);
+    return [...new Set(fromDummy)].sort((a, b) => a.localeCompare(b, "en"));
+  }
+
+  // Try dedicated tag documents first; fall back to aggregating tags from posts.
+  const rows =
+    await sanityClient.fetch<{ name?: string | null }[]>(newsTagsQuery);
+  if (rows.length > 0) {
+    const names = rows
+      .map((r) => (typeof r.name === "string" ? r.name.trim() : ""))
+      .filter((n) => n.length > 0);
+    return [...new Set(names)].sort((a, b) => a.localeCompare(b, "en"));
+  }
+
+  // Fallback: derive tags from already-fetched posts.
+  const posts = await getCachedSanityNewsPosts();
+  const allTags = posts.flatMap((p) => p.tags ?? []);
+  return [...new Set(allTags)].sort((a, b) => a.localeCompare(b, "en"));
 }
 
 /** Returns all posts, sorted by `publishedAt` descending. */
@@ -176,7 +204,9 @@ export async function getNewsPosts(): Promise<NewsPost[]> {
 }
 
 /** Returns a single post by slug, or `null`. */
-export async function getNewsPostBySlug(slug: string): Promise<NewsPost | null> {
+export async function getNewsPostBySlug(
+  slug: string,
+): Promise<NewsPost | null> {
   if (!sanityClient) {
     return getDummyNewsPostBySlug(slug);
   }

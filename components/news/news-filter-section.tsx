@@ -5,16 +5,19 @@ import { buildNewsListingHref } from "@/lib/news-listing-url";
 type NewsFilterSectionProps = {
   categories: string[];
   currentCategory: string;
+  currentTag?: string;
   searchQuery: string;
 };
 
 function NewsFilterSection({
   categories,
   currentCategory,
+  currentTag,
   searchQuery,
 }: NewsFilterSectionProps) {
   const displayCategories = ["All", ...categories.filter((c) => c !== "All")];
   const q = searchQuery.trim();
+  const tag = currentTag && currentTag !== "All" ? currentTag : undefined;
 
   return (
     <section id="news-filter" className="relative z-0">
@@ -29,6 +32,7 @@ function NewsFilterSection({
                     : currentCategory === category;
                 const href = buildNewsListingHref({
                   category: category === "All" ? undefined : category,
+                  tag,
                   q: q || undefined,
                 });
                 return (
@@ -49,6 +53,7 @@ function NewsFilterSection({
 
             <NewsExpandableSearch
               currentCategory={currentCategory}
+              currentTag={currentTag}
               searchQuery={searchQuery}
             />
           </div>

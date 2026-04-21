@@ -7,11 +7,13 @@ import { useEffect, useRef, useState } from "react";
 
 type NewsExpandableSearchProps = {
   currentCategory: string;
+  currentTag?: string;
   searchQuery: string;
 };
 
 export default function NewsExpandableSearch({
   currentCategory,
+  currentTag,
   searchQuery,
 }: NewsExpandableSearchProps) {
   const router = useRouter();
@@ -51,6 +53,7 @@ export default function NewsExpandableSearch({
           currentCategory && currentCategory !== "All"
             ? currentCategory
             : undefined,
+        tag: currentTag && currentTag !== "All" ? currentTag : undefined,
         q: q.trim() || undefined,
       }),
     );

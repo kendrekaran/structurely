@@ -21,6 +21,8 @@ export type DummyNewsPost = {
   /** When true, featured in the news hero; excluded from the grid listing. */
   pinned?: boolean;
   category?: string;
+  /** Topic tags used to filter and discover related articles. */
+  tags?: string[];
   description?: string;
   slug: { current: string };
   thumbnail?: string;
@@ -49,6 +51,7 @@ export const dummyNewsPosts: DummyNewsPost[] = [
     pinned: true,
     title: "How Structurely's Call and Text AI Improve Response Rates",
     category: "Press Release",
+    tags: ["AI", "Lead Engagement", "Automation"],
     description:
       "To drive conversions and grow revenue, companies must reach out to leads at the right time. Structurely's AI-powered calling and texting tools automate follow-ups with precision timing and personalized messaging.",
     slug: { current: "how-structurely-call-text-ai-improve-response-rates" },
@@ -129,6 +132,7 @@ export const dummyNewsPosts: DummyNewsPost[] = [
     _id: "struct-2",
     title: "24/7 Lead Handling with Structurely's AI Assistant",
     category: "Related News",
+    tags: ["AI", "Lead Handling", "Automation"],
     description:
       "Customers expect instant responses at any hour. With Structurely's AI assistant, your leads are never left waiting.",
     slug: { current: "247-lead-handling-structurely-ai-assistant" },
@@ -183,6 +187,7 @@ export const dummyNewsPosts: DummyNewsPost[] = [
     _id: "struct-3",
     title: "Embrace the Multi-Channel Approach",
     category: "Stories",
+    tags: ["Multi-Channel", "SMS", "Outreach"],
     description:
       "Reaching leads on a single channel is no longer enough. Discover how a multi-channel strategy drives higher engagement.",
     slug: { current: "embrace-the-multi-channel-approach" },
@@ -237,6 +242,7 @@ export const dummyNewsPosts: DummyNewsPost[] = [
     _id: "struct-4",
     title: "Maximize Your CRM Automation With AI",
     category: "Press Release",
+    tags: ["CRM", "Automation", "AI"],
     description:
       "Your CRM is only as powerful as the data inside it. AI-driven automation keeps everything clean, updated, and actionable.",
     slug: { current: "maximize-your-crm-automation-with-ai" },
@@ -291,6 +297,7 @@ export const dummyNewsPosts: DummyNewsPost[] = [
     _id: "struct-5",
     title: "Why Real Estate Teams Choose Structurely for Lead Follow-Up",
     category: "Related News",
+    tags: ["Real Estate", "Lead Engagement", "Mortgage"],
     description:
       "From first touch to closed deal, see how real estate teams use Structurely to stay ahead of the curve.",
     slug: { current: "why-real-estate-teams-choose-structurely" },
@@ -345,6 +352,7 @@ export const dummyNewsPosts: DummyNewsPost[] = [
     _id: "struct-6",
     title: "Intelligent Qualification: How AI Decides Who Gets a Call",
     category: "Stories",
+    tags: ["AI", "Lead Qualification", "Routing"],
     description:
       "Not every lead needs a human touch right away. Learn how Structurely uses signals like urgency and readiness to route leads intelligently.",
     slug: { current: "intelligent-qualification-ai-decides-who-gets-a-call" },
@@ -399,6 +407,7 @@ export const dummyNewsPosts: DummyNewsPost[] = [
     _id: "struct-7",
     title: "Structurely Expands AI Agents for Home Services and Contractors",
     category: "Press Release",
+    tags: ["AI", "Home Services", "Lead Qualification"],
     description:
       "New vertical-specific playbooks and qualification flows help remodelers, roofers, and home service teams convert more inbound leads without adding headcount.",
     slug: { current: "structurely-expands-ai-agents-home-services" },

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { buildNewsArticleHref } from "@/lib/news-article-url";
+import { buildNewsListingHref } from "@/lib/news-listing-url";
 
 type NewsCardProps = {
   title: string;
@@ -8,11 +9,13 @@ type NewsCardProps = {
   image?: string;
   /** Category label used to build /news/[category]/[slug]. */
   category?: string;
+  /** Topic tags displayed as clickable pill links on the card. */
+  tags?: string[];
   /** When provided, the card is wrapped in a link to /news/[category]/[slug]. */
   slug?: string;
 };
 
-function NewsCard({ title, date, image, category, slug }: NewsCardProps) {
+function NewsCard({ title, date, image, category, tags, slug }: NewsCardProps) {
   const content = (
     <div className="flex h-full flex-col bg-white">
       <div className="bg-white px-2 pt-2">
@@ -30,7 +33,25 @@ function NewsCard({ title, date, image, category, slug }: NewsCardProps) {
         <h3 className="text-[16px] leading-[26px] font-medium tracking-[-0.01em]">
           {title}
         </h3>
-        <p className="text-[14px] leading-[24px] tracking-[-0.006em]">{date}</p>
+        <div className="flex flex-col gap-2">
+          {tags && tags.length > 0 && (
+            <div className="flex flex-wrap gap-1">
+              {tags.map((tag) => (
+                <Link
+                  key={tag}
+                  href={buildNewsListingHref({ tag })}
+                  onClick={(e) => e.stopPropagation()}
+                  className="inline-flex items-center rounded-full border border-[#E5E7EB] px-2.5 py-0.5 text-[11px] leading-[16px] text-[#646464] transition-colors hover:border-[#006FFF] hover:text-[#006FFF]"
+                >
+                  #{tag}
+                </Link>
+              ))}
+            </div>
+          )}
+          <p className="text-[14px] leading-[24px] tracking-[-0.006em]">
+            {date}
+          </p>
+        </div>
       </div>
     </div>
   );

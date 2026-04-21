@@ -37,6 +37,13 @@ export function applyCategoryFilter(
   );
 }
 
+export function applyTagFilter(posts: NewsPost[], tag: string): NewsPost[] {
+  if (!tag || tag === "All") return posts;
+  return posts.filter((p) =>
+    (p.tags ?? []).some((t) => t.toLowerCase() === tag.toLowerCase()),
+  );
+}
+
 export function applySearchQuery(posts: NewsPost[], q: string): NewsPost[] {
   const s = q.trim().toLowerCase();
   if (!s) return posts;
@@ -44,6 +51,7 @@ export function applySearchQuery(posts: NewsPost[], q: string): NewsPost[] {
     const t = p.title.toLowerCase();
     const d = (p.description ?? "").toLowerCase();
     const c = (p.category ?? "").toLowerCase();
-    return t.includes(s) || d.includes(s) || c.includes(s);
+    const tags = (p.tags ?? []).join(" ").toLowerCase();
+    return t.includes(s) || d.includes(s) || c.includes(s) || tags.includes(s);
   });
 }
