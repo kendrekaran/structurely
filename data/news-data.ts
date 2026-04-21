@@ -115,7 +115,6 @@ function mapSanityPost(doc: Record<string, unknown>): NewsPost | null {
     pinned: parsePinned(doc.pinned),
     slug: { current: slug.current },
     publishedAt: String(doc.publishedAt ?? new Date().toISOString()),
-    readTime: typeof doc.readTime === "number" ? doc.readTime : undefined,
     primaryKeywords: Array.isArray(doc.primaryKeywords)
       ? (doc.primaryKeywords as unknown[]).filter(
           (x): x is string => typeof x === "string",

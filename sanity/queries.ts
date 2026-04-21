@@ -3,7 +3,7 @@
  *
  * Expected Studio schema (see your Sanity project):
  * - `news`: `slug`, `title`, `description`, `category` (ref → `category`), `pinned`, `publishedAt`,
- *   `readTime`, `thumbnail`, `primaryKeywords`, `secondaryKeywords`, `content`, `relatedNews` (refs → `news`)
+ *   `thumbnail`, `primaryKeywords`, `secondaryKeywords`, `content`, `relatedNews` (refs → `news`)
  * - `category`: `name`, `slug`
  */
 
@@ -16,7 +16,6 @@ export const newsPostProjection = `{
   "pinned": pinned,
   slug,
   publishedAt,
-  readTime,
   primaryKeywords,
   secondaryKeywords,
   content,

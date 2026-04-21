@@ -4,14 +4,15 @@ import NewsContentSection from "@/components/news/news-content-section";
 import NewsRelatedArticlesSection from "@/components/news/news-related-articles-section";
 import NewsShareSection from "@/components/news/news-share-section";
 import { getNewsPostBySlug, getNewsPosts } from "@/data/news-data";
+import { buildNewsArticleHref, toCategorySlug } from "@/lib/news-article-url";
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import FooterSection from "@/components/_common/footer-section";
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ category: string; slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
   const post = await getNewsPostBySlug(slug);
@@ -30,13 +31,18 @@ export async function generateMetadata({
 export default async function NewsArticlePage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ category: string; slug: string }>;
 }) {
-  const { slug } = await params;
+  const { category, slug } = await params;
   const post = await getNewsPostBySlug(slug);
 
   if (!post) {
     notFound();
+  }
+
+  const canonicalCategory = toCategorySlug(post.category);
+  if (category !== canonicalCategory) {
+    redirect(buildNewsArticleHref({ slug, category: post.category }));
   }
 
   const thumbnailUrl =
@@ -55,6 +61,7 @@ export default async function NewsArticlePage({
         year: "numeric",
       }),
       slug: rel.slug?.current ?? "",
+      category: "category" in rel ? rel.category : undefined,
       image:
         "thumbnail" in rel && typeof rel.thumbnail === "string"
           ? rel.thumbnail
@@ -76,6 +83,7 @@ export default async function NewsArticlePage({
               year: "numeric",
             }),
             slug: item.slug.current,
+            category: item.category,
             image: typeof item.thumbnail === "string" ? item.thumbnail : undefined,
           }))
       : [];

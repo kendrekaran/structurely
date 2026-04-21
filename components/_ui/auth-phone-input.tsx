@@ -60,6 +60,8 @@ export interface AuthPhoneInputProps {
   "aria-describedby"?: string;
   /** Called when the allowed-region error changes (embedded UIs should show this). */
   onRegionRestrictionError?: (message: string | null) => void;
+  /** Lock to US dial code and prevent editing/removing country code. */
+  lockCountryCode?: boolean;
 }
 
 const AuthPhoneInput = forwardRef<HTMLInputElement, AuthPhoneInputProps>(
@@ -81,6 +83,7 @@ const AuthPhoneInput = forwardRef<HTMLInputElement, AuthPhoneInputProps>(
       "aria-label": ariaLabel,
       "aria-describedby": ariaDescribedBy,
       onRegionRestrictionError,
+      lockCountryCode = false,
     },
     ref,
   ) {
@@ -116,7 +119,9 @@ const AuthPhoneInput = forwardRef<HTMLInputElement, AuthPhoneInputProps>(
       const iti = intlTelInput(el, {
         initialCountry: "us",
         onlyCountries: ["us", "ca"],
-        nationalMode: false,
+        nationalMode: lockCountryCode,
+        separateDialCode: lockCountryCode,
+        allowDropdown: !lockCountryCode,
         autoPlaceholder: "aggressive",
         formatOnDisplay: true,
         /** Wider dropdown sized to country names; use CSS min/max-width for bounds. */
@@ -283,7 +288,7 @@ const AuthPhoneInput = forwardRef<HTMLInputElement, AuthPhoneInputProps>(
           itiRef.current = null;
         }
       };
-    }, [embedded]);
+    }, [embedded, lockCountryCode]);
 
     useEffect(() => {
       const iti = itiRef.current;

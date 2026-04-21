@@ -25,7 +25,6 @@ export type DummyNewsPost = {
   slug: { current: string };
   thumbnail?: string;
   publishedAt: string;
-  readTime?: number;
   author?: { name: string };
   content?: PortableTextBlock[];
   primaryKeywords?: string[];
@@ -54,7 +53,6 @@ export const dummyNewsPosts: DummyNewsPost[] = [
       "To drive conversions and grow revenue, companies must reach out to leads at the right time. Structurely's AI-powered calling and texting tools automate follow-ups with precision timing and personalized messaging.",
     slug: { current: "how-structurely-call-text-ai-improve-response-rates" },
     publishedAt: "2025-02-15T00:00:00.000Z",
-    readTime: 5,
     author: { name: "Structurely Team" },
     primaryKeywords: ["Structurely", "AI", "response rates"],
     secondaryKeywords: ["calling", "text", "leads"],
@@ -135,7 +133,6 @@ export const dummyNewsPosts: DummyNewsPost[] = [
       "Customers expect instant responses at any hour. With Structurely's AI assistant, your leads are never left waiting.",
     slug: { current: "247-lead-handling-structurely-ai-assistant" },
     publishedAt: "2025-02-10T00:00:00.000Z",
-    readTime: 4,
     author: { name: "Structurely Team" },
     primaryKeywords: ["AI assistant", "24/7", "lead handling"],
     secondaryKeywords: ["automation", "qualification"],
@@ -190,7 +187,6 @@ export const dummyNewsPosts: DummyNewsPost[] = [
       "Reaching leads on a single channel is no longer enough. Discover how a multi-channel strategy drives higher engagement.",
     slug: { current: "embrace-the-multi-channel-approach" },
     publishedAt: "2025-02-05T00:00:00.000Z",
-    readTime: 6,
     author: { name: "Structurely Team" },
     primaryKeywords: ["multi-channel", "SMS", "email", "voice"],
     secondaryKeywords: ["engagement", "outreach"],
@@ -245,7 +241,6 @@ export const dummyNewsPosts: DummyNewsPost[] = [
       "Your CRM is only as powerful as the data inside it. AI-driven automation keeps everything clean, updated, and actionable.",
     slug: { current: "maximize-your-crm-automation-with-ai" },
     publishedAt: "2025-01-28T00:00:00.000Z",
-    readTime: 5,
     author: { name: "Structurely Team" },
     primaryKeywords: ["CRM", "Salesforce", "automation"],
     secondaryKeywords: ["AI", "data"],
@@ -300,7 +295,6 @@ export const dummyNewsPosts: DummyNewsPost[] = [
       "From first touch to closed deal, see how real estate teams use Structurely to stay ahead of the curve.",
     slug: { current: "why-real-estate-teams-choose-structurely" },
     publishedAt: "2025-01-20T00:00:00.000Z",
-    readTime: 5,
     author: { name: "Structurely Team" },
     primaryKeywords: ["real estate", "lead follow-up", "Structurely"],
     secondaryKeywords: ["brokers", "LOs"],
@@ -355,7 +349,6 @@ export const dummyNewsPosts: DummyNewsPost[] = [
       "Not every lead needs a human touch right away. Learn how Structurely uses signals like urgency and readiness to route leads intelligently.",
     slug: { current: "intelligent-qualification-ai-decides-who-gets-a-call" },
     publishedAt: "2025-01-12T00:00:00.000Z",
-    readTime: 7,
     author: { name: "Structurely Team" },
     primaryKeywords: ["qualification", "AI", "routing"],
     secondaryKeywords: ["signals", "conversion"],
@@ -410,7 +403,6 @@ export const dummyNewsPosts: DummyNewsPost[] = [
       "New vertical-specific playbooks and qualification flows help remodelers, roofers, and home service teams convert more inbound leads without adding headcount.",
     slug: { current: "structurely-expands-ai-agents-home-services" },
     publishedAt: "2025-01-05T00:00:00.000Z",
-    readTime: 4,
     author: { name: "Structurely Team" },
     primaryKeywords: ["home services", "AI agents", "contractors"],
     secondaryKeywords: ["leads", "qualification"],

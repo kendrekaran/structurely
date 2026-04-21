@@ -59,6 +59,7 @@ function NewsPostsSection({ posts }: NewsPostsSectionProps) {
                         title={post.title}
                         description={post.description ?? ""}
                         date={formatDate(post.publishedAt)}
+                        category={post.category}
                         image={
                           typeof post.thumbnail === "string"
                             ? post.thumbnail

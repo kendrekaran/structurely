@@ -1,15 +1,18 @@
 import Link from "next/link";
+import { buildNewsArticleHref } from "@/lib/news-article-url";
 
 type NewsCardProps = {
   title: string;
   description: string;
   date: string;
   image?: string;
-  /** When provided, the card is wrapped in a link to /news/[slug]. */
+  /** Category label used to build /news/[category]/[slug]. */
+  category?: string;
+  /** When provided, the card is wrapped in a link to /news/[category]/[slug]. */
   slug?: string;
 };
 
-function NewsCard({ title, date, image, slug }: NewsCardProps) {
+function NewsCard({ title, date, image, category, slug }: NewsCardProps) {
   const content = (
     <div className="flex h-full flex-col bg-white">
       <div className="bg-white px-2 pt-2">
@@ -35,7 +38,7 @@ function NewsCard({ title, date, image, slug }: NewsCardProps) {
   if (slug) {
     return (
       <Link
-        href={`/news/${slug}`}
+        href={buildNewsArticleHref({ slug, category })}
         className="group flex cursor-pointer flex-col"
       >
         {content}

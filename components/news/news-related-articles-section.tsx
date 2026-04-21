@@ -5,6 +5,7 @@ type RelatedArticle = {
   description: string;
   date: string;
   image?: string;
+  category?: string;
   slug?: string;
 };
 
@@ -31,6 +32,7 @@ function NewsRelatedArticlesSection({
                   description={article.description}
                   date={article.date}
                   image={article.image}
+                  category={article.category}
                   slug={article.slug}
                 />
               ))}

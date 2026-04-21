@@ -3,6 +3,7 @@ import { urlForImage } from "@/sanity/client";
 import type { NewsPost } from "@/data/news-data";
 import type { SanityImageSource } from "@sanity/image-url";
 import Link from "next/link";
+import { buildNewsArticleHref } from "@/lib/news-article-url";
 
 type NewsHeroSectionProps = {
   /** Pinned posts for the hero; each renders as a featured row (newest first). */
@@ -28,7 +29,9 @@ function heroImageUrl(post: NewsPost): string | undefined {
 
 function PinnedHeroRow({ post }: { post: NewsPost }) {
   const slug = post.slug?.current;
-  const articleHref = slug ? `/news/${slug}` : undefined;
+  const articleHref = slug
+    ? buildNewsArticleHref({ slug, category: post.category })
+    : undefined;
   const thumb = heroImageUrl(post);
 
   if (!articleHref) return null;

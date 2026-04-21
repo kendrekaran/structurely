@@ -136,6 +136,7 @@ export function LiveDemoPhoneRow({ onSubmitPhone }: LiveDemoPhoneRowProps) {
           {/* <PhoneIcon /> */}
           <AuthPhoneInput
             embedded
+            lockCountryCode
             value={raw}
             onChange={(value) => {
               setPhoneRaw(sanitizeE164Candidate(value));
