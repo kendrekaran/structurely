@@ -5,7 +5,7 @@ const primaryNavLinks = [
   { label: "How it works", href: "/how-it-works" },
   { label: "Use cases", href: "/use-cases" },
   { label: "Pricing", href: "/pricing" },
-  // { label: "News", href: "/blog" },
+  { label: "News", href: "/news" },
   { label: "About", href: "/about" },
 ] as const;
 
@@ -17,6 +17,11 @@ const accountLinks = [
   },
   { label: "Privacy policy", href: "/privacy-policy", external: false },
   { label: "Terms of use", href: "/terms-of-use", external: false },
+  {
+    label: "Subscription agreement",
+    href: "/subscription-agreement",
+    external: false,
+  },
   {
     label: "Contact sales",
     href: "/partners#partners-contact",

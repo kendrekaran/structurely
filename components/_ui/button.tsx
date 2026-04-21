@@ -34,13 +34,16 @@ const buttonVariants = cva(
 );
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
-  VariantProps<typeof buttonVariants>;
+  VariantProps<typeof buttonVariants> & {
+    iconOnly?: boolean;
+  };
 
 export default function Button({
   variant,
   size,
   className,
   children,
+  iconOnly = false,
   onMouseEnter,
   onMouseLeave,
   ...props
@@ -55,7 +58,8 @@ export default function Button({
       const btn = buttonRef.current;
       const leftIcon = leftIconRef.current;
       const rightIcon = rightIconRef.current;
-      if (!btn || !leftIcon || !rightIcon || variant !== "primary") return;
+      if (!btn || !leftIcon || !rightIcon || variant !== "primary" || iconOnly)
+        return;
 
       // btn.style.minWidth = `${btn.offsetWidth + 1}px`;
 
@@ -99,31 +103,50 @@ export default function Button({
           0,
         );
     },
-    { scope: buttonRef, dependencies: [variant] },
+    { scope: buttonRef, dependencies: [variant, iconOnly] },
   );
 
   return (
     <button
       ref={buttonRef}
-      className={cn(buttonVariants({ variant, size }), className)}
+      className={cn(
+        buttonVariants({ variant, size }),
+        iconOnly && "w-10 h-10 p-0 justify-center",
+        className,
+      )}
       onMouseEnter={(e) => {
         onMouseEnter?.(e);
-        if (variant === "primary") tlRef.current?.play();
+        if (variant === "primary" && !iconOnly) tlRef.current?.play();
       }}
       onMouseLeave={(e) => {
         onMouseLeave?.(e);
-        if (variant === "primary") tlRef.current?.reverse();
+        if (variant === "primary" && !iconOnly) tlRef.current?.reverse();
       }}
       {...props}
     >
       <span
         className={cn(
           "flex items-center gap-2",
-          variant === "primary" ? "w-full justify-between" : "justify-center",
+          iconOnly
+            ? "justify-center"
+            : variant === "primary"
+              ? "w-full justify-between"
+              : "justify-center",
         )}
       >
-        {children}
+        {!iconOnly && children}
         {variant === "primary" && (
+          iconOnly ? (
+            <span className="relative inline-flex h-5 w-5 shrink-0 items-center justify-center overflow-hidden">
+              <Image
+                src="/assets/common/arrow.svg"
+                alt="arrow"
+                width={20}
+                height={20}
+                className="h-5 w-5"
+              />
+            </span>
+          ) : (
           <span className="relative inline-flex h-5 w-5 shrink-0 items-center justify-center overflow-hidden">
             <span
               ref={leftIconRef}
@@ -150,6 +173,7 @@ export default function Button({
               />
             </span>
           </span>
+          )
         )}
       </span>
     </button>

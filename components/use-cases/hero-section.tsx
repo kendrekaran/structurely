@@ -1,8 +1,10 @@
+import Badge from "@/components/_ui/badge";
 function HeroSection() {
   return (
     <section id="hero" className="relative z-0">
       <div className="px-global">
         <div className="max-w-global md:py-section-md mx-auto flex flex-col items-center gap-3.5 border-x border-[#E5E7EB] px-[12px] py-[64px] md:gap-4 md:px-0">
+          <Badge text="Use Cases" />
           <h2
             data-reveal="words"
             className="max-w-[11.08em] text-center text-[32px] leading-[44px] font-medium tracking-[-0.04em] md:max-w-[653px] md:text-[48px] md:leading-[54px] md:tracking-[-0.03em]"

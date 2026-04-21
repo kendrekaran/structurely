@@ -32,9 +32,7 @@ export default function Overview() {
       <main className="max-w-full overflow-x-clip">
         <Header />
         <HeroSection />
-        <Separator />
         <LiveDemoSection />
-        <Separator />
         <HeroAnimationSection />
         <Separator />
         <TrustedLogosSection />

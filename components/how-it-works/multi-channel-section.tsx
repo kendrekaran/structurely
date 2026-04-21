@@ -33,13 +33,13 @@ function MultiChannelSection() {
                   <br />
                   channel
                 </span>{" "}
-                engagement
+                engagement.
               </h2>
 
               <div className="mt-6 flex w-full flex-col items-center md:mt-16">
                 <div className="border-border inline-flex items-center justify-center rounded-t-xl border border-b-0 bg-white px-4 py-2">
                   <span className="text-foreground text-sm tracking-[-0.14px]">
-                    AI initiates
+                    Structurely AI initiates
                   </span>
                 </div>
 

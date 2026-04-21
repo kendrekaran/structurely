@@ -1,5 +1,12 @@
+"use client";
+
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
 import Image from "next/image";
+import { useRef } from "react";
 import Badge from "@/components/_ui/badge";
+
+gsap.registerPlugin(useGSAP);
 
 const logoCardShadow =
   "shadow-[0_3px_3px_-1.5px_rgba(100,100,100,0.02),0_6px_6px_-3px_rgba(100,100,100,0.04),0_12px_12px_-6px_rgba(100,100,100,0.04),0_24px_24px_-12px_rgba(100,100,100,0.04),0_48px_48px_-24px_rgba(100,100,100,0.04),0_0_0_1px_#FFF]";
@@ -155,6 +162,230 @@ function AccuLynxLogo() {
   );
 }
 
+function parseStrengthAttr(raw: string | undefined, fallback: number): number {
+  if (raw == null || raw === "") return fallback;
+  const n = Number.parseFloat(raw.trim());
+  return Number.isFinite(n) && n >= 0 ? n : fallback;
+}
+
+/**
+ * Per-card motion multipliers on mapped pointer delta. Magnitudes ~±2× base “strength”
+ * feel; negatives invert direction on that axis. Order matches `[data-crm-parallax-card]` DOM.
+ */
+const PARALLAX_X_FACTORS = [
+  1.85, -1.15, -1.95, 1.45, -1.65, 1.75, -0.95, 1.35,
+] as const;
+const PARALLAX_Y_FACTORS = [
+  -1.55, 1.9, 1.25, -1.8, 1.0, -1.45, 1.7, -1.2,
+] as const;
+
+/** Desktop scattered CRM logos: mouse-follow parallax (container-local mapRange + eased tween). */
+function CrmLogosDesktopParallax() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    (_, contextSafe) => {
+      const root = containerRef.current;
+      if (!root) return;
+
+      const cards = Array.from(
+        root.querySelectorAll<HTMLElement>("[data-crm-parallax-card]"),
+      );
+      if (cards.length === 0) return;
+      if (
+        cards.length !== PARALLAX_X_FACTORS.length ||
+        cards.length !== PARALLAX_Y_FACTORS.length
+      ) {
+        return;
+      }
+
+      const followDuration = 0.52;
+      const followEase = "power3.out";
+      const resetDuration = 0.6;
+      const resetEase = "power3.out";
+
+      const onMove = (e: MouseEvent) => {
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          return;
+        }
+        const r = root.getBoundingClientRect();
+        if (r.width <= 0 || r.height <= 0) return;
+
+        const xRange = parseStrengthAttr(root.dataset.strengthX, 10);
+        const yRange = parseStrengthAttr(root.dataset.strengthY, 10);
+
+        const localX = e.clientX - r.left;
+        const localY = e.clientY - r.top;
+
+        const mapX = gsap.utils.mapRange(0, r.width, -xRange, xRange);
+        const mapY = gsap.utils.mapRange(0, r.height, -yRange, yRange);
+        const x = mapX(localX);
+        const y = mapY(localY);
+
+        cards.forEach((card, i) => {
+          gsap.to(card, {
+            x: x * PARALLAX_X_FACTORS[i],
+            y: y * PARALLAX_Y_FACTORS[i],
+            duration: followDuration,
+            ease: followEase,
+            overwrite: "auto",
+          });
+        });
+      };
+
+      const onLeave = () => {
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          gsap.set(cards, { x: 0, y: 0 });
+          return;
+        }
+        gsap.to(cards, {
+          x: 0,
+          y: 0,
+          duration: resetDuration,
+          ease: resetEase,
+          overwrite: "auto",
+        });
+      };
+
+      const moveHandler = contextSafe ? contextSafe(onMove) : onMove;
+      const leaveHandler = contextSafe ? contextSafe(onLeave) : onLeave;
+
+      root.addEventListener("mousemove", moveHandler);
+      root.addEventListener("mouseleave", leaveHandler);
+
+      return () => {
+        root.removeEventListener("mousemove", moveHandler);
+        root.removeEventListener("mouseleave", leaveHandler);
+      };
+    },
+    { scope: containerRef },
+  );
+
+  return (
+    <div
+      ref={containerRef}
+      data-mouse-follow-container
+      data-strength-x="10"
+      data-strength-y="10"
+      className="relative hidden w-full cursor-default md:block"
+      style={{ height: "460px" }}
+    >
+      <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-4">
+        <Badge text="Activity logs + remote management" />
+        <h2 data-reveal="words" className="max-w-[8em] text-center">
+          Integrated with your <span className="text-[#006FFF]">CRM.</span>
+        </h2>
+      </div>
+
+      <div className="absolute -top-8 left-[48%] -translate-x-1/2">
+        <div data-crm-parallax-card className="will-change-transform">
+          <LogoCard hasShadow>
+            <Image
+              src={centerLogos[0].src}
+              alt={centerLogos[0].alt}
+              width={centerLogos[0].width}
+              height={centerLogos[0].height}
+              className="object-contain"
+            />
+          </LogoCard>
+        </div>
+      </div>
+
+      <div className="absolute top-[10%] left-[18%]">
+        <div data-crm-parallax-card className="will-change-transform">
+          <LogoCard hasShadow>
+            <Image
+              src={leftLogos[1].src}
+              alt={leftLogos[1].alt}
+              width={leftLogos[1].width}
+              height={leftLogos[1].height}
+              className="object-contain"
+            />
+          </LogoCard>
+        </div>
+      </div>
+
+      <div className="absolute top-1/2 left-[5%] -translate-y-1/2">
+        <div data-crm-parallax-card className="will-change-transform">
+          <LogoCard hasShadow>
+            <Image
+              src={leftLogos[0].src}
+              alt={leftLogos[0].alt}
+              width={leftLogos[0].width}
+              height={leftLogos[0].height}
+              className="object-contain"
+            />
+          </LogoCard>
+        </div>
+      </div>
+
+      <div className="absolute bottom-[8%] left-[18%]">
+        <div data-crm-parallax-card className="will-change-transform">
+          <LogoCard hasShadow>
+            <Image
+              src={leftLogos[2].src}
+              alt={leftLogos[2].alt}
+              width={leftLogos[2].width}
+              height={leftLogos[2].height}
+              className="object-contain"
+            />
+          </LogoCard>
+        </div>
+      </div>
+
+      <div className="absolute bottom-[-8%] left-[48%] -translate-x-1/2">
+        <div data-crm-parallax-card className="will-change-transform">
+          <LogoCard>
+            <Image
+              src={centerLogos[1].src}
+              alt={centerLogos[1].alt}
+              width={centerLogos[1].width}
+              height={centerLogos[1].height}
+              className="object-contain"
+            />
+          </LogoCard>
+        </div>
+      </div>
+
+      <div className="absolute top-[10%] right-[18%]">
+        <div data-crm-parallax-card className="will-change-transform">
+          <LogoCard>
+            <Image
+              src={rightLogos[0].src}
+              alt={rightLogos[0].alt}
+              width={rightLogos[0].width}
+              height={rightLogos[0].height}
+              className="object-contain"
+            />
+          </LogoCard>
+        </div>
+      </div>
+
+      <div className="absolute top-1/2 right-[5%] -translate-y-1/2">
+        <div data-crm-parallax-card className="will-change-transform">
+          <LogoCard hasShadow>
+            <AccuLynxLogo />
+          </LogoCard>
+        </div>
+      </div>
+
+      <div className="absolute right-[18%] bottom-[8%]">
+        <div data-crm-parallax-card className="will-change-transform">
+          <LogoCard>
+            <Image
+              src={rightLogos[1].src}
+              alt={rightLogos[1].alt}
+              width={rightLogos[1].width}
+              height={rightLogos[1].height}
+              className="object-contain"
+            />
+          </LogoCard>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function AccuLynxLogoSm() {
   return (
     <svg
@@ -189,112 +420,10 @@ function CrmLogosSection() {
       <div className="px-global">
         <div className="max-w-global mx-auto overflow-hidden border-x border-[#E5E7EB]">
           <div className="flex flex-col items-center gap-8 lg:px-24">
-            {/* Desktop: scattered absolute layout */}
-            <div
-              className="relative hidden w-full lg:block"
-              style={{ height: "460px" }}
-            >
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
-                <Badge text="Activity logs + remote management" />
-                <h2 data-reveal="words" className="max-w-[8em] text-center">
-                  Integrated with your{" "}
-                  <span className="text-[#006FFF]">CRM.</span>
-                </h2>
-              </div>
-
-              <div className="absolute -top-8 left-[48%] -translate-x-1/2">
-                <LogoCard hasShadow>
-                  <Image
-                    src={centerLogos[0].src}
-                    alt={centerLogos[0].alt}
-                    width={centerLogos[0].width}
-                    height={centerLogos[0].height}
-                    className="object-contain"
-                  />
-                </LogoCard>
-              </div>
-
-              <div className="absolute top-[10%] left-[18%]">
-                <LogoCard hasShadow>
-                  <Image
-                    src={leftLogos[1].src}
-                    alt={leftLogos[1].alt}
-                    width={leftLogos[1].width}
-                    height={leftLogos[1].height}
-                    className="object-contain"
-                  />
-                </LogoCard>
-              </div>
-
-              <div className="absolute top-1/2 left-[5%] -translate-y-1/2">
-                <LogoCard hasShadow>
-                  <Image
-                    src={leftLogos[0].src}
-                    alt={leftLogos[0].alt}
-                    width={leftLogos[0].width}
-                    height={leftLogos[0].height}
-                    className="object-contain"
-                  />
-                </LogoCard>
-              </div>
-
-              <div className="absolute bottom-[8%] left-[18%]">
-                <LogoCard hasShadow>
-                  <Image
-                    src={leftLogos[2].src}
-                    alt={leftLogos[2].alt}
-                    width={leftLogos[2].width}
-                    height={leftLogos[2].height}
-                    className="object-contain"
-                  />
-                </LogoCard>
-              </div>
-
-              <div className="absolute bottom-[-8%] left-[48%] -translate-x-1/2">
-                <LogoCard>
-                  <Image
-                    src={centerLogos[1].src}
-                    alt={centerLogos[1].alt}
-                    width={centerLogos[1].width}
-                    height={centerLogos[1].height}
-                    className="object-contain"
-                  />
-                </LogoCard>
-              </div>
-
-              <div className="absolute top-[10%] right-[18%]">
-                <LogoCard>
-                  <Image
-                    src={rightLogos[0].src}
-                    alt={rightLogos[0].alt}
-                    width={rightLogos[0].width}
-                    height={rightLogos[0].height}
-                    className="object-contain"
-                  />
-                </LogoCard>
-              </div>
-
-              <div className="absolute top-1/2 right-[5%] -translate-y-1/2">
-                <LogoCard hasShadow>
-                  <AccuLynxLogo />
-                </LogoCard>
-              </div>
-
-              <div className="absolute right-[18%] bottom-[8%]">
-                <LogoCard>
-                  <Image
-                    src={rightLogos[1].src}
-                    alt={rightLogos[1].alt}
-                    width={rightLogos[1].width}
-                    height={rightLogos[1].height}
-                    className="object-contain"
-                  />
-                </LogoCard>
-              </div>
-            </div>
+            <CrmLogosDesktopParallax />
 
             {/* Mobile: logos as background behind heading */}
-            <div className="relative flex min-h-[230px] w-full items-center justify-center overflow-hidden lg:hidden">
+            <div className="relative flex min-h-[230px] w-full items-center justify-center overflow-hidden sm:min-h-[300px] md:hidden">
               {/* Logos background layer */}
               <div className="pointer-events-none absolute inset-0">
                 <div className="absolute top-[-16px] left-1/2 -translate-x-1/2 md:top-[22px]">

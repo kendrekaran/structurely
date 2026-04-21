@@ -185,7 +185,7 @@ export default function HelpCenterSection() {
         <div className="max-w-global mx-auto border-x md:border-b border-[#E5E7EB]">
           <div className="flex flex-col items-start gap-6  px-3  py-[40px] pb-[24px] md:items-center md:px-0 md:py-16">
             <Link
-              href="/blog"
+              href="/news"
               className="flex items-center gap-1 text-[#646464] md:hidden"
             >
               <svg
@@ -211,7 +211,7 @@ export default function HelpCenterSection() {
                 />
               </svg>
               <span className="text-[14px] leading-[20px] tracking-[-0.084px]">
-                Back to blog
+                Back to news
               </span>
             </Link>
             <div className="flex w-full max-w-[46.375em] flex-col items-start gap-[10px] md:gap-4 md:items-center md:text-center">

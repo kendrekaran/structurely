@@ -166,7 +166,7 @@ function CellContent({ value }: { value: CellValue }) {
 
 export default function ComparePlansSection() {
   return (
-    <section id="compare-plans" className="relative z-0">
+    <section id="compare-plans" className="relative z-0 hidden">
       <div className="px-global">
         <div className="max-w-global mx-auto flex flex-col items-center gap-3 border-x border-[#E5E7EB] px-3 py-6 md:px-0 md:py-16">
           <h2

@@ -36,7 +36,7 @@ export default function CallAiSection() {
                 <path d="M8.00016 12.6663L3.3335 7.99967L8.00016 3.33301" stroke="#646464" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" />
                 <path d="M12.6668 8H3.3335" stroke="#646464" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              <span className="text-[14px] leading-[20px] tracking-[-0.084px]">Back to blog</span>
+              <span className="text-[14px] leading-[20px] tracking-[-0.084px]">Back to help center</span>
             </Link>
             <div className="flex items-center justify-center rounded-lg bg-white px-4 py-2 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]">
               <span className="text-[14px] leading-[20px] tracking-[-0.084px] text-[#646464]">10 articles</span>

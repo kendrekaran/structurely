@@ -18,8 +18,8 @@ const navLinks = [
 
 const companyLinks = [
   { label: "About", href: "/about" },
+  { label: "News", href: "/news" },
   // { label: "Partners", href: "/partners" },
-  // { label: "News", href: "/blog" },
   // { label: "Help Center", href: "/help-center" },
 ];
 
@@ -33,7 +33,11 @@ export default function Header() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const isCompanyActive = companyLinks.some((l) => l.href === pathname);
+  const isCompanyActive = companyLinks.some((l) =>
+    l.href === "/news"
+      ? pathname === "/news" || pathname.startsWith("/news/")
+      : l.href === pathname,
+  );
 
   const handleMenuToggle = () => {
     setMobileMenuOpen((prev) => !prev);
@@ -135,8 +139,7 @@ export default function Header() {
           <div className="hidden flex-shrink-0 lg:flex">
             <Link href="/demo">
               <Button
-                variant="outline"
-                size="md"
+                size="sm"
                 className="tracking-0 text-[14px]! leading-[20px]"
               >
                 Request a demo

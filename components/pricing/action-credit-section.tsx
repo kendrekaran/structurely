@@ -34,9 +34,21 @@ const CARD_SHADOW =
   "shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]";
 
 const credits = [
-  { label: "= 1 SMS response", Icon: SmsIcon },
-  { label: "= 10 seconds of AI talk time", Icon: PhoneOutgoingIcon },
-  { label: "= 2 emails sent", Icon: MailIcon },
+  {
+    label: "1 SMS response",
+    subLabel: "(each SMS your AI sends or receives)",
+    Icon: SmsIcon,
+  },
+  {
+    label: "10s of AI talk time",
+    subLabel: "(billed in 10-second increments)",
+    Icon: PhoneOutgoingIcon,
+  },
+  {
+    label: "2 emails sent",
+    subLabel: "(personalized, templated, or nurture drips)",
+    Icon: MailIcon,
+  },
 ];
 
 export default function ActionCreditSection() {
@@ -47,11 +59,11 @@ export default function ActionCreditSection() {
           <div className="flex flex-col items-center gap-3 px-3 py-8 md:py-16 md:px-24">
             <div className={`flex items-center justify-center gap-1 overflow-hidden rounded-lg bg-white px-4 py-2 ${CARD_SHADOW}`}>
               <span className="text-center text-[12px] font-medium leading-4 text-[#646464]">
-                How billing works
+                How Billing Works
               </span>
             </div>
-            <h2 className="max-w-[13.375em] text-center  ">
-              What is an <span className="text-[#006FFF]">action credit?</span>
+            <h2 className="max-w-[13.375em] text-center">
+              How <span className="text-[#006FFF]">action credits</span> work
             </h2>
             <p className="max-w-[29.375em] text-center text-[16px] font-medium leading-[26px] tracking-[-0.01em] text-[#646464]">
               An Action Credit is a unit of AI labor. You only pay when the AI
@@ -67,6 +79,7 @@ export default function ActionCreditSection() {
             items={credits.map((credit) => ({
               key: credit.label,
               label: credit.label,
+              subLabel: credit.subLabel,
               icon: <credit.Icon />,
               topLabel: "1 Credit",
             }))}
@@ -77,9 +90,7 @@ export default function ActionCreditSection() {
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB] bg-white px-6 py-6 md:px-24">
           <p className="mx-auto max-w-[40.143em] text-center text-[14px] font-medium leading-5 tracking-[-0.01em] text-[#646464]">
-            Think of it like paying a team member per task completed — not per
-            hour logged. If your AI isn&apos;t working leads, you&apos;re not spending
-            credits.
+            Think of it like paying a team member per task — not per hour logged.
           </p>
         </div>
       </div>

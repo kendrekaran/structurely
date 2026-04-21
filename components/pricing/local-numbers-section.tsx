@@ -158,7 +158,7 @@ export default function LocalNumbersSection() {
               </p>
               <Link href="/demo">
                 <Button variant="primary" size="md" className="w-fit!">
-                  Ask Us About This
+                  Ask us about this
                 </Button>
               </Link>
             </div>

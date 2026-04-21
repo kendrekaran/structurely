@@ -18,7 +18,7 @@ const features: Feature[] = [
   {
     title: "Texting + drip campaigns",
     description:
-      "AI text messaging and drip campaigns automate follow-up, support two-way SMS conversations, and keep leads engaged throughout the sales funnel.",
+      "Structurely AI automate follow-up, support two-way SMS conversations, and keep leads engaged throughout the sales funnel.",
     flowSteps: ["Trigger", "Drip", "Reply", "Re-engage"],
   },
   {
@@ -30,7 +30,7 @@ const features: Feature[] = [
   {
     title: "Appointment setting",
     description:
-      "AI appointment setting automates scheduling for qualified leads, integrates with calendars and CRMs, and helps sales teams book more meetings.",
+      "Structurely AI appointment setting automates scheduling for qualified leads, integrates with calendars and CRMs, and helps sales teams book more meetings.",
     flowSteps: ["Intent", "Slots", "Book", "Remind"],
   },
 ];
@@ -44,7 +44,7 @@ function HowItWorksSection() {
       >
         <div className="flex flex-col items-center justify-center border-b border-[#E5E7EB] px-4 py-4 md:px-24 md:py-16">
           <h2 data-reveal="words" className="max-w-[10em] text-center">
-            How it works
+            How it works.
           </h2>
         </div>
 

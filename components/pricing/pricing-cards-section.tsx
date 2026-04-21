@@ -105,7 +105,7 @@ export default function PricingCardsSection({
     <section id="pricing-cards" className="relative z-0">
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB] max-md:border-b max-md:border-b-[#E5E7EB]">
-          <div className="flex w-full flex-col items-center gap-6 px-4 py-6">
+          <div className="flex hidden w-full flex-col items-center gap-6 px-4 py-6">
             <div className="flex flex-col items-center gap-3">
               <div className="flex rounded-full bg-[rgba(32,32,32,0.08)] p-0.5">
                 <button
@@ -134,47 +134,47 @@ export default function PricingCardsSection({
               </p>
             </div>
           </div>
-          <div className="flex w-full flex-col gap-2 overflow-x-visible p-2 *:w-full *:min-w-0 max-md:scrollbar-hide md:flex-row md:items-center md:gap-2 md:overflow-x-auto md:scrollbar-hide md:*:min-w-[272px] md:*:w-auto md:pb-4 lg:overflow-x-visible lg:*:min-w-0 [&::-webkit-scrollbar]:max-md:hidden md:[&::-webkit-scrollbar]:hidden">
+          <div className="max-md:scrollbar-hide md:scrollbar-hide flex w-full flex-col gap-2 overflow-x-visible p-2 py-3 *:w-full *:min-w-0 md:flex-row md:items-center md:gap-2 md:overflow-x-auto md:pb-4 md:*:w-auto md:*:min-w-[272px] lg:overflow-x-visible lg:*:min-w-0 [&::-webkit-scrollbar]:max-md:hidden md:[&::-webkit-scrollbar]:hidden">
             {plans.map((plan) => (
               <div
                 key={plan.id}
                 className={[
-                  "flex h-[566px] max-md:h-auto max-md:w-full max-md:flex-none flex-1 flex-col gap-6  overflow-hidden rounded-[10px] bg-white",
+                  "flex h-[566px] flex-1 flex-col gap-6 overflow-hidden rounded-[10px] bg-white max-md:h-auto max-md:w-full max-md:flex-none",
                   plan.popular
-                    ? "h-[595px] max-md:h-auto border border-[#006FFF] py-6 shadow-[0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]"
+                    ? "h-[595px] border border-[#006FFF] py-6 shadow-[0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)] max-md:h-auto"
                     : "py-6 shadow-[0_0_0_1px_rgba(0,0,0,0.08)]",
                 ].join(" ")}
               >
                 <div className="flex flex-col gap-4 px-6">
                   <div className="flex flex-col gap-3">
                     <div className="flex items-start gap-2">
-                      <span className="flex-1 text-base font-medium leading-6 tracking-[-0.096px] text-[#646464]">
+                      <span className="flex-1 text-base leading-6 font-medium tracking-[-0.096px] text-[#646464]">
                         {plan.name}
                       </span>
                       {plan.popular && (
-                        <span className="rounded-[8px] bg-[rgba(0,111,255,0.08)] px-2 py-1 text-[12px] font-medium leading-4 text-[#006FFF]">
+                        <span className="rounded-[8px] bg-[rgba(0,111,255,0.08)] px-2 py-1 text-[12px] leading-4 font-medium text-[#006FFF]">
                           Popular
                         </span>
                       )}
                     </div>
 
                     <div className="flex items-end gap-1">
-                      <span className="text-[32px] font-medium leading-8 tracking-[-0.96px] text-[#202020]">
+                      <span className="text-[32px] leading-8 font-medium tracking-[-0.96px] text-[#202020]">
                         $
                       </span>
-                      <div className="text-[32px] font-medium leading-8 tracking-[-0.96px] text-[#202020] [&_.leading-none]:leading-8">
+                      <div className="text-[32px] leading-8 font-medium tracking-[-0.96px] text-[#202020] [&_.leading-none]:leading-8">
                         <SlidingNumber value={getPriceValue(plan, billing)} />
                       </div>
-                      <span className="pb-0.5 text-base font-medium leading-6 tracking-[-0.16px] text-[#646464]">
+                      <span className="pb-0.5 text-base leading-6 font-medium tracking-[-0.16px] text-[#646464]">
                         /mo
                       </span>
                     </div>
 
                     <div className="flex flex-col gap-1">
-                      <p className="text-[12px] font-normal leading-6 tracking-[-0.12px] text-[#646464]">
+                      <p className="text-[12px] leading-6 font-normal tracking-[-0.12px] text-[#646464]">
                         Platform fee · billed monthly
                       </p>
-                      <p className="text-[12px] font-medium leading-6 tracking-[-0.12px] text-[#646464]">
+                      <p className="text-[12px] leading-6 font-medium tracking-[-0.12px] text-[#646464]">
                         {plan.description}
                       </p>
                     </div>
@@ -184,7 +184,7 @@ export default function PricingCardsSection({
                     <Button
                       variant="outline"
                       size="md"
-                      className="flex w-full text-center items-center justify-center"
+                      className="flex w-full items-center justify-center text-center"
                       style={
                         !plan.popular
                           ? { color: "#646464", borderColor: "#E5E7EB" }
@@ -199,14 +199,14 @@ export default function PricingCardsSection({
                 <hr className="border-[#E5E7EB]" />
 
                 <div className="flex flex-col gap-3 px-6">
-                  <span className="text-[12px] font-medium leading-6 tracking-[-0.12px] text-[#646464]">
+                  <span className="text-[12px] leading-6 font-medium tracking-[-0.12px] text-[#646464]">
                     {plan.featuresLabel}
                   </span>
                   <ul className="flex flex-col gap-6">
                     {plan.features.map((feature, i) => (
                       <li key={i} className="flex items-start gap-1">
                         <CheckIcon />
-                        <span className="text-[14px] font-medium leading-5 tracking-[-0.084px] text-[#646464]">
+                        <span className="text-[14px] leading-5 font-medium tracking-[-0.084px] text-[#646464]">
                           {typeof feature === "string" ? (
                             feature
                           ) : (

@@ -29,7 +29,7 @@ export default function PilotSection() {
               href="https://calendly.com/structurely-sales/schedule-demo"
             >
               <Button variant="secondary" size="md">
-                Talk to Sales
+                Talk to sales
               </Button>
             </Link>
           </div>

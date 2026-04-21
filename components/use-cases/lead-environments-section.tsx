@@ -98,18 +98,17 @@ const conditions = [
 function LeadEnvironmentsSection() {
   return (
     <section id="lead-environments" className="relative z-0">
-       <TrustedLogosSection  />
+      <TrustedLogosSection />
 
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
           <div className="flex flex-col items-center">
-           
-            <div className="flex w-full items-center justify-center gap-3 bg-[#006FFF] md:px-6 py-5">
+            <div className="flex w-full items-center justify-center gap-3 bg-[#006FFF] py-5 md:px-6">
               <Link href="/how-it-works" className="flex items-center gap-2">
-              <span className="text-[14px] leading-5 font-medium text-white">
-                See How It Works in Your Environment
-              </span>
-              {ARROW_ICON}
+                <span className="text-[14px] leading-5 font-medium text-white">
+                  See how It Works in Your Environment
+                </span>
+                {ARROW_ICON}
               </Link>
             </div>
           </div>

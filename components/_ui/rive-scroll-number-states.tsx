@@ -27,7 +27,7 @@ const DEFAULT_ITEMS: RiveNumberStateItem[] = [
   {
     title: "Texting + drip campaigns",
     description:
-      "AI text messaging and drip campaigns automate follow-up, support two-way SMS conversations, and keep leads engaged throughout the sales funnel.",
+      "Structurely AI automate follow-up, support two-way SMS conversations, and keep leads engaged throughout the sales funnel.",
     features: ["Trigger", "Drip", "Reply", "Re-engage"],
   },
   {
@@ -39,7 +39,7 @@ const DEFAULT_ITEMS: RiveNumberStateItem[] = [
   {
     title: "Appointment setting",
     description:
-      "AI appointment setting automates scheduling for qualified leads, integrates with calendars and CRMs, and helps sales teams book more meetings.",
+      "Structurely AI appointment setting automates scheduling for qualified leads, integrates with calendars and CRMs, and helps sales teams book more meetings.",
     features: ["Intent", "Slots", "Book", "Remind"],
   },
 ];
