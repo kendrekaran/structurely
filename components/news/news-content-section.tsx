@@ -39,7 +39,10 @@ function renderPortableBlock(block: PortableTextBlock, index: number) {
     );
   }
   return (
-    <p key={block._key ?? index} className="text-[#202020] text-[16px] leading-[26px] tracking-[-0.01em]">
+    <p
+      key={block._key ?? index}
+      className="text-[16px] leading-[26px] tracking-[-0.01em] text-[#202020]"
+    >
       {text}
     </p>
   );
@@ -50,65 +53,68 @@ function NewsContentSection({ blocks = [], content }: NewsContentSectionProps) {
   const nodes = hasContent
     ? content.map((block, index) => renderPortableBlock(block, index))
     : blocks.map((block, index) => {
-              if (block.type === "divider") {
-                return <hr key={index} className="border-t border-[#E5E7EB] md:my-[16px]" />;
-              }
+        if (block.type === "divider") {
+          return (
+            <hr
+              key={index}
+              className="border-t border-[#E5E7EB] md:my-[16px]"
+            />
+          );
+        }
 
-              if (block.type === "heading") {
-                return (
-                  <h2
-                    key={index}
-                    className="text-heading text-[28px] leading-[36px] font-medium tracking-[-0.02em] md:text-[36px] md:leading-[44px] md:tracking-[-0.03em]"
-                  >
-                    {block.text}
-                  </h2>
-                );
-              }
+        if (block.type === "heading") {
+          return (
+            <h2
+              key={index}
+              className="text-heading text-[28px] leading-[36px] font-medium tracking-[-0.02em] md:text-[36px] md:leading-[44px] md:tracking-[-0.03em]"
+            >
+              {block.text}
+            </h2>
+          );
+        }
 
-              if (block.type === "paragraph") {
-                return (
-                  <p key={index}>
-                    {block.segments.map((seg, i) => {
-                      if (seg.variant === "primary") {
-                        return (
-                          <span key={i} className="text-[--Primary]">
-                            {seg.text}
-                          </span>
-                        );
-                      }
-                      if (seg.variant === "bold") {
-                        return (
-                          <span key={i} className="font-medium text-[--Base]">
-                            {seg.text}
-                          </span>
-                        );
-                      }
-                      return <span key={i}>{seg.text}</span>;
-                    })}
-                  </p>
-                );
-              }
-
-              if (block.type === "labeled-paragraph") {
-                return (
-                  <p key={index}>
-                    <span className="font-medium text-[--Base]">
-                      {block.label}
+        if (block.type === "paragraph") {
+          return (
+            <p key={index}>
+              {block.segments.map((seg, i) => {
+                if (seg.variant === "primary") {
+                  return (
+                    <span key={i} className="text-[--Primary]">
+                      {seg.text}
                     </span>
-                    {"\n"}
-                    {block.text}
-                  </p>
-                );
-              }
+                  );
+                }
+                if (seg.variant === "bold") {
+                  return (
+                    <span key={i} className="font-medium text-[--Base]">
+                      {seg.text}
+                    </span>
+                  );
+                }
+                return <span key={i}>{seg.text}</span>;
+              })}
+            </p>
+          );
+        }
 
-              return null;
-            });
+        if (block.type === "labeled-paragraph") {
+          return (
+            <p key={index}>
+              <span className="font-medium text-[--Base]">{block.label}</span>
+              {"\n"}
+              {block.text}
+            </p>
+          );
+        }
+
+        return null;
+      });
   return (
     <section id="news-content" className="relative z-0">
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
-          <div className="mx-auto flex w-full flex-col mb-[64px] gap-6 md:gap-[32px] pt-6 md:pt-0 px-3 md:px-6 lg:max-w-[744px] lg:px-12">
-            <hr className="hidden md:block border-t border-[#E5E7EB]" />
+          <div className="mx-auto flex w-full flex-col gap-6 px-3 pt-6 pb-[64px] md:gap-[32px] md:px-6 md:pt-0 lg:max-w-[744px] lg:px-12">
+            <hr className="hidden border-t border-[#E5E7EB] md:block" />
             {nodes}
           </div>
         </div>
