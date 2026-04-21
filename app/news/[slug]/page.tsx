@@ -67,7 +67,6 @@ export default async function NewsArticlePage({
       <Header />
       <NewsDetailsHeroSection
         title={post.title}
-        intro={post.description ?? ""}
         description={post.description ?? ""}
         image={thumbnailUrl}
         category={post.category}

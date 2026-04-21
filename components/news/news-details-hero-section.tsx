@@ -3,7 +3,6 @@ import Badge from "@/components/_ui/badge";
 
 type NewsDetailsHeroSectionProps = {
   title: string;
-  intro: string;
   description: string;
   image?: string;
   /** e.g. Press Release, Related News, Stories */
@@ -12,7 +11,6 @@ type NewsDetailsHeroSectionProps = {
 
 function NewsDetailsHeroSection({
   title,
-  intro,
   description,
   image,
   category,
@@ -61,16 +59,13 @@ function NewsDetailsHeroSection({
               )}
             </div>
             <div className="md:px-6">
-              <Badge
-                text={category?.trim() || "News & Insights"}
-              />
+              <Badge text={category?.trim() || "News & Insights"} />
             </div>
             <h1 className="max-w-[744px] text-[24px] leading-[1.2222222222222223] font-medium tracking-[-0.03em] md:px-6 md:text-[36px]">
               {title}
             </h1>
 
             <div className="flex flex-col gap-2 md:px-6">
-              <p className="font-medium">{intro}</p>
               <p className="text-[var(--Subtext)]">{description}</p>
             </div>
           </div>

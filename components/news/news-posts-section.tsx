@@ -50,7 +50,7 @@ function NewsPostsSection({ posts }: NewsPostsSectionProps) {
               return (
                 <div
                   key={rowIdx}
-                  className="grid grid-cols-1 gap-px lg:grid-cols-3"
+                  className="grid grid-cols-1 gap-px lg:grid-cols-3 lg:items-stretch"
                 >
                   {cells.map((post, colIdx) =>
                     post ? (

@@ -17,7 +17,12 @@ export default function AiChatWidget() {
   );
   const closeWidget = useAiChatWidgetStore((state) => state.closeWidget);
 
-  const visible = pathname === "/" ? isOpen && !isHomeLiveDemoInView : isOpen;
+  const isNewsPage = pathname === "/news" || pathname.startsWith("/news/");
+  const visible = isNewsPage
+    ? false
+    : pathname === "/"
+      ? isOpen && !isHomeLiveDemoInView
+      : isOpen;
 
   return (
     <AnimatePresence>

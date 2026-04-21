@@ -44,9 +44,6 @@ function PinnedHeroRow({ post }: { post: NewsPost }) {
             <Badge text={post.category} />
           </div>
         ) : null}
-        <p className="text-[13px] leading-[20px] font-medium tracking-[-0.084px] text-[#646464]">
-          {formatHeroDate(post.publishedAt)}
-        </p>
         <div className="group">
           <h2 className="max-w-[14em] text-[28px] leading-[36px] tracking-[-0.03em] transition-colors group-hover:text-[#006FFF] md:text-[32px] md:leading-[40px]">
             {post.title}
@@ -54,6 +51,9 @@ function PinnedHeroRow({ post }: { post: NewsPost }) {
         </div>
         <p className="max-w-[30em] text-[15px] leading-[26px] tracking-[-0.01em] text-[#646464]">
           {post.description ?? ""}
+        </p>
+        <p className="text-[13px] leading-[20px] font-medium tracking-[-0.084px] text-[#646464]">
+          {formatHeroDate(post.publishedAt)}
         </p>
       </div>
 
