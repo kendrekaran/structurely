@@ -105,7 +105,7 @@ export default function CookieConsentBanner() {
             We use <span className="text-[#202020]">tracking cookies</span> to
             analyze site traffic and improve our services. These cookies are
             only set after you give explicit consent. By clicking{" "}
-            <span className="text-[#202020]">"Accept tracking"</span> you opt
+            <span className="text-[#202020]">&quot;Accept tracking&quot;</span> you opt
             in.{" "}
             <a
               href="/privacy-policy"
