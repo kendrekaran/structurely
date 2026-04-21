@@ -42,23 +42,25 @@ export default async function NewsArticlePage({
   const thumbnailUrl =
     typeof post.thumbnail === "string" ? post.thumbnail : undefined;
 
-  const relatedArticles = (post.relatedBlogs ?? []).map((rel) => ({
-    title: rel.title,
-    description:
-      "description" in rel && typeof rel.description === "string"
-        ? rel.description
-        : "",
-    date: new Date(rel.publishedAt).toLocaleDateString("en-US", {
-      month: "long",
-      day: "numeric",
-      year: "numeric",
-    }),
-    slug: rel.slug?.current ?? "",
-    image:
-      "thumbnail" in rel && typeof rel.thumbnail === "string"
-        ? rel.thumbnail
-        : undefined,
-  }));
+  const relatedArticles = (post.relatedBlogs ?? [])
+    .map((rel) => ({
+      title: rel.title,
+      description:
+        "description" in rel && typeof rel.description === "string"
+          ? rel.description
+          : "",
+      date: new Date(rel.publishedAt).toLocaleDateString("en-US", {
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+      }),
+      slug: rel.slug?.current ?? "",
+      image:
+        "thumbnail" in rel && typeof rel.thumbnail === "string"
+          ? rel.thumbnail
+          : undefined,
+    }))
+    .filter((article) => article.slug.length > 0);
 
   return (
     <main className="min-h-screen max-w-full overflow-x-clip">
@@ -71,8 +73,10 @@ export default async function NewsArticlePage({
         category={post.category}
       />
       <NewsContentSection content={post.content} />
-      <NewsShareSection />
-      <NewsRelatedArticlesSection articles={relatedArticles} />
+      <NewsShareSection title={post.title} />
+      {relatedArticles.length > 0 ? (
+        <NewsRelatedArticlesSection articles={relatedArticles} />
+      ) : null}
       <FooterSection />
     </main>
   );

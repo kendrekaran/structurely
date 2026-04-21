@@ -1,7 +1,59 @@
+ "use client";
+
 import Image from "next/image";
 import Button from "@/components/_ui/button";
+import { useState } from "react";
 
-function NewsShareSection() {
+type NewsShareSectionProps = {
+  title: string;
+};
+
+function NewsShareSection({ title }: NewsShareSectionProps) {
+  const [copied, setCopied] = useState(false);
+
+  const shareUrl =
+    typeof window !== "undefined" ? window.location.href : "";
+
+  const handleShareToX = () => {
+    const text = encodeURIComponent(title);
+    const url = encodeURIComponent(shareUrl);
+    window.open(
+      `https://twitter.com/intent/tweet?text=${text}&url=${url}`,
+      "_blank",
+      "noopener,noreferrer",
+    );
+  };
+
+  const handleShareToLinkedIn = () => {
+    const url = encodeURIComponent(shareUrl);
+    window.open(
+      `https://www.linkedin.com/sharing/share-offsite/?url=${url}`,
+      "_blank",
+      "noopener,noreferrer",
+    );
+  };
+
+  const handleNativeShare = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title,
+          url: shareUrl,
+        });
+        return;
+      } catch {
+        // Fall through to clipboard for dismissed dialogs/errors.
+      }
+    }
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // No-op: keep silent if clipboard is blocked.
+    }
+  };
+
   return (
     <section id="news-share" className="relative z-0">
       <div className="px-global">
@@ -14,6 +66,7 @@ function NewsShareSection() {
                 size="sm"
                 className="!w-auto !justify-center !px-4 !py-2"
                 aria-label="Share on X"
+                onClick={handleShareToX}
               >
                 <Image
                   src="/assets/news/socials/x.svg"
@@ -27,6 +80,7 @@ function NewsShareSection() {
                 size="sm"
                 className="!w-auto !justify-center !px-4 !py-2"
                 aria-label="Share on LinkedIn"
+                onClick={handleShareToLinkedIn}
               >
                 <Image
                   src="/assets/news/socials/linkedin.svg"
@@ -39,7 +93,8 @@ function NewsShareSection() {
                 variant="secondary"
                 size="sm"
                 className="!w-auto !justify-center !px-4 !py-2"
-                aria-label="Share"
+                aria-label={copied ? "Link copied" : "Share"}
+                onClick={handleNativeShare}
               >
                 <Image
                   src="/assets/news/socials/share.svg"
@@ -49,6 +104,11 @@ function NewsShareSection() {
                 />
               </Button>
             </div>
+            {copied ? (
+              <p className="text-[12px] leading-[16px] text-[#646464]">
+                Link copied to clipboard
+              </p>
+            ) : null}
           </div>
         </div>
       </div>
