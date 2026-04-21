@@ -47,7 +47,7 @@ export default function CookieConsentBanner() {
       aria-label="Cookie consent"
       className={cn(
         "fixed bottom-4 left-1/2 z-[9999] w-[calc(100%-24px)] max-w-[480px] -translate-x-1/2 transition-all duration-500 ease-out",
-        "sm:right-6 sm:bottom-6 sm:left-auto sm:translate-x-0",
+        "sm:bottom-6 sm:left-6 sm:translate-x-0",
         visible
           ? "translate-y-0 opacity-100"
           : "pointer-events-none translate-y-6 opacity-0",
