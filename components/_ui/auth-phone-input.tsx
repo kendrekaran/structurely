@@ -121,7 +121,7 @@ const AuthPhoneInput = forwardRef<HTMLInputElement, AuthPhoneInputProps>(
         onlyCountries: ["us", "ca"],
         nationalMode: lockCountryCode,
         separateDialCode: lockCountryCode,
-        allowDropdown: !lockCountryCode,
+        allowDropdown: true,
         autoPlaceholder: "aggressive",
         formatOnDisplay: true,
         /** Wider dropdown sized to country names; use CSS min/max-width for bounds. */
