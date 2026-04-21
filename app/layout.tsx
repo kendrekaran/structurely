@@ -6,6 +6,7 @@ import "intl-tel-input/styles";
 import "./globals.css";
 import RevealProvider from "@/components/_providers/reveal-provider";
 import CookieConsentBanner from "@/components/_common/cookie-consent-banner";
+import AnalyticsLoader from "@/components/_common/analytics-loader";
 import AiChatWidget from "@/components/ai-chat-widget";
 
 const inter = Inter({
@@ -45,6 +46,7 @@ export default function RootLayout({
           <AiChatWidget />
         </RevealProvider>
         <CookieConsentBanner />
+        <AnalyticsLoader />
       </body>
     </html>
   );

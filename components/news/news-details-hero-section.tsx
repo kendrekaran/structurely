@@ -7,13 +7,24 @@ type NewsDetailsHeroSectionProps = {
   image?: string;
   /** e.g. Press Release, Related News, Stories */
   category?: string | null;
+  /** ISO date string; if absent the date line is omitted */
+  publishedAt?: string | null;
 };
+
+function formatArticleDate(iso: string): string {
+  return new Date(iso).toLocaleDateString("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  });
+}
 
 function NewsDetailsHeroSection({
   title,
   description,
   image,
   category,
+  publishedAt,
 }: NewsDetailsHeroSectionProps) {
   return (
     <section id="news-details-hero" className="relative z-0">
@@ -67,6 +78,11 @@ function NewsDetailsHeroSection({
 
             <div className="flex flex-col gap-2 md:px-6">
               <p className="text-[var(--Subtext)]">{description}</p>
+              {publishedAt && (
+                <p className="text-[13px] leading-[20px] font-medium tracking-[-0.084px] text-[#646464]">
+                  {formatArticleDate(publishedAt)}
+                </p>
+              )}
             </div>
           </div>
 

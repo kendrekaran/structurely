@@ -19,6 +19,7 @@ function AutomateVideoSection() {
           <div className="bg-white">
             <BrandVideoPlayer
               src="/videos/promo.mp4"
+              poster="/videos/meet-structurely-high.gif"
               title="Promo video: automate your sales process"
             />
           </div>

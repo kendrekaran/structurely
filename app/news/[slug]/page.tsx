@@ -70,6 +70,7 @@ export default async function NewsArticlePage({
         description={post.description ?? ""}
         image={thumbnailUrl}
         category={post.category}
+        publishedAt={post.publishedAt ?? null}
       />
       <NewsContentSection content={post.content} />
       <NewsShareSection title={post.title} />

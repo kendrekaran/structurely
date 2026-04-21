@@ -5,14 +5,33 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 const COOKIE_CONSENT_KEY = "structurely_cookie_consent";
+const TRACKING_CONSENT_KEY = "structurely_tracking_consent";
 
 type ConsentState = "accepted" | "declined" | null;
+
+/** Dispatched on window when the user explicitly opts in to tracking cookies. */
+function fireTrackingConsentGranted() {
+  if (typeof window === "undefined") return;
+  window.dispatchEvent(new CustomEvent("trackingConsentGranted"));
+}
+
+/** Called once on mount if tracking consent was previously accepted — re-enables analytics. */
+function initTrackingIfConsented() {
+  if (typeof window === "undefined") return;
+  const stored = localStorage.getItem(TRACKING_CONSENT_KEY);
+  if (stored === "accepted") {
+    fireTrackingConsentGranted();
+  }
+}
 
 export default function CookieConsentBanner() {
   const [consent, setConsent] = useState<ConsentState | "loading">("loading");
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    // Re-enable analytics for returning visitors who already consented
+    initTrackingIfConsented();
+
     const stored = localStorage.getItem(
       COOKIE_CONSENT_KEY,
     ) as ConsentState | null;
@@ -28,12 +47,16 @@ export default function CookieConsentBanner() {
 
   function handleAccept() {
     localStorage.setItem(COOKIE_CONSENT_KEY, "accepted");
+    localStorage.setItem(TRACKING_CONSENT_KEY, "accepted");
     setConsent("accepted");
     setVisible(false);
+    // Notify analytics scripts that tracking is now allowed
+    fireTrackingConsentGranted();
   }
 
   function handleDecline() {
     localStorage.setItem(COOKIE_CONSENT_KEY, "declined");
+    localStorage.setItem(TRACKING_CONSENT_KEY, "declined");
     setConsent("declined");
     setVisible(false);
   }
@@ -73,16 +96,17 @@ export default function CookieConsentBanner() {
               />
             </span>
             <p className="text-sm font-medium tracking-[-0.01em] text-[#202020]">
-              We use cookies
+              Tracking cookies opt-in
             </p>
           </div>
 
           {/* Body */}
           <p className="text-sm leading-6 font-medium tracking-[-0.01em] text-[#646464]">
-            We use cookies to enhance your browsing experience, analyze site
-            traffic, and personalize content. By clicking{" "}
-            <span className="text-[#202020]">"Accept all"</span> you consent to
-            our use of cookies.{" "}
+            We use <span className="text-[#202020]">tracking cookies</span> to
+            analyze site traffic and improve our services. These cookies are
+            only set after you give explicit consent. By clicking{" "}
+            <span className="text-[#202020]">"Accept tracking"</span> you opt
+            in.{" "}
             <a
               href="/privacy-policy"
               className="text-[#006FFF] underline-offset-2 hover:underline"
@@ -111,7 +135,7 @@ export default function CookieConsentBanner() {
                 "transition-colors hover:bg-[#006FFF]/90 active:scale-[0.98] sm:w-auto",
               )}
             >
-              Accept all
+              Accept tracking
             </button>
           </div>
         </div>
