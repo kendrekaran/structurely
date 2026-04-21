@@ -22,9 +22,40 @@ export async function generateMetadata({
       description: "The requested article could not be found.",
     };
   }
+
+  // SEO fields fall back to their base equivalents when not set.
+  const metaTitle = post.seoTitle
+    ? `${post.seoTitle} - Structurely News`
+    : `${post.title} - Structurely News`;
+  const metaDescription = post.seoDescription ?? post.description ?? undefined;
+  const thumbnailUrl =
+    typeof post.thumbnail === "string" ? post.thumbnail : undefined;
+
   return {
-    title: `${post.title} - Structurely News`,
-    description: post.description ?? undefined,
+    title: metaTitle,
+    description: metaDescription,
+    openGraph: {
+      title: post.seoTitle ?? post.title,
+      description: metaDescription,
+      type: "article",
+      publishedTime: post.publishedAt ?? undefined,
+      ...(thumbnailUrl
+        ? {
+            images: [
+              {
+                url: thumbnailUrl,
+                alt: post.thumbnailAlt ?? post.title,
+              },
+            ],
+          }
+        : {}),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.seoTitle ?? post.title,
+      description: metaDescription,
+      ...(thumbnailUrl ? { images: [thumbnailUrl] } : {}),
+    },
   };
 }
 
@@ -69,25 +100,39 @@ export default async function NewsArticlePage({
     }))
     .filter((article) => article.slug.length > 0);
 
-  const fallbackRelatedArticles =
-    explicitRelatedArticles.length === 0
-      ? (await getNewsPosts())
-          .filter((item) => item.slug.current !== post.slug.current)
-          .slice(0, 3)
-          .map((item) => ({
-            title: item.title,
-            description: item.description ?? "",
-            date: new Date(item.publishedAt).toLocaleDateString("en-US", {
-              month: "long",
-              day: "numeric",
-              year: "numeric",
-            }),
-            slug: item.slug.current,
-            category: item.category,
-            image:
-              typeof item.thumbnail === "string" ? item.thumbnail : undefined,
-          }))
-      : [];
+  const fallbackRelatedArticles: typeof explicitRelatedArticles = [];
+  if (explicitRelatedArticles.length === 0) {
+    const allPosts = await getNewsPosts();
+    const otherPosts = allPosts.filter(
+      (item) => item.slug.current !== post.slug.current,
+    );
+
+    // Prefer posts that share the first tag of the current article.
+    const firstTag = post.tags?.[0];
+    const tagMatchedPosts =
+      firstTag && firstTag.length > 0
+        ? otherPosts.filter((item) =>
+            item.tags?.some((t) => t.toLowerCase() === firstTag.toLowerCase()),
+          )
+        : [];
+
+    const sourcePosts =
+      tagMatchedPosts.length > 0 ? tagMatchedPosts : otherPosts;
+
+    const mapped = sourcePosts.slice(0, 3).map((item) => ({
+      title: item.title,
+      description: item.description ?? "",
+      date: new Date(item.publishedAt).toLocaleDateString("en-US", {
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+      }),
+      slug: item.slug.current,
+      category: item.category,
+      image: typeof item.thumbnail === "string" ? item.thumbnail : undefined,
+    }));
+    fallbackRelatedArticles.push(...mapped);
+  }
 
   const relatedArticles =
     explicitRelatedArticles.length > 0
@@ -101,6 +146,7 @@ export default async function NewsArticlePage({
         title={post.title}
         description={post.description ?? ""}
         image={thumbnailUrl}
+        imageAlt={post.thumbnailAlt}
         category={post.category}
         publishedAt={post.publishedAt ?? null}
         tags={post.tags}

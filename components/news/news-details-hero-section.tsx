@@ -6,6 +6,8 @@ type NewsDetailsHeroSectionProps = {
   title: string;
   description: string;
   image?: string;
+  /** Alt text for the thumbnail image. Falls back to `title`. */
+  imageAlt?: string;
   /** e.g. Press Release, Related News, Stories */
   category?: string | null;
   /** ISO date string; if absent the date line is omitted */
@@ -26,6 +28,7 @@ function NewsDetailsHeroSection({
   title,
   description,
   image,
+  imageAlt,
   category,
   publishedAt,
   tags,
@@ -68,7 +71,7 @@ function NewsDetailsHeroSection({
               {image && (
                 <img
                   src={image}
-                  alt={title}
+                  alt={imageAlt || title}
                   className="h-full w-full object-cover"
                 />
               )}
@@ -107,7 +110,7 @@ function NewsDetailsHeroSection({
             {image && (
               <img
                 src={image}
-                alt={title}
+                alt={imageAlt || title}
                 className="h-full w-full object-cover"
               />
             )}

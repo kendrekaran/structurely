@@ -11,6 +11,7 @@ import {
   getDummyNewsPostBySlug,
   type DummyNewsPost,
   type PortableTextBlock,
+  type VideoBlock,
 } from "./dummy-news";
 import { sanityClient, urlForImage } from "@/sanity/client";
 import {
@@ -82,11 +83,14 @@ function mapRelatedPosts(
       return {
         _id: String(r._id ?? ""),
         title: String(r.title ?? ""),
+        shortTitle: typeof r.shortTitle === "string" ? r.shortTitle : undefined,
         description:
           typeof r.description === "string" ? r.description : undefined,
         slug: { current: slug.current },
         publishedAt: String(r.publishedAt ?? ""),
         ...(thumbStr ? { thumbnail: thumbStr } : {}),
+        thumbnailAlt:
+          typeof r.thumbnailAlt === "string" ? r.thumbnailAlt : undefined,
       };
     })
     .filter(Boolean);
@@ -110,8 +114,14 @@ function mapSanityPost(doc: Record<string, unknown>): NewsPost | null {
   return {
     _id: String(doc._id),
     title: String(doc.title),
+    shortTitle: typeof doc.shortTitle === "string" ? doc.shortTitle : undefined,
     description:
       typeof doc.description === "string" ? doc.description : undefined,
+    thumbnailAlt:
+      typeof doc.thumbnailAlt === "string" ? doc.thumbnailAlt : undefined,
+    seoTitle: typeof doc.seoTitle === "string" ? doc.seoTitle : undefined,
+    seoDescription:
+      typeof doc.seoDescription === "string" ? doc.seoDescription : undefined,
     category: categoryLabelFromSanity(doc.category),
     pinned: parsePinned(doc.pinned),
     slug: { current: slug.current },
@@ -132,7 +142,7 @@ function mapSanityPost(doc: Record<string, unknown>): NewsPost | null {
         )
       : undefined,
     content: Array.isArray(doc.content)
-      ? (doc.content as PortableTextBlock[])
+      ? (doc.content as Array<PortableTextBlock | VideoBlock>)
       : undefined,
     thumbnail,
     relatedBlogs: mapRelatedPosts(doc.relatedBlogs),

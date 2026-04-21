@@ -57,6 +57,7 @@ function NewsPostsSection({ posts }: NewsPostsSectionProps) {
                       <NewsCard
                         key={post._id}
                         title={post.title}
+                        shortTitle={post.shortTitle}
                         description={post.description ?? ""}
                         date={formatDate(post.publishedAt)}
                         category={post.category}
@@ -66,6 +67,7 @@ function NewsPostsSection({ posts }: NewsPostsSectionProps) {
                             ? post.thumbnail
                             : undefined
                         }
+                        imageAlt={post.thumbnailAlt}
                         slug={post.slug?.current}
                       />
                     ) : (

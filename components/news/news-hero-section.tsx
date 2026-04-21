@@ -36,6 +36,8 @@ function PinnedHeroRow({ post }: { post: NewsPost }) {
 
   if (!articleHref) return null;
 
+  const displayTitle = post.shortTitle || post.title;
+
   return (
     <Link
       href={articleHref}
@@ -49,7 +51,7 @@ function PinnedHeroRow({ post }: { post: NewsPost }) {
         ) : null}
         <div className="group">
           <h2 className="max-w-[14em] text-[28px] leading-[36px] tracking-[-0.03em] transition-colors group-hover:text-[#006FFF] md:text-[32px] md:leading-[40px]">
-            {post.title}
+            {displayTitle}
           </h2>
         </div>
         <p className="max-w-[30em] text-[15px] leading-[26px] tracking-[-0.01em] text-[#646464]">
@@ -65,7 +67,7 @@ function PinnedHeroRow({ post }: { post: NewsPost }) {
           {thumb ? (
             <img
               src={thumb}
-              alt={post.title}
+              alt={post.thumbnailAlt || post.title}
               className="h-full w-full object-cover"
             />
           ) : null}

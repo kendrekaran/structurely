@@ -15,9 +15,30 @@ export type PortableTextBlock = {
   }>;
 };
 
+/**
+ * A video block embedded in article content.
+ * - `videoType: "native"` — a self-hosted video file URL
+ * - `videoType: "youtube"` — a YouTube video ID or full URL
+ * - `videoType: "vimeo"` — a Vimeo video ID or full URL
+ */
+export type VideoBlock = {
+  _type: "videoEmbed";
+  _key: string;
+  videoType: "native" | "youtube" | "vimeo";
+  /** URL for native videos; video ID or full URL for YouTube/Vimeo */
+  url: string;
+  /** Optional caption displayed below the video */
+  caption?: string;
+};
+
 export type DummyNewsPost = {
   _id: string;
   title: string;
+  /**
+   * Optional short title used on the main News listing page (cards & hero).
+   * Falls back to `title` when not set.
+   */
+  shortTitle?: string;
   /** When true, featured in the news hero; excluded from the grid listing. */
   pinned?: boolean;
   category?: string;
@@ -26,11 +47,25 @@ export type DummyNewsPost = {
   description?: string;
   slug: { current: string };
   thumbnail?: string;
+  /** Optional alt text for the thumbnail image. Falls back to `title`. */
+  thumbnailAlt?: string;
   publishedAt: string;
   author?: { name: string };
-  content?: PortableTextBlock[];
+  content?: Array<PortableTextBlock | VideoBlock>;
   primaryKeywords?: string[];
   secondaryKeywords?: string[];
+  /**
+   * Optional SEO title. When set, used as the HTML `<title>` and for
+   * Open Graph / Twitter card `og:title` / `twitter:title`.
+   * Falls back to `title` when not set.
+   */
+  seoTitle?: string;
+  /**
+   * Optional SEO description. When set, used as the HTML meta description
+   * and for Open Graph / Twitter card `og:description` / `twitter:description`.
+   * Falls back to `description` when not set.
+   */
+  seoDescription?: string;
   relatedBlogs?: Array<
     | DummyNewsPost
     | {
@@ -50,6 +85,8 @@ export const dummyNewsPosts: DummyNewsPost[] = [
     _id: "struct-1",
     pinned: true,
     title: "How Structurely's Call and Text AI Improve Response Rates",
+    // Example: shortTitle shown on the News listing page instead of the full title
+    shortTitle: "AI Call & Text: Better Response Rates",
     category: "Press Release",
     tags: ["AI", "Lead Engagement", "Automation"],
     description:
@@ -57,75 +94,91 @@ export const dummyNewsPosts: DummyNewsPost[] = [
     slug: { current: "how-structurely-call-text-ai-improve-response-rates" },
     publishedAt: "2025-02-15T00:00:00.000Z",
     author: { name: "Structurely Team" },
+    // Example: custom SEO title / description separate from display title
+    seoTitle: "AI-Powered Call & Text Tools That Improve Lead Response Rates",
+    seoDescription:
+      "Discover how Structurely's AI calling and texting platform automates follow-ups with precision timing to dramatically improve lead response rates.",
+    // Example: explicit alt text for the thumbnail
+    thumbnailAlt: "Structurely AI assistant handling call and text follow-ups",
     primaryKeywords: ["Structurely", "AI", "response rates"],
     secondaryKeywords: ["calling", "text", "leads"],
-    content: pt([
+    content: [
+      ...pt([
+        {
+          _key: "b1",
+          _type: "block",
+          style: "normal",
+          children: [
+            {
+              _key: "c1",
+              _type: "span",
+              text: "In the modern world of sales, engaging with potential leads is both an art and a science. Structurely's AI-powered calling and texting tools eliminate the guesswork by automating follow-ups with precision timing and personalized messaging that actually gets responses.",
+              marks: [],
+            },
+          ],
+        },
+        {
+          _key: "b2",
+          _type: "block",
+          style: "h2",
+          children: [
+            {
+              _key: "c2",
+              _type: "span",
+              text: "The Challenge of Low Response Rates",
+              marks: [],
+            },
+          ],
+        },
+        {
+          _key: "b3",
+          _type: "block",
+          style: "normal",
+          children: [
+            {
+              _key: "c3",
+              _type: "span",
+              text: "Leads are often too busy to answer cold calls or respond to emails right away. Structurely's Text AI sends a message first, then follows up with a call from the same number when the lead is ready—making outreach feel more human and less intrusive.",
+              marks: [],
+            },
+          ],
+        },
+        {
+          _key: "b4",
+          _type: "block",
+          style: "h2",
+          children: [
+            {
+              _key: "c4",
+              _type: "span",
+              text: "Benefits of Combining Call AI and Text AI",
+              marks: [],
+            },
+          ],
+        },
+        {
+          _key: "b5",
+          _type: "block",
+          style: "normal",
+          children: [
+            {
+              _key: "c5",
+              _type: "span",
+              text: "By starting with text and following up with a call from the same number, Structurely ensures every lead is handled with care and precision. This approach improves response rates and enhances the overall customer experience.",
+              marks: [],
+            },
+          ],
+        },
+      ]),
+      // Example video block — replace the URL with a real video ID or URL in Sanity Studio
       {
-        _key: "b1",
-        _type: "block",
-        style: "normal",
-        children: [
-          {
-            _key: "c1",
-            _type: "span",
-            text: "In the modern world of sales, engaging with potential leads is both an art and a science. Structurely's AI-powered calling and texting tools eliminate the guesswork by automating follow-ups with precision timing and personalized messaging that actually gets responses.",
-            marks: [],
-          },
-        ],
+        _type: "videoEmbed" as const,
+        _key: "v1",
+        videoType: "youtube" as const,
+        url: "dQw4w9WgXcQ",
+        caption: "Watch how Structurely's AI handles real lead conversations",
       },
-      {
-        _key: "b2",
-        _type: "block",
-        style: "h2",
-        children: [
-          {
-            _key: "c2",
-            _type: "span",
-            text: "The Challenge of Low Response Rates",
-            marks: [],
-          },
-        ],
-      },
-      {
-        _key: "b3",
-        _type: "block",
-        style: "normal",
-        children: [
-          {
-            _key: "c3",
-            _type: "span",
-            text: "Leads are often too busy to answer cold calls or respond to emails right away. Structurely's Text AI sends a message first, then follows up with a call from the same number when the lead is ready—making outreach feel more human and less intrusive.",
-            marks: [],
-          },
-        ],
-      },
-      {
-        _key: "b4",
-        _type: "block",
-        style: "h2",
-        children: [
-          {
-            _key: "c4",
-            _type: "span",
-            text: "Benefits of Combining Call AI and Text AI",
-            marks: [],
-          },
-        ],
-      },
-      {
-        _key: "b5",
-        _type: "block",
-        style: "normal",
-        children: [
-          {
-            _key: "c5",
-            _type: "span",
-            text: "By starting with text and following up with a call from the same number, Structurely ensures every lead is handled with care and precision. This approach improves response rates and enhances the overall customer experience.",
-            marks: [],
-          },
-        ],
-      },
-    ]),
+    ],
     relatedBlogs: [],
   },
   {

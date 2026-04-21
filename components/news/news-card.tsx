@@ -4,9 +4,17 @@ import { buildNewsListingHref } from "@/lib/news-listing-url";
 
 type NewsCardProps = {
   title: string;
+  /**
+   * Optional short title used on the News listing page.
+   * When provided, it replaces `title` in the card heading.
+   * Falls back to `title` when absent.
+   */
+  shortTitle?: string;
   description: string;
   date: string;
   image?: string;
+  /** Alt text for the thumbnail image. Falls back to `title`. */
+  imageAlt?: string;
   /** Category label used to build /news/[category]/[slug]. */
   category?: string;
   /** Topic tags displayed as clickable pill links on the card. */
@@ -15,7 +23,17 @@ type NewsCardProps = {
   slug?: string;
 };
 
-function NewsCard({ title, date, image, category, tags, slug }: NewsCardProps) {
+function NewsCard({
+  title,
+  shortTitle,
+  date,
+  image,
+  imageAlt,
+  category,
+  tags,
+  slug,
+}: NewsCardProps) {
+  const displayTitle = shortTitle || title;
   const content = (
     <div className="flex h-full flex-col bg-white">
       <div className="bg-white px-2 pt-2">
@@ -23,7 +41,7 @@ function NewsCard({ title, date, image, category, tags, slug }: NewsCardProps) {
           {image && (
             <img
               src={image}
-              alt={title}
+              alt={imageAlt || title}
               className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
             />
           )}
@@ -31,7 +49,7 @@ function NewsCard({ title, date, image, category, tags, slug }: NewsCardProps) {
       </div>
       <div className="flex flex-1 flex-col justify-between gap-2 p-6 px-3 md:px-6">
         <h3 className="text-[16px] leading-[26px] font-medium tracking-[-0.01em]">
-          {title}
+          {displayTitle}
         </h3>
         <div className="flex flex-col gap-2">
           {tags && tags.length > 0 && (

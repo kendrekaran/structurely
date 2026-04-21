@@ -2,18 +2,29 @@
  * GROQ queries for `news` documents and `category` / `tag` references.
  *
  * Expected Studio schema (see your Sanity project):
- * - `news`: `slug`, `title`, `description`, `category` (ref → `category`), `pinned`, `publishedAt`,
- *   `thumbnail`, `primaryKeywords`, `secondaryKeywords`, `content`, `relatedNews` (refs → `news`),
+ * - `news`: `slug`, `title`, `shortTitle`, `description`, `category` (ref → `category`), `pinned`,
+ *   `publishedAt`, `thumbnail`, `thumbnailAlt`, `primaryKeywords`, `secondaryKeywords`,
+ *   `seoTitle`, `seoDescription`, `content`, `relatedNews` (refs → `news`),
  *   `tags` (array of refs → `tag`, or array of strings)
  * - `category`: `name`, `slug`
  * - `tag`: `name`, `slug`
+ *
+ * New optional fields:
+ * - `shortTitle`      – short display title used on the News listing page (falls back to `title`)
+ * - `thumbnailAlt`    – alt text for the thumbnail image (falls back to `title`)
+ * - `seoTitle`        – HTML <title> and og:title / twitter:title (falls back to `title`)
+ * - `seoDescription`  – meta description and og:description / twitter:description (falls back to `description`)
  */
 
 /** Single post shape reused in list and detail queries. */
 export const newsPostProjection = `{
   _id,
   title,
+  shortTitle,
   description,
+  thumbnailAlt,
+  seoTitle,
+  seoDescription,
   "category": category->name,
   "pinned": pinned,
   slug,
@@ -30,10 +41,12 @@ export const newsPostProjection = `{
   "relatedBlogs": coalesce(relatedNews, relatedBlogs, relatedPosts)[]->{
     _id,
     title,
+    shortTitle,
     description,
     slug,
     publishedAt,
-    "thumbnail": coalesce(thumbnail, mainImage, image, heroImage)
+    "thumbnail": coalesce(thumbnail, mainImage, image, heroImage),
+    thumbnailAlt
   }
 }`;
 
