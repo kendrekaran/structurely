@@ -3,7 +3,7 @@ import NewsDetailsHeroSection from "@/components/news/news-details-hero-section"
 import NewsContentSection from "@/components/news/news-content-section";
 import NewsRelatedArticlesSection from "@/components/news/news-related-articles-section";
 import NewsShareSection from "@/components/news/news-share-section";
-import { getNewsPostBySlug } from "@/data/news-data";
+import { getNewsPostBySlug, getNewsPosts } from "@/data/news-data";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import FooterSection from "@/components/_common/footer-section";
@@ -42,7 +42,7 @@ export default async function NewsArticlePage({
   const thumbnailUrl =
     typeof post.thumbnail === "string" ? post.thumbnail : undefined;
 
-  const relatedArticles = (post.relatedBlogs ?? [])
+  const explicitRelatedArticles = (post.relatedBlogs ?? [])
     .map((rel) => ({
       title: rel.title,
       description:
@@ -61,6 +61,29 @@ export default async function NewsArticlePage({
           : undefined,
     }))
     .filter((article) => article.slug.length > 0);
+
+  const fallbackRelatedArticles =
+    explicitRelatedArticles.length === 0
+      ? (await getNewsPosts())
+          .filter((item) => item.slug.current !== post.slug.current)
+          .slice(0, 3)
+          .map((item) => ({
+            title: item.title,
+            description: item.description ?? "",
+            date: new Date(item.publishedAt).toLocaleDateString("en-US", {
+              month: "long",
+              day: "numeric",
+              year: "numeric",
+            }),
+            slug: item.slug.current,
+            image: typeof item.thumbnail === "string" ? item.thumbnail : undefined,
+          }))
+      : [];
+
+  const relatedArticles =
+    explicitRelatedArticles.length > 0
+      ? explicitRelatedArticles
+      : fallbackRelatedArticles;
 
   return (
     <main className="min-h-screen max-w-full overflow-x-clip">
