@@ -5,6 +5,7 @@ import { GeistSans } from "geist/font/sans";
 import "intl-tel-input/styles";
 import "./globals.css";
 import RevealProvider from "@/components/_providers/reveal-provider";
+import CookieConsentBanner from "@/components/_common/cookie-consent-banner";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -41,6 +42,7 @@ export default function RootLayout({
         <RevealProvider>
           <div className="relative">{children}</div>
         </RevealProvider>
+        <CookieConsentBanner />
       </body>
     </html>
   );
