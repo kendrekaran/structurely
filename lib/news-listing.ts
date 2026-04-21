@@ -2,17 +2,29 @@ import type { NewsPost } from "@/data/news-data";
 
 export const NEWS_PAGE_SIZE = 6;
 
+/** True when the post is the Sanity “pinned” / featured hero item. */
+export function isPinnedNewsPost(p: NewsPost): boolean {
+  return p.pinned === true;
+}
+
+/** All pinned posts, newest first (hero order). */
+export function pickPinnedPosts(posts: NewsPost[]): NewsPost[] {
+  return posts
+    .filter(isPinnedNewsPost)
+    .sort(
+      (a, b) =>
+        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+    );
+}
+
+/** Newest pinned post only; prefer `pickPinnedPosts` when showing multiple. */
 export function pickPinnedPost(posts: NewsPost[]): NewsPost | null {
-  const pinned = posts.filter((p) => p.pinned === true);
-  if (!pinned.length) return null;
-  return [...pinned].sort(
-    (a, b) =>
-      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
-  )[0]!;
+  const rows = pickPinnedPosts(posts);
+  return rows[0] ?? null;
 }
 
 export function filterUnpinned(posts: NewsPost[]): NewsPost[] {
-  return posts.filter((p) => p.pinned !== true);
+  return posts.filter((p) => !isPinnedNewsPost(p));
 }
 
 export function applyCategoryFilter(

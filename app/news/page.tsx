@@ -10,7 +10,7 @@ import {
   applyCategoryFilter,
   applySearchQuery,
   filterUnpinned,
-  pickPinnedPost,
+  pickPinnedPosts,
 } from "@/lib/news-listing";
 import { buildNewsListingHref } from "@/lib/news-listing-url";
 import type { Metadata } from "next";
@@ -44,7 +44,7 @@ export default async function NewsPage({ searchParams }: NewsPageProps) {
     getNewsCategories(),
   ]);
 
-  const featuredPost = pickPinnedPost(allPosts);
+  const pinnedPosts = pickPinnedPosts(allPosts);
 
   let unpinned = filterUnpinned(allPosts);
   unpinned = applyCategoryFilter(unpinned, categoryParam);
@@ -71,7 +71,7 @@ export default async function NewsPage({ searchParams }: NewsPageProps) {
   return (
     <main className="min-h-screen max-w-full overflow-x-clip">
       <Header />
-      <NewsHeroSection featuredPost={featuredPost} />
+      <NewsHeroSection featuredPosts={pinnedPosts} />
       <Separator />
       <NewsFilterSection
         categories={categories}

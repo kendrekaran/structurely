@@ -1,10 +1,9 @@
 /**
  * News article data layer.
  *
- * - **Sanity**: When `sanityClient` is configured (`NEXT_PUBLIC_SANITY_PROJECT_ID` in `.env`),
- *   posts are loaded with GROQ from `sanity/queries.ts`. See `sanity/client.ts` for env vars.
- * - **Dummy data**: When the client is `null` (no project ID), all routes use `dummy-news.ts`.
- *   No CMS or token required for local development.
+ * - **Sanity**: Posts load via GROQ (`sanity/queries.ts`) with `_type` `news`
+ *   (see `sanity/constants.ts`; optional `NEXT_PUBLIC_SANITY_NEWS_DOCUMENT_TYPE`).
+ * - **Dummy data**: When the client is unavailable, routes use `dummy-news.ts`.
  */
 
 import {
@@ -21,24 +20,40 @@ import {
 } from "@/sanity/queries";
 import type { SanityImageSource } from "@sanity/image-url";
 import { unstable_cache } from "next/cache";
+import { getSanityNewsDocumentType } from "@/sanity/constants";
+
+/** Resolved once per server bundle; GROQ `*[_type == $type]` uses this value. */
+const SANITY_NEWS_DOC_TYPE = getSanityNewsDocumentType();
 
 /** Shape compatible with both dummy and Sanity. */
 export type NewsPost = Omit<DummyNewsPost, "thumbnail"> & {
   thumbnail?: string | Record<string, unknown>;
 };
 
-function getSanityNewsDocumentType(): string {
-  const raw = process.env.NEXT_PUBLIC_SANITY_BLOG_DOCUMENT_TYPE?.trim();
-  if (raw && /^[a-zA-Z0-9_]+$/.test(raw)) {
-    return raw;
+/** Normalize boolean from GROQ / API (handles rare string or numeric forms). */
+function parsePinned(raw: unknown): boolean {
+  if (raw === true) return true;
+  if (raw === false || raw == null) return false;
+  if (typeof raw === "string") {
+    const s = raw.trim().toLowerCase();
+    return s === "true" || s === "1" || s === "yes";
   }
-  return "blogPost";
+  if (typeof raw === "number") return raw === 1;
+  return false;
 }
 
-function toCategoryStrings(raw: unknown[]): string[] {
-  return [...new Set(raw)]
-    .filter((n): n is string => typeof n === "string" && n.length > 0)
-    .sort((a, b) => a.localeCompare(b, "en"));
+function categoryLabelFromSanity(raw: unknown): string | undefined {
+  if (typeof raw === "string" && raw.trim()) return raw.trim();
+  if (
+    raw &&
+    typeof raw === "object" &&
+    "name" in raw &&
+    typeof (raw as { name?: unknown }).name === "string"
+  ) {
+    const n = (raw as { name: string }).name.trim();
+    return n || undefined;
+  }
+  return undefined;
 }
 
 function sortByPublishedAt(posts: NewsPost[]): NewsPost[] {
@@ -91,26 +106,16 @@ function mapSanityPost(doc: Record<string, unknown>): NewsPost | null {
     thumbnail = u ?? (thumb as Record<string, unknown>);
   }
 
-  const authorRaw = doc.author;
-  const author =
-    authorRaw &&
-    typeof authorRaw === "object" &&
-    authorRaw !== null &&
-    "name" in authorRaw
-      ? { name: String((authorRaw as { name?: string }).name ?? "") }
-      : undefined;
-
   return {
     _id: String(doc._id),
     title: String(doc.title),
     description:
       typeof doc.description === "string" ? doc.description : undefined,
-    category: typeof doc.category === "string" ? doc.category : undefined,
-    pinned: doc.pinned === true,
+    category: categoryLabelFromSanity(doc.category),
+    pinned: parsePinned(doc.pinned),
     slug: { current: slug.current },
     publishedAt: String(doc.publishedAt ?? new Date().toISOString()),
     readTime: typeof doc.readTime === "number" ? doc.readTime : undefined,
-    author,
     primaryKeywords: Array.isArray(doc.primaryKeywords)
       ? (doc.primaryKeywords as unknown[]).filter(
           (x): x is string => typeof x === "string",
@@ -132,7 +137,7 @@ function mapSanityPost(doc: Record<string, unknown>): NewsPost | null {
 async function fetchSanityNewsPosts(): Promise<NewsPost[]> {
   const rows = await sanityClient!.fetch<Record<string, unknown>[]>(
     newsListQuery,
-    { type: getSanityNewsDocumentType() },
+    { type: SANITY_NEWS_DOC_TYPE },
   );
   return rows
     .map((row) => mapSanityPost(row))
@@ -141,7 +146,7 @@ async function fetchSanityNewsPosts(): Promise<NewsPost[]> {
 
 const getCachedSanityNewsPosts = unstable_cache(
   fetchSanityNewsPosts,
-  ["sanity-news-list"],
+  ["sanity-news-list", SANITY_NEWS_DOC_TYPE],
   { revalidate: 60 },
 );
 
@@ -154,11 +159,13 @@ export async function getNewsCategories(): Promise<string[]> {
     return fromDummy.sort((a, b) => a.localeCompare(b, "en"));
   }
 
-  const raw = await sanityClient.fetch<(string | null)[]>(
+  const rows = await sanityClient.fetch<{ name?: string | null }[]>(
     newsCategoriesQuery,
-    { type: getSanityNewsDocumentType() },
   );
-  return toCategoryStrings(raw.filter((c): c is string => typeof c === "string"));
+  const names = rows
+    .map((r) => (typeof r.name === "string" ? r.name.trim() : ""))
+    .filter((n) => n.length > 0);
+  return [...new Set(names)].sort((a, b) => a.localeCompare(b, "en"));
 }
 
 /** Returns all posts, sorted by `publishedAt` descending. */
@@ -179,12 +186,12 @@ export async function getNewsPostBySlug(slug: string): Promise<NewsPost | null> 
     async () => {
       const doc = await sanityClient!.fetch<Record<string, unknown> | null>(
         newsBySlugQuery,
-        { type: getSanityNewsDocumentType(), slug },
+        { type: SANITY_NEWS_DOC_TYPE, slug },
       );
       if (!doc) return null;
       return mapSanityPost(doc);
     },
-    ["sanity-news-by-slug", slug],
+    ["sanity-news-by-slug", SANITY_NEWS_DOC_TYPE, slug],
     { revalidate: 60 },
   )();
 }
