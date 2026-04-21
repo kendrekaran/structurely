@@ -19,12 +19,11 @@ import {
 export const AUTH_PHONE_ALLOWED_COUNTRIES = [
   "US",
   "CA",
-  "FR",
 ] as const satisfies readonly CountryCode[];
 
 export const AUTH_PHONE_REGION_ERROR_MESSAGE = "This number is not in range.";
 
-/** When the number is complete and valid but the country is not US, Canada, or France. */
+/** When the number is complete and valid but the country is not US or Canada. */
 export function getAuthPhoneRegionError(fullNumber: string): string | null {
   const raw = (fullNumber ?? "").trim();
   if (!raw || raw === "+") return null;
@@ -116,7 +115,7 @@ const AuthPhoneInput = forwardRef<HTMLInputElement, AuthPhoneInputProps>(
 
       const iti = intlTelInput(el, {
         initialCountry: "us",
-        onlyCountries: ["us", "ca", "fr"],
+        onlyCountries: ["us", "ca"],
         nationalMode: false,
         autoPlaceholder: "aggressive",
         formatOnDisplay: true,
