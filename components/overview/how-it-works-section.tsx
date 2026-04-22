@@ -1,37 +1,85 @@
 "use client";
 
-import { RiveScrollNumberStates } from "@/components/_ui/rive-scroll-number-states";
+import Image from "next/image";
+import {
+  RiveScrollNumberStates,
+  RiveNumberStateItem,
+} from "@/components/_ui/rive-scroll-number-states";
+const HOW_IT_WORKS_ICON_BASE =
+  "/assets/overview/logos/how-it-works-icons";
 
-type Feature = {
-  title: string;
-  description: string;
-  flowSteps: string[];
-};
+function HowItWorksIcon({
+  src,
+  width,
+  height,
+}: {
+  src: string;
+  width: number;
+  height: number;
+}) {
+  return (
+    <Image
+      src={src}
+      alt=""
+      width={width}
+      height={height}
+      className="max-h-[40px] max-w-[40px] object-contain"
+    />
+  );
+}
 
-const features: Feature[] = [
+const features: RiveNumberStateItem[] = [
   {
     title: "Human-like AI calls with leads",
     description:
       "Human-like AI voice agents handle inbound and outbound lead qualification calls, engage prospects naturally, and capture sales-ready opportunities.",
-    flowSteps: ["Ring", "AI dialog", "Score", "CRM log"],
+    features: ["Ring", "AI dialog", "Score", "CRM log"],
+    icon: (
+      <HowItWorksIcon
+        src={`${HOW_IT_WORKS_ICON_BASE}/1.svg`}
+        width={32}
+        height={28}
+      />
+    ),
   },
   {
     title: "Texting + drip campaigns",
     description:
       "Structurely AI automate follow-up, support two-way SMS conversations, and keep leads engaged throughout the sales funnel.",
-    flowSteps: ["Trigger", "Drip", "Reply", "Re-engage"],
+    features: ["Trigger", "Drip", "Reply", "Re-engage"],
+    icon: (
+      <HowItWorksIcon
+        src={`${HOW_IT_WORKS_ICON_BASE}/2.svg`}
+        width={24}
+        height={21.2}
+      />
+    ),
   },
   {
     title: "Live transfers",
     description:
       "Real-time live transfers route qualified leads directly to your sales team, improving response speed, connection rates, and conversion opportunities.",
-    flowSteps: ["Qualify", "Warm intro", "Bridge", "Agent"],
+    features: ["Qualify", "Warm intro", "Bridge", "Agent"],
+    icon: (
+      <HowItWorksIcon
+        src={`${HOW_IT_WORKS_ICON_BASE}/3.svg`}
+        width={22}
+        height={21.99}
+      />
+    ),
   },
   {
     title: "Appointment setting",
     description:
       "Structurely AI appointment setting automates scheduling for qualified leads, integrates with calendars and CRMs, and helps sales teams book more meetings.",
-    flowSteps: ["Intent", "Slots", "Book", "Remind"],
+    features: ["Intent", "Slots", "Book", "Remind"],
+    icon: (
+      <HowItWorksIcon
+        src={`${HOW_IT_WORKS_ICON_BASE}/4.svg`}
+        width={20}
+        height={20}
+      />
+    ),
   },
 ];
 
@@ -50,11 +98,8 @@ function HowItWorksSection() {
 
         <div className="w-full">
           <RiveScrollNumberStates
-            items={features.map((f) => ({
-              title: f.title,
-              description: f.description,
-              features: f.flowSteps,
-            }))}
+            items={features}
+            iconWrapperClassName="md:hidden"
           />
         </div>
       </section>

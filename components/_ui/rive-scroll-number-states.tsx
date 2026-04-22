@@ -15,6 +15,7 @@ export type RiveNumberStateItem = {
   description: string;
   /** Shown as pills on small screens (same pattern as industry selector). */
   features?: string[];
+  icon?: React.ReactNode;
 };
 
 const DEFAULT_ITEMS: RiveNumberStateItem[] = [
@@ -55,6 +56,8 @@ export type RiveScrollNumberStatesProps = {
   className?: string;
   /** If true, Rive input uses 1…n (legacy); if false, uses 0…n−1 (states 0–3 for four items). */
   inputOneBased?: boolean;
+  /** Extra classes on the optional per-item icon wrapper (e.g. `md:hidden` for mobile-only icons). */
+  iconWrapperClassName?: string;
 };
 
 function RiveScrollNumberStatesInner({
@@ -66,6 +69,7 @@ function RiveScrollNumberStatesInner({
   layout: layoutProp,
   className,
   inputOneBased = false,
+  iconWrapperClassName,
 }: RiveScrollNumberStatesProps) {
   const items = itemsProp ?? DEFAULT_ITEMS;
   const [activeIndex, setActiveIndex] = useState(0);
@@ -145,32 +149,49 @@ function RiveScrollNumberStatesInner({
             }}
             transition={tabTransition}
             className={cn(
-              "relative flex w-full cursor-pointer flex-col items-start px-6 py-5 text-left md:px-8 md:py-6",
+              "relative flex w-full cursor-pointer flex-col items-start gap-4 px-8 py-6 text-left",
               activeIndex !== i && i !== items.length - 1
                 ? "border-b border-[#E5E7EB]"
                 : "",
             )}
           >
-            <span className="text-base leading-6 font-medium tracking-[-0.02em] text-[#202020]">
-              {item.title}
-            </span>
-            <motion.div
-              className="overflow-hidden"
-              initial={false}
-              animate={{
-                height: activeIndex === i ? "auto" : 0,
-                opacity: activeIndex === i ? 1 : 0,
-                filter: activeIndex === i ? "blur(0px)" : "blur(4px)",
-                y: activeIndex === i ? 0 : 10,
-              }}
-              transition={tabTransition}
-            >
-              <div className="pt-2">
-                <span className="text-base leading-[26px] font-medium tracking-[-0.01em] text-[#646464]">
-                  {item.description}
+            {item.icon && (
+              <div
+                className={cn(
+                  "flex h-[40px] w-[40px] shrink-0 items-center justify-center overflow-hidden rounded-[12px] bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_1px_1px_-0.5px_rgba(51,51,51,0.05),0_3px_3px_-1.5px_rgba(51,51,51,0.05),0_6px_6px_-3px_rgba(51,51,51,0.05),0_12px_12px_-6px_rgba(51,51,51,0.05),0_24px_24px_-12px_rgba(51,51,51,0.05)]",
+                  iconWrapperClassName,
+                )}
+              >
+                <span
+                  className={cn(
+                    "flex h-full w-full items-center justify-center transition-opacity duration-300",
+                    activeIndex === i ? "opacity-30" : "opacity-100",
+                  )}
+                >
+                  {item.icon}
                 </span>
               </div>
-            </motion.div>
+            )}
+            <div className="flex flex-col items-start gap-2 self-stretch">
+              <span className="text-base font-medium leading-6 tracking-[-0.02em] text-[#202020]">
+                {item.title}
+              </span>
+              <motion.div
+                className="overflow-hidden"
+                initial={false}
+                animate={{
+                  height: activeIndex === i ? "auto" : 0,
+                  opacity: activeIndex === i ? 1 : 0,
+                  filter: activeIndex === i ? "blur(0px)" : "blur(4px)",
+                  y: activeIndex === i ? 0 : 10,
+                }}
+                transition={tabTransition}
+              >
+                <span className="text-sm font-normal leading-5 tracking-[-0.01em] text-[#646464]">
+                  {item.description}
+                </span>
+              </motion.div>
+            </div>
             {activeIndex === i && (
               <>
                 <div className="absolute right-0 bottom-0 left-0 h-[3px] bg-[#E5E7EB]" />
