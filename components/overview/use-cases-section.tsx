@@ -23,7 +23,7 @@ function UseCasesSection() {
     <section id="use-cases" className="relative z-0">
       <div className="px-global">
         <div className="max-w-global mx-auto border-x border-[#E5E7EB]">
-          <div className="border-b border-[#E5E7EB] px-6 py-8 text-center md:px-24 md:py-16">
+          <div className="md:border-b border-[#E5E7EB] px-6 py-8 text-center md:px-24 md:py-16">
             <h2 className="mx-auto max-w-[8em]">Use cases.</h2>
           </div>
         </div>
